@@ -1,9 +1,12 @@
 import { Suspense } from 'react';
 import Loading from './pages/Loading/Loading';
 import { ErrorBoundary } from 'react-error-boundary';
-import { QueryClientProvider, QueryErrorResetBoundary } from 'react-query';
+import { QueryClient, QueryClientProvider, QueryErrorResetBoundary } from 'react-query';
 import FallbackUI from './pages/FallbackUI/FallbackUI';
 import * as S from './App.style';
+import { RecoilRoot } from 'recoil';
+import { RouterProvider } from 'react-router-dom';
+import router from './router/Router';
 
 function App() {
   const queryClient = new QueryClient();
