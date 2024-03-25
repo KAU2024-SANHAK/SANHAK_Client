@@ -1,21 +1,91 @@
 module.exports = {
   root: true,
-  env: { browser: true, es2020: true },
+  env: { browser: true, es2020: true, node: true },
   extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:react/jsx-runtime',
-    'plugin:react-hooks/recommended',
+    "eslint:recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:@javascript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:import/javascript",
+    "plugin:react/jsx-runtime",
+    "plugin:prettier/recommended",
+    "prettier",
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
-  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
-  settings: { react: { version: '18.2' } },
-  plugins: ['react-refresh'],
+  ignorePatterns: ["dist", ".eslintrc.cjs"],
+  parser: "@javascript-eslint/parser",
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: "latest",
+    sourceType: "module",
+  },
+  plugins: [
+    "react-refresh",
+    "prettier",
+    "react",
+    "@javascript-eslint",
+    "import",
+    "jsx-a11y",
+    "react-hooks",
+  ],
   rules: {
-    'react/jsx-no-target-blank': 'off',
-    'react-refresh/only-export-components': [
-      'warn',
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "prettier/prettier": [
+      "warn",
+      {
+        singleQuote: true,
+        parser: "flow",
+        endOfLine: "auto",
+      },
+    ],
+    "@javascript-eslint/no-unused-vars": [
+      "warn",
+      {
+        argsIgnorePattern: "^_",
+        varsIgnorePattern: "^_",
+        caughtErrorsIgnorePattern: "^_",
+      },
+    ],
+    "no-console": "off",
+    "react/jsx-filename-extension": ["error", { extensions: [".js", ".jsx"] }],
+    "linebreak-style": "off",
+    "import/no-unresolved": "off",
+    "import/no-extraneous-dependencies": "off",
+    "default-param-last": "off",
+    "react/forbid-prop-types": "off",
+    camelcase: "off",
+    "no-shadow": "off",
+    "no-param-reassign": ["warn", { props: false }],
+    "no-debugger": "off",
+    "import/prefer-default-export": "off",
+    "react/require-default-props": "off",
+    "import/no-anonymous-default-export": "off",
+    "react-refresh/only-export-components": [
+      "warn",
       { allowConstantExport: true },
     ],
+    "@javascript-eslint/naming-convention": [
+      "warn",
+      {
+        selector: "default",
+        format: ["camelCase", "PascalCase"],
+        leadingUnderscore: "allow",
+        trailingUnderscore: "allow",
+      },
+
+      {
+        selector: "import",
+        format: ["camelCase", "PascalCase"],
+      },
+
+      {
+        selector: "variable",
+        format: ["camelCase", "UPPER_CASE", "PascalCase"],
+        leadingUnderscore: "allow",
+        trailingUnderscore: "allow",
+      },
+    ],
   },
-}
+};
