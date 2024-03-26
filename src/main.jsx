@@ -1,9 +1,9 @@
-import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
-import Styles from "./style/index.tsx";
+import Styles from './styles/index.jsx';
+import ReactDOM from 'react-dom/client';
+import App from './App.jsx';
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <Styles>
     <App />
-  </Styles>
+  </Styles>,
 );
