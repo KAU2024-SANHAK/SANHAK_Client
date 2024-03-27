@@ -1,4 +1,0 @@
-#!/usr/bin/env sh
-. "${0%/*}/h"
-
-"npx --no-install commitlint --edit \$1" 
