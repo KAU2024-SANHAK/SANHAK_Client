@@ -1,10 +1,10 @@
 import * as S from './Start.style';
 import { kakaoURL } from '../../utils/login';
 
+
 const handleLogin=()=>{
   window.location.href = kakaoURL;
 }
-
 
 function Start() {
   return (
@@ -14,6 +14,7 @@ function Start() {
       <button type='button'
       onClick={()=>{handleLogin()}}
       ></button>
+
     </S.StartWrapper>
   );
 }
