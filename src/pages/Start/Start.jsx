@@ -1,5 +1,6 @@
 import * as S from './Start.style';
 import { kakaoURL } from '../../utils/login';
+import BtnKakaoLogin from '../../components/common/buttons/KakaoLogin/BtnKakaoLogin';
 
 
 const handleLogin=()=>{
@@ -11,9 +12,7 @@ function Start() {
     <S.StartWrapper>
       <h1>시작 페이지 입니다.</h1>
 
-      <button type='button'
-      onClick={()=>{handleLogin()}}
-      ></button>
+      <BtnKakaoLogin/>
 
     </S.StartWrapper>
   );

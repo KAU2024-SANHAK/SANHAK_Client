@@ -12,22 +12,21 @@ const useLogin= async () => {
         if(code){
             try{
                 const response = authInstance.get(
-                //서버 주소에 쿼리 형식으로 인가코드 넣어 보내주기
+                //서버 주소에 쿼리형식으로 인가코드 넣어
+                `${code}`
                 )
                 
                 //const userData = response.data.;
-                
-                localStorage.setItem();
-                localStorage.setItem();
-                localStorage.setItem();
+            
 
             }catch(error){
                 console.log(error)
             }
             
-                
+            //localStorage에 값 넣기
         }
 
+        //메인 페이지로 이동하기
     }, [])
 }
 
