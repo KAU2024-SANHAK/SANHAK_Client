@@ -27,7 +27,7 @@ export default function OnBoarding(){
                 </Step>
 
                 <Step name='Step4'>
-                    <Step4/>
+                    <Step4  onNxt={() => navigate('/main')}/>
                 </Step>
             </Funnel>
         </S.Wrapper>
