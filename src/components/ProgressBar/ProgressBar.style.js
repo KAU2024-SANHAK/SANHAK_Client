@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    background-color: blue;
+    display: flex;
+    margin: 2rem;
+    gap: 0.5rem;    
 `
