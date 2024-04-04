@@ -15,6 +15,7 @@ ${reset}
 
  button {
   cursor: pointer;
+  border-style: solid;
  }
 
  :root {
