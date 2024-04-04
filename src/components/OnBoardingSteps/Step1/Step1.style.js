@@ -1,5 +1,16 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    background-color: blue;
+    ${({ theme: { mixin } }) => mixin.flexCenter({})};
+`
+
+export const Footer = styled.div`
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+
 `
