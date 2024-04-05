@@ -1,5 +1,5 @@
 import * as S from './OnBoarding.style'
-import { useFunnel } from '../../hooks/useFunnel'
+import { useFunnel } from '../../hooks/common/useFunnel'
 import Step1 from '../../components/OnBoardingSteps/Step1/Step1'
 import Step2 from '../../components/OnBoardingSteps/Step2/Step2'
 import Step3 from '../../components/OnBoardingSteps/Step3/Step3'
@@ -30,6 +30,10 @@ export default function OnBoarding(){
                     <Step4  onNxt={() => navigate('/main')}/>
                 </Step>
             </Funnel>
+
+            
+
+
         </S.Wrapper>
     )
 }
