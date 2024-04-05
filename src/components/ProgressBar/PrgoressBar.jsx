@@ -8,6 +8,8 @@ export default function ProgressBar(props){
             {props.cur == 'Step2' ?<SvgIcCurrentProgressCircle/> : <SvgIcProgressCircle/>}
             {props.cur == 'Step3' ?<SvgIcCurrentProgressCircle/> : <SvgIcProgressCircle/>}
             {props.cur == 'Step4' ?<SvgIcCurrentProgressCircle/> : <SvgIcProgressCircle/>}
+            {props.cur == 'Step5' ?<SvgIcCurrentProgressCircle/> : <SvgIcProgressCircle/>}
+            {props.cur == 'Step6' ?<SvgIcCurrentProgressCircle/> : <SvgIcProgressCircle/>}
        </S.Wrapper>
     )
 }

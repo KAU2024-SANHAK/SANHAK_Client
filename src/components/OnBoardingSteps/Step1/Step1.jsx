@@ -8,13 +8,12 @@ export default function Step1(props){
     return (
         <S.Wrapper>
             <Title>
-                <p>당신의<br/>
-                성격을 골라주세요
+                <p style={{lineHeight: '4rem'}}>당신은<br/>
+                스스로의 감정에 솔직한가요?
                 </p>
-                <SubTitle><p>일기 작성에 반영이 됩니다</p></SubTitle>
             </Title>
             
-
+            <SubTitle><p> 하루하루 스쳐갔던 우리의 감정들 <br/>이제 흘려보내지 말고 담아보아요</p></SubTitle>
             <S.Footer>
                 <ProgressBar cur='Step1'/>
                 <BtnNext setStep={props.onNxt}></BtnNext>

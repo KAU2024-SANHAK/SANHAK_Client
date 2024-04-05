@@ -1,21 +1,21 @@
 import BtnNext from "../../common/buttons/Next/BtnNext";
 import ProgressBar from "../../ProgressBar/PrgoressBar";
 import Title from "../../common/title/Title";
-import * as S from "./Step2.style"
+import * as S from "./Step5.style"
 import SubTitle from "../../common/title/SubTitle";
 
-export default function Step2(props){
+export default function Step4(props){
     return (
         <S.Wrapper>
             <Title>
-                <p style={{lineHeight: '4rem'}}>바쁘고 귀찮아...<br/>
-                도대체 일기는 언제 쓰지?
+                <p>
+                어떤 스타일의 글을 원하나요?
                 </p>
             </Title>
             
-            <SubTitle><p> 분주한 일상 속, <br/>허니어리에 일기를 채워보세요</p></SubTitle>
+            <SubTitle><p>사용자의 성향을 파악하여 일기를 작성해줄게요</p></SubTitle>
             <S.Footer>
-                <ProgressBar cur='Step2'/>
+                <ProgressBar cur='Step5'/>
                 <BtnNext setStep={props.onNxt}></BtnNext>
             </S.Footer>
 
