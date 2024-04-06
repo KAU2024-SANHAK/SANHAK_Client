@@ -8,6 +8,7 @@ export const Body = styled.div`
     width: 100%;
     flex-direction: column;
     align-items: center;
+    hegiht: 21.25rem;
 `
 export const Footer = styled.div`
     display: flex;
