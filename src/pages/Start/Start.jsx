@@ -1,6 +1,7 @@
 import * as S from './Start.style';
 import { kakaoURL } from '../../utils/login';
 import BtnKakaoLogin from '../../components/common/buttons/KakaoLogin/BtnKakaoLogin';
+import BtnStart from '../../components/common/buttons/Start/BtnStart';
 
 
 const handleLogin=()=>{
@@ -12,7 +13,7 @@ function Start() {
     <S.StartWrapper>
       <h1>시작 페이지 입니다.</h1>
 
-      <BtnKakaoLogin/>
+      {localStorage.length === 0 ? <BtnKakaoLogin/> : <BtnStart/>}
 
     </S.StartWrapper>
   );
