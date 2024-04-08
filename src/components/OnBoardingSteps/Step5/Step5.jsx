@@ -1,5 +1,5 @@
-import BtnNext from "../../common/buttons/Next/BtnNext";
-import ProgressBar from "../../ProgressBar/PrgoressBar";
+import OnBoardingProgressbar from "../../OnBoardingProgressBar/OnBoardingPrgoressBar"
+import BtnOnBordingNext from "../../common/buttons/OnBoardingNext/BtnOnBoardingNext"
 import Title from "../../common/title/Title";
 import * as S from "../Step.style"
 import SubTitle from "../../common/title/SubTitle";
@@ -21,8 +21,8 @@ export default function Step4(props){
             </S.Body>
 
             <S.Footer>
-                <ProgressBar cur='Step5'/>
-                <BtnNext setStep={props.onNxt}></BtnNext>
+                <OnBoardingProgressbar cur='Step5'/>
+                <BtnOnBordingNext setStep={props.onNxt}/>
             </S.Footer>
 
         </S.Wrapper>

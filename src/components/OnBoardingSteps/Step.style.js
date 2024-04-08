@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import SvgIcBlank from "../../assets/svg/IcBlank";
 
 export const Wrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
@@ -19,4 +20,9 @@ export const Footer = styled.div`
     transform: translateX(-50%);
     align-items: center;
 
+`
+
+export const BlankImage =styled(SvgIcBlank)`
+    margin-bottom: 3rem;
+    margin-top: 3rem;
 `

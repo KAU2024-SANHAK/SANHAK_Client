@@ -1,7 +1,8 @@
 import * as S from "./OnBoardingProgressBar.style"
 import SvgIcProgressCircle from "../../assets/svg/IcProgressCircle"
 import SvgIcCurrentProgressCircle from "../../assets/svg/IcCurrentProgressCircle"
-export default function ProgressBar(props){
+
+export default function OnBoardingProgressBar(props){
     return(
         <S.Wrapper>
             {props.cur == 'Step1' ?<SvgIcCurrentProgressCircle/> : <SvgIcProgressCircle/>}

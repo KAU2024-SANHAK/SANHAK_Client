@@ -1,7 +1,7 @@
 export default function SvgIcBlank(){
     return(
         <>
-            <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 108 108" fill="none" style={{marginBottom: '3rem', marginTop:'3rem'}}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 108 108" fill="none">
                 <g filter="url(#filter0_d_416_449)">
                 <rect x="4" width="100" height="100" fill="#E8E8E8"/>
                 <rect x="6.5" y="2.5" width="95" height="95" stroke="#83CECA" strokeOpacity="0.79" strokeWidth="5"/>

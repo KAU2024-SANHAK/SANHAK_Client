@@ -1,5 +1,5 @@
-import BtnNext from "../../common/buttons/Next/BtnNext";
-import ProgressBar from "../../ProgressBar/PrgoressBar";
+import OnBoardingProgressbar from "../../OnBoardingProgressBar/OnBoardingPrgoressBar"
+import BtnOnBordingNext from "../../common/buttons/OnBoardingNext/BtnOnBoardingNext"
 import Title from "../../common/title/Title";
 import * as S from "../Step.style"
 import SubTitle from "../../common/title/SubTitle";
@@ -15,13 +15,13 @@ export default function Step4(props){
             </Title>
 
             <S.Body>
-                <SvgIcBlank/>
+                <S.BlankImage/>
                 <SubTitle><p>허니베어와 함께<br/>당신의 하루를 되돌아 보아요</p></SubTitle>
             </S.Body>
 
             <S.Footer>
-                <ProgressBar cur='Step4'/>
-                <BtnNext setStep={props.onNxt}></BtnNext>
+                <OnBoardingProgressbar cur='Step4'/>
+                <BtnOnBordingNext setStep={props.onNxt}/>
             </S.Footer>
 
         </S.Wrapper>

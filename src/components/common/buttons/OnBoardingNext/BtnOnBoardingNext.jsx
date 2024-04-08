@@ -1,6 +1,6 @@
-import * as S from './BtnNext.style'
+import * as S from './BtnOnBoardingNext.style'
 
-export default function BtnNext(props){
+export default function BtnOnBoardingNext(props){
     return(
         <S.Wrapper onClick={()=>{props.setStep()}}>
             다음으로
