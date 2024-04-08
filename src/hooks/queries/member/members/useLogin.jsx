@@ -11,7 +11,7 @@ const useLogin= async () => {
     const navigate = useNavigate();
 
     useEffect(()=>{ 
-1
+
         if(code){
             try{
                 const response = authInstance.get(
