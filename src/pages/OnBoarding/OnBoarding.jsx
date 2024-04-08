@@ -11,34 +11,37 @@ import { useNavigate } from 'react-router-dom'
 export default function OnBoarding(){
 
     const navigate = useNavigate();
-    const [Funnel, Step, setStep] = useFunnel("Step1")
+    const steps = [
+        { name: 'Step1', component: Step1, nextStep: 'Step2' },
+        { name: 'Step2', component: Step2, nextStep: 'Step3' },
+        { name: 'Step3', component: Step3, nextStep: 'Step4' },
+        { name: 'Step4', component: Step4, nextStep: 'Step5' },
+        { name: 'Step5', component: Step5, nextStep: 'Step6' },
+        { name: 'Step6', component: Step6, nextStep: '/main' }
+    ]
+    const [Funnel, Step, currentStep, setCurrentStep] = useFunnel("Step1")
     
+    const handleNext=()=>{
+        const nextStepIndex = steps.findIndex(step => step.name === currentStep) + 1;
+
+        if (nextStepIndex < steps.length) {
+            setCurrentStep(steps[nextStepIndex].name);
+        } else {
+            navigate(steps[nextStepIndex-1].nextStep);
+        }
+    }
+
     return(
         <S.Wrapper>
             <Funnel>
-                <Step name='Step1'>
-                    <Step1 onNxt={()=> setStep('Step2')}/>
-                </Step>
-                <Step name='Step2'>
-                    <Step2 onNxt={()=> setStep('Step3')}/>
-                </Step>
-                <Step name='Step3'>
-                    <Step3 onNxt={()=> setStep('Step4')}/>
-                </Step>
-                <Step name='Step4'>
-                    <Step4  onNxt={() => setStep('Step5')}/>
-                </Step>
-                <Step name='Step5'>
-                    <Step5 onNxt={() => setStep('Step6')}/>   
-                </Step>
-                <Step name='Step6'>
-                    <Step6  onNxt={() => navigate('/main')}/>   
-                </Step>
+                
+                {steps.map((step, idx)=>(
+                    <Step key = {idx} name = {step.name}>
+                        <step.component onNxt={()=>{handleNext()}}/>
+                    </Step>
+                ))}
+
             </Funnel>
-
-            
-
-
         </S.Wrapper>
     )
 }
