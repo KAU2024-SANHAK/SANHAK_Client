@@ -4,7 +4,7 @@ import Title from "../../common/title/Title";
 import * as S from "../Step.style"
 import SubTitle from "../../common/title/SubTitle";
 import SvgIcBlank from "../../../assets/svg/IcBlank";
-import SetWritingStyle from "../SetWiritingStyle/SetWritingStyle";
+import SetWritingStyle from "../SetWriitingStyle/SetWritingStyle";
  
 export default function Step4(props){
     return (
