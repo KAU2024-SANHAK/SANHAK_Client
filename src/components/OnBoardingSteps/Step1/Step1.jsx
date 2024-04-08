@@ -1,8 +1,8 @@
 import OnBoardingProgressbar from "../../OnBoardingProgressBar/OnBoardingPrgoressBar"
 import BtnOnBordingNext from "../../common/buttons/OnBoardingNext/BtnOnBoardingNext"
-import Title from "../../common/title/Title";
 import * as S from "../Step.style"
-import SubTitle from "../../common/title/SubTitle";
+import Title from "../title/Title";
+import SubTitle from "../title/SubTitle";
 
 export default function Step1(props){
     return (

@@ -1,12 +1,13 @@
 import OnBoardingProgressbar from "../../OnBoardingProgressBar/OnBoardingPrgoressBar"
 import BtnOnBordingNext from "../../common/buttons/OnBoardingNext/BtnOnBoardingNext"
-import Title from "../../common/title/Title";
 import * as S from "../Step.style"
-import SubTitle from "../../common/title/SubTitle";
 import SvgIcBlank from "../../../assets/svg/IcBlank";
 import SetWritingStyle from "../SetWriitingStyle/SetWritingStyle";
+import Title from "../title/Title";
+import SubTitle from "../title/SubTitle";
+
  
-export default function Step4(props){
+export default function Step5(props){
     return (
         <S.Wrapper>
             <Title>
