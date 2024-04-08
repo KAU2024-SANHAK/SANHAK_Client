@@ -11,12 +11,11 @@ export const Body = styled.div`
     width: 100%;
 `
 export const Header = styled.div`
-    ${({ theme: { mixin } }) => mixin.flexBox({align: 'center' })};
+    ${({ theme: { mixin } }) => mixin.flexBox({justify:'flex-end', align: 'center' })};
     width: 100%;
 `
 
 export const BlankImage =styled(SvgIcBlank)`
-    
     margin-bottom: 3rem;
     margin-top: 3rem;
 `

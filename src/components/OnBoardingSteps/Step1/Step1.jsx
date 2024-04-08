@@ -3,7 +3,7 @@ import BtnOnBordingNext from "../../common/buttons/OnBoardingNext/BtnOnBoardingN
 import * as S from "../Step.style"
 import Title from "../title/Title";
 import SubTitle from "../title/SubTitle";
-import sample1 from '../../../assets'
+
 
 export default function Step1(props){
     return (

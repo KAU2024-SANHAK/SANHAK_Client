@@ -8,22 +8,19 @@ import SubTitle from "../title/SubTitle";
 export default function Step5(props){
     return (
         <S.Wrapper>
+            <S.Header>
+                <OnBoardingProgressbar cur='Step5'/>
+                <BtnOnBordingNext setStep={props.onNxt}/>
+            </S.Header>
+            
             <Title>
-                어떤 스타일의 글을 원하나요?
+                어떤 스타일의<br/>
+                일기를 원하나요?
             </Title>
 
             <S.Body>
                 <SetWritingStyle></SetWritingStyle>
-                <SubTitle>
-                    사용자의 성향을 파악하여<br/> 
-                    일기를 작성해줄게요
-                </SubTitle>
             </S.Body>
-
-            <S.Footer>
-                <OnBoardingProgressbar cur='Step5'/>
-                <BtnOnBordingNext setStep={props.onNxt}/>
-            </S.Footer>
 
         </S.Wrapper>
     )
