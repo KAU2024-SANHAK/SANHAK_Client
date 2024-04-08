@@ -1,7 +1,6 @@
+import { useNavigate } from "react-router-dom";
 import { authInstance } from "../../../../apis/client";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-
 
 const params = new URL(document.URL).searchParams;
 const code = params.get('code');
@@ -9,7 +8,7 @@ const code = params.get('code');
 //백엔드 서버에 get 으로 넘겨주기
 const useLogin= async () => {
     const navigate = useNavigate();
-
+    
     useEffect(()=>{ 
 
         if(code){
@@ -30,8 +29,9 @@ const useLogin= async () => {
             localStorage.setItem('EXIT_LOGIN_TOKEN', true);
         }
 
-        //시작 페이지로 이동하기
-        navigate('/')
+        //if 최초 로그인이면 온보딩으로 이동하기
+        navigate('/onboarding')
+        //else 메인 화면으로
     }, [])
 }
 

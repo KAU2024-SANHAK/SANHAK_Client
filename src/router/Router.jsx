@@ -4,6 +4,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import Layout from '../layouts/Layout';
 import Start from '../pages/Start/Start';
 import Login from '../components/Login';
+import OnBoarding  from '../pages/OnBoarding/OnBoarding';
 import Main from '../pages/Main/Main'
 
 /*이런 식으로 작성하기*/
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/api/oauth/kakao/login",
         element: <Login />,
+      },
+      {
+        path: "/onboarding",
+        element: <OnBoarding/>
       },
       {
         path: "/main",

@@ -15,7 +15,10 @@ ${reset}
 
  button {
   cursor: pointer;
+  border-style: solid;
  }
+ 
+
 
  :root {
   --vh: 100%;
@@ -24,6 +27,7 @@ ${reset}
  html, body{
   overflow-x :  hidden;
  }
+ 
 
  
 #root, body, html {

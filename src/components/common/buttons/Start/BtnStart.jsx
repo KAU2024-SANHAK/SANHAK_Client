@@ -7,7 +7,7 @@ export default function BtnStart(){
     const navigate = useNavigate()
 
     return(
-        <S.Wrapper onClick={()=>{navigate('/main')}}>
+        <S.Wrapper onClick={()=>{navigate('/onboarding')}}>
             <S.StartButton/>
         </S.Wrapper>
     )
