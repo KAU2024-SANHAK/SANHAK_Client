@@ -27,7 +27,7 @@ const useLogin= async () => {
             }
             
             //나중에 최초 로그인 값, 실제 아이디, 토큰 값 등으로 수정하겠습니다.
-            localStorage.setItem('id', true);
+            localStorage.setItem('EXIT_LOGIN_TOKEN', true);
         }
 
         //시작 페이지로 이동하기

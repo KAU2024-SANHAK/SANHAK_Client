@@ -9,11 +9,12 @@ const handleLogin=()=>{
 }
 
 function Start() {
+  console.log(localStorage.getItem('EXIT_LOGIN_TOKEN'))
   return (
     <S.StartWrapper>
       <h1>시작 페이지 입니다.</h1>
 
-      {localStorage.length === 0 ? <BtnKakaoLogin/> : <BtnStart/>}
+      {localStorage.getItem('EXIT_LOGIN_TOKEN') === false ? <BtnKakaoLogin/> : <BtnStart/>}
 
     </S.StartWrapper>
   );
