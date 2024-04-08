@@ -1,4 +1,4 @@
-import * as S from "./ProgressBar.style"
+import * as S from "./OnBoardingProgressBar.style"
 import SvgIcProgressCircle from "../../assets/svg/IcProgressCircle"
 import SvgIcCurrentProgressCircle from "../../assets/svg/IcCurrentProgressCircle"
 export default function ProgressBar(props){
