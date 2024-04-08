@@ -3,12 +3,11 @@ import SvgIcStartButton from "../../../../assets/svg/IcStartButton"
 
 export const Wrapper = styled.button`   
     ${({ theme: { mixin } }) => mixin.flexCenter({})}  
-    position: relative;
-    top: 20rem;
     border: none;
-    background-color: transparent; 
+    background-color: transparent;
+    margin-top: 30rem;
 `;
 
 export const StartButton = styled(SvgIcStartButton)`
-
+    
 `;
