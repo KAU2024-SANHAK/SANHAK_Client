@@ -3,14 +3,15 @@ import SvgIcProgressCircle from "../../assets/svg/IcProgressCircle"
 import SvgIcCurrentProgressCircle from "../../assets/svg/IcCurrentProgressCircle"
 
 export default function OnBoardingProgressBar(props){
+    const steps =['Step1', 'Step2', 'Step3', 'Step4', 'Step5', 'Step6']
+
     return(
         <S.Wrapper>
-            {props.cur == 'Step1' ?<SvgIcCurrentProgressCircle/> : <SvgIcProgressCircle/>}
-            {props.cur == 'Step2' ?<SvgIcCurrentProgressCircle/> : <SvgIcProgressCircle/>}
-            {props.cur == 'Step3' ?<SvgIcCurrentProgressCircle/> : <SvgIcProgressCircle/>}
-            {props.cur == 'Step4' ?<SvgIcCurrentProgressCircle/> : <SvgIcProgressCircle/>}
-            {props.cur == 'Step5' ?<SvgIcCurrentProgressCircle/> : <SvgIcProgressCircle/>}
-            {props.cur == 'Step6' ?<SvgIcCurrentProgressCircle/> : <SvgIcProgressCircle/>}
+            
+            {steps.map((step, idx)=>(
+                props.cur === step ? <SvgIcCurrentProgressCircle key = {idx} /> : <SvgIcProgressCircle key = {idx} />
+            ))}
+
        </S.Wrapper>
     )
 }
