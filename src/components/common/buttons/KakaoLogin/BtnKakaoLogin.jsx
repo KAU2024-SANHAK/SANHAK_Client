@@ -11,7 +11,7 @@ export default function BtnKakaoLogin(){
     return(
         
         <S.Wrapper onClick={()=>{handleLogin()}}>
-            <SvgIcKakaoLogin></SvgIcKakaoLogin>
+            <S.KakaoLoginButton/>
         </S.Wrapper>
         
     )

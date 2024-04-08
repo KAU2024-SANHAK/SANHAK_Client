@@ -25,7 +25,8 @@ const useLogin= async () => {
                 console.log(error)
             }
             
-            //localStorage에 값 넣기
+            //나중에 최초 로그인 값, 실제 아이디, 토큰 값 등으로 수정하겠습니다.
+            localStorage.setItem('EXIT_LOGIN_TOKEN', true);
         }
 
         //if 최초 로그인이면 온보딩으로 이동하기
