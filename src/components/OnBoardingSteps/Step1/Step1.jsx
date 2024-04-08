@@ -3,6 +3,7 @@ import BtnOnBordingNext from "../../common/buttons/OnBoardingNext/BtnOnBoardingN
 import * as S from "../Step.style"
 import Title from "../title/Title";
 import SubTitle from "../title/SubTitle";
+import sample1 from '../../../assets'
 
 export default function Step1(props){
     return (
@@ -21,7 +22,7 @@ export default function Step1(props){
                 흘려보내지 말고 담아보아요
             </SubTitle>
             <S.Body>
-                <S.BlankImage/>
+                <S.BlankImage />
             </S.Body>
             
 
