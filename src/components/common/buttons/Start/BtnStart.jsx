@@ -9,7 +9,7 @@ export default function BtnStart(){
     
     return(
         <S.Wrapper onClick={()=>{handleNavigate()}}>
-            <SvgIcStartButton/>
+            <S.StartButton/>
         </S.Wrapper>
     )
 }
