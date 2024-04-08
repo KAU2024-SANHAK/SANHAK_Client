@@ -9,5 +9,5 @@ export const Wrapper = styled.button`
 `;
 
 export const KakaoLoginButton = styled(SvgIcKakaoLogin)`
-
+    display: flex;
 `;
