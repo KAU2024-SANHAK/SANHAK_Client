@@ -1,9 +1,7 @@
 import * as S from  './BtnSetFast.style'
 
-export default function BtnSetFast(){
+export default function BtnSetFast(props){
     return(
-        <S.Wrapper>
-            <S.SetFastButton/>
-        </S.Wrapper>
+        <S.SetFastButton color = {props.color}/>
     )
 }

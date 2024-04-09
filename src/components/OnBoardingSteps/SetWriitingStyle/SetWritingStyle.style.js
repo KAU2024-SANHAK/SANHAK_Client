@@ -12,3 +12,8 @@ ${({ theme: { mixin } }) => mixin.flexCenter({})};
     text-align: center;
     
 `
+export const BtnWrapper = styled.button`
+border: none;
+background-color: transparent; 
+margin: 1rem;
+`
