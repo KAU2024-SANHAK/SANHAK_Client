@@ -19,7 +19,9 @@ export default function Step6(props){
                 꿀 같았던 하루를 담아보세요
             </SubTitle>
             
-            <HoneyBear width='375' height='479'/>
+            <S.Body>
+                <HoneyBear width='375' height='496'/>
+            </S.Body>
             
             <S.Footer>
                 <BtnOnBoardingStart setStep={props.onNxt}/>

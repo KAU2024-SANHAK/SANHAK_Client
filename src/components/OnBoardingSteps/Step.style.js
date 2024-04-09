@@ -10,9 +10,8 @@ export const Wrapper = styled.div`
 export const Body = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({direction:'column', align: 'center' })};
     width: 100%;
-    margin-bottom: 20rem;
     text-align: left;
-    
+    height: 60%;
 `
 export const Header = styled.div`
     // ${({ theme: { mixin } }) => mixin.flexBox({justify:'center',align: 'center' })};

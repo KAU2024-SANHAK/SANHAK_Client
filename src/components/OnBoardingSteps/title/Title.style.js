@@ -12,6 +12,7 @@ export const TitleWrapper = styled.p`
 export const SubTitleWrapper = styled.p`
     width: 100%;
     padding-left: 3.4rem;
+    margin-bottom: 3rem;
     font-size: 10px;
     font-style: normal;
     font-weight: 700;
