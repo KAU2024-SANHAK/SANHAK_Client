@@ -8,8 +8,14 @@ export default function FastDiary(){
 
     return(
         <S.FastDairyPageWrapper $isEven = {today%2}>
-            <BtnHome/>
-            <DiaryPrgoress/>
+            <S.Header>
+                <S.HomeButtonWrapper>
+                    <BtnHome/>
+                </S.HomeButtonWrapper>
+                
+                <DiaryPrgoress/>
+            </S.Header>
+            
             <S.WritingForm>
 
             </S.WritingForm>
