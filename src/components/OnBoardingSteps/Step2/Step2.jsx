@@ -9,7 +9,9 @@ export default function Step2(props){
         <S.Wrapper>
             <S.Header>
                 <OnBoardingProgressbar cur='Step2'/>
-                <BtnOnBordingNext setStep={props.onNxt}/>
+                <S.BtnWrapper onClick={()=>{props.onNxt()}}>
+                    <BtnOnBordingNext />
+                </S.BtnWrapper>
             </S.Header>
 
             <Title>

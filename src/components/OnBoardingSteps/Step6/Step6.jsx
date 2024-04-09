@@ -8,7 +8,9 @@ import HoneyBear from "../../common/HoneyBear/HoneyBear";
 export default function Step6(props){
     return (
         <S.Wrapper>
-            <OnBoardingProgressbar cur='Step6'/>
+            <S.Header>
+                <OnBoardingProgressbar cur='Step6'/>
+            </S.Header>
             <Title>
                 그 날의 너를 기록하다
             </Title>
@@ -21,7 +23,9 @@ export default function Step6(props){
                 <HoneyBear/>
             </S.Body>
 
-            <BtnOnBoardingStart setStep={props.onNxt}/>
+            <S.Footer>
+                <BtnOnBoardingStart setStep={props.onNxt}/>
+            </S.Footer>
         </S.Wrapper>
     )
 }

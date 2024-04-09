@@ -11,7 +11,7 @@ const handleSetWritingStyle= ()=>{
 export default function SetWritingStyle(){
     return(
         <S.Wrapper>
-            <SetFastButton/>
+            <SetFastButton onClick={()=>{handleSetWritingStyle()}}/>
             <SetSlowButton/>
         </S.Wrapper>
     )

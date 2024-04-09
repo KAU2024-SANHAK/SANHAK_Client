@@ -8,10 +8,12 @@ import SubTitle from "../title/SubTitle";
 export default function Step1(props){
     return (
         <S.Wrapper>
-            <S.Header>
-                <OnBoardingProgressbar cur='Step1'/>
-                <BtnOnBordingNext setStep={props.onNxt}/>
-            </S.Header>
+                <S.Header>
+                    <OnBoardingProgressbar cur='Step1'/>
+                    <S.BtnWrapper onClick={()=>{props.onNxt()}}>
+                        <BtnOnBordingNext />
+                    </S.BtnWrapper>
+                </S.Header>
 
             <Title>
                 당신은<br/>

@@ -9,8 +9,9 @@ import SubTitle from "../title/SubTitle";
 export default function Step5(props){
     return (
         <S.Wrapper>
-
-            <OnBoardingProgressbar cur='Step5'/>
+            <S.Header>
+                <OnBoardingProgressbar cur='Step5'/>         
+            </S.Header>
             
             <Title>
                 어떤 스타일의<br/>
@@ -19,10 +20,12 @@ export default function Step5(props){
 
             <S.Body>
                 <SetWritingStyle/>
-                <p></p>
+                
             </S.Body>
-
-            <BtnSetWritingStyle setStep={props.onNxt}/>
+            <S.Footer>
+                <p>일기 작성 페이지는 마이페이지에서 수정 가능합니다.</p>
+                <BtnSetWritingStyle setStep={props.onNxt}/>
+            </S.Footer>
         </S.Wrapper>
     )
 }
