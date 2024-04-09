@@ -16,8 +16,7 @@ export default function Step2(props){
 
             <Title>
                 바쁘고 귀찮아...<br/>
-                도대체 일기는 언제 쓰지?
-                
+                도대체 일기는 언제 쓰지?               
             </Title>
             <SubTitle>
                     분주한 일상 속, <br/>

@@ -11,6 +11,7 @@ export default function Step6(props){
             <S.Header>
                 <OnBoardingProgressbar cur='Step6'/>
             </S.Header>
+            
             <Title>
                 그 날의 너를 기록하다
             </Title>

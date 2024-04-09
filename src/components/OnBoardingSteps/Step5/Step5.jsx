@@ -1,10 +1,8 @@
 import OnBoardingProgressbar from "../../OnBoardingProgressBar/OnBoardingPrgoressBar"
-import BtnOnBordingNext from "../../common/buttons/OnBoardingNext/BtnOnBoardingNext"
 import BtnSetWritingStyle from "../../common/buttons/SetWritingStyleButton.jsx/BtnSetWritingStyle";
 import * as S from "../Step.style"
 import SetWritingStyle from "../SetWriitingStyle/SetWritingStyle";
 import Title from "../title/Title";
-import SubTitle from "../title/SubTitle";
 import Caption from "../title/Caption";
 
 export default function Step5(props){

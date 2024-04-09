@@ -9,6 +9,10 @@ const handleSetWritingStyle= ()=>{
     //이건 ai로 보내나요 백으로 보내나요? 
     console.log('api 요청하세요')
 }
+
+//이 부분은 BtnWrapper 사용하지 않아도 될 것 같았는데, 일단 손에 익힐 겸 사용해 봤습니다.!
+//아무래도 알려준 방법이 더 많이 사용될 것 같기 때문에...!
+
 export default function SetWritingStyle(){
     const [type, setType] = useState();
 

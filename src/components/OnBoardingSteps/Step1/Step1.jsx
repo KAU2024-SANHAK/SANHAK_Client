@@ -8,12 +8,12 @@ import SubTitle from "../title/SubTitle";
 export default function Step1(props){
     return (
         <S.Wrapper>
-                <S.Header>
-                    <OnBoardingProgressbar cur='Step1'/>
-                    <S.BtnWrapper onClick={()=>{props.onNxt()}}>
-                        <BtnOnBordingNext />
-                    </S.BtnWrapper>
-                </S.Header>
+            <S.Header>
+                <OnBoardingProgressbar cur='Step1'/>
+                <S.BtnWrapper onClick={()=>{props.onNxt()}}>
+                    <BtnOnBordingNext />
+                </S.BtnWrapper>
+            </S.Header>
 
             <Title>
                 당신은<br/>
@@ -23,6 +23,7 @@ export default function Step1(props){
                 하루하루 스쳐갔던 우리의 감정들 이제<br/>
                 흘려보내지 말고 담아보아요
             </SubTitle>
+
             <S.Body>
                 <S.BlankImage />
             </S.Body>
