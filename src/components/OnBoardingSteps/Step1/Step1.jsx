@@ -4,7 +4,9 @@ import * as S from "../Step.style"
 import Title from "../title/Title";
 import SubTitle from "../title/SubTitle";
 
-
+//온보딩 최적화 부분이 조금 어려운 것 같아요...
+//여기서 현재 상태랑 전체 배열도 넘겨줘야 된다 생각하는데
+//지저분할 것 같고, 또 그렇다면 내부 구현 변수는 어떻게 처리하는지,,,ㅠㅠ
 export default function Step1(props){
     return (
         <S.Wrapper>
