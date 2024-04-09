@@ -31,8 +31,8 @@ export const BlankImage =styled(SvgIcBlank)`
     margin-top: 3rem;
 `
 export const BtnWrapper = styled.button`
-background-color: transparent;
-border: none;
-position: absolute;
-right: 2rem;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 2rem;
 `
