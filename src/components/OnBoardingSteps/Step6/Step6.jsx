@@ -1,5 +1,5 @@
 import OnBoardingProgressbar from "../../OnBoardingProgressBar/OnBoardingPrgoressBar"
-import BtnOnBordingNext from "../../common/buttons/OnBoardingNext/BtnOnBoardingNext"
+import BtnOnBoardingStart from "../../common/buttons/OnBoardingStartButton/BtnOnBoardingStart";
 import * as S from "../Step.style"
 import Title from "../title/Title";
 import SubTitle from "../title/SubTitle";
@@ -21,7 +21,7 @@ export default function Step6(props){
                 <HoneyBear/>
             </S.Body>
 
-            <BtnOnBordingNext setStep={props.onNxt}/>
+            <BtnOnBoardingStart setStep={props.onNxt}/>
         </S.Wrapper>
     )
 }

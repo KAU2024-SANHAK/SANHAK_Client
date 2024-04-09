@@ -25,8 +25,6 @@ export default function Step1(props){
                 <S.BlankImage />
             </S.Body>
             
-
-
         </S.Wrapper>
 
         

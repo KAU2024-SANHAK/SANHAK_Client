@@ -1,4 +1,6 @@
 import * as S from './SetWritingStyle.style'
+import SetFastButton from '../../common/buttons/SetFastButton/BtnSetFast'
+import SetSlowButton from '../../common/buttons/SetSlowButton/BtnSetSlow'
 
 const handleSetWritingStyle= ()=>{
     //선호하는 스타일 전달
@@ -9,12 +11,8 @@ const handleSetWritingStyle= ()=>{
 export default function SetWritingStyle(){
     return(
         <S.Wrapper>
-            <p style={{padding:"3rem"}}
-            onClick={()=>{handleSetWritingStyle()}}
-            >감정을 기반으로 한 느린 글쓰기</p>
-            <p
-            onClick={()=>{handleSetWritingStyle()}}
-            >사건이 중심인 빠른 글쓰기</p> 
+            <SetFastButton/>
+            <SetSlowButton/>
         </S.Wrapper>
     )
 }
