@@ -1,8 +1,8 @@
 import * as S from './ModalButton.style'
 
-export default function BtnModalHome(){
+export default function BtnModalHome(props){
     return(
-        <S.BtnWrapper>
+        <S.BtnWrapper onClick={()=>{props.onMain()}}>
             <S.ModalHomeButton/>
         </S.BtnWrapper>
     )
