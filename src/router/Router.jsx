@@ -6,6 +6,7 @@ import Start from '../pages/Start/Start';
 import Login from '../components/Login';
 import OnBoarding  from '../pages/OnBoarding/OnBoarding';
 import Main from '../pages/Main/Main'
+import Sample from '../pages/Sample'
 
 /*이런 식으로 작성하기*/
 const router = createBrowserRouter([
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/main",
         element: <Main/>
+      },
+      {
+        path: "/sample",
+        element: <Sample/>
       }
     ],
   },
