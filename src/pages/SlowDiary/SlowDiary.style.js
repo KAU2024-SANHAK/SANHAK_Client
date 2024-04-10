@@ -30,7 +30,11 @@ export const FormWrapper = styled.form`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     width: 100%;
 `
-export const ImageInput = styled.div`
+export const ImageInput = styled.input`
+    display:none;
+
+`
+export const Label = styled.label`
     width: 315px;
     height: 315px;
     border-radius: 30px;

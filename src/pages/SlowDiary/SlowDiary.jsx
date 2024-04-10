@@ -14,7 +14,8 @@ export default function SlowDiary(){
             </S.Header>
 
             <S.FormWrapper>
-                <S.ImageInput/>
+                <S.ImageInput type='file' id ='imgInput' accept='image/*'/>
+                <S.Label htmlFor='imgInput'/>
                 <S.TitleInput type='text' placeholder='제목을 입력해주세요.'/>
                 <S.ContentInput type='text' placeholder='오늘 무슨 일이 있었나요? 자유롭게 적어주세요.'/>
 
