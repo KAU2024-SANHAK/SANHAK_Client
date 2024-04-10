@@ -2,6 +2,7 @@ import * as S from './FastDiary.style'
 import BtnHome from '../../components/common/buttons/Home/BtnHome';
 import DiaryPrgoress from '../../components/DiaryProgress/DiaryProgress';
 import Modal from '../../components/Modal/Modal';
+import HomeModal from '../../components/Modal/HomeModal';
 import { useState } from 'react';
 import StepProgress from '../../components/common/StepPrgoress/StepProgress';
 
@@ -16,7 +17,7 @@ export default function FastDiary(){
 
     return(
         <S.FastDairyPageWrapper $isEven = {today%2}>
-            {showModal && <Modal/>}
+            {showModal && <HomeModal/>}
             
             <S.Header>
                 <S.HomeButtonWrapper onClick={()=>{setShowModal(true)}}>

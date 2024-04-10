@@ -1,12 +1,15 @@
+import React from 'react'
 import * as S from './Modal.style'
 
-export default function Modal(){
+export default function Modal({children}){
+
     return(
         <>
-            <h1>gi</h1>
             <S.Overlay/>
             <S.ModalWrapper>
-                <S.Content>아니야 끌거야</S.Content>
+                <S.ModalBody>
+                    {children}
+                </S.ModalBody>
             </S.ModalWrapper>
         </>
     )

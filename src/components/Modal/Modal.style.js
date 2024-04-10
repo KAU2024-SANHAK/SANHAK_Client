@@ -26,6 +26,21 @@ export const ModalWrapper = styled.div`
     overflow: auto;
 `
 
+export const ModalBody = styled.div`
+`
 export const Content = styled.p`
     text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px; /* 122.222% */
+    letter-spacing: -0.408px;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+    
+
+`
+export const ButtonField = styled.div`
+    display: flex;
+    margin-bottom: 1.8rem;
 `
