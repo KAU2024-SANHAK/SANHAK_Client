@@ -1,3 +1,4 @@
+import { environments } from 'eslint-plugin-prettier';
 import * as S from './SlowDiary.style'
 import { useEffect, useState } from 'react';
 
@@ -6,6 +7,7 @@ export default function SlowDiary(){
     const today = date.getDate();
 
     const [data, setData] = useState({
+        image: ' ',
         title: ' ',
         content: ' '
     })
@@ -20,6 +22,17 @@ export default function SlowDiary(){
         setData({...data, [event.target.name] : event.target.value})
     }
 
+    //이미지 변환 부분이 조금 어렵네요 ㅠㅠ,,,.,
+    const handleImage=(event)=>{
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+            setData({...data, [event.target.name]: reader.result});
+           };
+
+    }
+
 
     return(
         <S.SlowDiaryPageWrapper  $isEven = {today%2}>
@@ -31,8 +44,14 @@ export default function SlowDiary(){
             </S.Header>
 
             <S.FormWrapper onSubmit={handleSubmit}>
-                <S.ImageInput type='file' id ='imgInput' accept='image/*' name='image' value={data.image}/>
-                <S.Label htmlFor='imgInput'/>
+                <S.ImageInput type='file' id ='imgInput' accept='image/*' name='image'  onChange={handleImage}/>
+                <S.Label htmlFor='imgInput'>
+                    {data.image ?(
+                        <S.PreviewImg src={data.image}/>
+                    ): 
+                        null
+                    }
+                </S.Label>
                 <S.TitleInput type='text' placeholder='제목을 입력해주세요.' name='title' value={data.title} onChange={handleChange} />
                 <S.ContentInput type='text' placeholder='오늘 무슨 일이 있었나요? 자유롭게 적어주세요.' name='content' value={data.content} onChange={handleChange}/>
 

@@ -113,3 +113,8 @@ export const Caption =styled.p`
     margin-bottom: 0.5rem;
     margin-top: 7rem;
 `
+export const PreviewImg = styled.img`
+    width: 315px;
+    height: 315px;
+    border-radius: 30px;
+`
