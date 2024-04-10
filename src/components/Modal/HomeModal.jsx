@@ -4,11 +4,16 @@ import BtnModalKeep from '../common/buttons/Modal/BtnModalKeep'
 import Modal from "./Modal"
 import {useNavigate} from 'react-router-dom'
 
-export default function HomeModal(){
+export default function HomeModal(props){
+
     const navigate = useNavigate();
     const handleClickGoMain=()=>{
         navigate('/main')
     }
+    const handleSetState=()=>{
+        props.setShowModal(false);
+    }
+
     return(
         <Modal>
             <S.Content>
@@ -17,7 +22,7 @@ export default function HomeModal(){
             </S.Content>
             <S.ButtonField>
                 <BtnModalHome onMain = {handleClickGoMain}/>
-                <BtnModalKeep/>
+                <BtnModalKeep closeModal = {handleSetState}/>
             </S.ButtonField>
         </Modal>
     )

@@ -17,7 +17,7 @@ export default function FastDiary(){
 
     return(
         <S.FastDairyPageWrapper $isEven = {today%2}>
-            {showModal && <HomeModal/>}
+            {showModal && <HomeModal setShowModal = {setShowModal}/>}
             
             <S.Header>
                 <S.HomeButtonWrapper onClick={()=>{setShowModal(true)}}>
