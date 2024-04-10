@@ -1,15 +1,22 @@
 import * as S from './DiaryProgress.style'
-import SvgIcDiaryProgress1 from "../../assets/svg/IcDiaryProgress1"
-import SvgIcDiaryProgress2 from "../../assets/svg/IcDiaryProgress2"
-import SvgIcDiaryProgress3 from "../../assets/svg/IcDiaryProgress3"
-import SvgIcDiaryProgress4 from "../../assets/svg/IcDiaryProgress4"
-import SvgIcDiaryProgress5 from "../../assets/svg/IcDiaryProgress5"
-import SvgIcDiaryProgress6 from "../../assets/svg/IcDiaryProgress6"
 
-export default function DiaryPrgoress(){
+const Progresses = [
+    <S.DiaryProgress1/>,
+    <S.DiaryProgress2/>,
+    <S.DiaryProgress3/>,
+    <S.DiaryProgress4/>,
+    <S.DiaryProgress5/>,
+    <S.DiaryProgress6/>
+]
+//이 부분 별로 안좋은 구현인 것 같아요 ㅠㅠ....
+export default function DiaryPrgoress(props){
+    
     return(
         <S.Wrapper>
-            <S.DiaryProgress1/>
+            
+            {Progresses.map((progress,idx) =>(
+                props.cur === idx ? <div  key = {idx}> {progress}</div> : null
+            ))}
         </S.Wrapper>
     )
 }

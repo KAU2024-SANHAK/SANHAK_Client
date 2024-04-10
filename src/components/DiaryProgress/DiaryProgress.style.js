@@ -12,3 +12,18 @@ export const Wrapper = styled.div`
 export const DiaryProgress1 = styled(SvgIcDiaryProgress1)`
 
 `
+export const DiaryProgress2 = styled(SvgIcDiaryProgress2)`
+
+`
+export const DiaryProgress3 = styled(SvgIcDiaryProgress3)`
+
+`
+export const DiaryProgress4 = styled(SvgIcDiaryProgress4)`
+
+`
+export const DiaryProgress5 = styled(SvgIcDiaryProgress5)`
+
+`
+export const DiaryProgress6 = styled(SvgIcDiaryProgress6)`
+
+`

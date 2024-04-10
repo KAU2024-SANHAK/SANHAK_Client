@@ -9,19 +9,18 @@ export default function FastDiary(){
     const today = date.getDate();
 
     const [showModal, setShowModal] = useState(false);
-    console.log(showModal)
 
     return(
         <S.FastDairyPageWrapper $isEven = {today%2}>
-
+            {showModal && <Modal/>}
+            
             <S.Header>
                 <S.HomeButtonWrapper onClick={()=>{setShowModal(true)}}>
                     <BtnHome/>
-                    {showModal && <Modal/>}
                     
                 </S.HomeButtonWrapper>
                 
-                <DiaryPrgoress/>
+                <DiaryPrgoress cur = {0}/>
             </S.Header>
             
             <S.WritingForm>
