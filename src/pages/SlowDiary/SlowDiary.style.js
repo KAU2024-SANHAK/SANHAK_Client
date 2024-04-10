@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import SvgIcAddImage from '../../assets/svg/IcAddImage';
 
 //여기 100vh 설정했는데 깨져서... 일단 px로 설정해두었습니다.
 export const SlowDiaryPageWrapper = styled.div`
@@ -117,4 +118,9 @@ export const PreviewImg = styled.img`
     width: 315px;
     height: 315px;
     border-radius: 30px;
+`
+
+export const AddImg = styled(SvgIcAddImage)`
+
+    
 `

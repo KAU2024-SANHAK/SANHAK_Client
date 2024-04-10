@@ -1,13 +1,13 @@
-import { environments } from 'eslint-plugin-prettier';
-import * as S from './SlowDiary.style'
 import { useEffect, useState } from 'react';
+import * as S from './SlowDiary.style'
+import SvgIcAddImage from '../../assets/svg/IcAddImage';
 
 export default function SlowDiary(){
     const date = new Date();
     const today = date.getDate();
 
     const [data, setData] = useState({
-        image: ' ',
+        image: '',
         title: ' ',
         content: ' '
     })
@@ -46,10 +46,10 @@ export default function SlowDiary(){
             <S.FormWrapper onSubmit={handleSubmit}>
                 <S.ImageInput type='file' id ='imgInput' accept='image/*' name='image'  onChange={handleImage}/>
                 <S.Label htmlFor='imgInput'>
-                    {data.image ?(
-                        <S.PreviewImg src={data.image}/>
+                    {data.image ? (
+                        <S.PreviewImg src={data.image} alt='preview'/>
                     ): 
-                        null
+                        <S.AddImg/>
                     }
                 </S.Label>
                 <S.TitleInput type='text' placeholder='제목을 입력해주세요.' name='title' value={data.title} onChange={handleChange} />
