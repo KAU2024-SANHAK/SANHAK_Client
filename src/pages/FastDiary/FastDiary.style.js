@@ -18,6 +18,7 @@ export const Header = styled.div`
 
 `
 export const WritingForm = styled.form`
+    ${({ theme: { mixin } }) => mixin.flexCenter({})};
     margin-top: 1rem;
     width: 100%;
     height: 431px;
