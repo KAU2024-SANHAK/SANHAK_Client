@@ -47,6 +47,8 @@ export const TitleInput = styled.input`
     border-radius: 30px;
     background: #FFF;
     backdrop-filter: blur(15px);
+
+    outline: none;
     border: none;
     margin-top: 2.2rem;
 
@@ -67,6 +69,8 @@ export const ContentInput = styled.textarea`
     border-radius: 30px;
     background: #FFF;
     backdrop-filter: blur(15px);
+
+    outline: none;
     border: none;
     margin-top: 0.8rem;
 
