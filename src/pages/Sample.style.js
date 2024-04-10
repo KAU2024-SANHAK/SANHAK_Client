@@ -6,7 +6,6 @@ export const Wrapper = styled.div`
     height: 100vh;
     background-color: #A6D3A0;
 `
-
 export const WritingForm = styled.form`
     position: absolute;
     bottom: 0;

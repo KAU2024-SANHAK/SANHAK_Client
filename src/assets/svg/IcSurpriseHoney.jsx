@@ -1,0 +1,18 @@
+export default function SvgIcSurpriseHoney(){
+    return(
+        <svg width="142" height="144" viewBox="0 0 142 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_b_581_279)">
+                <path d="M35.9166 41.4871C41.2879 31.9675 51.4116 26.1226 62.3414 26.2307L79.3244 26.3988C89.9359 26.5038 99.7023 32.2071 105.008 41.3973L114.241 57.3886C119.547 66.5789 119.603 77.8885 114.388 87.1308L106.042 101.923C100.671 111.442 90.5472 117.287 79.6173 117.179L62.6343 117.011C52.0229 116.906 42.2564 111.203 36.9505 102.012L27.7179 86.021C22.4119 76.8308 22.3559 65.5211 27.5707 56.2788L35.9166 41.4871Z" fill="white" fill-opacity="0.5"/>
+            </g>
+            <path d="M53.3806 62.9481H69.3556V65.5731H53.3806V62.9481ZM50.7806 67.3731H71.7556V69.9981H50.7806V67.3731ZM53.3806 58.6731H56.6806V64.4481H53.3806V58.6731ZM53.1556 71.2981H69.2806V77.3731H56.5056V79.4981H53.1806V75.0731H65.9556V73.7981H53.1556V71.2981ZM53.1806 78.7981H69.9556V81.3231H53.1806V78.7981ZM59.6306 64.5231H62.9306V68.9231H59.6306V64.5231ZM88.2706 58.4481H91.5956V72.1731H88.2706V58.4481ZM90.6456 63.8731H94.6706V66.6231H90.6456V63.8731ZM76.5206 73.1731H91.5956V81.3231H76.5206V73.1731ZM88.3456 75.7731H79.7956V78.6981H88.3456V75.7731ZM74.1956 68.6731H76.1456C80.6956 68.6731 83.4956 68.5981 86.6956 67.9981L86.9956 70.6231C83.7456 71.2481 80.8206 71.3731 76.1456 71.3731H74.1956V68.6731ZM74.1706 59.5731H84.7456V66.6231H77.4956V70.1481H74.1956V64.1481H81.4706V62.2231H74.1706V59.5731Z" fill="black"/>
+            <defs>
+                <filter id="filter0_b_581_279" x="-6.30136" y="-3.77051" width="154.561" height="150.951" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feGaussianBlur in="BackgroundImageFix" stdDeviation="15"/>
+                    <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_581_279"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_581_279" result="shape"/>
+                </filter>
+            </defs>
+        </svg>
+    )
+}
