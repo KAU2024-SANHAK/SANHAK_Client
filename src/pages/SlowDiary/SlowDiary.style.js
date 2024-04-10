@@ -5,7 +5,7 @@ import SvgIcAddImage from '../../assets/svg/IcAddImage';
 export const SlowDiaryPageWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     width: 100%;
-    height: 922px;
+    height: 92.2rem;
     background: ${(props) => (props.$isEven === 0 ? 'linear-gradient(187deg, #FFBBCB 20.43%, #FFDAE3 81.25%, #DCC6CC 100.45%, #999 100.45%);'
     :'linear-gradient(187deg, #FFE768 20.43%, #FFF3B7 84.05%);'
     )};
@@ -18,10 +18,10 @@ export const Header = styled.div`
 `
 //merge 이후에 홈 컴포넌트로 수정하겠습니다.
 export const BtnHome = styled.button`
-    width: 60px;
-    height: 85px;
+    width: 6rem;
+    height: 8.5rem;
     flex-shrink: 0;
-    border-radius: 30px;
+    border-radius: 3rem;
     background: #FFF;
     margin-bottom: 1.3rem;
     margin-left: 2.8rem;
@@ -36,16 +36,16 @@ export const ImageInput = styled.input`
 
 `
 export const Label = styled.label`
-    width: 315px;
-    height: 315px;
-    border-radius: 30px;
+    width: 31.5rem;
+    height: 31.5rem;
+    border-radius: 3rem;
     background: rgba(255, 255, 255, 0.50);
     backdrop-filter: blur(15px);
 `
 export const TitleInput = styled.input`
-    width: 315px;
-    height: 70px;
-    border-radius: 30px;
+    width: 31.5rem;
+    height: 7rem;
+    border-radius: 3rem;
     background: #FFF;
     backdrop-filter: blur(15px);
 
@@ -56,18 +56,18 @@ export const TitleInput = styled.input`
     &::placeholder{
         color: #8E8E8E;
         font-family: "Istok Web";
-        font-size: 15px;
+        font-size: 1.5rem;
         font-style: normal;
         font-weight: 400;
-        line-height: 30px; /* 200% */
+        line-height: 3rem; /* 200% */
         letter-spacing: -0.408px;
         text-decoration-line: underline;
     }
 `
 export const ContentInput = styled.textarea`
-    width: 315px;
-    height: 270px;
-    border-radius: 30px;
+    width: 31.5rem;
+    height: 27rem;
+    border-radius: 3rem;
     background: #FFF;
     backdrop-filter: blur(15px);
 
@@ -78,10 +78,10 @@ export const ContentInput = styled.textarea`
     &::placeholder{
         color: #8E8E8E;
         font-family: "Istok Web";
-        font-size: 15px;
+        font-size: 1.5rem;
         font-style: normal;
         font-weight: 400;
-        line-height: 30px; /* 200% */
+        line-height: 3rem; /* 200% */
         letter-spacing: -0.408px;
         text-decoration-line: underline;
     }
@@ -94,10 +94,10 @@ export const BtnField = styled.div`
 
 `
 export const BtnSubmit= styled.button`
-    width: 60px;
-    height: 60px;
+    width: 6rem;
+    height: 6rem;
     flex-shrink: 0;
-    border-radius: 30px;
+    border-radius: 3rem;
     background: #FFF;
     margin-top: 1.8rem;
     margin-right: 2.5rem;
@@ -105,22 +105,21 @@ export const BtnSubmit= styled.button`
 export const Caption =styled.p`
     color: #8E8E8E;
     font-family: "Istok Web";
-    font-size: 12px;
+    font-size: 1.2rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 30px; /* 250% */
+    line-height: 3rem; /* 250% */
     letter-spacing: -0.408px;
     
     margin-bottom: 0.5rem;
     margin-top: 7rem;
 `
 export const PreviewImg = styled.img`
-    width: 315px;
-    height: 315px;
-    border-radius: 30px;
+    width: 31.5rem;
+    height: 31.5rem;
+    border-radius: 3rem;
 `
 
 export const AddImg = styled(SvgIcAddImage)`
-
-    
+    display: flex;
 `

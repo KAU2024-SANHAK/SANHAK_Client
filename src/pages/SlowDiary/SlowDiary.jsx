@@ -33,11 +33,11 @@ export default function SlowDiary(){
 
     }
 
-
     return(
         <S.SlowDiaryPageWrapper  $isEven = {today%2}>
+
             <S.Header>
-                <S.BtnHome/>
+                <S.BtnHome/>            
                 <S.Caption>
                 사진을 첨부하려면 + 버튼을 누르세요.
                 </S.Caption>
@@ -59,8 +59,6 @@ export default function SlowDiary(){
                     <S.BtnSubmit/>
                 </S.BtnField>
             </S.FormWrapper>
-
-
 
         </S.SlowDiaryPageWrapper>
     )   
