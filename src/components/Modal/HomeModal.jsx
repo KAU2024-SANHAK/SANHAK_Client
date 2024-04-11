@@ -1,6 +1,6 @@
 import * as S from './Modal.style'
 import BtnModalHome from "../common/buttons/Modal/BtnModalHome"
-import BtnModalKeep from '../common/buttons/Modal/BtnModalKeep'
+import BtnRed from '../common/buttons/BtnRed/BtnRed'
 import Modal from "./Modal"
 import {useNavigate} from 'react-router-dom'
 
@@ -24,7 +24,9 @@ export default function HomeModal(props){
             </S.Content>
             <S.ButtonField>
                 <BtnModalHome onMain = {handleClickGoMain}/>
-                <BtnModalKeep closeModal = {handleSetState}/>
+                <BtnRed onClick={handleSetState}height='5.6rem'>
+                    이어서 기록하기
+                </BtnRed>
             </S.ButtonField>
         </Modal>
     )
