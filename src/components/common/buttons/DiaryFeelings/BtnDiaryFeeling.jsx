@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 
 export default function BtnDiaryFeeling(props){
-    const [color, setColor] =useState('none')
+    const [color, setColor] =useState('white')
 
     return(
         <S.DiaryFeelingButtonWrapper onClick={()=>{setColor(props.color)}}>
