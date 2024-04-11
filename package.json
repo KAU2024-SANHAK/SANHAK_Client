@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "axios": "^1.6.8",
+    "global": "^4.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-error-boundary": "^4.0.13",
@@ -25,7 +26,8 @@
     "react-router-dom": "^6.22.3",
     "recoil": "^0.7.7",
     "styled-components": "^6.1.8",
-    "styled-reset": "^4.5.2"
+    "styled-reset": "^4.5.2",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.2.1",
