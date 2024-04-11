@@ -6,13 +6,13 @@ import SubTitle from "../title/SubTitle";
 
 export default function Step3(props){
     return (
-        <S.Wrapper>
-            <S.Header>
+        <S.OnBoardingStepWrapper>
+            <S.OnBoardingHeader>
                 <OnBoardingProgressbar cur='Step3'/>
                 <S.BtnWrapper onClick={()=>{props.onNxt()}}>
                     <BtnOnBordingNext />
                 </S.BtnWrapper>
-            </S.Header>
+            </S.OnBoardingHeader>
 
             <Title>
                 생성형AI를 통한 일기 작성
@@ -22,10 +22,10 @@ export default function Step3(props){
                 허니베어가 일기를 작성해주고 그려줘요
             </SubTitle>
 
-            <S.Body>
+            <S.OnBoardingBody>
                 <S.BlankImage/>
-            </S.Body>
+            </S.OnBoardingBody>
 
-        </S.Wrapper>
+        </S.OnBoardingStepWrapper>
     )
 }

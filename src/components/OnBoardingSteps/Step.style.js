@@ -1,31 +1,33 @@
 import styled from "styled-components";
 import SvgIcBlank from "../../assets/svg/IcBlank";
 
-export const Wrapper = styled.div`
+export const OnBoardingStepWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     width: 100%;
     height: 100%;
 `
-export const Header = styled.div`
+export const OnBoardingHeader = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({justify:'center',align: 'center' })};
     position: absolute;
     top: 5rem;
     width: 100%;
 `
 
-export const Body = styled.div`
+export const OnBoardingBody = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({direction:'column', align: 'center' })};
     width: 100%;
     text-align: left;
     height: 60%;
 `
 
-export const Footer = styled.div`
+export const OnBoardingFooter = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     position: absolute;
     bottom: 1rem;
 `
+export const OnBoardingImgWrapper = styled.img`
 
+`
 export const BlankImage =styled(SvgIcBlank)`
     margin-bottom: 3rem;
     margin-top: 3rem;

@@ -6,13 +6,13 @@ import SubTitle from "../title/SubTitle";
 
 export default function Step4(props){
     return (
-        <S.Wrapper>
-            <S.Header>
+        <S.OnBoardingStepWrapper>
+            <S.OnBoardingHeader>
                 <OnBoardingProgressbar cur='Step4'/>
                 <S.BtnWrapper onClick={()=>{props.onNxt()}}>
                     <BtnOnBordingNext />
                 </S.BtnWrapper>
-            </S.Header>
+            </S.OnBoardingHeader>
 
             <Title>
                 허니베어가 해주는 답장
@@ -22,11 +22,11 @@ export default function Step4(props){
                 당신의 하루를 되돌아 보아요
             </SubTitle>
 
-            <S.Body>
+            <S.OnBoardingBody>
                 <S.BlankImage/>
 
-            </S.Body>
+            </S.OnBoardingBody>
 
-        </S.Wrapper>
+        </S.OnBoardingStepWrapper>
     )
 }

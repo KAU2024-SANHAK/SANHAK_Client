@@ -7,10 +7,10 @@ import HoneyBear from "../../common/HoneyBear/HoneyBear";
 
 export default function Step6(props){
     return (
-        <S.Wrapper>
-            <S.Header>
+        <S.OnBoardingStepWrapper>
+            <S.OnBoardingHeader>
                 <OnBoardingProgressbar cur='Step6'/>
-            </S.Header>
+            </S.OnBoardingHeader>
             
             <Title>
                 그 날의 너를 기록하다
@@ -20,13 +20,13 @@ export default function Step6(props){
                 꿀 같았던 하루를 담아보세요
             </SubTitle>
             
-            <S.Body>
+            <S.OnBoardingBody>
                 <HoneyBear width='375' height='496'/>
-            </S.Body>
+            </S.OnBoardingBody>
             
-            <S.Footer>
+            <S.OnBoardingFooter>
                 <BtnOnBoardingStart setStep={props.onNxt}/>
-            </S.Footer>
-        </S.Wrapper>
+            </S.OnBoardingFooter>
+        </S.OnBoardingStepWrapper>
     )
 }
