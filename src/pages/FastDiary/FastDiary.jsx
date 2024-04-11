@@ -18,13 +18,13 @@ export default function FastDiary(){
         <S.FastDairyPageWrapper $isEven = {today%2}>
             {isOpen && <HomeModal closeModal = {closeModal}/>}
             
-            <S.Header>
+            <S.FastDiaryHeader>
                 <S.HomeButtonWrapper onClick={()=>{opneModal()}}>
                     <BtnHome/>                    
                 </S.HomeButtonWrapper>
                 
                 <DiaryPrgoress cur = {0}/>
-            </S.Header>
+            </S.FastDiaryHeader>
             
             <S.WritingForm>
                 <StepProgress steps = {steps} cur = 'Step1'/>

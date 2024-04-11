@@ -26,8 +26,6 @@ export const ModalWrapper = styled.div`
     overflow: auto;
 `
 
-export const ModalBody = styled.div`
-`
 export const Content = styled.p`
     ${({ theme }) => theme.fonts.body_01};
     letter-spacing: -0.0408rem;

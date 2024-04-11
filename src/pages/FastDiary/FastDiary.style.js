@@ -9,7 +9,7 @@ export const FastDairyPageWrapper = styled.div`
     : 'linear-gradient(187deg, #FFE768 20.43%, #FFF3B7 84.05%)'
     )};
 `
-export const Header = styled.div`
+export const FastDiaryHeader = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({justify: 'space-between',align: 'center' })};
     width: 100%;
     margin-top: 3rem;
