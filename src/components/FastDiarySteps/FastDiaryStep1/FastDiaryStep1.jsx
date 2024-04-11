@@ -1,12 +1,8 @@
 import * as S from '../FastDiaryStep.style'
-import SvgIcHappyHoney from "../../../assets/svg/IcHappyHoney"
-import SvgIcAngryHoney from '../../../assets/svg/IcAngryHoney'
-import SvgIcSadHoney from '../../../assets/svg/IcSadHoney'
-import SvgIcWorryHoney from '../../../assets/svg/IcWorryHoney'
-import SvgIcRelaxHoney from '../../../assets/svg/IcRelaxHoney'
-import SvgIcSurpriseHoney from '../../../assets/svg/IcSurpriseHoney'
 import SvgIcHoneyPot from '../../../assets/svg/IcHoneyPot'
 import SvgIcQuestion1 from '../../../assets/svg/IcQuestion1'
+import { IcDiaryFeeling } from '../../../assets/svg'
+import BtnDiaryFeeling from '../../common/buttons/DiaryFeelings/BtnDiaryFeeling'
 
 export default function FastDiaryStep1(){
     return(
@@ -15,12 +11,7 @@ export default function FastDiaryStep1(){
                 <SvgIcQuestion1/>
             </S.QuestionWrapper>
             <S.ButtonField>
-                <SvgIcHappyHoney/>
-                <SvgIcAngryHoney/>
-                <SvgIcSadHoney/>
-                <SvgIcWorryHoney/>
-                <SvgIcSurpriseHoney/>
-                <SvgIcRelaxHoney/>
+                <BtnDiaryFeeling color = '#FFF1A8' text = '기쁨'/>
                 <SvgIcHoneyPot/>
             </S.ButtonField>
 
