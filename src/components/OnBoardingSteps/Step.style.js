@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import SvgIcBlank from "../../assets/svg/IcBlank";
 
 export const OnBoardingStepWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};

@@ -1,5 +1,5 @@
 import OnBoardingProgressbar from "../../OnBoardingProgressBar/OnBoardingPrgoressBar"
-import BtnOnBoardingStart from "../../common/buttons/OnBoardingStartButton/BtnOnBoardingStart";
+import BtnComplete from "../../common/buttons/complete/BtnComplete";
 import * as S from "../Step.style"
 import Title from "../title/Title";
 import SubTitle from "../title/SubTitle";
@@ -25,7 +25,9 @@ export default function Step6(props){
             </S.OnBoardingHoneyBearWrapper>
             
             <S.OnBoardingFooter>
-                <BtnOnBoardingStart setStep={props.onNxt}/>
+                <BtnComplete onClick={props.onNxt}>
+                    지금 시작하기
+                </BtnComplete>
             </S.OnBoardingFooter>
         </S.OnBoardingStepWrapper>
     )
