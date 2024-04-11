@@ -1,7 +1,6 @@
 import * as S from '../FastDiaryStep.style'
 import { useState } from 'react'
 import SvgIcHoneyPot from '../../../assets/svg/IcHoneyPot'
-import SvgIcQuestion1 from '../../../assets/svg/IcQuestion1'
 import BtnDiaryFeeling from '../../common/buttons/DiaryFeelings/BtnDiaryFeeling'
 
 export default function FastDiaryStep1(){
@@ -10,7 +9,7 @@ export default function FastDiaryStep1(){
     return(
         <S.StepWrapper>
             <S.QuestionWrapper>
-                <SvgIcQuestion1/>
+                <S.QuestionBox/>
             </S.QuestionWrapper>
 
             <S.ButtonField>
