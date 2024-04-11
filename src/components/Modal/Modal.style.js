@@ -31,7 +31,6 @@ export const Content = styled.p`
     letter-spacing: -0.0408rem;
     margin-bottom: 2rem;
     margin-top: 4rem;
-    margin-left: 3.3rem;
     
 
 `

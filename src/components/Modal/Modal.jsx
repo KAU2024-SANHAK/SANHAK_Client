@@ -7,9 +7,7 @@ export default function Modal({children}){
         <>
             <S.Overlay/>
             <S.ModalWrapper>
-                <S.ModalBody>
                     {children}
-                </S.ModalBody>
             </S.ModalWrapper>
         </>
     )
