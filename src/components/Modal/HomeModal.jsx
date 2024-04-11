@@ -4,7 +4,6 @@ import BtnRed from '../common/buttons/BtnRed/BtnRed'
 import Modal from "./Modal"
 import {useNavigate} from 'react-router-dom'
 
-//여기 함수 부분들은 따로 빼지 않고 둬도 될까요?
 export default function HomeModal(props){
 
     const navigate = useNavigate();
