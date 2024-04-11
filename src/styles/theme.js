@@ -1,35 +1,37 @@
 import mixin from './mixin';
 import { css } from 'styled-components';
 
-/*UI/UX 확정 되면 수정하기. 이런 식이라는 느낌만 알기 !*/
-
 const colors = {
-  white: '#FFFFFF',
-  black: '#222222',
-  G_01: '#F8F8F8',
-  G_02: '#EBE9EA',
-  G_03: '#E1DEDF',
-  G_04: '#D3CFD1',
-  G_05: '#CAC6C8',
-  G_06: '#BDB8BA',
-  G_07: '#ACA7A9',
-  G_08: '#868384',
-  G_09: '#686566',
-  G_10: '#4F4D4E',
-  P_01: '#FFE9F1',
-  P_02: '#FFBAD5',
-  P_03: '#FF99C0',
-  P_04: '#FF6AA3',
-  P_05: '#FF4D91',
-  P_06: '#FF2176',
-  P_07: '#E81E6B',
-  P_08: '#B51754',
-  P_09: '#8C1241',
-  P_10: '#6B0E32',
-  R_01: '#FFEDED',
-  R_02: '#FF4A4A',
-  B_01: '#EDF1FF',
-  B_02: '#4A72FF',
+  normal: {
+    white: '#FFFFFF',
+    background_white: '#F9F9F9',
+    black: '#000000',
+  },
+  pink: {
+    background_pink: '#FFBBCB',
+    dark_pink: '#FF7575',
+    btn_hover_pink: '#FFA8BC',
+    btn_pink: '#FFDFE7',
+    white_pink: '#FFEEF2',
+    warm_pink: '#FFA2A2',
+    red_pink: '#FF5959',
+  },
+  feeling: {
+    happy_yellow: '#FFF1A8',
+    sad_blue: '#B4F2FF',
+    surprised_orange: '#FFCA99',
+    relax_green: '#B9FFB3',
+    worried_purple: '#C3C9FF',
+    angry_pink: '#FFB6B6',
+  },
+  yellow: {
+    background_yellow: '#FFE768',
+  },
+  gray: {
+    white_gray: '#D9D9D9',
+    dark_gray: '#CBC7C7',
+    text_gray: '#858585',
+  },
 };
 
 const fonts = {
