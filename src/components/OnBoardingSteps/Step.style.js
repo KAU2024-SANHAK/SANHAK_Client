@@ -6,21 +6,21 @@ export const OnBoardingStepWrapper = styled.div`
     width: 100%;
     height: 100%;
 `
-export const OnBoardingHeader = styled.div`
+export const OnBoardingHeader = styled.header`
     ${({ theme: { mixin } }) => mixin.flexBox({justify:'center',align: 'center' })};
     position: absolute;
     top: 5rem;
     width: 100%;
 `
 
-export const OnBoardingBody = styled.div`
+export const OnBoardingBody = styled.body`
     ${({ theme: { mixin } }) => mixin.flexBox({direction:'column', align: 'center' })};
     width: 100%;
     text-align: left;
     height: 67%;
 `
 
-export const OnBoardingFooter = styled.div`
+export const OnBoardingFooter = styled.footer`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     position: absolute;
     bottom: 1rem;
