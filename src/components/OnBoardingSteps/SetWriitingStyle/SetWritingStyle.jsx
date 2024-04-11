@@ -1,7 +1,6 @@
 import * as S from './SetWritingStyle.style'
 import { useState } from 'react'
-import BtnSetFast from '../../common/buttons/SetFastButton/BtnSetFast'
-import BtnSetSlow from '../../common/buttons/SetSlowButton/BtnSetSlow'
+import BtnSetDiaryType from '../../common/buttons/setDiaryType/BtnSetDiaryType'
 
 const handleSetWritingStyle= ()=>{
     console.log('api 요청하세요')
@@ -13,19 +12,21 @@ export default function SetWritingStyle(){
     return(
         <S.Wrapper>
 
-                <BtnSetFast color = {type === 'Fast' ? '#FFA8BC' : '#FFDFE7'}
+                <BtnSetDiaryType isClick = {type === 'Fast' ? true : false}
                     onClick={()=>{
                     handleSetWritingStyle();
                     setType('Fast')
-                }}
-                />
+                    }} >
+                    빠른 일기
+                </BtnSetDiaryType>
 
-                <BtnSetSlow color = {type === 'Slow' ? '#FFA8BC' : '#FFDFE7'}
+                <BtnSetDiaryType isClick = {type === 'Slow' ? true : false}
                     onClick={()=>{
                     handleSetWritingStyle();
                     setType('Slow')
-                    }}
-                />
+                    }} >
+                    느린 일기
+                </BtnSetDiaryType>
                 
         </S.Wrapper>
     )
