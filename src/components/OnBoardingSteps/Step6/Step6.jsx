@@ -21,7 +21,7 @@ export default function Step6(props){
             </SubTitle>
             
             <S.OnBoardingBody>
-                <HoneyBear width='375' height='496'/>
+                <HoneyBear width='37.5rem' height='49.6rem'/>
             </S.OnBoardingBody>
             
             <S.OnBoardingFooter>
