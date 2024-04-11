@@ -1,8 +1,7 @@
-export default function SvgIcDiaryProgress5(){
-    return(
-        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="184" viewBox="0 0 50 184" fill="none">
-            <rect width="50" height="184" rx="25" fill="white" fillOpacity="0.2"/>
-            <rect y="54" width="50" height="130" rx="25" fill="#FFBF60"/>
-        </svg>
-    )
-}
+const SvgIcDiaryProgress5=()=>(
+    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="184" viewBox="0 0 50 184" fill="none">
+        <rect width="50" height="184" rx="25" fill="white" fillOpacity="0.2"/>
+        <rect y="134" width="50" height="130" rx="25" fill="#FFBF60"/>
+    </svg>
+);
+export default SvgIcDiaryProgress5;
