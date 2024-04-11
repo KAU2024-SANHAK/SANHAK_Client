@@ -7,8 +7,8 @@ ${({ theme: { mixin } }) => mixin.flexCenter({})};
     background: rgba(255, 255, 255, 0.24);
     height: 199px;
     width: 320px;
-    margin-bottom: 3rem;
-    margin-top: 3rem;
+    margin-bottom: 1rem;
+    margin-top: 7rem;
     font-size: 2rem;
     text-align: center;
     

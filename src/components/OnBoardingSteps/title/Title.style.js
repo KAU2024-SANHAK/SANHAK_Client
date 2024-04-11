@@ -14,12 +14,9 @@ export const SubTitleWrapper = styled.p`
     letter-spacing: -0.408px;
 `
 
-export const CaptionWrapper = styled.p`
+export const CaptionWrapper = styled.li`
+    ${({ theme }) => theme.fonts.caption_02};
     width: 100%;
-    margin-left: 2.2rem;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 16px; /* 133.333% */
+    margin-left: 6rem;
     letter-spacing: -0.408px;
 `

@@ -17,7 +17,7 @@ export const OnBoardingBody = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({direction:'column', align: 'center' })};
     width: 100%;
     text-align: left;
-    height: 60%;
+    height: 67%;
 `
 
 export const OnBoardingFooter = styled.div`
@@ -26,7 +26,7 @@ export const OnBoardingFooter = styled.div`
     bottom: 1rem;
 `
 export const OnBoardingImgWrapper = styled.img`
-    height: 47.3rem;
+    height: 48rem;
 `
 export const BlankImage =styled(SvgIcBlank)`
     margin-bottom: 3rem;
