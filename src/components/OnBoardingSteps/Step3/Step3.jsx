@@ -23,9 +23,9 @@ export default function Step3(props){
                 허니베어가 일기를 작성해주고 그려줘요
             </SubTitle>
 
-            <S.OnBoardingBody>
-                <S.OnBoardingImgWrapper src={onBoardingStep3Img}/>
-            </S.OnBoardingBody>
+            <S.OnBoardingImgWrapper>
+                <S.OnBoardingImg src={onBoardingStep3Img}/>
+            </S.OnBoardingImgWrapper>
 
         </S.OnBoardingStepWrapper>
     )

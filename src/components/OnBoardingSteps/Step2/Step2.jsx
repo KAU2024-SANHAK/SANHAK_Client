@@ -24,9 +24,9 @@ export default function Step2(props){
                     허니어리에 일기를 채워보세요
             </SubTitle>
 
-            <S.OnBoardingBody>
-                <S.OnBoardingImgWrapper src={onBoardingStep2Img}/>
-            </S.OnBoardingBody>
+            <S.OnBoardingImgWrapper>
+                <S.OnBoardingImg src={onBoardingStep2Img}/>
+            </S.OnBoardingImgWrapper>
 
 
         </S.OnBoardingStepWrapper>

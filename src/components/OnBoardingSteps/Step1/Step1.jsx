@@ -25,9 +25,9 @@ export default function Step1(props){
                 흘려보내지 말고 담아보아요
             </SubTitle>
 
-            <S.OnBoardingBody>
-                <S.OnBoardingImgWrapper src={onBoardingStep1Img}/>
-            </S.OnBoardingBody>
+            <S.OnBoardingImgWrapper>
+                <S.OnBoardingImg src={onBoardingStep1Img}/>
+            </S.OnBoardingImgWrapper>
             
         </S.OnBoardingStepWrapper>
 

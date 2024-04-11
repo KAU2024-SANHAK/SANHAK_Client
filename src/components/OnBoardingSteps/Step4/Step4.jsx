@@ -23,9 +23,9 @@ export default function Step4(props){
                 당신의 하루를 되돌아 보아요
             </SubTitle>
 
-            <S.OnBoardingBody>
-                <S.OnBoardingImgWrapper src={onBoardingStep4Img}/>
-            </S.OnBoardingBody>
+            <S.OnBoardingImgWrapper>
+                <S.OnBoardingImg src={onBoardingStep4Img}/>
+            </S.OnBoardingImgWrapper>
 
         </S.OnBoardingStepWrapper>
     )
