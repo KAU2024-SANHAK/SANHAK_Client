@@ -1,22 +1,16 @@
 import styled from "styled-components";
 
 export const TitleWrapper = styled.p`
+    ${({ theme }) => theme.fonts.title};
     width: 308px;
-    font-size: 23px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 30px; /* 115.385% */
     letter-spacing: -0.408px;
 `
 
 export const SubTitleWrapper = styled.p`
+    ${({ theme }) => theme.fonts.caption_01};
     width: 100%;
     padding-left: 3.4rem;
-    margin-bottom: 3rem;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 16px; 
+    margin-top: 0.4rem;
     letter-spacing: -0.408px;
 `
 

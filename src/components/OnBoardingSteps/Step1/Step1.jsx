@@ -10,6 +10,7 @@ import onBoardingStep1Img from '../../../assets/onBoardingStep1.png'
 export default function Step1(props){
     return (
         <S.OnBoardingStepWrapper>
+            
             <S.OnBoardingHeader>
                 <OnBoardingProgressbar cur='Step1'/>
                 <S.BtnWrapper onClick={()=>{props.onNxt()}}>
@@ -27,7 +28,7 @@ export default function Step1(props){
             </SubTitle>
 
             <S.OnBoardingBody>
-                <img src={onBoardingStep1Img}/>
+                <S.OnBoardingImgWrapper src={onBoardingStep1Img}/>
             </S.OnBoardingBody>
             
         </S.OnBoardingStepWrapper>

@@ -3,6 +3,7 @@ import BtnOnBordingNext from "../../common/buttons/OnBoardingNext/BtnOnBoardingN
 import * as S from "../Step.style"
 import Title from "../title/Title";
 import SubTitle from "../title/SubTitle";
+import onBoardingStep4Img from '../../../assets/onBoardingStep4.png'
 
 export default function Step4(props){
     return (
@@ -23,8 +24,7 @@ export default function Step4(props){
             </SubTitle>
 
             <S.OnBoardingBody>
-                <S.BlankImage/>
-
+                <S.OnBoardingImgWrapper src={onBoardingStep4Img}/>
             </S.OnBoardingBody>
 
         </S.OnBoardingStepWrapper>

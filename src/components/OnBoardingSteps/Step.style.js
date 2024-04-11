@@ -26,7 +26,7 @@ export const OnBoardingFooter = styled.div`
     bottom: 1rem;
 `
 export const OnBoardingImgWrapper = styled.img`
-
+    height: 47.3rem;
 `
 export const BlankImage =styled(SvgIcBlank)`
     margin-bottom: 3rem;
