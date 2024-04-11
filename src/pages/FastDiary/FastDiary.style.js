@@ -19,8 +19,8 @@ export const WritingForm = styled.form`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     margin-top: 1rem;
     width: 100%;
-    height: 431px;
-    border-radius: 30px;
+    height: 43.1rem;
+    border-radius: 3rem;
     background: rgba(255, 255, 255, 0.50);
     backdrop-filter: blur(15px);
 `

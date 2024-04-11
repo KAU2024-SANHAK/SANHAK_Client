@@ -13,14 +13,14 @@ export const Overlay = styled.div`
 
 export const ModalWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
-    width: 360px;
-    height: 185px;
+    width: 36rem;
+    height: 18.5rem;
     z-index: 9999;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 10px;
+    border-radius: 1rem;
     background-color: white;
     justify-content: center;
     overflow: auto;
@@ -29,14 +29,11 @@ export const ModalWrapper = styled.div`
 export const ModalBody = styled.div`
 `
 export const Content = styled.p`
-    text-align: center;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 22px; /* 122.222% */
-    letter-spacing: -0.408px;
+    ${({ theme }) => theme.fonts.body_01};
+    letter-spacing: -0.0408rem;
     margin-bottom: 2rem;
     margin-top: 4rem;
+    margin-left: 3.3rem;
     
 
 `
