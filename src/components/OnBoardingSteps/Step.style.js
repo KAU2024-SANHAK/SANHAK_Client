@@ -13,7 +13,7 @@ export const OnBoardingHeader = styled.header`
     width: 100%;
 `
 
-export const OnBoardingBody = styled.body`
+export const OnBoardingBody = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({direction:'column', align: 'center' })};
     width: 100%;
     text-align: left;

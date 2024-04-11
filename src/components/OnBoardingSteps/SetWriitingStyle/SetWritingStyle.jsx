@@ -12,23 +12,21 @@ export default function SetWritingStyle(){
 
     return(
         <S.Wrapper>
-            <S.BtnWrapper
-            onClick={()=>{
-                handleSetWritingStyle();
-                setType('Fast')
-            }}
-            >
-                <BtnSetFast color = {type === 'Fast' ? '#FFA8BC' : '#FFDFE7'}/>
-            </S.BtnWrapper>
 
-            <S.BtnWrapper 
-            onClick={()=>{
-                handleSetWritingStyle();
-                setType('Slow')
-            }}
-            >
-                <BtnSetSlow color = {type === 'Slow' ? '#FFA8BC' : '#FFDFE7'}/>
-            </S.BtnWrapper>
+                <BtnSetFast color = {type === 'Fast' ? '#FFA8BC' : '#FFDFE7'}
+                    onClick={()=>{
+                    handleSetWritingStyle();
+                    setType('Fast')
+                }}
+                />
+
+                <BtnSetSlow color = {type === 'Slow' ? '#FFA8BC' : '#FFDFE7'}
+                    onClick={()=>{
+                    handleSetWritingStyle();
+                    setType('Slow')
+                    }}
+                />
+                
         </S.Wrapper>
     )
 }
