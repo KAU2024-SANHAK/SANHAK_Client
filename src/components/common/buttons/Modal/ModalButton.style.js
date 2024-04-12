@@ -10,7 +10,3 @@ export const BtnWrapper = styled.button`
 export const ModalHomeButton = styled(SvgIcModalHome)`
     display: flex;
 `;
-
-export const ModalKeepButton = styled(SvgIcModalKeep)`
-    display: flex;
-`;

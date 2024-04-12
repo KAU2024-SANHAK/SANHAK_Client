@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { HomeButton } from '../../components/common/buttons/Home/BtnHome.style'
 
+//배경색 상수값으로 처리
 export const FastDairyPageWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     width: 100%;
