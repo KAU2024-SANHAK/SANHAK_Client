@@ -7,6 +7,7 @@ import Login from '../components/Login';
 import OnBoarding  from '../pages/OnBoarding/OnBoarding';
 import Main from '../pages/Main/Main'
 import MyPage from '../pages/MyPage/MyPage';
+import WriteDiary from '../pages/WriteDiary/WriteDiary';
 
 
 /*이런 식으로 작성하기*/
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       //   path: "/searchbyemotion",
       //   element: <SearchByEmotion/>
       // }
+      {
+        path: "/writediary",
+        element: <WriteDiary/>
+      }
     ],
   },
 ]);
