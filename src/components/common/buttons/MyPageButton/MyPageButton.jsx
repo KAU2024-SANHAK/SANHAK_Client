@@ -5,7 +5,10 @@ export default function MyPageButton() {
     const navigate = useNavigate();
     return (
         <S.Wrapper onClick={navigate("/mypage")}>
-            마이페이지
+            <S.MyPageIcon/>
+            <S.MyPageText>
+                마이페이지
+            </S.MyPageText>
         </S.Wrapper>
     )
 }
