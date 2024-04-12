@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const StepProgressWrapper = styled.div`
     
     display: flex;
-    margin: 2rem;
+    padding: 2rem;
     gap: 0.7rem;    
 `
