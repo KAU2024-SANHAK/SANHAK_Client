@@ -7,8 +7,8 @@ export default function SlowDiary(){
 
     const [data, setData] = useState({
         image: '',
-        title: ' ',
-        content: ' '
+        title: '',
+        content: ''
     })
 
     const handleSubmit=(event)=>{
@@ -50,7 +50,7 @@ export default function SlowDiary(){
                         <S.AddImg/>
                     }
                 </S.Label>
-                <S.TitleInput type='text' placeholder='제목을 입력해주세요.' name='title' value={data.title} onChange={handleChange} />
+                <S.TitleInput type='text' placeholder='제목을 입력해주세요.' name='title' value={data.title} onChange={handleChange}/>
                 <S.ContentInput type='text' placeholder='오늘 무슨 일이 있었나요? 자유롭게 적어주세요.' name='content' value={data.content} onChange={handleChange}/>
 
                 <S.BtnField>
