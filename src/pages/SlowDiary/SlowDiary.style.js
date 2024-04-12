@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import SvgIcAddImage from '../../assets/svg/IcAddImage';
 
-//여기 100vh 설정했는데 깨져서... 일단 px로 설정해두었습니다.
+//색상은 #28 merge 후 진행하겠습니다!
 export const SlowDiaryPageWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     width: 100%;
@@ -55,11 +55,7 @@ export const TitleInput = styled.input`
 
     &::placeholder{
         color: #8E8E8E;
-        font-family: "Istok Web";
-        font-size: 1.5rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 3rem; /* 200% */
+        ${({ theme }) => theme.fonts.body_08};
         letter-spacing: -0.408px;
         text-decoration-line: underline;
     }
@@ -77,11 +73,7 @@ export const ContentInput = styled.textarea`
 
     &::placeholder{
         color: #8E8E8E;
-        font-family: "Istok Web";
-        font-size: 1.5rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 3rem; /* 200% */
+        ${({ theme }) => theme.fonts.body_08};
         letter-spacing: -0.408px;
         text-decoration-line: underline;
     }
@@ -104,11 +96,7 @@ export const BtnSubmit= styled.button`
 `
 export const Caption =styled.p`
     color: #8E8E8E;
-    font-family: "Istok Web";
-    font-size: 1.2rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 3rem; /* 250% */
+    ${({ theme }) => theme.fonts.body_10};
     letter-spacing: -0.408px;
     
     margin-bottom: 0.5rem;
