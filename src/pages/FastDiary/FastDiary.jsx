@@ -4,6 +4,7 @@ import BtnHome from '../../components/common/buttons/Home/BtnHome';
 import DiaryPrgoress from '../../components/DiaryProgress/DiaryProgress';
 import HomeModal from '../../components/Modal/HomeModal';
 import StepProgress from '../../components/common/StepPrgoress/StepProgress';
+import { IcHoneyBear } from '../../assets/svg';
 
 export default function FastDiary(){
     const date = new Date();
@@ -17,7 +18,10 @@ export default function FastDiary(){
     return(
         <S.FastDairyPageWrapper $isEven = {today%2}>
             {isOpen && <HomeModal closeModal = {closeModal}/>}
-            
+            <S.HoneyBearWrapper>
+                <S.HoneyBear height='30.5rem'/>
+            </S.HoneyBearWrapper>
+
             <S.FastDiaryHeader>
                 <S.HomeButtonWrapper onClick={()=>{opneModal()}}>
                     <BtnHome/>                    
