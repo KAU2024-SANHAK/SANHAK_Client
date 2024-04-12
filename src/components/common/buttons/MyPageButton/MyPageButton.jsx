@@ -3,8 +3,13 @@ import * as S from "./MyPageButton.style"
 
 export default function MyPageButton() {
     const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate('/mypage')
+    }
+
     return (
-        <S.Wrapper onClick={navigate("/mypage")}>
+        <S.Wrapper onClick={handleClick}>
             <S.MyPageIcon/>
             <S.MyPageText>
                 마이페이지
