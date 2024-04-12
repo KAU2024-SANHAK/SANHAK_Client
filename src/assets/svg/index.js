@@ -1,6 +1,5 @@
 export { default as IcError } from './IcError';
 
-export { default as IcThisMonthEmotion} from './IcThisMonthEmotion';
 export { default as IcMyPage} from './IcMyPageButton';
 export { default as IcSearchByEmotion} from './IcSearchByEmotionButton';
 export { default as IcThisMonthEmotion} from './IcWriteDiaryButton';
