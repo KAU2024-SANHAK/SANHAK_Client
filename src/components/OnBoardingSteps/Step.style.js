@@ -15,11 +15,11 @@ export const OnBoardingBody = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({direction:'column', align: 'center' })};
     width: 100%;
     text-align: left;
-    height: 68%;
+    height: 64%;
 `
 export const OnBoardingFooter = styled.footer`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
-    position: absolute;
+    position: fixed;
     bottom: 1rem;
     margin-top: 10rem;
 `
