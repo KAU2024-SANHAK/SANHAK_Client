@@ -32,6 +32,10 @@ const colors = {
     dark_gray: '#CBC7C7',
     text_gray: '#858585',
   },
+  gradient:{
+    gradient_pink: 'linear-gradient(187deg, #FFBBCB 20.43%, #FFDAE3 81.25%, #DCC6CC 100.45%, #999 100.45%)',
+    gradient_yellow: 'linear-gradient(187deg, #FFE768 20.43%, #FFF3B7 84.05%)',
+  }
 };
 
 const fonts = {
