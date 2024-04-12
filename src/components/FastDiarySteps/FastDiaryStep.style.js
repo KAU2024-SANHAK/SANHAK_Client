@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {IcQuestionBox} from '../../assets/svg'
+import {IcSmallQuestionBox} from '../../assets/svg'
 
 export const StepWrapper = styled.div`
 ${({ theme: { mixin } }) => mixin.flexCenter({})};
@@ -14,5 +14,5 @@ ${({ theme: { mixin } }) => mixin.flexCenter({})};
     width: 10rem;
     display: flex;
 `
-export const QuestionBox = styled(IcQuestionBox)`
+export const QuestionBox = styled(IcSmallQuestionBox)`
 `
