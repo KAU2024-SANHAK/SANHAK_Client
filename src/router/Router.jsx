@@ -5,8 +5,9 @@ import Layout from '../layouts/Layout';
 import Start from '../pages/Start/Start';
 import Login from '../components/Login';
 import OnBoarding  from '../pages/OnBoarding/OnBoarding';
-import Main from '../pages/Main/Main'
-import FastDiary from '../pages/FastDiary/FastDiary'
+import Main from '../pages/Main/Main';
+import FastDiary from '../pages/FastDiary/FastDiary';
+import DiaryView from '../pages/DiaryView/DiaryView';
 
 /*이런 식으로 작성하기*/
 const router = createBrowserRouter([
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
         path: "/fastdiary",
         element: <FastDiary/>
       },
+      {
+        path: '/diaryview',
+        element: <DiaryView/>
+      }
 
     ],
   },
