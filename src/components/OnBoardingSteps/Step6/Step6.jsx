@@ -1,4 +1,3 @@
-import OnBoardingProgressbar from "../../OnBoardingProgressBar/OnBoardingPrgoressBar"
 import BtnComplete from "../../common/buttons/complete/BtnComplete";
 import * as S from "../Step.style"
 import Title from "../title/Title";
@@ -8,9 +7,6 @@ import HoneyBear from "../../common/HoneyBear/HoneyBear";
 export default function Step6(props){
     return (
         <S.OnBoardingStepWrapper>
-            <S.OnBoardingHeader>
-                <OnBoardingProgressbar cur='Step6'/>
-            </S.OnBoardingHeader>
             
             <S.OnBoardingTitleWrapper>
                 <Title>
