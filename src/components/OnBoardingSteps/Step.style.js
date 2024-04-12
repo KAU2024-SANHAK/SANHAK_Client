@@ -35,7 +35,7 @@ export const OnBoardingImg = styled.img`
 //곰돌이 맞추려면 제가 생각하기에는 제목을 묶어서
 //position absolute 랑 top으로 박아버리는 것밖에 없는데 다른 방법이 있을까요,...,.,.,
 export const OnBoardingHoneyBearWrapper = styled.div`
-    height: 40rem;
+    height: 50rem;
 `
 
 export const BtnWrapper = styled.button`
