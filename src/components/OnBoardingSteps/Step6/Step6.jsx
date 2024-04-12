@@ -21,9 +21,11 @@ export default function Step6(props){
                     꿀 같았던 하루를 담아보세요
                 </SubTitle>
             </S.OnBoardingTitleWrapper>
-            
-            <HoneyBear height='50.6rem'/>   
-            
+
+            <S.OnBoardingHoneyBearWrapper>
+                <HoneyBear height='50rem'/>   
+            </S.OnBoardingHoneyBearWrapper>
+                    
             <S.OnBoardingFooter>
                 <BtnComplete onClick={props.onNxt}>
                     지금 시작하기

@@ -24,16 +24,18 @@ export const OnBoardingFooter = styled.footer`
     margin-top: 10rem;
 `
 export const OnBoardingTitleWrapper = styled.div`
-${({ theme: { mixin } }) => mixin.flexCenter({})};  
+    position: absolute;
+    top: 6.5rem;
 `
 export const OnBoardingImgWrapper = styled.div`
-    height: 53%;
+    height: 34%;
 `
 export const OnBoardingImg = styled.img`
 
 `
 export const OnBoardingHoneyBearWrapper = styled.div`
-    height: 50rem;
+    margin-left: 1rem;
+    height: 57%;
 `
 
 export const BtnWrapper = styled.button`
