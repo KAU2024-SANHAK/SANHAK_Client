@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import * as S from './SlowDiary.style'
-import SvgIcAddImage from '../../assets/svg/IcAddImage';
 
 export default function SlowDiary(){
     const date = new Date();
@@ -22,7 +21,6 @@ export default function SlowDiary(){
         setData({...data, [event.target.name] : event.target.value})
     }
 
-    //이미지 변환 부분이 조금 어렵네요 ㅠㅠ,,,.,
     const handleImage=(event)=>{
         const file = event.target.files[0];
         const reader = new FileReader();
