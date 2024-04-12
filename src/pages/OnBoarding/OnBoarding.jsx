@@ -32,7 +32,7 @@ export default function OnBoarding(){
     }
 
     return(
-        <S.Wrapper>
+        <S.OnBoardingPageWrapper>
             <Funnel>
                 
                 {steps.map((step, idx)=>(
@@ -42,6 +42,6 @@ export default function OnBoarding(){
                 ))}
 
             </Funnel>
-        </S.Wrapper>
+        </S.OnBoardingPageWrapper>
     )
 }

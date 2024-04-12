@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const OnBoardingPageWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     align-items: center;
     width: 100%;
