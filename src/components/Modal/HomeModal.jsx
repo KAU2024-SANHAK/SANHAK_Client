@@ -1,13 +1,11 @@
 import * as S from './Modal.style'
-import BtnModalHome from "../common/buttons/Modal/BtnModalHome"
-import BtnRed from '../common/buttons/BtnRed/BtnRed'
 import Modal from "./Modal"
 import {useNavigate} from 'react-router-dom'
-
+import BtnSubmit from '../common/buttons/Submit/BtnSubmit'
 export default function HomeModal(props){
 
     const navigate = useNavigate();
-    const handleClickGoMain=()=>{
+    const handleGoMain=()=>{
         navigate('/main')
     }
 
@@ -22,10 +20,12 @@ export default function HomeModal(props){
                 되돌아가면 감정과 글은 초기화됩니다.
             </S.Content>
             <S.ButtonField>
-                <BtnModalHome onMain = {handleClickGoMain}/>
-                <BtnRed onClick={handleSetState}height='5.6rem'>
+                <BtnSubmit onClick={handleGoMain} height='5.6rem' $color={({ theme }) => theme.colors.normal.white}>
+                    홈으로 돌아가기
+                </BtnSubmit>
+                <BtnSubmit onClick={handleSetState} height='5.6rem' $color={({ theme }) => theme.colors.pink.red_pink}>
                     이어서 기록하기
-                </BtnRed>
+                </BtnSubmit>
             </S.ButtonField>
         </Modal>
     )

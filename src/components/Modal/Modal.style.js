@@ -1,4 +1,3 @@
-
 import styled from 'styled-components'
 
 export const Overlay = styled.div`
@@ -31,8 +30,6 @@ export const Content = styled.p`
     letter-spacing: -0.0408rem;
     margin-bottom: 2rem;
     margin-top: 4rem;
-    
-
 `
 export const ButtonField = styled.div`
     display: flex;
