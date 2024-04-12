@@ -10,13 +10,12 @@ const Progresses = [
     <IcDiaryProgress6/>
 ]
 
-export default function DiaryPrgoress(props){
-    
+export default function DiaryPrgoress({steps, cur}){
     return(
         <S.Wrapper>
             
             {Progresses.map((progress,idx) =>(
-                props.cur === idx ? <div  key = {idx}> {progress}</div> : null
+                steps[idx].name === cur ? <div  key = {idx}> {progress}</div> : null
             ))}
         </S.Wrapper>
     )

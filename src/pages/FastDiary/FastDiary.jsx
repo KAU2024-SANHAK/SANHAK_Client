@@ -39,13 +39,14 @@ export default function FastDiary(){
             navigate(steps[nextStepIndex-1].nextStep);
         }
     }
+
     const handlePrev=()=>{
         const prevStepIndex = steps.findIndex(step => step.name === currentStep) - 1;
 
             setCurrentStep(steps[prevStepIndex].name);
         
     }   
-
+    console.log(currentStep)
     return(
         <S.FastDairyPageWrapper $isEven = {today%2}>
             {isOpen && <HomeModal closeModal = {closeModal}/>}
@@ -59,7 +60,7 @@ export default function FastDiary(){
                     <BtnHome/>                    
                 </S.HomeButtonWrapper>
                 
-                <DiaryPrgoress cur = {0}/>
+                <DiaryPrgoress steps = {steps} cur = {currentStep}/>
             </S.FastDiaryHeader>
             
             <S.WritingForm>
