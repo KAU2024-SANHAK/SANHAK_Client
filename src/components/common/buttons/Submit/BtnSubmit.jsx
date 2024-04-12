@@ -1,9 +1,9 @@
 import * as S from './BtnSubmit.style'
 
-export default function BtnSubmit(props){
+export default function BtnSubmit({onClick, height, $color, children}){
     return(
-        <S.Wrapper onClick= {props.onClick} height= {props.height} $color= {props.$color}>
-            {props.children}
+        <S.Wrapper onClick= {onClick} height= {height} $color= {$color}>
+            {children}
         </S.Wrapper>
     )
 }
