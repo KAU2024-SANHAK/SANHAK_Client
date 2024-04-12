@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SvgIcStartButton from "../../../../assets/svg/IcStartButton"
+import { IcStartButton } from "../../../../assets/svg";
 
 export const Wrapper = styled.button`   
     ${({ theme: { mixin } }) => mixin.flexCenter({})}  
@@ -7,6 +7,6 @@ export const Wrapper = styled.button`
     background-color: transparent;
 `;
 
-export const StartButton = styled(SvgIcStartButton)`
+export const StartButton = styled(IcStartButton)`
     display: flex;
 `;

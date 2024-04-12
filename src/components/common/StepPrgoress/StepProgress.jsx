@@ -1,6 +1,5 @@
 import * as S from "./StepProgress.style"
-import SvgIcProgressCircle from "../../../assets/svg/IcProgressCircle"
-import SvgIcCurrentProgressCircle from "../../../assets/svg/IcCurrentProgressCircle"
+import { IcCurrentProgressCircle, IcProgressCircle} from "../../../assets/svg"
 
 export default function StepProgress({steps, cur}){
 
@@ -8,7 +7,7 @@ export default function StepProgress({steps, cur}){
         <S.Wrapper>
             
             {steps.map((step, idx)=>(
-                cur === step.name ? <SvgIcCurrentProgressCircle key = {idx} /> : <SvgIcProgressCircle key = {idx} />
+                cur === step.name ? <IcCurrentProgressCircle key = {idx} /> : <IcProgressCircle key = {idx} />
             ))}
 
        </S.Wrapper>

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import SvgIcHome from '../../../../assets/svg/IcHome'
+import { IcHome } from '../../../../assets/svg'
 
-export const HomeButton = styled(SvgIcHome)`
+export const HomeButton = styled(IcHome)`
     display: flex;
 `

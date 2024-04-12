@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import SvgIcNextButton from "../../../../assets/svg/IcNextButton"
+import { IcNextButton } from "../../../../assets/svg";
 
-export const OnBoardingNextButton = styled(SvgIcNextButton)`
+export const OnBoardingNextButton = styled(IcNextButton)`
 
 `;
