@@ -1,9 +1,9 @@
 import * as S from '../FastDiaryStep.style'
 import SmallQuestion from '../Questions/SamllQuestion'
 import BtnNext from '../../common/buttons/Next/BtnNext'
+import BtnPrev from '../../common/buttons/Prev/BtnPrev'
 
-
-export default function FastDiaryStep3({onNxt}){
+export default function FastDiaryStep3({onNxt, onPrev}){
     return(
         <S.FastDiaryStepWrapper>
             <S.FastDiaryContentWrapper>
@@ -17,6 +17,7 @@ export default function FastDiaryStep3({onNxt}){
             </S.FastDiaryContentWrapper>
 
             <S.ButtonField>
+                <BtnPrev onPrev={onPrev}/>
                 <BtnNext onNxt={onNxt}/>
             </S.ButtonField>
         </S.FastDiaryStepWrapper>

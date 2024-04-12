@@ -23,11 +23,11 @@ export default function FastDiary(){
 
     const steps = [
         { name: 'DiaryStep1', component: FastDiaryStep1, nextStep: 'DiaryStep2' },
-        { name: 'DiaryStep2', component: FastDiaryStep2, nextStep: 'DiaryStep3' },
-        { name: 'DiaryStep3', component: FastDiaryStep3, nextStep: 'DiaryStep4' },
-        { name: 'DiaryStep4', component: FastDiaryStep4, nextStep: 'DiaryStep5' },
-        { name: 'DiaryStep5', component: FastDiaryStep5, nextStep: 'DiaryStep6' },
-        { name: 'DiaryStep6', component: FastDiaryStep6, nextStep: '/diaryview' }
+        { name: 'DiaryStep2', component: FastDiaryStep2, nextStep: 'DiaryStep3', prevStep: 'DiaryStep1' },
+        { name: 'DiaryStep3', component: FastDiaryStep3, nextStep: 'DiaryStep4', prevStep: 'DiaryStep2' },
+        { name: 'DiaryStep4', component: FastDiaryStep4, nextStep: 'DiaryStep5', prevStep: 'DiaryStep3' },
+        { name: 'DiaryStep5', component: FastDiaryStep5, nextStep: 'DiaryStep6', prevStep: 'DiaryStep4' },
+        { name: 'DiaryStep6', component: FastDiaryStep6, nextStep: '/diaryview', prevStep: 'DiaryStep5' }
     ]
 
     const handleNext=()=>{
@@ -38,7 +38,13 @@ export default function FastDiary(){
         } else {
             navigate(steps[nextStepIndex-1].nextStep);
         }
-    }    
+    }
+    const handlePrev=()=>{
+        const prevStepIndex = steps.findIndex(step => step.name === currentStep) - 1;
+
+            setCurrentStep(steps[prevStepIndex].name);
+        
+    }   
 
     return(
         <S.FastDairyPageWrapper $isEven = {today%2}>
@@ -60,7 +66,7 @@ export default function FastDiary(){
                 <Funnel>
                     {steps.map((step, idx)=>(
                         <Step key = {idx} name = {step.name}>
-                            <step.component onNxt={()=>{handleNext()}}/>
+                            <step.component onNxt={()=>{handleNext()}} onPrev={()=>{handlePrev()}}/>
                             <S.ProgressWrapper>
                                 <StepProgress steps= {steps} cur={step.name}/>        
                             </S.ProgressWrapper>

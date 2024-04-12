@@ -6,12 +6,10 @@ ${({ theme: { mixin } }) => mixin.flexCenter({})};
 
 `
 export const ButtonField = styled.div`
-    ${({ theme: { mixin } }) => mixin.flexBox({justify:'flex-end'})};
     width: 100%;
     position: absolute;
     bottom: 3rem;
     width: 100%;
-    margin-right: 2.4rem;
     
 `
 export const FastDiaryTextAreaWrapper = styled.div`
