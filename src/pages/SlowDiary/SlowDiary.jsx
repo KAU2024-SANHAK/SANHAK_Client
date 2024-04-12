@@ -1,9 +1,14 @@
 import { useState } from 'react';
+import { useModal } from '../../hooks/common/useModal';
 import * as S from './SlowDiary.style'
+import BtnHome from '../../components/common/buttons/Home/BtnHome';
+import HomeModal from '../../components/Modal/HomeModal';
 
 export default function SlowDiary(){
     const date = new Date();
     const today = date.getDate();
+    const [isOpen, opneModal, closeModal] = useModal();
+
 
     const [data, setData] = useState({
         image: '',
@@ -33,9 +38,10 @@ export default function SlowDiary(){
 
     return(
         <S.SlowDiaryPageWrapper  $isEven = {today%2}>
+            {isOpen && <HomeModal closeModal = {closeModal}/>}
 
             <S.SlowDiaryHeader>
-                <S.BtnHome/>            
+                <BtnHome onClick={()=>{opneModal()}}/>       
                 <S.Caption>
                 사진을 첨부하려면 + 버튼을 누르세요.
                 </S.Caption>
