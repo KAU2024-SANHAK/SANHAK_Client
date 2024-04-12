@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import SvgIcAddImage from '../../assets/svg/IcAddImage';
 
-//색상은 #28 merge 후 진행하겠습니다!
+//배경색상은 #28 merge 후 진행하겠습니다!
 export const SlowDiaryPageWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     width: 100%;
@@ -40,23 +40,23 @@ export const Label = styled.label`
     height: 31.5rem;
     border-radius: 3rem;
     background: rgba(255, 255, 255, 0.50);
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(1.5rem);
 `
 export const TitleInput = styled.input`
     width: 31.5rem;
     height: 7rem;
     border-radius: 3rem;
-    background: #FFF;
-    backdrop-filter: blur(15px);
+    background: ${({ theme }) => theme.colors.normal.white};
+    backdrop-filter: blur(1.5rem);
 
     outline: none;
     border: none;
     margin-top: 2.2rem;
 
     &::placeholder{
-        color: #8E8E8E;
         ${({ theme }) => theme.fonts.body_08};
-        letter-spacing: -0.408px;
+        color: ${({ theme }) => theme.colors.gray.text_gray};
+        letter-spacing: -0.0408rem;
         text-decoration-line: underline;
     }
 `
@@ -64,17 +64,17 @@ export const ContentInput = styled.textarea`
     width: 31.5rem;
     height: 27rem;
     border-radius: 3rem;
-    background: #FFF;
-    backdrop-filter: blur(15px);
+    background: ${({ theme }) => theme.colors.normal.white};
+    backdrop-filter: blur(1.5rem);
 
     outline: none;
     border: none;
     margin-top: 0.8rem;
 
     &::placeholder{
-        color: #8E8E8E;
         ${({ theme }) => theme.fonts.body_08};
-        letter-spacing: -0.408px;
+        color: ${({ theme }) => theme.colors.gray.text_gray};
+        letter-spacing: -0.0408rem;
         text-decoration-line: underline;
     }
 `
@@ -95,9 +95,9 @@ export const BtnSubmit= styled.button`
     margin-right: 2.5rem;
 `
 export const Caption =styled.p`
-    color: #8E8E8E;
     ${({ theme }) => theme.fonts.body_10};
-    letter-spacing: -0.408px;
+    color: ${({ theme }) => theme.colors.gray.text_gray};
+    letter-spacing: -0.0408rem;
     
     margin-bottom: 0.5rem;
     margin-top: 7rem;
