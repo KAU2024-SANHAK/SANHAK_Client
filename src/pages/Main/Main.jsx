@@ -4,7 +4,8 @@ import MyPageButton from '../../components/common/buttons/MyPageButton/MyPageBut
 export default function Main(){
     return(
         <S.Wrapper>
-            <MyPageButton/>         
+            <MyPageButton/>
+            <HoneyBear         
         </S.Wrapper>
     )
 }
