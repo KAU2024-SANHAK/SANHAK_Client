@@ -11,7 +11,7 @@ export const SlowDiaryPageWrapper = styled.div`
     )};
 
 `
-export const Header = styled.div`
+export const SlowDiaryHeader = styled.div`
     width:100%;
     display: flex;
     position: relative;

@@ -34,12 +34,12 @@ export default function SlowDiary(){
     return(
         <S.SlowDiaryPageWrapper  $isEven = {today%2}>
 
-            <S.Header>
+            <S.SlowDiaryHeader>
                 <S.BtnHome/>            
                 <S.Caption>
                 사진을 첨부하려면 + 버튼을 누르세요.
                 </S.Caption>
-            </S.Header>
+            </S.SlowDiaryHeader>
 
             <S.FormWrapper onSubmit={handleSubmit}>
                 <S.ImageInput type='file' id ='imgInput' accept='image/*' name='image'  onChange={handleImage}/>
