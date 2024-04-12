@@ -1,4 +1,10 @@
 export { default as IcError } from './IcError';
+export { default as IcCurrentProgressCircle } from './IcCurrentProgressCircle'
+export { default as IcHoneyBear } from './IcHoneyBear' 
+export { default as IcKakaoLogin } from './IcKakaoLogin' 
+export { default as IcNextButton } from './IcNextButton' 
+export { default as IcProgressCircle } from './IcProgressCircle'
+export { default as IcStartButton } from './IcStartButton' 
 export { default as IcDiaryProgress1 } from './IcDiaryProgress1'
 export { default as IcDiaryProgress2 } from './IcDiaryProgress2'
 export { default as IcDiaryProgress3 } from './IcDiaryProgress3'

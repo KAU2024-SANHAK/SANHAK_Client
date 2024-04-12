@@ -1,18 +1,24 @@
 import styled from "styled-components";
 
 export const TitleWrapper = styled.p`
-    width: 100%;
-    font-size: 2.5rem;
-    margin-top: 6rem;
-    margin-left: 4rem;
-    position: fixed;
-    top: 0;
-    line-height: 4rem;
+    ${({ theme }) => theme.fonts.title};
+    width: 30.8rem;
+    margin-top: 1.9rem;
+    letter-spacing: -0.0408rem;
 `
 
 export const SubTitleWrapper = styled.p`
-    text-align: center;
-    padding: 2rem;
-    font-size: 1.5rem;
-    line-height: 2rem;
+    ${({ theme }) => theme.fonts.caption_01};
+    width: 100%;
+    padding-left: 3.4rem;
+    margin-top: 0.4rem;
+    margin-bottom: 7rem;
+    letter-spacing: -0.0408rem;
+`
+
+export const CaptionWrapper = styled.li`
+    ${({ theme }) => theme.fonts.caption_02};
+    width: 100%;
+    margin-left: 6rem;
+    letter-spacing: -0.0408rem;
 `

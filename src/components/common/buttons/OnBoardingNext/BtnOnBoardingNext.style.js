@@ -1,7 +1,6 @@
 import styled from "styled-components";
+import SvgIcNextButton from "../../../../assets/svg/IcNextButton"
 
-export const Wrapper = styled.button`
-    width: 15rem;
-    height: 4rem;
-    border-radius: 12px;
-`
+export const OnBoardingNextButton = styled(SvgIcNextButton)`
+
+`;
