@@ -1,4 +1,4 @@
-
+const SvgIcSearchByEmotionButton=()=>(
 <svg width="93" height="119" viewBox="0 0 93 119" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g filter="url(#filter0_b_665_364)">
         <rect width="93" height="119" rx="12" fill="white" fill-opacity="0.27"/>
@@ -19,3 +19,6 @@
         </clipPath>
     </defs>
 </svg>
+);
+
+export default SvgIcSearchByEmotionButton

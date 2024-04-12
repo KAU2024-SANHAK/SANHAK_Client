@@ -1,3 +1,4 @@
+const SvgIcThisMonthEmotion=()=>(
 <svg width="210" height="182" viewBox="0 0 210 182" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="210" height="182" rx="30" fill="#FFA2A2"/>
 <rect width="210" height="182" rx="30" fill="url(#paint0_linear_674_286)" fill-opacity="0.39"/>
@@ -38,3 +39,5 @@
 </linearGradient>
 </defs>
 </svg>
+);
+export default SvgIcThisMonthEmotion
