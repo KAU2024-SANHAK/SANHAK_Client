@@ -14,18 +14,17 @@ export const SlowDiaryPageWrapper = styled.div`
 export const Header = styled.div`
     width:100%;
     display: flex;
+    position: relative;
+    left: 3rem;
 
 `
 //merge 이후에 홈 컴포넌트로 수정하겠습니다.
 export const BtnHome = styled.button`
+    background: ${({ theme }) => theme.colors.normal.white};
     width: 6rem;
     height: 8.5rem;
     flex-shrink: 0;
     border-radius: 3rem;
-    background: #FFF;
-    margin-bottom: 1.3rem;
-    margin-left: 2.8rem;
-    margin-right: 0.7rem;
 `
 export const FormWrapper = styled.form`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
@@ -92,11 +91,11 @@ export const BtnField = styled.div`
 
 `
 export const BtnSubmit= styled.button`
+    background: ${({ theme }) => theme.colors.normal.white};
     width: 6rem;
     height: 6rem;
     flex-shrink: 0;
     border-radius: 3rem;
-    background: #FFF;
     margin-top: 1.8rem;
     margin-right: 2.5rem;
 `
@@ -107,6 +106,8 @@ export const Caption =styled.p`
     
     margin-bottom: 0.5rem;
     margin-top: 7rem;
+    margin-left: 1rem;
+    
 `
 export const PreviewImg = styled.img`
     width: 31.5rem;
