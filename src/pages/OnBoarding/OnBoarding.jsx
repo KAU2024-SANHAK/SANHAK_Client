@@ -1,12 +1,13 @@
 import * as S from './OnBoarding.style'
 import { useFunnel } from '../../hooks/common/useFunnel'
+import { useNavigate } from 'react-router-dom'
 import Step1 from '../../components/OnBoardingSteps/Step1/Step1'
 import Step2 from '../../components/OnBoardingSteps/Step2/Step2'
 import Step3 from '../../components/OnBoardingSteps/Step3/Step3'
 import Step4 from '../../components/OnBoardingSteps/Step4/Step4'
 import Step5 from '../../components/OnBoardingSteps/Step5/Step5'
 import Step6 from '../../components/OnBoardingSteps/Step6/Step6'
-import { useNavigate } from 'react-router-dom'
+import StepProgress from '../../components/common/StepPrgoress/StepProgress'
 
 export default function OnBoarding(){
 
@@ -34,9 +35,11 @@ export default function OnBoarding(){
     return(
         <S.OnBoardingPageWrapper>
             <Funnel>
-                
                 {steps.map((step, idx)=>(
                     <Step key = {idx} name = {step.name}>
+                        <S.ProgressWrapper>
+                            <StepProgress steps= {steps} cur={step.name}/>
+                        </S.ProgressWrapper>
                         <step.component onNxt={()=>{handleNext()}}/>
                     </Step>
                 ))}

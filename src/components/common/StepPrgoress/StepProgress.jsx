@@ -11,7 +11,7 @@ export default function StepProgress(props){
         <S.Wrapper>
             
             {props.steps.map((step, idx)=>(
-                props.cur === step ? <SvgIcCurrentProgressCircle key = {idx} /> : <SvgIcProgressCircle key = {idx} />
+                props.cur === step.name ? <SvgIcCurrentProgressCircle key = {idx} /> : <SvgIcProgressCircle key = {idx} />
             ))}
 
        </S.Wrapper>
