@@ -6,6 +6,7 @@ import Start from '../pages/Start/Start';
 import Login from '../components/Login';
 import OnBoarding  from '../pages/OnBoarding/OnBoarding';
 import Main from '../pages/Main/Main'
+import MyPage from '../pages/MyPage/MyPage';
 
 
 /*이런 식으로 작성하기*/
@@ -18,10 +19,6 @@ const router = createBrowserRouter([
         path: '/',
         element: <Start />,
       },
-      //   {
-      //     path: "/mypage",
-      //     element: <Mypage />,
-      //   },
       {
         path: "/api/oauth/kakao/login",
         element: <Login />,
@@ -36,12 +33,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/mypage",
-        element: <Mypage/>
+        element: <MyPage/>
       },
-      {
-        path: "/searchbyemotion",
-        element: <SearchByEmotion/>
-      }
+      // {
+      //   path: "/searchbyemotion",
+      //   element: <SearchByEmotion/>
+      // }
     ],
   },
 ]);
