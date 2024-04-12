@@ -58,8 +58,10 @@ export default function FastDiary(){
                 <Funnel>
                     {steps.map((step, idx)=>(
                         <Step key = {idx} name = {step.name}>
-                                <StepProgress steps= {steps} cur={step.name}/>        
                             <step.component onNxt={()=>{handleNext()}}/>
+                            <S.ProgressWrapper>
+                                <StepProgress steps= {steps} cur={step.name}/>        
+                            </S.ProgressWrapper>
                         </Step>
                     ))}
 

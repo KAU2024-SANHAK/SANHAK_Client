@@ -8,7 +8,6 @@ export const SmallQuestionWrapper = styled.div`
     display: flex;
     width: 34rem;
     height: 7.5rem;
-    margin-top: 2.4rem;
     margin-bottom: 2rem;
 `
 export const LargeQuestionWrapper = styled.div`
@@ -17,7 +16,6 @@ export const LargeQuestionWrapper = styled.div`
     display: flex;
     width: 34rem;
     height: 11.8rem;
-    margin-top: 2.4rem;
     margin-bottom: 2rem;
 `
 export const QustionText = styled.p`
