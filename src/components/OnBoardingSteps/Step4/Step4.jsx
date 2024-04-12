@@ -15,13 +15,15 @@ export default function Step4(props){
                 </S.BtnWrapper>
             </S.OnBoardingHeader>
 
-            <Title>
-                허니베어가 해주는 답장
-            </Title>
-            <SubTitle>
-                허니베어와 함께<br/>
-                당신의 하루를 되돌아 보아요
-            </SubTitle>
+            <S.OnBoardingTitleWrapper>
+                <Title>
+                    허니베어가 해주는 답장
+                </Title>
+                <SubTitle>
+                    허니베어와 함께<br/>
+                    당신의 하루를 되돌아 보아요
+                </SubTitle>
+            </S.OnBoardingTitleWrapper>
 
             <S.OnBoardingImgWrapper>
                 <S.OnBoardingImg src={onBoardingStep4Img}/>

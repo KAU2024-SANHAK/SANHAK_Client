@@ -12,13 +12,15 @@ export default function Step6(props){
                 <OnBoardingProgressbar cur='Step6'/>
             </S.OnBoardingHeader>
             
-            <Title>
-                그 날의 너를 기록하다
-            </Title>
-            <SubTitle>
-                지금, 당신의
-                꿀 같았던 하루를 담아보세요
-            </SubTitle>
+            <S.OnBoardingTitleWrapper>
+                <Title>
+                    그 날의 너를 기록하다
+                </Title>
+                <SubTitle>
+                    지금, 당신의
+                    꿀 같았던 하루를 담아보세요
+                </SubTitle>
+            </S.OnBoardingTitleWrapper>
             
             <HoneyBear height='50.6rem'/>   
             

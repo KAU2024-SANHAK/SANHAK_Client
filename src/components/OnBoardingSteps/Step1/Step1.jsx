@@ -16,14 +16,16 @@ export default function Step1(props){
                 </S.BtnWrapper>
             </S.OnBoardingHeader>
 
-            <Title>
-                당신은<br/>
-                스스로의 감정에 솔직한가요?
-            </Title>
-            <SubTitle>
-                하루하루 스쳐갔던 우리의 감정들 이제<br/>
-                흘려보내지 말고 담아보아요
-            </SubTitle>
+            <S.OnBoardingTitleWrapper>
+                <Title>
+                    당신은<br/>
+                    스스로의 감정에 솔직한가요?
+                </Title>
+                <SubTitle>
+                    하루하루 스쳐갔던 우리의 감정들 이제<br/>
+                    흘려보내지 말고 담아보아요
+                </SubTitle>
+            </S.OnBoardingTitleWrapper>
 
             <S.OnBoardingImgWrapper>
                 <S.OnBoardingImg src={onBoardingStep1Img}/>

@@ -12,10 +12,12 @@ export default function Step5(props){
                 <OnBoardingProgressbar cur='Step5'/>         
             </S.OnBoardingHeader>
             
-            <Title>
-                어떤 스타일의
-                글을 원하나요?
-            </Title>
+            <S.OnBoardingTitleWrapper>
+                <Title>
+                    어떤 스타일의
+                    글을 원하나요?
+                </Title>
+            </S.OnBoardingTitleWrapper>
 
             <S.OnBoardingBody>
                 <SetWritingStyle/>

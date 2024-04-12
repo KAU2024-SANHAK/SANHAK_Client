@@ -11,19 +11,20 @@ export const OnBoardingHeader = styled.header`
     top: 5rem;
     width: 100%;
 `
-
 export const OnBoardingBody = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({direction:'column', align: 'center' })};
     width: 100%;
     text-align: left;
     height: 68%;
 `
-
 export const OnBoardingFooter = styled.footer`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     position: absolute;
     bottom: 1rem;
     margin-top: 10rem;
+`
+export const OnBoardingTitleWrapper = styled.div`
+${({ theme: { mixin } }) => mixin.flexCenter({})};  
 `
 export const OnBoardingImgWrapper = styled.div`
     height: 53%;
@@ -31,9 +32,6 @@ export const OnBoardingImgWrapper = styled.div`
 export const OnBoardingImg = styled.img`
 
 `
-//이거...도저히 안되겠어요 ㅠㅠㅠㅠㅠ
-//곰돌이 맞추려면 제가 생각하기에는 제목을 묶어서
-//position absolute 랑 top으로 박아버리는 것밖에 없는데 다른 방법이 있을까요,...,.,.,
 export const OnBoardingHoneyBearWrapper = styled.div`
     height: 50rem;
 `
