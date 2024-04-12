@@ -53,6 +53,7 @@ export const TitleInput = styled.input`
     outline: none;
     border: none;
     margin-top: 2.2rem;
+    padding-left: 3.1rem;
 
     &::placeholder{
         ${({ theme }) => theme.fonts.body_08};
@@ -62,7 +63,7 @@ export const TitleInput = styled.input`
     }
 `
 export const ContentInput = styled.textarea`
-    ${({ theme }) => theme.fonts.body_08};
+    ${({ theme }) => theme.fonts.body_10};
     background: ${({ theme }) => theme.colors.normal.white};
     width: 31.5rem;
     height: 27rem;
@@ -72,9 +73,12 @@ export const ContentInput = styled.textarea`
     outline: none;
     border: none;
     margin-top: 0.8rem;
+    padding-left: 3.1rem;
+    padding-top: 3.3rem;
+    padding-right: 2rem;
 
     &::placeholder{
-        ${({ theme }) => theme.fonts.body_08};
+        ${({ theme }) => theme.fonts.body_10};
         color: ${({ theme }) => theme.colors.gray.text_gray};
         letter-spacing: -0.0408rem;
         text-decoration-line: underline;
