@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    display: flex;
-    margin: 2rem;
-    gap: 0.5rem;    
-`
+${({ theme: { mixin } }) => mixin.flexBox({justify:'center'})};
+    gap: 0.5rem;  
+    `
