@@ -46,7 +46,7 @@ export default function FastDiary(){
             setCurrentStep(steps[prevStepIndex].name);
         
     }   
-    console.log(currentStep)
+    
     return(
         <S.FastDairyPageWrapper $isEven = {today%2}>
             {isOpen && <HomeModal closeModal = {closeModal}/>}
