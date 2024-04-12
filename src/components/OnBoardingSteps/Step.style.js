@@ -24,11 +24,13 @@ export const OnBoardingFooter = styled.footer`
     margin-top: 10rem;
 `
 export const OnBoardingTitleWrapper = styled.div`
+    ${({ theme: { mixin } }) => mixin.flexCenter({ })};
     position: absolute;
     top: 6.5rem;
+    width: 100%;
 `
 export const OnBoardingImgWrapper = styled.div`
-    height: 34%;
+    height: 35.3%;
 `
 export const OnBoardingImg = styled.img`
 

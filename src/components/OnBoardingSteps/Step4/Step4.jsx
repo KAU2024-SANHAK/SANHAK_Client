@@ -20,8 +20,7 @@ export default function Step4(props){
                     허니베어가 해주는 답장
                 </Title>
                 <SubTitle>
-                    허니베어와 함께<br/>
-                    당신의 하루를 되돌아 보아요
+                    허니베어와 함께 당신의 하루를 되돌아 보아요
                 </SubTitle>
             </S.OnBoardingTitleWrapper>
 
