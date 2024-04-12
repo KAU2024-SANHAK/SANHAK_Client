@@ -1,6 +1,7 @@
 import * as S from './FastDiary.style'
 import { useModal } from '../../hooks/common/useModal';
 import { useFunnel } from '../../hooks/common/useFunnel';
+import { useNavigate } from 'react-router-dom'
 import BtnHome from '../../components/common/buttons/Home/BtnHome';
 import DiaryPrgoress from '../../components/DiaryProgress/DiaryProgress';
 import HomeModal from '../../components/Modal/HomeModal';
@@ -16,6 +17,7 @@ export default function FastDiary(){
     const date = new Date();
     const today = date.getDate();
 
+    const navigate = useNavigate();
     const [isOpen, opneModal, closeModal] = useModal();
     const [Funnel, Step, currentStep, setCurrentStep] = useFunnel("DiaryStep1")
 

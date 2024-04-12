@@ -1,7 +1,8 @@
 import * as S from '../FastDiaryStep.style'
 import LargeQuestion from '../Questions/LargeQustion'
+import BtnNext from '../../common/buttons/Next/BtnNext'
 
-export default function FastDiaryStep6(){
+export default function FastDiaryStep6({onNxt}){
     return(
         <S.FastDiaryStepWrapper>
             <LargeQuestion>
@@ -12,6 +13,9 @@ export default function FastDiaryStep6(){
             <S.FastDiaryTextAreaWrapper>
                 <S.InputArea placeholder='짧은 글로 작성해주거나 키워드를 입력해줘!'/>
             </S.FastDiaryTextAreaWrapper>
+            <S.ButtonField>
+                <BtnNext onNxt={onNxt}/>
+            </S.ButtonField>
         </S.FastDiaryStepWrapper>
 
     )

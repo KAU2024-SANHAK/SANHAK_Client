@@ -42,3 +42,9 @@ export const ProgressWrapper = styled.div`
     position: absolute;
     bottom: 0;
 `
+export const BtnWrapper = styled.button`
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 2rem;
+`
