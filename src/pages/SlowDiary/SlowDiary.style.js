@@ -43,10 +43,11 @@ export const Label = styled.label`
     backdrop-filter: blur(1.5rem);
 `
 export const TitleInput = styled.input`
+    ${({ theme }) => theme.fonts.body_08};
+    background: ${({ theme }) => theme.colors.normal.white};
     width: 31.5rem;
     height: 7rem;
     border-radius: 3rem;
-    background: ${({ theme }) => theme.colors.normal.white};
     backdrop-filter: blur(1.5rem);
 
     outline: none;
@@ -61,10 +62,11 @@ export const TitleInput = styled.input`
     }
 `
 export const ContentInput = styled.textarea`
+    ${({ theme }) => theme.fonts.body_08};
+    background: ${({ theme }) => theme.colors.normal.white};
     width: 31.5rem;
     height: 27rem;
     border-radius: 3rem;
-    background: ${({ theme }) => theme.colors.normal.white};
     backdrop-filter: blur(1.5rem);
 
     outline: none;
