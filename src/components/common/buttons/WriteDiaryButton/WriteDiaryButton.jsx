@@ -1,9 +1,16 @@
+import { useNavigate } from "react-router-dom"
 import * as S from "./WriteDiaryButton.style"
 
-export default function WriteDiaryButton(props) {
+export default function WriteDiaryButton() {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate('/mypage')
+    }
+
     return (
-        <S.Wrapper onClick={()=>props.WriteDiary}> // WriteDiary 함수를 불러오도록 함
-            // + 이미지 넣기
+        <S.Wrapper onClick={handleClick}>
+            <S.WriteDiaryButtonIcon/>
         </S.Wrapper>
     )
 }
