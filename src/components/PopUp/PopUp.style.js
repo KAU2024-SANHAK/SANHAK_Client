@@ -11,6 +11,7 @@ ${({ theme: { mixin } }) => mixin.flexCenter({})};
 `
 export const PopUpTitle=styled.div`
     ${({ theme }) => theme.fonts.heading_01};
-    
+    position: absolute;
+    top: 3.4rem;
 
 `
