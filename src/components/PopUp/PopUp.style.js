@@ -2,6 +2,8 @@ import styled from "styled-components";
 import {IcPopUpSlide} from '../../assets/svg/index'
 
 export const PopUpWrapper=styled.div`
+${({ theme: { mixin } }) => mixin.flexCenter({})};
+
     background-image: ${IcPopUpSlide};
     background-color: blue;
     position: absolute;
@@ -11,5 +13,6 @@ export const PopUpWrapper=styled.div`
 `
 export const PopUpTitle=styled.div`
     ${({ theme }) => theme.fonts.heading_01};
+    
 
 `
