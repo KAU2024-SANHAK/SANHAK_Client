@@ -1,3 +1,4 @@
+import BtnLogout from '../common/buttons/Logout/Logout'
 import BtnSetCharacter from '../common/buttons/SetCharcater/BtnSetCharacter'
 import BtnSetDiaryModal from '../common/buttons/SetDiaryModal/BtnSetDiaryModal'
 import * as S from './PopUp.style'
@@ -13,6 +14,7 @@ export default function PopUp({children}){
                 <BtnSetDiaryModal/>
             </S.DiaryTypeWrapper>
             <BtnSetCharacter/>
+            <BtnLogout/>
         </S.PopUpWrapper>
     )
 }
