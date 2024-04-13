@@ -1,4 +1,4 @@
-import * as S from './Logout.style'
+import * as S from './BtnLogout.style'
 
 export default function BtnLogout(){
     return(

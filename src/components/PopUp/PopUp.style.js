@@ -14,7 +14,3 @@ export const PopUpTitle=styled.div`
     
 
 `
-
-export const DiaryTypeWrapper=styled.div`
-
-`
