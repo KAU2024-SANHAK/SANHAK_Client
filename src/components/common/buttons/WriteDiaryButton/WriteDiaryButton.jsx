@@ -5,7 +5,7 @@ export default function WriteDiaryButton() {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate('/mypage')
+        navigate('/writediary')
     }
 
     return (
