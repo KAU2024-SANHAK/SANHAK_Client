@@ -8,7 +8,7 @@ ${({ theme: { mixin } }) => mixin.flexCenter({})};
 export const ButtonField = styled.div`
     width: 100%;
     position: absolute;
-    bottom: 3rem;
+    bottom: 1rem;
     width: 100%;
     
 `
