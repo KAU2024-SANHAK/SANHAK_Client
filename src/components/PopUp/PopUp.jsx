@@ -1,3 +1,4 @@
+import BtnSetCharacter from '../common/buttons/SetCharcater/BtnSetCharacter'
 import BtnSetDiaryModal from '../common/buttons/SetDiaryModal/BtnSetDiaryModal'
 import * as S from './PopUp.style'
 
@@ -11,6 +12,7 @@ export default function PopUp({children}){
                 <p>일기 작성 스타일</p>
                 <BtnSetDiaryModal/>
             </S.DiaryTypeWrapper>
+            <BtnSetCharacter/>
         </S.PopUpWrapper>
     )
 }

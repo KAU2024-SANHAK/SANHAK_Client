@@ -7,6 +7,5 @@ export const ButtonWrapper=styled.button`
     height: 5.2rem;
     border-radius: 2.5rem;
 
-
     font-weight: 400;
 `
