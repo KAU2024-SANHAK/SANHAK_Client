@@ -5,3 +5,7 @@ export const Wrapper = styled.div`
     width: 100%;
     height: 100%;
 `
+export const MainStep1HoneyBearWrapper = styled.div`
+    margin-left: 1rem;
+    height: 57%;
+`
