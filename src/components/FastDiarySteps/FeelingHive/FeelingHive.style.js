@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
 export const FeelingHiveWrapper = styled.div`
-${({ theme: { mixin } }) => mixin.flexBox({justify: 'space-between', align:'center'})};
-width: 26rem;
-margin-bottom: 10rem;
-margin-right: 3rem;
+    ${({ theme: { mixin } }) => mixin.flexBox({justify: 'space-between', align:'center'})};
+    width: 26rem;
+    margin-bottom: 12.6rem;
+    margin-right: 3rem;
 `
 export const FirstLayer= styled.div`
     width: 7rem;
@@ -22,5 +22,6 @@ export const ThirdLayer= styled.div`
     margin: auto;
 `
 export const HoneyPotWrapper = styled.div`
-    padding-left: 0.8rem;
+    padding-left: 0.83rem;
+    padding-bottom: 0.3rem;
 `

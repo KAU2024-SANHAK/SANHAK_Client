@@ -18,7 +18,7 @@ export const FastDiaryTextAreaWrapper = styled.div`
     width: 33rem;
     height: 9.7rem;
     margin-left: 1rem;
-    margin-bottom: 15rem;
+    margin-bottom: 17rem;
 `
 export const InputArea =styled.textarea`
     ${({ theme }) => theme.fonts.body_06};
