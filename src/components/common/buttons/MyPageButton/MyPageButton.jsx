@@ -10,10 +10,10 @@ export default function MyPageButton() {
 
     return (
         <S.Wrapper onClick={handleClick}>
-            <S.MyPageIcon/>
-            <S.MyPageText>
+            <S.MyPageButtonIcon/>
+            <S.MyPageButtonText>
                 마이페이지
-            </S.MyPageText>
+            </S.MyPageButtonText>
         </S.Wrapper>
     )
 }

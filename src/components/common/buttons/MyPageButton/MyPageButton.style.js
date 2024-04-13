@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import svgMyPage from "../../../../assets/svg/IcMyPageButton";
+import svgMyPageButton from "../../../../assets/svg/IcMyPageButton";
 
-export const MyPageIcon = styled(svgMyPage)`
+export const MyPageButtonIcon = styled(svgMyPageButton)`
     display: flex;
 `
 
@@ -14,6 +14,6 @@ background: rgba(255, 255, 255, 0.27);
 backdrop-filter: blur(7.5px);
 `
 
-export const MyPageText = styled.p`
+export const MyPageButtonText = styled.p`
     ${({ theme }) => theme.fonts.caption_01};
 `
