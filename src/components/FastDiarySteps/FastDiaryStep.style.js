@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import InputCloud from '../../assets/inputCloud.svg'
+import InputCloud from '../../assets/InputCloud.svg'
 
 export const FastDiaryStepWrapper = styled.div`
 ${({ theme: { mixin } }) => mixin.flexCenter({})};
