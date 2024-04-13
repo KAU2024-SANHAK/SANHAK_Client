@@ -6,12 +6,10 @@ export const MyPageButtonIcon = styled(svgMyPageButton)`
 `
 
 export const Wrapper = styled.button`
-width: 9.3rem;
-height: 11.9rem;
-flex-shrink: 0;
-border-radius: 12px;
-background: rgba(255, 255, 255, 0.27);
-backdrop-filter: blur(7.5px);
+background-color: transparent;
+border: none;
+position: absolute;
+left: 3rem;
 `
 
 export const MyPageButtonText = styled.p`
