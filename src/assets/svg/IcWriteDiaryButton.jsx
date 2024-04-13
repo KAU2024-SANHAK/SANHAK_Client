@@ -5,8 +5,8 @@ const SvgIcWriteDiaryButton=()=>(
         </g>
         <path fill-rule="evenodd" clip-rule="evenodd" d="M73.4727 53.5C73.4727 52.1193 72.3534 51 70.9727 51C69.5919 51 68.4727 52.1193 68.4727 53.5V68.473H53.5C52.1193 68.473 51 69.5923 51 70.973C51 72.3537 52.1193 73.473 53.5 73.473H68.4727V88.4459C68.4727 89.8266 69.5919 90.9459 70.9727 90.9459C72.3534 90.9459 73.4727 89.8266 73.4727 88.4459V73.473H88.4459C89.8266 73.473 90.9459 72.3537 90.9459 70.973C90.9459 69.5923 89.8266 68.473 88.4459 68.473H73.4727V53.5Z" fill="black"/>
         <defs>
-            <filter id="filter0_b_665_362" x="-6.30127" y="-4.0625" width="154.561" height="150.951" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <filter id="filter0_b_665_362" x="-6.30127" y="-4.0625" width="154.561" height="150.951" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                 <feGaussianBlur in="BackgroundImageFix" stdDeviation="15"/>
                 <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_665_362"/>
                 <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_665_362" result="shape"/>
