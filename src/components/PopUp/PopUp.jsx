@@ -6,6 +6,9 @@ export default function PopUp({children}){
             <S.PopUpTitle>
                 {children}
             </S.PopUpTitle>
+            <S.DiaryTypeWrapper>
+                <p>일기 작성 스타일</p>
+            </S.DiaryTypeWrapper>
         </S.PopUpWrapper>
     )
 }

@@ -3,9 +3,7 @@ import {IcPopUpSlide} from '../../assets/svg/index'
 
 export const PopUpWrapper=styled.div`
 ${({ theme: { mixin } }) => mixin.flexCenter({})};
-
-    background-image: ${IcPopUpSlide};
-    background-color: blue;
+    background-color: white;
     position: absolute;
     width: 37.5rem;
     height: 44.4rem;
@@ -14,5 +12,9 @@ ${({ theme: { mixin } }) => mixin.flexCenter({})};
 export const PopUpTitle=styled.div`
     ${({ theme }) => theme.fonts.heading_01};
     
+
+`
+
+export const DiaryTypeWrapper=styled.div`
 
 `
