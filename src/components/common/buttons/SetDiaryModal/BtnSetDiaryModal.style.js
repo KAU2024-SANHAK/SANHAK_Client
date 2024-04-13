@@ -5,6 +5,8 @@ export const ButtonWrapper=styled.button`
     fill: rgba(255, 255, 255, 0.50);
     width: 32rem;
     height: 5.2rem;
+    border-radius: 2.5rem;
+
 
     font-weight: 400;
 `
