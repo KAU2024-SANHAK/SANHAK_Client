@@ -5,7 +5,7 @@ export default function SearchByEmotionButton(props) {
     const navigate = useNavigate();
     
     const handleClick = () => {
-        navigate('/mypage')
+        navigate('/searchbyemotion')
     }
 
     return (
