@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import {IcPopUpSlide} from '../../assets/svg/index'
+import { IcPopUpSlide } from '../../assets/svg/index'
 
 export const PopUpWrapper=styled.div`
-${({ theme: { mixin } }) => mixin.flexCenter({})};
-    background-color: white;
+    ${({ theme: { mixin } }) => mixin.flexCenter({})};
     position: absolute;
     width: 37.5rem;
-    height: 44.4rem;
+    height: 43.7rem;
     margin-top: 22.3rem;
 `
 export const PopUpTitle=styled.div`
@@ -14,4 +13,9 @@ export const PopUpTitle=styled.div`
     position: absolute;
     top: 3.4rem;
 
+`
+export const PopUpSlide = styled(IcPopUpSlide)`
+`
+export const SlideWrapper = styled.div`
+    position: absolute;
 `
