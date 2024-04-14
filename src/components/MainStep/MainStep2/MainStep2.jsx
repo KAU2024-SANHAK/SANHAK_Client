@@ -1,15 +1,21 @@
-import * as S from "..Steps.style"
+import * as S from './MainStep2.style'
+import MyPageButton from '../../common/buttons/MyPageButton/MyPageButton'
+import SearchByEmotionButton from '../../common/buttons/SearchByEmotionButton/SearchByEmotionButton'
+import WriteDiaryButton from '../../common/buttons/WriteDiaryButton/WriteDiaryButton'
+import HoneyBearMainStep1 from '../../common/HoneyBearMainStep1/HoneyBearMainStep1'
+import ThisMonthEmotion from '../../common/buttons/ThisMonthEmotion/ThisMonthEmotion'
 
-export default function Step1(props) {
+export default function MainStep2(){
     return(
         <S.Wrapper>
-            <S.MainBody>
-                {/* 달력 컴포넌트 */}
-                {/* 일기 리스트로 나타내는 컴포넌트 */}
-            </S.MainBody>
-            <S.MainFooter>
-                <MainProgressbar cur='Step2'/>
-            </S.MainFooter>
+            <MyPageButton/>  
+            <SearchByEmotionButton/>   
+            <WriteDiaryButton/>
+            <ThisMonthEmotion/>
+
+            <S.MainStep1HoneyBearWrapper>
+                <HoneyBearMainStep1 height='100rem'/>
+            </S.MainStep1HoneyBearWrapper>
         </S.Wrapper>
     )
 }
