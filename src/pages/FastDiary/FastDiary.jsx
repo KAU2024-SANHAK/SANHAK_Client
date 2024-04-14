@@ -4,7 +4,6 @@ import BtnHome from '../../components/common/buttons/Home/BtnHome';
 import DiaryPrgoress from '../../components/DiaryProgress/DiaryProgress';
 import HomeModal from '../../components/Modal/HomeModal';
 import StepProgress from '../../components/common/StepPrgoress/StepProgress';
-import { IcHoneyBear } from '../../assets/svg';
 
 export default function FastDiary(){
     const date = new Date();
