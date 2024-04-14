@@ -6,6 +6,6 @@ export const Wrapper = styled.div`
     height: 100%;
 `
 export const MainStep1HoneyBearWrapper = styled.div`
-    margin-left: 9rem;
+    margin-left: -9rem;
     margin-top: -3.3rem;
 `
