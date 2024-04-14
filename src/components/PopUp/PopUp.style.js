@@ -13,6 +13,9 @@ export const PopUpTitle=styled.div`
     position: absolute;
     top: 3.4rem;
 
+    font-weight: 700;
+    letter-spacing: -0.0408rem;
+
 `
 export const PopUpSlide = styled(IcPopUpSlide)`
 `

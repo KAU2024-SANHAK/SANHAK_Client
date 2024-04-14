@@ -5,7 +5,7 @@ export default function MyPage(){
     return(
         <S.MyPageWrapper>
             <PopUp>
-                마이 페이지
+                마이페이지
             </PopUp>
         </S.MyPageWrapper>
     )
