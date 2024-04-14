@@ -13,5 +13,5 @@ export const ButtonWrapper=styled.button`
     text-align: left;
     padding-left: 3rem;
     font-weight: 400;
-    letter-spacing: -0.408px;
+    letter-spacing: -0.0408rem;
 `

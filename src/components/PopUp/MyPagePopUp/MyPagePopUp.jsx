@@ -7,7 +7,7 @@ export default function MyPagePopUp(){
     return(
         <S.MyPagePopUpWrapper>
             <S.DiaryTypeWrapper>
-                <p>일기 작성 스타일</p>
+                <S.TextWrapper>일기 작성 스타일</S.TextWrapper>
                 <BtnSetDiaryModal/>
             </S.DiaryTypeWrapper>
 
