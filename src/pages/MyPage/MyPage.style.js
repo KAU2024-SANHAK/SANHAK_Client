@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { IcHoneyBear } from "../../assets/svg";
+import { BackButton } from "../../components/common/buttons/Back/BtnBack.style";
 
 export const MyPageWrapper=styled.div`
     background: ${({ theme }) => theme.colors.gradient.gradient_pink};
@@ -14,4 +15,9 @@ export const HoneyBearWrapper = styled.div`
 `
 export const HoneyBear = styled(IcHoneyBear)`
     display: flex;
+`
+export const BackButtonWrapper = styled.div`
+    position: absolute;
+    top: 2rem;
+    left: 2.8rem;
 `
