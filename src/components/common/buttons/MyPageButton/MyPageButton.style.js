@@ -10,6 +10,7 @@ background-color: transparent;
 border: none;
 position: absolute;
 left: 3rem;
+top: 15.7rem;
 `
 
 export const MyPageButtonText = styled.p`

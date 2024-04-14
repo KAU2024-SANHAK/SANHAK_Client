@@ -8,6 +8,9 @@ export const SearchByEmotionButtonIcon = styled(svgSearchByEmotionButton)`
 export const Wrapper = styled.button`
 background-color: transparent;
 border: none;
+position: absolute;
+left: 3rem;
+top: 29.2rem;
 `
 
 export const SearchByEmotionButtonText = styled.p`
