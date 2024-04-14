@@ -5,7 +5,7 @@ export const PopUpWrapper=styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     position: absolute;
     width: 37.5rem;
-    height: 43.7rem;
+    height: 43.85rem;
     margin-top: 22.3rem;
 `
 export const PopUpTitle=styled.div`
@@ -14,7 +14,7 @@ export const PopUpTitle=styled.div`
     top: 3.4rem;
 
     font-weight: 700;
-    letter-spacing: -0.0408rem;
+    letter-spacing: 0.0408rem;
 
 `
 export const PopUpSlide = styled(IcPopUpSlide)`
