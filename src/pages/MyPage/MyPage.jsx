@@ -9,9 +9,11 @@ export default function MyPage(){
             <S.BackButtonWrapper>
                 <BtnBack/>
             </S.BackButtonWrapper>
+            
             <S.HoneyBearWrapper>
                 <S.HoneyBear height='30rem'/>
             </S.HoneyBearWrapper>
+
             <PopUp>
                 마이페이지
             </PopUp>

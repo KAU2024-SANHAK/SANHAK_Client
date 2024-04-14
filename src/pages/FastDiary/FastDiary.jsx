@@ -9,7 +9,7 @@ export default function FastDiary(){
     const date = new Date();
     const today = date.getDate();
 
-    const [isOpen, opneModal, closeModal] = useModal();
+    const [isOpen, openModal, closeModal] = useModal();
 
     //steps는 추후에 각 퍼널 정보를 담은 객체 배열로 변경하겠습니다. 지금은 임시로!
     const steps =['Step1', 'Step2', 'Step3', 'Step4', 'Step5']
@@ -22,7 +22,7 @@ export default function FastDiary(){
             </S.HoneyBearWrapper>
 
             <S.FastDiaryHeader>
-                <S.HomeButtonWrapper onClick={()=>{opneModal()}}>
+                <S.HomeButtonWrapper onClick={()=>{openModal()}}>
                     <BtnHome/>                    
                 </S.HomeButtonWrapper>
                 
