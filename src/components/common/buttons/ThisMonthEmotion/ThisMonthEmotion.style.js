@@ -6,11 +6,11 @@ export const ThisMonthEmotionIcon = styled(svgThisMonthEmotion)`
 `
 
 export const Wrapper = styled.div`
-// width: 210px;
-// height: 182px;
-// flex-shrink: 0;
-// border-radius: 30px;
-// background: var(--Warm-Pink, linear-gradient(180deg, rgba(255, 255, 255, 0.00) 50%, rgba(255, 255, 255, 0.39) 111.04%), #FFA2A2);
+background-color: transparent;
+border: none;
+position: absolute;
+left: 2.8rem;
+top: 42.4rem;
 `
 
 export const ThisMonthEmotionText = styled.p`
