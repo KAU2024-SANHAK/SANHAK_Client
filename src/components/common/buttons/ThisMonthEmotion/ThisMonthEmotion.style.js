@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import svgThisMonthEmotion from "../../../../assets/svg/IcMyPageButton";
+import svgThisMonthEmotion from "../../../../assets/svg/IcThisMonthEmotion";
 
 export const ThisMonthEmotionIcon = styled(svgThisMonthEmotion)`
     display: flex;
