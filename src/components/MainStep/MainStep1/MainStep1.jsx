@@ -13,9 +13,9 @@ export default function MainStep1(){
             </S.MainStep1HoneyBearWrapper>
 
             <S.MainButtonWrapper>
-            <MyPageButton/>
-            <SearchByEmotionButton/>
-            <ThisMonthEmotion/>
+                <MyPageButton/>
+                <SearchByEmotionButton/>
+                <ThisMonthEmotion/>
             </S.MainButtonWrapper>
             {/* <WriteDiaryButton/> */}
         </S.MainStep1Wrapper>
