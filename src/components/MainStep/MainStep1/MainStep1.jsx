@@ -9,7 +9,7 @@ export default function MainStep1(){
     return(
         <S.MainStep1Wrapper>
             <S.MainStep1HoneyBearWrapper>
-                <HoneyBearMainStep1 height='100rem'/>
+                <HoneyBearMainStep1/>
             </S.MainStep1HoneyBearWrapper>
 
             <S.MainButtonWrapper>
