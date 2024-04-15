@@ -4,14 +4,16 @@ import BtnBack from '../../components/common/buttons/Back/BtnBack'
 export default function CharacterWiki(){
     return(
         <S.CharacterWikiPageWrapper>
-            <BtnBack/>
+            <S.ButtonField>
+                <BtnBack/>
+            </S.ButtonField>
             <h1>gi</h1>
-            <S.HoneyBearWikiWrapper>
+            <S.WikiWrapper>
                 곰돌이
-            </S.HoneyBearWikiWrapper>
-            <S.HoneyBeeWikiWrapper>
+            </S.WikiWrapper>
+            <S.WikiWrapper>
                 꿀벌
-            </S.HoneyBeeWikiWrapper>
+            </S.WikiWrapper>
         </S.CharacterWikiPageWrapper>
     )
 }

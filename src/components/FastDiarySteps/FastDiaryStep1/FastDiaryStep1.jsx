@@ -7,9 +7,11 @@ export default function FastDiaryStep1({onNxt}){
 
     return(
         <S.FastDiaryStepWrapper>
+            
             <SmallQuestion>
                 오늘 느낀 감정을 선택해줄래?
             </SmallQuestion>
+
             
             <FeelingHive/>
             
