@@ -5,6 +5,9 @@ import Layout from '../layouts/Layout';
 import Start from '../pages/Start/Start';
 import Login from '../components/Login';
 import OnBoarding  from '../pages/OnBoarding/OnBoarding';
+import Main from '../pages/Main/Main';
+import FastDiary from '../pages/FastDiary/FastDiary';
+import DiaryView from '../pages/DiaryView/DiaryView';
 import Main from '../pages/Main/Main'
 import SlowDiary from '../pages/SlowDiary/SlowDiary';
 import FastDiary from '../pages/FastDiary/FastDiary'
@@ -42,7 +45,11 @@ const router = createBrowserRouter([
       {
         path: "/slowdiary",
         element: <SlowDiary/>
-      }
+      },
+      {
+        path: '/diaryview',
+        element: <DiaryView/>
+      },
     ],
   },
 ]);

@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import { IcHoneyBear } from '../../assets/svg'
 
-//배경색 상수값으로 처리
 export const FastDairyPageWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     width: 100%;
@@ -38,4 +37,14 @@ export const HoneyBearWrapper=styled.div`
 `
 export const HoneyBear = styled(IcHoneyBear)`
     position: fixed;
+`
+export const ProgressWrapper = styled.div`
+    position: absolute;
+    bottom: 0;
+`
+export const BtnWrapper = styled.button`
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 2rem;
 `
