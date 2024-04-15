@@ -10,7 +10,9 @@ export default function SearchByEmotionButton(props) {
 
     return (
         <S.Wrapper onClick={handleClick}>
-            <S.SearchByEmotionButtonIcon/>
+            <S.SearchByEmotionIconWrapper>
+                <S.SearchByEmotionButtonIcon/>
+            </S.SearchByEmotionIconWrapper>
             <S.SearchByEmotionButtonText>
                 감정별 <br/>
                 일기조회

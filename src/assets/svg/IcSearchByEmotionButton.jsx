@@ -1,17 +1,6 @@
 const SvgIcSearchByEmotionButton=()=>(
-    <svg width="93" height="119" viewBox="0 0 93 119" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g filter="url(#filter0_b_715_287)">
-            <rect width="93" height="119" rx="12" fill="white" fillOpacity="0.27"/>
-        </g>
-        <path d="M54.6875 44.75H52.6138L51.8787 44.0412C54.4513 41.0487 56 37.1637 56 32.9375C56 23.5138 48.3612 15.875 38.9375 15.875C29.5138 15.875 21.875 23.5138 21.875 32.9375C21.875 42.3612 29.5138 50 38.9375 50C43.1637 50 47.0487 48.4513 50.0412 45.8787L50.75 46.6138V48.6875L63.875 61.7863L67.7863 57.875L54.6875 44.75ZM38.9375 44.75C32.4012 44.75 27.125 39.4737 27.125 32.9375C27.125 26.4012 32.4012 21.125 38.9375 21.125C45.4737 21.125 50.75 26.4012 50.75 32.9375C50.75 39.4737 45.4737 44.75 38.9375 44.75Z" fill="black"/>
-        <defs>
-            <filter id="filter0_b_715_287" x="-15" y="-15" width="123" height="149" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-                <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-                <feGaussianBlur in="BackgroundImageFix" stdDeviation="7.5"/>
-                <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_715_287"/>
-                <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_715_287" result="shape"/>
-            </filter>
-        </defs>
+    <svg xmlns="http://www.w3.org/2000/svg" width="47" height="47" viewBox="0 0 47 47" fill="none">
+        <path d="M33.6875 29.75H31.6138L30.8787 29.0412C33.4513 26.0487 35 22.1637 35 17.9375C35 8.51375 27.3612 0.875 17.9375 0.875C8.51375 0.875 0.875 8.51375 0.875 17.9375C0.875 27.3612 8.51375 35 17.9375 35C22.1637 35 26.0487 33.4513 29.0412 30.8787L29.75 31.6138V33.6875L42.875 46.7863L46.7863 42.875L33.6875 29.75ZM17.9375 29.75C11.4012 29.75 6.125 24.4737 6.125 17.9375C6.125 11.4012 11.4012 6.125 17.9375 6.125C24.4737 6.125 29.75 11.4012 29.75 17.9375C29.75 24.4737 24.4737 29.75 17.9375 29.75Z" fill="black"/>
     </svg>
 );
 export default SvgIcSearchByEmotionButton;
