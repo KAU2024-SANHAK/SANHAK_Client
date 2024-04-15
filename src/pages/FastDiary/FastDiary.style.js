@@ -24,7 +24,7 @@ export const WritingForm = styled.form`
     background: rgba(255, 255, 255, 0.50);
     backdrop-filter: blur(15px);
 `
-export const HomeButtonWrapper = styled.button`
+export const HomeButtonWrapper = styled.div`
     border: none;
     background: transparent;
     margin-left: 2rem;

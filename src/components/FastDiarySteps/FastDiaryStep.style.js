@@ -2,14 +2,16 @@ import styled from 'styled-components'
 import InputCloud from '../../assets/InputCloud.svg'
 
 export const FastDiaryStepWrapper = styled.div`
-${({ theme: { mixin } }) => mixin.flexCenter({})};
+    ${({ theme: { mixin } }) => mixin.flexCenter({})};
 
 `
 export const ButtonField = styled.div`
+    display: flex;
     width: 100%;
     position: absolute;
-    bottom: 1rem;
-    width: 100%;
+    bottom: 2rem;
+    right: 2rem;
+    justify-content: flex-end;
     
 `
 export const FastDiaryTextAreaWrapper = styled.div`

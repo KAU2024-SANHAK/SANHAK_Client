@@ -56,8 +56,8 @@ export default function FastDiary(){
             </S.HoneyBearWrapper>
 
             <S.FastDiaryHeader>
-                <S.HomeButtonWrapper onClick={()=>{opneModal()}}>
-                    <BtnHome/>                    
+                <S.HomeButtonWrapper>
+                    <BtnHome onClick={()=>{opneModal()}}/>                    
                 </S.HomeButtonWrapper>
                 
                 <DiaryPrgoress steps = {steps} cur = {currentStep}/>

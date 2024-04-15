@@ -6,8 +6,7 @@ export const Warpper = styled.button`
     position: absolute;
     background-color: transparent;
     border: none;
-    bottom: 0.5rem;
-    left: 2rem;
+    left: 4rem;
 `
 export const PrevButton = styled(IcPrevButton)`
     display: flex;
