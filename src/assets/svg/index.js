@@ -9,4 +9,4 @@ export { default as IcKakaoLogin } from './IcKakaoLogin'
 export { default as IcNextButton } from './IcNextButton' 
 export { default as IcProgressCircle } from './IcProgressCircle'
 export { default as IcStartButton } from './IcStartButton' 
-
+export { default as IcHoneyBearEmotion } from './IcHoneyBearEmotion'

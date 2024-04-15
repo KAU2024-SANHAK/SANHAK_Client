@@ -9,8 +9,8 @@ export const MainStep1Wrapper = styled.div`
 export const MainButtonWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     width: 100%
-    height: 45.0rem;
-    gap: 15rem;
+    height: 40rem;
+    gap: 1.5rem;
     left: 2.8rem;
     top: 29.2rem;
 `
