@@ -1,7 +1,8 @@
+import * as S from './SlowDiary.style'
 import { useState } from 'react';
 import { useModal } from '../../hooks/common/useModal';
-import * as S from './SlowDiary.style'
 import BtnHome from '../../components/common/buttons/Home/BtnHome';
+import BtnNext from '../../components/common/buttons/Next/BtnNext';
 import HomeModal from '../../components/Modal/HomeModal';
 
 export default function SlowDiary(){
@@ -60,7 +61,7 @@ export default function SlowDiary(){
                 <S.ContentInput type='text' placeholder='오늘 무슨 일이 있었나요? 자유롭게 적어주세요.' name='content' value={data.content} onChange={handleChange}/>
 
                 <S.BtnField>
-                    <S.BtnSubmit/>
+                    <BtnNext/>
                 </S.BtnField>
             </S.FormWrapper>
 

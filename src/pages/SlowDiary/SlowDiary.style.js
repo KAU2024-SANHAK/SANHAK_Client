@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import SvgIcAddImage from '../../assets/svg/IcAddImage';
 
-//배경색상은 #28 merge 후 진행하겠습니다!
 export const SlowDiaryPageWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     width: 100%;
@@ -16,15 +15,7 @@ export const SlowDiaryHeader = styled.div`
     display: flex;
     position: relative;
     left: 3rem;
-
-`
-//merge 이후에 홈 컴포넌트로 수정하겠습니다.
-export const BtnHome = styled.button`
-    background: ${({ theme }) => theme.colors.normal.white};
-    width: 6rem;
-    height: 8.5rem;
-    flex-shrink: 0;
-    border-radius: 3rem;
+    top: 0;
 `
 export const FormWrapper = styled.form`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
@@ -83,11 +74,12 @@ export const ContentInput = styled.textarea`
         text-decoration-line: underline;
     }
 `
-//이것도 merge 이후 버튼 컴포넌트로 수정하겠습니다.
 export const BtnField = styled.div`
     display: flex;    
     width: 100%;
     justify-content: flex-end;
+    padding-top: 1.8rem;
+    padding-right: 2.8rem;
 
 `
 export const BtnSubmit= styled.button`
@@ -105,7 +97,7 @@ export const Caption =styled.p`
     letter-spacing: -0.0408rem;
     
     margin-bottom: 0.5rem;
-    margin-top: 7rem;
+    margin-top: 9rem;
     margin-left: 1rem;
     
 `
