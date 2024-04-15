@@ -18,6 +18,9 @@ ${reset}
   border-style: solid;
  }
  
+ textarea {
+    outline: none;
+ }
 
 
  :root {
