@@ -5,14 +5,17 @@ export const MyPageButtonIcon = styled(svgMyPageButton)`
     display: flex;
 `
 
-export const Wrapper = styled.div`
-background-color: transparent;
-border: none;
-position: absolute;
-left: 2.8rem;
-top: 15.7rem;
+export const Wrapper = styled.button`
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    left: 2.2rem;
+    top: 15.7rem;
 `
 
 export const MyPageButtonText = styled.p`
+    position: absolute;
+    left: 2.7rem;
+    bottom: 1.2rem;
     ${({ theme }) => theme.fonts.caption_01};
 `
