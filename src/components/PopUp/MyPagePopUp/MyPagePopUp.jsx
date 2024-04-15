@@ -11,7 +11,7 @@ export default function MyPagePopUp(){
     return(
         <S.MyPagePopUpWrapper>
 
-            {isOpen && <SetWritingStyleModal />}
+            {isOpen && <SetWritingStyleModal onClick={()=>{closeModal()}}/>}
             <S.DiaryTypeWrapper>
                 <S.TextWrapper>일기 작성 스타일</S.TextWrapper>
                 <BtnSetDiaryModal onClick={()=>{openModal()}}/>
