@@ -7,16 +7,21 @@ import ThisMonthEmotion from '../../common/buttons/ThisMonthEmotion/ThisMonthEmo
 
 export default function MainStep1(){
     return(
-        <S.MainButtonWrapper>
+        <S.MainStep1Wrapper>
             <S.MainStep1HoneyBearWrapper>
                 <HoneyBearMainStep1 height='100rem'/>
             </S.MainStep1HoneyBearWrapper>
+
+            <S.MainButtonWrapper>
             <MyPageButton/>
             <SearchByEmotionButton/>
             <ThisMonthEmotion/>
-
+            </S.MainButtonWrapper>
+        </S.MainStep1Wrapper>
+        
+        
             
-        </S.MainButtonWrapper>
+        
         
         // <S.MainStep1Wrapper>
         //     {/* 전체 페이지 내에서 버튼이 들어갈 영역 중간 차지 */}

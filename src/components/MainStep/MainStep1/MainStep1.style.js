@@ -11,8 +11,6 @@ export const MainButtonWrapper = styled.div`
     width: 100%
     height: 40rem;
     gap: 1.5rem;
-    left: 2.8rem;
-    top: 29.2rem;
 `
 export const CommonButton = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
