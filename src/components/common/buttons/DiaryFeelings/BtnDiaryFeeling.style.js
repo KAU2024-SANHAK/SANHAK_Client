@@ -10,5 +10,6 @@ export const DiaryFeelingButtonWrapper = styled.button`
     text-align: center;
 `
 export const DiaryFeelingButton = styled(IcDiaryFeeling)`
+    position: relative;
     display: flex;
 `
