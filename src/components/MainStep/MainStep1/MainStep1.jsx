@@ -8,9 +8,14 @@ import ThisMonthEmotion from '../../common/buttons/ThisMonthEmotion/ThisMonthEmo
 export default function MainStep1(){
     return(
         <S.MainButtonWrapper>
+            <S.MainStep1HoneyBearWrapper>
+                <HoneyBearMainStep1 height='100rem'/>
+            </S.MainStep1HoneyBearWrapper>
             <MyPageButton/>
             <SearchByEmotionButton/>
             <ThisMonthEmotion/>
+
+            
         </S.MainButtonWrapper>
         
         // <S.MainStep1Wrapper>
@@ -29,9 +34,7 @@ export default function MainStep1(){
 
         //     </FooterWrapper>
 
-        //     <S.MainStep1HoneyBearWrapper>
-        //         <HoneyBearMainStep1 height='100rem'/>
-        //     </S.MainStep1HoneyBearWrapper>
+            
         // </S.MainStep1Wrapper>
     )
 }
