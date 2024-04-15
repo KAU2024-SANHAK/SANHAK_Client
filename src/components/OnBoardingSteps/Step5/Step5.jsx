@@ -1,4 +1,3 @@
-import OnBoardingProgressbar from "../../OnBoardingProgressBar/OnBoardingPrgoressBar"
 import * as S from "../Step.style"
 import SetWritingStyle from "../SetWriitingStyle/SetWritingStyle";
 import Title from "../title/Title";
@@ -8,9 +7,6 @@ import BtnComplete from "../../common/buttons/complete/BtnComplete";
 export default function Step5(props){
     return (
         <S.OnBoardingStepWrapper>
-            <S.OnBoardingHeader>
-                <OnBoardingProgressbar cur='Step5'/>         
-            </S.OnBoardingHeader>
             
             <S.OnBoardingTitleWrapper>
                 <Title>
