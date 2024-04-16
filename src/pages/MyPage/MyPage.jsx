@@ -2,12 +2,12 @@ import * as S from './MyPage.style'
 import PopUp from '../../components/PopUp/PopUp'
 import BtnBack from '../../components/common/buttons/Back/BtnBack'
 
-
 export default function MyPage(){
+
     return(
         <S.MyPageWrapper>
             <S.BackButtonWrapper>
-                <BtnBack/>
+                <BtnBack onClick={()=>{GoWiki()}}/>
             </S.BackButtonWrapper>
             
             <S.HoneyBearWrapper>

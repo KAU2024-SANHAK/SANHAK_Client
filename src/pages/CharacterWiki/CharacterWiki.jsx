@@ -8,10 +8,11 @@ export default function CharacterWiki(){
     const GoMyPage=()=>{
         navigate('/mypage');
     }
+
     return(
         <S.CharacterWikiPageWrapper>
             <S.ButtonField>
-                <BtnBack onClcik={GoMyPage()}/>
+                <BtnBack onClick={()=>{GoMyPage()}}/>
             </S.ButtonField>
 
             <S.WikiWrapper>

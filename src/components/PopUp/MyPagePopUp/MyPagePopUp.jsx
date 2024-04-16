@@ -1,5 +1,7 @@
 import * as S from './MyPagePopUp.style'
 import { useModal } from '../../../hooks/common/useModal'
+import { useNavigate } from 'react-router-dom'
+
 import BtnLogout from '../../common/buttons/Logout/BtnLogout'
 import BtnSetCharacter from '../../common/buttons/SetCharcater/BtnSetCharacter'
 import BtnSetDiaryModal from '../../common/buttons/SetDiaryModal/BtnSetDiaryModal'
@@ -8,6 +10,10 @@ import SetWritingStyleModal from '../../Modal/SetWritingStyleModal/SetWritingSty
 export default function MyPagePopUp(){
     const [isOpen, openModal, closeModal] = useModal();
 
+    const navigate = useNavigate();
+    const GoWiki=()=>{
+        navigate('/mypage/characterwiki')
+    }
     return(
         <S.MyPagePopUpWrapper>
 
@@ -17,7 +23,7 @@ export default function MyPagePopUp(){
                 <BtnSetDiaryModal onClick={()=>{openModal()}}/>
             </S.DiaryTypeWrapper>
 
-            <BtnSetCharacter/>
+            <BtnSetCharacter onClick={()=>{GoWiki()}}/>
 
             <BtnLogout/>
         </S.MyPagePopUpWrapper>
