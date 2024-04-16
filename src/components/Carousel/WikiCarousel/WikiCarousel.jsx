@@ -3,7 +3,7 @@ import CharacterBox from './CharacterBox';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-export default function WikiCarousel(){
+export default function WikiCarousel({customs}){
 
     const settings = {
         dots: false,
@@ -17,11 +17,11 @@ export default function WikiCarousel(){
     return(
         <S.WikiCarouselWrapper>
             <S.CustomSlider {...settings}>
-                    <CharacterBox>
-                        일반 곰돌이
+                {customs.map((custom, idx)=>(
+                    <CharacterBox key={idx} name={custom.name}>
+                        {custom.component}    
                     </CharacterBox>
-                    <CharacterBox/>
-                    <CharacterBox/>
+                ))}
             </S.CustomSlider>
 
         </S.WikiCarouselWrapper>

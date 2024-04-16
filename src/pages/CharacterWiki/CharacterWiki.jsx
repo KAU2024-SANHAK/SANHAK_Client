@@ -9,6 +9,14 @@ export default function CharacterWiki(){
         navigate('/mypage');
     }
 
+    const HoneyBearCustom=[
+        {name: '일반 곰돌이', component: <S.HoneyBear height='13.3rem'/>},
+        {name: '멋진 곰돌이', component: <S.HoneyBear height='13.3rem'/>},
+        {name: '소학 곰돌이', component: <S.HoneyBear height='13.3rem'/>},
+        {name: '꿀벌 곰돌이', component: <S.HoneyBear height='13.3rem'/>},
+        {name: '왕자 곰돌이', component: <S.HoneyBear height='13.3rem'/>}
+    ]
+
     return(
         <S.CharacterWikiPageWrapper>
             <S.ButtonField>
@@ -20,7 +28,7 @@ export default function CharacterWiki(){
                     곰돌이
                 </S.CharacterNameWrapper>
 
-                <WikiCarousel/>
+                <WikiCarousel customs={HoneyBearCustom}/>
             </S.WikiWrapper>
 
             <S.WikiWrapper>
@@ -28,7 +36,7 @@ export default function CharacterWiki(){
                     꿀벌
                 </S.CharacterNameWrapper>
 
-                <WikiCarousel/>
+                <WikiCarousel customs={HoneyBearCustom}/>
             </S.WikiWrapper>
             
 

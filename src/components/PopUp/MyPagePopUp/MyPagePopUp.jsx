@@ -1,7 +1,6 @@
 import * as S from './MyPagePopUp.style'
 import { useModal } from '../../../hooks/common/useModal'
 import { useNavigate } from 'react-router-dom'
-
 import BtnLogout from '../../common/buttons/Logout/BtnLogout'
 import BtnSetCharacter from '../../common/buttons/SetCharcater/BtnSetCharacter'
 import BtnSetDiaryModal from '../../common/buttons/SetDiaryModal/BtnSetDiaryModal'

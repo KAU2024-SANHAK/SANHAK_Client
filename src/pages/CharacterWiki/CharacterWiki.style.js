@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { IcHoneyBear } from "../../assets/svg";
 
 export const CharacterWikiPageWrapper=styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
@@ -21,5 +22,6 @@ export const CharacterNameWrapper=styled.p`
     padding-left: 4.2rem;
     padding-bottom: 1rem;
     letter-spacing: -0.0408rem;
-
+`
+export const HoneyBear=styled(IcHoneyBear)`
 `
