@@ -7,11 +7,15 @@ export const WikiCarouselWrapper=styled.div`
     height: 50%;
     padding-left: 1.8rem;
 `
-export const CharacterBox=styled.p`
+export const CharacterBoxWrapper=styled.div`
+    ${({ theme: { mixin } }) => mixin.flexCenter({})};
+`
+export const CharacterBox=styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     background-color: ${({ theme }) => theme.colors.normal.white};
     width: 14.5rem;
     height: 16.6rem;
+    margin-bottom: 1rem;
     border-radius: 1.8rem;
 `
 export const CustomSlider=styled(Slider)`
@@ -25,4 +29,8 @@ export const CustomSlider=styled(Slider)`
 `
 export const HoneyBear=styled(IcHoneyBear)`
     display: flex;
+`
+export const CostumeName=styled.p`
+    ${({ theme }) => theme.fonts.body_08};
+    letter-spacing: -0.0408rem;
 `

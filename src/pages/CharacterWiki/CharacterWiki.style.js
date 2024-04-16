@@ -5,7 +5,7 @@ export const CharacterWikiPageWrapper=styled.div`
     background-color: ${({ theme }) => theme.colors.pink.white_pink};
     width: 100%;
     height: 100vh;
-    padding-top: 10rem;
+    padding-top: 13rem;
 `
 export const WikiWrapper=styled.div`
     position: relative;

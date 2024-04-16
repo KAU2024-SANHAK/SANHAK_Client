@@ -17,7 +17,9 @@ export default function WikiCarousel(){
     return(
         <S.WikiCarouselWrapper>
             <S.CustomSlider {...settings}>
-                    <CharacterBox/>
+                    <CharacterBox>
+                        일반 곰돌이
+                    </CharacterBox>
                     <CharacterBox/>
                     <CharacterBox/>
             </S.CustomSlider>
