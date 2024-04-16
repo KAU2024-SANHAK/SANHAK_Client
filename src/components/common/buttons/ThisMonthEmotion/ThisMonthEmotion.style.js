@@ -21,6 +21,7 @@ export const Bubble = styled.div`
     border-radius: 12px;
 `
 export const Wrapper = styled.div`
+    z-index: 10;
     width: 21rem;
     height: 18rem;
     flex-shrink: 0;
