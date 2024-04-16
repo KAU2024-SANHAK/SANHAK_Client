@@ -1,10 +1,10 @@
 import * as S from './MyPagePopUp.style'
 import { useModal } from '../../../hooks/common/useModal'
 import { useNavigate } from 'react-router-dom'
-import BtnLogout from '../../common/buttons/Logout/BtnLogout'
-import BtnSetCharacter from '../../common/buttons/SetCharcater/BtnSetCharacter'
-import BtnSetDiaryModal from '../../common/buttons/SetDiaryModal/BtnSetDiaryModal'
-import SetWritingStyleModal from '../../Modal/SetWritingStyleModal/SetWritingStyleModal'
+import BtnLogout from '../../../components/common/buttons/Logout/BtnLogout'
+import BtnSetCharacter from '../../../components/common/buttons/SetCharcater/BtnSetCharacter'
+import BtnSetDiaryModal from '../../../components/common/buttons/SetDiaryModal/BtnSetDiaryModal'
+import SetWritingStyleModal from '../../../components/Modal/SetWritingStyleModal/SetWritingStyleModal'
 
 export default function MyPagePopUp(){
     const [isOpen, openModal, closeModal] = useModal();

@@ -1,10 +1,9 @@
 import * as S from './MyPage.style'
 import PopUp from '../../components/PopUp/PopUp'
 import BtnBack from '../../components/common/buttons/Back/BtnBack'
-import MyPagePopUp from '../../components/PopUp/MyPagePopUp/MyPagePopUp'
+import MyPagePopUp from './MyPagePopUp/MyPagePopUp'
 
 export default function MyPage(){
-
     return(
         <S.MyPageWrapper>
             <S.BackButtonWrapper>

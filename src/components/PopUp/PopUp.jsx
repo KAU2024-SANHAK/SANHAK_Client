@@ -1,5 +1,4 @@
 import * as S from './PopUp.style'
-import MyPagePopUp from './MyPagePopUp/MyPagePopUp'
 
 export default function PopUp({name, children}){
     return(
@@ -11,6 +10,7 @@ export default function PopUp({name, children}){
             <S.PopUpTitle>
                 {name}
             </S.PopUpTitle>
+            
             {children}
         </S.PopUpWrapper>
     )
