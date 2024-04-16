@@ -5,7 +5,7 @@ import { IcHoneyBear } from "../../../assets/svg";
 export const WikiCarouselWrapper=styled.div`
     width: 100%;
     height: 50%;
-    padding-left: 2.8rem;
+    padding-left: 1.8rem;
 `
 export const CharacterBox=styled.p`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
@@ -15,9 +15,8 @@ export const CharacterBox=styled.p`
     border-radius: 1.8rem;
 `
 export const CustomSlider=styled(Slider)`
-    padding-right: 3rem;
     .slick-list{
-        width: 70rem;
+        width: 32rem;
     }
     .slick-prev:before,
     .slick-next:before {

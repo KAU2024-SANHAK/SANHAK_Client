@@ -8,15 +8,23 @@ export default function CharacterWiki(){
             <S.ButtonField>
                 <BtnBack/>
             </S.ButtonField>
-            <h1>gi</h1>
+
             <S.WikiWrapper>
-                곰돌이
+                <S.CharacterNameWrapper>
+                    곰돌이
+                </S.CharacterNameWrapper>
+
+                <WikiCarousel/>
             </S.WikiWrapper>
 
             <S.WikiWrapper>
-                꿀벌
+                <S.CharacterNameWrapper>
+                    꿀벌
+                </S.CharacterNameWrapper>
+                
+                <WikiCarousel/>
             </S.WikiWrapper>
-            <WikiCarousel/>
+            
 
         </S.CharacterWikiPageWrapper>
     )
