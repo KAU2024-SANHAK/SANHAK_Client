@@ -14,8 +14,7 @@ export default function MyPage(){
                 <S.HoneyBear height='30rem'/>
             </S.HoneyBearWrapper>
 
-            <PopUp>
-                마이페이지
+            <PopUp name='마이페이지'>
             </PopUp>
         </S.MyPageWrapper>
     )
