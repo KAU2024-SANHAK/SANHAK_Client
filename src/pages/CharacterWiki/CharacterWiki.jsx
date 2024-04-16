@@ -1,5 +1,6 @@
 import * as S from './CharacterWiki.style'
 import BtnBack from '../../components/common/buttons/Back/BtnBack'
+import WikiCarousel from '../../components/Carousel/WikiCarousel/WikiCarousel'
 
 export default function CharacterWiki(){
     return(
@@ -11,9 +12,12 @@ export default function CharacterWiki(){
             <S.WikiWrapper>
                 곰돌이
             </S.WikiWrapper>
+
             <S.WikiWrapper>
                 꿀벌
             </S.WikiWrapper>
+            <WikiCarousel/>
+
         </S.CharacterWikiPageWrapper>
     )
 }
