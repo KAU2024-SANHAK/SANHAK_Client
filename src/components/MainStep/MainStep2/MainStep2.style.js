@@ -12,5 +12,6 @@ export const MainStep2HoneyBearWrapper = styled.div`
 `
 export const MainStep2ComponentWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({direction:'column', justify: 'center'})};
-    margin-top: 10rem;
+    margin-top: 19.8rem;
+    gap: 0.8rem;
 `

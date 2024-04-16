@@ -8,11 +8,12 @@ export const DiaryListWrapper = styled.div`
     border-radius: 30px;
     background: rgba(255, 255, 255, 0.70);
     backdrop-filter: blur(5px);
+    margin-bottom: 5rem;
 `
 export const DiaryPhoto = styled.div`
     display: flex;
     margin-left: 1.2rem;
-    margin-top: 0.8rem;
+    margin-top: 1rem;
     width: 9.5rem;
     height: 9.5rem;
     flex-shrink: 0;
@@ -22,6 +23,7 @@ export const DiaryPhoto = styled.div`
 export const TextWrapper = styled.div`
     margin-left: 1.2rem;
     margin-top: 1.8rem;
+    gap: 0rem;
 `
 export const TextTitle = styled.p`
     ${({ theme }) => theme.fonts.body_02};
@@ -29,3 +31,4 @@ export const TextTitle = styled.p`
 export const TextDate = styled.p`
     ${({ theme }) => theme.fonts.caption_02};
 `
+

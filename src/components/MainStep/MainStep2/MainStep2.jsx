@@ -1,6 +1,7 @@
 import * as S from './MainStep2.style'
 import HoneyBearMainStep2 from '../../common/HoneyBearMainStep2/HoneyBearMainStep2'
 import Calendar from '../../common/Calendar/Calendar'
+import DiaryList from '../../common/DiaryList/DiaryList'
 
 export default function MainStep1(){
     return(
@@ -10,7 +11,7 @@ export default function MainStep1(){
             </S.MainStep2HoneyBearWrapper>
             <S.MainStep2ComponentWrapper>
                 <Calendar/>
-                {/* 일기 리스트 들어가기 */}
+                <DiaryList/>
 
             </S.MainStep2ComponentWrapper>
         </S.MainStep2Wrapper>

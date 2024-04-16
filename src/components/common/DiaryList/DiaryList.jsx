@@ -4,14 +4,14 @@ export default function DiaryList() {
     return (
         <S.DiaryListWrapper>
             <S.DiaryPhoto/>
-            <S.TextWarpper>
+            <S.TextWrapper>
                 <S.TextTitle>
                     배가 아프지만 참은 날
                 </S.TextTitle>
                 <S.TextDate>
                     2024.03.25
                 </S.TextDate>
-            </S.TextWarpper>
+            </S.TextWrapper>
         </S.DiaryListWrapper>
     )
 }
