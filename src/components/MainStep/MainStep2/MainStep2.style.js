@@ -6,6 +6,11 @@ export const MainStep2Wrapper = styled.div`
     height: 100vh;
 `
 export const MainStep2HoneyBearWrapper = styled.div`
-    margin-left: -9rem;
-    margin-top: -3.3rem;
+    position: absolute;
+    left: 0rem;
+    top: 3.929rem;
+`
+export const MainStep2ComponentWrapper = styled.div`
+    ${({ theme: { mixin } }) => mixin.flexBox({direction:'column', justify: 'center'})};
+    margin-top: 10rem;
 `
