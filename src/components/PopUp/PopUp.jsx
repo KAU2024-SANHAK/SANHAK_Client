@@ -1,7 +1,7 @@
 import * as S from './PopUp.style'
 import MyPagePopUp from './MyPagePopUp/MyPagePopUp'
 
-export default function PopUp({name}){
+export default function PopUp({name, children}){
     return(
         <S.PopUpWrapper>
             <S.SlideWrapper>
@@ -11,10 +11,7 @@ export default function PopUp({name}){
             <S.PopUpTitle>
                 {name}
             </S.PopUpTitle>
-
-            <MyPagePopUp>
-
-            </MyPagePopUp>
+            {children}
         </S.PopUpWrapper>
     )
 }

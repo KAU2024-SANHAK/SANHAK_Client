@@ -1,6 +1,7 @@
 import * as S from './MyPage.style'
 import PopUp from '../../components/PopUp/PopUp'
 import BtnBack from '../../components/common/buttons/Back/BtnBack'
+import MyPagePopUp from '../../components/PopUp/MyPagePopUp/MyPagePopUp'
 
 export default function MyPage(){
 
@@ -15,6 +16,7 @@ export default function MyPage(){
             </S.HoneyBearWrapper>
 
             <PopUp name='마이페이지'>
+                <MyPagePopUp/>
             </PopUp>
         </S.MyPageWrapper>
     )
