@@ -14,22 +14,24 @@ export default function CreatedDiary(){
             <S.BtnHomeWrapper onClick={handleClick}>
                 <BtnHome/>
             </S.BtnHomeWrapper>
-            <S.TodeayEmotionBtnWrapper>
+            <S.TodayEmotionBtnWrapper>
                 <TodayEmotion/>
-            </S.TodeayEmotionBtnWrapper>
+            </S.TodayEmotionBtnWrapper>
             <S.CreatedDiaryComponentWrapper>
                 <S.DiaryTopTextWrapper>
                     <S.DiaryTitle>
-                        제목 불러오기
+                        할 수 없이 고기를 먹어서 배탈난 날
                     </S.DiaryTitle>
                     <S.DiaryDate>
-                        날짜 불러오기
+                        2024.03.25 월
                     </S.DiaryDate>
                 </S.DiaryTopTextWrapper>
                 <S.DiaryPhotoWrapper/>
                 <S.DiaryTextWrapper>
                     <S.DiaryText>
-                        API 불러오기
+                    저녁으로 동기들과 꼬기꼬기에서 고기를 먹었다.
+배가 안고팠음에도 불구하고 고기를 먹으니 배탈이 났나보다. 배가 이렇게 아픈 적은 처음이었다.
+하지만 소화제를 먹고 나아져서 정말 다행이었다.
                     </S.DiaryText>
                 </S.DiaryTextWrapper>
             </S.CreatedDiaryComponentWrapper>

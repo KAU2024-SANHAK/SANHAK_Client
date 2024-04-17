@@ -13,16 +13,16 @@ export const BtnHomeWrapper = styled.div`
     left: 2.8rem;
     top: 3.2rem;
 `
-export const TodeayEmotionBtnWrapper = styled.div`
-    posiiton: absolute;
-    right: 2.7rem;
-    top: 6.8rem;
-    z-inedx: 10;
+export const TodayEmotionBtnWrapper = styled.div`
+    
 `
 export const CreatedDiaryComponentWrapper = styled.div`
-    ${({ theme: { mixin } }) => mixin.flexCenter({})};
-    margin-top: 13.1rem;
+    // ${({ theme: { mixin } }) => mixin.flexCenter({})};
+    // margin-top: 13.1rem;
+    position: absolute;
+    top: 13.1rem;
     gap: 1.1rem;
+    // bottom: 1.6rem;
 
 `
 export const DiaryTopTextWrapper = styled.div`
@@ -31,8 +31,11 @@ export const DiaryTopTextWrapper = styled.div`
 `
 export const DiaryTitle = styled.p`
     ${({ theme }) => theme.fonts.heading_01};
+    // heading_02로 하면 엄청 작아져요..! 무슨 문제가 있나봐요!
 `
 export const DiaryDate = styled.p`
+    margin-right: 22.7rem;
+    // 위에 코드 진짜 바보같은거 아는데.. 우선 뷰 구현 먼저 해야해서.. 하다가 안되서 넣었어용.. 여유 있을 때 수정하겠습니다!!!
     ${({ theme }) => theme.fonts.body_10};
 `
 export const DiaryPhotoWrapper = styled.div`
