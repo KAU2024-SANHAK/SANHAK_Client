@@ -6,7 +6,7 @@ import BtnLogout from '../../../components/common/buttons/Logout/BtnLogout'
 import BtnComplete from '../../../components/common/buttons/complete/BtnComplete'
 import BtnSetCharacter from '../../../components/common/buttons/SetCharcater/BtnSetCharacter'
 import BtnSetDiaryModal from '../../../components/common/buttons/SetDiaryModal/BtnSetDiaryModal'
-import SetWritingStyle from '../../../components/SetWritingStyle/SetWritingStyle'
+import SetWritingStyle from '../../../components/SetDiaryStyle/SetDiaryStyle'
 
 export default function MyPagePopUp(){
     const [isClick, setIsClick] = useState(false);

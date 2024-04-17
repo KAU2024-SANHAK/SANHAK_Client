@@ -1,4 +1,4 @@
-import * as S from './SetWritingStyle.style'
+import * as S from './SetDiaryStyle.style'
 import { useState } from 'react'
 import BtnSetDiaryType from '../common/buttons/setDiaryType/BtnSetDiaryType'
 
