@@ -1,5 +1,5 @@
 import * as S from "../Step.style"
-import SetWritingStyle from "../SetWriitingStyle/SetWritingStyle";
+import SetWritingStyle from "../../SetWritingStyle/SetWritingStyle";
 import Title from "../title/Title";
 import Caption from "../title/Caption";
 import BtnComplete from "../../common/buttons/complete/BtnComplete";

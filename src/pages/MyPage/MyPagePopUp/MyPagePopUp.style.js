@@ -9,6 +9,7 @@ export const DiaryTypeWrapper=styled.div`
 export const TextWrapper = styled.p`
     ${({ theme }) => theme.fonts.heading_03};
     position: relative;
+    width: 100%;
     padding-left: 3.3rem;
     padding-bottom: 0.4rem;
 

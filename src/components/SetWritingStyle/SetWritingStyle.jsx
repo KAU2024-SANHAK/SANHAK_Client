@@ -1,6 +1,6 @@
 import * as S from './SetWritingStyle.style'
 import { useState } from 'react'
-import BtnSetDiaryType from '../../common/buttons/setDiaryType/BtnSetDiaryType'
+import BtnSetDiaryType from '../common/buttons/setDiaryType/BtnSetDiaryType'
 
 const handleSetWritingStyle= ()=>{
     console.log('api 요청하세요')
