@@ -12,6 +12,7 @@ export const MainButtonWrapper = styled.div`
     margin-top: 15.7rem;
     height: 40rem;
     gap: 1.5rem;
+    z-index: 10;
 `
 export const MainStep1HoneyBearWrapper = styled.div`
     position: absolute;
