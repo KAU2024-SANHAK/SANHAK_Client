@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-//여기 px rem으로 쓰면 뭔가 이상해서 흑흑,,,
 export const Wrapper = styled.div`
 ${({ theme: { mixin } }) => mixin.flexCenter({})};
     border-radius: 25px;
@@ -8,7 +7,6 @@ ${({ theme: { mixin } }) => mixin.flexCenter({})};
     height: 199px;
     width: 320px;
     margin-bottom: 1rem;
-    margin-top: 7rem;
     font-size: 2rem;
     text-align: center;
     
