@@ -32,8 +32,19 @@ export default function CreatedDiary(){
                     저녁으로 동기들과 꼬기꼬기에서 고기를 먹었다.
 배가 안고팠음에도 불구하고 고기를 먹으니 배탈이 났나보다. 배가 이렇게 아픈 적은 처음이었다.
 하지만 소화제를 먹고 나아져서 정말 다행이었다.
+저녁으로 동기들과 꼬기꼬기에서 고기를 먹었다.
+배가 안고팠음에도 불구하고 고기를 먹으니 배탈이 났나보다. 배가 이렇게 아픈 적은 처음이었다.
+하지만 소화제를 먹고 나아져서 정말 다행이었다.
+저녁으로 동기들과 꼬기꼬기에서 고기를 먹었다.
+배가 안고팠음에도 불구하고 고기를 먹으니 배탈이 났나보다. 배가 이렇게 아픈 적은 처음이었다.
+하지만 소화제를 먹고 나아져서 정말 다행이었다.
                     </S.DiaryText>
                 </S.DiaryTextWrapper>
+                <S.GoToReplyBtnWrapper>
+                    <S.DiaryText>
+                        hello
+                    </S.DiaryText>
+                </S.GoToReplyBtnWrapper>
             </S.CreatedDiaryComponentWrapper>
         </S.CreatedDiaryWrapper>
     )

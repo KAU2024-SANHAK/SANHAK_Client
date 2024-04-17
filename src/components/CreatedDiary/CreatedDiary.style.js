@@ -50,7 +50,6 @@ export const DiaryPhotoWrapper = styled.div`
 export const DiaryTextWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({})};
     width: 32rem;
-    // height: 23.5rem;
     border-radius: 30px;
     background: rgba(255, 255, 255, 0.49);
 `
@@ -63,4 +62,8 @@ export const DiaryText = styled.p`
     // 이 코드가 왜 안먹는지..
     margin-top: 4rem;
     margin-bottom: 4rem;    
+`
+export const GoToReplyBtnWrapper = styled.div`
+    ${({ theme: { mixin } }) => mixin.flexCenter({})};
+    margin-bottom: 1.6rem;
 `
