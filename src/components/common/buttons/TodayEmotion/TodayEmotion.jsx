@@ -6,17 +6,17 @@ export default function TodayEmotion() {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate('/todayemotion')
+        navigate('/emotionview')
     }
 
     return (
-        <S.TodayEmotionBtnWrapper>
-            <S.TodayEmotionBtnIconWrapper>
-                <S.TodayEmotionBtnIcon/>
-            </S.TodayEmotionBtnIconWrapper>
+        <S.TodayEmotionBtnWrapper onClick={handleClick}>
             <S.TodayEmotionBtnText>
                 오늘의 감정 분석 보러가기
             </S.TodayEmotionBtnText>
+            <S.TodayEmotionBtnIconWrapper>
+                <S.TodayEmotionBtnIcon/>
+            </S.TodayEmotionBtnIconWrapper>
         </S.TodayEmotionBtnWrapper>
     )
 }

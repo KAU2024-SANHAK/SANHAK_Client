@@ -9,10 +9,13 @@ export const TodayEmotionBtnIconWrapper = styled.div`
     // top: 6.8rem;
 `
 export const TodayEmotionBtnWrapper = styled.div`
-    ${({ theme: { mixin } }) => mixin.flexCenter({})};
-    width: 17rem;
+    ${({ theme: { mixin } }) => mixin.flexBox({direction:'row'})};
+    width: 14.2rem;
     height: 5rem;
     flex-shrink: 0;
+    gap: 1.5rem;
+    background-color: black;
+    z-index: 10;
 `
 export const TodayEmotionBtnText = styled.p`
     position: absolute;

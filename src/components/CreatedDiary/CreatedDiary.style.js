@@ -8,7 +8,7 @@ export const CreatedDiaryWrapper = styled.div`
     backdrop-filter: blur(15px);
 
 `
-export const BtnBackWrapper = styled.div`
+export const BtnHomeWrapper = styled.div`
     position: absolute;
     left: 2.8rem;
     top: 3.2rem;
@@ -17,6 +17,7 @@ export const TodeayEmotionBtnWrapper = styled.div`
     posiiton: absolute;
     right: 2.7rem;
     top: 6.8rem;
+    z-inedx: 10;
 `
 export const CreatedDiaryComponentWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};

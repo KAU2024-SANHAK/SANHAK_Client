@@ -1,13 +1,19 @@
 import * as S from './CreatedDiary.style';
-import BtnBack from '../common/buttons/Back/BtnBack';
+import BtnHome from '../common/buttons/Home/BtnHome'
 import TodayEmotion from '../common/buttons/TodayEmotion/TodayEmotion';
+import { useNavigate } from 'react-router-dom';
 
 export default function CreatedDiary(){
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate('/main')
+    }
     return(
         <S.CreatedDiaryWrapper>
-            <S.BtnBackWrapper>
-                <BtnBack/>
-            </S.BtnBackWrapper>
+            <S.BtnHomeWrapper onClick={handleClick}>
+                <BtnHome/>
+            </S.BtnHomeWrapper>
             <S.TodeayEmotionBtnWrapper>
                 <TodayEmotion/>
             </S.TodeayEmotionBtnWrapper>
