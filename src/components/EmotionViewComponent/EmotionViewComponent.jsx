@@ -17,7 +17,7 @@ export function EmotionViewComponent() {
             <S.EmotionViewComponentWrapper>
                 <S.TodayEmotionQ>
                     너의 오늘 <br/>
-                    하루 감정은?
+                    하루 감정은
                 </S.TodayEmotionQ>
                 <S.EmotionPhoto/>
                 <S.EmotionTagWrapper>
