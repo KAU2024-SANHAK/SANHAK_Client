@@ -6,7 +6,6 @@ export const CreatedDiaryWrapper = styled.div`
     height: 100vh;
     background: rgba(255, 255, 255, 0.50);
     backdrop-filter: blur(15px);
-
 `
 export const BtnHomeWrapper = styled.div`
     position: absolute;
@@ -14,7 +13,9 @@ export const BtnHomeWrapper = styled.div`
     top: 3.2rem;
 `
 export const TodayEmotionBtnWrapper = styled.div`
-    
+    position: absolute;
+    right: 2.8rem;
+    top: 6.8rem;    
 `
 export const CreatedDiaryComponentWrapper = styled.div`
     // ${({ theme: { mixin } }) => mixin.flexCenter({})};
@@ -47,12 +48,19 @@ export const DiaryPhotoWrapper = styled.div`
     background: #FF8686;
 `
 export const DiaryTextWrapper = styled.div`
-    ${({ theme: { mixin } }) => mixin.flexCenter({})};
+    ${({ theme: { mixin } }) => mixin.flexBox({})};
     width: 32rem;
-    height: 23.5rem;
+    // height: 23.5rem;
     border-radius: 30px;
     background: rgba(255, 255, 255, 0.49);
 `
 export const DiaryText = styled.p`
     ${({ theme }) => theme.fonts.body_02};
+    
+    display: flex;
+    width: 27rem;
+    margin-left: 2.5rem;
+    // 이 코드가 왜 안먹는지..
+    margin-top: 4rem;
+    margin-bottom: 4rem;    
 `
