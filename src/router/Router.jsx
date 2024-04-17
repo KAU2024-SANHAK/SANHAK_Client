@@ -10,11 +10,11 @@ import MyPage from '../pages/MyPage/MyPage';
 import SearchByEmotion from '../pages/SearchByEmotion/SearchByEmotion';
 // import WriteDiary from '../pages/WriteDiary/WriteDiary';
 
-import Main from '../pages/Main/Main';
+// import Main from '../pages/Main/Main';
 import FastDiary from '../pages/FastDiary/FastDiary';
 import DiaryView from '../pages/DiaryView/DiaryView';
 import SlowDiary from '../pages/SlowDiary/SlowDiary';
-import MyPage from '../pages/MyPage/MyPage';
+// import MyPage from '../pages/MyPage/MyPage';
 
 /*이런 식으로 작성하기*/
 const router = createBrowserRouter([
