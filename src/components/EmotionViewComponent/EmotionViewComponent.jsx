@@ -1,10 +1,17 @@
 import * as S from './EmotionViewComponent.style';
 import BtnBack from '../common/buttons/Back/BtnBack';
+import { useNavigate } from 'react-router-dom';
 
 export function EmotionViewComponent() {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate('/diaryview')
+    }
+
     return(
         <S.EmotionViewWrapper>
-            <S.BtnBackWrapper>
+            <S.BtnBackWrapper onClick={handleClick}>
                 <BtnBack/>
             </S.BtnBackWrapper>
             <S.EmotionViewComponentWrapper>
