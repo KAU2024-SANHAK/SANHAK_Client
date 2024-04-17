@@ -1,7 +1,7 @@
 import * as S from './MyPagePopUp.style'
 import { useState } from 'react'
-import { useModal } from '../../../hooks/common/useModal'
 import { useNavigate } from 'react-router-dom'
+import useLogout from '../../../hooks/queries/member/members/useLogout'
 import BtnLogout from '../../../components/common/buttons/Logout/BtnLogout'
 import BtnComplete from '../../../components/common/buttons/complete/BtnComplete'
 import BtnSetCharacter from '../../../components/common/buttons/SetCharcater/BtnSetCharacter'
@@ -9,7 +9,6 @@ import BtnSetDiaryModal from '../../../components/common/buttons/SetDiaryModal/B
 import SetWritingStyle from '../../../components/SetWritingStyle/SetWritingStyle'
 
 export default function MyPagePopUp(){
-    const [isOpen, openModal, closeModal] = useModal();
     const [isClick, setIsClick] = useState(false);
 
     const navigate = useNavigate();
@@ -25,15 +24,13 @@ export default function MyPagePopUp(){
                 <S.MyPagePopUpBodyWrapper>
                     <BtnSetDiaryModal onClick={()=>{setIsClick(true)}}/>
                     <BtnSetCharacter onClick={()=>{GoWiki()}}/>
-                    <BtnLogout/>
+                    <BtnLogout onClick={()=>{useLogout()}}/>
                 </S.MyPagePopUpBodyWrapper>
                 :
                 <S.MyPagePopUpBodyWrapper>
-                <SetWritingStyle/>
-                <BtnComplete onClick={()=>{setIsClick(false)}}>선택 완료</BtnComplete>                
+                    <SetWritingStyle/>
+                    <BtnComplete onClick={()=>{setIsClick(false)}}>선택 완료</BtnComplete>                
                 </S.MyPagePopUpBodyWrapper>
-
-
                 }
 
         </S.MyPagePopUpWrapper>
