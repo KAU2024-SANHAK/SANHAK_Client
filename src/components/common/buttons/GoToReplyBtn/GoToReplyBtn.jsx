@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import * as S from "./TodayEmotion.style"
+import * as S from "./GoToReplyBtn.style"
 
 
 export default function GoToReplyBtn() {
@@ -10,13 +10,14 @@ export default function GoToReplyBtn() {
     }
 
     return (
-        <S.TodayEmotionBtnWrapper onClick={handleClick}>
-            <S.TodayEmotionBtnText>
-                오늘의 감정 분석 보러가기
-            </S.TodayEmotionBtnText>
-            <S.TodayEmotionBtnIconWrapper>
-                <S.TodayEmotionBtnIcon/>
-            </S.TodayEmotionBtnIconWrapper>
-        </S.TodayEmotionBtnWrapper>
+        <S.GoToReplyBtnWrapper onClick={handleClick}>
+        
+            <S.GoToReplyBtnIconWrapper>
+                <S.GoToReplyBtnIcon/>
+            </S.GoToReplyBtnIconWrapper>
+            <S.GoToReplyBtnText>
+                답장 보러가기
+            </S.GoToReplyBtnText>
+        </S.GoToReplyBtnWrapper>
     )
 }

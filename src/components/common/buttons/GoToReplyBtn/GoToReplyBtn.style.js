@@ -1,25 +1,18 @@
 import styled from "styled-components";
-import SvgIcTodayEmotionBtn from "../../../../assets/svg/IcTodayEmotionBtn";
+import SvgIcGoToReplyBtn from "../../../../assets/svg/IcGoToReplyBtn";
 
-export const TodayEmotionBtnIcon = styled(SvgIcTodayEmotionBtn)`
+export const GoToReplyBtnIcon = styled(SvgIcGoToReplyBtn)`
 `
-export const TodayEmotionBtnIconWrapper = styled.div`
-    // position: absolute;
-    // right: 2.7rem;
-    // top: 6.8rem;
+export const GoToReplyBtnIconWrapper = styled.div`
+
 `
-export const TodayEmotionBtnWrapper = styled.div`
-    ${({ theme: { mixin } }) => mixin.flexBox({direction:'row'})};
-    width: 14.2rem;
+export const GoToReplyBtnWrapper = styled.div`
+    ${({ theme: { mixin } }) => mixin.flexCenter({})};
+    width: 15rem;
     height: 5rem;
     flex-shrink: 0;
-    gap: 1.5rem;
-    background-color: black;
-    z-index: 10;
+    gap: 0rem;
 `
-export const TodayEmotionBtnText = styled.p`
-    position: absolute;
-    left: 2.1rem;
-    bottom: 1.2rem;
-    ${({ theme }) => theme.fonts.body_10};
+export const GoToReplyBtnText = styled.p`
+    ${({ theme }) => theme.fonts.caption_04};
 `

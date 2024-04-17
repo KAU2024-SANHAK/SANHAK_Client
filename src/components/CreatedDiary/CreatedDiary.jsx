@@ -1,6 +1,7 @@
 import * as S from './CreatedDiary.style';
 import BtnHome from '../common/buttons/Home/BtnHome'
 import TodayEmotion from '../common/buttons/TodayEmotion/TodayEmotion';
+import GoToReplyBtn from '../common/buttons/GoToReplyBtn/GoToReplyBtn';
 import { useNavigate } from 'react-router-dom';
 
 export default function CreatedDiary(){
@@ -41,9 +42,7 @@ export default function CreatedDiary(){
                     </S.DiaryText>
                 </S.DiaryTextWrapper>
                 <S.GoToReplyBtnWrapper>
-                    <S.DiaryText>
-                        hello
-                    </S.DiaryText>
+                    <GoToReplyBtn/>
                 </S.GoToReplyBtnWrapper>
             </S.CreatedDiaryComponentWrapper>
         </S.CreatedDiaryWrapper>
