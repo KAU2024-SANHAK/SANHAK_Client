@@ -19,7 +19,6 @@ export const EmotionViewComponentWrapper = styled.div`
 `
 export const TodayEmotionQ = styled.p`
     ${({ theme }) => theme.fonts.big_title};
-    ${({ theme: { mixin } }) => mixin.flexCenter({})};
     line-height: 120%;
     // display: flex;
     // justify-content: center;
