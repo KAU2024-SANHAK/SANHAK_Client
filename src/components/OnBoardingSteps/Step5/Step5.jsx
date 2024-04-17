@@ -16,7 +16,7 @@ export default function Step5(props){
             </S.OnBoardingTitleWrapper>
 
             <S.OnBoardingBody>
-                <SetWritingStyle/>
+                <SetWritingStyle transparency='0.24'/>
                 <Caption>'빠른 일기'는 간단한 6가지 질문을 통해 사용자의 하루를 파악하고</Caption>
                 <Caption>생성형 AI를 통해 글과 사진이 포함된 일기를 작성합니다.</Caption>
                 <Caption>'느린 일기'는 사용자가 직접 글을 작성하고 사진을 첨부합니다.</Caption>

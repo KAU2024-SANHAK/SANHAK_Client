@@ -6,11 +6,11 @@ const handleSetWritingStyle= ()=>{
     console.log('api 요청하세요')
 }
 
-export default function SetWritingStyle(){
+export default function SetWritingStyle({transparency}){
     const [type, setType] = useState();
 
     return(
-        <S.Wrapper>
+        <S.Wrapper $transparency={transparency}>
 
                 <BtnSetDiaryType isClick = {type === 'Fast' ? true : false}
                     onClick={()=>{

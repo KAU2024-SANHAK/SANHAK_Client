@@ -18,7 +18,6 @@ export default function MyPagePopUp(){
     return(
         <S.MyPagePopUpWrapper>
 
-
             <S.TextWrapper>일기 작성 스타일</S.TextWrapper>
                 {isClick === false ? 
                 <S.MyPagePopUpBodyWrapper>
@@ -28,7 +27,7 @@ export default function MyPagePopUp(){
                 </S.MyPagePopUpBodyWrapper>
                 :
                 <S.MyPagePopUpBodyWrapper>
-                    <SetWritingStyle/>
+                    <SetWritingStyle transparency='100'/>
                     <BtnComplete onClick={()=>{setIsClick(false)}}>선택 완료</BtnComplete>                
                 </S.MyPagePopUpBodyWrapper>
                 }
