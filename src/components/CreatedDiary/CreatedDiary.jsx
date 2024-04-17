@@ -1,5 +1,6 @@
 import * as S from './CreatedDiary.style';
 import BtnBack from '../common/buttons/Back/BtnBack';
+import TodayEmotion from '../common/buttons/TodayEmotion/TodayEmotion';
 
 export default function CreatedDiary(){
     return(
@@ -7,6 +8,9 @@ export default function CreatedDiary(){
             <S.BtnBackWrapper>
                 <BtnBack/>
             </S.BtnBackWrapper>
+            <S.TodeayEmotionBtnWrapper>
+                <TodayEmotion/>
+            </S.TodeayEmotionBtnWrapper>
             <S.CreatedDiaryComponentWrapper>
                 <S.DiaryTopTextWrapper>
                     <S.DiaryTitle>
