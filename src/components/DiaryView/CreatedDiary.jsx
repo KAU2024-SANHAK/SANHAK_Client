@@ -1,8 +1,12 @@
 import * as S from './CreatedDiary.style';
+import BtnBack from '../common/buttons/Back/BtnBack';
 
 export default function CreatedDiary(){
     return(
         <S.CreatedDiaryWrapper>
+            <S.BtnBackWrapper>
+                <BtnBack/>
+            </S.BtnBackWrapper>
             <S.CreatedDiaryComponentWrapper>
                 <S.DiaryTopTextWrapper>
                     <S.DiaryTitle>

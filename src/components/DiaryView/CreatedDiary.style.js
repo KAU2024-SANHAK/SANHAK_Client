@@ -8,6 +8,11 @@ export const CreatedDiaryWrapper = styled.div`
     backdrop-filter: blur(15px);
 
 `
+export const BtnBackWrapper = styled.div`
+    position: absolute;
+    left: 2.8rem;
+    top: 3.2rem;
+`
 export const CreatedDiaryComponentWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     margin-top: 13.1rem;
