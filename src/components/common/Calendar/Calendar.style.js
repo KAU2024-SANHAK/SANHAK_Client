@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Calendar = styled.div`
-    z-index: 10;
     display: flex;
     width: 32rem;
     height: 42.7rem;

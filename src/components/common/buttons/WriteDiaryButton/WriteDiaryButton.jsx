@@ -32,10 +32,10 @@ export default function WriteDiaryButton() {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        if (type === '빠른일기') {
+        if (type === 'FASTTYPE') {
             navigate('/fastdiary')
         }
-        else if (type === '느린일기') {
+        else if (type === 'SLOWTYPE') {
             navigate('/slowdiary')
         }
     }
