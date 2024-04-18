@@ -21,7 +21,7 @@ export default function MyPagePopUp(){
             <S.TextWrapper>일기 작성 스타일</S.TextWrapper>
                 {isClick === false ? 
                 <S.MyPagePopUpBodyWrapper>
-                    <BtnSetDiaryModal onClick={()=>{setIsClick(true)}}/>
+                    <BtnSetDiaryModal onClick={()=>{setIsClick(true)}} curType='빠른 일기'/>
                     <BtnSetCharacter onClick={()=>{handlegoWiki()}}/>
                     <BtnLogout onClick={()=>{useLogout()}}/>
                 </S.MyPagePopUpBodyWrapper>
