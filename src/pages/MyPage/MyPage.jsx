@@ -6,14 +6,14 @@ import MyPagePopUp from './MyPagePopUp/MyPagePopUp'
 
 export default function MyPage(){
     const navigate=useNavigate();
-    const GoMain=()=>{
+    const handleBackButton=()=>{
         navigate('/main');
     }
 
     return(
         <S.MyPageWrapper>
             <S.BackButtonWrapper>
-                <BtnBack onClick={()=>{GoMain()}}/>
+                <BtnBack onClick={()=>{handleBackButton()}}/>
             </S.BackButtonWrapper>
             
             <S.HoneyBearWrapper>

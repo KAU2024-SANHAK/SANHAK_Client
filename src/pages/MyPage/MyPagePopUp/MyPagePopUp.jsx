@@ -12,7 +12,7 @@ export default function MyPagePopUp(){
     const [isClick, setIsClick] = useState(false);
 
     const navigate = useNavigate();
-    const GoWiki=()=>{
+    const handlegoWiki=()=>{
         navigate('/mypage/characterwiki')
     }
     return(
@@ -22,7 +22,7 @@ export default function MyPagePopUp(){
                 {isClick === false ? 
                 <S.MyPagePopUpBodyWrapper>
                     <BtnSetDiaryModal onClick={()=>{setIsClick(true)}}/>
-                    <BtnSetCharacter onClick={()=>{GoWiki()}}/>
+                    <BtnSetCharacter onClick={()=>{handlegoWiki()}}/>
                     <BtnLogout onClick={()=>{useLogout()}}/>
                 </S.MyPagePopUpBodyWrapper>
                 :
