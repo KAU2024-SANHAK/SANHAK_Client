@@ -6,37 +6,29 @@ import Slider from "react-slick";
 
 function Main() {
   const settings = {
-    dots: true,
-    
+    dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     adaptiveHeight: true,
-    //
-    // appendDots: dots => (
-    //   <div
-    //     style={{
-    //       backgroundColor: "#trans",
-    //       borderRadius: "10px",
-    //       padding: "10px"
-    //     }}
-    //   >
-    //     <ul style={{ margin: "0px" }}> {dots} </ul>
-    //   </div>
-    // ),
-    // customPaging: i => (
-    //   <div
-    //     style={{
-    //       width: "30px",
-    //       color: "blue",
-    //       border: "1px blue solid"
-    //     }}
-    //   >
-    //     {i + 1}
-    //   </div>
-    // )
   };
+  // const steps = [ {name: 'MainStep1', component: <MainStep1/>}, {name: 'MainStep2', component: <MainStep2/>} ]
+  // retrun(
+  //   <S.Wrapper>
+  //       <S.MainStepSlider>
+  //        {steps.map((step, idx)=>(
+  //             <S.SlideWrapper key = {idx}>
+  //               {step.component}
+  //              <S.ProgressWrapper>
+  //           <StepProgress steps={steps} cur = {step.name} />
+  //         </S.ProgressWrapper>
+  //       </S.SlideWrapper>
+  //       ))}
+  //     </S.MainStepSlider>
+  //   </S.Wrapper>
+  // )
+  
   return (
     <div className='slider-container'>
       <Slider {...settings} dotsClass="test-css">

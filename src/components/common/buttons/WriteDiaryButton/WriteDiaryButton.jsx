@@ -32,12 +32,7 @@ export default function WriteDiaryButton() {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        if (type === 'FASTTYPE') {
-            navigate('/fastdiary')
-        }
-        else if (type === 'SLOWTYPE') {
-            navigate('/slowdiary')
-        }
+        type === 'FASTTYPE' ? naviagate('/fastdiary') : navigate('/slowdiary') 
     }
 
     return (
