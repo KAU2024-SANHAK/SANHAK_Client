@@ -1,4 +1,3 @@
-import SvgIcStartButton from "../../../../assets/svg/IcStartButton";
 import * as S from './BtnStart.style'
 import { useNavigate } from 'react-router-dom'
 

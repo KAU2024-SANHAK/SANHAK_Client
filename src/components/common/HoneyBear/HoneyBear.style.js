@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import SvgIcHoneyBear from '../../../assets/svg/IcHoneyBear'
+import { IcHoneyBear } from '../../../assets/svg'
 
-export const HoneyBear=styled(SvgIcHoneyBear)`
+export const HoneyBear=styled(IcHoneyBear)`
     position: fixed;
 `

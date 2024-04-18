@@ -1,4 +1,3 @@
-import OnBoardingProgressbar from "../../OnBoardingProgressBar/OnBoardingPrgoressBar"
 import BtnOnBordingNext from "../../common/buttons/OnBoardingNext/BtnOnBoardingNext"
 import * as S from "../Step.style"
 import Title from "../title/Title";
@@ -10,7 +9,6 @@ export default function Step1(props){
         <S.OnBoardingStepWrapper>
 
             <S.OnBoardingHeader>
-                <OnBoardingProgressbar cur='Step1'/>
                 <S.BtnWrapper onClick={()=>{props.onNxt()}}>
                     <BtnOnBordingNext />
                 </S.BtnWrapper>
