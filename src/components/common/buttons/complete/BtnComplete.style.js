@@ -7,7 +7,7 @@ export const Wrapper = styled.button`
     height: 5rem;
     flex-shrink: 0;
     margin: 1rem;
-    border-radius: 25px;
+    border-radius: 2.5rem;
     border: none;
     letter-spacing: -0.0408rem;
 `
