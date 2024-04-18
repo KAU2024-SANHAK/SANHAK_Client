@@ -20,9 +20,7 @@ export const EmotionViewComponentWrapper = styled.div`
 export const TodayEmotionQ = styled.p`
     ${({ theme }) => theme.fonts.big_title};
     line-height: 120%;
-    // display: flex;
-    // justify-content: center;
-    // 위에처럼 했는데 잘 안되네용..!
+    text-align: center;
 `
 export const EmotionPhoto = styled.div`
     width: 32rem;
