@@ -23,5 +23,6 @@ export const ThirdLayer= styled.div`
 `
 export const HoneyPotWrapper = styled.div`
     padding-left: 0.83rem;
+    padding-top: 0.3rem;
     padding-bottom: 0.3rem;
 `
