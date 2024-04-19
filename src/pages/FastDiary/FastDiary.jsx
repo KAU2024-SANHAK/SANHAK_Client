@@ -56,9 +56,7 @@ export default function FastDiary(){
             </S.HoneyBearWrapper>
 
             <S.FastDiaryHeader>
-                <S.HomeButtonWrapper>
-                    <BtnHome onClick={()=>{opneModal()}}/>                    
-                </S.HomeButtonWrapper>
+                <BtnHome onClick={()=>{opneModal()}}/>                    
                 
                 <DiaryProgress steps = {steps} cur = {currentStep}/>
             </S.FastDiaryHeader>
@@ -67,7 +65,7 @@ export default function FastDiary(){
                 <Funnel>
                     {steps.map((step, idx)=>(
                         <Step key = {idx} name = {step.name}>
-                            <step.component onNxt={()=>{handleNext()}} onPrev={()=>{handlePrev()}}/>
+                            <step.component onNext={()=>{handleNext()}} onPrev={()=>{handlePrev()}}/>
                             <S.ProgressWrapper>
                                 <StepProgress steps= {steps} cur={step.name}/>        
                             </S.ProgressWrapper>
@@ -77,7 +75,6 @@ export default function FastDiary(){
                 </Funnel>
             </S.WritingForm>
 
-            
         </S.FastDairyPageWrapper>
     )
 }
