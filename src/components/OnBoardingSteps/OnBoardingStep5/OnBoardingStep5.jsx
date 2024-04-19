@@ -4,7 +4,7 @@ import Title from "../title/Title";
 import Caption from "../title/Caption";
 import BtnComplete from "../../common/buttons/complete/BtnComplete";
 
-export default function Step5({onNext}){
+export default function OnBoardingStep5({onNext}){
     return (
         <S.OnBoardingStepWrapper>
             

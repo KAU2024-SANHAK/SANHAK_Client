@@ -4,7 +4,7 @@ import Title from "../title/Title";
 import SubTitle from "../title/SubTitle";
 import HoneyBear from "../../common/HoneyBear/HoneyBear";
 
-export default function Step6({onNext}){
+export default function OnBoardingStep6({onNext}){
     return (
         <S.OnBoardingStepWrapper>
             

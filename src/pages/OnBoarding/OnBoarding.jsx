@@ -1,11 +1,11 @@
 import * as S from './OnBoarding.style'
 import { useFunnel } from '../../hooks/common/useFunnel'
-import Step1 from '../../components/OnBoardingSteps/Step1/Step1'
-import Step2 from '../../components/OnBoardingSteps/Step2/Step2'
-import Step3 from '../../components/OnBoardingSteps/Step3/Step3'
-import Step4 from '../../components/OnBoardingSteps/Step4/Step4'
-import Step5 from '../../components/OnBoardingSteps/Step5/Step5'
-import Step6 from '../../components/OnBoardingSteps/Step6/Step6'
+import OnBoardingStep1 from '../../components/OnBoardingSteps/OnBoardingStep1/OnBoardingStep1'
+import OnBoardingStep2 from '../../components/OnBoardingSteps/OnBoardingStep2/OnBoardingStep2'
+import OnBoardingStep3 from '../../components/OnBoardingSteps/OnBoardingStep3/OnBoardingStep3'
+import OnBoardingStep4 from '../../components/OnBoardingSteps/OnBoardingStep4/OnBoardingStep4'
+import OnBoardingStep5 from '../../components/OnBoardingSteps/OnBoardingStep5/OnBoardingStep5'
+import OnBoardingStep6 from '../../components/OnBoardingSteps/OnBoardingStep6/OnBoardingStep6'
 import { useNavigate } from 'react-router-dom'
 import StepProgress from '../../components/common/StepPrgoress/StepProgress'
 
@@ -13,12 +13,12 @@ export default function OnBoarding(){
 
     const navigate = useNavigate();
     const steps = [
-        { name: 'Step1', component: Step1, nextStep: 'Step2' },
-        { name: 'Step2', component: Step2, nextStep: 'Step3' },
-        { name: 'Step3', component: Step3, nextStep: 'Step4' },
-        { name: 'Step4', component: Step4, nextStep: 'Step5' },
-        { name: 'Step5', component: Step5, nextStep: 'Step6' },
-        { name: 'Step6', component: Step6, nextStep: '/main' }
+        { name: 'Step1', component: OnBoardingStep1, nextStep: 'Step2' },
+        { name: 'Step2', component: OnBoardingStep2, nextStep: 'Step3' },
+        { name: 'Step3', component: OnBoardingStep3, nextStep: 'Step4' },
+        { name: 'Step4', component: OnBoardingStep4, nextStep: 'Step5' },
+        { name: 'Step5', component: OnBoardingStep5, nextStep: 'Step6' },
+        { name: 'Step6', component: OnBoardingStep6, nextStep: '/main' }
     ]
     const [Funnel, Step, currentStep, setCurrentStep] = useFunnel("Step1")
     
