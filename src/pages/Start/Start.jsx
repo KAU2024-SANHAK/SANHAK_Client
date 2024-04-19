@@ -1,22 +1,29 @@
 import * as S from './Start.style';
-import { kakaoURL } from '../../utils/login';
 import BtnKakaoLogin from '../../components/common/buttons/KakaoLogin/BtnKakaoLogin';
 import BtnStart from '../../components/common/buttons/Start/BtnStart';
-
-
-const handleLogin=()=>{
-  window.location.href = kakaoURL;
-}
+import HoneyBear from '../../components/common/HoneyBear/HoneyBear';
 
 function Start() {
   
   return (
-    <S.StartWrapper>
-      <h1>시작 페이지 입니다.</h1>
+    <S.StartPageWrapper>
+      
+      <S.TitleWrapper>
+        <S.SubTitle>
+          꿀같은 일상을 담는 일기서비스
+        </S.SubTitle>
+        <S.Title>
+          허니어리
+        </S.Title>
+      </S.TitleWrapper>
 
-      {localStorage.getItem('EXIT_LOGIN_TOKEN') === false ? <BtnKakaoLogin/> : <BtnStart/>}
+      <HoneyBear height='28.9rem' />
 
-    </S.StartWrapper>
+      <S.ButtonField>
+        {localStorage.getItem('EXIT_LOGIN_TOKEN') === false ? <BtnKakaoLogin/> : <BtnStart/>}
+      </S.ButtonField>
+
+    </S.StartPageWrapper>
   );
 }
 
