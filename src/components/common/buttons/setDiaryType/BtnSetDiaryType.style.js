@@ -9,7 +9,7 @@ export const ButtonWrapper = styled.button`
     flex-shrink: 0;
     margin-top: 1.2rem;
     margin-bottom: 1.2rem;
-    border-radius: 25px;
+    border-radius: 2.5rem;
     border: none;
     font-weight: 700;
     letter-spacing: -0.0408rem;
