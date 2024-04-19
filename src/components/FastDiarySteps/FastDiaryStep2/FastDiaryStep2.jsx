@@ -3,7 +3,7 @@ import LargeQuestion from '../Questions/LargeQustion'
 import BtnNext from '../../common/buttons/Next/BtnNext'
 import BtnPrev from '../../common/buttons/Prev/BtnPrev'
 
-export default function FastDiaryStep2({onNext, onPrev}){
+export default function FastDiaryStep2({keywords, setKeywords, onNext, onPrev}){
     return(
         <S.FastDiaryStepWrapper>
             <LargeQuestion>
