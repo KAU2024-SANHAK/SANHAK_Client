@@ -1,4 +1,3 @@
-import React from 'react'
 import * as S from './Modal.style'
 
 export default function Modal({children}){

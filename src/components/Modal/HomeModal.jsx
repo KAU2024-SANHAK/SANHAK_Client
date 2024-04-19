@@ -1,9 +1,10 @@
 import * as S from './Modal.style'
-import Modal from "./Modal"
 import {useNavigate} from 'react-router-dom'
+import Modal from "./Modal"
 import BtnSubmit from '../common/buttons/Submit/BtnSubmit'
-export default function HomeModal(props){
 
+export default function HomeModal(props){
+    
     const navigate = useNavigate();
     const handleGoMain=()=>{
         navigate('/main')
