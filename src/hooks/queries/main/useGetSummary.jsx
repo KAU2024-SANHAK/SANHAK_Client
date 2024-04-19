@@ -3,8 +3,9 @@ import { aiInstance } from "../../../apis/client";
 
 export const SUMMARY_QUERY_KEY = ['summaryData'];
 
-export const fetchSummary = ()=>{
-    aiInstance.get('/api/ai/diary/summary');
+export const fetchSummary = async()=>{
+    const response = await aiInstance.get('/api/ai/diary/summary');
+    return response.data;
 };
 
 export const useGetSummary = ()=>{
