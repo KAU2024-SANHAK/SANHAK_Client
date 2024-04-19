@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { IcHome } from '../../../../assets/svg'
 
-export const Wrapper = styled.button`
+export const ButtonWrapper = styled.button`
     background-color: transparent;
     border: none;
 `

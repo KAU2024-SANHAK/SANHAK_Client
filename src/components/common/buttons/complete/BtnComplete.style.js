@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.button`
+export const ButtonWrapper = styled.button`
     ${({ theme }) => theme.fonts.title};
     background-color: ${({ theme }) => theme.colors.pink.dark_pink};
     width: 31.9rem;
