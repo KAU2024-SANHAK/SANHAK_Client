@@ -1,6 +1,6 @@
-import * as S from './BtnSetDiaryModal.style'
+import * as S from './BtnCurDiaryType.style'
 
-export default function BtnSetDiaryModal({onClick, curType}){
+export default function BtnCurDiaryType({onClick, curType}){
     return(
         <S.ButtonWrapper onClick={()=>{onClick()}}>
             {curType}    

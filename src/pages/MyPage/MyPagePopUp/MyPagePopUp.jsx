@@ -5,7 +5,7 @@ import useLogout from '../../../hooks/queries/member/members/useLogout'
 import BtnLogout from '../../../components/common/buttons/Logout/BtnLogout'
 import BtnComplete from '../../../components/common/buttons/complete/BtnComplete'
 import BtnSetCharacter from '../../../components/common/buttons/SetCharcater/BtnSetCharacter'
-import BtnSetDiaryModal from '../../../components/common/buttons/SetDiaryModal/BtnSetDiaryModal'
+import BtnCurDiaryType from '../../../components/common/buttons/CurDiaryType/BtnCurDiaryType'
 import SetWritingStyle from '../../../components/SetDiaryStyle/SetDiaryStyle'
 
 export default function MyPagePopUp(){
@@ -21,7 +21,7 @@ export default function MyPagePopUp(){
             <S.TextWrapper>일기 작성 스타일</S.TextWrapper>
                 {isClick === false ? 
                 <S.MyPagePopUpBodyWrapper>
-                    <BtnSetDiaryModal onClick={()=>{setIsClick(true)}} curType='빠른 일기'/>
+                    <BtnCurDiaryType onClick={()=>{setIsClick(true)}} curType='빠른 일기'/>
                     <BtnSetCharacter onClick={()=>{handlegoWiki()}}/>
                     <BtnLogout onClick={()=>{useLogout()}}/>
                 </S.MyPagePopUpBodyWrapper>
