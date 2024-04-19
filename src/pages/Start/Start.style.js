@@ -15,6 +15,7 @@ export const TitleWrapper= styled.div`
   width: 28.1rem;
   height: 7rem;
   text-align: left;
+  margin-bottom: 2rem;
 
 `
 export const SubTitle = styled.p`
@@ -24,6 +25,12 @@ export const Title = styled.p`
   ${({ theme }) => theme.fonts.big_title};
   line-height: 3rem;
 `
+export const HoneyBearWrapper = styled.div`
+  position: absaolute;
+  margin-top: 3rem;
+  padding-bottom: 2.5rem;
+`
 export const ButtonField = styled.div`
-  
+  position: absolute;
+  bottom: 8rem;
 `

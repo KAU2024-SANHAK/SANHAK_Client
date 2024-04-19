@@ -23,7 +23,9 @@ function Start() {
         </S.Title>
       </S.TitleWrapper>
 
-      <HoneyBear height='28.9rem' />
+      <S.HoneyBearWrapper>
+        <HoneyBear height='34rem'/>
+      </S.HoneyBearWrapper>
 
       <S.ButtonField>
         {localStorage.getItem('EXIT_LOGIN_TOKEN') === false ? <BtnKakaoLogin/> : 
