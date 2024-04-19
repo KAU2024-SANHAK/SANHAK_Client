@@ -1,5 +1,5 @@
-import BtnOnBordingNext from "../../common/buttons/OnBoardingNext/BtnOnBoardingNext"
 import * as S from "../Step.style"
+import BtnOnBordingNext from "../../common/buttons/OnBoardingNext/BtnOnBoardingNext"
 import Title from "../title/Title";
 import SubTitle from "../title/SubTitle";
 import onBoardingStep2Img from '../../../assets/onBoardingStep2.png'
