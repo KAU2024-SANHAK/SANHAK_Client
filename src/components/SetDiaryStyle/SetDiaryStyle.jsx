@@ -1,29 +1,31 @@
 import * as S from './SetDiaryStyle.style'
-import { useState } from 'react'
+import { useRecoilState } from 'recoil'
+import { DairyTypeState } from '../../recoil/atoms'
 import BtnSetDiaryType from '../common/buttons/setDiaryType/BtnSetDiaryType'
+
 
 const handleSetWritingStyle= ()=>{
     console.log('api 요청하세요')
 }
 
 export default function SetWritingStyle({transparency}){
-    const [type, setType] = useState();
+    const [diaryType,setDiaryType] = useRecoilState(DairyTypeState)
 
     return(
         <S.Wrapper $transparency={transparency}>
 
-                <BtnSetDiaryType isClick = {type === 'Fast' ? true : false}
+                <BtnSetDiaryType isClick = {diaryType === 'Fast' ? true : false}
                     onClick={()=>{
                     handleSetWritingStyle();
-                    setType('Fast')
+                    setDiaryType('Fast')
                     }} >
                     빠른 일기
                 </BtnSetDiaryType>
 
-                <BtnSetDiaryType isClick = {type === 'Slow' ? true : false}
+                <BtnSetDiaryType isClick = {diaryType === 'Slow' ? true : false}
                     onClick={()=>{
                     handleSetWritingStyle();
-                    setType('Slow')
+                    setDiaryType('Slow')
                     }} >
                     느린 일기
                 </BtnSetDiaryType>
