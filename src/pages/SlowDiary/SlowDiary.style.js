@@ -97,7 +97,7 @@ export const Caption =styled.p`
     
     margin-bottom: 0.5rem;
     margin-top: 9rem;
-    margin-left: 1rem;
+    margin-left: 8.5rem;
     
 `
 export const PreviewImg = styled.img`

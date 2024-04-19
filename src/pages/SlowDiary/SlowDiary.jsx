@@ -5,7 +5,6 @@ import BtnHome from '../../components/common/buttons/Home/BtnHome';
 import BtnNext from '../../components/common/buttons/Next/BtnNext';
 import HomeModal from '../../components/Modal/HomeModal';
 
-//
 export default function SlowDiary(){
     const date = new Date();
     const today = date.getDate();
