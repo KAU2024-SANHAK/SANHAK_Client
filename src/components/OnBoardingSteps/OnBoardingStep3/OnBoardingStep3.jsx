@@ -1,4 +1,4 @@
-import * as S from "../Step.style"
+import * as S from "../OnBoardingStep.style"
 import BtnNext from "../../common/buttons/Next/BtnNext"
 import Title from "../title/Title";
 import SubTitle from "../title/SubTitle";
@@ -9,9 +9,9 @@ export default function OnBoardingStep3({onNext}){
         <S.OnBoardingStepWrapper>
 
             <S.OnBoardingHeader>
-                <S.BtnWrapper>
+                <S.ButtonField>
                     <BtnNext onNext={()=>{onNext()}}/>
-                </S.BtnWrapper>
+                </S.ButtonField>
             </S.OnBoardingHeader>
 
             <S.OnBoardingTitleWrapper>

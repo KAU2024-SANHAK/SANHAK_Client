@@ -1,4 +1,4 @@
-import * as S from "../Step.style"
+import * as S from "../OnBoardingStep.style"
 import SetWritingStyle from "../SetWriitingStyle/SetWritingStyle";
 import Title from "../title/Title";
 import Caption from "../title/Caption";
