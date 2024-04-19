@@ -4,7 +4,6 @@ import SmallQuestion from '../Questions/SamllQuestion'
 import BtnNext from '../../common/buttons/Next/BtnNext'
 
 export default function FastDiaryStep1({onNxt}){
-
     return(
         <S.FastDiaryStepWrapper>
             <SmallQuestion>

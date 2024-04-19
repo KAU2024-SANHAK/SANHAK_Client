@@ -3,7 +3,6 @@ import InputCloud from '../../assets/InputCloud.svg'
 
 export const FastDiaryStepWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
-
 `
 export const ButtonField = styled.div`
     display: flex;
@@ -28,7 +27,7 @@ export const InputArea =styled.textarea`
     height: 5rem;
     background-color: transparent;
     border: none;
-    letter-spacing: -0.408px;
+    letter-spacing: -0.0408rem;
 
 `
 export const FastDiaryContentWrapper = styled.div`
