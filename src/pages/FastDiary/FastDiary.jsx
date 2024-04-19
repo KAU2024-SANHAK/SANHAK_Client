@@ -2,6 +2,8 @@ import * as S from './FastDiary.style'
 import { useModal } from '../../hooks/common/useModal';
 import { useFunnel } from '../../hooks/common/useFunnel';
 import { useNavigate } from 'react-router-dom'
+import { useRecoilState } from 'recoil'
+import { fastDiaryKeywords } from '../../recoil/atoms'
 import BtnHome from '../../components/common/buttons/Home/BtnHome';
 import DiaryProgress from '../../components/DiaryProgress/DiaryProgress';
 import HomeModal from '../../components/Modal/HomeModal';
@@ -19,7 +21,9 @@ export default function FastDiary(){
 
     const navigate = useNavigate();
     const [isOpen, opneModal, closeModal] = useModal();
-    const [Funnel, Step, currentStep, setCurrentStep] = useFunnel("DiaryStep1")
+    const [Funnel, Step, currentStep, setCurrentStep] = useFunnel("DiaryStep1");
+    const [keywords, setKeywords] = useRecoilState(fastDiaryKeywords);
+
 
     const steps = [
         { name: 'DiaryStep1', component: FastDiaryStep1, nextStep: 'DiaryStep2' },
@@ -65,7 +69,7 @@ export default function FastDiary(){
                 <Funnel>
                     {steps.map((step, idx)=>(
                         <Step key = {idx} name = {step.name}>
-                            <step.component onNext={()=>{handleNext()}} onPrev={()=>{handlePrev()}}/>
+                            <step.component keywords={keywords} setKeywords={setKeywords} onNext={()=>{handleNext()}} onPrev={()=>{handlePrev()}}/>
                             <S.ProgressWrapper>
                                 <StepProgress steps= {steps} cur={step.name}/>        
                             </S.ProgressWrapper>

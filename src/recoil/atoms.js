@@ -5,7 +5,7 @@ import { atom } from "recoil";
 
 //   default: {},
 // });
-export const FastDiaryKeywords = atom({
+export const fastDiaryKeywords = atom({
     key: "fastDiaryKeywords",
     default:{
         feeling: '',
@@ -14,6 +14,6 @@ export const FastDiaryKeywords = atom({
         when: '',
         where: '',
         realized: ''
-    }
+    },
 
 })
