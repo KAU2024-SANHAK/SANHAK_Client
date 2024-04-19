@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { authInstance } from "../../../../apis/client";
+import { authInstance } from "../../apis/client";
 import { useEffect } from "react";
 
 const useLogin= async () => {

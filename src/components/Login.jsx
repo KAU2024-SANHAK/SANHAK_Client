@@ -1,4 +1,4 @@
-import useLogin from "../hooks/queries/member/members/useLogin";
+import useLogin from "../hooks/auth/useLogin";
 
 export default function Login(){
     useLogin();
