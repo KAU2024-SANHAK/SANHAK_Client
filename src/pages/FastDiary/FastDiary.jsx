@@ -3,7 +3,7 @@ import { useModal } from '../../hooks/common/useModal';
 import { useFunnel } from '../../hooks/common/useFunnel';
 import { useNavigate } from 'react-router-dom'
 import BtnHome from '../../components/common/buttons/Home/BtnHome';
-import DiaryPrgoress from '../../components/DiaryProgress/DiaryProgress';
+import DiaryProgress from '../../components/DiaryProgress/DiaryProgress';
 import HomeModal from '../../components/Modal/HomeModal';
 import StepProgress from '../../components/common/StepPrgoress/StepProgress';
 import FastDiaryStep1 from '../../components/FastDiarySteps/FastDiaryStep1/FastDiaryStep1'
@@ -60,7 +60,7 @@ export default function FastDiary(){
                     <BtnHome onClick={()=>{opneModal()}}/>                    
                 </S.HomeButtonWrapper>
                 
-                <DiaryPrgoress steps = {steps} cur = {currentStep}/>
+                <DiaryProgress steps = {steps} cur = {currentStep}/>
             </S.FastDiaryHeader>
             
             <S.WritingForm>
