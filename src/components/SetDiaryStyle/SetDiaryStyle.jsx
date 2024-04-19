@@ -14,18 +14,18 @@ export default function SetWritingStyle({transparency}){
     return(
         <S.Wrapper $transparency={transparency}>
 
-                <BtnSetDiaryType isClick = {diaryType === 'Fast' ? true : false}
+                <BtnSetDiaryType isClick = {diaryType === 'FASTTYPE' ? true : false}
                     onClick={()=>{
                     handleSetWritingStyle();
-                    setDiaryType('Fast')
+                    setDiaryType('FASTTYPE')
                     }} >
                     빠른 일기
                 </BtnSetDiaryType>
 
-                <BtnSetDiaryType isClick = {diaryType === 'Slow' ? true : false}
+                <BtnSetDiaryType isClick = {diaryType === 'SLOWTYPE' ? true : false}
                     onClick={()=>{
                     handleSetWritingStyle();
-                    setDiaryType('Slow')
+                    setDiaryType('SLOWTYPE')
                     }} >
                     느린 일기
                 </BtnSetDiaryType>
