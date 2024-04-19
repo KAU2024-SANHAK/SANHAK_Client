@@ -9,8 +9,8 @@ export default function FeelingHive(){
     return(
         <S.FeelingHiveWrapper>
             <S.FirstLayer>
-                <BtnDiaryFeeling feeling = {feeling} setFeeling = {setFeeling} color = 'theme.colors.feeling.happy_yellow' text = '놀람'/>
-                <BtnDiaryFeeling feeling = {feeling} setFeeling = {setFeeling} color = '${({ theme }) => theme.colors.feeling.happy_yellow};' text = '평온'/>
+                <BtnDiaryFeeling feeling = {feeling} setFeeling = {setFeeling} color = '#FFCA99' text = '놀람'/>
+                <BtnDiaryFeeling feeling = {feeling} setFeeling = {setFeeling} color = '#B9FFB3' text = '평온'/>
             </S.FirstLayer>
 
             <S.SecondLayer>
