@@ -14,7 +14,6 @@ export const SlowDiaryHeader = styled.div`
     width:100%;
     display: flex;
     position: relative;
-    left: 3rem;
     top: 0;
 `
 export const FormWrapper = styled.form`
