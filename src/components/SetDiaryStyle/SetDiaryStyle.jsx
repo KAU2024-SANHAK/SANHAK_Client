@@ -1,6 +1,6 @@
 import * as S from './SetDiaryStyle.style'
 import { useRecoilState } from 'recoil'
-import { DairyTypeState } from '../../recoil/atoms'
+import { UserDiaryType } from '../../recoil/atoms'
 import BtnSetDiaryType from '../common/buttons/setDiaryType/BtnSetDiaryType'
 
 
@@ -9,7 +9,7 @@ const handleSetWritingStyle= ()=>{
 }
 
 export default function SetWritingStyle({transparency}){
-    const [diaryType,setDiaryType] = useRecoilState(DairyTypeState)
+    const [diaryType,setDiaryType] = useRecoilState(UserDiaryType)
 
     return(
         <S.Wrapper $transparency={transparency}>

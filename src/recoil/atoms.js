@@ -1,6 +1,6 @@
  import { atom } from "recoil";
 
-export const DairyTypeState = atom({
+export const UserDiaryType = atom({
    key: 'userDiaryType',
    default: '',
 });
