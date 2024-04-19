@@ -1,10 +1,16 @@
 import * as S from './Start.style';
 import BtnKakaoLogin from '../../components/common/buttons/KakaoLogin/BtnKakaoLogin';
-import BtnStart from '../../components/common/buttons/Start/BtnStart';
+import BtnComplete from '../../components/common/buttons/complete/BtnComplete'
 import HoneyBear from '../../components/common/HoneyBear/HoneyBear';
+import { useNavigate } from 'react-router-dom';
 
 function Start() {
-  
+  const navigate = useNavigate();
+
+  const handleStartButton=()=>{
+    navigate('/main')
+  }
+
   return (
     <S.StartPageWrapper>
       
@@ -20,7 +26,11 @@ function Start() {
       <HoneyBear height='28.9rem' />
 
       <S.ButtonField>
-        {localStorage.getItem('EXIT_LOGIN_TOKEN') === false ? <BtnKakaoLogin/> : <BtnStart/>}
+        {localStorage.getItem('EXIT_LOGIN_TOKEN') === false ? <BtnKakaoLogin/> : 
+        <BtnComplete>
+          허니어리 시작하기  
+        </BtnComplete>
+        }
       </S.ButtonField>
 
     </S.StartPageWrapper>
