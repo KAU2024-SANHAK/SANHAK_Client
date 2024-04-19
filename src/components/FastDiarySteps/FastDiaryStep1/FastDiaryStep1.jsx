@@ -3,7 +3,7 @@ import FeelingHive from '../FeelingHive/FeelingHive'
 import SmallQuestion from '../Questions/SamllQuestion'
 import BtnNext from '../../common/buttons/Next/BtnNext'
 
-export default function FastDiaryStep1({onNxt}){
+export default function FastDiaryStep1({onNext}){
     return(
         <S.FastDiaryStepWrapper>
             <SmallQuestion>
@@ -13,7 +13,7 @@ export default function FastDiaryStep1({onNxt}){
             <FeelingHive/>
             
             <S.ButtonField>
-                <BtnNext onNxt={onNxt}/>
+                <BtnNext onNext={onNext}/>
             </S.ButtonField>
         </S.FastDiaryStepWrapper>
     )

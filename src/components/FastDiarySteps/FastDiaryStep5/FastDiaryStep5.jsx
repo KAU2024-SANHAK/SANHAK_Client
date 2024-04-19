@@ -3,7 +3,7 @@ import LargeQuestion from '../Questions/LargeQustion'
 import BtnNext from '../../common/buttons/Next/BtnNext'
 import BtnPrev from '../../common/buttons/Prev/BtnPrev'
 
-export default function FastDiaryStep5({onNxt, onPrev}){
+export default function FastDiaryStep5({onNext, onPrev}){
     return(
         <S.FastDiaryStepWrapper>
             <LargeQuestion>
@@ -17,7 +17,7 @@ export default function FastDiaryStep5({onNxt, onPrev}){
 
             <S.ButtonField>
                 <BtnPrev onPrev={onPrev}/>
-                <BtnNext onNxt={onNxt}/>
+                <BtnNext onNext={onNext}/>
             </S.ButtonField>
         </S.FastDiaryStepWrapper>
 
