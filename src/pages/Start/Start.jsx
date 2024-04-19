@@ -8,7 +8,7 @@ function Start() {
   const navigate = useNavigate();
 
   const handleStartButton=()=>{
-    navigate('/main')
+    localStorage.getItem('FIRST_LOGIN') === true ? navigate('/onboarding') : navigate('/main')
   }
 
   return (
@@ -27,7 +27,7 @@ function Start() {
 
       <S.ButtonField>
         {localStorage.getItem('EXIT_LOGIN_TOKEN') === false ? <BtnKakaoLogin/> : 
-        <BtnComplete>
+        <BtnComplete onClick={()=>{handleStartButton()}}>
           허니어리 시작하기  
         </BtnComplete>
         }
