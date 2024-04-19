@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom'
 import Modal from "./Modal"
 import BtnSubmit from '../common/buttons/Submit/BtnSubmit'
 
-export default function HomeModal(props){
+export default function HomeModal({closeModal}){
     
     const navigate = useNavigate();
     const handleGoMain=()=>{
@@ -11,7 +11,7 @@ export default function HomeModal(props){
     }
 
     const handleSetState=()=>{
-        props.closeModal();
+        closeModal();
     }
 
     return(
