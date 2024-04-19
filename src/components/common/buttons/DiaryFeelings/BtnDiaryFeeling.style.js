@@ -7,6 +7,7 @@ export const DiaryFeelingButtonWrapper = styled.button`
     width: 9.6rem;
     background-color: transparent;
     border: none;
+    padding-top: 1rem;
     padding-left: 2rem;
     text-align: center;
     font-weight: 700;
@@ -14,6 +15,7 @@ export const DiaryFeelingButtonWrapper = styled.button`
 `
 export const DiaryFeelingButton = styled(IcDiaryFeeling)`
     display: flex;
+    fill: ${({ theme }) => theme.colors.normal.white};
 `
 export const FeelingText=styled.p`
     position: absolute;
