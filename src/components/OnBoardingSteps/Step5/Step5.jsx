@@ -4,7 +4,7 @@ import Title from "../title/Title";
 import Caption from "../title/Caption";
 import BtnComplete from "../../common/buttons/complete/BtnComplete";
 
-export default function Step5(props){
+export default function Step5({onNext}){
     return (
         <S.OnBoardingStepWrapper>
             
@@ -24,7 +24,7 @@ export default function Step5(props){
 
             <S.OnBoardingFooter>
                 <Caption>일기 작성 페이지는 마이페이지에서 수정 가능합니다.</Caption>
-                <BtnComplete onClick={props.onNxt}>
+                <BtnComplete onClick={()=>{onNext()}}>
                     선택 완료
                 </BtnComplete>
             </S.OnBoardingFooter>
