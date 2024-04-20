@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const CreatedDiaryWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     width: 100%;
-    height: 100vh;
+    height: 300vh;
     background: rgba(255, 255, 255, 0.50);
     backdrop-filter: blur(15px);
 `
@@ -31,8 +31,7 @@ export const DiaryTopTextWrapper = styled.div`
 
 `
 export const DiaryTitle = styled.p`
-    ${({ theme }) => theme.fonts.heading_01};
-    // heading_02로 하면 엄청 작아져요..! 무슨 문제가 있나봐요!
+    ${({ theme }) => theme.fonts.heading_03};
 `
 export const DiaryDate = styled.p`
     margin-right: 22.7rem;
@@ -59,7 +58,6 @@ export const DiaryText = styled.p`
     display: flex;
     width: 27rem;
     margin-left: 2.5rem;
-    // 이 코드가 왜 안먹는지..
     margin-top: 4rem;
     margin-bottom: 4rem;    
 `
