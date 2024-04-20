@@ -5,9 +5,11 @@ import PopUp from '../../components/PopUp/PopUp'
 export default function DiaryView(){
     return(
         <S.DiaryViewPageWrapper>
-            <CreatedDiary/>
-            {/* <PopUp name={'꿀비의 답장'}>
-            </PopUp> */}
+            <S.DiaryViewFilter>
+                <CreatedDiary/>
+                {/* <PopUp name={'꿀비의 답장'}>
+                </PopUp> */}
+            </S.DiaryViewFilter>
         </S.DiaryViewPageWrapper>
     )
 }

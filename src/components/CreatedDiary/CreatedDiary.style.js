@@ -3,9 +3,13 @@ import styled from 'styled-components';
 export const CreatedDiaryWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     width: 100%;
-    height: 300vh;
-    background: rgba(255, 255, 255, 0.50);
-    backdrop-filter: blur(15px);
+    height: 100vh;
+    // background: rgba(255, 255, 255, 0.50);
+    // backdrop-filter: blur(15px);
+`
+export const CreatComponentWrapper = styled.div`
+    width: 100%;
+
 `
 export const BtnHomeWrapper = styled.div`
     position: absolute;
