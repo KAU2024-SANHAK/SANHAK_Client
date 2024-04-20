@@ -1,9 +1,13 @@
-//이런 식으로 작성
+import { atom } from "recoil";
+import { recoilPersist } from "recoil-persist";
 
-//import { atom } from "recoil";
+const { persistAtom } =recoilPersist({
+   key: 'localstorage',
+   storage: localStorage,
+})
 
-// export const HoneyState = atom({
-//   key: "honey",
-
-//   default: {},
-// });
+export const UserDiaryType = atom({
+   key: 'userDiaryType',
+   default: '',
+   effects_UNSTABLE: [persistAtom]
+});
