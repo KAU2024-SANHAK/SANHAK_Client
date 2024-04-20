@@ -1,10 +1,17 @@
 import { atom } from "recoil";
+import { recoilPersist } from "recoil-persist";
 
-// export const HoneyState = atom({
-//   key: "honey",
+const { persistAtom } =recoilPersist({
+   key: 'localstorage',
+   storage: localStorage,
+})
 
-//   default: {},
-// });
+export const UserDiaryType = atom({
+   key: 'userDiaryType',
+   default: '',
+   effects_UNSTABLE: [persistAtom]
+});
+
 export const fastDiaryKeywords = atom({
     key: "fastDiaryKeywords",
     default:{

@@ -16,6 +16,7 @@ export const OnBoardingBody = styled.div`
     width: 100%;
     text-align: left;
     height: 64%;
+    padding-top: 6.5rem;
 `
 export const OnBoardingFooter = styled.footer`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};

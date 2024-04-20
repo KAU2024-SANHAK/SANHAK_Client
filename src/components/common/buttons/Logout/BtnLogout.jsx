@@ -1,8 +1,8 @@
 import * as S from './BtnLogout.style'
 
-export default function BtnLogout(){
+export default function BtnLogout({onClick}){
     return(
-        <S.ButtonWrapper>
+        <S.ButtonWrapper onClick={()=>{onClick()}}>
             로그아웃
         </S.ButtonWrapper>
     )
