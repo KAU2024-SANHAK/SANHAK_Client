@@ -1,10 +1,5 @@
-<<<<<<< HEAD:src/components/OnBoardingSteps/OnBoardingStep5/OnBoardingStep5.jsx
 import * as S from "../OnBoardingStep.style"
-import SetWritingStyle from "../SetWriitingStyle/SetWritingStyle";
-=======
-import * as S from "../Step.style"
-import SetWritingStyle from "../../SetDiaryStyle/SetDiaryStyle";
->>>>>>> develop:src/components/OnBoardingSteps/Step5/Step5.jsx
+import SetDiaryStyle from "../../SetDiaryStyle/SetDiaryStyle";
 import Title from "../title/Title";
 import Caption from "../title/Caption";
 import BtnComplete from "../../common/buttons/complete/BtnComplete";
@@ -21,7 +16,7 @@ export default function OnBoardingStep5({onNext}){
             </S.OnBoardingTitleWrapper>
 
             <S.OnBoardingBody>
-                <SetWritingStyle transparency='0.24'/>
+                <SetDiaryStyle transparency='0.24'/>
                 <Caption>'빠른 일기'는 간단한 6가지 질문을 통해 사용자의 하루를 파악하고</Caption>
                 <Caption>생성형 AI를 통해 글과 사진이 포함된 일기를 작성합니다.</Caption>
                 <Caption>'느린 일기'는 사용자가 직접 글을 작성하고 사진을 첨부합니다.</Caption>
