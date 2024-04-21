@@ -22,5 +22,5 @@ export const fastDiaryKeywords = atom({
         where: '',
         realized: ''
     },
-
+    effects_UNSTABLE: [persistAtom]
 })
