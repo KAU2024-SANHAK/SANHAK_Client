@@ -2,7 +2,7 @@ import * as S from './Modal.style'
 import Modal from './Modal'
 import BtnSubmit from '../common/buttons/Submit/BtnSubmit'
 
-export default function DiaryErrorModal(){
+export default function DiaryErrorModal({closeModal}){
     return(
         <Modal>
             <S.Content>
@@ -10,7 +10,7 @@ export default function DiaryErrorModal(){
                 답변을 토대로 AI일기가 생성됩니다.
             </S.Content>
             <S.ButtonField>
-                <BtnSubmit width='27.2rem' $color={({ theme }) => theme.colors.pink.red_pink}>
+                <BtnSubmit onClick={()=>{closeModal()}}width='27.2rem' $color={({ theme }) => theme.colors.pink.red_pink}>
                     돌아가기
                 </BtnSubmit>
             </S.ButtonField>

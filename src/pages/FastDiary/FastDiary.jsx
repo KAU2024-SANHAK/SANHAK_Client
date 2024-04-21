@@ -20,7 +20,7 @@ export default function FastDiary(){
     const today = date.getDate();
 
     const navigate = useNavigate();
-    const [isOpen, opneModal, closeModal] = useModal();
+    const [isOpen, openModal, closeModal] = useModal();
     const [Funnel, Step, currentStep, setCurrentStep] = useFunnel("DiaryStep1");
     const [keywords, setKeywords] = useRecoilState(fastDiaryKeywords);
 
@@ -60,7 +60,7 @@ export default function FastDiary(){
             </S.HoneyBearWrapper>
 
             <S.FastDiaryHeader>
-                <BtnHome onClick={()=>{opneModal()}}/>                    
+                <BtnHome onClick={()=>{openModal()}}/>                    
                 
                 <DiaryProgress steps = {steps} cur = {currentStep}/>
             </S.FastDiaryHeader>

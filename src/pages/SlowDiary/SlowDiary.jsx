@@ -10,7 +10,7 @@ export default function SlowDiary(){
     const date = new Date();
     const today = date.getDate();
     const navigate = useNavigate();
-    const [isOpen, opneModal, closeModal] = useModal();
+    const [isOpen, openModal, closeModal] = useModal();
 
     const [data, setData] = useState({
         imageUrl: '',
@@ -47,7 +47,7 @@ export default function SlowDiary(){
             {isOpen && <HomeModal closeModal = {closeModal}/>}
 
             <S.SlowDiaryHeader>
-                <BtnHome onClick={()=>{opneModal()}}/>       
+                <BtnHome onClick={()=>{openModal()}}/>       
                 <S.Caption>
                 사진을 첨부하려면 + 버튼을 누르세요.
                 </S.Caption>

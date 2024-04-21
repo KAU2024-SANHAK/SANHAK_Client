@@ -8,7 +8,7 @@ import DiaryErrorModal from '../../Modal/DiaryErrorModal'
 
 export default function FastDiaryStep6({keywords, setKeywords, onNext, onPrev}){
     const [realized, setRealized] = useState(keywords.realized);
-    const [isOpen, opneModal, closeModal] = useModal();
+    const [isOpen, openModal, closeModal] = useModal();
 
     const handleChange = (event)=>{
         setRealized(event.target.value)
@@ -26,7 +26,7 @@ export default function FastDiaryStep6({keywords, setKeywords, onNext, onPrev}){
     }
 
     const onClickSubmit = ()=>{
-        opneModal()
+        openModal()
      /*   checkNull()
         setKeywords({...keywords, realized: realized})
         onNext()*/
@@ -34,7 +34,7 @@ export default function FastDiaryStep6({keywords, setKeywords, onNext, onPrev}){
 
     return(
         <S.FastDiaryStepWrapper>
-            {isOpen && <DiaryErrorModal />}
+            {isOpen && <DiaryErrorModal closeModal={closeModal}/>}
             <LargeQuestion>
                 하루를 돌아보면서<br/>
                 느꼈던 것들이 있다면 말해줄래?
