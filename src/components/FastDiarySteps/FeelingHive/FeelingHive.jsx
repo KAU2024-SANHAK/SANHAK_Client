@@ -3,7 +3,6 @@ import { IcHoneyPot } from '../../../assets/svg'
 import BtnDiaryFeeling from '../../common/buttons/DiaryFeelings/BtnDiaryFeeling'
 
 export default function FeelingHive({keywords, setKeywords}){
-    //const [keywords, setKeywords] = useRecoilState(fastDiaryKeywords)
     console.log(keywords)
     return(
         <S.FeelingHiveWrapper>

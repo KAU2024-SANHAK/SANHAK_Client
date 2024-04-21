@@ -1,9 +1,22 @@
 import * as S from '../FastDiaryStep.style'
+import { useState } from 'react'
 import LargeQuestion from '../Questions/LargeQustion'
 import BtnNext from '../../common/buttons/Next/BtnNext'
 import BtnPrev from '../../common/buttons/Prev/BtnPrev'
 
 export default function FastDiaryStep6({keywords, setKeywords, onNext, onPrev}){
+    const [realized, setRealized] = useState(keywords.realized);
+
+    const handleChange = (event)=>{
+        setRealized(event.target.value)
+        console.log(keywords)
+    }
+
+    const onClickSubmit = ()=>{
+        onNext()
+        setKeywords({...keywords, realized: realized})
+    }
+
     return(
         <S.FastDiaryStepWrapper>
             <LargeQuestion>
@@ -12,12 +25,12 @@ export default function FastDiaryStep6({keywords, setKeywords, onNext, onPrev}){
             </LargeQuestion>
             
             <S.FastDiaryTextAreaWrapper>
-                <S.InputArea placeholder='짧은 글로 작성해주거나 키워드를 입력해줘!'/>
+                <S.InputArea type='text' placeholder='짧은 글로 작성해주거나 키워드를 입력해줘!' value={realized} onChange={handleChange}/>
             </S.FastDiaryTextAreaWrapper>
 
             <S.ButtonField>
                 <BtnPrev onPrev={onPrev}/>
-                <BtnNext onNext={onNext}/>
+                <BtnNext onNext={()=>{onClickSubmit()}}/>
             </S.ButtonField>
         </S.FastDiaryStepWrapper>
 
