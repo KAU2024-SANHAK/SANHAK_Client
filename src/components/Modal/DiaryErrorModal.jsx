@@ -10,7 +10,7 @@ export default function DiaryErrorModal(){
                 답변을 토대로 AI일기가 생성됩니다.
             </S.Content>
             <S.ButtonField>
-                <BtnSubmit height='5.6rem' $color={({ theme }) => theme.colors.pink.red_pink}>
+                <BtnSubmit width='27.2rem' $color={({ theme }) => theme.colors.pink.red_pink}>
                     돌아가기
                 </BtnSubmit>
             </S.ButtonField>

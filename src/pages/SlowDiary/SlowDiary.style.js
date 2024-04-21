@@ -81,15 +81,6 @@ export const BtnField = styled.div`
     padding-right: 2.8rem;
 
 `
-export const BtnSubmit= styled.button`
-    background: ${({ theme }) => theme.colors.normal.white};
-    width: 6rem;
-    height: 6rem;
-    flex-shrink: 0;
-    border-radius: 3rem;
-    margin-top: 1.8rem;
-    margin-right: 2.5rem;
-`
 export const Caption =styled.p`
     ${({ theme }) => theme.fonts.body_10};
     color: ${({ theme }) => theme.colors.gray.text_gray};
