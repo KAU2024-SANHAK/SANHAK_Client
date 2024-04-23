@@ -1,6 +1,7 @@
 import * as S from './FeelingHive.style'
 import { IcHoneyPot } from '../../../assets/svg'
 import BtnDiaryFeeling from '../../common/buttons/DiaryFeelings/BtnDiaryFeeling'
+import BtnHoneyPot from '../../common/buttons/HoneyPot/BtnHoneyPot'
 
 export default function FeelingHive({keywords, setKeywords}){
     console.log(keywords)
@@ -14,7 +15,7 @@ export default function FeelingHive({keywords, setKeywords}){
             <S.SecondLayer>
                 <BtnDiaryFeeling keywords = {keywords} setKeywords = {setKeywords} color = '#FFF1A8' text = '기쁨' value ='HAPPY'/>
                 <S.HoneyPotWrapper>
-                    <IcHoneyPot/>
+                    <BtnHoneyPot/>
                 </S.HoneyPotWrapper>
                 <BtnDiaryFeeling keywords = {keywords} setKeywords = {setKeywords} color = '#C3C9FF' text = '걱정' value ='WORRIED'/>
             </S.SecondLayer>
