@@ -23,4 +23,40 @@ export const fastDiaryKeywords = atom({
         realized: ''
     },
     effects_UNSTABLE: [persistAtom]
-})
+});
+
+export const feeling = atom({
+    key: "feeling",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const whoKeyword = atom({
+    key: "who",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const whenKeyword = atom({
+    key: "when",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const whereKeyword = atom({
+    key: "where",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const whatKeyword = atom({
+    key: "what",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const realizedKeyword = atom({
+    key: "realized",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
