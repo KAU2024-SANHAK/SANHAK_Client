@@ -1,7 +1,7 @@
 import { aiInstance } from "../../../apis/client"
 import { useSuspenseQuery } from '@tanstack/react-query';
 
-export const SLOW_DIARY_ID_KEY = ['slowDiaryId']
+export const DIARY_ADVICE_KEY = ['diaryAdvice']
 
 export const postAdvice = async (body) => {
     const response =  await aiInstance.post('/api/ai/advice/content', body);
