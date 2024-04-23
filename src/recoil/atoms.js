@@ -11,7 +11,7 @@ export const UserDiaryType = atom({
    default: '',
    effects_UNSTABLE: [persistAtom]
 });
-
+/*
 export const fastDiaryKeywords = atom({
     key: "fastDiaryKeywords",
     default:{
@@ -23,9 +23,9 @@ export const fastDiaryKeywords = atom({
         realized: ''
     },
     effects_UNSTABLE: [persistAtom]
-});
+});*/
 
-export const feeling = atom({
+export const feelingKeyword = atom({
     key: "feeling",
     default:'',
     effects_UNSTABLE: [persistAtom]

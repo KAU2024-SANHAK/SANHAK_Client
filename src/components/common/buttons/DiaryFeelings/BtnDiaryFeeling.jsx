@@ -1,10 +1,10 @@
 import * as S from './BtnDiaryFeeling.style'
 
-export default function BtnDiaryFeeling({keywords, setKeywords, color, text, value}){
+export default function BtnDiaryFeeling({feeling, setFeeling, color, text, value}){
     return(
-        <S.DiaryFeelingButtonWrapper type='button' onClick={()=>{ setKeywords(prevFeeling => ({ ...prevFeeling, feeling: value }))  }}>
+        <S.DiaryFeelingButtonWrapper type='button' onClick={()=>{setFeeling(value)}}>
             <S.FeelingText>{text}</S.FeelingText>
-            <S.DiaryFeelingButton color={keywords.feeling === value ? color : 'white'}  />
+            <S.DiaryFeelingButton color={feeling === value ? color : 'white'}  />
         </S.DiaryFeelingButtonWrapper>
 
     )
