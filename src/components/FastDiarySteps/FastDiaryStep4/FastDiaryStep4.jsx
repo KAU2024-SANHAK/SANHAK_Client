@@ -1,20 +1,15 @@
 import * as S from '../FastDiaryStep.style'
-import { useState } from 'react'
+import { useRecoilState } from 'recoil'
+import { whereKeyword } from '../../../recoil/atoms'
 import LargeQuestion from '../Questions/LargeQustion'
 import BtnNext from '../../common/buttons/Next/BtnNext'
 import BtnPrev from '../../common/buttons/Prev/BtnPrev'
 
-export default function FastDiaryStep4({keywords, setKeywords, onNext, onPrev}){
-    const [where, setWhere] = useState(keywords.where);
+export default function FastDiaryStep4({onNext, onPrev}){
+    const [where, setWhere] = useRecoilState(whereKeyword);
 
     const handleChange = (event)=>{
         setWhere(event.target.value)
-        console.log(keywords)
-    }
-
-    const onClickWhere = ()=>{
-        onNext()
-        setKeywords({...keywords, where: where})
     }
 
     return(
@@ -30,7 +25,7 @@ export default function FastDiaryStep4({keywords, setKeywords, onNext, onPrev}){
 
             <S.ButtonField>
                 <BtnPrev onPrev={onPrev}/>
-                <BtnNext onNext={()=>{onClickWhere()}}/>
+                <BtnNext onNext={()=>{onNext()}}/>
             </S.ButtonField>
         </S.FastDiaryStepWrapper>
     )

@@ -1,13 +1,14 @@
 import * as S from '../FastDiaryStep.style'
-import { useState } from 'react'
+import { useRecoilState } from 'recoil'
+import { realizedKeyword } from '../../../recoil/atoms'
 import { useModal } from '../../../hooks/common/useModal'
 import LargeQuestion from '../Questions/LargeQustion'
 import BtnNext from '../../common/buttons/Next/BtnNext'
 import BtnPrev from '../../common/buttons/Prev/BtnPrev'
 import DiaryErrorModal from '../../Modal/DiaryErrorModal'
 
-export default function FastDiaryStep6({keywords, setKeywords, onNext, onPrev}){
-    const [realized, setRealized] = useState(keywords.realized);
+export default function FastDiaryStep6({onNext, onPrev}){
+    const [realized, setRealized] = useRecoilState(realizedKeyword);
     const [isOpen, openModal, closeModal] = useModal();
 
     const handleChange = (event)=>{
@@ -46,7 +47,7 @@ export default function FastDiaryStep6({keywords, setKeywords, onNext, onPrev}){
 
             <S.ButtonField>
                 <BtnPrev onPrev={onPrev}/>
-                <BtnNext onNext={()=>{onClickSubmit()}}/>
+                <BtnNext onNext={()=>{onNext()}}/>
             </S.ButtonField>
         </S.FastDiaryStepWrapper>
 

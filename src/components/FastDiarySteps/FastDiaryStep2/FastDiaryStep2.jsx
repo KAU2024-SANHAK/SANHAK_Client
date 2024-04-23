@@ -1,20 +1,15 @@
 import * as S from '../FastDiaryStep.style'
-import { useState } from 'react'
+import { useRecoilState } from 'recoil'
+import { whoKeyword } from '../../../recoil/atoms'
 import LargeQuestion from '../Questions/LargeQustion'
 import BtnNext from '../../common/buttons/Next/BtnNext'
 import BtnPrev from '../../common/buttons/Prev/BtnPrev'
 
 export default function FastDiaryStep2({onNext, onPrev}){
-    const [who, setWho] = useState(keywords.who);
+    const [who, setWho] = useRecoilState(whoKeyword);
 
     const handleChange = (event)=>{
-        setKeywords({...keywords, who: event.target.value})
-        console.log(keywords)
-    }
-
-    const onClickWho = ()=>{
-        onNext()
-        setKeywords({...keywords, who: who})
+        setWho(event.target.value)
     }
 
     return(
@@ -25,12 +20,12 @@ export default function FastDiaryStep2({onNext, onPrev}){
             </LargeQuestion>
                 
             <S.FastDiaryTextAreaWrapper>
-                <S.InputArea type = 'text' placeholder='짧은 글로 작성해주거나 키워드를 입력해줘!' value={keywords.who} onChange={handleChange}/>
+                <S.InputArea type = 'text' placeholder='짧은 글로 작성해주거나 키워드를 입력해줘!' value={who} onChange={handleChange}/>
             </S.FastDiaryTextAreaWrapper>
 
             <S.ButtonField>
                 <BtnPrev onPrev={onPrev}/>
-                <BtnNext onNext={()=>{onClickWho()}}/>
+                <BtnNext onNext={()=>{onNext()}}/>
             </S.ButtonField>
         </S.FastDiaryStepWrapper>
 

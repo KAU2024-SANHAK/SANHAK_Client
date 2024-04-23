@@ -1,8 +1,8 @@
 import * as S from './FeelingHive.style'
-import BtnDiaryFeeling from '../../common/buttons/DiaryFeelings/BtnDiaryFeeling'
-import BtnHoneyPot from '../../common/buttons/HoneyPot/BtnHoneyPot'
 import { useRecoilState } from 'recoil'
 import { feelingKeyword } from '../../../recoil/atoms'
+import BtnDiaryFeeling from '../../common/buttons/DiaryFeelings/BtnDiaryFeeling'
+import BtnHoneyPot from '../../common/buttons/HoneyPot/BtnHoneyPot'
 
 export default function FeelingHive(){
     const [feeling, setFeeling] = useRecoilState(feelingKeyword)
