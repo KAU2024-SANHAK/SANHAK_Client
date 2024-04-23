@@ -12,6 +12,7 @@ export const Overlay = styled.div`
 
 export const ModalWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
+    background-color: ${({ theme }) => theme.colors.normal.white};
     width: 36rem;
     height: 18.5rem;
     z-index: 9999;
@@ -20,7 +21,6 @@ export const ModalWrapper = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 1rem;
-    background-color: white;
     justify-content: center;
     overflow: auto;
 `
