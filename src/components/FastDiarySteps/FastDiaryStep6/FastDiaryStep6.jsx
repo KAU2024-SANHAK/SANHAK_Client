@@ -1,6 +1,6 @@
 import * as S from '../FastDiaryStep.style'
 import { useRecoilState } from 'recoil'
-import { realizedKeyword } from '../../../recoil/atoms'
+import { feelingKeyword, whenKeyword, whereKeyword, whoKeyword, whatKeyword, realizedKeyword } from '../../../recoil/atoms'
 import { useModal } from '../../../hooks/common/useModal'
 import LargeQuestion from '../Questions/LargeQustion'
 import BtnNext from '../../common/buttons/Next/BtnNext'
@@ -15,16 +15,16 @@ export default function FastDiaryStep6({onNext, onPrev}){
         setRealized(event.target.value)
         console.log(keywords)
     }
-
+/*
     const checkNull = ()=>{
-        const values = Object.values(keywords);
+     //   const values = Object.values(keywords);
         values.forEach(value =>{
             if(value === ''){
                 console.log('no!')
                 
             }
         })
-    }
+    }*/
 
     const onClickSubmit = ()=>{
         openModal()
@@ -47,7 +47,7 @@ export default function FastDiaryStep6({onNext, onPrev}){
 
             <S.ButtonField>
                 <BtnPrev onPrev={onPrev}/>
-                <BtnNext onNext={()=>{onNext()}}/>
+                <BtnNext onNext={()=>{onClickSubmit()}}/>
             </S.ButtonField>
         </S.FastDiaryStepWrapper>
 
