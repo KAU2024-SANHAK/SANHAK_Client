@@ -1,5 +1,4 @@
 import * as S from './FeelingHive.style'
-import { IcHoneyPot } from '../../../assets/svg'
 import BtnDiaryFeeling from '../../common/buttons/DiaryFeelings/BtnDiaryFeeling'
 import BtnHoneyPot from '../../common/buttons/HoneyPot/BtnHoneyPot'
 
