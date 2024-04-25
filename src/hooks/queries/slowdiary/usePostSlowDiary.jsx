@@ -1,18 +1,17 @@
-import { useSuspenseQuery } from '@tanstack/react-query';
 import { instance } from "../../../apis/client"
-
-export const SLOW_DIARY_ID_KEY = ['slowDiaryId']
+import { useMutation } from "react-query"
 
 export const postSlowDiary = async (body) => {
     const response =  await instance.post('/api/diary/create/slow', body);
     return response.data;
 }
 
-export const usePostSlowdiary = ({slowDiaryData}) => {
-    const {data} = useSuspenseQuery({
-        queryKey: SLOW_DIARY_ID_KEY,
-        queryFn: () => {postSlowDiary(slowDiaryData)}
-    });
-    
-    return data;
+export const usePostSlowdiary = () => {
+    const mutation = useMutation({
+        mutationFn: postSlowDiary,
+        onSuccess: (data)=>{
+            return data;
+        }
+    })
+    return {mutation};
 }
