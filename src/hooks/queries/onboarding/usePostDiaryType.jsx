@@ -1,5 +1,5 @@
-import { useMutation } from "react-query"
 import { instance } from "../../../apis/client"
+import { useMutation } from "react-query"
 
 //recoil에서 diarytype 받아오기. merge 하고 진행하겠습니다.
 export const postUserDiaryType = async ()=>{
@@ -13,4 +13,6 @@ export const usePostDiaryType = ()=>{
             console.log('요청이 성공했습니다.')
         }
     })
+
+    return {mutation};
 }
