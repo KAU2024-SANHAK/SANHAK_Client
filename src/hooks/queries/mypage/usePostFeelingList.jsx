@@ -1,18 +1,17 @@
 import { instance } from "../../../apis/client"
-import { useSuspenseQuery } from '@tanstack/react-query';
-
-export const FEELING_LIST_KEY = ['diary']
+import { useMutation } from "react-query";
 
 export const postFeelingList = async (body) => {
     const response =  await instance.post('/api/diary/list/feeling', body);
     return response.data;
 }
 
-export const usePostFeelingList = ({feeling}) => {
-    const {data} = useSuspenseQuery({
-        queryKey: FEELING_LIST_KEY,
-        queryFn: () => {postFeelingList(feeling)}
-    });
-    
-    return data;
+export const usePostFeelingList = () => { 
+    const mutation = useMutation({
+        mutationFn: postFeelingList,
+        onSuccess: (data) => {
+            console.log('요청에 성공했습니다.', data)
+        }
+    })
+    return { mutation };
 }

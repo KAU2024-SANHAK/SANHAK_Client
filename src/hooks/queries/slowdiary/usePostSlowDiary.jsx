@@ -10,7 +10,7 @@ export const usePostSlowdiary = () => {
     const mutation = useMutation({
         mutationFn: postSlowDiary,
         onSuccess: (data)=>{
-            return data;
+            console.log('요청에 성공했습니다.', data)
         }
     })
     return {mutation};

@@ -1,7 +1,5 @@
 import { aiInstance } from "../../../apis/client";
-import { useSuspenseQuery } from '@tanstack/react-query';
-
-export const DIARY_KEYWORDS_KEY = ['diaryKeywords']
+import { useMutation } from "react-query";
 
 export const postKeywords = async (body) => {
     const response = aiInstance.post('/api/ai/diary/create', body);
@@ -9,11 +7,12 @@ export const postKeywords = async (body) => {
 }
 
 //diaryKeywords로 recoil 정보 넘겨줌
-export const usePostKeywords = ({diaryKeywords}) => {
-    const {data} = useSuspenseQuery({
-        queryKey: DIARY_KEYWORDS_KEY,
-        queryFn: () => {postKeywords(diaryKeywords)}
-    });
-
-    return data;
+export const usePostKeywords = () => {
+    const mutation  = useMutation({
+        mutationFn: postKeywords,
+        onSuccess: (data) => {
+            console.log('요청에 성공했습니다.', data)
+        }
+    })
+    return { mutation };
 }
