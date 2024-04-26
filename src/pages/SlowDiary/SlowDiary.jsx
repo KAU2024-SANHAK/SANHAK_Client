@@ -10,6 +10,7 @@ export default function SlowDiary(){
     const date = new Date();
     const today = date.getDate();
     const navigate = useNavigate();
+    const formData = new FormData();
     const [isOpen, openModal, closeModal] = useModal();
 
     const [data, setData] = useState({
@@ -18,8 +19,12 @@ export default function SlowDiary(){
         diaryContent: ''
     })
 
-    const handleSubmit=(event)=>{
+
+
+    const handleSubmit=()=>{
         //api 연결
+        formData.append('diaryTitle', data.diaryTitle);
+        formData.append('diaryContent', data.diaryContent);
         alert('저장!');
         console.log(data);
     }
@@ -29,7 +34,9 @@ export default function SlowDiary(){
     }
 
     const handleImage=(event)=>{
+        formData.append('imageUrl', event.target.file[0]);
         const file = event.target.files[0];
+        console.log(file);
         const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onloadend = () => {
