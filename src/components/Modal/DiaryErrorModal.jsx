@@ -4,7 +4,7 @@ import BtnSubmit from '../common/buttons/Submit/BtnSubmit'
 
 export default function DiaryErrorModal({closeModal}){
     return(
-        <Modal>
+        <Modal top = 'none'>
             <S.Content>
                 모든 질문에 답변해주세요.<br/>
                 답변을 토대로 AI일기가 생성됩니다.

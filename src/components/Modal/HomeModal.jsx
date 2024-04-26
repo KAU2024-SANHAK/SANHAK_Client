@@ -15,7 +15,7 @@ export default function HomeModal({closeModal}){
     }
 
     return(
-        <Modal>
+        <Modal top = '50%'>
             <S.Content>
                 홈으로 되돌아가시겠습니까?<br/>
                 되돌아가면 감정과 글은 초기화됩니다.

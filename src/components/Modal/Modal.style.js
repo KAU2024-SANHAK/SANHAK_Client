@@ -15,7 +15,7 @@ export const ModalWrapper = styled.div`
     height: 18.5rem;
     z-index: 9999;
     position: fixed;
-    top: 50%;
+    top: ${(props) =>props.$top };
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 1rem;
