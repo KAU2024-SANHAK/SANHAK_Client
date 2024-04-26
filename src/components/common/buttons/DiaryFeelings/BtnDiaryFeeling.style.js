@@ -6,7 +6,6 @@ export const DiaryFeelingButtonWrapper = styled.button`
     ${({ theme }) => theme.fonts.heading_01};
     width: 9.6rem;
     background-color: transparent;
-    border: none;
     padding-top: 1rem;
     padding-left: 2rem;
     text-align: center;

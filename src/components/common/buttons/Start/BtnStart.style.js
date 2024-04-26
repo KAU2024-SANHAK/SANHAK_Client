@@ -3,7 +3,6 @@ import { IcStartButton } from "../../../../assets/svg";
 
 export const ButtonWrapper = styled.button`   
     ${({ theme: { mixin } }) => mixin.flexCenter({})}  
-    border: none;
     background-color: transparent;
 `;
 

@@ -8,6 +8,5 @@ export const ButtonWrapper = styled.button`
     flex-shrink: 0;
     margin: 1rem;
     border-radius: 2.5rem;
-    border: none;
     letter-spacing: -0.0408rem;
 `

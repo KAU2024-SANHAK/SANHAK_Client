@@ -7,5 +7,4 @@ export const ButtonWrapper=styled.button`
     height: 5.6rem;
     flex-shrink: 0;
     border-radius: 3rem;
-    border: none;
 `

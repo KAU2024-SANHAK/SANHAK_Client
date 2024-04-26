@@ -5,7 +5,6 @@ export const ButtonWrapper = styled.button`
     display: flex;
     position: absolute;
     background-color: transparent;
-    border: none;
     left: 4rem;
 `
 export const PrevButton = styled(IcPrevButton)`
