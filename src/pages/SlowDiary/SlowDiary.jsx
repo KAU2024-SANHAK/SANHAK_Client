@@ -1,6 +1,7 @@
 import * as S from './SlowDiary.style'
 import { useState } from 'react';
 import { useModal } from '../../hooks/common/useModal';
+import { useFileReader } from '../../hooks/common/useFileReader';
 import { useNavigate } from 'react-router-dom';
 import BtnHome from '../../components/common/buttons/Home/BtnHome';
 import BtnNext from '../../components/common/buttons/Next/BtnNext';
@@ -12,14 +13,13 @@ export default function SlowDiary(){
     const navigate = useNavigate();
     const formData = new FormData();
     const [isOpen, openModal, closeModal] = useModal();
+    const readData = useFileReader();
 
     const [data, setData] = useState({
         imageUrl: '',
         diaryTitle: '',
         diaryContent: ''
     })
-
-
 
     const handleSubmit=()=>{
         //api 연결
@@ -33,16 +33,13 @@ export default function SlowDiary(){
         setData({...data, [event.target.name] : event.target.value})
     }
 
-    const handleImage=(event)=>{
-        formData.append('imageUrl', event.target.file[0]);
+    const handleImage= (event)=>{
         const file = event.target.files[0];
+        formData.append('imageUrl', file);
         console.log(file);
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onloadend = () => {
-            setData({...data, [event.target.name]: reader.result});
-           };
-
+        readData(file, (imageFile) => {
+            setData({...data, [event.target.name]: imageFile});
+        })
     }
 
     const handleNext=()=>{
