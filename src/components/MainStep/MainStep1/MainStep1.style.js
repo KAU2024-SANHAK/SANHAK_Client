@@ -14,9 +14,3 @@ export const MainButtonWrapper = styled.div`
     gap: 1.5rem;
     z-index: 10;
 `
-export const MainStep1HoneyBearWrapper = styled.div`
-    position: absolute;
-    right: 0rem;
-    top: 4.254rem;
-`
-

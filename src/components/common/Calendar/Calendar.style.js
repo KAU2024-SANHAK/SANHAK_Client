@@ -8,4 +8,5 @@ export const Calendar = styled.div`
     border-radius: 30px;
     background: rgba(255, 255, 255, 0.80);
     backdrop-filter: blur(15px);
+    // margin-left: 5rem;
     `

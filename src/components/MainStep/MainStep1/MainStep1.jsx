@@ -8,10 +8,6 @@ import ThisMonthEmotion from '../../common/buttons/ThisMonthEmotion/ThisMonthEmo
 export default function MainStep1(){
     return(
         <S.MainStep1Wrapper>
-            <S.MainStep1HoneyBearWrapper>
-                <HoneyBearMainStep1/>
-            </S.MainStep1HoneyBearWrapper>
-
             <S.MainButtonWrapper>
                 <MyPageButton/>
                 <SearchByEmotionButton/>

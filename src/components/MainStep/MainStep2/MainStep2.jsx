@@ -6,14 +6,11 @@ import DiaryList from '../../common/DiaryList/DiaryList'
 export default function MainStep1(){
     return(
         <S.MainStep2Wrapper>
-            <S.MainStep2HoneyBearWrapper>
-                <HoneyBearMainStep2/>
-            </S.MainStep2HoneyBearWrapper>
-            <S.MainStep2ComponentWrapper>
+            {/* <S.MainStep2ComponentWrapper>
                 <Calendar/>
                 <DiaryList/>
 
-            </S.MainStep2ComponentWrapper>
+            </S.MainStep2ComponentWrapper> */}
         </S.MainStep2Wrapper>
     )
 }
