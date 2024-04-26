@@ -8,6 +8,6 @@ export const ButtonWrapper=styled.button`
     border-radius: 3rem;
     border: none;
 
-    position: absolute;
-    bottom:  4.2rem;
+    position: relative;
+    bottom: 0;
 `
