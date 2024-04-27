@@ -1,8 +1,8 @@
 import * as S from './BtnBack.style'
 
-export default function BtnBack(){
+export default function BtnBack({onClick}){
     return(
-        <S.ButtonWrapper>
+        <S.ButtonWrapper onClick={()=>{onClick()}}>
             <S.BackButton/>
         </S.ButtonWrapper>
     )
