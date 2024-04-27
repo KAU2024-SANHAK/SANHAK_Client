@@ -12,6 +12,7 @@ import SlowDiary from '../pages/SlowDiary/SlowDiary';
 import MyPage from '../pages/MyPage/MyPage';
 import SearchByEmotion from '../pages/SearchByEmotion/SearchByEmotion';
 import CharacterWiki from '../pages/CharacterWiki/CharacterWiki';
+import DiaryList from '../pages/SearchByEmotion/DiaryList/DiaryList';
 
 /*이런 식으로 작성하기*/
 const router = createBrowserRouter([
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       {
         path:"/mypage/characterwiki",
         element: <CharacterWiki/>
+      },
+      {
+        path:"/searchbyemotion/diarylist",
+        element: <DiaryList/>
       }
     ],
   },
