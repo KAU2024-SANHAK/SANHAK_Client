@@ -12,7 +12,6 @@ import EmotionView from '../pages/EmotionView/EmotionView';
 import FastDiary from '../pages/FastDiary/FastDiary';
 import DiaryView from '../pages/DiaryView/DiaryView';
 import SlowDiary from '../pages/SlowDiary/SlowDiary';
-import MyPage from '../pages/MyPage/MyPage';
 import CharacterWiki from '../pages/CharacterWiki/CharacterWiki';
 
 /*이런 식으로 작성하기*/
@@ -60,10 +59,6 @@ const router = createBrowserRouter([
       {
         path: '/diaryview',
         element: <DiaryView/>
-      },
-      {
-        path: "/mypage",
-        element: <MyPage/>
       },
       {
         path: "/emotionview",
