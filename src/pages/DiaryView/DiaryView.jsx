@@ -7,8 +7,6 @@ export default function DiaryView(){
         <S.DiaryViewPageWrapper>
             <S.DiaryViewFilter>
                 <CreatedDiary/>
-                {/* <PopUp name={'꿀비의 답장'}>
-                </PopUp> */}
             </S.DiaryViewFilter>
         </S.DiaryViewPageWrapper>
     )
