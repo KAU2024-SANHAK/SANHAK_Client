@@ -8,6 +8,7 @@ export default function DiaryList(){
     const handleBackButton=()=>{
         navigate('/searchbyemotion');
     }
+    
 
     return(
         
@@ -16,6 +17,8 @@ export default function DiaryList(){
                 <BtnBack onClick={()=>{handleBackButton()}}/>
             </S.BackButtonWrapper>
             <S.DiaryListComponentWrapper>
+                <DiaryListComponent/>
+                <DiaryListComponent/>
                 <DiaryListComponent/>
             </S.DiaryListComponentWrapper>
         </S.DiaryListWrapper>

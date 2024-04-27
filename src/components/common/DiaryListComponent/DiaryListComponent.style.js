@@ -31,5 +31,15 @@ export const TextTitle = styled.p`
 export const TextDate = styled.p`
     ${({ theme }) => theme.fonts.caption_02};
 `
-export const BtnSubmitWrapper = styled.div`
+export const SubmitBtnWrapper = styled.div`
+    ${({ theme: { mixin } }) => mixin.flexCenter({})};
+    width: 18.5rem;
+    height: 4rem;
+    flex-shrink: 0;
+    border-radius: 30px;
+    background: var(--Red-Pink, #FF5959);
+    margin-top: 0.3rem;
+`
+export const SubmitBtnTextWrapper = styled.p`
+    ${({ theme }) => theme.fonts.body_02};
 `

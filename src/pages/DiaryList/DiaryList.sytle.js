@@ -14,4 +14,5 @@ export const BackButtonWrapper = styled.div`
 export const DiaryListComponentWrapper = styled.div`
     position: absolute;
     top: 14.5rem;
+    bottom: 50rem;
 `

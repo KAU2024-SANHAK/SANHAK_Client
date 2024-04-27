@@ -1,8 +1,13 @@
 import * as S from "./DiaryListComponent.style"
-import BtnSubmit from "../buttons/Submit/BtnSubmit"
 import DiaryView from "../../../pages/DiaryView/DiaryView"
+import { useNavigate } from "react-router-dom"
 
 export default function DiaryListComponent() {
+    const navigate=useNavigate();
+    const handleSearchButton=() =>{
+        navigate('/diaryview')
+    }
+
     return (
         <S.DiaryListWrapper>
             <S.DiaryPhoto/>
@@ -13,10 +18,13 @@ export default function DiaryListComponent() {
                 <S.TextDate>
                     2024.03.25
                 </S.TextDate>
+                <S.SubmitBtnWrapper onClick={() => handleSearchButton()}>
+                    <S.SubmitBtnTextWrapper>
+                        조회하기
+                    </S.SubmitBtnTextWrapper>
+                </S.SubmitBtnWrapper>
             </S.TextWrapper>
-            {/* <BtnSubmitWrapper> */}
-                <BtnSubmit onClick={()=>{DiaryView}} height={100} $color={'var(--Red-Pink, #FF5959)'} />
-            {/* </BtnSubmitWrapper> */}
+            
         </S.DiaryListWrapper>
     )
 }
