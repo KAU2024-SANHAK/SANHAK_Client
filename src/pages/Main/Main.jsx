@@ -6,7 +6,6 @@ import Slider from "react-slick";
 import HoneyBearMainStep1 from '../../components/common/HoneyBearMainStep1/HoneyBearMainStep1';
 import HoneyBearMainStep2 from '../../components/common/HoneyBearMainStep2/HoneyBearMainStep2';
 import Calendar from '../../components/common/Calendar/Calendar';
-import DiaryList from '../../components/common/DiaryList/DiaryList';
 // import WriteDiaryButton from '../../components/common/buttons/WriteDiaryButton';
 
 function Main() {

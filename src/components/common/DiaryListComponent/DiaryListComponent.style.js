@@ -31,4 +31,5 @@ export const TextTitle = styled.p`
 export const TextDate = styled.p`
     ${({ theme }) => theme.fonts.caption_02};
 `
-
+export const BtnSubmitWrapper = styled.div`
+`
