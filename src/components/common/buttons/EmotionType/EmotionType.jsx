@@ -1,11 +1,11 @@
 import * as S from "./EmotionType.style";
 import { useNavigate } from "react-router-dom";
 
-export default function EmotionType({name, page}) {
+export default function EmotionType({name}) {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate(`/searchbyemotion/diarylist/${page}`);
+        navigate(`/searchbyemotion/diarylist`);
     }
     
     return (
