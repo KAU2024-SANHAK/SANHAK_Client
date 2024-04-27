@@ -65,7 +65,3 @@ export const DiaryText = styled.p`
     margin-top: 4rem;
     margin-bottom: 4rem;    
 `
-export const GoToReplyBtnWrapper = styled.div`
-    ${({ theme: { mixin } }) => mixin.flexCenter({})};
-    margin-bottom: 1.6rem;
-`

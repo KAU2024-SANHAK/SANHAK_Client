@@ -41,9 +41,6 @@ export default function CreatedDiary(){
 하지만 소화제를 먹고 나아져서 정말 다행이었다.
                     </S.DiaryText>
                 </S.DiaryTextWrapper>
-                <S.GoToReplyBtnWrapper>
-                    <GoToReplyBtn/>
-                </S.GoToReplyBtnWrapper>
             </S.CreatedDiaryComponentWrapper>
         </S.CreatedDiaryWrapper>
     )

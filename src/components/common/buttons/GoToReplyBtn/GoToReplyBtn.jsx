@@ -1,23 +1,15 @@
-import { useNavigate } from "react-router-dom";
-import * as S from "./GoToReplyBtn.style"
+// GoToReplyBtn.js
+import * as S from './GoToReplyBtn.style';
 
-
-export default function GoToReplyBtn() {
-    const navigate = useNavigate();
-
-    const handleClick = () => {
-        navigate('/emotionview')
-    }
-
+export default function GoToReplyBtn({ onReplyBtnClick }) {
     return (
-        <S.GoToReplyBtnWrapper onClick={handleClick}>
-        
+        <S.GoToReplyBtnWrapper onClick={onReplyBtnClick}> {/* Call onReplyBtnClick when button is clicked */}
             <S.GoToReplyBtnIconWrapper>
-                <S.GoToReplyBtnIcon/>
+                <S.GoToReplyBtnIcon />
             </S.GoToReplyBtnIconWrapper>
             <S.GoToReplyBtnText>
                 답장 보러가기
             </S.GoToReplyBtnText>
         </S.GoToReplyBtnWrapper>
-    )
+    );
 }
