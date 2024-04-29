@@ -1,4 +1,5 @@
 import * as S from '../FastDiaryStep.style'
+import { useState } from 'react'
 import { useRecoilState } from 'recoil'
 import { realizedKeyword } from '../../../recoil/atoms'
 import { useKeywordNullCheck } from '../../../hooks/useKeywordNullCheck'
@@ -18,9 +19,6 @@ export default function FastDiaryStep6({onNext, onPrev}){
     }
 
     const onClickSubmit = ()=>{
-        if(checkNull === true){
-            openModal()
-        }
         {checkNull === true ? openModal() :
             //api 연결 코드 들어갈 부분 
             onNext()

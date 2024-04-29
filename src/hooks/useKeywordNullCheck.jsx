@@ -3,7 +3,7 @@ import { useRecoilValue } from 'recoil'
 import { feelingKeyword, whenKeyword, whereKeyword, whoKeyword, whatKeyword, realizedKeyword } from '../recoil/atoms'
 
 export function useKeywordNullCheck(){
-    const [isNull, setIsNull] = useState(false);
+    const [isNull, setIsNull] = useState();
     const keywords = [
         useRecoilValue(feelingKeyword),
         useRecoilValue(whenKeyword),
@@ -14,13 +14,15 @@ export function useKeywordNullCheck(){
     ];
 
     useEffect(()=>{
+        setIsNull(false);
         keywords.map((keyword, idx)=>{
             console.log(keyword, idx)
             if(keyword === ''){
                 setIsNull(true);
+                
             }
         })
-    },[])
-
+    },[keywords])
     return isNull
+
 }
