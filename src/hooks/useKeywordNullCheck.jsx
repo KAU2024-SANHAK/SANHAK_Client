@@ -23,6 +23,6 @@ export function useKeywordNullCheck(){
             }
         })
     },[keywords])
-    return isNull
 
+    return isNull
 }
