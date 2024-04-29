@@ -11,15 +11,15 @@ export const getRefreshToken = ()=>{
 };
 
 export const authInstance = axios.create({
-    baseURL: import.meta.env.VITE_APP_BASE_URL,
+    baseURL: import.meta.env.VITE_APP_SERVER_BASE_URL,
     withCredentials: true,
     headers:{'X-Environment': 
     ''
     }
 });
 
-export const instance = axios.create({
-    baseURL: import.meta.env.VITE_APP_BASE_URL,
+export const serverInstance = axios.create({
+    baseURL: import.meta.env.VITE_APP_SERVER_BASE_URL,
     withCredentials: true,
     headers:{
         Authorization: `${getAccessToken()}`
@@ -27,7 +27,7 @@ export const instance = axios.create({
 });
 
 export const aiInstance = axios.create({
-    baseURL: import.meta.env.VITE_AI_BASE_URL,
+    baseURL: import.meta.env.VITE_APP_AI_BASE_URL,
     withCredentials: true,
     headers:{
         Authorization: `${getAccessToken()}`
