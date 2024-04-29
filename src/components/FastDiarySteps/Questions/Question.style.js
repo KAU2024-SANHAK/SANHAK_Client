@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import SmallQuestionBox from '../../../assets/smallQuestionBox.svg'
 import LargeQuestionBox from '../../../assets/largeQuestionBox.svg'
+import { IcSmallQuestionBox } from '../../../assets/svg'
 
 export const SmallQuestionWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
@@ -22,6 +23,7 @@ export const LargeQuestionWrapper = styled.div`
 `
 export const QustionText = styled.p`
     ${({ theme }) => theme.fonts.heading_03};
-    
+`
+export const SmallQuestionBoxs = styled(IcSmallQuestionBox)`
 
 `

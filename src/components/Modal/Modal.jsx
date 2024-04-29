@@ -1,12 +1,11 @@
-import React from 'react'
 import * as S from './Modal.style'
 
-export default function Modal({children}){
+export default function Modal({children, top}){
 
     return(
         <>
             <S.Overlay/>
-            <S.ModalWrapper>
+            <S.ModalWrapper $top = {top}>
                     {children}
             </S.ModalWrapper>
         </>

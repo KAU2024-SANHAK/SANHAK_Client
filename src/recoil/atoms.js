@@ -1,9 +1,62 @@
-//이런 식으로 작성
+import { atom } from "recoil";
+import { recoilPersist } from "recoil-persist";
 
-//import { atom } from "recoil";
+const { persistAtom } =recoilPersist({
+   key: 'localstorage',
+   storage: localStorage,
+})
 
-// export const HoneyState = atom({
-//   key: "honey",
+export const UserDiaryType = atom({
+   key: 'userDiaryType',
+   default: '',
+   effects_UNSTABLE: [persistAtom]
+});
+/*
+export const fastDiaryKeywords = atom({
+    key: "fastDiaryKeywords",
+    default:{
+        feeling: '',
+        what: '',
+        who: '',
+        when: '',
+        where: '',
+        realized: ''
+    },
+    effects_UNSTABLE: [persistAtom]
+});*/
 
-//   default: {},
-// });
+export const feelingKeyword = atom({
+    key: "feeling",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const whoKeyword = atom({
+    key: "who",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const whenKeyword = atom({
+    key: "when",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const whereKeyword = atom({
+    key: "where",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const whatKeyword = atom({
+    key: "what",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const realizedKeyword = atom({
+    key: "realized",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
