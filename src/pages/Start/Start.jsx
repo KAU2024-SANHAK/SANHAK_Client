@@ -14,7 +14,7 @@ function Start() {
     <S.StartWrapper>
       <h1>시작 페이지 입니다.</h1>
 
-      {localStorage.getItem('EXIT_LOGIN_TOKEN') === false ? <BtnKakaoLogin/> : <BtnStart/>}
+      {localStorage.getItem('') === false ? <BtnKakaoLogin/> : <BtnStart/>}
 
     </S.StartWrapper>
   );
