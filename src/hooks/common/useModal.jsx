@@ -3,7 +3,7 @@ import { useState } from "react";
 export function useModal(){
     const [isOpen, setIsOpen] = useState(false);
 
-    const opneModal =()=>{
+    const openModal =()=>{
         setIsOpen(true);
     }
     const closeModal =()=>{
@@ -12,7 +12,7 @@ export function useModal(){
 
     return[
         isOpen,
-        opneModal,
+        openModal,
         closeModal
     ]
 } 

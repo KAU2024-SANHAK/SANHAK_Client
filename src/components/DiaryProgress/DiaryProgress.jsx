@@ -10,10 +10,9 @@ const Progresses = [
     <IcDiaryProgress6/>
 ]
 
-export default function DiaryPrgoress({steps, cur}){
+export default function DiaryProgress({steps, cur}){
     return(
         <S.Wrapper>
-            
             {Progresses.map((progress,idx) =>(
                 steps[idx].name === cur ? <div  key = {idx}> {progress}</div> : null
             ))}
