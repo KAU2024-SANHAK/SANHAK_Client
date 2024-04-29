@@ -1,8 +1,8 @@
-import { instance } from "../../../apis/client"
+import { seerverInstance } from "../../../apis/client"
 import { useMutation } from 'react-query';
 
 export const postDiary = async (body) => {
-    const response =  await instance.post('/api/diary/content', body);
+    const response =  await seerverInstance.post('/api/diary/content', body);
     return response.data;
 }
 

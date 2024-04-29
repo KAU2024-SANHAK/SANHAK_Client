@@ -1,8 +1,8 @@
-import { instance } from "../../../apis/client"
+import { seerverInstance } from "../../../apis/client"
 import { useMutation } from "react-query";
 
 export const postCalendar = async (body) => {
-    const response =  await instance.post('/api/diary/list/calendar', body);
+    const response =  await seerverInstance.post('/api/diary/list/calendar', body);
     return response.data;
 }
 
