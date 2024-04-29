@@ -21,5 +21,5 @@ export const PopUpSlide = styled(IcPopUpSlide)`
 `
 export const SlideWrapper = styled.div`
     position: absolute;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(1.5rem);
 `

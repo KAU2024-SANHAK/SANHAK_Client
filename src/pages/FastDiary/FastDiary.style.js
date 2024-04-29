@@ -10,7 +10,7 @@ export const FastDairyPageWrapper = styled.div`
     )};
 `
 export const FastDiaryHeader = styled.div`
-    ${({ theme: { mixin } }) => mixin.flexBox({justify: 'space-between',align: 'center' })};
+    ${({ theme: { mixin } }) => mixin.flexBox({justify: 'flex-end'})};
     width: 100%;
     margin-top: 3rem;
 
@@ -22,7 +22,7 @@ export const WritingForm = styled.form`
     height: 43.1rem;
     border-radius: 3rem;
     background: rgba(255, 255, 255, 0.50);
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(1.5rem);
 `
 export const HomeButtonWrapper = styled.div`
     border: none;
@@ -41,10 +41,4 @@ export const HoneyBear = styled(IcHoneyBear)`
 export const ProgressWrapper = styled.div`
     position: absolute;
     bottom: 0;
-`
-export const BtnWrapper = styled.button`
-    background-color: transparent;
-    border: none;
-    position: absolute;
-    right: 2rem;
 `

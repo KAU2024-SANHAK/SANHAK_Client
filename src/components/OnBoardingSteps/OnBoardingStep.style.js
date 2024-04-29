@@ -41,9 +41,7 @@ export const OnBoardingHoneyBearWrapper = styled.div`
     height: 57%;
 `
 
-export const BtnWrapper = styled.button`
-    background-color: transparent;
-    border: none;
+export const ButtonField = styled.div`
     position: absolute;
     right: 2rem;
 `

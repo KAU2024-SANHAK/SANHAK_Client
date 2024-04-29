@@ -1,6 +1,8 @@
 import * as S from './SlowDiary.style'
 import { useState } from 'react';
 import { useModal } from '../../hooks/common/useModal';
+import { useFileReader } from '../../hooks/common/useFileReader';
+import { useNavigate } from 'react-router-dom';
 import BtnHome from '../../components/common/buttons/Home/BtnHome';
 import BtnNext from '../../components/common/buttons/Next/BtnNext';
 import HomeModal from '../../components/Modal/HomeModal';
@@ -8,17 +10,21 @@ import HomeModal from '../../components/Modal/HomeModal';
 export default function SlowDiary(){
     const date = new Date();
     const today = date.getDate();
-    const [isOpen, opneModal, closeModal] = useModal();
-
+    const navigate = useNavigate();
+    const formData = new FormData();
+    const [isOpen, openModal, closeModal] = useModal();
+    const readData = useFileReader();
 
     const [data, setData] = useState({
-        image: '',
-        title: '',
-        content: ''
+        imageUrl: '',
+        diaryTitle: '',
+        diaryContent: ''
     })
 
-    const handleSubmit=(event)=>{
-        event.preventDefault();
+    const handleSubmit=()=>{
+        //api 연결
+        formData.append('diaryTitle', data.diaryTitle);
+        formData.append('diaryContent', data.diaryContent);
         alert('저장!');
         console.log(data);
     }
@@ -27,14 +33,17 @@ export default function SlowDiary(){
         setData({...data, [event.target.name] : event.target.value})
     }
 
-    const handleImage=(event)=>{
+    const handleImage= (event)=>{
         const file = event.target.files[0];
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onloadend = () => {
-            setData({...data, [event.target.name]: reader.result});
-           };
+        formData.append('imageUrl', file);
+        console.log(file);
+        readData(file, (imageFile) => {
+            setData({...data, [event.target.name]: imageFile});
+        })
+    }
 
+    const handleNext=()=>{
+        navigate('/diaryview')
     }
 
     return(
@@ -42,26 +51,28 @@ export default function SlowDiary(){
             {isOpen && <HomeModal closeModal = {closeModal}/>}
 
             <S.SlowDiaryHeader>
-                <BtnHome onClick={()=>{opneModal()}}/>       
+                <BtnHome onClick={()=>{openModal()}}/>       
                 <S.Caption>
                 사진을 첨부하려면 + 버튼을 누르세요.
                 </S.Caption>
             </S.SlowDiaryHeader>
 
             <S.FormWrapper onSubmit={handleSubmit}>
-                <S.ImageInput type='file' id ='imgInput' accept='image/*' name='image'  onChange={handleImage}/>
+                <S.ImageInput type='file' id ='imgInput' accept='image/*' name='imageUrl' onChange={handleImage}/>
                 <S.Label htmlFor='imgInput'>
-                    {data.image ? (
-                        <S.PreviewImg src={data.image} alt='preview'/>
+                    {data.imageUrl ? (
+                        <S.PreviewImg src={data.imageUrl}/>
                     ): 
                         <S.AddImg/>
                     }
                 </S.Label>
-                <S.TitleInput type='text' placeholder='제목을 입력해주세요.' name='title' value={data.title} onChange={handleChange}/>
-                <S.ContentInput type='text' placeholder='오늘 무슨 일이 있었나요? 자유롭게 적어주세요.' name='content' value={data.content} onChange={handleChange}/>
+                <S.TitleInput type='text' placeholder='제목을 입력해주세요.' name='diaryTitle' value={data.diaryTitle} onChange={handleChange}/>
+                <S.ContentInput type='text' placeholder='오늘 무슨 일이 있었나요? 자유롭게 적어주세요.' name='diaryContent' value={data.diaryContent} onChange={handleChange}/>
 
                 <S.BtnField>
-                    <BtnNext/>
+                    <BtnNext onNext={()=>{handleNext()
+                    handleSubmit()
+                    }}/>
                 </S.BtnField>
             </S.FormWrapper>
 

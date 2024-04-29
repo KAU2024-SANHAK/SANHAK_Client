@@ -9,8 +9,7 @@ export const TitleWrapper = styled.p`
 
 export const SubTitleWrapper = styled.p`
     ${({ theme }) => theme.fonts.caption_01};
-    width: 100%;
-    padding-left: 3.4rem;
+    width: 30.8rem;
     margin-top: 0.4rem;
     margin-bottom: 7rem;
     letter-spacing: -0.0408rem;
