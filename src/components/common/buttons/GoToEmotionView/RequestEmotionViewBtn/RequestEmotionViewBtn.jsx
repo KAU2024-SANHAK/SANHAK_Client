@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import * as S from "./TodayEmotion.style"
+import * as S from './RequestEmotionViewBtn'
 
 
-export default function TodayEmotion() {
+export default function GoToEmotionView() {
     const navigate = useNavigate();
 
     const handleClick = () => {

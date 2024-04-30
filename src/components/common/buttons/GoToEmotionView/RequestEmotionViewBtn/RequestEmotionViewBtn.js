@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SvgIcTodayEmotionBtn from "../../../../assets/svg/IcTodayEmotionBtn";
+import SvgIcTodayEmotionBtn from "../../../../../assets/svg/IcTodayEmotionBtn";
 
 export const TodayEmotionBtnIcon = styled(SvgIcTodayEmotionBtn)`
 `
