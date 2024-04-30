@@ -8,7 +8,7 @@ export default function GoToReplyBtn({ onReplyBtnClick }) {
                 <S.GoToReplyBtnIcon />
             </S.GoToReplyBtnIconWrapper>
             <S.GoToReplyBtnText>
-                답장 보러가기
+                답장 생성하기
             </S.GoToReplyBtnText>
         </S.GoToReplyBtnWrapper>
     );

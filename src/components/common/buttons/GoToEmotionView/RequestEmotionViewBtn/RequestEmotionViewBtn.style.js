@@ -11,7 +11,6 @@ export const TodayEmotionBtnWrapper = styled.div`
     width: 15.2rem;
     height: 5rem;
     flex-shrink: 0;
-    gap: 1rem;
 `
 export const TodayEmotionBtnText = styled.p`
     ${({ theme }) => theme.fonts.body_10};

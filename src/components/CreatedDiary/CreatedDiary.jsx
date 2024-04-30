@@ -1,6 +1,6 @@
 import * as S from './CreatedDiary.style';
 import BtnBack from '../common/buttons/Back/BtnBack';
-import TodayEmotion from '../common/buttons/TodayEmotion/TodayEmotion';
+import GoToEmotionView from '../common/buttons/GoToEmotionView/ResponseEmotionViewBtn/ResponseEmotionViewBtn';
 import GoToReplyBtn from '../common/buttons/GoToReplyBtn/GoToReplyBtn';
 import { useNavigate } from 'react-router-dom';
 
@@ -16,7 +16,7 @@ export default function CreatedDiary(){
                 <BtnBack/>
             </S.BtnBackWrapper>
             <S.TodayEmotionBtnWrapper>
-                <TodayEmotion/>
+                <GoToEmotion/>
             </S.TodayEmotionBtnWrapper>
             <S.CreatedDiaryComponentWrapper>
                 <S.DiaryTopTextWrapper>
