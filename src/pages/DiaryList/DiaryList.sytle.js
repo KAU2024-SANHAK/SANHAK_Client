@@ -5,6 +5,7 @@ export const DiaryListWrapper=styled.div`
     background-color: ${({ theme }) => theme.colors.pink.white_pink};
     width: 100%;
     height: 100vh;
+    position: absolute;
 `
 export const BackButtonWrapper = styled.div`
     position: absolute;
@@ -14,5 +15,4 @@ export const BackButtonWrapper = styled.div`
 export const DiaryListComponentWrapper = styled.div`
     position: absolute;
     top: 14.5rem;
-    bottom: 50rem;
 `
