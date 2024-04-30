@@ -1,17 +1,17 @@
-import BtnOnBordingNext from "../../common/buttons/OnBoardingNext/BtnOnBoardingNext"
-import * as S from "../Step.style"
+import * as S from "../OnBoardingStep.style"
+import BtnNext from "../../common/buttons/Next/BtnNext"
 import Title from "../title/Title";
 import SubTitle from "../title/SubTitle";
 import onBoardingStep1Img from '../../../assets/onBoardingStep1.png'
 
-export default function Step1(props){
+export default function OnBoardingStep1({onNext}){
     return (
         <S.OnBoardingStepWrapper>
 
             <S.OnBoardingHeader>
-                <S.BtnWrapper onClick={()=>{props.onNxt()}}>
-                    <BtnOnBordingNext />
-                </S.BtnWrapper>
+                <S.ButtonField>
+                    <BtnNext onNext={()=>{onNext()}}/>
+                </S.ButtonField>
             </S.OnBoardingHeader>
 
             <S.OnBoardingTitleWrapper>

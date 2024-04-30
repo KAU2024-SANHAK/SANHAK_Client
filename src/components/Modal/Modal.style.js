@@ -5,26 +5,27 @@ export const Overlay = styled.div`
     width: 100%;
     height: 100vh;
     z-index: 9999;
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: absolute;
+    bottom: 0;
 `
-
 export const ModalWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
+    background-color: ${({ theme }) => theme.colors.normal.white};
     width: 36rem;
     height: 18.5rem;
     z-index: 9999;
-    position: absolute;
-    top: 50%;
+    position: fixed;
+    top: ${(props) =>props.$top };
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 1rem;
-    background-color: white;
     justify-content: center;
     overflow: auto;
 `
-
+export const ErrorModalWrapper = styled.div`
+    position: absolute;
+    top: 0;
+`
 export const Content = styled.p`
     ${({ theme }) => theme.fonts.body_01};
     letter-spacing: -0.0408rem;

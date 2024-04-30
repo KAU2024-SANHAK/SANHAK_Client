@@ -7,7 +7,6 @@ export const ButtonWrapper=styled.button`
     width: 32rem;
     height: 5.2rem;
     border-radius: 2.5rem;
-    border: none;
 
     color: ${({ theme }) => theme.colors.normal.black};    
     text-align: left;

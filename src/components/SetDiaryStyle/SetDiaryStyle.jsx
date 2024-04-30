@@ -8,7 +8,7 @@ const handleSetWritingStyle= ()=>{
     console.log('api 요청하세요')
 }
 
-export default function SetWritingStyle({transparency}){
+export default function SetDiaryStyle({transparency}){
     const [diaryType,setDiaryType] = useRecoilState(UserDiaryType)
 
     return(

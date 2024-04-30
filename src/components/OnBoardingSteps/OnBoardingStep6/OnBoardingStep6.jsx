@@ -1,10 +1,10 @@
+import * as S from "../OnBoardingStep.style"
 import BtnComplete from "../../common/buttons/complete/BtnComplete";
-import * as S from "../Step.style"
 import Title from "../title/Title";
 import SubTitle from "../title/SubTitle";
 import HoneyBear from "../../common/HoneyBear/HoneyBear";
 
-export default function Step6(props){
+export default function OnBoardingStep6({onNext}){
     return (
         <S.OnBoardingStepWrapper>
             
@@ -23,7 +23,7 @@ export default function Step6(props){
             </S.OnBoardingHoneyBearWrapper>
                     
             <S.OnBoardingFooter>
-                <BtnComplete onClick={props.onNxt}>
+                <BtnComplete onClick={()=>{onNext()}}>
                     지금 시작하기
                 </BtnComplete>
             </S.OnBoardingFooter>
