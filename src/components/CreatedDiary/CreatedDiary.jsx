@@ -1,5 +1,5 @@
 import * as S from './CreatedDiary.style';
-import BtnHome from '../common/buttons/Home/BtnHome'
+import BtnBack from '../common/buttons/Back/BtnBack';
 import TodayEmotion from '../common/buttons/TodayEmotion/TodayEmotion';
 import GoToReplyBtn from '../common/buttons/GoToReplyBtn/GoToReplyBtn';
 import { useNavigate } from 'react-router-dom';
@@ -12,9 +12,9 @@ export default function CreatedDiary(){
     }
     return(
         <S.CreatedDiaryWrapper>
-            <S.BtnHomeWrapper onClick={handleClick}>
-                <BtnHome/>
-            </S.BtnHomeWrapper>
+            <S.BtnBackWrapper onClick={handleClick}>
+                <BtnBack/>
+            </S.BtnBackWrapper>
             <S.TodayEmotionBtnWrapper>
                 <TodayEmotion/>
             </S.TodayEmotionBtnWrapper>

@@ -11,7 +11,7 @@ export const CreatComponentWrapper = styled.div`
     width: 100%;
 
 `
-export const BtnHomeWrapper = styled.div`
+export const BtnBackWrapper = styled.div`
     position: absolute;
     left: 2.8rem;
     top: 3.2rem;
