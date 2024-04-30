@@ -2,21 +2,27 @@ import * as S from "./DiaryListComponent.style"
 import DiaryView from "../../../pages/DiaryView/DiaryView"
 import { useNavigate } from "react-router-dom"
 
-export default function DiaryListComponent() {
+export default function DiaryListComponent({ keys, feelingListId, feelingListTitle, feelingListDate }) {
     const navigate=useNavigate();
     const handleSearchButton=() =>{
+        // recoil에서 조언 존재 여부 확인하기
+
+        // recoil에서 감정 존재 여부 확인하기
+
+        // recoil에서 key값에 따른 제목, 날짜, 글, 감정(빠른일기의 경우) 불러오기
+
         navigate('/diaryview')
     }
 
     return (
-        <S.DiaryListWrapper>
+        <S.DiaryListComponentWrapper>
             <S.DiaryPhoto/>
             <S.TextWrapper>
                 <S.TextTitle>
-                    배가 아프지만 참은 날
+                    {feelingListTitle}
                 </S.TextTitle>
                 <S.TextDate>
-                    2024.03.25
+                    {feelingListDate}
                 </S.TextDate>
                 <S.SubmitBtnWrapper onClick={() => handleSearchButton()}>
                     <S.SubmitBtnTextWrapper>
@@ -25,6 +31,6 @@ export default function DiaryListComponent() {
                 </S.SubmitBtnWrapper>
             </S.TextWrapper>
             
-        </S.DiaryListWrapper>
+        </S.DiaryListComponentWrapper>
     )
 }

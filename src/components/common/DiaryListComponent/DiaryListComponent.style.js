@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 
-export const DiaryListWrapper = styled.div`
+export const DiaryListComponentWrapper = styled.div`
     display: flex;
     width: 32.0rem;
     height: 11.5rem;
     flex-shrink: 0;
     border-radius: 30px;
-    background: rgba(255, 255, 255, 0.70);
-    backdrop-filter: blur(5px);
-    margin-bottom: 5rem;
+    background: white;
+    margin-bottom: 0.8rem;
 `
 export const DiaryPhoto = styled.div`
     display: flex;
