@@ -21,11 +21,12 @@ export const Bubble = styled.div`
     border-radius: 12px;
 `
 export const Wrapper = styled.div`
+    z-index: 10;
     width: 21rem;
     height: 18rem;
     flex-shrink: 0;
     border-radius: 30px;
-    background: var(--Warm-Pink, linear-gradient(180deg, rgba(255, 255, 255, 0.00) 50%, rgba(255, 255, 255, 0.39) 111.04%), #FFA2A2);
+    ${({ theme }) => theme.colors.gradient.this_month_emotion_gradient};
 `
 export const ThisMonthEmotionText = styled.p`
     margin-top: 1.2rem;
