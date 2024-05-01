@@ -1,14 +1,23 @@
 import { useNavigate } from "react-router-dom";
-import { authInstance } from "../../apis/client";
 import { useEffect } from "react";
+import axios from "axios";
 
 const useLogin= async () => {
+    console.log('test 로그인을 실행합니다.')
     const navigate = useNavigate();
     const params = new URL(document.URL).searchParams;
     const code = params.get('code');   
+
+    const authInstance = axios.create({
+        baseURL: import.meta.env.VITE_APP_SERVER_BASE_URL,
+        withCredentials: true,
+        headers:{Authorization: 
+        ''
+        }
+    });
     
     const fetchAuth = ()=>{
-        authInstance.get(`/api/login?code=${code}`)
+        authInstance.get(`/api/kakao/?code=${code}`)
     }
 
     useEffect(()=>{ 

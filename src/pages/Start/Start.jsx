@@ -3,12 +3,18 @@ import BtnKakaoLogin from '../../components/common/buttons/KakaoLogin/BtnKakaoLo
 import BtnComplete from '../../components/common/buttons/complete/BtnComplete'
 import HoneyBear from '../../components/common/HoneyBear/HoneyBear';
 import { useNavigate } from 'react-router-dom';
+import useTestLogin from '../../hooks/auth/useTestLogin'
 
 function Start() {
   const navigate = useNavigate();
 
   const handleStartButton=()=>{
     localStorage.getItem('FIRST_LOGIN') === true ? navigate('/onboarding') : navigate('/main')
+  }
+
+  const onTestClick = () => {
+    console.log('임시 코드 발급 버튼')
+    useTestLogin();
   }
 
   return (
@@ -33,6 +39,7 @@ function Start() {
           허니어리 시작하기  
         </BtnComplete>
         }
+        <button onClick={()=>{onTestClick()}}>임시 버튼</button>
       </S.ButtonField>
 
     </S.StartPageWrapper>
