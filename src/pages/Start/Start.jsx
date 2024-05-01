@@ -15,7 +15,7 @@ function Start() {
 
   const onTestClick = () => {
     console.log('임시 코드 발급 버튼')
-    testLogin;
+    testLogin();
   }
 
   return (

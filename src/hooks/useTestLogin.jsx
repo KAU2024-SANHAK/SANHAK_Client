@@ -7,24 +7,24 @@ const useTestLogin= async () => {
     const navigate = useNavigate();
    // const params = new URL(document.URL).searchParams;
   //  const code = params.get('code');   
-
+    const code = 'pLF2DvbE2TwMJeiagojcATGBCPft-272eHtA5uqAXo_xjQ-2jZAjl6oN4LAKPXOaAAABjzRF8orE017PSiBv1Q'
     const authTestInstance = axios.create({
         baseURL: import.meta.env.VITE_APP_SERVER_BASE_URL,
         withCredentials: true,
         headers:{
             "Content-Type": 'application/json',
-            Authorization: 'Bearer pLF2DvbE2TwMJeiagojcATGBCPft-272eHtA5uqAXo_xjQ-2jZAjl6oN4LAKPXOaAAABjzRF8orE017PSiBv1Q',
+            Authorization: `Bearer ${code}`,
         }
     });
     
     const fetchAuth = ()=>{
-        authTestInstance.get('api/kakao');
+        authTestInstance.get('/api/kakao');
     }
   //  console.log(code);
 
     useEffect(()=>{ 
 
-        
+        if(code){
              fetchAuth().then((response) =>{
                 const data = response.data
 
@@ -35,6 +35,7 @@ const useTestLogin= async () => {
                 //localStorage.setItem('최초 로그인 여부 판단' 어쩌구 저쩌구)
 
             })
+        }
             
         
 
