@@ -4,7 +4,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import Layout from '../layouts/Layout';
 import Start from '../pages/Start/Start';
 import Login from '../components/Login';
-import OnBoarding  from '../pages/OnBoarding/OnBoarding';
+import OnBoarding from '../pages/OnBoarding/OnBoarding';
 import Main from '../pages/Main/Main';
 import FastDiary from '../pages/FastDiary/FastDiary';
 import DiaryView from '../pages/DiaryView/DiaryView';
@@ -27,37 +27,37 @@ const router = createBrowserRouter([
       //     element: <Mypage />,
       //   },
       {
-        path: "/api/oauth/kakao/login",
+        path: '/api/login',
         element: <Login />,
       },
       {
-        path: "/onboarding",
-        element: <OnBoarding/>
+        path: '/onboarding',
+        element: <OnBoarding />,
       },
       {
-        path: "/main",
-        element: <Main/>
+        path: '/main',
+        element: <Main />,
       },
       {
-        path: "/fastdiary",
-        element: <FastDiary/>
+        path: '/fastdiary',
+        element: <FastDiary />,
       },
       {
-        path: "/slowdiary",
-        element: <SlowDiary/>
+        path: '/slowdiary',
+        element: <SlowDiary />,
       },
       {
         path: '/diaryview',
-        element: <DiaryView/>
+        element: <DiaryView />,
       },
       {
-        path: "/mypage",
-        element: <MyPage/>
+        path: '/mypage',
+        element: <MyPage />,
       },
       {
-        path:"/mypage/characterwiki",
-        element: <CharacterWiki/>
-      }
+        path: '/mypage/characterwiki',
+        element: <CharacterWiki />,
+      },
     ],
   },
 ]);
