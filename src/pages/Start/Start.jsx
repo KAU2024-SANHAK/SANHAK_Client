@@ -14,6 +14,7 @@ function Start() {
 
   const onTestClick = () => {
     console.log('임시 코드 발급 버튼')
+    
   }
 
   return (
@@ -34,6 +35,7 @@ function Start() {
         </BtnComplete>
         } */}
         <BtnKakaoLogin />
+        <button onClick={()=>{onTestClick()}}>테스트 코드 임시 버튼</button>
       </S.ButtonField>
     </S.StartPageWrapper>
   );
