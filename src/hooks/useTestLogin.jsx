@@ -5,27 +5,27 @@ import axios from "axios";
 const useTestLogin= async () => {
     console.log('test 로그인을 실행합니다.')
     const navigate = useNavigate();
-    const params = new URL(document.URL).searchParams;
-    const code = params.get('code');   
+   // const params = new URL(document.URL).searchParams;
+  //  const code = params.get('code');   
 
     const authTestInstance = axios.create({
         baseURL: import.meta.env.VITE_APP_SERVER_BASE_URL,
         withCredentials: true,
         headers:{
             "Content-Type": 'application/json',
-            Authorization: code
+            Authorization: 'Bearer pLF2DvbE2TwMJeiagojcATGBCPft-272eHtA5uqAXo_xjQ-2jZAjl6oN4LAKPXOaAAABjzRF8orE017PSiBv1Q',
         }
     });
     
     const fetchAuth = ()=>{
-        authTestInstance.get(`/api/kakao/?code=${code}`)
+        authTestInstance.get('api/kakao');
     }
-    console.log(code);
+  //  console.log(code);
 
     useEffect(()=>{ 
 
-        if(code){
-            fetchAuth().then((response) =>{
+        
+             fetchAuth().then((response) =>{
                 const data = response.data
 
                 const JWT = data.data;
@@ -36,7 +36,7 @@ const useTestLogin= async () => {
 
             })
             
-        }
+        
 
         //if 최초 로그인이면 온보딩으로 이동하기
         navigate('/')

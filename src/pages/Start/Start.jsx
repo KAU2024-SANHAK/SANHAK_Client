@@ -7,6 +7,7 @@ import useTestLogin from '../../hooks/useTestLogin'
 
 function Start() {
   const navigate = useNavigate();
+  const testLogin = useTestLogin();
 
   const handleStartButton = () => {
     localStorage.getItem('FIRST_LOGIN') === true ? navigate('/onboarding') : navigate('/main');
@@ -14,7 +15,7 @@ function Start() {
 
   const onTestClick = () => {
     console.log('임시 코드 발급 버튼')
-    
+    testLogin;
   }
 
   return (

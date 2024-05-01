@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useModal } from '../../hooks/common/useModal';
 import { useFileReader } from '../../hooks/common/useFileReader';
 import { useNavigate } from 'react-router-dom';
+import { usePostSlowDiary } from '../../hooks/queries/slowdiary/usePostSlowDiary'
 import BtnHome from '../../components/common/buttons/Home/BtnHome';
 import BtnNext from '../../components/common/buttons/Next/BtnNext';
 import HomeModal from '../../components/Modal/HomeModal';
@@ -13,6 +14,7 @@ export default function SlowDiary(){
     const navigate = useNavigate();
     const formData = new FormData();
     const [isOpen, openModal, closeModal] = useModal();
+    const { mutate } = usePostSlowDiary();
     const readData = useFileReader();
 
     const [data, setData] = useState({
@@ -35,6 +37,7 @@ export default function SlowDiary(){
 
     const handleImage= (event)=>{
         const file = event.target.files[0];
+       // setData({...data, [event.target.name]: file});
         formData.append('imageUrl', file);
         console.log(file);
         readData(file, (imageFile) => {
