@@ -1,7 +1,7 @@
 import * as S from './CreatedDiary.style';
 import BtnBack from '../common/buttons/Back/BtnBack';
-import GoToEmotionView from '../common/buttons/GoToEmotionView/ResponseEmotionViewBtn/ResponseEmotionViewBtn';
-import GoToReplyBtn from '../common/buttons/GoToReplyBtn/GoToReplyBtn';
+import GoToEmotionView from '../common/buttons/GoToEmotionViewBtn/ResponseEmotionViewBtn/ResponseEmotionViewBtn';
+import GoToReplyBtn from '../common/buttons/GoToReplyViewBtn/GoToReplyBtn';
 import { useNavigate } from 'react-router-dom';
 
 export default function CreatedDiary(){

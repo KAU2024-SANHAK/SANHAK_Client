@@ -40,4 +40,12 @@ export const KindTextWrapper = styled.div`
     width: 10rem;
     height: 5rem;
     color: ${props => props.selected ? 'white' : 'black'}; // 선택 여부에 따라 색상 변경
-`;
+`
+export const BtnExitWrapper = styled.div`
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.5rem;
+    position: absolute;
+    right: 5rem;
+    top: 5rem;
+`
