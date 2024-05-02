@@ -2,9 +2,10 @@
 
 import * as S from './GoToReplyBtn.style';
 
-export default function GoToReplyBtn({ onReplyBtnClick }) {
+export default function ResponseReplyViewBtn() {
+    
     return (
-        <S.GoToReplyBtnWrapper onClick={onReplyBtnClick}>
+        <S.GoToReplyBtnWrapper>
             <S.GoToReplyBtnIconWrapper>
                 <S.GoToReplyBtnIcon />
             </S.GoToReplyBtnIconWrapper>
