@@ -1,11 +1,13 @@
 import * as S from './Start.style';
-import BtnKakaoLogin from '../../components/common/buttons/KakaoLogin/BtnKakaoLogin';
 import BtnComplete from '../../components/common/buttons/complete/BtnComplete';
 import HoneyBear from '../../components/common/HoneyBear/HoneyBear';
 import { useNavigate } from 'react-router-dom';
+import BtnKakaoLogin from '../../components/common/buttons/KakaoLogin/BtnKakaoLogin';
 
 function Start() {
   const navigate = useNavigate();
+  const ref = document.referrer;
+  sessionStorage.setItem('url', ref);
 
   const handleStartButton = () => {
     localStorage.getItem('FIRST_LOGIN') === true ? navigate('/onboarding') : navigate('/main');
@@ -23,7 +25,7 @@ function Start() {
       </S.HoneyBearWrapper>
 
       <S.ButtonField>
-        {/* {localStorage.getItem('EXIT_LOGIN_TOKEN') === false ? <BtnKakaoLogin/> : 
+        {/* {localStorage.getItem('EXIT_LOGIN_TOKEN') === false ? <BtnKakaoLogin /> : 
         <BtnComplete onClick={()=>{handleStartButton()}}>
           허니어리 시작하기  
         </BtnComplete>
