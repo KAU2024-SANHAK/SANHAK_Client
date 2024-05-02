@@ -1,6 +1,7 @@
 import * as S from '../FastDiaryStep.style'
 import { useRecoilState } from 'recoil'
-import { feelingKeyword, whenKeyword, whereKeyword, whoKeyword, whatKeyword, realizedKeyword } from '../../../recoil/atoms'
+import { realizedKeyword } from '../../../recoil/atoms'
+import { useKeywordNullCheck } from '../../../hooks/useKeywordNullCheck'
 import { useModal } from '../../../hooks/common/useModal'
 import LargeQuestion from '../Questions/LargeQustion'
 import BtnNext from '../../common/buttons/Next/BtnNext'
@@ -10,27 +11,18 @@ import DiaryErrorModal from '../../Modal/DiaryErrorModal'
 export default function FastDiaryStep6({onNext, onPrev}){
     const [realized, setRealized] = useRecoilState(realizedKeyword);
     const [isOpen, openModal, closeModal] = useModal();
+    const checkNull = useKeywordNullCheck();
 
     const handleChange = (event)=>{
         setRealized(event.target.value)
-        console.log(keywords)
     }
-/*
-    const checkNull = ()=>{
-     //   const values = Object.values(keywords);
-        values.forEach(value =>{
-            if(value === ''){
-                console.log('no!')
-                
-            }
-        })
-    }*/
 
     const onClickSubmit = ()=>{
-        openModal()
-     /*   checkNull()
-        setKeywords({...keywords, realized: realized})
-        onNext()*/
+        {checkNull === true ? openModal() :
+            //api 연결 이벤트
+            onNext()
+        }
+
     }
 
     return(
