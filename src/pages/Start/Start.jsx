@@ -25,12 +25,17 @@ function Start() {
       </S.HoneyBearWrapper>
 
       <S.ButtonField>
-        {/* {localStorage.getItem('EXIT_LOGIN_TOKEN') === false ? <BtnKakaoLogin /> : 
-        <BtnComplete onClick={()=>{handleStartButton()}}>
-          허니어리 시작하기  
-        </BtnComplete>
-        } */}
-        <BtnKakaoLogin />
+        {localStorage.getItem('EXIT_LOGIN_TOKEN') === false ? (
+          <BtnKakaoLogin />
+        ) : (
+          <BtnComplete
+            onClick={() => {
+              handleStartButton();
+            }}
+          >
+            허니어리 시작하기
+          </BtnComplete>
+        )}
       </S.ButtonField>
     </S.StartPageWrapper>
   );
