@@ -60,3 +60,9 @@ export const realizedKeyword = atom({
     default:'',
     effects_UNSTABLE: [persistAtom]
 });
+
+export const diaryContentState = atom({
+    key: "diaryContent",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
