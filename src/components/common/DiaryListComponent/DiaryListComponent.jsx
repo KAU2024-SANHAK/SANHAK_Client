@@ -15,7 +15,7 @@ export default function DiaryListComponent({ keys, feelingListId, feelingListTit
 
     const handleSearchButton=() =>{
         // API 연결_back에 diaryId request
-        // const responseObject = usePostDiary({diaryId={feelingListId}})
+        // const responseObject = usePostDiary(diaryId={feelingListId})
 
         // API 연결_back에 diaryId response 핸들링_리코일 atom에 저장
         // const { status, data } = responseObject;
