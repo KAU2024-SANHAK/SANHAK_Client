@@ -1,39 +1,66 @@
-// DiaryView.js
 import * as S from './DiaryView.style';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CreatedDiary from '../../components/CreatedDiary/CreatedDiary';
 import DiaryViewPopUp from './DiaryViewPopUp/DiaryViewPopUp';
 import PopUp from '../../components/PopUp/PopUp';
-import RequestReplyViewBtn from '../../components/common/buttons/GoToReplyViewBtn/RequestReplyViewBtn'
-import ResponseReplyViewBtn from '../../components/common/buttons/GoToReplyViewBtn/ResponseReplyViewBtn'
+import RequestReplyViewBtn from '../../components/common/buttons/GoToReplyViewBtn/RequestReplyViewBtn/RequestReplyViewBtn'
+import ResponseReplyViewBtn from '../../components/common/buttons/GoToReplyViewBtn/ResponseReplyViewBtn/ResponseReplyViewBtn'
 import { useRecoilState } from 'recoil';
+import { advice } from '../../recoil/atoms';
+import { diaryId } from '../../recoil/atoms';
+import { usePostAdvice } from '../../hooks/queries/create/usePostAdvice';
 
-export default function DiaryView({ state }) {
+export default function DiaryView() {
+
     const [isClick, setIsClick] = useState(false);
-    const [diary, setDiary] = useRecoilState('diaryState=>atom이름!!!')
+    const [showResponseBtn, setShowResponseBtn] = useState(false);
+    const [adviceState, setAdviceState] = useRecoilState(advice);
 
-    const handlePopUpToggle = () => {
+    // data에 advice가 존재하는 지 여부 확인하기
+    const checkAdviceExists = () => {
+        return !!adviceState;
+    }
+
+    const setDiaryAdvice = (adv) => {
+        advice.set(adv);
+    }
+
+    // advice가 있는지 확인하여 useEffect로 렌더링
+    useEffect(() => {
+        const adviceExists = checkAdviceExists();
+        setShowResponseBtn(adviceExists);
+    }, []);
+
+    const requestPopUpToggle = () => {
+        const responseObject = usePostAdvice(diaryId={diaryId});
+        const { status, data } = responseObject;
+        if (status === 201) {
+            setDiaryAdvice(data.advice);
+        }
+
         setIsClick(!isClick);
-        const response = usePostAdvice(diaryId);
-    };
+    }
 
-    // useEffect를 써서 atom을 검사하고 렌더링
-
-    // default 값으로 (조회하기 / 일기생성) 눌렀을 때, 리코일 조사해서 Request인지, Response인지 띄우기
-
-    // popup 내의 x버튼 누를 때마다 리코일의 조언 여부에 따라 state 값을 달리함. 버튼 선택적으로 렌더링 하기.
+    const responsePopUpToggle = () => {
+        setIsClick(!isClick);
+    }
 
     return (
         <S.DiaryViewPageWrapper>
-                <CreatedDiary contents={diary}/>
+                <CreatedDiary contents={data}/>
                 <S.GoToReplyBtnWrapper>
-                    <RequestReplyViewBtn/>
-                    <GoToReplyBtn onReplyBtnClick={handlePopUpToggle} /> {/* Pass the function to GoToReplyBtn */}
+                    {/* 리코일에 조언이 저장되어 있다면 Response 버튼을 렌더링하고 그렇지 않으면 Request 버튼을 렌더링 */}
+                    {showResponseBtn ? (
+                        <ResponseReplyViewBtn onClick={responsePopUpToggle}/>
+                    ) : (
+                        <RequestReplyViewBtn onClick={requestPopUpToggle}/>
+                    )}
                 </S.GoToReplyBtnWrapper>
-                {/* 리코일에 조언 저장이 되어있다면, */}
+
+                {/* isClick의 상태에 따라 PopUp 렌더링 여부 결정 */}
                 {isClick ? (
                     <PopUp name="꿀비의 답장">
-                        <DiaryViewPopUp isClick={isClick} setIsClick={setIsClick} spicy={response.spicy} kind={response.kind}/>
+                        <DiaryViewPopUp setIsClick spicy={advice.spicy} kind={advice.kind}/>
                     </PopUp>
                 ) : null}
         </S.DiaryViewPageWrapper>

@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 export function EmotionViewComponent() {
     const navigate = useNavigate();
+    const [diary, setDiary] = useRecoilState(diaryContentState);
 
     const handleClick = () => {
         navigate('/diaryview')
@@ -24,7 +25,7 @@ export function EmotionViewComponent() {
                 <S.EmotionPhoto/>
                 <S.EmotionTagWrapper>
                     <S.EmotionTag>
-                        // AI/서버에서 받아온 감정 키워드 출력하기
+                        {diary.feeling}
                     </S.EmotionTag>
                 </S.EmotionTagWrapper>
             </S.EmotionViewComponentWrapper>

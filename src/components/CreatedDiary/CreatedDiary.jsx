@@ -1,44 +1,78 @@
 import * as S from './CreatedDiary.style';
 import BtnBack from '../common/buttons/Back/BtnBack';
-import GoToEmotionView from '../common/buttons/GoToEmotionViewBtn/ResponseEmotionViewBtn/ResponseEmotionViewBtn';
-import GoToReplyBtn from '../common/buttons/GoToReplyViewBtn/GoToReplyBtn';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import RequestEmotionViewBtn from '../common/buttons/GoToEmotionViewBtn/RequestEmotionViewBtn/RequestEmotionViewBtn';
+import ResponseEmotionViewBtn from '../common/buttons/GoToEmotionViewBtn/ResponseEmotionViewBtn/ResponseEmotionViewBtn';
+import { useRecoilState } from 'recoil';
+import { diaryTitle } from '../../recoil/atoms';
+import { diaryId } from '../../recoil/atoms';
+import { diary_content } from '../../recoil/atoms';
+import { feeling } from '../../recoil/atoms';
+import { usePostFeeling } from '../../hooks/queries/create/usePostFeeling';
 
 export default function CreatedDiary(){
+
     const navigate = useNavigate();
 
-    const handleClick = () => {
-        navigate('/main')
+    const [showResponseBtn, setShowResponseBtn] = useState(false);
+    const [feelingState, setFeelingState] = useRecoilState(feeling);
+
+    // data에 feeling이 존재하는 지 여부 확인하기
+    const checkFeelingExists = () => {
+        return !!feelingState;
     }
+
+    const setDiaryFeeling = (feel) => {
+        feeling.set(feel);
+    }
+
+    // advice가 있는지 확인하여 useEffect로 렌더링
+    useEffect(() => {
+        const feelingExists = checkFeelingExists();
+        setShowResponseBtn(feelingExists);
+    }, []);
+
+    const handleRequest = () => {
+        const responseObject = usePostFeeling(diaryId={diaryId});
+        const { status, data } = responseObject;
+        if (status === 201) {
+            setDiaryFeeling(data.feeling);
+        }
+
+        navigate('/emotionview');
+    }
+
+    const handleResponse = () => {
+        navigate('/emotionview');
+    }
+
     return(
         <S.CreatedDiaryWrapper>
             <S.BtnBackWrapper onClick={handleClick}>
                 <BtnBack/>
             </S.BtnBackWrapper>
             <S.TodayEmotionBtnWrapper>
-                <GoToEmotion/>
+                {/* 리코일에 조언이 저장되어 있다면 Response 버튼을 렌더링하고 그렇지 않으면 Request 버튼을 렌더링 */}
+                {showResponseBtn ? (
+                    <ResponseEmotionViewBtn onClick={handleResponse}/>
+                ) : (
+                    <RequestEmotionViewBtn onClick={handleRequest}/>
+                )}
             </S.TodayEmotionBtnWrapper>
             <S.CreatedDiaryComponentWrapper>
                 <S.DiaryTopTextWrapper>
                     <S.DiaryTitle>
-                        할 수 없이 고기를 먹어서 배탈난 날
+                        {diaryTitle}
                     </S.DiaryTitle>
                     <S.DiaryDate>
-                        2024.03.25 월
+                        {/* {data.createdDate} */}
                     </S.DiaryDate>
                 </S.DiaryTopTextWrapper>
                 <S.DiaryPhotoWrapper/>
                 <S.DiaryTextWrapper>
                     <S.DiaryText>
-                    저녁으로 동기들과 꼬기꼬기에서 고기를 먹었다.
-배가 안고팠음에도 불구하고 고기를 먹으니 배탈이 났나보다. 배가 이렇게 아픈 적은 처음이었다.
-하지만 소화제를 먹고 나아져서 정말 다행이었다.
-저녁으로 동기들과 꼬기꼬기에서 고기를 먹었다.
-배가 안고팠음에도 불구하고 고기를 먹으니 배탈이 났나보다. 배가 이렇게 아픈 적은 처음이었다.
-하지만 소화제를 먹고 나아져서 정말 다행이었다.
-저녁으로 동기들과 꼬기꼬기에서 고기를 먹었다.
-배가 안고팠음에도 불구하고 고기를 먹으니 배탈이 났나보다. 배가 이렇게 아픈 적은 처음이었다.
-하지만 소화제를 먹고 나아져서 정말 다행이었다.
+                        {diary_content}
                     </S.DiaryText>
                 </S.DiaryTextWrapper>
             </S.CreatedDiaryComponentWrapper>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as S from './DiaryViewPopUp.style';
 
-export default function DiaryViewPopUp({ isClick, setIsClick, spicy, kind }) {
+export default function DiaryViewPopUp({ setIsClick, spicy, kind }) {
     const [spicySelected, setSpicySelected] = useState(true); // 매운맛 선택 여부 상태
     const [kindSelected, setKindSelected] = useState(false); // 순한맛 선택 여부 상태
 
@@ -16,9 +16,7 @@ export default function DiaryViewPopUp({ isClick, setIsClick, spicy, kind }) {
     };
 
     const handlePopUpToggle = () => {
-        setIsClick(!isClick);
-        // 조언 여부를 리코일에서 확인하고 선택적으로 값을 부모 컴포넌트에게 보내기 (state값을 통해서)
-        if ()
+        setIsClick();
     };
 
     return (
