@@ -61,8 +61,52 @@ export const realizedKeyword = atom({
     effects_UNSTABLE: [persistAtom]
 });
 
-export const diaryContentState = atom({
-    key: "diaryContent",
+/*
+export const diary = atom({
+    key: "diary",
+    default:{
+        diaryId: '',
+        diary_content: '',
+        advice: '',
+        feeling: '',
+        imageUrl: '',
+        diaryTitle: ''
+    },
+    effects_UNSTABLE: [persistAtom]
+});*/
+
+export const diaryId = atom({
+    key: "diaryId",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const diary_content = atom({
+    key: "diary_content",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const advice = atom({
+    key: "advice",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const feeling = atom({
+    key: "feeling",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const imageUrl = atom({
+    key: "imageUrl",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const diaryTitle = atom({
+    key: "diaryTitle",
     default:'',
     effects_UNSTABLE: [persistAtom]
 });
