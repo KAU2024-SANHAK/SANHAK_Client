@@ -1,5 +1,6 @@
 import * as S from './Start.style';
 import BtnKakaoLogin from '../../components/common/buttons/KakaoLogin/BtnKakaoLogin';
+import BtnTestLogin from '../../components/common/buttons/KakaoLogin/BtnTestLogin';
 import BtnComplete from '../../components/common/buttons/complete/BtnComplete';
 import HoneyBear from '../../components/common/HoneyBear/HoneyBear';
 import { useNavigate } from 'react-router-dom';
@@ -7,16 +8,10 @@ import useTestLogin from '../../hooks/useTestLogin'
 
 function Start() {
   const navigate = useNavigate();
-  const testLogin = useTestLogin();
 
   const handleStartButton = () => {
     localStorage.getItem('FIRST_LOGIN') === true ? navigate('/onboarding') : navigate('/main');
   };
-
-  const onTestClick = () => {
-    console.log('임시 코드 발급 버튼')
-    testLogin();
-  }
 
   return (
     <S.StartPageWrapper>
@@ -36,7 +31,8 @@ function Start() {
         </BtnComplete>
         } */}
         <BtnKakaoLogin />
-        <button onClick={()=>{onTestClick()}}>테스트 코드 임시 버튼</button>
+        
+        <BtnTestLogin />
       </S.ButtonField>
     </S.StartPageWrapper>
   );

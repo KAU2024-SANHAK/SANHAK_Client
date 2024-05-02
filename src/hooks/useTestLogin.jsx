@@ -7,7 +7,7 @@ const useTestLogin= async () => {
     const navigate = useNavigate();
    // const params = new URL(document.URL).searchParams;
   //  const code = params.get('code');   
-    const code = 'pLF2DvbE2TwMJeiagojcATGBCPft-272eHtA5uqAXo_xjQ-2jZAjl6oN4LAKPXOaAAABjzRF8orE017PSiBv1Q'
+    const code = 'AFyYTRr97Zl-2QvBTK9KuhP_ek6esF-u9AVl5-Qu8SZGcz-_LGTwTBwmA_AKPXVbAAABjzakKSCo9NUiJo7xnA'
     const authTestInstance = axios.create({
         baseURL: import.meta.env.VITE_APP_SERVER_BASE_URL,
         withCredentials: true,
