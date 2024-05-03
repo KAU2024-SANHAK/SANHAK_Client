@@ -3,6 +3,7 @@ import { useRecoilState } from 'recoil'
 import { realizedKeyword } from '../../../recoil/atoms'
 import { useKeywordNullCheck } from '../../../hooks/useKeywordNullCheck'
 import { useModal } from '../../../hooks/common/useModal'
+import { usePostKeywords } from '../../../hooks/queries/fastdiary/usePostKeywords'
 import LargeQuestion from '../Questions/LargeQustion'
 import BtnNext from '../../common/buttons/Next/BtnNext'
 import BtnPrev from '../../common/buttons/Prev/BtnPrev'
@@ -11,6 +12,7 @@ import DiaryErrorModal from '../../Modal/DiaryErrorModal'
 export default function FastDiaryStep6({onNext, onPrev}){
     const [realized, setRealized] = useRecoilState(realizedKeyword);
     const [isOpen, openModal, closeModal] = useModal();
+    const { mutation } = usePostKeywords();
     const checkNull = useKeywordNullCheck();
 
     const handleChange = (event)=>{
