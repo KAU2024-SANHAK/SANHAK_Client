@@ -20,6 +20,6 @@ export const LargeQuestionWrapper = styled.div`
     height: 11.8rem;
     margin-bottom: 1.3rem;
 `
-export const QustionText = styled.p`
+export const QuestionText = styled.p`
     ${({ theme }) => theme.fonts.heading_03};
 `

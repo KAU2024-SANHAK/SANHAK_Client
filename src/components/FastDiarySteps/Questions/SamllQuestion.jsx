@@ -3,9 +3,9 @@ import * as S from './Question.style'
 export default function SmallQuestion({children}){
     return(
         <S.SmallQuestionWrapper>
-            <S.QustionText>
+            <S.QuestionText>
                 {children}
-            </S.QustionText>
+            </S.QuestionText>
         </S.SmallQuestionWrapper>
     )
 }
