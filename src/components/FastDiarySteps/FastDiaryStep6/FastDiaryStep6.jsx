@@ -1,9 +1,10 @@
 import * as S from '../FastDiaryStep.style'
 import { useRecoilState } from 'recoil'
-import { realizedKeyword } from '../../../recoil/atoms'
+import { realizedKeyword, diaryImage } from '../../../recoil/atoms'
 import { useKeywordNullCheck } from '../../../hooks/useKeywordNullCheck'
 import { useModal } from '../../../hooks/common/useModal'
 import { usePostKeywords } from '../../../hooks/queries/fastdiary/usePostKeywords'
+import { keywords } from '../../../utils/keyword'
 import LargeQuestion from '../Questions/LargeQustion'
 import BtnNext from '../../common/buttons/Next/BtnNext'
 import BtnPrev from '../../common/buttons/Prev/BtnPrev'
@@ -22,6 +23,11 @@ export default function FastDiaryStep6({onNext, onPrev}){
     const onClickSubmit = ()=>{
         {checkNull === true ? openModal() :
             //api 연결 이벤트
+            mutation.mutate(keywords,{
+                onSuccess: (data) =>{
+                    console.log(data);
+                }
+            })
             onNext()
         }
 

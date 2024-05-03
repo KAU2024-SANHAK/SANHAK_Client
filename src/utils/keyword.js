@@ -8,5 +8,4 @@ export const keywords = {
     when: useRecoilValue(whenKeyword),
     where: useRecoilValue(whereKeyword),
     realized: useRecoilValue(realizedKeyword),
-
 }
