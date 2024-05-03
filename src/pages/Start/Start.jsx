@@ -25,7 +25,7 @@ function Start() {
       </S.HoneyBearWrapper>
 
       <S.ButtonField>
-        {localStorage.getItem('EXIT_LOGIN_TOKEN') === null ? (
+        {localStorage.getItem('EXIT_LOGIN_TOKEN') === false ? (
           <BtnKakaoLogin />
         ) : (
           <BtnComplete

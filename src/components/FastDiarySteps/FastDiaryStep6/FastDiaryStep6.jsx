@@ -14,6 +14,7 @@ export default function FastDiaryStep6({onNext, onPrev}){
     const [realized, setRealized] = useRecoilState(realizedKeyword);
     const [isOpen, openModal, closeModal] = useModal();
     const { mutation } = usePostKeywords();
+    const diaryKeywords = keywords();
     const checkNull = useKeywordNullCheck();
 
     const handleChange = (event)=>{
@@ -23,7 +24,8 @@ export default function FastDiaryStep6({onNext, onPrev}){
     const onClickSubmit = ()=>{
         {checkNull === true ? openModal() :
             //api 연결 이벤트
-            mutation.mutate(keywords,{
+            console.log(diaryKeywords)
+            mutation.mutate(diaryKeywords,{
                 onSuccess: (data) =>{
                     console.log(data);
                 }
