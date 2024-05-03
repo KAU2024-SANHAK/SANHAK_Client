@@ -1,15 +1,21 @@
 import styled from 'styled-components'
 import { IcDiaryFeeling } from "../../../../assets/svg"
 
-//버튼 텍스트 정렬이 안됩니다....
 export const DiaryFeelingButtonWrapper = styled.button`
+    ${({ theme: { mixin } }) => mixin.flexCenter({})};
     ${({ theme }) => theme.fonts.heading_01};
     width: 9.6rem;
     background-color: transparent;
-    border: none;
+    padding-top: 1rem;
+    padding-left: 2rem;
     text-align: center;
+    font-weight: 700;
+    letter-spacing: -0.0408rem;
 `
 export const DiaryFeelingButton = styled(IcDiaryFeeling)`
-    position: relative;
     display: flex;
+    fill: ${({ theme }) => theme.colors.normal.white};
+`
+export const FeelingText=styled.p`
+    position: absolute;
 `

@@ -15,7 +15,7 @@ ${reset}
 
  button {
   cursor: pointer;
-  border-style: solid;
+  border: none;
  }
  
  textarea {

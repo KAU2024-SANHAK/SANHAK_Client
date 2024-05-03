@@ -1,38 +1,71 @@
-import { useNavigate } from "react-router-dom";
-import { authInstance } from "../../../../apis/client";
-import { useEffect } from "react";
+// import { useNavigate } from 'react-router-dom';
+// import { useEffect } from 'react';
+// import axios from 'axios';
+// import { useMutation } from 'react-query';
 
-const params = new URL(document.URL).searchParams;
-const code = params.get('code');
+// const useLogin = async () => {
+//   const navigate = useNavigate();
+//   const params = new URL(document.URL).searchParams;
+//   const query = params.get('code');
 
-//백엔드 서버에 get 으로 넘겨주기
-const useLogin= async () => {
-    const navigate = useNavigate();
-    
-    useEffect(()=>{ 
+//   const getKakaoToken = useMutation({
+//     mutationFn: async (code) => {
+//       const data = {
+//         grant_type: 'authorization_code',
+//         client_id: import.meta.env.VITE_REST_API_KEY || '',
+//         redirect_uri: import.meta.env.VITE_LOCAL_REDIRECT_URI,
+//         code,
+//       };
+//       const queryString = Object.keys(data)
+//         .map((key) => `${key}=${data[key]}`)
+//         .join('&');
+//       return await axios.post('https://kauth.kakao.com/oauth/token', queryString, {
+//         headers: {
+//           'Content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+//         },
+//       });
+//     },
+//     onSuccess: (res) => {
+//       console.log(res.data.access_token);
+//       putKakaoTokenToServer.mutate(res.data.access_token);
+//     },
+//     retry: false,
+//   });
 
-        if(code){
-            try{
-                const response = authInstance.get(
-                //서버 주소에 쿼리형식으로 인가코드 넣어
-                `${code}`
-                )
-                
-                //const userData = response.data.;
-            
+//   const putKakaoTokenToServer = useMutation({
+//     mutationFn: async (token) => {
+//       const authInstance = axios.create({
+//         baseURL: import.meta.env.VITE_APP_SERVER_BASE_URL,
+//         withCredentials: true,
+//         headers: { Authorization: `Bearer ${token}` },
+//       });
+//       return await authInstance.post('/api/login');
+//     },
+//     onSuccess: (res) => {
+//       const data = res.data;
+//       console.log(data);
+//       // const jwt= data.data.memberToken.accessToken;
+//       // const RefreshToken = data.data.memberToken.refreshToken;
 
-            }catch(error){
-                console.log(error)
-            }
-            
-            //나중에 최초 로그인 값, 실제 아이디, 토큰 값 등으로 수정하겠습니다.
-            localStorage.setItem('EXIT_LOGIN_TOKEN', true);
-        }
+//       // if (res.status == 201 || res.status == 200) {
+//       //   localStorage.setItem('LOGIN_TOKEN', jwt);
+//       //   localStorage.setItem('LOGIN_REFRESH_TOKEN', RefreshToken);
+//       //   axios.defaults.headers.common["Authorization"] = `${jwt}`;
+//       //   navigate('/');
+//       // } else {
+//       //   window.alert("로그인에 실패하였습니다.");
+//       // }
+//     },
+//   });
 
-        //if 최초 로그인이면 온보딩으로 이동하기
-        navigate('/onboarding')
-        //else 메인 화면으로
-    }, [])
-}
+//   useEffect(() => {
+//     if (query) {
+//       getKakaoToken.mutate(query);
+//     }
+//   }, [query]);
+//   return {
+//     isLoading: getKakaoToken.isLoading || putKakaoTokenToServer.isLoading,
+//   };
+// };
 
-export default useLogin
+// export default useLogin;

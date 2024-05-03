@@ -11,3 +11,72 @@ export const UserDiaryType = atom({
    default: '',
    effects_UNSTABLE: [persistAtom]
 });
+
+export const feelingKeyword = atom({
+    key: "feeling",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const whoKeyword = atom({
+    key: "who",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const whenKeyword = atom({
+    key: "when",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const whereKeyword = atom({
+    key: "where",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const whatKeyword = atom({
+    key: "what",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const realizedKeyword = atom({
+    key: "realized",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const diaryTitle = atom({
+    key: "diaryTitle",
+    default: '',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const diaryContent = atom({
+    key: "diaryContent",
+    default: '',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const diaryFeeling = atom({
+    key: "diaryFeeling",
+    default: '',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const diaryImage = atom({
+    key: "diaryImage",
+    default: '',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const diaryAdvice = atom({
+    key: "diaryAdvice",
+    default: {
+        spicy: '',
+        kind: '',
+    },
+    effects_UNSTABLE: [persistAtom]
+});

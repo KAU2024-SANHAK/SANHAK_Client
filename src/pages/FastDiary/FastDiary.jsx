@@ -3,7 +3,7 @@ import { useModal } from '../../hooks/common/useModal';
 import { useFunnel } from '../../hooks/common/useFunnel';
 import { useNavigate } from 'react-router-dom'
 import BtnHome from '../../components/common/buttons/Home/BtnHome';
-import DiaryPrgoress from '../../components/DiaryProgress/DiaryProgress';
+import DiaryProgress from '../../components/DiaryProgress/DiaryProgress';
 import HomeModal from '../../components/Modal/HomeModal';
 import StepProgress from '../../components/common/StepPrgoress/StepProgress';
 import FastDiaryStep1 from '../../components/FastDiarySteps/FastDiaryStep1/FastDiaryStep1'
@@ -18,8 +18,9 @@ export default function FastDiary(){
     const today = date.getDate();
 
     const navigate = useNavigate();
-    const [isOpen, opneModal, closeModal] = useModal();
-    const [Funnel, Step, currentStep, setCurrentStep] = useFunnel("DiaryStep1")
+    const [isOpen, openModal, closeModal] = useModal();
+    const [Funnel, Step, currentStep, setCurrentStep] = useFunnel("DiaryStep1");
+
 
     const steps = [
         { name: 'DiaryStep1', component: FastDiaryStep1, nextStep: 'DiaryStep2' },
@@ -56,18 +57,16 @@ export default function FastDiary(){
             </S.HoneyBearWrapper>
 
             <S.FastDiaryHeader>
-                <S.HomeButtonWrapper>
-                    <BtnHome onClick={()=>{opneModal()}}/>                    
-                </S.HomeButtonWrapper>
+                <BtnHome onClick={()=>{openModal()}}/>                    
                 
-                <DiaryPrgoress steps = {steps} cur = {currentStep}/>
+                <DiaryProgress steps = {steps} cur = {currentStep}/>
             </S.FastDiaryHeader>
             
             <S.WritingForm>
                 <Funnel>
                     {steps.map((step, idx)=>(
                         <Step key = {idx} name = {step.name}>
-                            <step.component onNxt={()=>{handleNext()}} onPrev={()=>{handlePrev()}}/>
+                            <step.component onNext={()=>{handleNext()}} onPrev={()=>{handlePrev()}}/>
                             <S.ProgressWrapper>
                                 <StepProgress steps= {steps} cur={step.name}/>        
                             </S.ProgressWrapper>
@@ -77,7 +76,6 @@ export default function FastDiary(){
                 </Funnel>
             </S.WritingForm>
 
-            
         </S.FastDairyPageWrapper>
     )
 }

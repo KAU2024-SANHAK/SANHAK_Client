@@ -1,22 +1,43 @@
 import * as S from './Start.style';
-import { kakaoURL } from '../../utils/login';
+import BtnComplete from '../../components/common/buttons/complete/BtnComplete';
+import HoneyBear from '../../components/common/HoneyBear/HoneyBear';
+import { useNavigate } from 'react-router-dom';
 import BtnKakaoLogin from '../../components/common/buttons/KakaoLogin/BtnKakaoLogin';
-import BtnStart from '../../components/common/buttons/Start/BtnStart';
-
-
-const handleLogin=()=>{
-  window.location.href = kakaoURL;
-}
 
 function Start() {
-  
+  const navigate = useNavigate();
+  const ref = document.referrer;
+  sessionStorage.setItem('url', ref);
+
+  const handleStartButton = () => {
+    localStorage.getItem('FIRST_LOGIN') === true ? navigate('/onboarding') : navigate('/main');
+  };
+
   return (
-    <S.StartWrapper>
-      <h1>시작 페이지 입니다.</h1>
+    <S.StartPageWrapper>
+      <S.TitleWrapper>
+        <S.SubTitle>꿀같은 일상을 담는 일기서비스</S.SubTitle>
+        <S.Title>허니어리</S.Title>
+      </S.TitleWrapper>
 
-      {localStorage.getItem('EXIT_LOGIN_TOKEN') === false ? <BtnKakaoLogin/> : <BtnStart/>}
+      <S.HoneyBearWrapper>
+        <HoneyBear height='34rem' />
+      </S.HoneyBearWrapper>
 
-    </S.StartWrapper>
+      <S.ButtonField>
+        {localStorage.getItem('EXIT_LOGIN_TOKEN') === false ? (
+          <BtnKakaoLogin />
+        ) : (
+          <BtnComplete
+            onClick={() => {
+              handleStartButton();
+            }}
+          >
+            허니어리 시작하기
+          </BtnComplete>
+        )}
+      </S.ButtonField>
+    </S.StartPageWrapper>
   );
 }
 
