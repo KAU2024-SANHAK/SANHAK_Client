@@ -1,11 +1,10 @@
 import styled from 'styled-components'
-import SmallQuestionBox from '../../../assets/smallQuestionBox.svg'
-import LargeQuestionBox from '../../../assets/largeQuestionBox.svg'
-import { IcSmallQuestionBox } from '../../../assets/svg'
+import smallSpeakCloud from '../../../assets/smallSpeakCloud.png'
+import largeSpeakCloud from '../../../assets/largeSpeakCloud.png'
 
 export const SmallQuestionWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
-    background-image:url(${SmallQuestionBox});
+    background-image:url(${smallSpeakCloud});
     display: flex;
     bottom: 32rem;
     width: 34rem;
@@ -14,7 +13,7 @@ export const SmallQuestionWrapper = styled.div`
 `
 export const LargeQuestionWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
-    background-image:url(${LargeQuestionBox});
+    background-image:url(${largeSpeakCloud});
     display: flex;
     bottom: 28rem;
     width: 34rem;
@@ -23,7 +22,4 @@ export const LargeQuestionWrapper = styled.div`
 `
 export const QustionText = styled.p`
     ${({ theme }) => theme.fonts.heading_03};
-`
-export const SmallQuestionBoxs = styled(IcSmallQuestionBox)`
-
 `
