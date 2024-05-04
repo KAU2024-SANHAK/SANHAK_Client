@@ -22,17 +22,14 @@ export default function FastDiaryStep6({onNext, onPrev}){
     }
 
     const onClickSubmit = ()=>{
+        console.log(checkNull)
         {checkNull === true ? openModal() :
-            //api 연결 이벤트
-            console.log(diaryKeywords)
             mutation.mutate(diaryKeywords,{
                 onSuccess: (data) =>{
                     console.log(data);
                 }
-            })
-            onNext()
+            })&&onNext()
         }
-
     }
 
     return(

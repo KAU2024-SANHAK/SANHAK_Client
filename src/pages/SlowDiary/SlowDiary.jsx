@@ -51,7 +51,7 @@ export default function SlowDiary(){
         navigate('/diaryview')
     }
     const handleSubmit=()=>{
-        formData.append('imageurl', data.imageurl)
+        formData.append('imageurl', file)
         const blobTitle = new Blob([JSON.stringify(data.diaryTitle)],{
             type: 'application/json',
         })        
