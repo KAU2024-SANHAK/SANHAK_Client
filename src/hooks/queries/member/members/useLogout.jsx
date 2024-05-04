@@ -6,9 +6,9 @@ export const patchToken = async () => {
     return response.data;
 }
 
-const useLogout = async()=>{
+export const useLogout = () => {
     const mutation = useMutation({
-        mutationFn: patchToken(),
+        mutationFn: patchToken,
         onSuccess: (data) => {
             console.log(data.message);
             localStorage.removeItem('LOGIN_TOKEN');
@@ -16,6 +16,5 @@ const useLogout = async()=>{
             navigate('/')
         }
     })
-    return { mutation }
+    return { mutation }; 
 };
-export default useLogout;
