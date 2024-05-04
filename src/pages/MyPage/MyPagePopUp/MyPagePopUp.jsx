@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useRecoilValue } from 'recoil'
 import { UserDiaryType } from '../../../recoil/atoms'
-import useLogout from '../../../hooks/queries/member/members/useLogout'
+import { useLogout } from '../../../hooks/queries/member/members/useLogout'
 import BtnLogout from '../../../components/common/buttons/Logout/BtnLogout'
 import BtnComplete from '../../../components/common/buttons/complete/BtnComplete'
 import BtnSetCharacter from '../../../components/common/buttons/SetCharcater/BtnSetCharacter'
@@ -13,12 +13,18 @@ import SetWritingStyle from '../../../components/SetDiaryStyle/SetDiaryStyle'
 
 export default function MyPagePopUp(){
     const [isClick, setIsClick] = useState(false);
-    const curType = useRecoilValue(UserDiaryType)
-
+    const curType = useRecoilValue(UserDiaryType);
+    const  { mutation }  = useLogout();
     const navigate = useNavigate();
-    const handlegoWiki=()=>{
-        navigate('/mypage/characterwiki')
-    }
+
+    const handlegoWiki = () => {
+        navigate('/mypage/characterwiki');
+    };
+
+    const handleLogout = () => {
+        mutation.mutate();
+    };
+
     return(
         <S.MyPagePopUpWrapper>
 
@@ -27,7 +33,7 @@ export default function MyPagePopUp(){
                 <S.MyPagePopUpBodyWrapper>
                     <BtnCurDiaryType onClick={()=>{setIsClick(true)}} curType={curType}/>
                     <BtnSetCharacter onClick={()=>{handlegoWiki()}}/>
-                    <BtnLogout onClick={()=>{useLogout()}}/>
+                    <BtnLogout onClick={()=>{handleLogout()}}/>
                 </S.MyPagePopUpBodyWrapper>
                 :
                 <S.MyPagePopUpBodyWrapper>

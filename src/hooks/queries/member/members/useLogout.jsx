@@ -6,13 +6,13 @@ export const patchToken = async (body) => {
     return response.data;
 }
 
-const useLogout = async()=>{
+export const useLogout = async()=>{
     const mutation = useMutation({
-        mutationFn: patchToken(),
+        mutationFn: patchToken,
         onSuccess: (data) => {
             console.log(data.message);
         }
     })
     console.log('logout');
+    return { mutation }
 };
-export default useLogout;
