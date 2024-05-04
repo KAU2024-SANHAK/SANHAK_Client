@@ -22,8 +22,9 @@ export default function MyPagePopUp(){
     };
 
     const handleLogout = () => {
-        navigate('/')
-;    }
+        mutation.mutate();
+    };
+
     return(
         <S.MyPagePopUpWrapper>
 
@@ -32,7 +33,7 @@ export default function MyPagePopUp(){
                 <S.MyPagePopUpBodyWrapper>
                     <BtnCurDiaryType onClick={()=>{setIsClick(true)}} curType={curType}/>
                     <BtnSetCharacter onClick={()=>{handlegoWiki()}}/>
-                    <BtnLogout onClick={()=>{useLogout()}}/>
+                    <BtnLogout onClick={()=>{handleLogout()}}/>
                 </S.MyPagePopUpBodyWrapper>
                 :
                 <S.MyPagePopUpBodyWrapper>
