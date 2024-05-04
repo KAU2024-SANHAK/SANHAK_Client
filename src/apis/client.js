@@ -21,7 +21,6 @@ export const serverInstance = axios.create({
   withCredentials: true,
   headers: {
     Authorization: `${getAccessToken()}`,
-   'Content-Type': 'multipart/form-data',
   },
 });
 
