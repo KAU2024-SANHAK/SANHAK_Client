@@ -1,6 +1,6 @@
 import * as S from './Main.style'
 import MainStep1 from '../../components/MainStep/MainStep1/MainStep1'
-import MainStep2 from '../../components/MainStep/MainStep2/MainStep2'
+// import MainStep2 from '../../components/MainStep/MainStep2/MainStep2'
 import React from "react";
 import Slider from "react-slick";
 import HoneyBearMainStep1 from '../../components/common/HoneyBearMainStep1/HoneyBearMainStep1';
@@ -33,45 +33,51 @@ function Main() {
   //   </S.Wrapper>
   // )
   
-  return (
-    <div className='slider-container'>
-      <Slider {...settings} dotsClass="test-css">
-        <div>
-          <S.Wrapper>
-            <S.MainStep1HoneyBearWrapper>
-              <HoneyBearMainStep2/>
-            </S.MainStep1HoneyBearWrapper>
-            <MainStep1/>
-          </S.Wrapper>
-        </div>
-        <div>
-          <S.Wrapper>
-            <div>
-              <S.MainStep2HoneyBearWrapper>
-                <HoneyBearMainStep1/>
-              </S.MainStep2HoneyBearWrapper>
-              {/* <MainStep2/> */}
-              {/* <S.MainStep2ComponentWrapper> */}
-                  <Calendar/>
-                  <DiaryList/>
+  // return (
+  //   <div className='slider-container'>
+  //     <Slider {...settings} dotsClass="test-css">
+  //       <div>
+  //         <S.Wrapper>
+  //           <S.MainStep1HoneyBearWrapper>
+  //             <HoneyBearMainStep2/>
+  //           </S.MainStep1HoneyBearWrapper>
+  //           <MainStep1/>
+  //         </S.Wrapper>
+  //       </div>
+  //       <div>
+  //         <S.Wrapper>
+  //           <div>
+  //             <S.MainStep2HoneyBearWrapper>
+  //               <HoneyBearMainStep1/>
+  //             </S.MainStep2HoneyBearWrapper>
+  //             {/* <MainStep2/> */}
+  //             {/* <S.MainStep2ComponentWrapper> */}
+  //                 <Calendar/>
+  //                 <DiaryList/>
 
-              {/* </S.MainStep2ComponentWrapper> */}
-            </div>
+  //             {/* </S.MainStep2ComponentWrapper> */}
+  //           </div>
             
-          </S.Wrapper>
-          <h2>
-            Hello
-          </h2>
-          <div>
-            Hello
-          </div>
-          <p>
-            hi
-          </p>
-        </div>
-      </Slider>
-    </div>
-  );
+  //         </S.Wrapper>
+  //         <h2>
+  //           Hello
+  //         </h2>
+  //         <div>
+  //           Hello
+  //         </div>
+  //         <p>
+  //           hi
+  //         </p>
+  //       </div>
+  //     </Slider>
+  //   </div>
+  // );
+
+  return (
+    <>
+      <Calendar/>
+    </>
+  )
 }
 
 export default Main;
