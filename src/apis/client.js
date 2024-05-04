@@ -29,7 +29,6 @@ export const aiInstance = axios.create({
   baseURL: import.meta.env.VITE_APP_AI_BASE_URL,
   withCredentials: true,
   headers: {
-    'Content-Type': 'application/json',
     Authorization: `${getAccessToken()}`,
   },
 });
