@@ -13,12 +13,17 @@ import SetWritingStyle from '../../../components/SetDiaryStyle/SetDiaryStyle'
 
 export default function MyPagePopUp(){
     const [isClick, setIsClick] = useState(false);
-    const curType = useRecoilValue(UserDiaryType)
-
+    const curType = useRecoilValue(UserDiaryType);
+    const { mutation } = useLogout();
     const navigate = useNavigate();
-    const handlegoWiki=()=>{
-        navigate('/mypage/characterwiki')
-    }
+
+    const handlegoWiki = () => {
+        navigate('/mypage/characterwiki');
+    };
+
+    const handleLogout = () => {
+        navigate('/')
+;    }
     return(
         <S.MyPagePopUpWrapper>
 
