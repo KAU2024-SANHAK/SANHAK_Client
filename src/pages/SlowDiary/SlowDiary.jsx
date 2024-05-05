@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { useModal } from '../../hooks/common/useModal';
 import { useFileReader } from '../../hooks/common/useFileReader';
 import { useNavigate } from 'react-router-dom';
-import  usePostSlowDiary  from '../../hooks/queries/slowdiary/usePostSlowDiary';
+import { setDiaryAtoms } from '../../hooks/common/useSetDiaryAtoms';
+import usePostSlowDiary from '../../hooks/queries/slowdiary/usePostSlowDiary';
 import BtnHome from '../../components/common/buttons/Home/BtnHome';
 import BtnNext from '../../components/common/buttons/Next/BtnNext';
 import HomeModal from '../../components/Modal/HomeModal';
@@ -16,7 +17,8 @@ export default function SlowDiary(){
     const [isOpen, openModal, closeModal] = useModal();
     const { mutation } = usePostSlowDiary();
     const readData = useFileReader();
-    
+    //const setAtoms = setDiaryAtoms;
+
     const [data, setData] = useState({
         imageurl: '',
         diaryTitle: '',
@@ -31,11 +33,11 @@ export default function SlowDiary(){
         type: 'application/json',
     });
 
-    const handleChange=(event)=>{
+    const handleChange = (event) => {
         setData({...data, [event.target.name] : event.target.value});
     };
 
-    const handleImage= (event)=>{
+    const handleImage = (event) => {
         const file = event.target.files[0];
         
         readData(file, (imageFile) => {
@@ -45,22 +47,19 @@ export default function SlowDiary(){
         setFile(file);
     };
 
-    const handleNext=()=>{
-        navigate('/diaryview');
-    };
-
-    const handleSubmit=()=>{
+    const handleSubmit = () => {
         formData.append('imageurl', file);
         formData.append('diaryTitle',blobTitle);
         formData.append('diaryContent',blobContent);
 
         mutation.mutate(formData, {
-            onSuccess: (data) => {
-                console.log(data);
+            onSuccess: (response) => {
+                const data = response.data;
+           //     setAtoms(data.imageurl, data.content, data.title, null);
+                navigate('/diaryview');
             }
         });
-
-        navigate('/diaryview');
+        
     };
 
     return(
@@ -113,7 +112,6 @@ export default function SlowDiary(){
                 <S.BtnField>
                     <BtnNext onNext={() => {
                         handleSubmit();
-                        handleNext();
                     }}/>
                 </S.BtnField>
             </S.FormWrapper>
