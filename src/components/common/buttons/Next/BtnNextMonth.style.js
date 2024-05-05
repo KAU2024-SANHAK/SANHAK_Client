@@ -1,11 +1,9 @@
 import styled from 'styled-components'
 import { IcNextMonthBtn } from '../../../../assets/svg'
 
-export const ButtonWrapper = styled.button`
+export const ButtonWrapper = styled.div`
     display: flex;
-    position: absolute;
     background-color: transparent;
-    left: 4rem;
 `
 export const NextMonthButton = styled(IcNextMonthBtn)`
     display: flex;
