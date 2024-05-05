@@ -4,6 +4,7 @@ import { getYear } from "date-fns";
 import * as S from './Calendar.style'
 import BtnNextMonth from '../buttons/Next/BtnNextMonth'
 import BtnPrevMonth from '../buttons/Prev/BtnPrevMonth'
+import SelectInToggle from "../buttons/SelectInToggle/SelectInToggle";
 
 const range = (start, end) => {
   return Array.from({ length: end - start + 1 }, (_, index) => start + index);
@@ -51,7 +52,7 @@ const ReactDatePicker = () => {
             <S.BtnLeftWrapper onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
               <BtnPrevMonth/>
             </S.BtnLeftWrapper>
-            <S.YearSelector
+            {/* <S.YearSelector
               value={getYear(date)}
               onChange={({ target: { value } }) => changeYear(value)}
             >
@@ -60,7 +61,7 @@ const ReactDatePicker = () => {
                   {option}
                 </S.YearOption>
               ))}
-            </S.YearSelector>
+            </S.YearSelector>ßß
   
             <S.MonthSelector
               value={months[getMonth(date)]}
@@ -74,7 +75,9 @@ const ReactDatePicker = () => {
                 </S.MonthOption>
               ))}
             </S.MonthSelector>
-  
+   */}
+
+            <SelectInToggle currentYear={getYear(date)} currentMonth={getMonth(date)}/>
             <S.BtnRightWrapper onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
               <BtnNextMonth/>
             </S.BtnRightWrapper>
@@ -82,6 +85,7 @@ const ReactDatePicker = () => {
         )}
       />
     </S.CalendarComponentWrapper>
+    // isClicked?
   );
 };
 

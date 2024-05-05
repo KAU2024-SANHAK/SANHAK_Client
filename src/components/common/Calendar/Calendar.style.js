@@ -70,14 +70,16 @@ export const CustomDatePicker = styled(DatePicker)`
 export const BtnLeftWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({})};
     margin-left: 2.2rem;
+    margin-right: 4rem;
 `
 export const BtnRightWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({})};
-    margin-left: 7rem;
+    margin-right: 2.2rem;
+    margin-left: 4rem;
 `
 export const YearSelector = styled.select`
     ${({ theme: { mixin } }) => mixin.flexBox({})};
-    margin-left: 8rem;
+    margin-left: 7rem;
     background-color: transparent;
     border: none;
     ${({ theme }) => theme.fonts.heading_01};
