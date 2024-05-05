@@ -1,8 +1,8 @@
 import * as S from './BtnPrevMonth.style'
 
-export default function BtnPrevMonth({onPrev}){
+export default function BtnPrevMonth(){
     return(
-        <S.ButtonWrapper type='button' onClick={()=>onPrev()}>
+        <S.ButtonWrapper type='button'>
             <S.PrevMonthButton/>
         </S.ButtonWrapper>
     )
