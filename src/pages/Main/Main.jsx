@@ -74,9 +74,12 @@ function Main() {
   // );
 
   return (
-    <>
-      <Calendar/>
-    </>
+    <S.Wrapper>
+      <S.CalendarWrapper>
+        <Calendar/>
+      </S.CalendarWrapper>
+    </S.Wrapper>
+
   )
 }
 
