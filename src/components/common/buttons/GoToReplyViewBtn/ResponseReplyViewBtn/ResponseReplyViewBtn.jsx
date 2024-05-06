@@ -1,17 +1,15 @@
-// 일기생성 완료 화면 (중앙 하단)에 보여지는 버튼_해당 페이지로 렌더링될 때, 답장 리코일이 존재하는 경우
-
-import * as S from './GoToReplyBtn.style';
+import * as S from './ResponseReplyViewBtn.style';
 
 export default function ResponseReplyViewBtn() {
     
     return (
-        <S.GoToReplyBtnWrapper>
-            <S.GoToReplyBtnIconWrapper>
-                <S.GoToReplyBtnIcon />
-            </S.GoToReplyBtnIconWrapper>
-            <S.GoToReplyBtnText>
+        <S.ResponseReplyViewBtnWrapper>
+            <S.ResponseReplyViewBtnIconWrapper>
+                <S.ResponseReplyViewBtnIcon />
+            </S.ResponseReplyViewBtnIconWrapper>
+            <S.ResponseReplyViewBtnText>
                 답장 보러가기
-            </S.GoToReplyBtnText>
-        </S.GoToReplyBtnWrapper>
+            </S.ResponseReplyViewBtnText>
+        </S.ResponseReplyViewBtnWrapper>
     );
 }
