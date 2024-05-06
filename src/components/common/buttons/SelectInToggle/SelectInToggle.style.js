@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
     justify-content: center;
     ${({ theme }) => theme.fonts.heading_01};
     width: 17.8rem;
+    margin-left: 1rem;
 `
 
 export const CalendarToggle = styled(IcCalendarToggle)`
