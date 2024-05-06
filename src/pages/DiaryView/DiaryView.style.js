@@ -19,3 +19,8 @@ export const GoToReplyBtnWrapper = styled.div`
     bottom: 1.6rem;
     left: 11rem;
 `
+export const CloseBtn = styled.div`
+    width: 3rem;
+    height: 3rem;
+    background-color: black;
+`

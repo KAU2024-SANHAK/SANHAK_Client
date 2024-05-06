@@ -62,15 +62,17 @@ export default function DiaryView() {
                     ) : (
                         <RequestReplyViewBtn onClick={requestPopUpToggle}/>
                     )} */}
-                    <ResponseReplyViewBtn onClick={() => {responsePopUpToggle()}}/>
+                    <ResponseReplyViewBtn onClick={responsePopUpToggle}/>
+                        {/* isClick의 상태에 따라 PopUp 렌더링 여부 결정 */}
+                        {isClick === true ? (
+                            <PopUp name="꿀비의 답장">
+                                <DiaryViewPopUp spicy={advice.spicy} kind={advice.kind}/>
+                                <S.CloseBtn onClick={responsePopUpToggle} />
+                            </PopUp>
+                        ) : null}
                 </S.GoToReplyBtnWrapper>
 
-                {/* isClick의 상태에 따라 PopUp 렌더링 여부 결정 */}
-                {isClick ? (
-                    <PopUp name="꿀비의 답장">
-                        <DiaryViewPopUp setIsClick spicy={advice.spicy} kind={advice.kind}/>
-                    </PopUp>
-                ) : null}
+                
         </S.DiaryViewPageWrapper>
     );
 }

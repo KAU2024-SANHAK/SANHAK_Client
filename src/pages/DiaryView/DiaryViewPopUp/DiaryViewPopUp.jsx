@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as S from './DiaryViewPopUp.style';
 
-export default function DiaryViewPopUp({ setIsClick, spicy, kind }) {
+export default function DiaryViewPopUp({ spicy, kind }) {
     const [spicySelected, setSpicySelected] = useState(true); // 매운맛 선택 여부 상태
     const [kindSelected, setKindSelected] = useState(false); // 순한맛 선택 여부 상태
 
