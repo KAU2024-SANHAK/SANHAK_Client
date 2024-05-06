@@ -5,6 +5,8 @@ import * as S from './Calendar.style'
 import BtnNextMonth from '../buttons/Next/BtnNextMonth'
 import BtnPrevMonth from '../buttons/Prev/BtnPrevMonth'
 import SelectInToggle from "../buttons/SelectInToggle/SelectInToggle";
+import CalendarPopUp from "../CalendarPopUp/CalendarPopUp";
+import SmallPopUp from "../../PopUp/SmallPopUp/SmallPopUp";
 
 const range = (start, end) => {
   return Array.from({ length: end - start + 1 }, (_, index) => start + index);
@@ -12,6 +14,7 @@ const range = (start, end) => {
 
 const ReactDatePicker = () => {
   const [startDate, setStartDate] = useState(new Date());
+  const [isClick, setIsClick] = useState(false);
   const years = range(2023, getYear(new Date()), 1);
   const months = [
     "1월",
@@ -27,6 +30,10 @@ const ReactDatePicker = () => {
     "11월",
     "12월",
   ];
+
+  const handleDate = () => {
+    setIsClick(!isClick);
+  };
   
 	return (
     <S.CalendarComponentWrapper>
@@ -49,6 +56,7 @@ const ReactDatePicker = () => {
           nextMonthButtonDisabled,
         }) => (
           <S.HeaderWrapper>
+
             <S.BtnLeftWrapper onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
               <BtnPrevMonth/>
             </S.BtnLeftWrapper>
@@ -74,10 +82,18 @@ const ReactDatePicker = () => {
                   {option}
                 </S.MonthOption>
               ))}
-            </S.MonthSelector>
-   */}
+            </S.MonthSelector> */}
+  
 
-            <SelectInToggle currentYear={getYear(date)} currentMonth={getMonth(date)}/>
+          <SelectInToggle onClick={handleDate} currentYear={getYear(date)} currentMonth={getMonth(date)}/>
+            {isClick === true ? 
+              <SmallPopUp name={getYear(date)}>
+                <CalendarPopUp />
+                <S.CloseBtn onClick={handleDate}>x</S.CloseBtn>
+              </SmallPopUp>
+            
+            :  
+            null}
             <S.BtnRightWrapper onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
               <BtnNextMonth/>
             </S.BtnRightWrapper>
@@ -85,7 +101,7 @@ const ReactDatePicker = () => {
         )}
       />
     </S.CalendarComponentWrapper>
-    // isClicked?
+    
   );
 };
 

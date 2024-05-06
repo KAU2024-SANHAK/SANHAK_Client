@@ -96,3 +96,11 @@ export const MonthSelector = styled.select`
 `
 export const MonthOption = styled.option`
 `
+export const CloseBtn = styled.div`
+    position: absolute;
+    top: -0.5rem;
+    left: 31.6rem;
+    background-color: black;
+    height: 3rem;
+    width: 3rem;
+`
