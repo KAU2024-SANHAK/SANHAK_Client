@@ -1,12 +1,17 @@
 import * as S from './SearchByEmotionPopUp.style';
+import { useState } from 'react';
 import { useRecoilState } from "recoil";
 import { diaryListAtom } from "../../../recoil/atoms";
 import { useNavigate } from "react-router-dom";
 import { usePostFeelingList } from "../../../hooks/queries/mypage/usePostFeelingList";
+import { useModal } from '../../../hooks/common/useModal';
+import DiaryErrorModal from '../../../components/Modal/DiaryErrorModal';
 import BtnEmotionType from '../../../components/common/buttons/EmotionType/EmotionType';
 
 export default function SearchByEmotionPopUp(){
   const [diaryList, setDiaryList] = useRecoilState(diaryListAtom);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [isOpen, openModal, closeModal] = useModal();
   const { mutation } = usePostFeelingList();
   const navigate = useNavigate();
   
@@ -17,15 +22,27 @@ export default function SearchByEmotionPopUp(){
 
     mutation.mutate(body, {
       onSuccess: (response) => {
-        console.log(response);
         setDiaryList(response.data.feelingList);    
         navigate('/searchbyemotion/diarylist');
+      },
+      onError: (error) => {
+        setErrorMessage(error.response.data.message);
+        console.log(errorMessage);
+        openModal();
       }
     });
   };
 
   return(
     <S.Wrapper>
+      {isOpen && 
+        <DiaryErrorModal 
+          closeModal = {closeModal} 
+          top = '50%'
+        >
+          {errorMessage}
+        </DiaryErrorModal>
+      }
       <S.SearchByEmotionPopUpWrapper1>
         <BtnEmotionType 
           name = '기쁨'
