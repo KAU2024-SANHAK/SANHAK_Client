@@ -19,6 +19,8 @@ export default function DiaryView() {
     const [showResponseBtn, setShowResponseBtn] = useState(false);
     const [adviceState, setAdviceState] = useRecoilState(advice);
 
+    const responseObject = {diaryContent}
+
     // data에 advice가 존재하는 지 여부 확인하기
     const checkAdviceExists = () => {
         return !!adviceState;
@@ -37,10 +39,6 @@ export default function DiaryView() {
     const requestPopUpToggle = () => {
         // API 연결 시 활성화할 코드
         // const responseObject = usePostAdvice(diaryId={diaryId});
-
-        // API 연결 시 비활성화 할 코드
-        const responseObject = {diaryContent}
-        setDiaryAdvice(responseObject.diaryContent.data.advice)
 
         setIsClick(!isClick);
     }
