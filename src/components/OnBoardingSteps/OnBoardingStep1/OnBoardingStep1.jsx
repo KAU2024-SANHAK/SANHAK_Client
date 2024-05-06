@@ -2,7 +2,7 @@ import * as S from "../OnBoardingStep.style"
 import BtnNext from "../../common/buttons/Next/BtnNext"
 import Title from "../title/Title";
 import SubTitle from "../title/SubTitle";
-import onBoardingStep1Img from '../../../assets/onBoardingStep1.png'
+import onBoardingStep1Img from '../../../assets/img/onBoardingStep1.png'
 
 export default function OnBoardingStep1({onNext}){
     return (
