@@ -5,6 +5,7 @@ export const RequestEmotionViewBtnIcon = styled(IcTodayEmotionBtn)`
 `
 export const RequestEmotionViewBtnIconWrapper = styled.div`
     padding-left: 1rem;
+    padding-top: 1rem;
 `
 export const RequestEmotionViewBtnWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({direction:'row', justify:'end'})};
@@ -14,5 +15,6 @@ export const RequestEmotionViewBtnWrapper = styled.div`
 `
 export const RequestEmotionViewBtnText = styled.p`
     ${({ theme }) => theme.fonts.body_10};
+    padding-top: 1rem;
     text-decoration: underline;
 `
