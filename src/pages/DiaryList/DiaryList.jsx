@@ -3,14 +3,10 @@ import { useNavigate, useParams } from 'react-router-dom';
 import BtnBack from '../../components/common/buttons/Back/BtnBack';
 import DiaryListComponent from '../../components/common/DiaryListComponent/DiaryListComponent';
 
-// utils에서 테스트용 js 파일을 가져오는 코드
-import { feelingDiaryList } from '../../utils/feelingDiaryList';
-
 export default function DiaryList(){
     
-    // API 연결 시에 활성화 할 부분입니다.
-    // const params = useParams();
-    // const responseObject = params.response;
+    const params = useParams();
+    const responseObject = params.response;
 
     const navigate=useNavigate();
     const handleBackButton=()=>{
@@ -25,12 +21,7 @@ export default function DiaryList(){
             </S.BackButtonWrapper>
 
             <S.DiaryListComponentWrapper>
-                {/* API 연결 시에 활성화 할 부분입니다. */}
-                {/* {responseObject.map((item) => ( */}
-
-                {/* API 연결 시에 비활성화 할 부분입니다. */}
-                {feelingDiaryList.map((item) => (
-
+                {responseObject.map((item) => (
                     <DiaryListComponent
                         key={item.diaryId}
                         feelingListId={item.diaryId}

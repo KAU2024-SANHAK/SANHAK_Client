@@ -1,14 +1,12 @@
 import * as S from "./DiaryListComponent.style"
 import { useNavigate } from "react-router-dom"
-// import { usePostDiary } from "../../../hooks/queries/etc/usePostDiary";
+import { usePostDiary } from "../../../hooks/queries/etc/usePostDiary";
 
 export default function DiaryListComponent({ keys, feelingListId, feelingListTitle, feelingListDate }) {
     const navigate=useNavigate();
 
     const handleSearchButton=() =>{
-        // API 연결_back에 diaryId request
-        // const responseObject = usePostDiary(diaryId={feelingListId})
-
+        const responseObject = usePostDiary(diaryId={feelingListId})
         navigate('/diaryview')
     }
 
