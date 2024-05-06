@@ -1,9 +1,9 @@
 import * as S from './ResponseReplyViewBtn.style';
 
-export default function ResponseReplyViewBtn() {
+export default function ResponseReplyViewBtn({ onClick }) {
     
     return (
-        <S.ResponseReplyViewBtnWrapper>
+        <S.ResponseReplyViewBtnWrapper onClick={onClick}>
             <S.ResponseReplyViewBtnIconWrapper>
                 <S.ResponseReplyViewBtnIcon />
             </S.ResponseReplyViewBtnIconWrapper>
