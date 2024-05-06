@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const DiaryViewPopUpWrapper=styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
+    height: 100vh;
+    bottom: 0rem;
 `
 export const ReplyWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};

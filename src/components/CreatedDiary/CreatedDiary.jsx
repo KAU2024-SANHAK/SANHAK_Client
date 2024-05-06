@@ -58,16 +58,18 @@ export default function CreatedDiary({ content, feeling, title }){
             <S.CreatedDiaryComponentWrapper>
                 <S.DiaryTopTextWrapper>
                     <S.DiaryTitle>
-                        {title}
+                        제목입니당!
                     </S.DiaryTitle>
                     <S.DiaryDate>
-                        {/* {data.createdDate} */}
+                        날짜입니당
                     </S.DiaryDate>
                 </S.DiaryTopTextWrapper>
                 <S.DiaryPhotoWrapper/>
                 <S.DiaryTextWrapper>
                     <S.DiaryText>
-                        {content}
+                        내용입니당! - 내용이 길어져도 과연 컴포넌트가 늘어나면서 내용들을 잘 핸들링할 수 있는지가 궁금하네용./// 그래서 한번 길게 써봅니다
+                        핸들을 못하네용.. 첫 번째 문제. 답장 보러가기 버튼이 맨 아래 박혀야 합니다. 두 번째 문제: 100vh까지밖에 보이지 않는 문제가 있습니당..
+                        세 번째 문제. 배경의 핑크색이 감싸줘야 합니당.. 네 번째 문제: 리코일 값을 불러와서 수행해야 합니당..
                     </S.DiaryText>
                 </S.DiaryTextWrapper>
             </S.CreatedDiaryComponentWrapper>

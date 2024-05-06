@@ -15,15 +15,13 @@ export default function DiaryViewPopUp({ spicy, kind }) {
         setKindSelected(true); // 순한맛 선택
     };
 
+    // handlePopUpToggle 함수 수정
     const handlePopUpToggle = () => {
-        setIsClick();
+        // 팝업을 열고 닫는 동작을 수행하는 함수 추가
     };
 
     return (
         <S.DiaryViewPopUpWrapper>
-            <S.BtnExit onClick={handlePopUpToggle} >
-
-            </S.BtnExit>
             <S.SpicyTextWrapper onClick={handleSpicyClick} selected={spicySelected}>
                 <S.Spicy>
                     매운맛
@@ -36,7 +34,7 @@ export default function DiaryViewPopUp({ spicy, kind }) {
             </S.KindTextWrapper>
             <S.ReplyWrapper>
                 <S.ReplyTextWrapper>
-                    {spicySelected ? {spicy} : {kind}}
+                    {spicySelected ? spicy : kind} {/* 중괄호 {}를 사용하여 변수를 출력 */}
                 </S.ReplyTextWrapper>
             </S.ReplyWrapper>
         </S.DiaryViewPopUpWrapper>

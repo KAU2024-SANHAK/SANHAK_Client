@@ -46,15 +46,19 @@ export default function DiaryView() {
 
     const responsePopUpToggle = () => {
         setIsClick(!isClick);
+        console.log("clicked!")
     }
 
     return (
         <S.DiaryViewPageWrapper>
-                <CreatedDiary
-                    content={diaryContent.diary_content}
-                    feeling={diaryContent.feeling}
-                    title={diaryContent.diaryTitle}    
-                />
+                <S.CreatedDiaryWrapper>
+                    <CreatedDiary
+                        content={diaryContent.diary_content}
+                        feeling={diaryContent.feeling}
+                        title={diaryContent.diaryTitle}    
+                    />
+                </S.CreatedDiaryWrapper>
+                
                 <S.GoToReplyBtnWrapper>
                     {/* 리코일에 조언이 저장되어 있다면 Response 버튼을 렌더링하고 그렇지 않으면 Request 버튼을 렌더링
                     {showResponseBtn ? (
@@ -65,10 +69,13 @@ export default function DiaryView() {
                     <ResponseReplyViewBtn onClick={responsePopUpToggle}/>
                         {/* isClick의 상태에 따라 PopUp 렌더링 여부 결정 */}
                         {isClick === true ? (
-                            <PopUp name="꿀비의 답장">
-                                <DiaryViewPopUp spicy={advice.spicy} kind={advice.kind}/>
-                                <S.CloseBtn onClick={responsePopUpToggle} />
-                            </PopUp>
+                            <S.PopUpWrapper>
+                                <PopUp name="꿀비의 답장">
+                                    <DiaryViewPopUp/>
+                                    <S.CloseBtn onClick={responsePopUpToggle} />
+                                </PopUp>
+                            </S.PopUpWrapper>
+                            
                         ) : null}
                 </S.GoToReplyBtnWrapper>
 
