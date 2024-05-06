@@ -13,6 +13,8 @@ import MyPage from '../pages/MyPage/MyPage';
 import SearchByEmotion from '../pages/SearchByEmotion/SearchByEmotion';
 import CharacterWiki from '../pages/CharacterWiki/CharacterWiki';
 import DiaryList from '../pages/DiaryList/DiaryList';
+import LoginCallback from '../components/common/buttons/KakaoLogin/LoginCallback/LoginCallback';
+import FallbackUI from '../pages/FallbackUI/FallbackUI';
 
 /*이런 식으로 작성하기*/
 const router = createBrowserRouter([
@@ -41,28 +43,28 @@ const router = createBrowserRouter([
         element: <SearchByEmotion/>
       },
       {
-        path: "/fastdiary",
-        element: <FastDiary/>
+        path: '/fastdiary',
+        element: <FastDiary />,
       },
       {
         path: "/slowdiary",
-        element: <SlowDiary/>
+        element: <SlowDiary />
       },
       {
         path: '/diaryview',
-        element: <DiaryView/>
+        element: <DiaryView />
       },
       {
         path: "/mypage",
-        element: <MyPage/>
+        element: <MyPage />
       },
       {
-        path:"/mypage/characterwiki",
-        element: <CharacterWiki/>
+        path: '/mypage/characterwiki',
+        element: <CharacterWiki />,
       },
       {
         path:"/searchbyemotion/diarylist",
-        element: <DiaryList/>
+        element: <DiaryList />
       }
     ],
   },
