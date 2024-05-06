@@ -1,4 +1,8 @@
 export { default as IcError } from './IcError';
+
+export { default as IcMyPage} from './IcMyPage';
+export { default as IcSearchByEmotion} from './IcSearchByEmotionButton';
+export { default as IcThisMonthEmotion} from './IcWriteDiaryButton';
 export { default as IcCurrentProgressCircle } from './IcCurrentProgressCircle'
 export { default as IcHoneyBear } from './IcHoneyBear' 
 export { default as IcKakaoLogin } from './IcKakaoLogin' 
@@ -7,6 +11,7 @@ export { default as IcPrevButton } from './IcPrevButton'
 export { default as IcBackButton } from './IcBackButton'
 export { default as IcProgressCircle } from './IcProgressCircle'
 export { default as IcStartButton } from './IcStartButton' 
+export { default as IcHoneyBearEmotion } from './IcHoneyBearEmotion'
 export { default as IcDiaryProgress1 } from './IcDiaryProgress1'
 export { default as IcDiaryProgress2 } from './IcDiaryProgress2'
 export { default as IcDiaryProgress3 } from './IcDiaryProgress3'
