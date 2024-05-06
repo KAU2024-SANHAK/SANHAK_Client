@@ -2,7 +2,7 @@ import * as S from './MyPagePopUp.style'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useRecoilValue } from 'recoil'
-import { UserDiaryType } from '../../../recoil/atoms'
+import { userDiaryType } from '../../../recoil/atoms'
 import useLogout from '../../../hooks/queries/member/members/useLogout'
 import BtnLogout from '../../../components/common/buttons/Logout/BtnLogout'
 import BtnComplete from '../../../components/common/buttons/complete/BtnComplete'
@@ -13,7 +13,7 @@ import SetWritingStyle from '../../../components/SetDiaryStyle/SetDiaryStyle'
 
 export default function MyPagePopUp(){
     const [isClick, setIsClick] = useState(false);
-    const curType = useRecoilValue(UserDiaryType)
+    const curType = useRecoilValue(userDiaryType)
 
     const navigate = useNavigate();
     const handlegoWiki=()=>{

@@ -1,10 +1,14 @@
-import * as S from "../OnBoardingStep.style"
+import * as S from "../OnBoardingStep.style";
 import SetDiaryStyle from "../../SetDiaryStyle/SetDiaryStyle";
 import Title from "../title/Title";
 import Caption from "../title/Caption";
 import BtnComplete from "../../common/buttons/complete/BtnComplete";
+import useHandleDiaryType from '../../../hooks/diary/useHandelDiaryType';
+
 
 export default function OnBoardingStep5({onNext}){
+    const handleDiaryType = useHandleDiaryType;
+
     return (
         <S.OnBoardingStepWrapper>
             
@@ -24,7 +28,11 @@ export default function OnBoardingStep5({onNext}){
 
             <S.OnBoardingFooter>
                 <Caption>일기 작성 페이지는 마이페이지에서 수정 가능합니다.</Caption>
-                <BtnComplete onClick={()=>{onNext()}}>
+                <BtnComplete onClick={() => {
+                        handleDiaryType();
+                        onNext()
+                    }}
+                >
                     선택 완료
                 </BtnComplete>
             </S.OnBoardingFooter>
