@@ -28,13 +28,6 @@ export default function CreatedDiary({ content, feeling, title }){
         setShowResponseBtn(feelingExists);
     }, []);
 
-    const handleRequest = () => {
-        // API 연결 시 활성화할 코드
-        // const responseObject = usePostFeeling(diaryId={diaryId});
-
-        navigate('/emotionview');
-    }
-
     const handleResponse = () => {
         navigate('/emotionview');
     }
@@ -49,12 +42,13 @@ export default function CreatedDiary({ content, feeling, title }){
                     <BtnBack/>
                 </S.BtnBackWrapper>
                 <S.TodayEmotionBtnWrapper>
+                    <ResponseEmotionViewBtn onClick={handleResponse}/>
                     {/* 리코일에 조언이 저장되어 있다면 Response 버튼을 렌더링하고 그렇지 않으면 Request 버튼을 렌더링 */}
-                    {showResponseBtn ? (
+                    {/* {showResponseBtn ? (
                         <ResponseEmotionViewBtn onClick={handleResponse}/>
                     ) : (
                         <RequestEmotionViewBtn onClick={handleRequest}/>
-                    )}
+                    )} */}
                 </S.TodayEmotionBtnWrapper>
             </S.HeaderWrapper>
             

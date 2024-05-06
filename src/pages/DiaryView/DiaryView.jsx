@@ -11,7 +11,7 @@ import { diaryId } from '../../recoil/atoms';
 import { usePostAdvice } from '../../hooks/queries/create/usePostAdvice';
 
 // utils에서 테스트용 js 파일을 가져오는 코드
-import { diaryContent } from '../../utils/diaryContent';
+// import { diaryContent } from '../../utils/diaryContent';
 import { useNavigate } from 'react-router-dom';
 
 export default function DiaryView() {
@@ -37,12 +37,12 @@ export default function DiaryView() {
     //     setShowResponseBtn(adviceExists);
     // }, []);
 
-    const requestPopUpToggle = () => {
-        // API 연결 시 활성화할 코드
-        // const responseObject = usePostAdvice(diaryId={diaryId});
+    // const requestPopUpToggle = () => {
+    //     // API 연결 시 활성화할 코드
+    //     // const responseObject = usePostAdvice(diaryId={diaryId});
 
-        setIsClick(!isClick);
-    }
+    //     setIsClick(!isClick);
+    // }
 
     const responsePopUpToggle = () => {
         setIsClick(!isClick);
@@ -54,9 +54,9 @@ export default function DiaryView() {
             <S.Filter>
                 <S.CreatedDiaryWrapper>
                     <CreatedDiary
-                        content={diaryContent.diary_content}
-                        feeling={diaryContent.feeling}
-                        title={diaryContent.diaryTitle}    
+                        // content={diaryContent.diary_content}
+                        // feeling={diaryContent.feeling}
+                        // title={diaryContent.diaryTitle}    
                     />
                 </S.CreatedDiaryWrapper>
                 

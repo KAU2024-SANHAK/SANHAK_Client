@@ -20,5 +20,5 @@ export const diaryContent = [
         "feeling": "HAPPY",
         "imageUrl": "fsdfsfdsfdsf",
         "diaryTitle":"오늘나의하루"
-}
+    }
 ];
