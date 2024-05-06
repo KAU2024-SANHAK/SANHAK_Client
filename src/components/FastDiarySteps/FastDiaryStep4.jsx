@@ -1,9 +1,9 @@
-import * as S from '../FastDiaryStep.style'
+import * as S from './FastDiaryStep.style'
 import { useRecoilState } from 'recoil'
-import { whereKeyword } from '../../../recoil/atoms'
-import LargeQuestion from '../Questions/LargeQustion'
-import BtnNext from '../../common/buttons/Next/BtnNext'
-import BtnPrev from '../../common/buttons/Prev/BtnPrev'
+import { whereKeyword } from '../../recoil/atoms'
+import LargeQuestion from './Questions/LargeQustion'
+import BtnNext from '../common/buttons/Next/BtnNext'
+import BtnPrev from '../common/buttons/Prev/BtnPrev'
 
 export default function FastDiaryStep4({onNext, onPrev}){
     const [where, setWhere] = useRecoilState(whereKeyword);

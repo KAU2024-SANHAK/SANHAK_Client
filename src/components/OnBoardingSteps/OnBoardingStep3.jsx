@@ -1,8 +1,8 @@
-import * as S from "../OnBoardingStep.style"
-import BtnNext from "../../common/buttons/Next/BtnNext"
-import Title from "../title/Title";
-import SubTitle from "../title/SubTitle";
-import onBoardingStep3Img from '../../../assets/img/onBoardingStep3.png'
+import * as S from "./OnBoardingStep.style"
+import BtnNext from "../common/buttons/Next/BtnNext"
+import Title from "./title/Title";
+import SubTitle from "./title/SubTitle";
+import onBoardingStep3Img from '../../assets/img/onBoardingStep3.png'
 
 export default function OnBoardingStep3({onNext}){
     return (

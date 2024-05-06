@@ -1,12 +1,12 @@
-import * as S from '../FastDiaryStep.style'
+import * as S from './FastDiaryStep.style'
 import { useRecoilState } from 'recoil'
-import { realizedKeyword } from '../../../recoil/atoms'
-import { useKeywordNullCheck } from '../../../hooks/useKeywordNullCheck'
-import { useModal } from '../../../hooks/common/useModal'
-import LargeQuestion from '../Questions/LargeQustion'
-import BtnNext from '../../common/buttons/Next/BtnNext'
-import BtnPrev from '../../common/buttons/Prev/BtnPrev'
-import DiaryErrorModal from '../../Modal/DiaryErrorModal'
+import { realizedKeyword } from '../../recoil/atoms'
+import { useKeywordNullCheck } from '../../hooks/useKeywordNullCheck'
+import { useModal } from '../../hooks/common/useModal'
+import LargeQuestion from './Questions/LargeQustion'
+import BtnNext from '../common/buttons/Next/BtnNext'
+import BtnPrev from '../common/buttons/Prev/BtnPrev'
+import DiaryErrorModal from '../Modal/DiaryErrorModal'
 
 export default function FastDiaryStep6({onNext, onPrev}){
     const [realized, setRealized] = useRecoilState(realizedKeyword);

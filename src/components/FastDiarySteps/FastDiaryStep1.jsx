@@ -1,7 +1,7 @@
-import * as S from '../FastDiaryStep.style'
-import FeelingHive from '../FeelingHive/FeelingHive'
-import SmallQuestion from '../Questions/SamllQuestion'
-import BtnNext from '../../common/buttons/Next/BtnNext'
+import * as S from './FastDiaryStep.style'
+import FeelingHive from './FeelingHive/FeelingHive'
+import SmallQuestion from './Questions/SamllQuestion'
+import BtnNext from '../common/buttons/Next/BtnNext'
 
 export default function FastDiaryStep1({onNext}){
     return(
