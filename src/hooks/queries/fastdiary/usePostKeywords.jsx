@@ -2,8 +2,10 @@ import { aiInstance } from "../../../apis/client";
 import { useMutation } from "react-query";
 import axios from "axios";
 
+
 export const postKeywords = async (body) => {
-    const response = aiInstance.post('/api/ai/diary/create', body);
+    //const response = axios.post('/ai/diary/create', body);
+    const response = aiInstance.post('/api/ai/diary/create', body)
     return response.data;
 }
 
