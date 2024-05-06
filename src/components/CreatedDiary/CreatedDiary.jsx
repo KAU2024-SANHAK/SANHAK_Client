@@ -5,26 +5,21 @@ import { useNavigate } from 'react-router-dom';
 import RequestEmotionViewBtn from '../common/buttons/GoToEmotionViewBtn/RequestEmotionViewBtn/RequestEmotionViewBtn';
 import ResponseEmotionViewBtn from '../common/buttons/GoToEmotionViewBtn/ResponseEmotionViewBtn/ResponseEmotionViewBtn';
 import { useRecoilState } from 'recoil';
-import { diaryTitle } from '../../recoil/atoms';
-import { diaryId } from '../../recoil/atoms';
-import { diary_content } from '../../recoil/atoms';
-import { feeling } from '../../recoil/atoms';
+import { feelingKeyword } from '../../recoil/atoms';
+
+// API 연결 시 활성화할 부분
 import { usePostFeeling } from '../../hooks/queries/create/usePostFeeling';
 
-export default function CreatedDiary(){
+export default function CreatedDiary({ content, feeling, title }){
 
     const navigate = useNavigate();
 
     const [showResponseBtn, setShowResponseBtn] = useState(false);
-    const [feelingState, setFeelingState] = useRecoilState(feeling);
+    const [feelingState, setFeelingState] = useRecoilState(feelingKeyword);
 
     // data에 feeling이 존재하는 지 여부 확인하기
     const checkFeelingExists = () => {
         return !!feelingState;
-    }
-
-    const setDiaryFeeling = (feel) => {
-        feeling.set(feel);
     }
 
     // advice가 있는지 확인하여 useEffect로 렌더링
@@ -34,17 +29,17 @@ export default function CreatedDiary(){
     }, []);
 
     const handleRequest = () => {
-        const responseObject = usePostFeeling(diaryId={diaryId});
-        const { status, data } = responseObject;
-        if (status === 201) {
-            setDiaryFeeling(data.feeling);
-        }
+        // API 연결 시 활성화할 코드
+        // const responseObject = usePostFeeling(diaryId={diaryId});
 
         navigate('/emotionview');
     }
 
     const handleResponse = () => {
         navigate('/emotionview');
+    }
+    const handleClick = () => {
+        navigate('/main')
     }
 
     return(
@@ -63,7 +58,7 @@ export default function CreatedDiary(){
             <S.CreatedDiaryComponentWrapper>
                 <S.DiaryTopTextWrapper>
                     <S.DiaryTitle>
-                        {diaryTitle}
+                        {title}
                     </S.DiaryTitle>
                     <S.DiaryDate>
                         {/* {data.createdDate} */}
@@ -72,7 +67,7 @@ export default function CreatedDiary(){
                 <S.DiaryPhotoWrapper/>
                 <S.DiaryTextWrapper>
                     <S.DiaryText>
-                        {diary_content}
+                        {content}
                     </S.DiaryText>
                 </S.DiaryTextWrapper>
             </S.CreatedDiaryComponentWrapper>

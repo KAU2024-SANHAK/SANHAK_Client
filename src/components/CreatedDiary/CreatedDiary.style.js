@@ -4,7 +4,7 @@ export const CreatedDiaryWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     width: 100%;
     height: 100vh;
-    // background: rgba(255, 255, 255, 0.50);
+    background: rgba(255, 255, 255, 0.50);
     // backdrop-filter: blur(15px);
 `
 export const CreatComponentWrapper = styled.div`

@@ -10,6 +10,9 @@ import { advice } from '../../recoil/atoms';
 import { diaryId } from '../../recoil/atoms';
 import { usePostAdvice } from '../../hooks/queries/create/usePostAdvice';
 
+// utils에서 테스트용 js 파일을 가져오는 코드
+import { diaryContent } from '../../utils/diaryContent';
+
 export default function DiaryView() {
 
     const [isClick, setIsClick] = useState(false);
@@ -32,11 +35,12 @@ export default function DiaryView() {
     }, []);
 
     const requestPopUpToggle = () => {
-        const responseObject = usePostAdvice(diaryId={diaryId});
-        const { status, data } = responseObject;
-        if (status === 201) {
-            setDiaryAdvice(data.advice);
-        }
+        // API 연결 시 활성화할 코드
+        // const responseObject = usePostAdvice(diaryId={diaryId});
+
+        // API 연결 시 비활성화 할 코드
+        const responseObject = {diaryContent}
+        setDiaryAdvice(responseObject.diaryContent.data.advice)
 
         setIsClick(!isClick);
     }
@@ -47,7 +51,11 @@ export default function DiaryView() {
 
     return (
         <S.DiaryViewPageWrapper>
-                <CreatedDiary contents={data}/>
+                <CreatedDiary
+                    content={diaryContent.diary_content}
+                    feeling={diaryContent.feeling}
+                    title={diaryContent.diaryTitle}    
+                />
                 <S.GoToReplyBtnWrapper>
                     {/* 리코일에 조언이 저장되어 있다면 Response 버튼을 렌더링하고 그렇지 않으면 Request 버튼을 렌더링 */}
                     {showResponseBtn ? (
