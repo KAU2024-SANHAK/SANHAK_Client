@@ -44,21 +44,24 @@ export default function CreatedDiary({ content, feeling, title }){
 
     return(
         <S.CreatedDiaryWrapper>
-            <S.BtnBackWrapper onClick={handleClick}>
-                <BtnBack/>
-            </S.BtnBackWrapper>
-            <S.TodayEmotionBtnWrapper>
-                {/* 리코일에 조언이 저장되어 있다면 Response 버튼을 렌더링하고 그렇지 않으면 Request 버튼을 렌더링 */}
-                {showResponseBtn ? (
-                    <ResponseEmotionViewBtn onClick={handleResponse}/>
-                ) : (
-                    <RequestEmotionViewBtn onClick={handleRequest}/>
-                )}
-            </S.TodayEmotionBtnWrapper>
+            <S.HeaderWrapper>
+                <S.BtnBackWrapper onClick={handleClick}>
+                    <BtnBack/>
+                </S.BtnBackWrapper>
+                <S.TodayEmotionBtnWrapper>
+                    {/* 리코일에 조언이 저장되어 있다면 Response 버튼을 렌더링하고 그렇지 않으면 Request 버튼을 렌더링 */}
+                    {showResponseBtn ? (
+                        <ResponseEmotionViewBtn onClick={handleResponse}/>
+                    ) : (
+                        <RequestEmotionViewBtn onClick={handleRequest}/>
+                    )}
+                </S.TodayEmotionBtnWrapper>
+            </S.HeaderWrapper>
+            
             <S.CreatedDiaryComponentWrapper>
                 <S.DiaryTopTextWrapper>
                     <S.DiaryTitle>
-                        제목입니당!
+                        제목입니당! 제목이 더 길어지면 어떻게되려나했는데 엄청 안예뻐지는군요..
                     </S.DiaryTitle>
                     <S.DiaryDate>
                         날짜입니당

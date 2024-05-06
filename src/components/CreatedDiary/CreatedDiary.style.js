@@ -1,47 +1,39 @@
 import styled from 'styled-components';
 
 export const CreatedDiaryWrapper = styled.div`
-    ${({ theme: { mixin } }) => mixin.flexCenter({})};
     width: 100%;
-    height: 100vh;
-    // ${({ theme }) => theme.colors.gradient.gradient_pink};
-    background: rgba(255, 255, 255, 0.50);
-    // backdrop-filter: blur(15px);
+    margin-bottom: 2.5rem;
+`
+export const HeaderWrapper = styled.div`
+    ${({ theme: { mixin } }) => mixin.flexBox({})};
+    margin-top: 3.2rem;
+    justify-content: space-between;
+    padding: 0 2.8rem 0 2.8rem;
 `
 export const CreatComponentWrapper = styled.div`
     width: 100%;
     ${({ theme }) => theme.colors.gradient.gradient_pink};
 `
 export const BtnBackWrapper = styled.div`
-    position: absolute;
-    left: 2.8rem;
-    top: 3.2rem;
 `
 export const TodayEmotionBtnWrapper = styled.div`
-    position: absolute;
-    right: 2.8rem;
-    top: 6.8rem;    
+    margin-top: 4.1rem;
 `
 export const CreatedDiaryComponentWrapper = styled.div`
-    // ${({ theme: { mixin } }) => mixin.flexCenter({})};
-    // margin-top: 13.1rem;
-    position: absolute;
-    top: 13.1rem;
+    ${({ theme: { mixin } }) => mixin.flexCenter({})};
     gap: 1.1rem;
-    // bottom: 1.6rem;
-
 `
 export const DiaryTopTextWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
-
 `
 export const DiaryTitle = styled.p`
+    ${({ theme: { mixin } }) => mixin.flexCenter({})};
     ${({ theme }) => theme.fonts.heading_03};
+    padding: 1.2rem 3rem 0 3rem;
 `
 export const DiaryDate = styled.p`
-    margin-right: 22.7rem;
-    // 위에 코드 진짜 바보같은거 아는데.. 우선 뷰 구현 먼저 해야해서.. 하다가 안되서 넣었어용.. 여유 있을 때 수정하겠습니다!!!
     ${({ theme }) => theme.fonts.body_10};
+    padding-right: 23rem;
 `
 export const DiaryPhotoWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};

@@ -51,6 +51,7 @@ export default function DiaryView() {
 
     return (
         <S.DiaryViewPageWrapper>
+            <S.Filter>
                 <S.CreatedDiaryWrapper>
                     <CreatedDiary
                         content={diaryContent.diary_content}
@@ -78,6 +79,8 @@ export default function DiaryView() {
                             
                         ) : null}
                 </S.GoToReplyBtnWrapper>
+            </S.Filter>
+                
 
                 
         </S.DiaryViewPageWrapper>
