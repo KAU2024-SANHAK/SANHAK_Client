@@ -1,12 +1,12 @@
 import * as S from './SearchByEmotionPopUp.style';
 import { useRecoilState } from "recoil";
-import { diaryList } from "../../../recoil/atoms";
+import { diaryListAtom } from "../../../recoil/atoms";
 import { useNavigate } from "react-router-dom";
 import { usePostFeelingList } from "../../../hooks/queries/mypage/usePostFeelingList";
 import BtnEmotionType from '../../../components/common/buttons/EmotionType/EmotionType';
 
 export default function SearchByEmotionPopUp(){
-  const [diaryListAtom, setDiaryListAtom] = useRecoilState(diaryList);
+  const [diaryList, setDiaryList] = useRecoilState(diaryListAtom);
   const { mutation } = usePostFeelingList();
   const navigate = useNavigate();
   
@@ -18,7 +18,7 @@ export default function SearchByEmotionPopUp(){
     mutation.mutate(body, {
       onSuccess: (response) => {
         console.log(response);
-        setDiaryListAtom(response.data.feelingList);    
+        setDiaryList(response.data.feelingList);    
         navigate('/searchbyemotion/diarylist');
       }
     });

@@ -1,12 +1,12 @@
 import * as S from './DiaryList.sytle';
 import { useRecoilValue } from 'recoil';
-import { diaryList } from '../../recoil/atoms';
-import { useNavigate, useParams } from 'react-router-dom';
+import { diaryListAtom } from '../../recoil/atoms';
+import { useNavigate } from 'react-router-dom';
 import BtnBack from '../../components/common/buttons/Back/BtnBack';
 import DiaryListComponent from '../../components/common/DiaryListComponent/DiaryListComponent';
 
 export default function DiaryList(){
-    const diaryListAtom = useRecoilValue(diaryList);
+    const diaryList = useRecoilValue(diaryListAtom);
     const navigate = useNavigate();
 
     const handleBackButton = () => {
@@ -21,7 +21,7 @@ export default function DiaryList(){
             </S.BackButtonWrapper>
 
             <S.DiaryListComponentWrapper>
-                {diaryListAtom.map((item) => (
+                {diaryList.map((item) => (
                     <DiaryListComponent
                         key={item.diaryId}
                         feelingListId={item.diaryId}
