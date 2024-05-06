@@ -1,4 +1,4 @@
-import { userDiaryType } from '../../recoil/atoms';
+/*import { userDiaryType } from '../../recoil/atoms';
 import { useRecoilValue } from 'recoil';
 import { usePostDiaryType } from '../queries/onboarding/usePostDiaryType';
 
@@ -14,4 +14,4 @@ const useHandleDiaryType = () => {
         }
     });
 };
-export default useHandleDiaryType;
+export default useHandleDiaryType;*/

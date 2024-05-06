@@ -1,26 +1,10 @@
 import * as S from './SetDiaryStyle.style';
 import { useRecoilState } from 'recoil';
 import { userDiaryType } from '../../recoil/atoms';
-import { usePostDiaryType } from '../../hooks/queries/onboarding/usePostDiaryType';
-import useHandleDiaryType from '../../hooks/diary/useHandelDiaryType';
 import BtnSetDiaryType from '../common/buttons/setDiaryType/BtnSetDiaryType';
 
 export default function SetDiaryStyle({transparency}){
     const [diaryType,setDiaryType] = useRecoilState(userDiaryType);
-    const handleDiaryType = useHandleDiaryType;
-    const { mutation } = usePostDiaryType();
-
-   /* const handleSetWritingStyle= ()=>{
-        const body = {
-            userDiaryType : diaryType,
-        };
-
-        mutation.mutate(body, {
-            onSucess: (data) => {
-                console.log(data);
-            }
-        })
-    };*/
 
     return(
         <S.Wrapper $transparency={transparency}>
