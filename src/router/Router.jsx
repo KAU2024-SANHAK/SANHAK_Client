@@ -3,8 +3,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Layout from '../layouts/Layout';
 import Start from '../pages/Start/Start';
-import Login from '../components/Login';
-import OnBoarding  from '../pages/OnBoarding/OnBoarding';
+import OnBoarding from '../pages/OnBoarding/OnBoarding';
 import Main from '../pages/Main/Main';
 import FastDiary from '../pages/FastDiary/FastDiary';
 import DiaryView from '../pages/DiaryView/DiaryView';
@@ -27,16 +26,16 @@ const router = createBrowserRouter([
         element: <Start />,
       },
       {
-        path: "/api/oauth/kakao/login",
-        element: <Login />,
+        path: '/loading',
+        element: <LoginCallback />,
       },
       {
-        path: "/onboarding",
-        element: <OnBoarding/>
+        path: '/onboarding',
+        element: <OnBoarding />,
       },
       {
-        path: "/main",
-        element: <Main/>
+        path: '/main',
+        element: <Main />,
       },
       {
         path: "/searchbyemotion",
@@ -47,16 +46,16 @@ const router = createBrowserRouter([
         element: <FastDiary />,
       },
       {
-        path: "/slowdiary",
-        element: <SlowDiary />
+        path: '/slowdiary',
+        element: <SlowDiary />,
       },
       {
         path: '/diaryview',
-        element: <DiaryView />
+        element: <DiaryView />,
       },
       {
-        path: "/mypage",
-        element: <MyPage />
+        path: '/mypage',
+        element: <MyPage />,
       },
       {
         path: '/mypage/characterwiki',

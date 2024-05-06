@@ -6,24 +6,11 @@ const { persistAtom } =recoilPersist({
    storage: localStorage,
 })
 
-export const UserDiaryType = atom({
+export const userDiaryType = atom({
    key: 'userDiaryType',
    default: '',
    effects_UNSTABLE: [persistAtom]
 });
-/*
-export const fastDiaryKeywords = atom({
-    key: "fastDiaryKeywords",
-    default:{
-        feeling: '',
-        what: '',
-        who: '',
-        when: '',
-        where: '',
-        realized: ''
-    },
-    effects_UNSTABLE: [persistAtom]
-});*/
 
 export const feelingKeyword = atom({
     key: "feeling",
@@ -58,5 +45,38 @@ export const whatKeyword = atom({
 export const realizedKeyword = atom({
     key: "realized",
     default:'',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const diaryTitle = atom({
+    key: "diaryTitle",
+    default: '',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const diaryContent = atom({
+    key: "diaryContent",
+    default: '',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const diaryFeeling = atom({
+    key: "diaryFeeling",
+    default: '',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const diaryImage = atom({
+    key: "diaryImage",
+    default: '',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const diaryAdvice = atom({
+    key: "diaryAdvice",
+    default: {
+        spicy: '',
+        kind: '',
+    },
     effects_UNSTABLE: [persistAtom]
 });
