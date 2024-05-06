@@ -93,12 +93,6 @@ export const advice = atom({
     effects_UNSTABLE: [persistAtom]
 });
 
-export const feeling = atom({
-    key: "feeling",
-    default:'',
-    effects_UNSTABLE: [persistAtom]
-});
-
 export const imageUrl = atom({
     key: "imageUrl",
     default:'',

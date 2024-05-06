@@ -3,6 +3,7 @@ export const diaryContent = [
         "status": 201,
         "message": "요청이 성공했습니다.",
         "data":{
+            "diaryId":"1",
             "diary_content":"string",
             "advice":{
                 "spicy": "string",
