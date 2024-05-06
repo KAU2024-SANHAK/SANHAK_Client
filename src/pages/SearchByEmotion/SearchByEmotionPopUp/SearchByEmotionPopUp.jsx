@@ -1,6 +1,5 @@
-import * as S from './SearchByEmotionPopUp.style'
-import BtnEmotionType from '../../../components/common/buttons/EmotionType/EmotionType'
-
+import * as S from './SearchByEmotionPopUp.style';
+import BtnEmotionType from '../../../components/common/buttons/EmotionType/EmotionType';
 
 export default function SearchByEmotionPopUp(){
     return(
