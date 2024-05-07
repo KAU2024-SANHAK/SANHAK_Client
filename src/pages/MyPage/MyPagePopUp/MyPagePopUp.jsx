@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { userDiaryType } from '../../../recoil/atoms';
 import usePostDiaryType from "../../../hooks/queries/onboarding/usePostDiaryType";
-import { useLogout } from '../../../hooks/queries/member/members/useLogout';
+import useLogout from '../../../hooks/queries/member/members/useLogout';
 import BtnLogout from '../../../components/common/buttons/Logout/BtnLogout';
 import BtnComplete from '../../../components/common/buttons/complete/BtnComplete';
 import BtnSetCharacter from '../../../components/common/buttons/SetCharcater/BtnSetCharacter';
@@ -14,7 +14,7 @@ import SetWritingStyle from '../../../components/SetDiaryStyle/SetDiaryStyle';
 export default function MyPagePopUp(){
   const [isClick, setIsClick] = useState(false);
   const postDiaryTypeMutation = usePostDiaryType();
-  const { logoutMutation} = useLogout();
+  const logoutMutation = useLogout();
   const navigate = useNavigate();
   const curType = useRecoilValue(userDiaryType)
   const diaryTypeAtom = useRecoilValue(userDiaryType);
