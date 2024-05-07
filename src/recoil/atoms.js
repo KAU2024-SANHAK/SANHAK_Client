@@ -77,7 +77,7 @@ export const diary = atom({
 
 export const diaryId = atom({
     key: "diaryId",
-    default:'',
+    default:0,
     effects_UNSTABLE: [persistAtom]
 });
 

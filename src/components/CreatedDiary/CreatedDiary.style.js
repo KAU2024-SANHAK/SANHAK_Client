@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 
 export const CreatedDiaryWrapper = styled.div`
-    width: 100%;
+    width: 32rem;
     margin-bottom: 2.5rem;
 `
 export const HeaderWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({})};
     margin-top: 3.2rem;
     justify-content: space-between;
-    padding: 0 2.8rem 0 2.8rem;
 `
 export const CreatComponentWrapper = styled.div`
     width: 100%;
@@ -29,11 +28,11 @@ export const DiaryTopTextWrapper = styled.div`
 export const DiaryTitle = styled.p`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     ${({ theme }) => theme.fonts.heading_03};
-    padding: 1.2rem 3rem 0 3rem;
+    padding: 0.2rem 0.2rem 0 0.2rem;
 `
 export const DiaryDate = styled.p`
     ${({ theme }) => theme.fonts.body_10};
-    padding-right: 23rem;
+    padding-right: 20rem;
 `
 export const DiaryPhotoWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};

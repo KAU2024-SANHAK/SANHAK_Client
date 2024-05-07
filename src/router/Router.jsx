@@ -57,10 +57,6 @@ const router = createBrowserRouter([
         path: "/searchbyemotion",
         element: <SearchByEmotion/>
       },
-      // {
-      //   path: "/writediary",
-      //   element: <WriteDiary/>
-      // }
       {
         path:"/mypage/characterwiki",
         element: <CharacterWiki/>
@@ -70,7 +66,7 @@ const router = createBrowserRouter([
         element: <DiaryList/>
       },
       {
-        path:"/emotionview",
+        path:"/emotionview/:response",
         element: <EmotionView/>
       }
     ],
