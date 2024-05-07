@@ -11,7 +11,6 @@ import FastDiary from '../pages/FastDiary/FastDiary';
 import DiaryView from '../pages/DiaryView/DiaryView';
 import SlowDiary from '../pages/SlowDiary/SlowDiary';
 import MyPage from '../pages/MyPage/MyPage';
-import SearchByEmotion from '../pages/SearchByEmotion/SearchByEmotion';
 import CharacterWiki from '../pages/CharacterWiki/CharacterWiki';
 import DiaryList from '../pages/DiaryList/DiaryList';
 import LoginCallback from '../components/common/buttons/KakaoLogin/LoginCallback/LoginCallback';
