@@ -6,7 +6,7 @@ export const postAdvice = async (body) => {
     return response.data;
 }
 
-export const usePostFeeling = () => {
+export const usePostAdvice = () => {
     const mutation = useMutation({
         mutationFn: postAdvice,
         onSuccess: (data) => {

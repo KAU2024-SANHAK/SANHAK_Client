@@ -48,11 +48,23 @@ export const realizedKeyword = atom({
     effects_UNSTABLE: [persistAtom]
 });
 
+export const diaryId = atom({
+    key: "diaryId",
+    default: 0,
+    effects_UNSTABLE: [persistAtom]
+});
+
 export const diaryTitle = atom({
     key: "diaryTitle",
     default: '',
     effects_UNSTABLE: [persistAtom]
 });
+
+export const createdDate = atom({
+    key: "createdDate",
+    default: '',
+    effects_UNSTABLE: [persistAtom]
+})
 
 export const diaryContent = atom({
     key: "diaryContent",
