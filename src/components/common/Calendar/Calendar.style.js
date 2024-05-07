@@ -19,6 +19,8 @@ export const CalendarComponentWrapper = styled.div`
         border-radius: 3rem;
         border: none;
     }
+
+    // S M T ... 아래의 
     .react-datepicker__month {
         height: auto;
         margin-bottom: 2.1rem;

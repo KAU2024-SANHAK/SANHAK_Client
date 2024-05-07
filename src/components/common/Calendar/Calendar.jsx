@@ -4,7 +4,7 @@ import { getYear } from "date-fns";
 import * as S from './Calendar.style'
 import BtnNextMonth from '../buttons/Next/BtnNextMonth'
 import BtnPrevMonth from '../buttons/Prev/BtnPrevMonth'
-import SelectInToggle from "../buttons/SelectInToggle/SelectInToggle";
+import SelectInToggleBtn from "../buttons/SelectInToggleBtn/SelectInToggleBtn";
 import CalendarPopUp from "../CalendarPopUp/CalendarPopUp";
 import SmallPopUp from "../../PopUp/SmallPopUp/SmallPopUp";
 
@@ -85,7 +85,7 @@ const ReactDatePicker = () => {
             </S.MonthSelector> */}
   
 
-          <SelectInToggle onClick={handleDate} currentYear={getYear(date)} currentMonth={getMonth(date)}/>
+          <SelectInToggleBtn onClick={handleDate} currentYear={getYear(date)} currentMonth={getMonth(date)}/>
             {isClick === true ? 
               <SmallPopUp name={getYear(date)}>
                 <CalendarPopUp />
