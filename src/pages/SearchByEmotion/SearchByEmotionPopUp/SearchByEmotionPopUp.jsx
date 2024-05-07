@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useRecoilState } from "recoil";
 import { diaryListAtom } from "../../../recoil/atoms";
 import { useNavigate } from "react-router-dom";
-import { usePostFeelingList } from "../../../hooks/queries/mypage/usePostFeelingList";
+import usePostFeelingList from "../../../hooks/queries/mypage/usePostFeelingList";
 import { useModal } from '../../../hooks/common/useModal';
 import DiaryErrorModal from '../../../components/Modal/DiaryErrorModal';
 import BtnEmotionType from '../../../components/common/buttons/EmotionType/EmotionType';
@@ -12,7 +12,7 @@ export default function SearchByEmotionPopUp(){
   const [diaryList, setDiaryList] = useRecoilState(diaryListAtom);
   const [errorMessage, setErrorMessage] = useState('');
   const [isOpen, openModal, closeModal] = useModal();
-  const { mutation } = usePostFeelingList();
+  const mutation = usePostFeelingList();
   const navigate = useNavigate();
   
   const handleClick = (btnEnum) => {
