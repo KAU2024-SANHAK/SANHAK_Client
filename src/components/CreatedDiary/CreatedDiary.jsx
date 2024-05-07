@@ -42,8 +42,8 @@ export default function CreatedDiary({ title, date, content }){
     return(
         <S.CreatedDiaryWrapper>
             <S.HeaderWrapper>
-                <S.BtnBackWrapper onClick={() => {handleClick()}}>
-                    <BtnBack/>
+                <S.BtnBackWrapper >
+                    <BtnBack handleClick={handleClick}/>
                 </S.BtnBackWrapper>
                 <S.TodayEmotionBtnWrapper>
                 <ResponseEmotionViewBtn onClick={feeling ? responseEmotion : requestEmotion} />

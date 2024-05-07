@@ -37,8 +37,8 @@ export function EmotionViewComponent({ feeling }) {
 
     return(
         <S.EmotionViewWrapper>
-            <S.BtnBackWrapper onClick={() => {handleClick()}}>
-                <BtnBack/>
+            <S.BtnBackWrapper >
+                <BtnBack handleClick={handleClick}/>
             </S.BtnBackWrapper>
             <S.EmotionViewComponentWrapper>
                 <S.TodayEmotionQ>
