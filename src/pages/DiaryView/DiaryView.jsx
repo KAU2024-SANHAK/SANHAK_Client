@@ -9,51 +9,46 @@ import PopUp from '../../components/PopUp/PopUp';
 import ResponseReplyViewBtn from '../../components/common/buttons/GoToReplyViewBtn/ResponseReplyViewBtn/ResponseReplyViewBtn'
 
 // TEST: utils에서 테스트용 js 파일을 가져오는 코드
-import { diaryContent } from '../../utils/diaryContent';
+// import { diaryContent } from '../../utils/diaryContent';
 
 // REAL: recoil에서 atom 가져오기
-// import { useRecoilState } from 'recoil';
-// import { diaryId } from '../../recoil/atoms';
-// import { diaryTitle } from '../../recoil/atoms';
-// import { createdDate } from '../../recoil/atoms';
-// import { diaryContent } from '../../recoil/atoms';
-// import { diaryAdvice } from '../../recoil/atoms';
-// import { diaryFeeling } from '../../recoil/atoms';
+import { useRecoilState } from 'recoil';
+import { diaryId } from '../../recoil/atoms';
+import { diaryTitle } from '../../recoil/atoms';
+import { createdDate } from '../../recoil/atoms';
+import { diaryContent } from '../../recoil/atoms';
+import { diaryAdvice } from '../../recoil/atoms';
 
-// import { usePostAdvice } from '../../hooks/queries/create/usePostAdvice';
+import { usePostAdvice } from '../../hooks/queries/create/usePostAdvice';
 
 export default function DiaryView() {
 
     const [isClick, setIsClick] = useState(false);
 
     // TEST: utils 테스트 코드 돌리기
-    const response = diaryContent[0];
+    // const response = diaryContent[0];
 
     // REAL: API 연결후 코드 돌리기
     // **********************************************************
-    // const [advice, setAdvice] = useRecoilState(diaryAdvice);
+    const [advice, setAdvice] = useRecoilState(diaryAdvice);
 
     // data에 advice가 존재하는 지 여부 확인하기
-    // const checkAdviceExists = () => {
-    //     return !!advice;
-    // }
-
-    // const setAdvice = (adv) => {
-    //     advice.set(adv);
-    // }
+    const checkAdviceExists = () => {
+        return !!advice;
+    }
 
     // advice가 있는지 확인하여 useEffect로 렌더링
-    // useEffect(() => {
-    //     const adviceExists = checkAdviceExists();
-    //     setAdvice(adviceExists);
-    // }, []);
+    useEffect(() => {
+        const adviceExists = checkAdviceExists();
+        setAdvice(adviceExists);
+    }, []);
 
-    // const requestPopUpToggle = () => {
-    //     const responseAdvice = usePostAdvice(diaryId);
-    //     setAdvice(responseAdvice);
+    const requestPopUpToggle = () => {
+        const responseAdvice = usePostAdvice(diaryId);
+        setAdvice(responseAdvice);
 
-    //     setIsClick(!isClick);
-    // }
+        setIsClick(!isClick);
+    }
     // **********************************************************
 
     const responsePopUpToggle = () => {
@@ -66,23 +61,23 @@ export default function DiaryView() {
                 <S.CreatedDiaryWrapper>
                     <CreatedDiary
                         // TEST: API 연결 전 테스트코드
-                        title={response.diaryTitle}  
-                        date={response.createdDate}
-                        content={response.diary_content}
+                        // title={response.diaryTitle}  
+                        // date={response.createdDate}
+                        // content={response.diary_content}
 
                         // REAL: API 연결 시 실행
-                        // title={diaryTitle}  
-                        // date={createdDate}
-                        // content={diaryContent}
+                        title={diaryTitle}  
+                        date={createdDate}
+                        content={diaryContent}
                     />
                 </S.CreatedDiaryWrapper>
                 
                 <S.GoToReplyBtnWrapper>
                     {/* TEST: API 연결 전 실행 */}
-                    <ResponseReplyViewBtn onClick={responsePopUpToggle} />
+                    {/* <ResponseReplyViewBtn onClick={responsePopUpToggle} /> */}
 
                     {/* REAL: API 연결 시에 */}
-                    {/* <ResponseReplyViewBtn onClick={advice ? responsePopUpToggle : requestPopUpToggle} /> */}
+                    <ResponseReplyViewBtn onClick={advice ? responsePopUpToggle : requestPopUpToggle} />
 
                         {/* isClick의 상태에 따라 PopUp 렌더링 여부 결정 */}
                         {isClick === true ? (
@@ -93,10 +88,10 @@ export default function DiaryView() {
 
                                 <PopUp name="꿀비의 답장">
                                     {/* TEST: 테스트용 코드 */}
-                                    <DiaryViewPopUp spicy={response.advice.spicy} kind={response.advice.kind}/>
+                                    {/* <DiaryViewPopUp spicy={response.advice.spicy} kind={response.advice.kind}/> */}
 
                                     {/* REAL: API 연결 시 사용할 코드 */}
-                                    {/* <DiaryViewPopUp spicy={diaryAdvice.spicy} kind={diaryAdvice.kind} /> */}
+                                    <DiaryViewPopUp spicy={diaryAdvice.spicy} kind={diaryAdvice.kind} />
                                     <S.CloseBtn onClick={responsePopUpToggle} >
                                         <S.XBtn />
                                     </S.CloseBtn>

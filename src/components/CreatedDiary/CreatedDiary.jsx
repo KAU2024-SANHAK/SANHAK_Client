@@ -8,11 +8,11 @@ import BtnBack from '../common/buttons/Back/BtnBack';
 import ResponseEmotionViewBtn from '../common/buttons/GoToEmotionViewBtn/ResponseEmotionViewBtn/ResponseEmotionViewBtn';
 
 // Real: recoil에서 atom 가져오기
-// import { useRecoilState } from 'recoil';
-// import { diaryFeeling } from '../../recoil/atoms';
-// import { diaryId } from '../../recoil/atoms';
+import { useRecoilState } from 'recoil';
+import { diaryFeeling } from '../../recoil/atoms';
+import { diaryId } from '../../recoil/atoms';
 
-// import { usePostFeeling } from '../../hooks/queries/create/usePostFeeling';
+import { usePostFeeling } from '../../hooks/queries/create/usePostFeeling';
 
 export default function CreatedDiary({ title, date, content }){
 
@@ -20,29 +20,25 @@ export default function CreatedDiary({ title, date, content }){
 
     // REAL: API 연결후 코드 돌리기
     // **********************************************************
-    // const [feeling, setFeeling] = useRecoilState(diaryFeeling);
+    const [feeling, setFeeling] = useRecoilState(diaryFeeling);
 
     // data에 feeling이 존재하는 지 여부 확인하기
-    // const checkFeelingExists = () => {
-    //     return !!feeling;
-    // }
-
-    // const setFeeling = (feel) => {
-    //     feeling.set(feel);
-    // }
+    const checkFeelingExists = () => {
+        return !!feeling;
+    }
 
     // feeling이 있는지 확인하여 useEffect로 렌더링
-    // useEffect(() => {
-    //     const feelingExists = checkFeelingExists();
-    //     setFeeling(feelingExists);
-    // }, []);
+    useEffect(() => {
+        const feelingExists = checkFeelingExists();
+        setFeeling(feelingExists);
+    }, []);
 
-    // const requestEmotion = () => {
-    //     const responseEmotion = usePostFeeling(diaryId);
-    //     setFeeling(responseEmotion);
+    const requestEmotion = () => {
+        const responseEmotion = usePostFeeling(diaryId);
+        setFeeling(responseEmotion);
 
-    //     navigate('/emotionview');
-    // }
+        navigate('/emotionview');
+    }
     // **********************************************************
 
     const responseEmotion = () => {
@@ -60,10 +56,10 @@ export default function CreatedDiary({ title, date, content }){
                 </S.BtnBackWrapper>
                 <S.TodayEmotionBtnWrapper>
                     {/* TEST: API 연결 전 실행 */}
-                    <ResponseEmotionViewBtn onClick={responseEmotion} />
+                    {/* <ResponseEmotionViewBtn onClick={responseEmotion} /> */}
 
                     {/* REAL: API 연결 시에 */}
-                    {/* <ResponseEmotionViewBtn onClick={feeling ? responseEmotion : requestEmotion} /> */}
+                    <ResponseEmotionViewBtn onClick={feeling ? responseEmotion : requestEmotion} />
                 </S.TodayEmotionBtnWrapper>
             </S.HeaderWrapper>
             
