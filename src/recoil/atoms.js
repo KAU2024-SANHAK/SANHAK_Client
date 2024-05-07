@@ -80,3 +80,9 @@ export const diaryAdvice = atom({
     },
     effects_UNSTABLE: [persistAtom]
 });
+
+export const diaryListAtom = atom({
+    key: 'diaryList',
+    default: {},
+    effects_UNSTABLE: [persistAtom],
+})

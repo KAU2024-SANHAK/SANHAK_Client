@@ -1,12 +1,13 @@
-import * as S from './SearchByEmotion.style'
-import { useNavigate } from 'react-router-dom'
-import PopUp from '../../components/PopUp/PopUp'
-import BtnBack from '../../components/common/buttons/Back/BtnBack'
-import SearchByEmotionPopUp from './SearchByEmotionPopUp/SearchByEmotionPopUp'
+import * as S from './SearchByEmotion.style';
+import { useNavigate } from 'react-router-dom';
+import PopUp from '../../components/PopUp/PopUp';
+import BtnBack from '../../components/common/buttons/Back/BtnBack';
+import SearchByEmotionPopUp from './SearchByEmotionPopUp/SearchByEmotionPopUp';
 
 export default function SearchByEmotion(){
-    const navigate=useNavigate();
-    const handleBackButton=()=>{
+    const navigate = useNavigate();
+
+    const handleBackButton = () => {
         navigate('/main');
     }
 
