@@ -70,9 +70,15 @@ export default function DiaryView() {
                         {/* isClick의 상태에 따라 PopUp 렌더링 여부 결정 */}
                         {isClick === true ? (
                             <S.PopUpWrapper>
+                                <S.HoneyBearWrapper>
+                                    <S.HoneyBear height='17rem'/>
+                                </S.HoneyBearWrapper>
+
                                 <PopUp name="꿀비의 답장">
                                     <DiaryViewPopUp/>
-                                    <S.CloseBtn onClick={responsePopUpToggle} />
+                                    <S.CloseBtn onClick={responsePopUpToggle} >
+                                        <S.XBtn />
+                                    </S.CloseBtn>
                                 </PopUp>
                             </S.PopUpWrapper>
                             
