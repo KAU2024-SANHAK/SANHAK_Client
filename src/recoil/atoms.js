@@ -81,6 +81,12 @@ export const diaryId = atom({
     effects_UNSTABLE: [persistAtom]
 });
 
+export const createdDate = atom({
+    key: "createdDate",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
+
 export const diary_content = atom({
     key: "diary_content",
     default:'',
@@ -95,6 +101,12 @@ export const advice = atom({
 
 export const imageUrl = atom({
     key: "imageUrl",
+    default:'',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const diaryFeeling = atom({
+    key: "diaryFeeling",
     default:'',
     effects_UNSTABLE: [persistAtom]
 });

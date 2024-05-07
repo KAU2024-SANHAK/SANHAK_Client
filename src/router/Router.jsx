@@ -66,7 +66,7 @@ const router = createBrowserRouter([
         element: <DiaryList/>
       },
       {
-        path:"/emotionview/:response",
+        path:"/emotionview",
         element: <EmotionView/>
       }
     ],
