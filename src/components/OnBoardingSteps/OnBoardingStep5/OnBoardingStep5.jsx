@@ -1,5 +1,5 @@
 import * as S from "../OnBoardingStep.style";
-import { usePostDiaryType } from "../../../hooks/queries/onboarding/usePostDiaryType";
+import usePostDiaryType from "../../../hooks/queries/onboarding/usePostDiaryType";
 import { useRecoilValue } from "recoil";
 import { userDiaryType } from "../../../recoil/atoms";
 import SetDiaryStyle from "../../SetDiaryStyle/SetDiaryStyle";
@@ -9,7 +9,7 @@ import BtnComplete from "../../common/buttons/complete/BtnComplete";
 
 export default function OnBoardingStep5({onNext}){
     const diaryTypeAtom = useRecoilValue(userDiaryType);
-    const { mutation } = usePostDiaryType();
+    const mutation = usePostDiaryType();
 
     const handlePostDiaryStyle= () => {
          const body = {

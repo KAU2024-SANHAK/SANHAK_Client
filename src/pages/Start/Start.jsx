@@ -3,15 +3,24 @@ import BtnComplete from '../../components/common/buttons/complete/BtnComplete';
 import HoneyBear from '../../components/common/HoneyBear/HoneyBear';
 import { useNavigate } from 'react-router-dom';
 import BtnKakaoLogin from '../../components/common/buttons/KakaoLogin/BtnKakaoLogin';
+import { useEffect, useState } from 'react';
 
 function Start() {
   const navigate = useNavigate();
+  const isToken = window.localStorage.getItem('LOGIN_TOKEN');
+  const isFirstLogin = localStorage.getItem('FIRST_LOGIN');
   const ref = document.referrer;
   sessionStorage.setItem('url', ref);
 
   const handleStartButton = () => {
-    localStorage.getItem('FIRST_LOGIN') === true ? navigate('/onboarding') : navigate('/main');
+    //isFirstLogin ? navigate('/onboarding') : navigate('/main');
+    navigate('/onboarding');
   };
+
+  useEffect(() => {
+    console.log(isToken);
+    console.log(localStorage.getItem('LOGIN_TOKEN'));
+  }, []);
 
   return (
     <S.StartPageWrapper>
@@ -25,9 +34,7 @@ function Start() {
       </S.HoneyBearWrapper>
 
       <S.ButtonField>
-        {localStorage.getItem('EXIT_LOGIN_TOKEN') === false ? (
-          <BtnKakaoLogin />
-        ) : (
+        {isToken ? (
           <BtnComplete
             onClick={() => {
               handleStartButton();
@@ -35,6 +42,8 @@ function Start() {
           >
             허니어리 시작하기
           </BtnComplete>
+        ) : (
+          <BtnKakaoLogin />
         )}
       </S.ButtonField>
     </S.StartPageWrapper>
