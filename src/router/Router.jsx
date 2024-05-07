@@ -12,6 +12,7 @@ import MyPage from '../pages/MyPage/MyPage';
 import CharacterWiki from '../pages/CharacterWiki/CharacterWiki';
 import LoginCallback from '../components/common/buttons/KakaoLogin/LoginCallback/LoginCallback';
 import FallbackUI from '../pages/FallbackUI/FallbackUI';
+import Loading from '../pages/Loading/Loading';
 
 /*이런 식으로 작성하기*/
 const router = createBrowserRouter([
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: '/mypage/characterwiki',
         element: <CharacterWiki />,
+      },
+      {
+        path: '/test',
+        element: <Loading />,
       },
     ],
   },
