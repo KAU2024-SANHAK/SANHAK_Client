@@ -8,10 +8,12 @@ export const fetchSummary = async()=>{
     return response.data;
 };
 
-export const useGetSummary = ()=>{
-    const {data} = useSuspenseQuery({
+const useGetSummary = ()=>{
+    const data = useSuspenseQuery({
         queryKey: SUMMARY_QUERY_KEY,
         queryfn: () => fetchSummary(),
     });
     return data;
 };
+
+export default useGetSummary;
