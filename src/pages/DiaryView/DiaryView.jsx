@@ -1,24 +1,15 @@
-// 이 파일에서는 useEffect로 조언이 있는지 확인하고, 조언이 있다면 ResponseReplyViewBtn 버튼에
-// responsePopUpToggle 핸들러를 연결하고, 없다면 requestPopUpToggle핸들러를 연결하여 리코일에 저장하고 비동기처리한다.
-
 import * as S from './DiaryView.style';
 import { useState, useEffect } from 'react';
 import CreatedDiary from '../../components/CreatedDiary/CreatedDiary';
 import DiaryViewPopUp from './DiaryViewPopUp/DiaryViewPopUp';
 import PopUp from '../../components/PopUp/PopUp';
 import ResponseReplyViewBtn from '../../components/common/buttons/GoToReplyViewBtn/ResponseReplyViewBtn/ResponseReplyViewBtn'
-
-// TEST: utils에서 테스트용 js 파일을 가져오는 코드
-// import { diaryContent } from '../../utils/diaryContent';
-
-// REAL: recoil에서 atom 가져오기
 import { useRecoilState } from 'recoil';
 import { diaryId } from '../../recoil/atoms';
 import { diaryTitle } from '../../recoil/atoms';
 import { createdDate } from '../../recoil/atoms';
 import { diaryContent } from '../../recoil/atoms';
 import { diaryAdvice } from '../../recoil/atoms';
-
 import { usePostAdvice } from '../../hooks/queries/create/usePostAdvice';
 
 export default function DiaryView() {
