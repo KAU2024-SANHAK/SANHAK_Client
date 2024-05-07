@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ResponseEmotionViewBtn from '../common/buttons/GoToEmotionViewBtn/ResponseEmotionViewBtn/ResponseEmotionViewBtn';
 // import { useRecoilState } from 'recoil';
-import { feelingKeyword } from '../../recoil/atoms';
 
 // API 연결 시 활성화할 부분
 import { usePostFeeling } from '../../hooks/queries/create/usePostFeeling';
@@ -30,7 +29,7 @@ export default function CreatedDiary({ title, date, content, feeling }){
     // }, []);
 
     const handleResponse = () => {
-        navigate(`/emotionview/response?=${response}`);
+        navigate('/emotionview');
     }
     const handleClick = () => {
         navigate('/main')

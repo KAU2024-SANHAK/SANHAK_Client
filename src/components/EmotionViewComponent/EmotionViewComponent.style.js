@@ -1,4 +1,17 @@
 import styled from "styled-components";
+import { IcHappy } from "../../assets/svg";
+import { IcAngry } from "../../assets/svg";
+import { IcSad } from "../../assets/svg";
+import { IcWorried } from "../../assets/svg";
+import { IcRelax } from "../../assets/svg";
+import { IcSurprised } from "../../assets/svg";
+
+export const Happy = styled(IcHappy)``
+export const Sad = styled(IcSad)``
+export const Angry = styled(IcAngry)``
+export const Worried = styled(IcWorried)``
+export const Relax = styled(IcRelax)``
+export const Surprised = styled(IcSurprised)``
 
 export const EmotionViewWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
@@ -38,4 +51,8 @@ export const EmotionTagWrapper = styled.div`
 `
 export const EmotionTag = styled.p`
     ${({ theme }) => theme.fonts.big_title};
+`
+export const EmotionPhotoWrapper = styled.div`
+    margin-left: 4rem;
+    margin-top: 1rem;
 `

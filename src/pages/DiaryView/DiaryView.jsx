@@ -10,7 +10,6 @@ import ResponseReplyViewBtn from '../../components/common/buttons/GoToReplyViewB
 
 // recoil에서 atom 가져오기
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { diaryId } from '../../recoil/atoms';
 import { diary_content } from '../../recoil/atoms';
 import { DiaryDate } from '../../components/CreatedDiary/CreatedDiary.style';
 

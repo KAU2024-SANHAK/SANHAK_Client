@@ -1,16 +1,41 @@
-// AI / 서버에서 감정 키워드를 받아와 <S.EmotionTag> 사이에 렌더링하기
-
 import * as S from './EmotionViewComponent.style';
 import BtnBack from '../common/buttons/Back/BtnBack';
 import { useNavigate } from 'react-router-dom';
 // import { useRecoilState } from 'recoil';
+import { diaryFeeling } from '../../recoil/atoms'
 
-export function EmotionViewComponent( {emotion}) {
+export function EmotionViewComponent({ feeling }) {
     const navigate = useNavigate();
     // const [diary, setDiary] = useRecoilState(diaryContentState);
 
     const handleClick = () => {
         navigate('/diaryview')
+    }
+
+    const feelingMap = {
+        HAPPY: "기쁨",
+        SAD: "슬픔",
+        ANGRY: "분노",
+        WORRIED: "걱정",
+        RELAX: "평온",
+        SURPRISED: "놀람"
+    };
+
+    const feelingImgMap = {
+        HAPPY: <S.Happy />,
+        SAD: <S.Sad />,
+        ANGRY: <S.Angry />,
+        WORRIED: <S.Worried />,
+        RELAX: <S.Relax />,
+        SURPRISED: <S.Surprised />
+    }
+
+    function convertFeelingToKorean(feeling) {
+        return feelingMap[feeling] || feeling;
+    }
+
+    function convertFeelingToImg(feeling) {
+        return feelingImgMap[feeling] ||  null;
     }
 
     return(
@@ -23,11 +48,16 @@ export function EmotionViewComponent( {emotion}) {
                     너의 오늘 <br/>
                     하루 감정은
                 </S.TodayEmotionQ>
-                <S.EmotionPhoto/>
+                    <S.EmotionPhoto>
+                        <S.EmotionPhotoWrapper>
+                            {convertFeelingToImg(feeling)}
+                        </S.EmotionPhotoWrapper>
+                    </S.EmotionPhoto>
+
                 <S.EmotionTagWrapper>
                     <S.EmotionTag>
-                        {emotion}
-                    </S.EmotionTag>
+                        {/* {diaryFeeling} */}
+                        {"#" + convertFeelingToKorean(feeling)}                    </S.EmotionTag>
                 </S.EmotionTagWrapper>
             </S.EmotionViewComponentWrapper>
         </S.EmotionViewWrapper>
