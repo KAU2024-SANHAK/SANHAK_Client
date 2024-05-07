@@ -14,19 +14,19 @@ export default function CreatedDiary({ content, feeling, title }){
 
     const navigate = useNavigate();
 
-    const [showResponseBtn, setShowResponseBtn] = useState(false);
-    const [feelingState, setFeelingState] = useRecoilState(feelingKeyword);
+    // const [showResponseBtn, setShowResponseBtn] = useState(false);
+    // const [feelingState, setFeelingState] = useRecoilState(feelingKeyword);
 
-    // data에 feeling이 존재하는 지 여부 확인하기
-    const checkFeelingExists = () => {
-        return !!feelingState;
-    }
+    // // data에 feeling이 존재하는 지 여부 확인하기
+    // const checkFeelingExists = () => {
+    //     return !!feelingState;
+    // }
 
-    // advice가 있는지 확인하여 useEffect로 렌더링
-    useEffect(() => {
-        const feelingExists = checkFeelingExists();
-        setShowResponseBtn(feelingExists);
-    }, []);
+    // // advice가 있는지 확인하여 useEffect로 렌더링
+    // useEffect(() => {
+    //     const feelingExists = checkFeelingExists();
+    //     setShowResponseBtn(feelingExists);
+    // }, []);
 
     const handleResponse = () => {
         navigate('/emotionview');

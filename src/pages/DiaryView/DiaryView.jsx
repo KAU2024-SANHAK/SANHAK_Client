@@ -46,7 +46,6 @@ export default function DiaryView() {
 
     const responsePopUpToggle = () => {
         setIsClick(!isClick);
-        console.log("clicked!")
     }
 
     return (
