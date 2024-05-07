@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import usePostDiary from "../../../hooks/queries/etc/usePostDiary";
 import BtnSubmit from "../buttons/Submit/BtnSubmit";
 
-export default function DiaryListComponent({ keys, feelingListId, feelingListTitle, feelingListDate }) {
+export default function DiaryListComponent({ feelingListId, feelingListTitle, feelingListDate }) {
   const mutation = usePostDiary();
   const navigate = useNavigate();
 
