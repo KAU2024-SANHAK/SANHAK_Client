@@ -8,7 +8,7 @@ export const ResponseEmotionViewBtnIconWrapper = styled.div`
     padding-top: 1rem;
 `
 export const ResponseEmotionViewBtnWrapper = styled.div`
-    ${({ theme: { mixin } }) => mixin.flexCenter()};
+    ${({ theme: { mixin } }) => mixin.flexBox({})};
     width: 15.2rem;
     height: 5rem;
     flex-shrink: 0;
