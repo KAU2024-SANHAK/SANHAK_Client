@@ -3,8 +3,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Layout from '../layouts/Layout';
 import Start from '../pages/Start/Start';
-import Login from '../components/Login';
-import OnBoarding  from '../pages/OnBoarding/OnBoarding';
+import OnBoarding from '../pages/OnBoarding/OnBoarding';
 import Main from '../pages/Main/Main';
 import SearchByEmotion from '../pages/SearchByEmotion/SearchByEmotion';
 import EmotionView from '../pages/EmotionView/EmotionView';
@@ -14,6 +13,8 @@ import SlowDiary from '../pages/SlowDiary/SlowDiary';
 import MyPage from '../pages/MyPage/MyPage';
 import CharacterWiki from '../pages/CharacterWiki/CharacterWiki';
 import DiaryList from '../pages/DiaryList/DiaryList';
+import LoginCallback from '../components/common/buttons/KakaoLogin/LoginCallback/LoginCallback';
+import FallbackUI from '../pages/FallbackUI/FallbackUI';
 
 /*이런 식으로 작성하기*/
 const router = createBrowserRouter([
@@ -26,32 +27,32 @@ const router = createBrowserRouter([
         element: <Start />,
       },
       {
-        path: "/api/oauth/kakao/login",
-        element: <Login />,
+        path: '/loading',
+        element: <LoginCallback />,
       },
       {
-        path: "/onboarding",
-        element: <OnBoarding/>
+        path: '/onboarding',
+        element: <OnBoarding />,
       },
       {
-        path: "/main",
-        element: <Main/>
+        path: '/main',
+        element: <Main />,
       },
       {
-        path: "/fastdiary",
-        element: <FastDiary/>
+        path: '/fastdiary',
+        element: <FastDiary />,
       },
       {
-        path: "/slowdiary",
-        element: <SlowDiary/>
+        path: '/slowdiary',
+        element: <SlowDiary />,
       },
       {
         path: '/diaryview',
-        element: <DiaryView/>
+        element: <DiaryView />,
       },
       {
-        path: "/mypage",
-        element: <MyPage/>
+        path: '/mypage',
+        element: <MyPage />,
       },
       {
         path: "/searchbyemotion",
@@ -68,7 +69,11 @@ const router = createBrowserRouter([
       {
         path:"/emotionview",
         element: <EmotionView/>
-      }
+      },
+      {
+        path: '/mypage/characterwiki',
+        element: <CharacterWiki />,
+      },
     ],
   },
 ]);

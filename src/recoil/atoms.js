@@ -6,24 +6,11 @@ const { persistAtom } =recoilPersist({
    storage: localStorage,
 })
 
-export const UserDiaryType = atom({
+export const userDiaryType = atom({
    key: 'userDiaryType',
    default: '',
    effects_UNSTABLE: [persistAtom]
 });
-/*
-export const fastDiaryKeywords = atom({
-    key: "fastDiaryKeywords",
-    default:{
-        feeling: '',
-        what: '',
-        who: '',
-        when: '',
-        where: '',
-        realized: ''
-    },
-    effects_UNSTABLE: [persistAtom]
-});*/
 
 export const feelingKeyword = atom({
     key: "feeling",
@@ -61,58 +48,47 @@ export const realizedKeyword = atom({
     effects_UNSTABLE: [persistAtom]
 });
 
-/*
-export const diary = atom({
-    key: "diary",
-    default:{
-        diaryId: '',
-        diary_content: '',
-        advice: '',
-        feeling: '',
-        imageUrl: '',
-        diaryTitle: ''
-    },
-    effects_UNSTABLE: [persistAtom]
-});*/
-
 export const diaryId = atom({
     key: "diaryId",
-    default:0,
-    effects_UNSTABLE: [persistAtom]
-});
-
-export const createdDate = atom({
-    key: "createdDate",
-    default:'',
-    effects_UNSTABLE: [persistAtom]
-});
-
-export const diary_content = atom({
-    key: "diary_content",
-    default:'',
-    effects_UNSTABLE: [persistAtom]
-});
-
-export const advice = atom({
-    key: "advice",
-    default:'',
-    effects_UNSTABLE: [persistAtom]
-});
-
-export const imageUrl = atom({
-    key: "imageUrl",
-    default:'',
-    effects_UNSTABLE: [persistAtom]
-});
-
-export const diaryFeeling = atom({
-    key: "diaryFeeling",
-    default:'',
+    default: 0,
     effects_UNSTABLE: [persistAtom]
 });
 
 export const diaryTitle = atom({
     key: "diaryTitle",
-    default:'',
+    default: '',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const createdDate = atom({
+    key: "createdDate",
+    default: '',
+    effects_UNSTABLE: [persistAtom]
+})
+
+export const diaryContent = atom({
+    key: "diaryContent",
+    default: '',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const diaryFeeling = atom({
+    key: "diaryFeeling",
+    default: '',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const diaryImage = atom({
+    key: "diaryImage",
+    default: '',
+    effects_UNSTABLE: [persistAtom]
+});
+
+export const diaryAdvice = atom({
+    key: "diaryAdvice",
+    default: {
+        spicy: '',
+        kind: '',
+    },
     effects_UNSTABLE: [persistAtom]
 });
