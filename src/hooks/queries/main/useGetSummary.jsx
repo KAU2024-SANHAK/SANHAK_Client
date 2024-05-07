@@ -3,17 +3,17 @@ import { aiInstance } from "../../../apis/client";
 
 export const SUMMARY_QUERY_KEY = ['summaryData'];
 
-export const fetchSummary = async()=>{
+export const fetchSummary = async () => {
     const response = await aiInstance.get('/api/ai/diary/summary');
     return response.data;
 };
 
 const useGetSummary = ()=>{
-    const data = useSuspenseQuery({
+    const { data, isLoading, isError } = useSuspenseQuery({
         queryKey: SUMMARY_QUERY_KEY,
-        queryfn: () => fetchSummary(),
+        queryFn: () => fetchSummary(),
     });
-    return data;
+    return  { data, isLoading, isError };
 };
 
 export default useGetSummary;
