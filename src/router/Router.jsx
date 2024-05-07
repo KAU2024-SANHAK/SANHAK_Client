@@ -78,10 +78,6 @@ const router = createBrowserRouter([
         path: '/mypage/characterwiki',
         element: <CharacterWiki />,
       },
-      {
-        path:"/searchbyemotion/diarylist",
-        element: <DiaryList />
-      }
     ],
   },
 ]);
