@@ -40,6 +40,7 @@ function Main() {
             <S.MainStep1HoneyBearWrapper>
               <HoneyBearMainStep2/>
             </S.MainStep1HoneyBearWrapper>
+            
             <MainStep1/>
           </S.Wrapper>
         </div>
@@ -52,7 +53,6 @@ function Main() {
               {/* <MainStep2/> */}
               {/* <S.MainStep2ComponentWrapper> */}
                   <Calendar/>
-                  <DiaryList/>
 
               {/* </S.MainStep2ComponentWrapper> */}
             </div>

@@ -9,34 +9,12 @@ export default function MainStep1(){
     return(
         <S.MainStep1Wrapper>
             <S.MainButtonWrapper>
-                <MyPageButton/>
-                <SearchByEmotionButton/>
-                <ThisMonthEmotion/>
+                <MyPageButton />
+                <SearchByEmotionButton />
+                <ThisMonthEmotion />
             </S.MainButtonWrapper>
             {/* <WriteDiaryButton/> */}
         </S.MainStep1Wrapper>
-        
-        
-            
-        
-        
-        // <S.MainStep1Wrapper>
-        //     {/* 전체 페이지 내에서 버튼이 들어갈 영역 중간 차지 */}
-        //     <MainButtonWrapper>
-        //         <MyPageButton/>  
-        //         <SearchByEmotionButton/>    
-        //         <ThisMonthEmotion/>
-        //     </MainButtonWrapper>
 
-        //     {/* 앱솔루트로 위치값 고정하기 */}
-        //     <WriteDiaryButton/>
-
-        //     <FooterWrapper>
-        //         {/* 프로그래스 바 설정하기 */}
-
-        //     </FooterWrapper>
-
-            
-        // </S.MainStep1Wrapper>
     )
 }
