@@ -1,9 +1,29 @@
-import * as S from './SearchByEmotion.style'
+import * as S from './SearchByEmotion.style';
+import { useNavigate } from 'react-router-dom';
+import PopUp from '../../components/PopUp/PopUp';
+import BtnBack from '../../components/common/buttons/Back/BtnBack';
+import SearchByEmotionPopUp from './SearchByEmotionPopUp/SearchByEmotionPopUp';
 
 export default function SearchByEmotion(){
+    const navigate = useNavigate();
+
+    const handleBackButton = () => {
+        navigate('/main');
+    }
+
     return(
-        <S.Wrapper>
-            <p>감정별 일기조회 페이지입니다.</p>
-        </S.Wrapper>
+        <S.MyPageWrapper>
+            <S.BackButtonWrapper>
+                <BtnBack onClick={()=>{handleBackButton()}}/>
+            </S.BackButtonWrapper>
+            
+            <S.HoneyBearWrapper>
+                <S.HoneyBear height='30rem'/>
+            </S.HoneyBearWrapper>
+
+            <PopUp name='감정별 일기조회'>
+                <SearchByEmotionPopUp/>
+            </PopUp>
+        </S.MyPageWrapper>
     )
 }
