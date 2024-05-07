@@ -3,10 +3,11 @@
 import * as S from './EmotionViewComponent.style';
 import BtnBack from '../common/buttons/Back/BtnBack';
 import { useNavigate } from 'react-router-dom';
+// import { useRecoilState } from 'recoil';
 
 export function EmotionViewComponent() {
     const navigate = useNavigate();
-    const [diary, setDiary] = useRecoilState(diaryContentState);
+    // const [diary, setDiary] = useRecoilState(diaryContentState);
 
     const handleClick = () => {
         navigate('/diaryview')
@@ -25,7 +26,7 @@ export function EmotionViewComponent() {
                 <S.EmotionPhoto/>
                 <S.EmotionTagWrapper>
                     <S.EmotionTag>
-                        {diary.feeling}
+                        #기쁨
                     </S.EmotionTag>
                 </S.EmotionTagWrapper>
             </S.EmotionViewComponentWrapper>

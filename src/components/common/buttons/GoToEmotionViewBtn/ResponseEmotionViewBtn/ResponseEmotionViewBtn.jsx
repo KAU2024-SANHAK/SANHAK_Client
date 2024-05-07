@@ -1,9 +1,9 @@
 import * as S from './ResponseEmotionViewBtn.style';
 
-export default function ResponseEmotionViewBtn() {
+export default function ResponseEmotionViewBtn({ onClick }) {
 
     return (
-        <S.ResponseEmotionViewBtnWrapper>
+        <S.ResponseEmotionViewBtnWrapper onClick={onClick}>
             <S.ResponseEmotionViewBtnText>
                 오늘의 감정 분석 보러가기
             </S.ResponseEmotionViewBtnText>
