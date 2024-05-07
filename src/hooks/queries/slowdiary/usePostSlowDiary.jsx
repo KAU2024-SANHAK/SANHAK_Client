@@ -1,8 +1,8 @@
-import { seerverInstance } from "../../../apis/client"
+import { serverInstance } from "../../../apis/client"
 import { useMutation } from "react-query"
 
 export const postSlowDiary = async (body) => {
-    const response =  await seerverInstance.post('/api/diary/create/slow', body);
+    const response =  await serverInstance.post('/api/diary/create/slow', body);
     return response.data;
 }
 

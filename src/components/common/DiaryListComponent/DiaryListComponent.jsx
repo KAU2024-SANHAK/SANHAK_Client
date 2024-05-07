@@ -1,14 +1,12 @@
 import * as S from "./DiaryListComponent.style"
 import { useNavigate } from "react-router-dom"
-// import { usePostDiary } from "../../../hooks/queries/etc/usePostDiary";
+import { usePostDiary } from "../../../hooks/queries/etc/usePostDiary";
 
 export default function DiaryListComponent({ keys, feelingListId, feelingListTitle, feelingListDate }) {
     const navigate=useNavigate();
 
     const handleSearchButton=() =>{
-        // API 연결_back에 diaryId request
-        // const responseObject = usePostDiary(diaryId={feelingListId})
-
+        const responseObject = usePostDiary(diaryId={feelingListId})
         navigate('/diaryview')
     }
 
@@ -22,7 +20,7 @@ export default function DiaryListComponent({ keys, feelingListId, feelingListTit
                 <S.TextDate>
                     {feelingListDate}
                 </S.TextDate>
-                <S.SubmitBtnWrapper onClick={() => handleSearchButton()} >
+                <S.SubmitBtnWrapper onClick={() => handleSearchButton()}>
                     <S.SubmitBtnTextWrapper>
                         조회하기
                     </S.SubmitBtnTextWrapper>
@@ -32,5 +30,3 @@ export default function DiaryListComponent({ keys, feelingListId, feelingListTit
         </S.DiaryListComponentWrapper>
     )
 }
-
-// 조회하기 버튼을 누르면 AI로부터 API를 받아오고, 받아온 값을 리코일에 저장해서 리코일에 저장한 값을 diaryview에 띄우게 된다.

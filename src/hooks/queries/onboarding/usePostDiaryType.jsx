@@ -6,12 +6,13 @@ export const postUserDiaryType = async (body)=>{
     serverInstance.post('/api/member/character', body)
 }
 
-export const usePostDiaryType = () => {
+const usePostDiaryType = () => {
     const mutation = useMutation({
         mutationFn: postUserDiaryType,
         onSuccess: ()=>{
             console.log('요청이 성공했습니다.')
         }
     })
-    return {mutation};
-}
+    return mutation;
+};
+export default usePostDiaryType;

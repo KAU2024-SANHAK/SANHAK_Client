@@ -9,13 +9,13 @@ import Calendar from '../../components/common/Calendar/Calendar';
 // import WriteDiaryButton from '../../components/common/buttons/WriteDiaryButton';
 
 function Main() {
-  // const settings = {
-  //   dots: false,
-  //   infinite: false,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  //   adaptiveHeight: true,
-  // };
+  const settings = {
+    dots: false,
+    infinite: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    adaptiveHeight: true,
+  };
   // const steps = [ {name: 'MainStep1', component: <MainStep1/>}, {name: 'MainStep2', component: <MainStep2/>} ]
   // retrun(
   //   <S.Wrapper>
@@ -32,50 +32,45 @@ function Main() {
   //   </S.Wrapper>
   // )
   
-  // return (
-  //   <div className='slider-container'>
-  //     <Slider {...settings} dotsClass="test-css">
-  //       <div>
-  //         <S.Wrapper>
-  //           <S.MainStep1HoneyBearWrapper>
-  //             <HoneyBearMainStep2/>
-  //           </S.MainStep1HoneyBearWrapper>
-  //           <MainStep1/>
-  //         </S.Wrapper>
-  //       </div>
-  //       <div>
-  //         <S.Wrapper>
-  //           <div>
-  //             <S.MainStep2HoneyBearWrapper>
-  //               <HoneyBearMainStep1/>
-  //             </S.MainStep2HoneyBearWrapper>
-  //             {/* <MainStep2/> */}
-  //             {/* <S.MainStep2ComponentWrapper> */}
-  //                 <Calendar/>
-  //                 <DiaryList/>
-
-  //             {/* </S.MainStep2ComponentWrapper> */}
-  //           </div>
-            
-  //         </S.Wrapper>
-  //         <h2>
-  //           Hello
-  //         </h2>
-  //         <div>
-  //           Hello
-  //         </div>
-  //         <p>
-  //           hi
-  //         </p>
-  //       </div>
-  //     </Slider>
-  //   </div>
-  // );
   return (
-    <S.Wrapper>
-      <MainStep2/>
-    </S.Wrapper>
-  )
+    <div className='slider-container'>
+      <Slider {...settings} dotsClass="test-css">
+        <div>
+          <S.Wrapper>
+            <S.MainStep1HoneyBearWrapper>
+              <HoneyBearMainStep2/>
+            </S.MainStep1HoneyBearWrapper>
+            <MainStep1/>
+          </S.Wrapper>
+        </div>
+        <div>
+          <S.Wrapper>
+            <div>
+              <S.MainStep2HoneyBearWrapper>
+                <HoneyBearMainStep1/>
+              </S.MainStep2HoneyBearWrapper>
+              {/* <MainStep2/> */}
+              {/* <S.MainStep2ComponentWrapper> */}
+                  <Calendar/>
+                  <DiaryList/>
+
+              {/* </S.MainStep2ComponentWrapper> */}
+            </div>
+            
+          </S.Wrapper>
+          <h2>
+            Hello
+          </h2>
+          <div>
+            Hello
+          </div>
+          <p>
+            hi
+          </p>
+        </div>
+      </Slider>
+    </div>
+  );
 }
 
 export default Main;

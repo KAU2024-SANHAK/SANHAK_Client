@@ -27,7 +27,16 @@ export default function FastDiaryStep6({onNext, onPrev}){
 
     return(
         <S.FastDiaryStepWrapper>
-            {isOpen && <DiaryErrorModal closeModal={closeModal}/>}
+            {isOpen && 
+                <DiaryErrorModal 
+                    closeModal = {closeModal} 
+                    top = 'none'
+                >
+                    모든 질문에 답변해주세요.<br/>
+                    답변을 토대로 AI일기가 생성됩니다.
+                </DiaryErrorModal>
+            }
+            
             <LargeQuestion>
                 하루를 돌아보면서<br/>
                 느꼈던 것들이 있다면 말해줄래?
