@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const getAccessToken = () => {
   const accessToken = localStorage.getItem('LOGIN_TOKEN');
-  return accessToken ? `Bearer ${accessToken}` : '';
+  return accessToken ? accessToken : '';
 };
 
 export const getRefreshToken = () => {
@@ -20,7 +20,7 @@ export const serverInstance = axios.create({
   baseURL: import.meta.env.VITE_APP_SERVER_BASE_URL,
   withCredentials: true,
   headers: {
-    Authorization: `${getAccessToken()}`,
+    Authorization: `Bearer ${getAccessToken()}`,
   },
 });
 
