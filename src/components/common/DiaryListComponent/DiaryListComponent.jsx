@@ -1,15 +1,25 @@
 import * as S from "./DiaryListComponent.style"
 import { useNavigate } from "react-router-dom"
-import { usePostDiary } from "../../../hooks/queries/etc/usePostDiary";
+import usePostDiary from "../../../hooks/queries/etc/usePostDiary";
 import BtnSubmit from "../buttons/Submit/BtnSubmit";
 
 export default function DiaryListComponent({ keys, feelingListId, feelingListTitle, feelingListDate }) {
-  const navigate=useNavigate();
+  const mutation = usePostDiary();
+  const navigate = useNavigate();
 
-  const handleSearchButton=() =>{
-    const responseObject = usePostDiary(diaryId={feelingListId})
-    navigate('/diaryview')
-  }
+  const handleSearchButton= () => {
+    const body = {
+      diaryId: feelingListId, 
+    };
+
+    mutation.mutate(body,{
+      onSuccess: (response) => {
+        console.log(response);
+      //  navigate('/diaryview');
+      }
+
+    });
+  };
 
   return (
     <S.DiaryListComponentWrapper>
