@@ -6,7 +6,7 @@ const { persistAtom } =recoilPersist({
    storage: localStorage,
 })
 
-export const UserDiaryType = atom({
+export const userDiaryType = atom({
    key: 'userDiaryType',
    default: '',
    effects_UNSTABLE: [persistAtom]

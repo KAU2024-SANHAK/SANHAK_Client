@@ -9,7 +9,9 @@ import FastDiary from '../pages/FastDiary/FastDiary';
 import DiaryView from '../pages/DiaryView/DiaryView';
 import SlowDiary from '../pages/SlowDiary/SlowDiary';
 import MyPage from '../pages/MyPage/MyPage';
+import SearchByEmotion from '../pages/SearchByEmotion/SearchByEmotion';
 import CharacterWiki from '../pages/CharacterWiki/CharacterWiki';
+import DiaryList from '../pages/DiaryList/DiaryList';
 import LoginCallback from '../components/common/buttons/KakaoLogin/LoginCallback/LoginCallback';
 import FallbackUI from '../pages/FallbackUI/FallbackUI';
 
@@ -23,10 +25,6 @@ const router = createBrowserRouter([
         path: '/',
         element: <Start />,
       },
-      //   {
-      //     path: "/mypage",
-      //     element: <Mypage />,
-      //   },
       {
         path: '/loading',
         element: <LoginCallback />,
@@ -38,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: '/main',
         element: <Main />,
+      },
+      {
+        path: "/searchbyemotion",
+        element: <SearchByEmotion/>
       },
       {
         path: '/fastdiary',
@@ -59,6 +61,10 @@ const router = createBrowserRouter([
         path: '/mypage/characterwiki',
         element: <CharacterWiki />,
       },
+      {
+        path:"/searchbyemotion/diarylist",
+        element: <DiaryList />
+      }
     ],
   },
 ]);

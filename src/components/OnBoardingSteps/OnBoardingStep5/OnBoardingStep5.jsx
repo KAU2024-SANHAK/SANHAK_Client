@@ -1,10 +1,28 @@
-import * as S from "../OnBoardingStep.style"
+import * as S from "../OnBoardingStep.style";
+import { usePostDiaryType } from "../../../hooks/queries/onboarding/usePostDiaryType";
+import { useRecoilValue } from "recoil";
+import { userDiaryType } from "../../../recoil/atoms";
 import SetDiaryStyle from "../../SetDiaryStyle/SetDiaryStyle";
 import Title from "../title/Title";
 import Caption from "../title/Caption";
 import BtnComplete from "../../common/buttons/complete/BtnComplete";
 
 export default function OnBoardingStep5({onNext}){
+    const diaryTypeAtom = useRecoilValue(userDiaryType);
+    const { mutation } = usePostDiaryType();
+
+    const handlePostDiaryStyle= () => {
+         const body = {
+            userDiaryType : diaryTypeAtom,
+         };
+ 
+         mutation.mutate(body, {
+             onSucess: (data) => {
+                 console.log(data);
+             }
+         })
+     };
+
     return (
         <S.OnBoardingStepWrapper>
             
@@ -24,7 +42,11 @@ export default function OnBoardingStep5({onNext}){
 
             <S.OnBoardingFooter>
                 <Caption>일기 작성 페이지는 마이페이지에서 수정 가능합니다.</Caption>
-                <BtnComplete onClick={()=>{onNext()}}>
+                <BtnComplete onClick={() => {
+                        handlePostDiaryStyle();
+                        onNext()
+                    }}
+                >
                     선택 완료
                 </BtnComplete>
             </S.OnBoardingFooter>

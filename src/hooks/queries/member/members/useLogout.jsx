@@ -15,3 +15,4 @@ export const useLogout = () => {
   });
   return { mutation };
 };
+
