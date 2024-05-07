@@ -52,7 +52,6 @@ function Main() {
               {/* <MainStep2/> */}
               {/* <S.MainStep2ComponentWrapper> */}
                   <Calendar/>
-                  <DiaryList/>
 
               {/* </S.MainStep2ComponentWrapper> */}
             </div>
