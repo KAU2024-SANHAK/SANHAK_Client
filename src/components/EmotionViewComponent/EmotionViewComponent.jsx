@@ -1,12 +1,9 @@
 import * as S from './EmotionViewComponent.style';
 import BtnBack from '../common/buttons/Back/BtnBack';
 import { useNavigate } from 'react-router-dom';
-// import { useRecoilState } from 'recoil';
-import { diaryFeeling } from '../../recoil/atoms'
 
 export function EmotionViewComponent({ feeling }) {
     const navigate = useNavigate();
-    // const [diary, setDiary] = useRecoilState(diaryContentState);
 
     const handleClick = () => {
         navigate('/diaryview')
@@ -31,7 +28,7 @@ export function EmotionViewComponent({ feeling }) {
     }
 
     function convertFeelingToKorean(feeling) {
-        return feelingMap[feeling] || feeling;
+        return feelingMap[feeling] || null;
     }
 
     function convertFeelingToImg(feeling) {
