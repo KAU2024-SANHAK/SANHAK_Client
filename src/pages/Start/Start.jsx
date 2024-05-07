@@ -13,7 +13,8 @@ function Start() {
   sessionStorage.setItem('url', ref);
 
   const handleStartButton = () => {
-    isFirstLogin ? navigate('/onboarding') : navigate('/main');
+    //isFirstLogin ? navigate('/onboarding') : navigate('/main');
+    navigate('/onboarding');
   };
 
   useEffect(() => {
