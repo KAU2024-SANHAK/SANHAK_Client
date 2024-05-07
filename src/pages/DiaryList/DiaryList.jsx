@@ -10,6 +10,7 @@ export default function DiaryList(){
   const navigate = useNavigate();
 
   const handleBackButton = () => {
+    console.log('dho')
     setDiaryList({});
     navigate('/searchbyemotion');
   };
@@ -18,7 +19,7 @@ export default function DiaryList(){
     <S.DiaryListWrapper>
 
       <S.BackButtonWrapper>
-        <BtnBack onClick={() => {handleBackButton()}}/>
+        <BtnBack handleClick={() => {handleBackButton()}}/>
       </S.BackButtonWrapper>
 
       <S.DiaryListComponentWrapper>
