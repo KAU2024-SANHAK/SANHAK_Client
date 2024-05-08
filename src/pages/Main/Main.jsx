@@ -3,10 +3,6 @@ import MainStep1 from '../../components/MainStep/MainStep1/MainStep1'
 import MainStep2 from '../../components/MainStep/MainStep2/MainStep2'
 import React from "react";
 import Slider from "react-slick";
-import HoneyBearMainStep1 from '../../components/common/HoneyBearMainStep1/HoneyBearMainStep1';
-import HoneyBearMainStep2 from '../../components/common/HoneyBearMainStep2/HoneyBearMainStep2';
-import Calendar from '../../components/common/Calendar/Calendar';
-import DiaryList from '../../components/common/DiaryList/DiaryList';
 import WriteDiaryButton from '../../components/common/buttons/WriteDiaryButton/WriteDiaryButton';
 
 function Main() {
@@ -36,39 +32,19 @@ function Main() {
   return (
     <div className='slider-container'>
       <Slider {...settings} dotsClass="test-css">
-        <div>
-          <S.Wrapper>
-            <S.MainStep1HoneyBearWrapper>
-              <HoneyBearMainStep2/>
-            </S.MainStep1HoneyBearWrapper>
+        <S.Wrapper>
+          <S.MainStep1Wrapper>
             <MainStep1/>
-          </S.Wrapper>
-        </div>
-        <div>
-          <S.Wrapper>
-              <S.MainStep2HoneyBearWrapper>
-                <HoneyBearMainStep1/>
-              </S.MainStep2HoneyBearWrapper>
-              {/* <MainStep2/> */}
-              <S.MainStep2ComponentWrapper>
-                  <Calendar/>
-                  <DiaryList/>
-
-              </S.MainStep2ComponentWrapper>
-          </S.Wrapper>
-        </div>
+          </S.MainStep1Wrapper>
+        </S.Wrapper>
+        <S.Wrapper>
+            <S.MainStep2Wrapper>
+              <MainStep2/>
+            </S.MainStep2Wrapper>
+        </S.Wrapper>
       </Slider>
     </div>
   );
-
-  // return (
-  //   <S.Wrapper>
-  //     <S.CalendarWrapper>
-  //       <MainStep1/>
-  //     </S.CalendarWrapper>
-  //   </S.Wrapper>
-
-  // )
 }
 
 export default Main;

@@ -11,7 +11,7 @@ export const CalendarComponentWrapper = styled.div`
         width: 32rem;
         border-radius: 3rem;
         background: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(7.5rem);
+        backdrop-filter: blur(1.5rem);
         border: none;
     }
 

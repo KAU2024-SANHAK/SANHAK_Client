@@ -1,16 +1,18 @@
 import styled from 'styled-components';
 
 export const MainStep1Wrapper = styled.div`
-    display: flex;
+    ${({ theme: { mixin } }) => mixin.flexCenter({})};
     width: 100%;
     height: 100vh;
 `
 export const MainButtonWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-left: 2.8rem;
-    margin-top: 15.7rem;
-    height: 40rem;
+    ${({ theme: { mixin } }) => mixin.flexBox({direction:'column'})};
+    margin-top: 8.7rem;
+    margin-right: 11rem;
     gap: 1.5rem;
-    z-index: 10;
+`
+export const MainStep1HoneyBearWrapper = styled.div`
+    position: absolute;
+    top: 4rem;
+    left: 8.7rem;
 `
