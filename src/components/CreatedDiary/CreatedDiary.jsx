@@ -2,7 +2,6 @@ import * as S from './CreatedDiary.style';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import BtnBack from '../common/buttons/Back/BtnBack';
-import ResponseEmotionViewBtn from '../common/buttons/GoToEmotionViewBtn/ResponseEmotionViewBtn/ResponseEmotionViewBtn';
 import { useRecoilState } from 'recoil';
 import { diaryFeeling } from '../../recoil/atoms';
 import { diaryId } from '../../recoil/atoms';
@@ -13,6 +12,8 @@ import BtnShowFeeling from '../common/buttons/ShowFeeling/BtnShowFeeling';
 export default function CreatedDiary({ title, date, content }){
     const navigate = useNavigate();
     const [feeling, setFeeling] = useRecoilState(diaryFeeling);
+    feeling ? console.log('yes') : console.log('no');
+    console.log(feeling)
     const resetDiary = useResetDiary();
 /*
 
@@ -28,14 +29,12 @@ export default function CreatedDiary({ title, date, content }){
         setFeeling(feelingExists);
     }, []);*/
 
-    const requestEmotion = () => {
-      //  const responseEmotion = usePostFeeling(diaryId);
-    //    setFeeling(responseEmotion);
+    const requestFeeling = () => {
 
         navigate('/emotionview');
     }
 
-    const responseEmotion = () => {
+    const responseFeeling = () => {
         navigate('/emotionview', {state: {value: feeling}});
     }
     const handleClick = () => {
@@ -50,11 +49,9 @@ export default function CreatedDiary({ title, date, content }){
                     <BtnBack handleClick={handleClick}/>
                 </S.BtnBackWrapper>
                 <S.TodayEmotionBtnWrapper>
-                    <BtnShowFeeling handleClick = {feeling ? responseEmotion : requestEmotion}>
-                        {feeling ? '오늘의 감정 분석 생성하기' : '오늘의 감정 분석 보러가기'}
+                    <BtnShowFeeling handleClick = {feeling ? responseFeeling : requestFeeling}>
+                        {feeling ? '오늘의 감정 보러가기' : '오늘의 감정 생성하기'}
                     </BtnShowFeeling>
-                <ResponseEmotionViewBtn onClick={feeling ? responseEmotion : requestEmotion} />
-                 {/*   <ResponseEmotionViewBtn onClick={feeling ? responseEmotion : requestEmotion} />*/}
                 </S.TodayEmotionBtnWrapper>
             </S.HeaderWrapper>
             
