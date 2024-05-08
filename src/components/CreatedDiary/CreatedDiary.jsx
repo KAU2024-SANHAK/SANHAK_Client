@@ -7,10 +7,12 @@ import { useRecoilState } from 'recoil';
 import { diaryFeeling } from '../../recoil/atoms';
 import { diaryId } from '../../recoil/atoms';
 import { usePostFeeling } from '../../hooks/queries/create/usePostFeeling';
+import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
 
 export default function CreatedDiary({ title, date, content }){
     const navigate = useNavigate();
     const [feeling, setFeeling] = useRecoilState(diaryFeeling);
+    const resetDiary = useResetDiary();
 /*
 
 
@@ -36,6 +38,7 @@ export default function CreatedDiary({ title, date, content }){
         navigate('/emotionview', {state: {value: feeling}});
     }
     const handleClick = () => {
+        resetDiary();
         navigate('/main')
     }
 
