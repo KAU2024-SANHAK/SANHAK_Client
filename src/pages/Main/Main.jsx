@@ -4,6 +4,7 @@ import MainStep2 from '../../components/MainStep/MainStep2/MainStep2'
 import React from "react";
 import Slider from "react-slick";
 import WriteDiaryButton from '../../components/common/buttons/WriteDiaryButton/WriteDiaryButton';
+import StepProgress from '../../components/common/StepPrgoress/StepProgress';
 
 function Main() {
   const settings = {
@@ -13,36 +14,27 @@ function Main() {
     slidesToScroll: 1,
     adaptiveHeight: true,
   };
-  // const steps = [ {name: 'MainStep1', component: <MainStep1/>}, {name: 'MainStep2', component: <MainStep2/>} ]
-  // retrun(
-  //   <S.Wrapper>
-  //       <S.MainStepSlider>
-  //        {steps.map((step, idx)=>(
-  //             <S.SlideWrapper key = {idx}>
-  //               {step.component}
-  //              <S.ProgressWrapper>
-  //           <StepProgress steps={steps} cur = {step.name} />
-  //         </S.ProgressWrapper>
-  //       </S.SlideWrapper>
-  //       ))}
-  //     </S.MainStepSlider>
-  //   </S.Wrapper>
-  // )
-  
+
+
+  const steps = [ {name: 'MainStep1', component: <MainStep1/>}, {name: 'MainStep2', component: <MainStep2/>} ]
+
   return (
     <div className='slider-container'>
       <Slider {...settings} dotsClass="test-css">
-        <S.Wrapper>
-          <S.MainStep1Wrapper>
-            <MainStep1/>
-          </S.MainStep1Wrapper>
-        </S.Wrapper>
-        <S.Wrapper>
-            <S.MainStep2Wrapper>
-              <MainStep2/>
-            </S.MainStep2Wrapper>
-        </S.Wrapper>
+        {steps.map((step, idx)=>(
+          <S.Wrapper key = {idx}>
+            {step.component}
+            <S.MainStepWrapper>
+              <StepProgress steps={steps} cur = {step.name} />
+            </S.MainStepWrapper>
+          </S.Wrapper>
+        ))}
       </Slider>
+      
+      <S.WriteDiaryButtonWrapper>
+        <WriteDiaryButton/>
+      </S.WriteDiaryButtonWrapper>
+
     </div>
   );
 }
