@@ -37,6 +37,7 @@ export default function DiaryView() {
       mutation.mutate(body,{
         onSuccess: (response) => {
           console.log(response.data);
+          setAdvice(response.data.advice);
         }
       })
       setIsClick(!isClick);
