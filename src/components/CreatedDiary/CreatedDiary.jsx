@@ -16,6 +16,9 @@ export default function CreatedDiary({ title, date, content, id }){
     const resetDiary = useResetDiary();
 
     const requestFeeling = () => {
+        const body = {
+            diaryId: id,
+        }
         mutation.mutate(body,{
             onSuccess: (response) => {
                 console.log(response.data.feeling);
