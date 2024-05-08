@@ -17,6 +17,7 @@ const useResetDiary = () => {
     resetTitle();
     resetImage();
   }
+  
   return resetDiary;
 
 };
