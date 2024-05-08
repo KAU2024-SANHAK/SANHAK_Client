@@ -8,6 +8,7 @@ import { diaryFeeling } from '../../recoil/atoms';
 import { diaryId } from '../../recoil/atoms';
 import { usePostFeeling } from '../../hooks/queries/create/usePostFeeling';
 import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
+import BtnShowFeeling from '../common/buttons/ShowFeeling/BtnShowFeeling';
 
 export default function CreatedDiary({ title, date, content }){
     const navigate = useNavigate();
@@ -28,8 +29,8 @@ export default function CreatedDiary({ title, date, content }){
     }, []);*/
 
     const requestEmotion = () => {
-        const responseEmotion = usePostFeeling(diaryId);
-        setFeeling(responseEmotion);
+      //  const responseEmotion = usePostFeeling(diaryId);
+    //    setFeeling(responseEmotion);
 
         navigate('/emotionview');
     }
@@ -49,6 +50,9 @@ export default function CreatedDiary({ title, date, content }){
                     <BtnBack handleClick={handleClick}/>
                 </S.BtnBackWrapper>
                 <S.TodayEmotionBtnWrapper>
+                    <BtnShowFeeling handleClick = {feeling ? responseEmotion : requestEmotion}>
+                        {feeling ? '오늘의 감정 분석 생성하기' : '오늘의 감정 분석 보러가기'}
+                    </BtnShowFeeling>
                 <ResponseEmotionViewBtn onClick={feeling ? responseEmotion : requestEmotion} />
                  {/*   <ResponseEmotionViewBtn onClick={feeling ? responseEmotion : requestEmotion} />*/}
                 </S.TodayEmotionBtnWrapper>
