@@ -5,42 +5,34 @@ import BtnBack from '../common/buttons/Back/BtnBack';
 import { useRecoilState } from 'recoil';
 import { diaryFeeling } from '../../recoil/atoms';
 import { diaryId } from '../../recoil/atoms';
-import { usePostFeeling } from '../../hooks/queries/create/usePostFeeling';
+import usePostFeeling from '../../hooks/queries/create/usePostFeeling';
 import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
 import BtnShowFeeling from '../common/buttons/ShowFeeling/BtnShowFeeling';
 
-export default function CreatedDiary({ title, date, content }){
+export default function CreatedDiary({ title, date, content, id }){
     const navigate = useNavigate();
     const [feeling, setFeeling] = useRecoilState(diaryFeeling);
-    feeling ? console.log('yes') : console.log('no');
-    console.log(feeling)
+    const mutation = usePostFeeling();
     const resetDiary = useResetDiary();
-/*
-
-
-    const [feeling, setFeeling] = useRecoilState(diaryFeeling);
-
-    const checkFeelingExists = () => {
-        return !!feeling;
-    }
-
-    useEffect(() => {
-        const feelingExists = checkFeelingExists();
-        setFeeling(feelingExists);
-    }, []);*/
 
     const requestFeeling = () => {
-
-        navigate('/emotionview');
-    }
+        mutation.mutate(body,{
+            onSuccess: (response) => {
+                console.log(response.data.feeling);
+                setFeeling(response.data.feeling);
+                navigate('/emotionview');
+            }
+        });
+    };
 
     const responseFeeling = () => {
         navigate('/emotionview', {state: {value: feeling}});
-    }
+    };
+
     const handleClick = () => {
         resetDiary();
-        navigate('/main')
-    }
+        navigate('/main');
+    };
 
     return(
         <S.CreatedDiaryWrapper>

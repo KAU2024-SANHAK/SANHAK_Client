@@ -16,37 +16,26 @@ export default function DiaryView() {
   const date = useRecoilValue(createdDate);
   const id = useRecoilValue(diaryId);
   const [advice, setAdvice] = useRecoilState(diaryAdvice);
-  const mutation = usePostAdvice();
-  /*
-    // data에 advice가 존재하는 지 여부 확인하기
-    const checkAdviceExists = () => {
-        return !!advice;
-    }
+  const mutation = usePostAdvice();4
 
-    // advice가 있는지 확인하여 useEffect로 렌더링
-    useEffect(() => {
-        const adviceExists = checkAdviceExists();
-        setAdvice(adviceExists);
-    }, []);
-*/
-    const handleRequest = () => {
-      console.log('요청하기')
-      const body = {
-        diaryId: id,
+  const handleRequest = () => {
+    console.log('요청하기')
+    const body = {
+      diaryId: id,
+    }
+    mutation.mutate(body,{
+      onSuccess: (response) => {
+        console.log(response.data);
+        setAdvice(response.data.advice);
       }
-      mutation.mutate(body,{
-        onSuccess: (response) => {
-          console.log(response.data);
-          setAdvice(response.data.advice);
-        }
-      })
-      setIsClick(!isClick);
-    }
+    })
+    setIsClick(!isClick);
+  }
 
-    const handleResponse = () => {
-      console.log('보여주기')  
-      setIsClick(!isClick);
-    }
+  const handleResponse = () => {
+    console.log('보여주기')  
+    setIsClick(!isClick);
+  }
 
   return (
     <S.DiaryViewPageWrapper>
@@ -56,6 +45,7 @@ export default function DiaryView() {
             title={title}  
             date={date}
             content={content}
+            id={id}
           />
         </S.CreatedDiaryWrapper>
         
