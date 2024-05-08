@@ -14,19 +14,20 @@ export const CalendarComponentWrapper = styled.div`
         backdrop-filter: blur(7.5rem);
         border: none;
     }
+
+    // 달력 년,월 표시 / 월 이동 화살표 / 요일 컴포넌트 포함
     .react-datepicker__header {
         background: transparent;
         border-radius: 3rem;
         border: none;
     }
 
-    // S M T ... 아래의 
+    // S M T ... 요일 컴포넌트 아래부분
     .react-datepicker__month {
         height: auto;
         margin-bottom: 2.1rem;
     }
     .react-datepicker__week {
-
     }
     .react-datepicker__day {
         padding: 1.2rem 2.5rem 1.2rem 1.2rem;
@@ -35,14 +36,16 @@ export const CalendarComponentWrapper = styled.div`
     .react-datepicker__day-names {
         padding: 0.9rem;
         margin: 0.9rem 0.9rem 0 0.9rem;
-        justify-content: center;
+        justify-content : center;
+        align-items : center;
         border-top: 0.2rem solid white;
         border-bottom: 0.2rem solid white;
     }
     .react-datepicker__day-name {
         padding: 0 2.5rem 0 1.2rem;
         ${({ theme }) => theme.fonts.body_08};
-        justify-content: center;
+        justify-content : center;
+        align-items : center;
     }
     .react-datepicker__day--weekend {
         color: red;
@@ -54,7 +57,7 @@ export const CalendarComponentWrapper = styled.div`
         color: white;
     }
     .react-datepicker__day--keyboard-selected {
-        background: transparent;
+        background: red;
     }
     .react-datepicker__day--disabled {
         color: lightgrey;

@@ -3,14 +3,18 @@ import HoneyBearMainStep2 from '../../common/HoneyBearMainStep2/HoneyBearMainSte
 import Calendar from '../../common/Calendar/Calendar'
 import DiaryList from '../../common/DiaryList/DiaryList'
 
-// export default function MainStep2(){
-//     return(
-//         <S.MainStep2Wrapper>
-//             <S.MainStep2ComponentWrapper>
-//                 <Calendar/>
-//                 {/* <DiaryList/> */}
+// import Calendar from '../../components/common/Calendar/Calendar';
+// import DiaryList from '../../components/common/DiaryList/DiaryList';
 
-//             </S.MainStep2ComponentWrapper>
-//         </S.MainStep2Wrapper>
-//     )
-// }
+
+export default function MainStep2(){
+    return(
+        <S.MainStep2Wrapper>
+            <S.MainStep2ComponentWrapper>
+                <Calendar/>
+                <DiaryList/>
+
+            </S.MainStep2ComponentWrapper>
+        </S.MainStep2Wrapper>
+    )
+}
