@@ -6,7 +6,7 @@ export const postSlowDiary = async (body) => {
     return response.data;
 }
 
-export const usePostSlowdiary = () => {
+export const usePostSlowDiary = () => {
     const mutation = useMutation({
         mutationFn: postSlowDiary,
         onSuccess: (data)=>{
@@ -15,3 +15,4 @@ export const usePostSlowdiary = () => {
     })
     return {mutation};
 }
+export default usePostSlowDiary;
