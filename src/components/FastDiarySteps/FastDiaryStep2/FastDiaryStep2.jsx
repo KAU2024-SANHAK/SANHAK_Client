@@ -15,7 +15,7 @@ export default function FastDiaryStep2({onNext, onPrev}){
     return(
         <S.FastDiaryStepWrapper>
             <LargeQuestion>
-                오늘 하루름 함께 나누었던<br/>
+                오늘 하루를 함께 나누었던<br/>
                 사람들이 있을까?
             </LargeQuestion>
                 
