@@ -1,7 +1,7 @@
 import * as S from './MainStep2.style';
 import HoneyBearMainStep2 from '../../common/HoneyBearMainStep2/HoneyBearMainStep2';
 import Calendar from '../../common/Calendar/Calendar';
-import DiaryList from '../../../pages/DiaryList/DiaryList';
+import DiaryListComponent from '../../common/DiaryListComponent/DiaryListComponent';
 // import { HoneyBear } from '../../../pages/MyPage/MyPage.style'
 
 export default function MainStep2() {
@@ -18,7 +18,7 @@ export default function MainStep2() {
 
       <S.MainStep2ComponentWrapper>
         <Calendar />
-        <DiaryList />
+        <DiaryListComponent />
       </S.MainStep2ComponentWrapper>
     </S.MainStep2Wrapper>
   );
