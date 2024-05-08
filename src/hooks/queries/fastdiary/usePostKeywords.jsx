@@ -3,7 +3,13 @@ import { useMutation } from 'react-query';
 import axios from 'axios';
 
 export const postKeywords = async (body) => {
-  const response = await aiInstance.post('/api/ai/diary/create', body);
+  const memberId = localStorage.getItem('MemberId');
+  const response = await aiInstance.post('/api/ai/diary/create', body, {
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `${memberId}`,
+    },
+  });
   return response.data;
 };
 
