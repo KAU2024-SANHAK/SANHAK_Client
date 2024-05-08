@@ -13,7 +13,7 @@ import SetWritingStyle from '../../../components/SetDiaryStyle/SetDiaryStyle';
 
 export default function MyPagePopUp(){
     const [isClick, setIsClick] = useState(false);
-    const curType = useRecoilValue(UserDiaryType)
+    const curType = useRecoilValue(userDiaryType)
 
     const navigate = useNavigate();
     const handlegoWiki=()=>{
