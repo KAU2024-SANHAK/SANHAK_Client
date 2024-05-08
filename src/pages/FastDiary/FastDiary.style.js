@@ -15,7 +15,7 @@ export const FastDiaryHeader = styled.div`
     margin-top: 3rem;
 
 `
-export const WritingForm = styled.form`
+export const WritingForm = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     margin-top: 2rem;
     width: 100%;
