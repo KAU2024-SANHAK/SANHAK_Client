@@ -19,7 +19,7 @@ export default function DiaryListComponent({ feelingListId, feelingListTitle, fe
 
   const handleSearchButton= () => {
     const body = {
-      diaryId: 102, 
+      diaryId: feelingListId, 
     };
 
     mutation.mutate(body,{

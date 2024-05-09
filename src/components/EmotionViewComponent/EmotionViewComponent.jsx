@@ -1,10 +1,12 @@
 import * as S from './EmotionViewComponent.style';
 import BtnBack from '../common/buttons/Back/BtnBack';
 import { useNavigate } from 'react-router-dom';
+import { convertFeelingText } from '../../utils/feelingText';
 
 export function EmotionViewComponent({ feeling }) {
     const navigate = useNavigate();
-
+    const feelingText = convertFeelingText(feeling);
+    console.log(feelingText);
     const handleClick = () => {
         navigate('/diaryview')
     }
@@ -53,8 +55,9 @@ export function EmotionViewComponent({ feeling }) {
 
                 <S.EmotionTagWrapper>
                     <S.EmotionTag>
-                        {/* {diaryFeeling} */}
-                        {"#" + convertFeelingToKorean(feeling)}                    </S.EmotionTag>
+                        {"#" + feelingText}                    
+                        
+                    </S.EmotionTag>
                 </S.EmotionTagWrapper>
             </S.EmotionViewComponentWrapper>
         </S.EmotionViewWrapper>
