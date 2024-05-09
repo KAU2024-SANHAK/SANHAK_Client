@@ -39,7 +39,7 @@ export default function FastDiaryStep6({ onNext, onPrev }) {
               const data = response.data;
               setId(data.diaryId);
               setContent(data.diaryContent);
-              setFeeling(feeling);
+              setFeeling(data.feeling);
               navigate('/diaryview');
             }
           }) && onNext();
