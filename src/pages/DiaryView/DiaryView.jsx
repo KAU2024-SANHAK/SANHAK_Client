@@ -4,7 +4,7 @@ import CreatedDiary from '../../components/CreatedDiary/CreatedDiary';
 import DiaryViewPopUp from './DiaryViewPopUp/DiaryViewPopUp';
 import PopUp from '../../components/PopUp/PopUp';
 import { useRecoilValue, useRecoilState } from 'recoil';
-import { diaryId, diaryAdvice, diaryFeeling, diaryTitle, diaryContent, createdDate } from '../../recoil/atoms';
+import { diaryId, diaryAdvice, diaryFeeling, diaryTitle, diaryContent, createdDate, diaryImage } from '../../recoil/atoms';
 import usePostAdvice from '../../hooks/queries/create/usePostAdvice';
 import BtnShowAdvice from '../../components/common/buttons/ShowAdvice/BtnShowAdvice';
 
@@ -15,6 +15,7 @@ export default function DiaryView() {
   const content = useRecoilValue(diaryContent);
   const date = useRecoilValue(createdDate);
   const id = useRecoilValue(diaryId);
+  const image = useRecoilState(diaryImage);
   const [advice, setAdvice] = useRecoilState(diaryAdvice);
   const mutation = usePostAdvice();4
 
@@ -46,6 +47,7 @@ export default function DiaryView() {
             date={date}
             content={content}
             id={id}
+            image={image}
           />
         </S.CreatedDiaryWrapper>
         

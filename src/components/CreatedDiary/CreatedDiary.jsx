@@ -9,7 +9,7 @@ import usePostFeeling from '../../hooks/queries/create/usePostFeeling';
 import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
 import BtnShowFeeling from '../common/buttons/ShowFeeling/BtnShowFeeling';
 
-export default function CreatedDiary({ title, date, content, id }){
+export default function CreatedDiary({ title, date, content, id, image }){
     const navigate = useNavigate();
     const [feeling, setFeeling] = useRecoilState(diaryFeeling);
     const mutation = usePostFeeling();
@@ -37,6 +37,8 @@ export default function CreatedDiary({ title, date, content, id }){
         navigate('/main');
     };
 
+    console.log(image[0])
+
     return(
         <S.CreatedDiaryWrapper>
             <S.HeaderWrapper>
@@ -60,7 +62,7 @@ export default function CreatedDiary({ title, date, content, id }){
                     </S.DiaryDate>
                 </S.DiaryTopTextWrapper>
 
-                <S.DiaryPhotoWrapper/>
+                <S.DiaryPhoto src={image[0]}/>
 
                 <S.DiaryTextWrapper>
                     <S.DiaryText>
