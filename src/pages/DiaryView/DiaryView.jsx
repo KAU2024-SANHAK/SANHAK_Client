@@ -17,7 +17,7 @@ export default function DiaryView() {
   const id = useRecoilValue(diaryId);
   const image = useRecoilState(diaryImage);
   const [advice, setAdvice] = useRecoilState(diaryAdvice);
-  const mutation = usePostAdvice();4
+  const mutation = usePostAdvice();
 
   const handleRequest = () => {
     console.log('요청하기')
