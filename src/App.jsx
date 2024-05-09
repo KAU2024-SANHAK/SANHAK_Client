@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import Loading from './pages/Loading/Loading';
 import { ErrorBoundary } from 'react-error-boundary';
-import { QueryClient, QueryClientProvider, QueryErrorResetBoundary } from 'react-query';
+import { QueryClient, QueryClientProvider, QueryErrorResetBoundary } from '@tanstack/react-query';
 import FallbackUI from './pages/FallbackUI/FallbackUI';
 import * as S from './App.style';
 import { RecoilRoot } from 'recoil';
