@@ -5,7 +5,7 @@ import { useKeywordNullCheck } from '../../../hooks/useKeywordNullCheck';
 import { useModal } from '../../../hooks/common/useModal';
 import { usePostKeywords } from '../../../hooks/queries/fastdiary/usePostKeywords';
 import { keywords } from '../../../utils/keyword';
-import { realizedKeyword, diaryId, diaryTitle, diaryContent, diaryImage, diaryFeeling } from '../../../recoil/atoms';
+import { realizedKeyword, diaryId, diaryTitle, diaryContent, diaryImage, diaryFeeling, createdDate } from '../../../recoil/atoms';
 import LargeQuestion from '../Questions/LargeQustion';
 import BtnNext from '../../common/buttons/Next/BtnNext';
 import BtnPrev from '../../common/buttons/Prev/BtnPrev';
@@ -17,6 +17,7 @@ export default function FastDiaryStep6({ onNext, onPrev }) {
   const [title, setTitle] = useRecoilState(diaryTitle);
   const [content, setContent] = useRecoilState(diaryContent);
   const [image, setImage] = useRecoilState(diaryImage);
+  const [date, setDate] = useRecoilState(createdDate);
   const [feeling, setFeeling] = useRecoilState(diaryFeeling);
   const [isOpen, openModal, closeModal] = useModal();
   const { mutation } = usePostKeywords();
@@ -40,6 +41,8 @@ export default function FastDiaryStep6({ onNext, onPrev }) {
               setId(data.diaryId);
               setContent(data.diaryContent);
               setFeeling(data.feeling);
+              setTitle(data.title);
+              setDate(data.writed_at);
               navigate('/diaryview');
             }
           }) && onNext();
