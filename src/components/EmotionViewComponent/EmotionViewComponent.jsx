@@ -1,7 +1,7 @@
 import * as S from './EmotionViewComponent.style';
 import BtnBack from '../common/buttons/Back/BtnBack';
 import { useNavigate } from 'react-router-dom';
-import { convertFeelingText } from '../../utils/feelingText';
+import { convertFeelingText } from '../../utils/convertFeelingText';
 
 export function EmotionViewComponent({ feeling }) {
   const navigate = useNavigate();
