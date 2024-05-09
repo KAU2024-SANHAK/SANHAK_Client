@@ -2,7 +2,6 @@ export { default as IcError } from './IcError';
 
 export { default as IcMyPage} from './IcMyPage';
 export { default as IcSearchByEmotion} from './IcSearchByEmotionButton';
-export { default as IcThisMonthEmotion} from './IcWriteDiaryButton';
 export { default as IcCurrentProgressCircle } from './IcCurrentProgressCircle'
 export { default as IcHoneyBear } from './IcHoneyBear' 
 export { default as IcKakaoLogin } from './IcKakaoLogin' 
@@ -26,6 +25,10 @@ export { default as IcLargeQuestionBox } from './IcLargeQuestionBox'
 export { default as IcFilledHoneyPot } from './IcFilledHoneyPot'
 export { default as IcHoneyPot } from './IcHoneyPot'
 export { default as IcAddImage } from './IcAddImage'
+export { default as IcPrevMonthBtn } from './IcPrevMonthBtn'
+export { default as IcNextMonthBtn } from './IcNextMonthBtn'
+export { default as IcCalendarToggle } from './IcCalendarToggle'
+export { default as IcWriteDiaryButton } from './IcWriteDiaryButton'
 export { default as IcTodayEmotionBtn } from './IcTodayEmotionBtn' 
 export { default as IcGoToReplyBtn } from './IcGoToReplyBtn'
 export { default as IcXBtn } from './IcXBtn'

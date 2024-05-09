@@ -10,6 +10,11 @@ export const getRefreshToken = () => {
   return refreshToken ? `Bearer ${refreshToken}` : '';
 };
 
+export const getMemberId = () => {
+  const memberId = localStorage.getItem('MemberId');
+  return memberId ? `${memberId}` : '';
+}
+
 export const authInstance = axios.create({
   baseURL: import.meta.env.VITE_APP_SERVER_BASE_URL,
   withCredentials: true,
@@ -28,6 +33,6 @@ export const aiInstance = axios.create({
   baseURL: import.meta.env.VITE_APP_AI_BASE_URL,
   withCredentials: true,
   headers: {
-    Authorization: `${getAccessToken()}`,
-  },
+    Authorization: `${getMemberId()}`,
+  }
 });

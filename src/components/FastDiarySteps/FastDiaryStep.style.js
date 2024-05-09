@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import InputCloud from '../../assets/InputCloud.svg'
+import inputCloud from '../../assets/InputCloud.png'
 
 export const FastDiaryStepWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
@@ -15,7 +15,7 @@ export const ButtonField = styled.div`
 `
 export const FastDiaryTextAreaWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
-    background-image: url(${InputCloud});
+    background-image: url(${inputCloud});
     width: 33rem;
     height: 9.7rem;
     margin-left: 1rem;
