@@ -2,6 +2,7 @@ import * as S from './EmotionViewComponent.style';
 import BtnBack from '../common/buttons/Back/BtnBack';
 import { useNavigate } from 'react-router-dom';
 import { convertFeelingText } from '../../utils/convertFeelingText';
+import FeelingHoneyBear from '../common/HoneyBear/FeelingHoneyBear';
 
 export function EmotionViewComponent({ feeling }) {
   const navigate = useNavigate();
@@ -9,19 +10,6 @@ export function EmotionViewComponent({ feeling }) {
   console.log(feelingText);
   const handleClick = () => {
     navigate('/diaryview')
-  }
-
-  const feelingImgMap = {
-    HAPPY: <S.Happy />,
-    SAD: <S.Sad />,
-    ANGRY: <S.Angry />,
-    WORRIED: <S.Worried />,
-    RELAX: <S.Relax />,
-    SURPRISED: <S.Surprised />
-  }
-
-  function convertFeelingToImg(feeling) {
-    return feelingImgMap[feeling] ||  null;
   }
 
   return(
@@ -39,13 +27,13 @@ export function EmotionViewComponent({ feeling }) {
 
         <S.EmotionPhoto>
           <S.EmotionPhotoWrapper>
-            {convertFeelingToImg(feeling)}
+            <FeelingHoneyBear feeling={feeling}/>
           </S.EmotionPhotoWrapper>
         </S.EmotionPhoto>
 
         <S.EmotionTagWrapper>
           <S.EmotionTag>
-            {"#" + feelingText}                    
+            {feelingText}                    
           </S.EmotionTag>
         </S.EmotionTagWrapper>
 

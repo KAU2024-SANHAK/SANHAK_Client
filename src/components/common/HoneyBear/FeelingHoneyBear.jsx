@@ -1,15 +1,18 @@
+import * as S from './FeelingHoneyBear.style';
 
 export default function FeelingHoneyBear({feeling}){
-  const feelingMap = {
-    HAPPY: "기쁨",
-    SAD: "슬픔",
-    ANGRY: "분노",
-    WORRIED: "걱정",
-    RELAX: "평온",
-    SURPRISED: "놀람"
+  const feelingHoneyBears = {
+    HAPPY: <S.Happy />,
+    SAD: <S.Sad />,
+    ANGRY: <S.Angry />,
+    WORRIED: <S.Worried />,
+    RELAX: <S.Relax />,
+    SURPRISED: <S.Surprised />,
   };
 
   return(
-    <></>
+    <S.Wrapper>
+      {feelingHoneyBears[feeling]}
+    </S.Wrapper>
   )
 }

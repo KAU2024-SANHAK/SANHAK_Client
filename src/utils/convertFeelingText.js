@@ -8,7 +8,5 @@ export const convertFeelingText = (feeling) => {
     SURPRISED: "놀람"
   };
 
-  console.log(feelingMap[feeling]);
-
-  return feelingMap[feeling];
+  return `#${feelingMap[feeling]}`;
 };
