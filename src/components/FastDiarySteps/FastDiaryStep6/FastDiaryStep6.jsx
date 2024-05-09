@@ -1,10 +1,11 @@
 import * as S from '../FastDiaryStep.style';
 import { useRecoilState } from 'recoil';
-import { realizedKeyword } from '../../../recoil/atoms';
+import { useNavigate } from 'react-router-dom';
 import { useKeywordNullCheck } from '../../../hooks/useKeywordNullCheck';
 import { useModal } from '../../../hooks/common/useModal';
 import { usePostKeywords } from '../../../hooks/queries/fastdiary/usePostKeywords';
 import { keywords } from '../../../utils/keyword';
+import { realizedKeyword, diaryId, diaryTitle, diaryContent, diaryImage, diaryFeeling } from '../../../recoil/atoms';
 import LargeQuestion from '../Questions/LargeQustion';
 import BtnNext from '../../common/buttons/Next/BtnNext';
 import BtnPrev from '../../common/buttons/Prev/BtnPrev';
@@ -12,8 +13,15 @@ import DiaryErrorModal from '../../Modal/DiaryErrorModal';
 
 export default function FastDiaryStep6({ onNext, onPrev }) {
   const [realized, setRealized] = useRecoilState(realizedKeyword);
+  const [id, setId] = useRecoilState(diaryId);
+  const [title, setTitle] = useRecoilState(diaryTitle);
+  const [content, setContent] = useRecoilState(diaryContent);
+  const [image, setImage] = useRecoilState(diaryImage);
+  const [feeling, setFeeling] = useRecoilState(diaryFeeling);
   const [isOpen, openModal, closeModal] = useModal();
   const { mutation } = usePostKeywords();
+  const navigate = useNavigate();
+
   const diaryKeywords = keywords();
   const checkNull = useKeywordNullCheck();
 
@@ -27,9 +35,13 @@ export default function FastDiaryStep6({ onNext, onPrev }) {
       checkNull === true
         ? openModal()
         : mutation.mutate(diaryKeywords, {
-            onSuccess: (data) => {
-              console.log(data);
-            },
+            onSuccess: (response) => {
+              const data = response.data;
+              setId(data.diaryId);
+              setContent(data.diaryContent);
+              setFeeling(feeling);
+              navigate('/diaryview');
+            }
           }) && onNext();
     }
   };
