@@ -24,7 +24,8 @@ export default function SearchByEmotionPopUp(){
 
     mutation.mutate(body, {
       onSuccess: (response) => {
-        setDiaryList(response.data.feelingList);    
+        setDiaryList(response.data.feelingList);  
+        parsingDate()
         navigate('/searchbyemotion/diarylist');
 
       },
