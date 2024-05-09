@@ -1,5 +1,5 @@
 import { aiInstance } from "../../../apis/client"
-import { useMutation } from "react-query";
+import { useMutation } from '@tanstack/react-query';
 
 export const postAdvice = async (body) => {
     const response =  await aiInstance.post('/api/ai/advice/content', body);
