@@ -1,11 +1,12 @@
 import * as S from "./ThisMonthEmotion.style";
-import usePostSummary from "../../../../hooks/queries/main/useGetSummary";
+import useGetSummary from "../../../../hooks/queries/main/useGetSummary";
 
 export default function ThisMonthEmotion() {
   const date = new Date();
   const formattedDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')} ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')}`;
 
-  //const { data, isLoading, isError } = useGetSummary();
+  const { data, isLoading, isError } = useGetSummary();
+  console.log(data);
 /* const mutation = usePostSummary();
   console.log(formattedDate);
   mutation.mutate(formattedDate,{
