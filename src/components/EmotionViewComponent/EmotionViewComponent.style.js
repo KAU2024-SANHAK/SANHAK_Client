@@ -1,10 +1,5 @@
 import styled from "styled-components";
-import { IcHappy } from "../../assets/svg";
-import { IcAngry } from "../../assets/svg";
-import { IcSad } from "../../assets/svg";
-import { IcWorried } from "../../assets/svg";
-import { IcRelax } from "../../assets/svg";
-import { IcSurprised } from "../../assets/svg";
+import { IcHappy, IcSad, IcWorried, IcAngry, IcRelax, IcSurprised } from "../../assets/svg";
 
 export const Happy = styled(IcHappy)``
 export const Sad = styled(IcSad)``

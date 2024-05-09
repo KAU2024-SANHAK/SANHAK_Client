@@ -4,62 +4,52 @@ import { useNavigate } from 'react-router-dom';
 import { convertFeelingText } from '../../utils/feelingText';
 
 export function EmotionViewComponent({ feeling }) {
-    const navigate = useNavigate();
-    const feelingText = convertFeelingText(feeling);
-    console.log(feelingText);
-    const handleClick = () => {
-        navigate('/diaryview')
-    }
+  const navigate = useNavigate();
+  const feelingText = convertFeelingText(feeling);
+  console.log(feelingText);
+  const handleClick = () => {
+    navigate('/diaryview')
+  }
 
-    const feelingMap = {
-        HAPPY: "기쁨",
-        SAD: "슬픔",
-        ANGRY: "분노",
-        WORRIED: "걱정",
-        RELAX: "평온",
-        SURPRISED: "놀람"
-    };
+  const feelingImgMap = {
+    HAPPY: <S.Happy />,
+    SAD: <S.Sad />,
+    ANGRY: <S.Angry />,
+    WORRIED: <S.Worried />,
+    RELAX: <S.Relax />,
+    SURPRISED: <S.Surprised />
+  }
 
-    const feelingImgMap = {
-        HAPPY: <S.Happy />,
-        SAD: <S.Sad />,
-        ANGRY: <S.Angry />,
-        WORRIED: <S.Worried />,
-        RELAX: <S.Relax />,
-        SURPRISED: <S.Surprised />
-    }
+  function convertFeelingToImg(feeling) {
+    return feelingImgMap[feeling] ||  null;
+  }
 
-    function convertFeelingToKorean(feeling) {
-        return feelingMap[feeling] || null;
-    }
+  return(
+    <S.EmotionViewWrapper>
+      <S.BtnBackWrapper >
+        <BtnBack handleClick={handleClick} />
+      </S.BtnBackWrapper>
 
-    function convertFeelingToImg(feeling) {
-        return feelingImgMap[feeling] ||  null;
-    }
+      <S.EmotionViewComponentWrapper>
+        <S.TodayEmotionQ>
+          너의 오늘 
+          <br />
+          하루 감정은
+        </S.TodayEmotionQ>
 
-    return(
-        <S.EmotionViewWrapper>
-            <S.BtnBackWrapper >
-                <BtnBack handleClick={handleClick}/>
-            </S.BtnBackWrapper>
-            <S.EmotionViewComponentWrapper>
-                <S.TodayEmotionQ>
-                    너의 오늘 <br/>
-                    하루 감정은
-                </S.TodayEmotionQ>
-                    <S.EmotionPhoto>
-                        <S.EmotionPhotoWrapper>
-                            {convertFeelingToImg(feeling)}
-                        </S.EmotionPhotoWrapper>
-                    </S.EmotionPhoto>
+        <S.EmotionPhoto>
+          <S.EmotionPhotoWrapper>
+            {convertFeelingToImg(feeling)}
+          </S.EmotionPhotoWrapper>
+        </S.EmotionPhoto>
 
-                <S.EmotionTagWrapper>
-                    <S.EmotionTag>
-                        {"#" + feelingText}                    
-                        
-                    </S.EmotionTag>
-                </S.EmotionTagWrapper>
-            </S.EmotionViewComponentWrapper>
-        </S.EmotionViewWrapper>
-    )
+        <S.EmotionTagWrapper>
+          <S.EmotionTag>
+            {"#" + feelingText}                    
+          </S.EmotionTag>
+        </S.EmotionTagWrapper>
+
+      </S.EmotionViewComponentWrapper>
+    </S.EmotionViewWrapper>
+  )
 }
