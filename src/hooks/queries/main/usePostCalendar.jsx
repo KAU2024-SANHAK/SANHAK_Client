@@ -1,5 +1,5 @@
 import { serverInstance } from "../../../apis/client"
-import { useMutation } from "react-query";
+import { useMutation } from '@tanstack/react-query';
 
 export const postCalendar = async (body) => {
     const response =  await serverInstance.post('/api/diary/list/calendar', body);
