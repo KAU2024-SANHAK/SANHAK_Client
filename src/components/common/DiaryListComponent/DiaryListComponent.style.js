@@ -4,7 +4,7 @@ import theme from '../../../styles/theme';
 export const DiaryListComponentWrapper = styled.div`
     display: flex;
     width: 32.0rem;
-    height: 11.5rem;
+    // height: 11.5rem;
     flex-shrink: 0;
     border-radius: 3rem;
     background: white;
@@ -24,6 +24,7 @@ export const Image = styled.div`
 `
 export const TextWrapper = styled.div`
     margin-left: 1.2rem;
+    margin-bottom: 1.2rem;
     margin-top: 1.8rem;
     gap: 0rem;
 `

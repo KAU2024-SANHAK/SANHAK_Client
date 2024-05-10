@@ -8,9 +8,6 @@ import SelectInToggleBtn from "../buttons/SelectInToggleBtn/SelectInToggleBtn";
 import CalendarPopUp from "../CalendarPopUp/CalendarPopUp";
 import SmallPopUp from "../../PopUp/SmallPopUp/SmallPopUp";
 
-// TEST: 테스트코드를 불러와서 작업
-import { monthList } from "../../../utils/onDiary";
-
 import { clickedDiary } from '../../../recoil/atoms'
 import { useRecoilState } from "recoil";
 import usePostCalendar from "../../../hooks/queries/main/usePostCalendar";
@@ -19,11 +16,12 @@ const ReactDatePicker = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [isClick, setIsClick] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [highlightDates, setHighlistDates] = useState([]);
+  const [thatDiaries, setThatDiaries] = useRecoilState(clickedDiary);
 
   const mutation = usePostCalendar();
   
-  // TEST
-  const highlightDates = monthList.map(item => new Date(item.createdDate));
+  const result = highlightDates.map(item => new Date(item.createdDate));
 
   const handleDate = () => {
     setIsClick(!isClick);
@@ -37,15 +35,16 @@ const ReactDatePicker = () => {
 
     mutation.mutate(body, {
       onSuccess: (response) => {
-        // 또는
-        const datas = response.data.monthList
-        console.log(datas)
-        
-        // 이거
-        // response.map((item) => {console.log(item.data.monthList)})
+        setHighlistDates(response.data.monthList)
 
-        // 아님 이거
-        // response.data.monthList.map((item) => {console.log(item.data.monthList)})
+        const MonthList = response.data.monthList
+        const filterDiaries = MonthList.filter(item => {
+          const itemDate = new Date(item.createdDate).toISOString().substring(0, 10);
+          return itemDate === current_date
+        });
+        setThatDiaries(filterDiaries)
+        // current_date와 같은 값이 response 안에 있다면, 리코일에 이를 저장.
+        // 없다면, 건너뜀.
       },
       onError: (error) => {
         setErrorMessage(error.response.data.messgge);
@@ -59,8 +58,6 @@ const ReactDatePicker = () => {
   // 2-2) 년, 월, 일을 recoil atom clickedDiary에 저장
   // 3) [MainStep2]에서 리코일값 가져와서 DiaryListComponent에 랜더링
 
-
-
 	return (
     <S.CalendarComponentWrapper>
       <S.CustomDatePicker
@@ -70,7 +67,7 @@ const ReactDatePicker = () => {
         onChange={(date) => setStartDate(date)}
         calendarClassName="oneStripes"
         maxDate={new Date()}
-        highlightDates={highlightDates}
+        highlightDates={result}
         selectedDates={new Date()}
         dateFormat='yyyy-mm-dd'
         inline

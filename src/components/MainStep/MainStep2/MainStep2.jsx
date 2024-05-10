@@ -4,7 +4,12 @@ import Calendar from '../../common/Calendar/Calendar';
 import DiaryListComponent from '../../common/DiaryListComponent/DiaryListComponent';
 // import { HoneyBear } from '../../../pages/MyPage/MyPage.style'
 
+import { clickedDiary } from '../../../recoil/atoms'
+import { useRecoilValue } from "recoil";
+
+
 export default function MainStep2() {
+  const diaries = useRecoilValue(clickedDiary);
   return (
     <S.MainStep2Wrapper>
       <S.MainStep2HoneyBearWrapper>
@@ -18,7 +23,7 @@ export default function MainStep2() {
 
       <S.MainStep2ComponentWrapper>
         <Calendar />
-        <DiaryListComponent />
+        {diaries.map(item => <DiaryListComponent key={item.diaryId} feelingListId={item.diaryId} feelingListTitle={item.diaryTitle} feelingListDate={item.createdDate} />)}
       </S.MainStep2ComponentWrapper>
     </S.MainStep2Wrapper>
   );
