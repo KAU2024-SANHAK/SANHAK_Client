@@ -28,7 +28,7 @@ export default function DiaryListComponent({ feelingListId, feelingListTitle, fe
         console.log(response);
         setAdvice(data.advice);
         setContent(data.diary_content);
-        setDate(data.createdDate);
+        setDate(feelingListDate);
         setFeeling(data.feeling);
         setImage(data.imageUrl);
         settitle(data.diaryTitle);
