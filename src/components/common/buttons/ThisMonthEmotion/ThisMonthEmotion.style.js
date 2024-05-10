@@ -30,7 +30,7 @@ export const Wrapper = styled.div`
 `
 export const ThisMonthEmotionText = styled.p`
     margin-top: 1.2rem;
-    margin-left: 4.882rem;
+    margin-left: 3rem;
     ${({ theme }) => theme.fonts.body_01};
 `
 export const PlayList = styled.p`
