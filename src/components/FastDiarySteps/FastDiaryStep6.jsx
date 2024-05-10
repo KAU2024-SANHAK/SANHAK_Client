@@ -30,6 +30,7 @@ export default function FastDiaryStep6({ onNext, onPrev }) {
             onSuccess: (data) => {
               console.log(data);
             },
+            
           }) && onNext();
     }
   };

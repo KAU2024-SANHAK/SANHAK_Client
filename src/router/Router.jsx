@@ -15,8 +15,6 @@ import CharacterWiki from '../pages/CharacterWiki/CharacterWiki';
 import DiaryList from '../pages/DiaryList/DiaryList';
 import LoginCallback from '../components/common/buttons/KakaoLogin/LoginCallback/LoginCallback';
 import FallbackUI from '../pages/FallbackUI/FallbackUI';
-import SummaryTest from '../pages/SummaryTest/SummaryTest';
-import Loading from '../pages/Loading/Loading';
 
 /*이런 식으로 작성하기*/
 const router = createBrowserRouter([
@@ -83,14 +81,6 @@ const router = createBrowserRouter([
       {
         path:"/searchbyemotion/diarylist",
         element: <DiaryList />
-      },
-      {
-        path: '/summary',
-        element: <SummaryTest />
-      },
-      {
-        path: '/test',
-        element: <Loading />,
       },
     ],
   },
