@@ -101,6 +101,12 @@ export const diaryListAtom = atom({
 
 export const clickedDiary = atom({
     key: 'clickedDiary',
+    default: [],
+    effects_UNSTABLE: [persistAtom],
+})
+
+export const memberIdState = atom({
+    key: 'memberIdState',
     default: {},
     effects_UNSTABLE: [persistAtom],
 })
