@@ -5,7 +5,6 @@ import { useFileReader } from '../../hooks/common/useFileReader';
 import { useNavigate } from 'react-router-dom';
 import { diaryImage, diaryContent, diaryTitle, diaryId } from '../../recoil/atoms';
 import { useRecoilState } from 'recoil';
-//import useSetDiaryAtoms from '../../hooks/common/useSetDiaryAtoms';
 import usePostSlowDiary from '../../hooks/queries/slowdiary/usePostSlowDiary';
 import BtnHome from '../../components/common/buttons/Home/BtnHome';
 import BtnNext from '../../components/common/buttons/Next/BtnNext';
@@ -23,7 +22,6 @@ export default function SlowDiary(){
     const [title, setTitle] = useRecoilState(diaryTitle);
     const [content, setContent] = useRecoilState(diaryContent);
     const [id, setId] = useRecoilState(diaryId);
-   // const setAtoms = useSetDiaryAtoms();
 
     const [data, setData] = useState({
         imageurl: '',
@@ -65,7 +63,6 @@ export default function SlowDiary(){
                 setContent(data.diaryContent);
                 setTitle(data.diaryTitle);
                 setId(data.diaryId);
-            //  setAtoms(data.imageurl, data.content, data.title, null);
                 navigate('/diaryview');
             }
         });
@@ -123,8 +120,6 @@ export default function SlowDiary(){
                     <BtnNext onNext={() => {
                         handleSubmit();
                     }}/>
-                    <button onClick = {()=>{handleTest}}>임시 버튼</button>
-
                 </S.BtnField>
             </S.FormWrapper>
         </S.SlowDiaryPageWrapper>

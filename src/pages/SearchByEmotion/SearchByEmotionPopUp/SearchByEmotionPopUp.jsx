@@ -30,8 +30,6 @@ export default function SearchByEmotionPopUp(){
     return list;
   };
 
-
-
   const handleClick = (btnEnum) => {
     const body = {
       feeling : btnEnum,
