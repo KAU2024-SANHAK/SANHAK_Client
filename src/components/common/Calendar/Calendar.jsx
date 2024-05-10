@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { getDate, getMonth } from "date-fns";
 import { getYear } from "date-fns";
 import * as S from './Calendar.style'
@@ -11,40 +11,56 @@ import SmallPopUp from "../../PopUp/SmallPopUp/SmallPopUp";
 // TEST: 테스트코드를 불러와서 작업
 import { monthList } from "../../../utils/onDiary";
 
-{monthList.map=((item) => (
-  date=item.createdDate
-))}
-
-const range = (start, end) => {
-  return Array.from({ length: end - start + 1 }, (_, index) => start + index);
-};
+import { clickedDiary } from '../../../recoil/atoms'
+import { useRecoilState } from "recoil";
+import usePostCalendar from "../../../hooks/queries/main/usePostCalendar";
 
 const ReactDatePicker = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [isClick, setIsClick] = useState(false);
-  // const years = range(2023, getYear(new Date()), 1);
-  // const months = [
-  //   "1월",
-  //   "2월",
-  //   "3월",
-  //   "4월",
-  //   "5월",
-  //   "6월",
-  //   "7월",
-  //   "8월",
-  //   "9월",
-  //   "10월",
-  //   "11월",
-  //   "12월",
-  // ];
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const mutation = usePostCalendar();
+  
+  // TEST
+  const highlightDates = monthList.map(item => new Date(item.createdDate));
 
   const handleDate = () => {
     setIsClick(!isClick);
   };
 
-  // 좌우버튼을 누르면 달이 바뀜. keyboard-selected 컴포넌트 값을 request body로 보내고 다이어리 리스트를 받아서 해당 월에 표시
-  // keyboard-selected와 day-selected가 함께 있으면 keyboard-selected의 달력 조회버튼을 띄우도록.
-  
+  const handleDateClick = (Year, Month, Day) => {
+    const current_date = `${Year}-${String(Month).padStart(2, '0')}-${String(Day).padStart(2, '0')}`;
+    const body = {
+      currentDate: current_date+'T00:00:00',
+    };
+
+    mutation.mutate(body, {
+      onSuccess: (response) => {
+        // 또는
+        const datas = response.data.monthList
+        console.log(datas)
+        
+        // 이거
+        // response.map((item) => {console.log(item.data.monthList)})
+
+        // 아님 이거
+        // response.data.monthList.map((item) => {console.log(item.data.monthList)})
+      },
+      onError: (error) => {
+        setErrorMessage(error.response.data.messgge);
+        console.log(errorMessage)
+      }
+    });
+  }
+
+  // 1) 좌우버튼을 클릭하거나 날짜를 클릭하면 년, 월, 일을 request body로 보내기
+  // 2) response body를 hightlightDates에 map 형식으로 저장하여 달력에 표시
+  // 2-2) 년, 월, 일을 recoil atom clickedDiary에 저장
+  // 3) [MainStep2]에서 리코일값 가져와서 DiaryListComponent에 랜더링
+
+
+
 	return (
     <S.CalendarComponentWrapper>
       <S.CustomDatePicker
@@ -54,59 +70,35 @@ const ReactDatePicker = () => {
         onChange={(date) => setStartDate(date)}
         calendarClassName="oneStripes"
         maxDate={new Date()}
+        highlightDates={highlightDates}
+        selectedDates={new Date()}
+        dateFormat='yyyy-mm-dd'
         inline
 
         renderCustomHeader={({
           date,
-          changeYear,
-          changeMonth,
           decreaseMonth,
           increaseMonth,
           prevMonthButtonDisabled,
-          nextMonthButtonDisabled,
+          nextMonthButtonDisabled
         }) => (
           <S.HeaderWrapper>
 
             <S.BtnLeftWrapper onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
-              {/* <BtnPrevMonth onClick={console.log(getMonth(date)+1)}/> */}
-              <BtnPrevMonth onClick={console.log(getYear(date))}/>
+              <BtnPrevMonth />
             </S.BtnLeftWrapper>
-            {/* <S.YearSelector
-              value={getYear(date)}
-              onChange={({ target: { value } }) => changeYear(value)}
-            >
-              {years.map((option) => (
-                <S.YearOption key={option} value={option}>
-                  {option}
-                </S.YearOption>
-              ))}
-            </S.YearSelector>ßß
-  
-            <S.MonthSelector
-              value={months[getMonth(date)]}
-              onChange={({ target: { value } }) =>
-                changeMonth(months.indexOf(value))
-              }
-            >
-              {months.map((option) => (
-                <S.MonthOption key={option} value={option}>
-                  {option}
-                </S.MonthOption>
-              ))}
-            </S.MonthSelector> */}
-  
 
-          <SelectInToggleBtn onClick={handleDate} currentYear={getYear(date)} currentMonth={getMonth(date)}/>
-            {isClick === true ? 
-              <SmallPopUp name={getYear(date)}>
-                <CalendarPopUp />
-                <S.CloseBtn onClick={handleDate}>x</S.CloseBtn>
-              </SmallPopUp>
-            
-            :  
-            null}
+            <SelectInToggleBtn onClick={() => {handleDateClick(getYear(date), getMonth(date)+1, getDate(date))}} currentYear={getYear(date)} currentMonth={getMonth(date)}/>
+              {/* {isClick === true ? 
+                <SmallPopUp name={getYear(date)}>
+                  <CalendarPopUp />
+                  <S.CloseBtn onClick={handleDate}>x</S.CloseBtn>
+                </SmallPopUp>            
+              :  
+              null} */}
+
             <S.BtnRightWrapper onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
-              <BtnNextMonth/>
+              <BtnNextMonth />
             </S.BtnRightWrapper>
           </S.HeaderWrapper>
         )}
