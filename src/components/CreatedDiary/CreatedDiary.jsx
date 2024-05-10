@@ -37,7 +37,7 @@ export default function CreatedDiary({ title, date, content, id, image }){
         navigate('/main');
     };
 
-    console.log(image[0])
+    console.log(content)
 
     return(
         <S.CreatedDiaryWrapper>

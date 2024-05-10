@@ -36,6 +36,10 @@ export default function SlowDiary(){
     const blobContent = new Blob([JSON.stringify(data.diaryContent)],{
         type: 'application/json',
     });
+    
+    const deleteQuotes = (text) => {
+        return text.substring(1, text.length-1);
+    };
 
     const handleChange = (event) => {
         setData({...data, [event.target.name] : event.target.value});
@@ -60,8 +64,8 @@ export default function SlowDiary(){
             onSuccess: (response) => {
                 const data = response.data;
                 setImage(data.imageurl);
-                setContent(data.diaryContent);
-                setTitle(data.diaryTitle);
+                setContent(deleteQuotes(data.diaryContent));
+                setTitle(deleteQuotes(data.diaryTitle));
                 setId(data.diaryId);
                 navigate('/diaryview');
             }
