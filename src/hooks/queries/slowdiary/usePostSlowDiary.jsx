@@ -1,12 +1,12 @@
-import { seerverInstance } from "../../../apis/client"
-import { useMutation } from "react-query"
+import { serverInstance } from "../../../apis/client"
+import { useMutation } from '@tanstack/react-query';
 
 export const postSlowDiary = async (body) => {
-    const response =  await seerverInstance.post('/api/diary/create/slow', body);
+    const response =  await serverInstance.post('/api/diary/create/slow', body);
     return response.data;
 }
 
-export const usePostSlowdiary = () => {
+export const usePostSlowDiary = () => {
     const mutation = useMutation({
         mutationFn: postSlowDiary,
         onSuccess: (data)=>{
@@ -15,3 +15,4 @@ export const usePostSlowdiary = () => {
     })
     return {mutation};
 }
+export default usePostSlowDiary;

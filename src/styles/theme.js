@@ -35,6 +35,7 @@ const colors = {
   gradient:{
     gradient_pink: 'linear-gradient(187deg, #FFBBCB 20.43%, #FFDAE3 81.25%, #DCC6CC 100.45%, #999 100.45%)',
     gradient_yellow: 'linear-gradient(187deg, #FFE768 20.43%, #FFF3B7 84.05%)',
+    this_month_emotion_gradient: 'background: var(--Warm-Pink, linear-gradient(180deg, rgba(255, 255, 255, 0.00) 50%, rgba(255, 255, 255, 0.39) 111.04%), #FFA2A2)'
   }
 };
 

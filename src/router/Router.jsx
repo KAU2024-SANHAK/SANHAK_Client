@@ -5,13 +5,17 @@ import Layout from '../layouts/Layout';
 import Start from '../pages/Start/Start';
 import OnBoarding from '../pages/OnBoarding/OnBoarding';
 import Main from '../pages/Main/Main';
+import SearchByEmotion from '../pages/SearchByEmotion/SearchByEmotion';
+import EmotionView from '../pages/EmotionView/EmotionView';
 import FastDiary from '../pages/FastDiary/FastDiary';
 import DiaryView from '../pages/DiaryView/DiaryView';
 import SlowDiary from '../pages/SlowDiary/SlowDiary';
 import MyPage from '../pages/MyPage/MyPage';
 import CharacterWiki from '../pages/CharacterWiki/CharacterWiki';
+import DiaryList from '../pages/DiaryList/DiaryList';
 import LoginCallback from '../components/common/buttons/KakaoLogin/LoginCallback/LoginCallback';
 import FallbackUI from '../pages/FallbackUI/FallbackUI';
+import SummaryTest from '../pages/SummaryTest/SummaryTest';
 import Loading from '../pages/Loading/Loading';
 
 /*이런 식으로 작성하기*/
@@ -24,10 +28,6 @@ const router = createBrowserRouter([
         path: '/',
         element: <Start />,
       },
-      //   {
-      //     path: "/mypage",
-      //     element: <Mypage />,
-      //   },
       {
         path: '/loading',
         element: <LoginCallback />,
@@ -39,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: '/main',
         element: <Main />,
+      },
+      {
+        path: "/searchbyemotion",
+        element: <SearchByEmotion/>
       },
       {
         path: '/fastdiary',
@@ -57,8 +61,32 @@ const router = createBrowserRouter([
         element: <MyPage />,
       },
       {
+        path: "/searchbyemotion",
+        element: <SearchByEmotion/>
+      },
+      {
+        path:"/mypage/characterwiki",
+        element: <CharacterWiki/>
+      },
+      {
+        path:"/searchbyemotion/diarylist",
+        element: <DiaryList/>
+      },
+      {
+        path:"/emotionview",
+        element: <EmotionView/>
+      },
+      {
         path: '/mypage/characterwiki',
         element: <CharacterWiki />,
+      },
+      {
+        path:"/searchbyemotion/diarylist",
+        element: <DiaryList />
+      },
+      {
+        path: '/summary',
+        element: <SummaryTest />
       },
       {
         path: '/test',
