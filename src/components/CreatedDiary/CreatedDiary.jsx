@@ -1,65 +1,54 @@
-// 이 파일에서는 useEffect로 감정이 있는지 확인하고, 감정이 있다면 ResponseEmotionViewBtn 버튼에
-// responseEmotion 핸들러를 연결하고, 없다면 requestEmotion핸들러를 연결하여 리코일에 저장하고 비동기처리한다.
-
 import * as S from './CreatedDiary.style';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import BtnBack from '../common/buttons/Back/BtnBack';
-import ResponseEmotionViewBtn from '../common/buttons/GoToEmotionViewBtn/ResponseEmotionViewBtn/ResponseEmotionViewBtn';
-
-// Real: recoil에서 atom 가져오기
 import { useRecoilState } from 'recoil';
 import { diaryFeeling } from '../../recoil/atoms';
 import { diaryId } from '../../recoil/atoms';
+import usePostFeeling from '../../hooks/queries/create/usePostFeeling';
+import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
+import BtnShowFeeling from '../common/buttons/ShowFeeling/BtnShowFeeling';
 
-import { usePostFeeling } from '../../hooks/queries/create/usePostFeeling';
-
-export default function CreatedDiary({ title, date, content }){
-
+export default function CreatedDiary({ title, date, content, id, image }){
     const navigate = useNavigate();
-
-    // REAL: API 연결후 코드 돌리기
-    // **********************************************************
     const [feeling, setFeeling] = useRecoilState(diaryFeeling);
+    const mutation = usePostFeeling();
+    const resetDiary = useResetDiary();
 
-    // data에 feeling이 존재하는 지 여부 확인하기
-    const checkFeelingExists = () => {
-        return !!feeling;
-    }
+    const requestFeeling = () => {
+        const body = {
+            diaryId: id,
+        }
+        mutation.mutate(body,{
+            onSuccess: (response) => {
+                console.log(response.data.feeling);
+                setFeeling(response.data.feeling);
+                navigate('/emotionview');
+            }
+        });
+    };
 
-    // feeling이 있는지 확인하여 useEffect로 렌더링
-    useEffect(() => {
-        const feelingExists = checkFeelingExists();
-        setFeeling(feelingExists);
-    }, []);
+    const responseFeeling = () => {
+        navigate('/emotionview', {state: {value: feeling}});
+    };
 
-    const requestEmotion = () => {
-        const responseEmotion = usePostFeeling(diaryId);
-        setFeeling(responseEmotion);
-
-        navigate('/emotionview');
-    }
-    // **********************************************************
-
-    const responseEmotion = () => {
-        navigate('/emotionview');
-    }
     const handleClick = () => {
-        navigate('/main')
-    }
+        resetDiary();
+        navigate('/main');
+    };
+
+    console.log(image[0])
 
     return(
         <S.CreatedDiaryWrapper>
             <S.HeaderWrapper>
-                <S.BtnBackWrapper onClick={handleClick}>
-                    <BtnBack/>
+                <S.BtnBackWrapper >
+                    <BtnBack handleClick={handleClick}/>
                 </S.BtnBackWrapper>
                 <S.TodayEmotionBtnWrapper>
-                    {/* TEST: API 연결 전 실행 */}
-                    {/* <ResponseEmotionViewBtn onClick={responseEmotion} /> */}
-
-                    {/* REAL: API 연결 시에 */}
-                    <ResponseEmotionViewBtn onClick={feeling ? responseEmotion : requestEmotion} />
+                    <BtnShowFeeling handleClick = {feeling ? responseFeeling : requestFeeling}>
+                        {feeling ? '오늘의 감정 보러가기' : '오늘의 감정 생성하기'}
+                    </BtnShowFeeling>
                 </S.TodayEmotionBtnWrapper>
             </S.HeaderWrapper>
             
@@ -72,13 +61,16 @@ export default function CreatedDiary({ title, date, content }){
                         {date}
                     </S.DiaryDate>
                 </S.DiaryTopTextWrapper>
-                <S.DiaryPhotoWrapper/>
+
+                <S.DiaryPhoto src={image[0]}/>
+
                 <S.DiaryTextWrapper>
                     <S.DiaryText>
                         {content}
                     </S.DiaryText>
                 </S.DiaryTextWrapper>
             </S.CreatedDiaryComponentWrapper>
+
         </S.CreatedDiaryWrapper>
     )
 }

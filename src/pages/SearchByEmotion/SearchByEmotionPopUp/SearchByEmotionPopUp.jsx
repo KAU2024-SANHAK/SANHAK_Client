@@ -1,5 +1,5 @@
 import * as S from './SearchByEmotionPopUp.style';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRecoilState } from "recoil";
 import { diaryListAtom } from "../../../recoil/atoms";
 import { useNavigate } from "react-router-dom";
@@ -15,6 +15,21 @@ export default function SearchByEmotionPopUp(){
   const mutation = usePostFeelingList();
   const navigate = useNavigate();
   
+  const handleDate = (list) => {
+    list.map((item) => {
+      const date = new Date(item.createdDate);
+      const year = date.getFullYear();
+      const month = date.getMonth() + 1;
+      const day = date.getDate();
+      const newDate = `${year}년 ${month}월 ${day}일`;
+      
+      item.createdDate = newDate;
+
+    });
+    
+    return list;
+  };
+
   const handleClick = (btnEnum) => {
     const body = {
       feeling : btnEnum,
@@ -22,7 +37,8 @@ export default function SearchByEmotionPopUp(){
 
     mutation.mutate(body, {
       onSuccess: (response) => {
-        setDiaryList(response.data.feelingList);    
+
+        setDiaryList(handleDate(response.data.feelingList));  
         navigate('/searchbyemotion/diarylist');
       },
       onError: (error) => {
@@ -31,6 +47,7 @@ export default function SearchByEmotionPopUp(){
         openModal();
       }
     });
+
   };
 
   return(

@@ -34,7 +34,7 @@ export const DiaryDate = styled.p`
     ${({ theme }) => theme.fonts.body_10};
     padding-right: 20rem;
 `
-export const DiaryPhotoWrapper = styled.div`
+export const DiaryPhoto = styled.img`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     width: 32rem;
     height: 31.4rem;

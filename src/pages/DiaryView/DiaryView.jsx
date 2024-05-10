@@ -1,108 +1,83 @@
-// 이 파일에서는 useEffect로 조언이 있는지 확인하고, 조언이 있다면 ResponseReplyViewBtn 버튼에
-// responsePopUpToggle 핸들러를 연결하고, 없다면 requestPopUpToggle핸들러를 연결하여 리코일에 저장하고 비동기처리한다.
-
 import * as S from './DiaryView.style';
 import { useState, useEffect } from 'react';
 import CreatedDiary from '../../components/CreatedDiary/CreatedDiary';
 import DiaryViewPopUp from './DiaryViewPopUp/DiaryViewPopUp';
 import PopUp from '../../components/PopUp/PopUp';
-import ResponseReplyViewBtn from '../../components/common/buttons/GoToReplyViewBtn/ResponseReplyViewBtn/ResponseReplyViewBtn'
-
-// TEST: utils에서 테스트용 js 파일을 가져오는 코드
-// import { diaryContent } from '../../utils/diaryContent';
-
-// REAL: recoil에서 atom 가져오기
-import { useRecoilState } from 'recoil';
-import { diaryId } from '../../recoil/atoms';
-import { diaryTitle } from '../../recoil/atoms';
-import { createdDate } from '../../recoil/atoms';
-import { diaryContent } from '../../recoil/atoms';
-import { diaryAdvice } from '../../recoil/atoms';
-
-import { usePostAdvice } from '../../hooks/queries/create/usePostAdvice';
+import { useRecoilValue, useRecoilState } from 'recoil';
+import { diaryId, diaryAdvice, diaryFeeling, diaryTitle, diaryContent, createdDate, diaryImage } from '../../recoil/atoms';
+import usePostAdvice from '../../hooks/queries/create/usePostAdvice';
+import BtnShowAdvice from '../../components/common/buttons/ShowAdvice/BtnShowAdvice';
 
 export default function DiaryView() {
 
-    const [isClick, setIsClick] = useState(false);
+  const [isClick, setIsClick] = useState(false);
+  const title = useRecoilValue(diaryTitle);
+  const content = useRecoilValue(diaryContent);
+  const date = useRecoilValue(createdDate);
+  const id = useRecoilValue(diaryId);
+  const image = useRecoilState(diaryImage);
+  const [advice, setAdvice] = useRecoilState(diaryAdvice);
+  const mutation = usePostAdvice();
 
-    // TEST: utils 테스트 코드 돌리기
-    // const response = diaryContent[0];
-
-    // REAL: API 연결후 코드 돌리기
-    // **********************************************************
-    const [advice, setAdvice] = useRecoilState(diaryAdvice);
-
-    // data에 advice가 존재하는 지 여부 확인하기
-    const checkAdviceExists = () => {
-        return !!advice;
+  const handleRequest = () => {
+    console.log('요청하기')
+    const body = {
+      diaryId: id,
     }
+    mutation.mutate(body,{
+      onSuccess: (response) => {
+        console.log(response.data);
+        setAdvice(response.data.advice);
+      }
+    })
+    setIsClick(!isClick);
+  }
 
-    // advice가 있는지 확인하여 useEffect로 렌더링
-    useEffect(() => {
-        const adviceExists = checkAdviceExists();
-        setAdvice(adviceExists);
-    }, []);
+  const handleResponse = () => {
+    console.log('보여주기')  
+    setIsClick(!isClick);
+  }
 
-    const requestPopUpToggle = () => {
-        const responseAdvice = usePostAdvice(diaryId);
-        setAdvice(responseAdvice);
+  return (
+    <S.DiaryViewPageWrapper>
+      <S.Filter>
+        <S.CreatedDiaryWrapper>
+          <CreatedDiary
+            title={title}  
+            date={date}
+            content={content}
+            id={id}
+            image={image}
+          />
+        </S.CreatedDiaryWrapper>
+        
+        <S.GoToReplyBtnWrapper>
+          <BtnShowAdvice handleClick={advice ? handleRequest: handleResponse}>
+            {advice ? '답장 생성하기' : '답장 보러가기'}
+          </BtnShowAdvice>
 
-        setIsClick(!isClick);
-    }
-    // **********************************************************
+            {isClick === true ? (
+              <S.PopUpWrapper>
 
-    const responsePopUpToggle = () => {
-        setIsClick(!isClick);
-    }
+                <S.HoneyBearWrapper>
+                  <S.HoneyBear height='17rem'/>
+                </S.HoneyBearWrapper>
 
-    return (
-        <S.DiaryViewPageWrapper>
-            <S.Filter>
-                <S.CreatedDiaryWrapper>
-                    <CreatedDiary
-                        // TEST: API 연결 전 테스트코드
-                        // title={response.diaryTitle}  
-                        // date={response.createdDate}
-                        // content={response.diary_content}
+                <PopUp name="꿀비의 답장">
+                  <DiaryViewPopUp spicy={advice.spicy} kind={advice.kind} />
+                  
+                  <S.CloseBtn onClick={()=>{setIsClick(false)}} >
+                    <S.XBtn />
+                  </S.CloseBtn>
+                </PopUp>
 
-                        // REAL: API 연결 시 실행
-                        title={diaryTitle}  
-                        date={createdDate}
-                        content={diaryContent}
-                    />
-                </S.CreatedDiaryWrapper>
-                
-                <S.GoToReplyBtnWrapper>
-                    {/* TEST: API 연결 전 실행 */}
-                    {/* <ResponseReplyViewBtn onClick={responsePopUpToggle} /> */}
+              </S.PopUpWrapper>    
+            ) : null}
 
-                    {/* REAL: API 연결 시에 */}
-                    <ResponseReplyViewBtn onClick={advice ? responsePopUpToggle : requestPopUpToggle} />
-
-                        {/* isClick의 상태에 따라 PopUp 렌더링 여부 결정 */}
-                        {isClick === true ? (
-                            <S.PopUpWrapper>
-                                <S.HoneyBearWrapper>
-                                    <S.HoneyBear height='17rem'/>
-                                </S.HoneyBearWrapper>
-
-                                <PopUp name="꿀비의 답장">
-                                    {/* TEST: 테스트용 코드 */}
-                                    {/* <DiaryViewPopUp spicy={response.advice.spicy} kind={response.advice.kind}/> */}
-
-                                    {/* REAL: API 연결 시 사용할 코드 */}
-                                    <DiaryViewPopUp spicy={diaryAdvice.spicy} kind={diaryAdvice.kind} />
-                                    <S.CloseBtn onClick={responsePopUpToggle} >
-                                        <S.XBtn />
-                                    </S.CloseBtn>
-                                </PopUp>
-                            </S.PopUpWrapper>    
-                        ) : null}
-
-                </S.GoToReplyBtnWrapper>
-            </S.Filter>        
-        </S.DiaryViewPageWrapper>
-    );
+        </S.GoToReplyBtnWrapper>
+      </S.Filter>        
+    </S.DiaryViewPageWrapper>
+  );
 }
 
 

@@ -32,7 +32,7 @@ function Main() {
       </Slider>
       
       <S.WriteDiaryButtonWrapper>
-        <WriteDiaryButton/>
+        <WriteDiaryButton />
       </S.WriteDiaryButtonWrapper>
 
     </div>
