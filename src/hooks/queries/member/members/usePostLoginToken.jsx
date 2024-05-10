@@ -2,7 +2,7 @@ import { useMutation } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 import { postLoginToken } from '../../../../apis/kakaoapi/postLoginToken';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { memberIdState } from '../../../../recoil/atoms';
+// import { memberIdState } from '../../../../recoil/atoms';
 
 const usePostLoginToken = () => {
   const navigate = useNavigate();
