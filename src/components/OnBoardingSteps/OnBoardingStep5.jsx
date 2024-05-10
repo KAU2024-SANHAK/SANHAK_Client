@@ -1,5 +1,5 @@
-import * as S from "../OnBoardingStep.style";
-import usePostDiaryType from "../../../hooks/queries/onboarding/usePostDiaryType";
+import * as S from "./OnBoardingStep.style";
+import usePostDiaryType from "../../hooks/queries/onboarding/usePostDiaryType";
 import { useRecoilValue } from "recoil";
 import { userDiaryType } from "../../recoil/atoms";
 import SetDiaryStyle from "../SetDiaryStyle/SetDiaryStyle";
