@@ -1,10 +1,9 @@
 import * as S from './SearchByEmotionPopUp.style';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRecoilState } from "recoil";
 import { diaryListAtom } from "../../../recoil/atoms";
 import { useNavigate } from "react-router-dom";
 import usePostFeelingList from "../../../hooks/queries/mypage/usePostFeelingList";
-import useParsingDate from '../../../hooks/diary/useParsingDate';
 import { useModal } from '../../../hooks/common/useModal';
 import DiaryErrorModal from '../../../components/Modal/DiaryErrorModal';
 import BtnEmotionType from '../../../components/common/buttons/EmotionType/EmotionType';
@@ -14,7 +13,6 @@ export default function SearchByEmotionPopUp(){
   const [errorMessage, setErrorMessage] = useState('');
   const [isOpen, openModal, closeModal] = useModal();
   const mutation = usePostFeelingList();
-  const parsingDate = useParsingDate();
   const navigate = useNavigate();
   
   const handleClick = (btnEnum) => {
@@ -25,9 +23,7 @@ export default function SearchByEmotionPopUp(){
     mutation.mutate(body, {
       onSuccess: (response) => {
         setDiaryList(response.data.feelingList);  
-        parsingDate()
         navigate('/searchbyemotion/diarylist');
-
       },
       onError: (error) => {
         setErrorMessage(error.response.data.message);
@@ -35,6 +31,7 @@ export default function SearchByEmotionPopUp(){
         openModal();
       }
     });
+
   };
 
   return(
