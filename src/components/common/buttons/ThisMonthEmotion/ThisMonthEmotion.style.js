@@ -29,9 +29,11 @@ export const Wrapper = styled.div`
     ${({ theme }) => theme.colors.gradient.this_month_emotion_gradient};
 `
 export const ThisMonthEmotionText = styled.p`
-    margin-top: 1.2rem;
-    margin-left: 3rem;
     ${({ theme }) => theme.fonts.body_01};
+    width: 17.8rem;
+    padding-top: 1.2rem;
+    text-align: center;
+
 `
 export const PlayList = styled.p`
     margin-left: 3.7rem;

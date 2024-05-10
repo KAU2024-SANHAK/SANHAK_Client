@@ -4,6 +4,7 @@ import useGetSummary from "../../../../hooks/queries/main/useGetSummary";
 
 export default function ThisMonthEmotion() {
   const { data, isLoading, isError } = useGetSummary();
+  //진학이가 감정 수정하면 convert 진행
   const firstFeeling = data.data.firstFeeling;
   const secondFeeling = data.data.secondFeeling;
   console.log(data);
@@ -14,7 +15,7 @@ export default function ThisMonthEmotion() {
       <S.Bubble>
         <S.ThisMonthEmotionText>
           {firstFeeling === null ? 
-            '분석된 감정이 없습니다.'
+            '감정 분석 중'
             :
             {firstFeeling, secondFeeling}
           }
