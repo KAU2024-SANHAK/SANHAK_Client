@@ -1,6 +1,6 @@
 import * as S from './FastDiaryStep.style';
 import { useRecoilState } from 'recoil';
-import { realizedKeyword } from '../../recoil/atoms';
+import { realizedKeyword, diaryContent, diaryFeeling, diaryImage, diaryTitle, diaryId, createdDate } from '../../recoil/atoms';
 import { useKeywordNullCheck } from '../../hooks/useKeywordNullCheck';
 import { useModal } from '../../hooks/common/useModal';
 import { usePostKeywords } from '../../hooks/queries/fastdiary/usePostKeywords';
@@ -9,11 +9,18 @@ import LargeQuestion from './Questions/LargeQustion';
 import BtnNext from '../common/buttons/Next/BtnNext';
 import BtnPrev from '../common/buttons/Prev/BtnPrev';
 import DiaryErrorModal from '../Modal/DiaryErrorModal';
+import Loading from '../../pages/Loading/Loading';
 
 export default function FastDiaryStep6({ onNext, onPrev }) {
   const [realized, setRealized] = useRecoilState(realizedKeyword);
   const [isOpen, openModal, closeModal] = useModal();
   const { mutation } = usePostKeywords();
+  const [date, setDate] = useRecoilState(createdDate);
+  const [id, setId] = useRecoilState(diaryId);
+  const [title, setTitle] = useRecoilState(diaryTitle);
+  const [content, setContent] = useRecoilState(diaryContent);
+  const [image, setImage] = useRecoilState(diaryImage);
+  const [feeling, setFeeling] = useRecoilState(diaryFeeling);
   const diaryKeywords = keywords();
   const checkNull = useKeywordNullCheck();
 
@@ -27,17 +34,32 @@ export default function FastDiaryStep6({ onNext, onPrev }) {
       checkNull === true
         ? openModal()
         : mutation.mutate(diaryKeywords, {
-            onSuccess: (data) => {
-              console.log(data);
+            onSuccess: (response) => {
+              const data = response.data;
+              setId(data.diaryId);
+              setContent(data.diaryContent);
+              setTitle(data.title);
+              setDate(data.writed_at);
+              setFeeling(feeling);
+              onNext();
             },
             
-          }) && onNext();
+          });
     }
   };
-
+  if(mutation.isPending){
+    return <Loading />;
+  }
   return (
     <S.FastDiaryStepWrapper>
-      {isOpen && <DiaryErrorModal closeModal={closeModal} />}
+       
+      {isOpen && 
+        <DiaryErrorModal 
+          closeModal={closeModal} 
+        >
+          모든 질문에 답변해주세요.
+        </DiaryErrorModal>
+      }
       <LargeQuestion>
         하루를 돌아보면서
         <br />

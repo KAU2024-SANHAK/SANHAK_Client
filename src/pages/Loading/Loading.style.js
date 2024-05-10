@@ -5,7 +5,6 @@ export const LoadingWrapper = styled.div`
   background: ${({ theme: { colors } }) => colors.pink.white_pink};
   width: 100%;
   height: 100vh;
-  padding-bottom: 10rem;
 `;
 
 export const Text = styled.div`
