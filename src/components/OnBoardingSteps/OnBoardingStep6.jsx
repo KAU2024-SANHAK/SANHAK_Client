@@ -1,8 +1,8 @@
-import * as S from "../OnBoardingStep.style"
-import BtnComplete from "../../common/buttons/complete/BtnComplete";
-import Title from "../title/Title";
-import SubTitle from "../title/SubTitle";
-import HoneyBear from "../../common/HoneyBear/HoneyBear";
+import * as S from "./OnBoardingStep.style"
+import BtnComplete from "../common/buttons/complete/BtnComplete";
+import Title from "./title/Title";
+import SubTitle from "./title/SubTitle";
+import HoneyBear from "../common/HoneyBear/HoneyBear";
 
 export default function OnBoardingStep6({onNext}){
     return (
