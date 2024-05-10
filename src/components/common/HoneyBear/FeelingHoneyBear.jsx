@@ -1,6 +1,6 @@
 import * as S from './FeelingHoneyBear.style';
 
-export default function FeelingHoneyBear({feeling}){
+export default function FeelingHoneyBear({feeling, width}){
   const feelingHoneyBears = {
     HAPPY: <S.Happy />,
     SAD: <S.Sad />,
@@ -8,10 +8,13 @@ export default function FeelingHoneyBear({feeling}){
     WORRIED: <S.Worried />,
     RELAX: <S.Relax />,
     SURPRISED: <S.Surprised />,
+    null: <S.None />
   };
 
   return(
-    <S.Wrapper>
+    <S.Wrapper 
+      width={width}
+    >
       {feelingHoneyBears[feeling]}
     </S.Wrapper>
   )

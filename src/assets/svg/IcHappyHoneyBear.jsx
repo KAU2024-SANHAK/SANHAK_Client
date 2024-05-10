@@ -1,4 +1,4 @@
-const SvgIcHappy=()=>(
+const SvgIcHappyHoneyBear = () => (
     <svg width="231" height="295" viewBox="0 0 231 295" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M230.096 230.569C225.557 290.053 112.962 294.153 112.962 294.153C112.962 294.153 -2.05487 278.571 0.0279511 230.569C6.91186 71.919 50.7971 60.9143 112.962 60.9143C175.126 60.9143 230.096 70.0849 230.096 230.569Z" fill="#AC7E47"/>
         <ellipse cx="115.203" cy="162.607" rx="20.5026" ry="18.0423" fill="#F2C879"/>
@@ -24,4 +24,4 @@ const SvgIcHappy=()=>(
         <circle cx="130.088" cy="3.91127" r="1.2801" transform="rotate(-15 130.088 3.91127)" fill="#2C2A28"/>
     </svg>
 );
-export default SvgIcHappy;
+export default SvgIcHappyHoneyBear;

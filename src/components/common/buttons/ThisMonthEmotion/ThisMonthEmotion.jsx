@@ -1,6 +1,7 @@
 import * as S from "./ThisMonthEmotion.style";
 import { convertFeelingText } from "../../../../utils/convertFeelingText";
 import useGetSummary from "../../../../hooks/queries/main/useGetSummary";
+import FeelingHoneyBear from "../../HoneyBear/FeelingHoneyBear";
 
 export default function ThisMonthEmotion() {
   const { data, isLoading, isError } = useGetSummary();
@@ -11,7 +12,12 @@ export default function ThisMonthEmotion() {
   
   return (
     <S.Wrapper>
-      <S.Boxe/>
+      <S.HoneyBearWrapper>
+        <FeelingHoneyBear 
+          feeling={firstFeeling} 
+          width='5.6rem'
+        />  
+      </S.HoneyBearWrapper> 
       <S.Bubble>
         <S.ThisMonthEmotionText>
           {firstFeeling === null ? 

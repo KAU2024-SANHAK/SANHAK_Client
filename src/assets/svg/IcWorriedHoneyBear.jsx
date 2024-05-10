@@ -1,4 +1,4 @@
-const SvgIcWorried=()=>(
+const SvgIcWorriedHoneyBear = () => (
     <svg width="231" height="295" viewBox="0 0 231 295" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M230.366 230.569C225.827 290.053 113.231 294.153 113.231 294.153C113.231 294.153 -1.7851 278.571 0.297726 230.569C7.18163 71.919 51.0669 60.9143 113.232 60.9143C175.396 60.9143 230.366 70.0849 230.366 230.569Z" fill="#AC7E47"/>
         <ellipse cx="115.472" cy="162.607" rx="20.5026" ry="18.0423" fill="#F2C879"/>
@@ -35,4 +35,4 @@ const SvgIcWorried=()=>(
         <circle cx="128.088" cy="3.91127" r="1.2801" transform="rotate(-15 128.088 3.91127)" fill="#2C2A28"/>
     </svg>
 );
-export default SvgIcWorried;
+export default SvgIcWorriedHoneyBear;

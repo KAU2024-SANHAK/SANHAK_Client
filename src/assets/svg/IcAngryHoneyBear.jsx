@@ -1,4 +1,4 @@
-const SvgIcAngry=()=>(
+const SvgIcAngryHoneyBear=()=>(
     <svg width="231" height="296" viewBox="0 0 231 296" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M230.61 232.21C226.071 291.693 113.475 295.794 113.475 295.794C113.475 295.794 -1.54172 280.212 0.541104 232.21C7.42501 73.5591 51.3103 62.5544 113.475 62.5544C175.64 62.5544 230.61 71.725 230.61 232.21Z" fill="#AC7E47"/>
         <ellipse cx="115.716" cy="164.248" rx="20.5026" ry="18.0423" fill="#F2C879"/>
@@ -31,4 +31,4 @@ const SvgIcAngry=()=>(
         <circle cx="129.088" cy="3.91127" r="1.2801" transform="rotate(-15 129.088 3.91127)" fill="#2C2A28"/>
     </svg>
 );
-export default SvgIcAngry;
+export default SvgIcAngryHoneyBear;
