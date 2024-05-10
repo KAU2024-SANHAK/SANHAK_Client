@@ -5,7 +5,7 @@ import WikiCarousel from '../../components/Carousel/WikiCarousel/WikiCarousel'
 
 export default function CharacterWiki(){
     const navigate = useNavigate();
-    const GoMyPage=()=>{
+    const handleMyPage=()=>{
         navigate('/mypage');
     }
 
@@ -20,7 +20,7 @@ export default function CharacterWiki(){
     return(
         <S.CharacterWikiPageWrapper>
             <S.ButtonField>
-                <BtnBack onClick={()=>{GoMyPage()}}/>
+                <BtnBack handleClick={handleMyPage}/>
             </S.ButtonField>
 
             <S.WikiWrapper>

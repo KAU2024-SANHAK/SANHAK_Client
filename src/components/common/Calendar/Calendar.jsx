@@ -8,13 +8,6 @@ import SelectInToggleBtn from "../buttons/SelectInToggleBtn/SelectInToggleBtn";
 import CalendarPopUp from "../CalendarPopUp/CalendarPopUp";
 import SmallPopUp from "../../PopUp/SmallPopUp/SmallPopUp";
 
-// TEST: 테스트코드를 불러와서 작업
-import { monthList } from "../../../utils/onDiary";
-
-{monthList.map=((item) => (
-  date=item.createdDate
-))}
-
 const range = (start, end) => {
   return Array.from({ length: end - start + 1 }, (_, index) => start + index);
 };

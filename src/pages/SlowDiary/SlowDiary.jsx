@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { useModal } from '../../hooks/common/useModal';
 import { useFileReader } from '../../hooks/common/useFileReader';
 import { useNavigate } from 'react-router-dom';
-import { setDiaryAtoms } from '../../hooks/common/useSetDiaryAtoms';
+import { diaryImage, diaryContent, diaryTitle, diaryId } from '../../recoil/atoms';
+import { useRecoilState } from 'recoil';
 import usePostSlowDiary from '../../hooks/queries/slowdiary/usePostSlowDiary';
 import BtnHome from '../../components/common/buttons/Home/BtnHome';
 import BtnNext from '../../components/common/buttons/Next/BtnNext';
@@ -15,9 +16,12 @@ export default function SlowDiary(){
     const formData = new FormData();
     const navigate = useNavigate();
     const [isOpen, openModal, closeModal] = useModal();
-    const { mutation } = usePostSlowDiary();
+    const mutation = usePostSlowDiary();
     const readData = useFileReader();
-    //const setAtoms = setDiaryAtoms;
+    const [image, setImage] = useRecoilState(diaryImage);
+    const [title, setTitle] = useRecoilState(diaryTitle);
+    const [content, setContent] = useRecoilState(diaryContent);
+    const [id, setId] = useRecoilState(diaryId);
 
     const [data, setData] = useState({
         imageurl: '',
@@ -55,7 +59,10 @@ export default function SlowDiary(){
         mutation.mutate(formData, {
             onSuccess: (response) => {
                 const data = response.data;
-           //     setAtoms(data.imageurl, data.content, data.title, null);
+                setImage(data.imageurl);
+                setContent(data.diaryContent);
+                setTitle(data.diaryTitle);
+                setId(data.diaryId);
                 navigate('/diaryview');
             }
         });

@@ -1,21 +1,29 @@
-import { useNavigate } from "react-router-dom"
-import { useRecoilState } from "recoil"
-import { userDiaryType } from "../../../../recoil/atoms"
-import * as S from "./WriteDiaryButton.style"
+import * as S from "./WriteDiaryButton.style";
+import { useNavigate } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import { userDiaryType } from "../../../../recoil/atoms";
+import useResetKeywords from "../../../../hooks/diary/useResetKeywords";
 
 export default function WriteDiaryButton() {
-    const [type, setType] = useRecoilState(userDiaryType); // atom 사용
+  const type = useRecoilValue(userDiaryType);
+  const navigate = useNavigate();
+  const resetKeyWords = useResetKeywords();
 
-    const navigate = useNavigate();
+  const handleClick = () => {
+    resetKeyWords();
+    { type === 'FASTTYPE' ? 
+      navigate('/fastdiary') 
+      : 
+      navigate('/slowdiary') 
+    } 
+  }
 
-    const handleClick = () => {
-        type === 'FASTTYPE' ? navigate('/fastdiary') : navigate('/slowdiary') 
-    }
-
-    return (
-        <S.Wrapper onClick={handleClick}>
-            <S.WriteDiaryButtonIcon/>
-        </S.Wrapper>
-    )
+  return (
+    <S.ButtonWrapper onClick={() => {
+      handleClick();
+    }}>
+      <S.WriteDiaryButtonIcon/>
+    </S.ButtonWrapper>
+  )
 }
 

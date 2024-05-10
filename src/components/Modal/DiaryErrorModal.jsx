@@ -13,7 +13,8 @@ export default function DiaryErrorModal({closeModal, top, children}){
           onClick = {() => { 
             closeModal();
           }}
-          width = '27.2rem' 
+          width = '27.2rem'
+          height = '5.6rem' 
           $color = {({ theme }) => theme.colors.pink.red_pink}
         >
           돌아가기
