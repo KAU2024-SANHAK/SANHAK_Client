@@ -9,8 +9,9 @@ import LargeQuestion from './Questions/LargeQustion';
 import BtnNext from '../common/buttons/Next/BtnNext';
 import BtnPrev from '../common/buttons/Prev/BtnPrev';
 import DiaryErrorModal from '../Modal/DiaryErrorModal';
+import Loading from '../../pages/Loading/Loading';
 
-export default function FastDiaryStep6({ onNext, onPrev, onMutate }) {
+export default function FastDiaryStep6({ onNext, onPrev }) {
   const [realized, setRealized] = useRecoilState(realizedKeyword);
   const [isOpen, openModal, closeModal] = useModal();
   const { mutation } = usePostKeywords();
@@ -23,7 +24,6 @@ export default function FastDiaryStep6({ onNext, onPrev, onMutate }) {
   const diaryKeywords = keywords();
   const checkNull = useKeywordNullCheck();
 
-
   const handleChange = (event) => {
     setRealized(event.target.value);
   };
@@ -33,11 +33,24 @@ export default function FastDiaryStep6({ onNext, onPrev, onMutate }) {
     {
       checkNull === true
         ? openModal()
-        : 
-        onMutate();
-        onNext();
+        : mutation.mutate(diaryKeywords, {
+            onSuccess: (response) => {
+              const data = response.data;
+              setImage(data.imageurl)
+              setId(data.diaryId);
+              setContent(data.diaryContent);
+              setTitle(data.title);
+              setDate(data.writed_at);
+              setFeeling(feeling);
+              onNext();
+            },
+            
+          });
     }
   };
+  if(mutation.isPending){
+    return <Loading />;
+  }
   return (
     <S.FastDiaryStepWrapper>
        
