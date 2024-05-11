@@ -1,8 +1,8 @@
-import { seerverInstance } from "../../../apis/client"
-import { useMutation } from "react-query";
+import { serverInstance } from "../../../apis/client"
+import { useMutation } from '@tanstack/react-query';
 
 export const postCalendar = async (body) => {
-    const response =  await seerverInstance.post('/api/diary/list/calendar', body);
+    const response =  await serverInstance.post('/api/diary/list/calendar', body);
     return response.data;
 }
 

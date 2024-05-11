@@ -13,7 +13,7 @@ export default function MyPage(){
     return(
         <S.MyPageWrapper>
             <S.BackButtonWrapper>
-                <BtnBack onClick={()=>{handleBackButton()}}/>
+                <BtnBack handleClick={handleBackButton}/>
             </S.BackButtonWrapper>
             
             <S.HoneyBearWrapper>

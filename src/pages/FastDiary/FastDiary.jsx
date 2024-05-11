@@ -6,12 +6,12 @@ import BtnHome from '../../components/common/buttons/Home/BtnHome';
 import DiaryProgress from '../../components/DiaryProgress/DiaryProgress';
 import HomeModal from '../../components/Modal/HomeModal';
 import StepProgress from '../../components/common/StepPrgoress/StepProgress';
-import FastDiaryStep1 from '../../components/FastDiarySteps/FastDiaryStep1/FastDiaryStep1'
-import FastDiaryStep2 from '../../components/FastDiarySteps/FastDiaryStep2/FastDiaryStep2'
-import FastDiaryStep3 from '../../components/FastDiarySteps/FastDiaryStep3/FastDiaryStep3'
-import FastDiaryStep4 from '../../components/FastDiarySteps/FastDiaryStep4/FastDiaryStep4'
-import FastDiaryStep5 from '../../components/FastDiarySteps/FastDiaryStep5/FastDiaryStep5'
-import FastDiaryStep6 from '../../components/FastDiarySteps/FastDiaryStep6/FastDiaryStep6'
+import FastDiaryStep1 from '../../components/FastDiarySteps/FastDiaryStep1'
+import FastDiaryStep2 from '../../components/FastDiarySteps/FastDiaryStep2'
+import FastDiaryStep3 from '../../components/FastDiarySteps/FastDiaryStep3'
+import FastDiaryStep4 from '../../components/FastDiarySteps/FastDiaryStep4'
+import FastDiaryStep5 from '../../components/FastDiarySteps/FastDiaryStep5'
+import FastDiaryStep6 from '../../components/FastDiarySteps/FastDiaryStep6'
 
 export default function FastDiary(){
     const date = new Date();
