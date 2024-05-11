@@ -5,14 +5,12 @@ import { useKeywordNullCheck } from '../../hooks/useKeywordNullCheck';
 import { useModal } from '../../hooks/common/useModal';
 import { usePostKeywords } from '../../hooks/queries/fastdiary/usePostKeywords';
 import { keywords } from '../../utils/keyword';
-import { useNavigate } from 'react-router-dom';
 import LargeQuestion from './Questions/LargeQustion';
 import BtnNext from '../common/buttons/Next/BtnNext';
 import BtnPrev from '../common/buttons/Prev/BtnPrev';
 import DiaryErrorModal from '../Modal/DiaryErrorModal';
-import Loading from '../../pages/Loading/Loading';
 
-export default function FastDiaryStep6({ onNext, onPrev }) {
+export default function FastDiaryStep6({ onNext, onPrev, onMutate }) {
   const [realized, setRealized] = useRecoilState(realizedKeyword);
   const [isOpen, openModal, closeModal] = useModal();
   const { mutation } = usePostKeywords();
@@ -24,7 +22,7 @@ export default function FastDiaryStep6({ onNext, onPrev }) {
   const [feeling, setFeeling] = useRecoilState(diaryFeeling);
   const diaryKeywords = keywords();
   const checkNull = useKeywordNullCheck();
-  const navigate = useNavigate();
+
 
   const handleChange = (event) => {
     setRealized(event.target.value);
@@ -35,23 +33,11 @@ export default function FastDiaryStep6({ onNext, onPrev }) {
     {
       checkNull === true
         ? openModal()
-        : mutation.mutate(diaryKeywords, {
-            onSuccess: (response) => {
-              const data = response.data;
-              setId(data.diaryId);
-              setContent(data.diaryContent);
-              setTitle(data.title);
-              setDate(data.writed_at);
-              setFeeling(feeling);
-              onNext();
-            },
-            
-          });
+        : 
+        onMutate();
+        onNext();
     }
   };
-  if(mutation.isPending){
-    navigate('/apiloading');
-  }
   return (
     <S.FastDiaryStepWrapper>
        

@@ -2,6 +2,10 @@ import * as S from './FastDiary.style'
 import { useModal } from '../../hooks/common/useModal';
 import { useFunnel } from '../../hooks/common/useFunnel';
 import { useNavigate } from 'react-router-dom'
+import { useRecoilState } from 'recoil';
+import { keywords } from '../../utils/keyword';
+import { usePostKeywords } from '../../hooks/queries/fastdiary/usePostKeywords';
+import { diaryContent, diaryFeeling, diaryImage, diaryTitle, diaryId, createdDate } from '../../recoil/atoms';
 import BtnHome from '../../components/common/buttons/Home/BtnHome';
 import DiaryProgress from '../../components/DiaryProgress/DiaryProgress';
 import HomeModal from '../../components/Modal/HomeModal';
@@ -12,15 +16,24 @@ import FastDiaryStep3 from '../../components/FastDiarySteps/FastDiaryStep3'
 import FastDiaryStep4 from '../../components/FastDiarySteps/FastDiaryStep4'
 import FastDiaryStep5 from '../../components/FastDiarySteps/FastDiaryStep5'
 import FastDiaryStep6 from '../../components/FastDiarySteps/FastDiaryStep6'
+import { useState } from 'react';
+import Loading from '../Loading/Loading';
 
 export default function FastDiary(){
-    const date = new Date();
-    const today = date.getDate();
+    const today = new Date().getDate();
 
     const navigate = useNavigate();
     const [isOpen, openModal, closeModal] = useModal();
     const [Funnel, Step, currentStep, setCurrentStep] = useFunnel("DiaryStep1");
 
+    const { mutation } = usePostKeywords();
+    const [date, setDate] = useRecoilState(createdDate);
+    const [id, setId] = useRecoilState(diaryId);
+    const [title, setTitle] = useRecoilState(diaryTitle);
+    const [content, setContent] = useRecoilState(diaryContent);
+    const [image, setImage] = useRecoilState(diaryImage);
+    const [feeling, setFeeling] = useRecoilState(diaryFeeling);
+    const diaryKeywords = keywords();
 
     const steps = [
         { name: 'DiaryStep1', component: FastDiaryStep1, nextStep: 'DiaryStep2' },
@@ -44,10 +57,29 @@ export default function FastDiary(){
     const handlePrev=()=>{
         const prevStepIndex = steps.findIndex(step => step.name === currentStep) - 1;
 
-            setCurrentStep(steps[prevStepIndex].name);
+        setCurrentStep(steps[prevStepIndex].name);
         
     }   
     
+    const handelMutate = () => {
+        mutation.mutate(diaryKeywords, {
+            onSuccess: (response) => {
+              const data = response.data;
+              setId(data.diaryId);
+              setContent(data.diaryContent);
+              setTitle(data.title);
+              setDate(data.writed_at);
+              setFeeling(feeling);
+              handleNext();
+            },    
+        
+        });
+    }
+
+    if(mutation.isPending){
+        console.log(mutation.isPending);
+        return <Loading />
+    }
     return(
         <S.FastDairyPageWrapper $isEven = {today%2}>
             {isOpen && <HomeModal closeModal = {closeModal}/>}
@@ -66,7 +98,7 @@ export default function FastDiary(){
                 <Funnel>
                     {steps.map((step, idx)=>(
                         <Step key = {idx} name = {step.name}>
-                            <step.component onNext={()=>{handleNext()}} onPrev={()=>{handlePrev()}}/>
+                            <step.component onNext={()=>{handleNext()}} onPrev={()=>{handlePrev()}} onMutate = {()=>{handelMutate()}}/>
                             <S.ProgressWrapper>
                                 <StepProgress steps= {steps} cur={step.name}/>        
                             </S.ProgressWrapper>
