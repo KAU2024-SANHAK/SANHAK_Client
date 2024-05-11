@@ -15,8 +15,9 @@ export default function DiaryView() {
   const content = useRecoilValue(diaryContent);
   const date = useRecoilValue(createdDate);
   const id = useRecoilValue(diaryId);
-  const image = useRecoilState(diaryImage);
+  const image = useRecoilValue(diaryImage);
   const [advice, setAdvice] = useRecoilState(diaryAdvice);
+  const isAdvice = advice.spicy !== (null || "");
   const mutation = usePostAdvice();
 
   const handleRequest = () => {
@@ -37,6 +38,10 @@ export default function DiaryView() {
     console.log('보여주기')  
     setIsClick(!isClick);
   }
+  useEffect(() => {
+
+  })
+  console.log(isAdvice)
 
   return (
     <S.DiaryViewPageWrapper>
@@ -52,8 +57,8 @@ export default function DiaryView() {
         </S.CreatedDiaryWrapper>
         
         <S.GoToReplyBtnWrapper>
-          <BtnShowAdvice handleClick={advice ? handleRequest: handleResponse}>
-            {advice ? '답장 생성하기' : '답장 보러가기'}
+          <BtnShowAdvice handleClick={isAdvice ?() => {handleResponse()}: () => {handleRequest()}}>
+            {isAdvice ? '답장 보러가기' : '답장 생성하기'}
           </BtnShowAdvice>
 
             {isClick === true ? (

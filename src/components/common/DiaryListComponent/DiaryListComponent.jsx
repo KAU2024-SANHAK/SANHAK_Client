@@ -30,7 +30,7 @@ export default function DiaryListComponent({ feelingListId, feelingListTitle, fe
         setContent(data.diary_content);
         setDate(feelingListDate);
         setFeeling(data.feeling);
-        setImage(data.imageUrl);
+      //  setImage(data.imageUrl);
         settitle(data.diaryTitle);
         navigate('/diaryview');
       }
@@ -40,7 +40,7 @@ export default function DiaryListComponent({ feelingListId, feelingListTitle, fe
 
   return (
     <S.DiaryListComponentWrapper>
-      <S.Image />
+      <S.Image src={image}/>
       
       <S.TextWrapper>
         <S.TextTitle>
