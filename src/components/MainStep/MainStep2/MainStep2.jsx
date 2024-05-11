@@ -23,7 +23,20 @@ export default function MainStep2() {
 
       <S.MainStep2ComponentWrapper>
         <Calendar />
-        {diaries.map(item => <DiaryListComponent key={item.diaryId} feelingListId={item.diaryId} feelingListTitle={item.diaryTitle} feelingListDate={item.createdDate} />)}
+        {diaries.length > 0 ? (
+          diaries.map(item => (
+            <DiaryListComponent
+              key={item.diaryId}
+              feelingListId={item.diaryId}
+              feelingListTitle={item.diaryTitle}
+              feelingListDate={item.createdDate}
+            />
+          ))
+        ) : (
+          <S.NoDiaryExist>
+            아직 작성된 일기가 없습니다.
+          </S.NoDiaryExist>
+        )}
       </S.MainStep2ComponentWrapper>
     </S.MainStep2Wrapper>
   );
