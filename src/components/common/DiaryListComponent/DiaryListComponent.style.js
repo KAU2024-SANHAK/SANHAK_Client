@@ -10,12 +10,10 @@ export const DiaryListComponentWrapper = styled.div`
     background: white;
     // theme colors 적용이 안되는 것 같아요... 왜이러지
     // ${({ theme }) => theme.colors.normal.white};
-    margin-bottom: 0.8rem;
 `
 export const Image = styled.div`
     display: flex;
-    margin-left: 1.2rem;
-    margin-top: 1rem;
+    margin: 1rem 0 1rem 1rem;
     width: 9.5rem;
     height: 9.5rem;
     flex-shrink: 0;
