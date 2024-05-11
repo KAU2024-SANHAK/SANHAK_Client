@@ -16,8 +16,8 @@ const SvgIcAngryHoneyBear=()=>(
         <path d="M157.565 84.9293C151.465 74.4898 156.522 60.1828 168.859 52.9738C181.197 45.7647 196.144 48.3836 202.244 58.8231C208.344 69.2627 203.287 83.5697 190.949 90.7787C178.612 97.9877 163.665 95.3689 157.565 84.9293Z" fill="#AC7E47"/>
         <circle cx="91.5449" cy="137.513" r="5.74074" fill="black"/>
         <circle cx="140.751" cy="137.513" r="5.74074" fill="black"/>
-        <line x1="83.2955" y1="127.206" x2="99.6976" y2="137.047" stroke="black" stroke-width="3"/>
-        <line x1="147.186" y1="124.851" x2="130.873" y2="134.839" stroke="black" stroke-width="3"/>
+        <line x1="83.2955" y1="127.206" x2="99.6976" y2="137.047" stroke="black" strokeWidth="3"/>
+        <line x1="147.186" y1="124.851" x2="130.873" y2="134.839" stroke="black" strokeWidth="3"/>
         <ellipse cx="110.6" cy="7.20356" rx="4.32" ry="6.3" transform="rotate(-15 110.6 7.20356)" fill="#B4F2FF"/>
         <ellipse cx="118.52" cy="7.20343" rx="4.32" ry="6.3" transform="rotate(15 118.52 7.20343)" fill="#B4F2FF"/>
         <rect x="89" y="9.18359" width="54" height="31.32" rx="15.66" fill="#FCD44C"/>
