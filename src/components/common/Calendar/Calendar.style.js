@@ -33,6 +33,9 @@ export const CalendarComponentWrapper = styled.div`
         padding: 1.2rem 2.5rem 1.2rem 1.2rem;
         ${({ theme }) => theme.fonts.body_08};
     }
+    .react-datepicker__day--highlighted{
+        background-color: pink;
+    }
     .react-datepicker__day-names {
         padding: 0.9rem;
         margin: 0.9rem 0.9rem 0 0.9rem;
