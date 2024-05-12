@@ -5,8 +5,8 @@ export default function FeelingHoneyBear({feeling, width}){
     HAPPY: <S.Happy />,
     SAD: <S.Sad />,
     ANGRY: <S.Angry />,
-    WORRIED: <S.Worried />,
-    RELAX: <S.Relax />,
+    WORRY: <S.Worried />,
+    RELAXED: <S.Relax />,
     SURPRISED: <S.Surprised />,
     null: <S.None />
   };

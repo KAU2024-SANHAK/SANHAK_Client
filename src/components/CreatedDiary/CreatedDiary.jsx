@@ -22,15 +22,16 @@ export default function CreatedDiary({ title, date, content, id, image }) {
     };
     mutation.mutate(body, {
       onSuccess: (response) => {
-        console.log(response.data.feeling);
+        console.log(response.data.feeling)
         setFeeling(response.data.feeling);
+        console.log(feeling)
         navigate('/emotionview');
       },
     });
   };
 
   const responseFeeling = () => {
-    navigate('/emotionview', { state: { value: feeling } });
+    navigate('/emotionview');
   };
 
   const handleClick = () => {
