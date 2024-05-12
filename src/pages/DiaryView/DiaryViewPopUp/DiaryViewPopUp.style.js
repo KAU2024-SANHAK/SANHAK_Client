@@ -19,8 +19,7 @@ export const ReplyWrapper = styled.div`
 `
 export const ReplyTextWrapper = styled.p`
     ${({ theme }) => theme.fonts.body_08};
-    padding: 4rem 2.5rem 4rem 2.5rem;
-    overflowY: auto;
+    margin: 4rem 2.5rem 4rem 2.5rem;
     
 `
 export const Spicy = styled.p`
