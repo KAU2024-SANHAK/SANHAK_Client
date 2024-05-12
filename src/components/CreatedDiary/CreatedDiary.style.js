@@ -56,4 +56,5 @@ export const DiaryText = styled.p`
     margin-left: 2.5rem;
     margin-top: 4rem;
     margin-bottom: 4rem;    
+    white-space: pre-line;
 `
