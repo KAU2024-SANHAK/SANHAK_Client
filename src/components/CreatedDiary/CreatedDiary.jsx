@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import BtnBack from '../common/buttons/Back/BtnBack';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { diaryFeeling, diaryImage } from '../../recoil/atoms';in
+import { diaryFeeling, diaryImage } from '../../recoil/atoms';
 import { diaryId } from '../../recoil/atoms';
 import usePostFeeling from '../../hooks/queries/create/usePostFeeling';
 import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
