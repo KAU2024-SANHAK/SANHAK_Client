@@ -20,11 +20,11 @@ export default function ThisMonthEmotion() {
       </S.HoneyBearWrapper> 
       <S.Bubble>
         <S.ThisMonthEmotionText>
-          {firstFeeling === null ? 
+          {/* {firstFeeling === null ? 
             '감정 분석 중'
             :
             {firstFeeling, secondFeeling}
-          }
+          } */}
         </S.ThisMonthEmotionText>
       </S.Bubble>
       
