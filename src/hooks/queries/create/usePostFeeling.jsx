@@ -2,7 +2,7 @@ import { aiInstance } from "../../../apis/client"
 import { useMutation } from '@tanstack/react-query';
 
 export const postFeeling = async (body) => {
-    const response =  await aiInstance.post('/api/ai/diary/feelings', body);
+    const response =  await aiInstance.post('/api/ai/diary/feeling', body);
     return response.data;
 };
 
