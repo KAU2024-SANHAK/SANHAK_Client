@@ -5,7 +5,7 @@ import { diaryContent, diaryAdvice, diaryTitle, diaryImage, diaryFeeling, create
 import usePostDiary from "../../../hooks/queries/etc/usePostDiary";
 import BtnSubmit from "../buttons/Submit/BtnSubmit";
 
-export default function DiaryListComponent({ feelingListId, feelingListTitle, feelingListDate }) {
+export default function DiaryListComponent({ feelingListId, feelingListTitle, feelingListDate, imageUrl }) {
   //이거랑 다른 부분들 꼭 hooks로 빼서 코드 정리하기 꼭
   const [content, setContent] = useRecoilState(diaryContent);
   const [advice, setAdvice] = useRecoilState(diaryAdvice);
@@ -30,7 +30,7 @@ export default function DiaryListComponent({ feelingListId, feelingListTitle, fe
         setContent(data.diary_content);
         setDate(feelingListDate);
         setFeeling(data.feeling);
-      //  setImage(data.imageUrl);
+        setImage(data.imageUrl);
         settitle(data.diaryTitle);
         navigate('/diaryview');
       }
@@ -40,7 +40,7 @@ export default function DiaryListComponent({ feelingListId, feelingListTitle, fe
 
   return (
     <S.DiaryListComponentWrapper>
-      <S.Image src={image}/>
+      <S.Image src={imageUrl}/>
       
       <S.TextWrapper>
         <S.TextTitle>

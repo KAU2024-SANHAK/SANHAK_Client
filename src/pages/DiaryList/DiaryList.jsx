@@ -30,6 +30,7 @@ export default function DiaryList(){
               feelingListId = {item.diaryId}
               feelingListTitle = {item.diaryTitle}
               feelingListDate = {item.createdDate}
+              imageUrl = {item.imageUrl}
             />
           ))}
       </S.DiaryListComponentWrapper>

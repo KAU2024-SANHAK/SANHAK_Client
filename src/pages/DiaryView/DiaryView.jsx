@@ -17,7 +17,8 @@ export default function DiaryView() {
   const id = useRecoilValue(diaryId);
   const image = useRecoilValue(diaryImage);
   const [advice, setAdvice] = useRecoilState(diaryAdvice);
-  const isAdvice = advice.spicy !== (null || "");
+  console.log(advice)
+  const isAdvice = advice.kind !== (null || "");
   const mutation = usePostAdvice();
 
   const handleRequest = () => {
@@ -38,9 +39,7 @@ export default function DiaryView() {
     console.log('보여주기')  
     setIsClick(!isClick);
   }
-  useEffect(() => {
 
-  })
   console.log(isAdvice)
 
   return (
