@@ -8,6 +8,7 @@ import { diaryId } from '../../recoil/atoms';
 import usePostFeeling from '../../hooks/queries/create/usePostFeeling';
 import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
 import BtnShowFeeling from '../common/buttons/ShowFeeling/BtnShowFeeling';
+import Loading from '../../pages/Loading/Loading';
 
 export default function CreatedDiary({ title, date, content, id, image }) {
   const navigate = useNavigate();
@@ -40,7 +41,9 @@ export default function CreatedDiary({ title, date, content, id, image }) {
     navigate('/main');
   };
 
-  console.log(feeling)
+  if(mutation.isPending){
+    return <Loading />
+  }
   return (
     <S.CreatedDiaryWrapper>
       <S.HeaderWrapper>
