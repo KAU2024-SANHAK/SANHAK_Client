@@ -1,5 +1,4 @@
 import * as S from './DiaryList.sytle';
-import { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import { diaryListAtom } from '../../recoil/atoms';
 import { useNavigate } from 'react-router-dom';
