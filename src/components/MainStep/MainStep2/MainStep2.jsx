@@ -30,6 +30,7 @@ export default function MainStep2() {
               feelingListId={item.diaryId}
               feelingListTitle={item.diaryTitle}
               feelingListDate={item.createdDate}
+              imageUrl={item.imageUrl}
             />
           ))
         ) : (
