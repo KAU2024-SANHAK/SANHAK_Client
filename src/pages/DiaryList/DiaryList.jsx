@@ -1,5 +1,4 @@
 import * as S from './DiaryList.sytle';
-import { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import { diaryListAtom } from '../../recoil/atoms';
 import { useNavigate } from 'react-router-dom';
@@ -30,6 +29,7 @@ export default function DiaryList(){
               feelingListId = {item.diaryId}
               feelingListTitle = {item.diaryTitle}
               feelingListDate = {item.createdDate}
+              imageUrl = {item.imageUrl}
             />
           ))}
       </S.DiaryListComponentWrapper>

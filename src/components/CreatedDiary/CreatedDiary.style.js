@@ -47,6 +47,7 @@ export const DiaryTextWrapper = styled.div`
     width: 32rem;
     border-radius: 30px;
     background: rgba(255, 255, 255, 0.49);
+
 `
 export const DiaryText = styled.p`
     ${({ theme }) => theme.fonts.body_02};
@@ -56,4 +57,5 @@ export const DiaryText = styled.p`
     margin-left: 2.5rem;
     margin-top: 4rem;
     margin-bottom: 4rem;    
+    white-space: pre-line;
 `

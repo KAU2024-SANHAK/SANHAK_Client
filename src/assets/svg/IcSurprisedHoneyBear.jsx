@@ -1,4 +1,4 @@
-const SvgIcSurprised=()=>(
+const SvgIcSurprisedHoneyBear=()=>(
     <svg width="231" height="294" viewBox="0 0 231 294" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M230.832 230.416C226.293 289.899 113.697 294 113.697 294C113.697 294 -1.31948 278.418 0.763348 230.416C7.64726 71.7654 51.5325 60.7607 113.697 60.7607C175.862 60.7607 230.832 69.9313 230.832 230.416Z" fill="#AC7E47"/>
         <ellipse cx="115.938" cy="162.454" rx="20.5026" ry="18.0423" fill="#F2C879"/>
@@ -31,4 +31,4 @@ const SvgIcSurprised=()=>(
         <circle cx="129.088" cy="3.91127" r="1.2801" transform="rotate(-15 129.088 3.91127)" fill="#2C2A28"/>
     </svg>
 );
-export default SvgIcSurprised;
+export default SvgIcSurprisedHoneyBear;

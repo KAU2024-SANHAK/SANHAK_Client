@@ -36,6 +36,7 @@ export default function FastDiaryStep6({ onNext, onPrev }) {
         : mutation.mutate(diaryKeywords, {
             onSuccess: (response) => {
               const data = response.data;
+              setImage(data.imageurl)
               setId(data.diaryId);
               setContent(data.diaryContent);
               setTitle(data.title);

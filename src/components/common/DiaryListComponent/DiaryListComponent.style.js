@@ -12,7 +12,7 @@ export const DiaryListComponentWrapper = styled.div`
     // ${({ theme }) => theme.colors.normal.white};
     margin-bottom: 0.8rem;
 `
-export const Image = styled.div`
+export const Image = styled.img`
     display: flex;
     margin-left: 1.2rem;
     margin-top: 1rem;

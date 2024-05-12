@@ -36,5 +36,5 @@ export { default as IcSadHoneyBear} from './IcSadHoneyBear';
 export { default as IcAngryHoneyBear} from './IcAngryHoneyBear';
 export { default as IcWorriedHoneyBear} from './IcWorriedHoneyBear';
 export { default as IcRelaxHoneyBear} from './IcRelaxHoneyBear';
-export { default as IcSurprisedHoneyBear} from './IcSurprised';
+export { default as IcSurprisedHoneyBear} from './IcSurprisedHoneyBear';
 export { default as IcNoneHoneyBear } from './IcNoneHoeyBear';
