@@ -4,10 +4,7 @@ export const LoadingWrapper = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
   background: ${({ theme: { colors } }) => colors.pink.white_pink};
   width: 100%;
-  height: 100vh;
-  position: fixed;
-  bottom: 0;
-  z-index: 999;
+  height: 100%;
 `;
 
 export const Text = styled.div`
@@ -17,5 +14,5 @@ export const Text = styled.div`
 `;
 
 export const LottieWrapper = styled.div`
-  width: 90%;
+  width: 70%;
 `

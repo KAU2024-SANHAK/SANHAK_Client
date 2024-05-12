@@ -2,8 +2,8 @@ import * as S from './CreatedDiary.style';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import BtnBack from '../common/buttons/Back/BtnBack';
-import { useRecoilState } from 'recoil';
-import { diaryFeeling } from '../../recoil/atoms';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { diaryFeeling, diaryImage } from '../../recoil/atoms';in
 import { diaryId } from '../../recoil/atoms';
 import usePostFeeling from '../../hooks/queries/create/usePostFeeling';
 import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
@@ -11,6 +11,7 @@ import BtnShowFeeling from '../common/buttons/ShowFeeling/BtnShowFeeling';
 
 export default function CreatedDiary({ title, date, content, id, image }){
     const navigate = useNavigate();
+    const img = useRecoilValue(diaryImage);
     const [feeling, setFeeling] = useRecoilState(diaryFeeling);
     const mutation = usePostFeeling();
     const resetDiary = useResetDiary();
@@ -37,8 +38,6 @@ export default function CreatedDiary({ title, date, content, id, image }){
         navigate('/main');
     };
 
-    console.log(image[0])
-
     return(
         <S.CreatedDiaryWrapper>
             <S.HeaderWrapper>
@@ -62,7 +61,7 @@ export default function CreatedDiary({ title, date, content, id, image }){
                     </S.DiaryDate>
                 </S.DiaryTopTextWrapper>
 
-                <S.DiaryPhoto src={image[0]}/>
+                <S.DiaryPhoto src={img}/>
 
                 <S.DiaryTextWrapper>
                     <S.DiaryText>

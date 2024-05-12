@@ -15,10 +15,12 @@ export const ReplyWrapper = styled.div`
     border-radius: 30px;
     position: fixed;
     bottom: 2.4rem;
+    overflowY: auto;
 `
 export const ReplyTextWrapper = styled.p`
     ${({ theme }) => theme.fonts.body_08};
     padding: 4rem 2.5rem 4rem 2.5rem;
+    overflowY: auto;
     
 `
 export const Spicy = styled.p`

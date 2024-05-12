@@ -9,7 +9,7 @@ export default function ThisMonthEmotion() {
   const firstFeeling = data.data.firstFeeling;
   const secondFeeling = data.data.secondFeeling;
   console.log(data);
-  
+  convertFeelingText(firstFeeling)
   return (
     <S.Wrapper>
       <S.HoneyBearWrapper>
@@ -20,11 +20,12 @@ export default function ThisMonthEmotion() {
       </S.HoneyBearWrapper> 
       <S.Bubble>
         <S.ThisMonthEmotionText>
-          {/* {firstFeeling === null ? 
+          {firstFeeling === null ? 
             '감정 분석 중'
             :
-            {firstFeeling, secondFeeling}
-          } */}
+            `${convertFeelingText(firstFeeling)} 
+             ${convertFeelingText(secondFeeling)}`          
+          }
         </S.ThisMonthEmotionText>
       </S.Bubble>
       

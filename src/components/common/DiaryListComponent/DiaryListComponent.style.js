@@ -11,7 +11,7 @@ export const DiaryListComponentWrapper = styled.div`
     // theme colors 적용이 안되는 것 같아요... 왜이러지
     // ${({ theme }) => theme.colors.normal.white};
 `
-export const Image = styled.div`
+export const Image = styled.img`
     display: flex;
     margin: 1rem 0 1rem 1rem;
     width: 9.5rem;

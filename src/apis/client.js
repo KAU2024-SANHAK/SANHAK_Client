@@ -2,6 +2,7 @@ import axios from 'axios';
 
 export const getAccessToken = () => {
   const accessToken = localStorage.getItem('LOGIN_TOKEN');
+  console.log(accessToken)
   return accessToken ? accessToken : '';
 };
 
