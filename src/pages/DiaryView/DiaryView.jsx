@@ -7,6 +7,7 @@ import { useRecoilValue, useRecoilState } from 'recoil';
 import { diaryId, diaryAdvice, diaryFeeling, diaryTitle, diaryContent, createdDate, diaryImage } from '../../recoil/atoms';
 import usePostAdvice from '../../hooks/queries/create/usePostAdvice';
 import BtnShowAdvice from '../../components/common/buttons/ShowAdvice/BtnShowAdvice';
+import AdviceLoading from '../../components/Loading/AdviceLoading/AdviceLoading';
 
 export default function DiaryView() {
 
@@ -18,7 +19,7 @@ export default function DiaryView() {
   const image = useRecoilValue(diaryImage);
   const [advice, setAdvice] = useRecoilState(diaryAdvice);
   console.log(advice)
-  const isAdvice = advice.kind !== (null || "");
+  const isAdvice = advice.kind !== null && advice.kind !== "";
   const mutation = usePostAdvice();
 
   const handleRequest = () => {
@@ -41,6 +42,7 @@ export default function DiaryView() {
   }
 
   console.log(isAdvice)
+
 
   return (
     <S.DiaryViewPageWrapper>
@@ -68,11 +70,14 @@ export default function DiaryView() {
                 </S.HoneyBearWrapper>
 
                 <PopUp name="꿀비의 답장">
+                  {mutation.isPending ? <AdviceLoading /> : 
                   <DiaryViewPopUp spicy={advice.spicy} kind={advice.kind} />
+                  }
                   
                   <S.CloseBtn onClick={()=>{setIsClick(false)}} >
                     <S.XBtn />
                   </S.CloseBtn>
+
                 </PopUp>
 
               </S.PopUpWrapper>    
