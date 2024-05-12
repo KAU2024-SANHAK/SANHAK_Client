@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { getDate, getMonth } from "date-fns";
-import { getYear } from "date-fns";
+import React, { useState, useEffect } from "react";
+import { getDate, getMonth, getYear } from "date-fns";
 import * as S from './Calendar.style'
 import BtnNextMonth from '../buttons/Next/BtnNextMonth'
 import BtnPrevMonth from '../buttons/Prev/BtnPrevMonth'
@@ -8,104 +7,85 @@ import SelectInToggleBtn from "../buttons/SelectInToggleBtn/SelectInToggleBtn";
 import CalendarPopUp from "../CalendarPopUp/CalendarPopUp";
 import SmallPopUp from "../../PopUp/SmallPopUp/SmallPopUp";
 
-const range = (start, end) => {
-  return Array.from({ length: end - start + 1 }, (_, index) => start + index);
-};
+import { clickedDiary } from '../../../recoil/atoms'
+import { useRecoilState } from "recoil";
+import usePostCalendar from "../../../hooks/queries/main/usePostCalendar";
 
 const ReactDatePicker = () => {
   const [startDate, setStartDate] = useState(new Date());
-  const [isClick, setIsClick] = useState(false);
-  // const years = range(2023, getYear(new Date()), 1);
-  // const months = [
-  //   "1월",
-  //   "2월",
-  //   "3월",
-  //   "4월",
-  //   "5월",
-  //   "6월",
-  //   "7월",
-  //   "8월",
-  //   "9월",
-  //   "10월",
-  //   "11월",
-  //   "12월",
-  // ];
+  const [highlightDates, setHighlightDates] = useState([]);
+  const [thatDiaries, setThatDiaries] = useRecoilState(clickedDiary);
+  const mutation = usePostCalendar();
+  
+  useEffect(() => {
+    // 초기 렌더링 시 오늘 날짜에 대한 일기를 가져옴
+    const current_date = new Date().toISOString().substring(0, 10);
+    handleDateClick(getYear(current_date), getMonth(current_date) + 1, getDate(current_date));
+  }, []);
 
-  const handleDate = () => {
-    setIsClick(!isClick);
+  const result = highlightDates.map(item => new Date(item.createdDate));
+
+  const handleDateClick = (Year, Month, Day) => {
+    const current_date = `${Year}-${String(Month).padStart(2, '0')}-${String(Day).padStart(2, '0')}`;
+    const body = {
+      currentDate: current_date+'T00:00:00',
+    };
+
+    mutation.mutate(body, {
+      onSuccess: (response) => {
+        setHighlightDates(response.data.monthList)
+
+        const MonthList = response.data.monthList
+        const filterDiaries = MonthList.filter(item => {
+          const itemDate = new Date(item.createdDate).toISOString().substring(0, 10);
+          return itemDate === current_date
+        });
+        setThatDiaries(filterDiaries)
+      },
+      onError: (error) => {
+        console.log(error.response.data.message);
+      }
+    });
+  }
+
+  const handleDateChange = (date) => {
+    setStartDate(date);
+    handleDateClick(getYear(date), getMonth(date) + 1, getDate(date));
   };
 
-  // 좌우버튼을 누르면 달이 바뀜. keyboard-selected 컴포넌트 값을 request body로 보내고 다이어리 리스트를 받아서 해당 월에 표시
-  // keyboard-selected와 day-selected가 함께 있으면 keyboard-selected의 달력 조회버튼을 띄우도록.
-  
-	return (
+  return (
     <S.CalendarComponentWrapper>
       <S.CustomDatePicker
         formatWeekDay={(nameOfDay) => nameOfDay.substring(0, 1)}
         selected={startDate}
         useWeekdaysShort={false}
-        onChange={(date) => setStartDate(date)}
+        onChange={handleDateChange}
         calendarClassName="oneStripes"
         maxDate={new Date()}
+        highlightDates={result}
+        selectedDates={new Date()}
+        dateFormat='yyyy-mm-dd'
         inline
 
         renderCustomHeader={({
           date,
-          changeYear,
-          changeMonth,
           decreaseMonth,
           increaseMonth,
           prevMonthButtonDisabled,
-          nextMonthButtonDisabled,
+          nextMonthButtonDisabled
         }) => (
           <S.HeaderWrapper>
-
             <S.BtnLeftWrapper onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
-              {/* <BtnPrevMonth onClick={console.log(getMonth(date)+1)}/> */}
-              <BtnPrevMonth onClick={console.log(getYear(date))}/>
+              <BtnPrevMonth />
             </S.BtnLeftWrapper>
-            {/* <S.YearSelector
-              value={getYear(date)}
-              onChange={({ target: { value } }) => changeYear(value)}
-            >
-              {years.map((option) => (
-                <S.YearOption key={option} value={option}>
-                  {option}
-                </S.YearOption>
-              ))}
-            </S.YearSelector>ßß
-  
-            <S.MonthSelector
-              value={months[getMonth(date)]}
-              onChange={({ target: { value } }) =>
-                changeMonth(months.indexOf(value))
-              }
-            >
-              {months.map((option) => (
-                <S.MonthOption key={option} value={option}>
-                  {option}
-                </S.MonthOption>
-              ))}
-            </S.MonthSelector> */}
-  
-
-          <SelectInToggleBtn onClick={handleDate} currentYear={getYear(date)} currentMonth={getMonth(date)}/>
-            {isClick === true ? 
-              <SmallPopUp name={getYear(date)}>
-                <CalendarPopUp />
-                <S.CloseBtn onClick={handleDate}>x</S.CloseBtn>
-              </SmallPopUp>
-            
-            :  
-            null}
+            <SelectInToggleBtn onClick={() => {handleDateClick(getYear(date), getMonth(date) + 1, getDate(date))}} currentYear={getYear(date)} currentMonth={getMonth(date)}/>
             <S.BtnRightWrapper onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
-              <BtnNextMonth/>
+              <BtnNextMonth />
             </S.BtnRightWrapper>
           </S.HeaderWrapper>
         )}
       />
     </S.CalendarComponentWrapper>
-    
   );
 };
 
