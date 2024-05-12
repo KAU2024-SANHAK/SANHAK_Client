@@ -28,6 +28,18 @@ export default function FastDiaryStep6({ onNext, onPrev }) {
     setRealized(event.target.value);
   };
 
+  const handleDate = (data) => {
+    const date = new Date(data);
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const newDate = `${year}년 ${month}월 ${day}일`;
+    
+    data = newDate;
+    
+    return data;
+  };
+
   const onClickSubmit = async () => {
     console.log(checkNull);
     {
@@ -40,8 +52,8 @@ export default function FastDiaryStep6({ onNext, onPrev }) {
               setId(data.diaryId);
               setContent(data.diaryContent);
               setTitle(data.title);
-              setDate(data.writed_at);
-              setFeeling(feeling);
+              setDate(handleDate(data.writed_at));
+              setFeeling(diaryKeywords.feeling);
               onNext();
             },
             

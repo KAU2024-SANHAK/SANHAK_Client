@@ -8,11 +8,13 @@ import { diaryId } from '../../recoil/atoms';
 import usePostFeeling from '../../hooks/queries/create/usePostFeeling';
 import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
 import BtnShowFeeling from '../common/buttons/ShowFeeling/BtnShowFeeling';
+import Loading from '../../pages/Loading/Loading';
 
 export default function CreatedDiary({ title, date, content, id, image }) {
   const navigate = useNavigate();
   const img = useRecoilValue(diaryImage);
   const [feeling, setFeeling] = useRecoilState(diaryFeeling);
+  const isFeeling = feeling !== 'NONE' && feeling !== '';
   const mutation = usePostFeeling();
   const resetDiary = useResetDiary();
 
@@ -22,15 +24,16 @@ export default function CreatedDiary({ title, date, content, id, image }) {
     };
     mutation.mutate(body, {
       onSuccess: (response) => {
-        console.log(response.data.feeling);
+        console.log(response.data.feeling)
         setFeeling(response.data.feeling);
+        console.log(feeling)
         navigate('/emotionview');
       },
     });
   };
 
   const responseFeeling = () => {
-    navigate('/emotionview', { state: { value: feeling } });
+    navigate('/emotionview');
   };
 
   const handleClick = () => {
@@ -38,6 +41,9 @@ export default function CreatedDiary({ title, date, content, id, image }) {
     navigate('/main');
   };
 
+  if(mutation.isPending){
+    return <Loading />
+  }
   return (
     <S.CreatedDiaryWrapper>
       <S.HeaderWrapper>
@@ -45,8 +51,8 @@ export default function CreatedDiary({ title, date, content, id, image }) {
           <BtnBack handleClick={handleClick} />
         </S.BtnBackWrapper>
         <S.TodayEmotionBtnWrapper>
-          <BtnShowFeeling handleClick={feeling ? responseFeeling : requestFeeling}>
-            {feeling ? '오늘의 감정 보러가기' : '오늘의 감정 생성하기'}
+          <BtnShowFeeling handleClick={isFeeling ? responseFeeling : requestFeeling}>
+            {isFeeling ? '오늘의 감정 보러가기' : '오늘의 감정 생성하기'}
           </BtnShowFeeling>
         </S.TodayEmotionBtnWrapper>
       </S.HeaderWrapper>

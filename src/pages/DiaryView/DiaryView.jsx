@@ -43,8 +43,6 @@ export default function DiaryView() {
 
   console.log(isAdvice)
 
-
-
   return (
     <S.DiaryViewPageWrapper>
       <S.Filter>
