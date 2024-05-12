@@ -10,27 +10,27 @@ export const StartPageWrapper = styled.div`
 
   font-weight: 700;
   letter-spacing: -0.0408rem;
-`
-export const TitleWrapper= styled.div`
+`;
+export const TitleWrapper = styled.div`
   width: 28.1rem;
   height: 7rem;
   text-align: left;
   margin-bottom: 2rem;
-
-`
+`;
 export const SubTitle = styled.p`
+  width: 100%;
   padding-bottom: 0.7rem;
-`
+`;
 export const Title = styled.p`
   ${({ theme }) => theme.fonts.big_title};
   line-height: 3rem;
-`
+`;
 export const HoneyBearWrapper = styled.div`
   position: absaolute;
   margin-top: 3rem;
   padding-bottom: 2.5rem;
-`
+`;
 export const ButtonField = styled.div`
   position: absolute;
   bottom: 8rem;
-`
+`;
