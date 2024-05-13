@@ -30,6 +30,7 @@ export const CalendarComponentWrapper = styled.div`
     .react-datepicker__week {
     }
     .react-datepicker__day {
+        // justify-content: center;
         padding: 1.2rem 2.5rem 1.2rem 1.2rem;
         ${({ theme }) => theme.fonts.body_08};
     }
@@ -59,8 +60,9 @@ export const CalendarComponentWrapper = styled.div`
         height: 4rem;
         color: white;
     }
+    // 여기바뀜
     .react-datepicker__day--keyboard-selected {
-        background: red;
+        background: transparent;
     }
     .react-datepicker__day--disabled {
         color: lightgrey;
