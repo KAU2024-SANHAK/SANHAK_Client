@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getDate, getMonth, getYear } from "date-fns";
+import { getDate, getMonth, getYear, format } from "date-fns"; // format 함수 추가
 import * as S from './Calendar.style'
 import BtnNextMonth from '../buttons/Next/BtnNextMonth'
 import BtnPrevMonth from '../buttons/Prev/BtnPrevMonth'
@@ -19,8 +19,8 @@ const ReactDatePicker = () => {
   
   useEffect(() => {
     // 초기 렌더링 시 오늘 날짜에 대한 일기를 가져옴
-    const current_date = new Date().toISOString().substring(0, 10);
-    handleDateClick(getYear(current_date), getMonth(current_date) + 1, getDate(current_date));
+    const current_date = new Date(); // 현재 날짜를 가져오는 코드 수정
+    handleDateClick(getYear(current_date), getMonth(current_date)+1, getDate(current_date)); // 수정된 current_date 변수 사용
   }, []);
 
   const result = highlightDates.map(item => new Date(item.createdDate));
@@ -37,8 +37,10 @@ const ReactDatePicker = () => {
 
         const MonthList = response.data.monthList
         const filterDiaries = MonthList.filter(item => {
-          const itemDate = new Date(item.createdDate).toISOString().substring(0, 10);
-          return itemDate === current_date
+          // 현재 일자를 문자열로 변환하여 시간 부분을 제외한 것과 비교하여 일치하는지 확인
+          const itemDate = format(new Date(item.createdDate), 'yyyy-MM-dd'); // format 함수로 변경
+          const currentDateWithoutTime = format(new Date(current_date), 'yyyy-MM-dd'); // format 함수로 변경
+          return itemDate === currentDateWithoutTime;
         });
         setThatDiaries(filterDiaries)
       },
@@ -64,7 +66,6 @@ const ReactDatePicker = () => {
         maxDate={new Date()}
         highlightDates={result}
         selectedDates={new Date()}
-        dateFormat='yyyy-mm-dd'
         inline
 
         renderCustomHeader={({
@@ -78,7 +79,7 @@ const ReactDatePicker = () => {
             <S.BtnLeftWrapper onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
               <BtnPrevMonth />
             </S.BtnLeftWrapper>
-            <SelectInToggleBtn onClick={() => {handleDateClick(getYear(date), getMonth(date) + 1, getDate(date))}} currentYear={getYear(date)} currentMonth={getMonth(date)}/>
+            <SelectInToggleBtn currentYear={getYear(date)} currentMonth={getMonth(date)}/>
             <S.BtnRightWrapper onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
               <BtnNextMonth />
             </S.BtnRightWrapper>
