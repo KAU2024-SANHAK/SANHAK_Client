@@ -1,5 +1,4 @@
-import { keywords } from "../../utils/keyword";
-import { feelingKeyword, whoKeyword, whatKeyword, whenKeyword, whereKeyword, realizedKeyword } from "../../recoil/atoms";
+import { feelingKeyword, whoKeyword, whatKeyword, whenKeyword, whereKeyword, realizedKeyword, diaryId, diaryImage, diaryTitle, diaryFeeling, diaryContent } from "../../recoil/atoms";
 import { useResetRecoilState } from "recoil";
 
 const useResetKeywords = () => {
@@ -9,6 +8,11 @@ const useResetKeywords = () => {
   const resetWhen = useResetRecoilState(whenKeyword);
   const resetWhere = useResetRecoilState(whereKeyword);
   const resetRealized = useResetRecoilState(realizedKeyword);
+  const resetId = useResetRecoilState(diaryId);
+  const resetImage = useResetRecoilState(diaryImage);
+  const resetTitle = useResetRecoilState(diaryTitle);
+  const resetDiaryFeeling = useResetRecoilState(diaryFeeling);
+  const resetContent = useResetRecoilState(diaryContent);
 
   const resetKeyWords = () => {
     resetFeeling();
@@ -17,6 +21,11 @@ const useResetKeywords = () => {
     resetWhere();
     resetWho();
     resetRealized();
+    resetId();
+    resetImage();
+    resetTitle();
+    resetDiaryFeeling();
+    resetContent();
   }
 
   return resetKeyWords;
