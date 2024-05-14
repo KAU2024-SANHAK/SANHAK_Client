@@ -2,7 +2,7 @@ import { serverInstance } from "../../../apis/client";
 import { useMutation } from '@tanstack/react-query';
 
 export const patchDiary = async (body) => {
-  const response =  await serverInstance.post('/api/diary/update', body);
+  const response =  await serverInstance.patch('/api/diary/update', body);
   return response.data;
 };
 

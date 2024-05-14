@@ -50,6 +50,11 @@ export default function CreatedDiary({ title, date, content, id, image }) {
         <S.BtnBackWrapper>
           <BtnBack handleClick={handleClick} />
         </S.BtnBackWrapper>
+        <button
+          onClick={()=>{navigate('/slowdiary')}}
+        >
+          일기 수정하기
+        </button>
         <S.TodayEmotionBtnWrapper>
           <BtnShowFeeling handleClick={isFeeling ? responseFeeling : requestFeeling}>
             {isFeeling ? '오늘의 감정 보러가기' : '오늘의 감정 생성하기'}
