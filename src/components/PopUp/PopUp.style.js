@@ -12,8 +12,8 @@ export const PopUpWrapper=styled.div`
 //팝업창 제목 (마이페이지, 꿀비의 답장)
 export const PopUpTitle=styled.div`
     ${({ theme }) => theme.fonts.heading_01};
-    position: relative;
-
+    position: absolute;
+    top: 17rem;
     font-weight: 700;
     letter-spacing: 0.0408rem;
 
