@@ -7,13 +7,12 @@ export const PopUpWrapper=styled.div`
     position: absolute;
     width: 37.5rem;
     height: 43.85rem;
-    margin-top: 22.3rem;
+    padding-top: 27.2rem;
 `
 //팝업창 제목 (마이페이지, 꿀비의 답장)
 export const PopUpTitle=styled.div`
     ${({ theme }) => theme.fonts.heading_01};
-    position: absolute;
-    top: 3.4rem;
+    position: relative;
 
     font-weight: 700;
     letter-spacing: 0.0408rem;
