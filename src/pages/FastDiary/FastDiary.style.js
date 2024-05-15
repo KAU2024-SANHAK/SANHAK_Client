@@ -11,6 +11,7 @@ export const FastDairyPageWrapper = styled.div`
 `
 export const FastDiaryHeader = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({justify: 'flex-end'})};
+    position: relative;
     width: 100%;
     margin-top: 3rem;
 
@@ -31,7 +32,7 @@ export const HomeButtonWrapper = styled.div`
     margin-bottom: 10rem;
 `
 export const HoneyBearWrapper=styled.div`
-    position: fixed;
+    position: absolute;
     top: 14rem;
     left: -13rem;
 `
