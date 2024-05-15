@@ -31,13 +31,14 @@ export const HomeButtonWrapper = styled.div`
     margin-left: 2rem;
     margin-bottom: 10rem;
 `
-export const HoneyBearWrapper=styled.div`
+export const HoneyBearWrapper = styled.div`
+    width: 37.5rem;
     position: absolute;
-    top: 14rem;
-    left: -13rem;
+    margin-bottom: 10rem;
+    margin-right: 10rem;
+
 `
 export const HoneyBear = styled(IcHoneyBear)`
-    position: fixed;
 `
 export const ProgressWrapper = styled.div`
     position: absolute;
