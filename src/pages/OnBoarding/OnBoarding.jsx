@@ -10,41 +10,48 @@ import { useNavigate } from 'react-router-dom'
 import StepProgress from '../../components/common/StepPrgoress/StepProgress'
 
 export default function OnBoarding(){
+  const navigate = useNavigate();
+  const steps = [
+    { name: 'Step1', component: OnBoardingStep1, nextStep: 'Step2' },
+    { name: 'Step2', component: OnBoardingStep2, nextStep: 'Step3' },
+    { name: 'Step3', component: OnBoardingStep3, nextStep: 'Step4' },
+    { name: 'Step4', component: OnBoardingStep4, nextStep: 'Step5' },
+    { name: 'Step5', component: OnBoardingStep5, nextStep: 'Step6' },
+    { name: 'Step6', component: OnBoardingStep6, nextStep: '/main' },
+  ];
+  const [Funnel, Step, currentStep, setCurrentStep] = useFunnel("Step1");
+  
+  const handleNext = () => {
+    const nextStepIndex = steps.findIndex(step => step.name === currentStep) + 1;
 
-    const navigate = useNavigate();
-    const steps = [
-        { name: 'Step1', component: OnBoardingStep1, nextStep: 'Step2' },
-        { name: 'Step2', component: OnBoardingStep2, nextStep: 'Step3' },
-        { name: 'Step3', component: OnBoardingStep3, nextStep: 'Step4' },
-        { name: 'Step4', component: OnBoardingStep4, nextStep: 'Step5' },
-        { name: 'Step5', component: OnBoardingStep5, nextStep: 'Step6' },
-        { name: 'Step6', component: OnBoardingStep6, nextStep: '/main' }
-    ]
-    const [Funnel, Step, currentStep, setCurrentStep] = useFunnel("Step1")
-    
-    const handleNext=()=>{
-        const nextStepIndex = steps.findIndex(step => step.name === currentStep) + 1;
-
-        if (nextStepIndex < steps.length) {
-            setCurrentStep(steps[nextStepIndex].name);
-        } else {
-            navigate(steps[nextStepIndex-1].nextStep);
-        }
+    if (nextStepIndex < steps.length) {
+      setCurrentStep(steps[nextStepIndex].name);
+    } else {
+      navigate(steps[nextStepIndex-1].nextStep);
     }
+  };
 
-    return(
-        <S.OnBoardingPageWrapper>
-            <Funnel>
-                {steps.map((step, idx)=>(
-                    <Step key = {idx} name = {step.name}>
-                        <S.ProgressWrapper>
-                            <StepProgress steps= {steps} cur={step.name}/>        
-                        </S.ProgressWrapper>
-                        <step.component onNext={()=>{handleNext()}}/>
-                    </Step>
-                ))}
+  return(
+    <S.OnBoardingPageWrapper>
+      <Funnel>
+        {steps.map((step, idx)=>(
+          <Step 
+            key={idx} 
+            name={step.name}
+          >
+            <S.ProgressWrapper>
+              <StepProgress 
+                steps={steps} 
+                cur={step.name}
+              />        
+            </S.ProgressWrapper>
+            <step.component onNext={() => {
+              handleNext();
+            }}/>
+          </Step>
+        ))}
 
-            </Funnel>
-        </S.OnBoardingPageWrapper>
-    )
+      </Funnel>
+    </S.OnBoardingPageWrapper>
+  )
 }
