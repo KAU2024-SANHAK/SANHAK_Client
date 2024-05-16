@@ -9,6 +9,8 @@ import usePostFeeling from '../../hooks/queries/create/usePostFeeling';
 import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
 import BtnShowFeeling from '../common/buttons/ShowFeeling/BtnShowFeeling';
 import Loading from '../../pages/Loading/Loading';
+import dayHoneyBear from '../../assets/img/dayHoneyBear.webp'
+
 
 export default function CreatedDiary({ title, date, content, id, image }) {
   const navigate = useNavigate();
@@ -68,7 +70,9 @@ export default function CreatedDiary({ title, date, content, id, image }) {
           <S.DiaryDate>{date}</S.DiaryDate>
         </S.DiaryTopTextWrapper>
 
-        <S.DiaryPhoto src={img} />
+        <S.DiaryPhoto 
+          src={img ? img : dayHoneyBear} 
+        />
 
         <S.DiaryTextWrapper>
           <S.DiaryText>{content}</S.DiaryText>
