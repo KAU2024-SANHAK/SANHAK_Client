@@ -14,7 +14,7 @@ export default function MainStep1(){
             <S.MainButtonWrapper>
                 <MyPageButton />
                 <SearchByEmotionButton />
-                <ThisMonthEmotion />
+                {/* <ThisMonthEmotion /> */}
             </S.MainButtonWrapper>
         </S.MainStep1Wrapper>
 
