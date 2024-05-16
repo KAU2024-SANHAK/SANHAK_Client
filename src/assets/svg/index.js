@@ -38,3 +38,5 @@ export { default as IcWorriedHoneyBear} from './IcWorriedHoneyBear';
 export { default as IcRelaxHoneyBear} from './IcRelaxHoneyBear';
 export { default as IcSurprisedHoneyBear} from './IcSurprisedHoneyBear';
 export { default as IcNoneHoneyBear } from './IcNoneHoeyBear';
+export { default as IcShare } from './IcShare';
+export { default as IcMenu } from './IcMenu';
