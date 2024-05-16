@@ -16,8 +16,8 @@ export default function CreatedDiary({ title, date, content, id, image }) {
   const [feeling, setFeeling] = useRecoilState(diaryFeeling);
   const isFeeling = feeling !== 'NONE' && feeling !== '';
   const mutation = usePostFeeling();
-  const resetDiary = useResetDiary();
-  console.log(id);
+  const {resetAdvice, resetContent, resetTitle, resetFeeling, resetId, resetImage} = useResetDiary();
+
   const requestFeeling = () => {
     const body = {
       diaryId: id,
@@ -36,8 +36,13 @@ export default function CreatedDiary({ title, date, content, id, image }) {
     navigate('/emotionview');
   };
 
-  const handleClick = () => {
-    resetDiary();
+  const handleBack = () => {
+    resetAdvice();
+    resetContent();
+    resetTitle();
+    resetFeeling();
+    resetId();
+    resetImage();
     navigate('/main');
   };
 
@@ -48,13 +53,8 @@ export default function CreatedDiary({ title, date, content, id, image }) {
     <S.CreatedDiaryWrapper>
       <S.HeaderWrapper>
         <S.BtnBackWrapper>
-          <BtnBack handleClick={handleClick} />
+          <BtnBack handleClick={handleBack} />
         </S.BtnBackWrapper>
-        <button
-          onClick={()=>{navigate('/slowdiary')}}
-        >
-          일기 수정하기
-        </button>
         <S.TodayEmotionBtnWrapper>
           <BtnShowFeeling handleClick={isFeeling ? responseFeeling : requestFeeling}>
             {isFeeling ? '오늘의 감정 보러가기' : '오늘의 감정 생성하기'}
