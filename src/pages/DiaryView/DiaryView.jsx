@@ -8,6 +8,7 @@ import { diaryId, diaryAdvice, diaryFeeling, diaryTitle, diaryContent, createdDa
 import usePostAdvice from '../../hooks/queries/create/usePostAdvice';
 import BtnShowAdvice from '../../components/common/buttons/ShowAdvice/BtnShowAdvice';
 import AdviceLoading from '../../components/Loading/AdviceLoading/AdviceLoading';
+import { shareKakao } from '../../utils/shareKakao';
 
 export default function DiaryView() {
 
@@ -46,6 +47,13 @@ export default function DiaryView() {
   return (
     <S.DiaryViewPageWrapper>
       <S.Filter>
+        <button 
+          onClick={() => {
+            shareKakao(title, image);
+          }}
+        >
+          카카오 공유하기
+        </button>
         <S.CreatedDiaryWrapper>
           <CreatedDiary
             title={title}  

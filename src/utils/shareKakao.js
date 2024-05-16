@@ -1,11 +1,13 @@
+
 export const shareKakao = (diaryTitle, diaryImage) => {
+  console.log(diaryTitle)
   if(window.Kakao){
     const kakao = window.Kakao;
     if(!kakao.isInitialized()){
-      kakao.init(process.env.VITE_KAKAO_JAVASCRIPT_KEY);
+      kakao.init(import.meta.env.VITE_KAKAO_JAVASCRIPT_KEY);
     }
 
-    kakao.Link.sendDefault({
+    kakao.Share.sendDefault({
       objectType: 'feed',
       content: {
         title: diaryTitle,
@@ -14,11 +16,11 @@ export const shareKakao = (diaryTitle, diaryImage) => {
         link:{
           //배포 url로 수정
           mobileWebUrl: `${
-            import.meta.VITE_LOCAL_URL
-          }/dairyview`,
+            import.meta.env.VITE_LOCAL_URL
+          }diaryview`,
           webUrl: `${
-            import.meta.VITE_LOCAL_URL
-          }/dairyview`,
+            import.meta.env.VITE_LOCAL_URL
+          }diaryview`,
         },
       },
       buttons: [
@@ -27,11 +29,11 @@ export const shareKakao = (diaryTitle, diaryImage) => {
           link:{
             //배포 url로 수정
             mobileWebUrl: `${
-              import.meta.VITE_LOCAL_URL
-            }/dairyview`,
+              import.meta.env.VITE_LOCAL_URL
+            }diaryview`,
             webUrl: `${
-              import.meta.VITE_LOCAL_URL
-            }/dairyview`,
+              import.meta.env.VITE_LOCAL_URL
+            }diaryview`,
           },
         },
       ],
