@@ -10,6 +10,7 @@ import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
 import BtnShowFeeling from '../common/buttons/ShowFeeling/BtnShowFeeling';
 import Loading from '../../pages/Loading/Loading';
 import dayHoneyBear from '../../assets/img/dayHoneyBear.webp'
+import defaultImage  from '../../utils/defaultImage';
 
 
 export default function CreatedDiary({ title, date, content, id, image }) {
@@ -18,6 +19,7 @@ export default function CreatedDiary({ title, date, content, id, image }) {
   const [feeling, setFeeling] = useRecoilState(diaryFeeling);
   const isFeeling = feeling !== 'NONE' && feeling !== '';
   const mutation = usePostFeeling();
+  const defaultImg = defaultImage();
   const {resetAdvice, resetContent, resetTitle, resetFeeling, resetId, resetImage} = useResetDiary();
 
   const requestFeeling = () => {
@@ -71,7 +73,7 @@ export default function CreatedDiary({ title, date, content, id, image }) {
         </S.DiaryTopTextWrapper>
 
         <S.DiaryPhoto 
-          src={img ? img : dayHoneyBear} 
+          src={img ? img : defaultImg} 
         />
 
         <S.DiaryTextWrapper>
