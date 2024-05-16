@@ -64,7 +64,7 @@ export default function SlowDiary(){
     if(id === 0){
       formData.append('diaryTitle',blobTitle);
       formData.append('diaryContent',blobContent);
-      formData.append('imageurl', file);
+      formData.append('imageUrl', file);
 
       postMutation.mutate(formData, {
         onSuccess: (response) => {
