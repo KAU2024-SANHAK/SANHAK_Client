@@ -19,7 +19,6 @@ export default function CreatedDiary({ title, date, content, id, image }) {
   const [feeling, setFeeling] = useRecoilState(diaryFeeling);
   const isFeeling = feeling !== 'NONE' && feeling !== '';
   const mutation = usePostFeeling();
-  const defaultImg = defaultImage();
   const {resetAdvice, resetContent, resetTitle, resetFeeling, resetId, resetImage} = useResetDiary();
 
   const requestFeeling = () => {
@@ -73,7 +72,7 @@ export default function CreatedDiary({ title, date, content, id, image }) {
         </S.DiaryTopTextWrapper>
 
         <S.DiaryPhoto 
-          src={img ? img : defaultImg} 
+          src={img} 
         />
 
         <S.DiaryTextWrapper>
