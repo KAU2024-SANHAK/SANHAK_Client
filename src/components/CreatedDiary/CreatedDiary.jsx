@@ -9,6 +9,8 @@ import usePostFeeling from '../../hooks/queries/create/usePostFeeling';
 import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
 import BtnShowFeeling from '../common/buttons/ShowFeeling/BtnShowFeeling';
 import Loading from '../../pages/Loading/Loading';
+import Menu from '../common/buttons/Menu/Menu';
+import Share from '../common/buttons/Share/Share';
 
 export default function CreatedDiary({ title, date, content, id, image }) {
   const navigate = useNavigate();
@@ -50,17 +52,25 @@ export default function CreatedDiary({ title, date, content, id, image }) {
         <S.BtnBackWrapper>
           <BtnBack handleClick={handleClick} />
         </S.BtnBackWrapper>
-        <S.TodayEmotionBtnWrapper>
-          <BtnShowFeeling handleClick={isFeeling ? responseFeeling : requestFeeling}>
-            {isFeeling ? '오늘의 감정 보러가기' : '오늘의 감정 생성하기'}
-          </BtnShowFeeling>
-        </S.TodayEmotionBtnWrapper>
+        <S.ExtraBtnWrapper>
+        <Share />
+        <Menu />
+      </S.ExtraBtnWrapper>
       </S.HeaderWrapper>
 
       <S.CreatedDiaryComponentWrapper>
         <S.DiaryTopTextWrapper>
           <S.DiaryTitle>{title}</S.DiaryTitle>
-          <S.DiaryDate>{date}</S.DiaryDate>
+          <S.DiaryTopInfoWrapper>
+            <S.DiaryDate>{date}</S.DiaryDate>
+            <S.TodayEmotionBtnWrapper>
+              <BtnShowFeeling handleClick={isFeeling ? responseFeeling : requestFeeling}>
+                {isFeeling ? '오늘의 감정 보러가기' : '오늘의 감정 생성하기'}
+              </BtnShowFeeling>
+            </S.TodayEmotionBtnWrapper>
+          </S.DiaryTopInfoWrapper>
+          
+          
         </S.DiaryTopTextWrapper>
 
         <S.DiaryPhoto src={img} />

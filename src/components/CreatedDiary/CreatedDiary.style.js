@@ -15,24 +15,28 @@ export const CreatComponentWrapper = styled.div`
 `
 export const BtnBackWrapper = styled.div`
 `
-export const TodayEmotionBtnWrapper = styled.div`
-    margin-top: 4.1rem;
-`
 export const CreatedDiaryComponentWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     gap: 1.1rem;
 `
 export const DiaryTopTextWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
+    margin-top: 1.1rem;
 `
 export const DiaryTitle = styled.p`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     ${({ theme }) => theme.fonts.heading_03};
     padding: 0.2rem 0.2rem 0 0.2rem;
 `
+export const DiaryTopInfoWrapper = styled.div`
+    ${({ theme: { mixin } }) => mixin.flexBox({})};
+    justify-content: space-between;
+`
+export const TodayEmotionBtnWrapper = styled.div`
+    // margin-top: 4.1rem;
+`
 export const DiaryDate = styled.p`
     ${({ theme }) => theme.fonts.body_10};
-    padding-right: 20rem;
 `
 export const DiaryPhoto = styled.img`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
@@ -57,4 +61,20 @@ export const DiaryText = styled.p`
     margin-top: 4rem;
     margin-bottom: 4rem;    
     white-space: pre-line;
+`
+export const ExtraBtnWrapper = styled.div`
+    ${({ theme: { mixin } }) => mixin.flexCenter({direction:'row'})};
+    background-color: transparent;
+`
+export const MenuWrapper = styled.div`
+    width: 10rem;
+    height: 8rem;
+    background-color: white;
+
+`
+export const EditBtn = styled.button`
+    ${({ theme }) => theme.fonts.body_02};
+`
+export const DeleteBtn = styled.button`
+    ${({ theme }) => theme.fonts.body_02};
 `
