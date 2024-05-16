@@ -14,6 +14,7 @@ import usePostCalendar from "../../../hooks/queries/main/usePostCalendar";
 const ReactDatePicker = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [highlightDates, setHighlightDates] = useState([]);
+  const [isClick, setIsClick] = useState(false);
   const [thatDiaries, setThatDiaries] = useRecoilState(clickedDiary);
   const mutation = usePostCalendar();
   
@@ -50,6 +51,11 @@ const ReactDatePicker = () => {
     });
   }
 
+  const handleToggle = () => {
+    setIsClick(!isClick);
+
+  }
+
   const handleDateChange = (date) => {
     setStartDate(date);
     handleDateClick(getYear(date), getMonth(date) + 1, getDate(date));
@@ -68,23 +74,29 @@ const ReactDatePicker = () => {
         selectedDates={new Date()}
         inline
 
-        renderCustomHeader={({
-          date,
-          decreaseMonth,
-          increaseMonth,
-          prevMonthButtonDisabled,
-          nextMonthButtonDisabled
-        }) => (
+        renderCustomHeader={({ date, decreaseMonth, increaseMonth, prevMonthButtonDisabled, nextMonthButtonDisabled }) => (
           <S.HeaderWrapper>
-            <S.BtnLeftWrapper onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
+            <S.BtnLeftWrapper onClick={() => { decreaseMonth(); handleDateChange(new Date(date.getFullYear(), date.getMonth() - 1, 1)); }} disabled={prevMonthButtonDisabled}>
               <BtnPrevMonth />
             </S.BtnLeftWrapper>
-            <SelectInToggleBtn currentYear={getYear(date)} currentMonth={getMonth(date)}/>
-            <S.BtnRightWrapper onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
+            <SelectInToggleBtn onClick={handleToggle} currentYear={getYear(date)} currentMonth={getMonth(date)}/>
+            {isClick === true ? 
+              <S.PopUpWrapper>
+                <SmallPopUp name={getYear(date)}>
+                  <CalendarPopUp />
+                  <S.CloseBtn onClick={handleToggle}>x</S.CloseBtn>
+                </SmallPopUp>
+              </S.PopUpWrapper>
+              
+
+            :  
+            null}            
+            <S.BtnRightWrapper onClick={() => { increaseMonth(); handleDateChange(new Date(date.getFullYear(), date.getMonth() + 1, 1)); }} disabled={nextMonthButtonDisabled}>
               <BtnNextMonth />
             </S.BtnRightWrapper>
           </S.HeaderWrapper>
         )}
+        
       />
     </S.CalendarComponentWrapper>
   );

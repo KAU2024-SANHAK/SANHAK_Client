@@ -30,12 +30,25 @@ export const CalendarComponentWrapper = styled.div`
     .react-datepicker__week {
     }
     .react-datepicker__day {
-        // justify-content: center;
-        padding: 1.2rem 2.5rem 1.2rem 1.2rem;
         ${({ theme }) => theme.fonts.body_08};
+        padding: 1.2rem 2.5rem 1.2rem 1.2rem;
     }
-    .react-datepicker__day--highlighted{
-        background-color: pink;
+    
+    .react-datepicker__day--highlighted {
+        position: relative; /* 부모 요소로부터의 상대적 위치 설정 */
+        background-color: transparent;
+        color: black;
+    }
+    .react-datepicker__day--highlighted::after {
+        content: '';
+        position: absolute;
+        bottom: 0.55rem;
+        left: 50%; /* 가운데 정렬 */
+        transform: translateX(-50%);
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 0.4rem;
+        background-color: #FE693D;
     }
     .react-datepicker__day-names {
         padding: 0.9rem;
@@ -113,4 +126,7 @@ export const CloseBtn = styled.div`
     background-color: black;
     height: 3rem;
     width: 3rem;
+`
+export const PopUpWrapper = styled.div`
+    position: fixed;
 `
