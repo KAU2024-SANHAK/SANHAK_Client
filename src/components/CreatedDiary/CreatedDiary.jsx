@@ -9,8 +9,6 @@ import usePostFeeling from '../../hooks/queries/create/usePostFeeling';
 import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
 import BtnShowFeeling from '../common/buttons/ShowFeeling/BtnShowFeeling';
 import Loading from '../../pages/Loading/Loading';
-import dayHoneyBear from '../../assets/img/dayHoneyBear.webp'
-import defaultImage  from '../../utils/defaultImage';
 
 
 export default function CreatedDiary({ title, date, content, id, image }) {
