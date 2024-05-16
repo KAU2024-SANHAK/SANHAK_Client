@@ -32,7 +32,7 @@ export default function SlowDiary(){
     diaryContent: content,
   });
 
-  const [file, setFile] = useState('');
+  const [file, setFile] = useState(null);
   
   const blobTitle = new Blob([JSON.stringify(data.diaryTitle)],{
     type: 'application/json',
@@ -40,10 +40,6 @@ export default function SlowDiary(){
   const blobContent = new Blob([JSON.stringify(data.diaryContent)],{
     type: 'application/json',
   });
-  const blobId = new Blob([JSON.stringify(diaryId.toString())],{
-    type: 'application/json',
-  });
-  
   
   const deleteQuotes = (text) => {
     return text.substring(1, text.length-1);
@@ -63,13 +59,13 @@ export default function SlowDiary(){
     setFile(file);
   };
 
-  console.log(blobId)
   const handleSubmit = () => {
 
     if(id === 0){
       formData.append('diaryTitle',blobTitle);
       formData.append('diaryContent',blobContent);
       formData.append('imageurl', file);
+
       postMutation.mutate(formData, {
         onSuccess: (response) => {
           const data = response.data;
@@ -83,28 +79,24 @@ export default function SlowDiary(){
     }
     else{
       console.log('patch')
-      formData.append('imageUrl', image);
+      !file ? formData.append('imageUrl', new Blob(), '')
+      : formData.append('imageUrl', file);
+
       formData.append('diaryTitle', data.diaryTitle);
       formData.append('diaryContent', data.diaryContent);
-      formData.append('diaryId', blobId);
-/*      const body = {
-        imageUrl: image,
-        diaryId: id,
-        diaryTitle: title,
-        diaryContent: content,
-      }*/
+      formData.append('diaryId', id);
+
       patchMutation.mutate(formData,{
         onSuccess: (response) => {
           const data = response.data;
           setImage(data.imageurl);
-          setContent(deleteQuotes(data.diaryContent));
-          setTitle(deleteQuotes(data.diaryTitle));
+          setContent(data.diaryContent);
+          setTitle(data.diaryTitle);
           setId(data.diaryId);
           navigate('/diaryview');
         }
 
       })         
-      
     }
       
   };

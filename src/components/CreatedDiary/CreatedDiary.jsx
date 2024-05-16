@@ -17,7 +17,7 @@ export default function CreatedDiary({ title, date, content, id, image }) {
   const isFeeling = feeling !== 'NONE' && feeling !== '';
   const mutation = usePostFeeling();
   const resetDiary = useResetDiary();
-
+  console.log(id);
   const requestFeeling = () => {
     const body = {
       diaryId: id,
