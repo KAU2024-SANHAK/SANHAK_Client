@@ -2,7 +2,7 @@ import { serverInstance } from "../../../apis/client";
 import { useMutation } from '@tanstack/react-query';
 
 export const deleteDiary = async (body) => {
-  const response =  await serverInstance.delete('/api/diary/delete', body);
+  const response =  await serverInstance.delete('/api/diary/delete', {data: { body }});
   return response.data;
 };
 

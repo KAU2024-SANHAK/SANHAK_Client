@@ -65,7 +65,7 @@ export default function CreatedDiary({ title, date, content, id }) {
         </S.BtnBackWrapper>
         <S.ExtraBtnWrapper>
         <Share />
-        <Menu imageUrl={image} diaryId={id} diaryTitle={title} diaryContent={content}/>
+        <Menu id={id} />
       </S.ExtraBtnWrapper>
       </S.HeaderWrapper>
 

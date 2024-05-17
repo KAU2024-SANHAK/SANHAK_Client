@@ -5,11 +5,9 @@ import DiaryViewPopUp from './DiaryViewPopUp/DiaryViewPopUp';
 import PopUp from '../../components/PopUp/PopUp';
 import { useRecoilValue, useRecoilState, useResetRecoilState } from 'recoil';
 import { diaryId, diaryAdvice, diaryFeeling, diaryTitle, diaryContent, createdDate, diaryImage } from '../../recoil/atoms';
-import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
 import usePostAdvice from '../../hooks/queries/create/usePostAdvice';
 import BtnShowAdvice from '../../components/common/buttons/ShowAdvice/BtnShowAdvice';
 import AdviceLoading from '../../components/Loading/AdviceLoading/AdviceLoading';
-import { useNavigate } from 'react-router-dom';
 
 export default function DiaryView() {
 
@@ -19,10 +17,8 @@ export default function DiaryView() {
   const date = useRecoilValue(createdDate);
   const id = useRecoilValue(diaryId);
   const [advice, setAdvice] = useRecoilState(diaryAdvice);
-  const {resetAdvice, resetFeeling} = useResetDiary();
   const isAdvice = advice.kind !== null && advice.kind !== "";
   const mutation = usePostAdvice();
-  const navigate = useNavigate();
 
   const handleRequest = () => {
     console.log('요청하기')
@@ -43,20 +39,9 @@ export default function DiaryView() {
     setIsClick(!isClick);
   }
 
-  const handlePatch = () => { 
-    resetAdvice();
-    resetFeeling();
-    navigate('/slowdiary');
-  } 
-
   return (
     <S.DiaryViewPageWrapper>
       <S.Filter>
-        <button
-          onClick={()=>{handlePatch()}}
-        >
-          일기 수정하기
-        </button>
         <S.CreatedDiaryWrapper>
           <CreatedDiary
             title={title}  
