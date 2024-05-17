@@ -5,15 +5,15 @@ export default function Menu({id}){
     const [isClicked, setIsClicked] = useState(false);
     
     const deleteDiary = () => {
-        
-        const body = {
-            diaryId: id,
-          };
-          mutation.mutate(body, {
-            onSuccess: (response) => {
-              console.log(response.message)
-            },
-          });
+        console.log('deleting')
+        // const body = {
+        //     diaryId: id,
+        //   };
+        //   mutation.mutate(body, {
+        //     onSuccess: (response) => {
+        //       console.log(response.message)
+        //     },
+        //   });
     }
 
     const editDiary = () => {

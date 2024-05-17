@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import BtnBack from '../common/buttons/Back/BtnBack';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { diaryFeeling, diaryImage } from '../../recoil/atoms';
-import { diaryId } from '../../recoil/atoms';
 import usePostFeeling from '../../hooks/queries/create/usePostFeeling';
 import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
 import BtnShowFeeling from '../common/buttons/ShowFeeling/BtnShowFeeling';
@@ -12,11 +11,12 @@ import Loading from '../../pages/Loading/Loading';
 import Menu from '../common/buttons/Menu/Menu';
 import Share from '../common/buttons/Share/Share';
 
-export default function CreatedDiary({ title, date, content, id, image }) {
+export default function CreatedDiary({ title, date, content, id }) {
   const navigate = useNavigate();
-  const img = useRecoilValue(diaryImage);
   const [feeling, setFeeling] = useRecoilState(diaryFeeling);
   const isFeeling = feeling !== 'NONE' && feeling !== '';
+  const [image, setImage] = useRecoilState(diaryImage)
+  const isImage = image !== null && image !== "";
   const mutation = usePostFeeling();
   const resetDiary = useResetDiary();
 
@@ -38,10 +38,16 @@ export default function CreatedDiary({ title, date, content, id, image }) {
     navigate('/emotionview');
   };
 
-  const handleClick = () => {
+  const handleBack = () => {
     resetDiary();
     navigate('/main');
   };
+
+  const createImg = () => {
+    // 클릭시 ai 연결해서 이미지 생성하기
+
+    // 리코일에 이미지 저장하기
+  }
 
   if(mutation.isPending){
     return <Loading />
@@ -50,17 +56,18 @@ export default function CreatedDiary({ title, date, content, id, image }) {
     <S.CreatedDiaryWrapper>
       <S.HeaderWrapper>
         <S.BtnBackWrapper>
-          <BtnBack handleClick={handleClick} />
+          <BtnBack handleClick={handleBack} />
         </S.BtnBackWrapper>
         <S.ExtraBtnWrapper>
         <Share />
-        <Menu diaryId={id}/>
+        <Menu imageUrl={image} diaryId={id} diaryTitle={title} diaryContent={content}/>
       </S.ExtraBtnWrapper>
       </S.HeaderWrapper>
 
       <S.CreatedDiaryComponentWrapper>
         <S.DiaryTopTextWrapper>
           <S.DiaryTitle>{title}</S.DiaryTitle>
+
           <S.DiaryTopInfoWrapper>
             <S.DiaryDate>{date}</S.DiaryDate>
             <S.TodayEmotionBtnWrapper>
@@ -72,8 +79,12 @@ export default function CreatedDiary({ title, date, content, id, image }) {
           
           
         </S.DiaryTopTextWrapper>
-
-        <S.DiaryPhoto src={img} />
+       
+        {isImage ? <S.DiaryPhoto src={image} />
+        :
+        <S.ImageBtnWrapper handleClick={createImg}>
+          <S.ImageBtn />
+        </S.ImageBtnWrapper>}
 
         <S.DiaryTextWrapper>
           <S.DiaryText>{content}</S.DiaryText>

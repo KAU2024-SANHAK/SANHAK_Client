@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { IcCreateImageBtn } from '../../assets/svg';
 
 export const CreatedDiaryWrapper = styled.div`
     width: 32rem;
@@ -30,13 +31,14 @@ export const DiaryTitle = styled.p`
 `
 export const DiaryTopInfoWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({})};
+    width: 30rem;
     justify-content: space-between;
 `
 export const TodayEmotionBtnWrapper = styled.div`
-    // margin-top: 4.1rem;
 `
 export const DiaryDate = styled.p`
     ${({ theme }) => theme.fonts.body_10};
+    margin-top: 1.2rem;
 `
 export const DiaryPhoto = styled.img`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
@@ -45,6 +47,15 @@ export const DiaryPhoto = styled.img`
     flex-shrink: 0;
     border-radius: 30px;
     background: #FF8686;
+`
+export const ImageBtnWrapper = styled.button`
+    width: 32rem;
+    height: 31.4rem;
+    flex-shrink: 0;
+    border-radius: 30px;
+    background: #FF8686;
+`
+export const ImageBtn = styled(IcCreateImageBtn)`
 `
 export const DiaryTextWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({})};
