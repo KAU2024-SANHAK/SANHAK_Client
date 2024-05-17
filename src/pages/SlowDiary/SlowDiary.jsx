@@ -5,7 +5,9 @@ import { useFileReader } from '../../hooks/common/useFileReader';
 import { useNavigate } from 'react-router-dom';
 import { diaryImage, diaryContent, diaryTitle, diaryId } from '../../recoil/atoms';
 import { useRecoilState } from 'recoil';
+import parse from 'html-react-parser';
 import usePostSlowDiary from '../../hooks/queries/slowdiary/usePostSlowDiary';
+import usePatchDiary from '../../hooks/queries/slowdiary/usePatchDiary';
 import BtnHome from '../../components/common/buttons/Home/BtnHome';
 import BtnNext from '../../components/common/buttons/Next/BtnNext';
 import HomeModal from '../../components/Modal/HomeModal';
@@ -17,7 +19,8 @@ export default function SlowDiary(){
   const formData = new FormData();
   const navigate = useNavigate();
   const [isOpen, openModal, closeModal] = useModal();
-  const mutation = usePostSlowDiary();
+  const postMutation = usePostSlowDiary();
+  const patchMutation = usePatchDiary();
   const readData = useFileReader();
   const [image, setImage] = useRecoilState(diaryImage);
   const [title, setTitle] = useRecoilState(diaryTitle);
@@ -30,7 +33,7 @@ export default function SlowDiary(){
     diaryContent: content,
   });
 
-  const [file, setFile] = useState('');
+  const [file, setFile] = useState(null);
   
   const blobTitle = new Blob([JSON.stringify(data.diaryTitle)],{
     type: 'application/json',
@@ -42,6 +45,11 @@ export default function SlowDiary(){
   const deleteQuotes = (text) => {
     return text.substring(1, text.length-1);
   };
+
+  const parseString =(text) =>{
+    text = text.replace(/\\n/g, '\n');
+    return text.substring(1, text.length-1);
+ };
 
   const handleChange = (event) => {
     setData({...data, [event.target.name] : event.target.value});
@@ -56,22 +64,48 @@ export default function SlowDiary(){
 
     setFile(file);
   };
+  console.log(data.diaryContent)
 
   const handleSubmit = () => {
-    formData.append('imageurl', file);
-    formData.append('diaryTitle',blobTitle);
-    formData.append('diaryContent',blobContent);
 
-    mutation.mutate(formData, {
-      onSuccess: (response) => {
-        const data = response.data;
-        setImage(data.imageurl);
-        setContent(deleteQuotes(data.diaryContent));
-        setTitle(deleteQuotes(data.diaryTitle));
-        setId(data.diaryId);
-        navigate('/diaryview');
-      }
-    });
+    if(id === 0){
+      formData.append('diaryTitle',blobTitle);
+      formData.append('diaryContent',blobContent);
+      formData.append('imageUrl', file);
+
+      postMutation.mutate(formData, {
+        onSuccess: (response) => {
+          const data = response.data;
+
+          setImage(data.imageurl);
+          setContent(parseString(data.diaryContent));
+          setTitle(parseString(data.diaryTitle));
+          setId(data.diaryId);
+          navigate('/diaryview');
+        }
+      });
+    }
+    else{
+      console.log('patch')
+      !file ? formData.append('imageUrl', new Blob(), '')
+      : formData.append('imageUrl', file);
+
+      formData.append('diaryTitle', data.diaryTitle);
+      formData.append('diaryContent', data.diaryContent);
+      formData.append('diaryId', id);
+
+      patchMutation.mutate(formData,{
+        onSuccess: (response) => {
+          const data = response.data;
+          setImage(data.imageurl);
+          setContent(data.diaryContent);
+          setTitle(data.diaryTitle);
+          setId(data.diaryId);
+          navigate('/diaryview');
+        }
+
+      })         
+    }
       
   };
 
@@ -82,7 +116,6 @@ export default function SlowDiary(){
           closeModal={closeModal} 
         />  
       }
-
       <S.SlowDiaryHeader>
         <BtnHome
           onClick={() => {
@@ -95,22 +128,22 @@ export default function SlowDiary(){
       </S.SlowDiaryHeader>
 
       <S.FormWrapper onSubmit={handleSubmit}>
-        <S.ImageInput 
-          type = 'file' 
-          id ='imgInput' 
-          accept ='image/*' 
-          name = 'imageurl' 
-          onChange = {handleImage} />
+          <S.ImageInput 
+            type = 'file' 
+            id ='imgInput' 
+            accept ='image/*' 
+            name = 'imageurl' 
+            onChange = {handleImage} />
 
-        <S.Label htmlFor = 'imgInput'>
-          {data.imageurl ? (
-            <S.PreviewImg 
-              src = {data.imageurl} 
-            />
-          ): 
-            <S.AddImg />
-          } 
-        </S.Label>
+          <S.Label htmlFor = 'imgInput'>
+            {data.imageurl ? (
+              <S.PreviewImg 
+                src = {data.imageurl} 
+              />
+            ): 
+              <S.AddImg />
+            } 
+          </S.Label>
 
           <S.TitleInput 
             type = 'text' 
@@ -126,7 +159,7 @@ export default function SlowDiary(){
             value = {data.diaryContent} 
             onChange = {handleChange}
           />
-
+ 
           <S.BtnField>
             <BtnNext onNext={() => {
               handleSubmit();
