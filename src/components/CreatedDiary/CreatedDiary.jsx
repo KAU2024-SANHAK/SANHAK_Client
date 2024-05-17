@@ -74,7 +74,13 @@ export default function CreatedDiary({ title, date, content, id, image }) {
         />
 
         <S.DiaryTextWrapper>
-          <S.DiaryText>{loadNewLine(content)}</S.DiaryText>
+          <S.DiaryText>
+            {
+              content.split('\\n').map( line => {
+                return (<span>{line}<br/></span>)
+              })
+            }
+          </S.DiaryText>
         </S.DiaryTextWrapper>
       </S.CreatedDiaryComponentWrapper>
     </S.CreatedDiaryWrapper>

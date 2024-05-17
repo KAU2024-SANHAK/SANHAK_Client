@@ -5,7 +5,7 @@ import { useFileReader } from '../../hooks/common/useFileReader';
 import { useNavigate } from 'react-router-dom';
 import { diaryImage, diaryContent, diaryTitle, diaryId } from '../../recoil/atoms';
 import { useRecoilState } from 'recoil';
-
+import parse from 'html-react-parser';
 import usePostSlowDiary from '../../hooks/queries/slowdiary/usePostSlowDiary';
 import usePatchDiary from '../../hooks/queries/slowdiary/usePatchDiary';
 import BtnHome from '../../components/common/buttons/Home/BtnHome';
@@ -46,6 +46,11 @@ export default function SlowDiary(){
     return text.substring(1, text.length-1);
   };
 
+  const parseString =(text) =>{
+    text = text.replace(/\\n/g, '\n');
+    return text.substring(1, text.length-1);
+ };
+
   const handleChange = (event) => {
     setData({...data, [event.target.name] : event.target.value});
   };
@@ -59,6 +64,7 @@ export default function SlowDiary(){
 
     setFile(file);
   };
+  console.log(data.diaryContent)
 
   const handleSubmit = () => {
 
@@ -70,9 +76,10 @@ export default function SlowDiary(){
       postMutation.mutate(formData, {
         onSuccess: (response) => {
           const data = response.data;
+
           setImage(data.imageurl);
-          setContent(deleteQuotes(data.diaryContent));
-          setTitle(deleteQuotes(data.diaryTitle));
+          setContent(parseString(data.diaryContent));
+          setTitle(parseString(data.diaryTitle));
           setId(data.diaryId);
           navigate('/diaryview');
         }
