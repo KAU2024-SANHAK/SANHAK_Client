@@ -74,7 +74,7 @@ export default function CreatedDiary({ title, date, content, id, image }) {
         />
 
         <S.DiaryTextWrapper>
-          <S.DiaryText>{content}</S.DiaryText>
+          <S.DiaryText>{loadNewLine(content)}</S.DiaryText>
         </S.DiaryTextWrapper>
       </S.CreatedDiaryComponentWrapper>
     </S.CreatedDiaryWrapper>
