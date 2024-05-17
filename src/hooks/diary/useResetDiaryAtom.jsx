@@ -18,7 +18,7 @@ const useResetDiary = () => {
     resetImage();
   }
   
-  return resetDiary;
+  return {resetAdvice, resetContent, resetTitle, resetFeeling, resetId, resetImage};
 
 };
 export default useResetDiary;

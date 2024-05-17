@@ -18,7 +18,7 @@ export default function CreatedDiary({ title, date, content, id }) {
   const [image, setImage] = useRecoilState(diaryImage)
   const isImage = image !== null && image !== "";
   const mutation = usePostFeeling();
-  const resetDiary = useResetDiary();
+  const {resetAdvice, resetContent, resetTitle, resetFeeling, resetId, resetImage} = useResetDiary();
 
   const requestFeeling = () => {
     const body = {
@@ -39,7 +39,12 @@ export default function CreatedDiary({ title, date, content, id }) {
   };
 
   const handleBack = () => {
-    resetDiary();
+    resetAdvice();
+    resetContent();
+    resetTitle();
+    resetFeeling();
+    resetId();
+    resetImage();
     navigate('/main');
   };
 
