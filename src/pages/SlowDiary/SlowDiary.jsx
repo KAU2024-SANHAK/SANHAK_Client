@@ -108,7 +108,6 @@ export default function SlowDiary(){
           closeModal={closeModal} 
         />  
       }
-
       <S.SlowDiaryHeader>
         <BtnHome
           onClick={() => {
@@ -121,22 +120,22 @@ export default function SlowDiary(){
       </S.SlowDiaryHeader>
 
       <S.FormWrapper onSubmit={handleSubmit}>
-        <S.ImageInput 
-          type = 'file' 
-          id ='imgInput' 
-          accept ='image/*' 
-          name = 'imageurl' 
-          onChange = {handleImage} />
+          <S.ImageInput 
+            type = 'file' 
+            id ='imgInput' 
+            accept ='image/*' 
+            name = 'imageurl' 
+            onChange = {handleImage} />
 
-        <S.Label htmlFor = 'imgInput'>
-          {data.imageurl ? (
-            <S.PreviewImg 
-              src = {data.imageurl} 
-            />
-          ): 
-            <S.AddImg />
-          } 
-        </S.Label>
+          <S.Label htmlFor = 'imgInput'>
+            {data.imageurl ? (
+              <S.PreviewImg 
+                src = {data.imageurl} 
+              />
+            ): 
+              <S.AddImg />
+            } 
+          </S.Label>
 
           <S.TitleInput 
             type = 'text' 
@@ -152,7 +151,7 @@ export default function SlowDiary(){
             value = {data.diaryContent} 
             onChange = {handleChange}
           />
-
+ 
           <S.BtnField>
             <BtnNext onNext={() => {
               handleSubmit();
