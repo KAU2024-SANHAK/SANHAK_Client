@@ -6,6 +6,7 @@ import { useRecoilState, useRecoilValue } from 'recoil';
 import { diaryFeeling, diaryImage } from '../../recoil/atoms';
 import { diaryId } from '../../recoil/atoms';
 import usePostFeeling from '../../hooks/queries/create/usePostFeeling';
+import usePostAiImage from '../../hooks/queries/create/usePostAiImage';
 import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
 import BtnShowFeeling from '../common/buttons/ShowFeeling/BtnShowFeeling';
 import Loading from '../../pages/Loading/Loading';
@@ -13,17 +14,18 @@ import Loading from '../../pages/Loading/Loading';
 
 export default function CreatedDiary({ title, date, content, id, image }) {
   const navigate = useNavigate();
-  const img = useRecoilValue(diaryImage);
+  const [img, setImg] = useRecoilState(diaryImage);
   const [feeling, setFeeling] = useRecoilState(diaryFeeling);
   const isFeeling = feeling !== 'NONE' && feeling !== '';
-  const mutation = usePostFeeling();
+  const postFeelingMutation = usePostFeeling();
+  const postImageMutation = usePostAiImage();
   const {resetAdvice, resetContent, resetTitle, resetFeeling, resetId, resetImage} = useResetDiary();
 
   const requestFeeling = () => {
     const body = {
       diaryId: id,
     };
-    mutation.mutate(body, {
+    postFeelingMutation.mutate(body, {
       onSuccess: (response) => {
         console.log(response.data.feeling)
         setFeeling(response.data.feeling);
@@ -47,11 +49,31 @@ export default function CreatedDiary({ title, date, content, id, image }) {
     navigate('/main');
   };
 
-  if(mutation.isPending){
+  const handleImage = () => {
+    const body = {
+      diaryId: id,
+    };
+    postImageMutation.mutate(body,{
+      onSuccess: (response) => {
+        const data = response.data;
+        console.log(response);
+        setImg(data.image_url);
+      }
+    })
+  };
+
+  if(postFeelingMutation.isPending){
     return <Loading />
   }
   return (
     <S.CreatedDiaryWrapper>
+      <button
+        onClick={() => {
+          handleImage();
+        }}
+      >
+        일기 생성 버튼
+      </button>
       <S.HeaderWrapper>
         <S.BtnBackWrapper>
           <BtnBack handleClick={handleBack} />

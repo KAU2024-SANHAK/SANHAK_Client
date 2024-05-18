@@ -15,4 +15,4 @@ const usePostAiImage = () => {
   })
   return mutation;
 }
-export default usePostAdvice;
+export default usePostAiImage;
