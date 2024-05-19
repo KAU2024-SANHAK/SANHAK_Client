@@ -10,6 +10,7 @@ import usePostAiImage from '../../hooks/queries/create/usePostAiImage';
 import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
 import BtnShowFeeling from '../common/buttons/ShowFeeling/BtnShowFeeling';
 import Loading from '../../pages/Loading/Loading';
+import AdviceLoading from '../Loading/AdviceLoading/AdviceLoading';
 
 
 export default function CreatedDiary({ title, date, content, id, image }) {
@@ -91,9 +92,14 @@ export default function CreatedDiary({ title, date, content, id, image }) {
           <S.DiaryDate>{date}</S.DiaryDate>
         </S.DiaryTopTextWrapper>
 
-        <S.DiaryPhoto 
-          src={img} 
-        />
+        {
+          postImageMutation.isPending ? 
+          <AdviceLoading />
+          :
+          <S.DiaryPhoto 
+            src={img} 
+          /> 
+        }
 
         <S.DiaryTextWrapper>
           <S.DiaryText>
