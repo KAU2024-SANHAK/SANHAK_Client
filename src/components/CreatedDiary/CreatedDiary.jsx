@@ -1,5 +1,4 @@
 import * as S from './CreatedDiary.style';
-import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import BtnBack from '../common/buttons/Back/BtnBack';
 import { useRecoilState, useRecoilValue } from 'recoil';
@@ -10,7 +9,7 @@ import usePostAiImage from '../../hooks/queries/create/usePostAiImage';
 import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
 import BtnShowFeeling from '../common/buttons/ShowFeeling/BtnShowFeeling';
 import Loading from '../../pages/Loading/Loading';
-import AdviceLoading from '../Loading/AdviceLoading/AdviceLoading';
+import CircleLoading from '../Loading/CircleLoading/CircleLoading';
 
 
 export default function CreatedDiary({ title, date, content, id, image }) {
@@ -94,7 +93,9 @@ export default function CreatedDiary({ title, date, content, id, image }) {
 
         {
           postImageMutation.isPending ? 
-          <AdviceLoading />
+          <CircleLoading>
+            AI 이미지를 생성 중입니다.
+          </CircleLoading>
           :
           <S.DiaryPhoto 
             src={img} 
