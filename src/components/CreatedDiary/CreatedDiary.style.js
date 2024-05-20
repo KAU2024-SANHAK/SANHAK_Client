@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { IcCreateImageBtn } from '../../assets/svg';
 
 export const CreatedDiaryWrapper = styled.div`
     width: 32rem;
@@ -48,14 +47,15 @@ export const DiaryPhoto = styled.img`
     border-radius: 30px;
     background: #FF8686;
 `
-export const ImageBtnWrapper = styled.button`
+export const PhotoBtnWrapper = styled.button`
     width: 32rem;
     height: 31.4rem;
     flex-shrink: 0;
     border-radius: 30px;
     background: #FF8686;
 `
-export const ImageBtn = styled(IcCreateImageBtn)`
+export const BtnImage = styled.img`
+    height: 100.2%;
 `
 export const DiaryTextWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({})};

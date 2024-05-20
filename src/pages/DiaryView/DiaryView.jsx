@@ -1,10 +1,10 @@
 import * as S from './DiaryView.style';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import CreatedDiary from '../../components/CreatedDiary/CreatedDiary';
 import DiaryViewPopUp from './DiaryViewPopUp/DiaryViewPopUp';
 import PopUp from '../../components/PopUp/PopUp';
-import { useRecoilValue, useRecoilState, useResetRecoilState } from 'recoil';
-import { diaryId, diaryAdvice, diaryFeeling, diaryTitle, diaryContent, createdDate, diaryImage } from '../../recoil/atoms';
+import { useRecoilValue, useRecoilState } from 'recoil';
+import { diaryId, diaryAdvice, diaryTitle, diaryContent, createdDate } from '../../recoil/atoms';
 import usePostAdvice from '../../hooks/queries/create/usePostAdvice';
 import BtnShowAdvice from '../../components/common/buttons/ShowAdvice/BtnShowAdvice';
 import AdviceLoading from '../../components/Loading/AdviceLoading/AdviceLoading';
@@ -17,7 +17,7 @@ export default function DiaryView() {
   const date = useRecoilValue(createdDate);
   const id = useRecoilValue(diaryId);
   const [advice, setAdvice] = useRecoilState(diaryAdvice);
-  const isAdvice = advice.kind !== null && advice.kind !== "";
+  const isAdvice = advice.kind !== null && advice.kind !== '';
   const mutation = usePostAdvice();
 
   const handleRequest = () => {

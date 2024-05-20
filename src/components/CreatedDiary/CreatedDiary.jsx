@@ -10,13 +10,14 @@ import BtnShowFeeling from '../common/buttons/ShowFeeling/BtnShowFeeling';
 import Loading from '../../pages/Loading/Loading';
 import Menu from '../common/buttons/Menu/Menu';
 import Share from '../common/buttons/Share/Share';
+import createImgBtn from '../../assets/img/createImgBtn.png';
 
 export default function CreatedDiary({ title, date, content, id }) {
   const navigate = useNavigate();
   const [feeling, setFeeling] = useRecoilState(diaryFeeling);
   const isFeeling = feeling !== 'NONE' && feeling !== '';
   const [image, setImage] = useRecoilState(diaryImage)
-  const isImage = image !== null && image !== "";
+  const isImage = image !== null && image !== '';
   const mutation = usePostFeeling();
   const {resetAdvice, resetContent, resetTitle, resetFeeling, resetId, resetImage} = useResetDiary();
 
@@ -50,7 +51,7 @@ export default function CreatedDiary({ title, date, content, id }) {
 
   const createImg = () => {
     // 클릭시 ai 연결해서 이미지 생성하기
-
+    console.log("이미지를 생성중입니다.")
     // 리코일에 이미지 저장하기
   }
 
@@ -65,7 +66,7 @@ export default function CreatedDiary({ title, date, content, id }) {
         </S.BtnBackWrapper>
         <S.ExtraBtnWrapper>
         <Share />
-        <Menu id={id} />
+        <Menu />
       </S.ExtraBtnWrapper>
       </S.HeaderWrapper>
 
@@ -84,12 +85,11 @@ export default function CreatedDiary({ title, date, content, id }) {
           
           
         </S.DiaryTopTextWrapper>
-       
         {isImage ? <S.DiaryPhoto src={image} />
         :
-        <S.ImageBtnWrapper handleClick={createImg}>
-          <S.ImageBtn />
-        </S.ImageBtnWrapper>}
+        <S.PhotoBtnWrapper onClick={() => {createImg()}}>
+          <S.BtnImage src={createImgBtn} />
+        </S.PhotoBtnWrapper>}
 
         <S.DiaryTextWrapper>
           <S.DiaryText>{content}</S.DiaryText>
