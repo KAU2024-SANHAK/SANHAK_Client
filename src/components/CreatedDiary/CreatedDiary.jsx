@@ -1,5 +1,5 @@
 import * as S from './CreatedDiary.style';
-import { useNavigate, useRouteError } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import BtnBack from '../common/buttons/Back/BtnBack';
 import { useRecoilState } from 'recoil';
 import { diaryFeeling, diaryImage } from '../../recoil/atoms';
@@ -11,6 +11,7 @@ import Loading from '../../pages/Loading/Loading';
 import Menu from '../common/buttons/Menu/Menu';
 import Share from '../common/buttons/Share/Share';
 import createImgBtn from '../../assets/img/createImgBtn.png';
+import CircleLoading from '../Loading/CircleLoading/CircleLoading';
 
 export default function CreatedDiary({ title, date, content, id }) {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ export default function CreatedDiary({ title, date, content, id }) {
   const isImage = image !== null && image !== '';
   const postFeelingMutation = usePostFeeling();
   const postImageMutation = usePostAiImage();
-  const {resetAdvice, resetContent, resetTitle, resetFeeling, resetId, resetImage} = useResetDiary();
+  const { resetAdvice, resetContent, resetTitle, resetFeeling, resetId, resetImage } = useResetDiary();
 
   const requestFeeling = () => {
     const body = {
@@ -28,9 +29,9 @@ export default function CreatedDiary({ title, date, content, id }) {
     };
     postFeelingMutation.mutate(body, {
       onSuccess: (response) => {
-        console.log(response.data.feeling)
+        console.log(response.data.feeling);
         setFeeling(response.data.feeling);
-        console.log(feeling)
+        console.log(feeling);
         navigate('/emotionview');
       },
     });
@@ -54,29 +55,29 @@ export default function CreatedDiary({ title, date, content, id }) {
     const body = {
       diaryId: id,
     };
-    postImageMutation.mutate(body,{
+    postImageMutation.mutate(body, {
       onSuccess: (response) => {
         const data = response.data;
         console.log(response);
         setImage(data.image_url);
-      }
-    })
+      },
+    });
   };
 
-  if(postFeelingMutation.isPending){
-    return <Loading />
+  if (postFeelingMutation.isPending || postImageMutation.isPending) {
+    return <Loading />;
   }
+
   return (
     <S.CreatedDiaryWrapper>
-      
       <S.HeaderWrapper>
         <S.BtnBackWrapper>
           <BtnBack handleClick={handleBack} />
         </S.BtnBackWrapper>
         <S.ExtraBtnWrapper>
-        <Share title={title} image={image}/>
-        <Menu />
-      </S.ExtraBtnWrapper>
+          <Share title={title} image={image} />
+          <Menu />
+        </S.ExtraBtnWrapper>
       </S.HeaderWrapper>
 
       <S.CreatedDiaryComponentWrapper>
@@ -91,22 +92,23 @@ export default function CreatedDiary({ title, date, content, id }) {
               </BtnShowFeeling>
             </S.TodayEmotionBtnWrapper>
           </S.DiaryTopInfoWrapper>
-          {isImage ? <S.DiaryPhoto src={image} />
-          :
-          <S.PhotoBtnWrapper onClick={() => {handleImage()}}>
-            <S.BtnImage src={createImgBtn} />
-          </S.PhotoBtnWrapper>}
-
-          
+          {isImage ? (
+            <S.DiaryPhoto src={image} />
+          ) : (
+            <S.PhotoBtnWrapper onClick={() => handleImage()}>
+              <S.BtnImage src={createImgBtn} />
+            </S.PhotoBtnWrapper>
+          )}
+          {postImageMutation.isPending && (
+            <CircleLoading>AI 이미지를 생성 중입니다.</CircleLoading>
+          )}
         </S.DiaryTopTextWrapper>
 
         <S.DiaryTextWrapper>
           <S.DiaryText>
-            {
-              content.split('\\n').map( (line, idx) => {
-                return (<span key={idx}>{line}<br/></span>)
-              })
-            }
+            {content.split('\\n').map((line, idx) => {
+              return (<span key={idx}>{line}<br/></span>);
+            })}
           </S.DiaryText>
         </S.DiaryTextWrapper>
       </S.CreatedDiaryComponentWrapper>
