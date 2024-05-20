@@ -4,8 +4,6 @@ import * as S from './Calendar.style'
 import BtnNextMonth from '../buttons/Next/BtnNextMonth'
 import BtnPrevMonth from '../buttons/Prev/BtnPrevMonth'
 import SelectInToggleBtn from "../buttons/SelectInToggleBtn/SelectInToggleBtn";
-import CalendarPopUp from "../CalendarPopUp/CalendarPopUp";
-import SmallPopUp from "../../PopUp/SmallPopUp/SmallPopUp";
 
 import { clickedDiary } from '../../../recoil/atoms'
 import { useRecoilState } from "recoil";
@@ -14,7 +12,6 @@ import usePostCalendar from "../../../hooks/queries/main/usePostCalendar";
 const ReactDatePicker = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [highlightDates, setHighlightDates] = useState([]);
-  const [isClick, setIsClick] = useState(false);
   const [thatDiaries, setThatDiaries] = useRecoilState(clickedDiary);
   const mutation = usePostCalendar();
   
@@ -50,12 +47,6 @@ const ReactDatePicker = () => {
       }
     });
   }
-
-  const handleToggle = () => {
-    setIsClick(!isClick);
-
-  }
-
   const handleDateChange = (date) => {
     setStartDate(date);
     handleDateClick(getYear(date), getMonth(date) + 1, getDate(date));
@@ -79,18 +70,7 @@ const ReactDatePicker = () => {
             <S.BtnLeftWrapper onClick={() => { decreaseMonth(); handleDateChange(new Date(date.getFullYear(), date.getMonth() - 1, 1)); }} disabled={prevMonthButtonDisabled}>
               <BtnPrevMonth />
             </S.BtnLeftWrapper>
-            <SelectInToggleBtn onClick={handleToggle} currentYear={getYear(date)} currentMonth={getMonth(date)}/>
-            {isClick === true ? 
-              <S.PopUpWrapper>
-                <SmallPopUp name={getYear(date)}>
-                  <CalendarPopUp />
-                  <S.CloseBtn onClick={handleToggle}>x</S.CloseBtn>
-                </SmallPopUp>
-              </S.PopUpWrapper>
-              
-
-            :  
-            null}            
+            <SelectInToggleBtn currentYear={getYear(date)} currentMonth={getMonth(date)}/>
             <S.BtnRightWrapper onClick={() => { increaseMonth(); handleDateChange(new Date(date.getFullYear(), date.getMonth() + 1, 1)); }} disabled={nextMonthButtonDisabled}>
               <BtnNextMonth />
             </S.BtnRightWrapper>
