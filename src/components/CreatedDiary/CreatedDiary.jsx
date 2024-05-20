@@ -65,7 +65,7 @@ export default function CreatedDiary({ title, date, content, id }) {
           <BtnBack handleClick={handleBack} />
         </S.BtnBackWrapper>
         <S.ExtraBtnWrapper>
-        <Share />
+        <Share title={title} image={image}/>
         <Menu />
       </S.ExtraBtnWrapper>
       </S.HeaderWrapper>
