@@ -6,7 +6,7 @@ import useDeleteDiary from '../../../../hooks/queries/create/useDeleteDiary';
 import { useRecoilValue } from 'recoil';
 import { diaryId } from '../../../../recoil/atoms';
 
-export default function Menu() {
+export default function BtnMenu() {
     const [menuOpen, setMenuOpen] = useState(false);
     const { resetAdvice, resetFeeling } = useResetDiary();
     const navigate = useNavigate();

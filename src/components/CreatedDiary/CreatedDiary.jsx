@@ -1,6 +1,5 @@
 import * as S from './CreatedDiary.style';
 import { useNavigate } from 'react-router-dom';
-import BtnBack from '../common/buttons/Back/BtnBack';
 import { useRecoilState } from 'recoil';
 import { diaryFeeling, diaryImage } from '../../recoil/atoms';
 import usePostFeeling from '../../hooks/queries/create/usePostFeeling';
@@ -8,8 +7,6 @@ import usePostAiImage from '../../hooks/queries/create/usePostAiImage';
 import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
 import BtnShowFeeling from '../common/buttons/ShowFeeling/BtnShowFeeling';
 import Loading from '../../pages/Loading/Loading';
-import Menu from '../common/buttons/Menu/Menu';
-import Share from '../common/buttons/Share/Share';
 import createImgBtn from '../../assets/img/createImgBtn.png';
 import CircleLoading from '../Loading/CircleLoading/CircleLoading';
 
@@ -21,7 +18,6 @@ export default function CreatedDiary({ title, date, content, id }) {
   const isImage = image !== null && image !== '';
   const postFeelingMutation = usePostFeeling();
   const postImageMutation = usePostAiImage();
-  const { resetAdvice, resetContent, resetTitle, resetFeeling, resetId, resetImage } = useResetDiary();
 
   const requestFeeling = () => {
     const body = {
@@ -39,16 +35,6 @@ export default function CreatedDiary({ title, date, content, id }) {
 
   const responseFeeling = () => {
     navigate('/emotionview');
-  };
-
-  const handleBack = () => {
-    resetAdvice();
-    resetContent();
-    resetTitle();
-    resetFeeling();
-    resetId();
-    resetImage();
-    navigate('/main');
   };
 
   const handleImage = () => {
@@ -70,15 +56,6 @@ export default function CreatedDiary({ title, date, content, id }) {
 
   return (
     <S.CreatedDiaryWrapper>
-      <S.HeaderWrapper>
-        <S.BtnBackWrapper>
-          <BtnBack handleClick={handleBack} />
-        </S.BtnBackWrapper>
-        <S.ExtraBtnWrapper>
-          <Share title={title} image={image} />
-          <Menu />
-        </S.ExtraBtnWrapper>
-      </S.HeaderWrapper>
 
       <S.CreatedDiaryComponentWrapper>
         <S.DiaryTopTextWrapper>
@@ -93,12 +70,6 @@ export default function CreatedDiary({ title, date, content, id }) {
             </S.TodayEmotionBtnWrapper>
           </S.DiaryTopInfoWrapper>
 
-          {/*postImageMutation.isPending ? (
-            <S.PhotoBtnWrapper>
-              <CircleLoading>AI 이미지를 생성 중입니다.</CircleLoading>
-            </S.PhotoBtnWrapper>
-          ) : (
-          )*/}
           {isImage ? (
             <S.DiaryPhoto src={image} />
           ) : (

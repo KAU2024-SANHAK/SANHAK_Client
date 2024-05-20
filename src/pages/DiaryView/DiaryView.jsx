@@ -4,10 +4,14 @@ import CreatedDiary from '../../components/CreatedDiary/CreatedDiary';
 import DiaryViewPopUp from './DiaryViewPopUp/DiaryViewPopUp';
 import PopUp from '../../components/PopUp/PopUp';
 import { useRecoilValue, useRecoilState } from 'recoil';
-import { diaryId, diaryAdvice, diaryTitle, diaryContent, createdDate } from '../../recoil/atoms';
+import { diaryId, diaryAdvice, diaryTitle, diaryContent, createdDate, diaryImage } from '../../recoil/atoms';
 import usePostAdvice from '../../hooks/queries/create/usePostAdvice';
 import BtnShowAdvice from '../../components/common/buttons/ShowAdvice/BtnShowAdvice';
+import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
 import CircleLoading from '../../components/Loading/CircleLoading/CircleLoading';
+import BtnBack from '../../components/common/buttons/Back/BtnBack';
+import BtnMenu from '../../components/common/buttons/Menu/Menu';
+import BtnShare from '../../components/common/buttons/Share/Share';
 import { useNavigate } from 'react-router-dom';
 
 export default function DiaryView() {
@@ -17,10 +21,13 @@ export default function DiaryView() {
   const content = useRecoilValue(diaryContent);
   const date = useRecoilValue(createdDate);
   const id = useRecoilValue(diaryId);
+  const image = useRecoilValue(diaryImage);
   const [advice, setAdvice] = useRecoilState(diaryAdvice);
   const isAdvice = advice.kind !== null && advice.kind !== "";
   const mutation = usePostAdvice();
   const navigate = useNavigate();
+  const { resetAdvice, resetContent, resetTitle, resetFeeling, resetId, resetImage } = useResetDiary();
+
 
   const handleRequest = () => {
     console.log('요청하기')
@@ -41,9 +48,29 @@ export default function DiaryView() {
     setIsClick(!isClick);
   }
 
+  const handleBack = () => {
+    resetAdvice();
+    resetContent();
+    resetTitle();
+    resetFeeling();
+    resetId();
+    resetImage();
+    navigate('/main');
+  };
+
   return (
     <S.DiaryViewPageWrapper>
+
       <S.Filter>
+        <S.HeaderWrapper>
+          <S.BtnBackWrapper>
+            <BtnBack handleClick={handleBack} />
+          </S.BtnBackWrapper>
+          <S.ExtraBtnWrapper>
+            <BtnShare title={title} image={image} />
+            <BtnMenu />
+          </S.ExtraBtnWrapper>
+        </S.HeaderWrapper>
         <S.CreatedDiaryWrapper>
           <CreatedDiary
             title={title}  
