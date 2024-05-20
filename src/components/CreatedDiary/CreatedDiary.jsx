@@ -93,19 +93,27 @@ export default function CreatedDiary({ title, date, content, id }) {
             </S.TodayEmotionBtnWrapper>
           </S.DiaryTopInfoWrapper>
 
-          {postImageMutation.isPending ? (
+          {/*postImageMutation.isPending ? (
             <S.PhotoBtnWrapper>
               <CircleLoading>AI 이미지를 생성 중입니다.</CircleLoading>
             </S.PhotoBtnWrapper>
           ) : (
-            isImage ? (
-              <S.DiaryPhoto src={image} />
-            ) : (
-              <S.PhotoBtnWrapper onClick={handleImage}>
+          )*/}
+          {isImage ? (
+            <S.DiaryPhoto src={image} />
+          ) : (
+            <S.PhotoBtnWrapper onClick={handleImage}>
+              {postImageMutation.isPending ? 
+                <CircleLoading>
+                  이미지를 생성 중입니다.
+                </CircleLoading>
+              :
                 <S.BtnImage src={createImgBtn} />
-              </S.PhotoBtnWrapper>
-            )
+              }
+            </S.PhotoBtnWrapper>
           )}
+
+
         </S.DiaryTopTextWrapper>
 
         <S.DiaryTextWrapper>
