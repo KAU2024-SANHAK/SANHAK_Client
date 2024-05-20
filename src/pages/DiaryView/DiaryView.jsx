@@ -27,7 +27,7 @@ export default function DiaryView() {
   const image = useRecoilValue(diaryImage);
   const [advice, setAdvice] = useRecoilState(diaryAdvice);
   const isAdvice = advice.kind !== null && advice.kind !== "";
-  const postmutation = usePostAdvice();
+  const postMutation = usePostAdvice();
   const deleteMutation = useDeleteDiary();
   const navigate = useNavigate();
   const { resetAdvice, resetContent, resetTitle, resetFeeling, resetId, resetImage } = useResetDiary();
@@ -38,7 +38,7 @@ export default function DiaryView() {
     const body = {
       diaryId: id,
     }
-    postmutation.mutate(body,{
+    postMutation.mutate(body,{
       onSuccess: (response) => {
         console.log(response.data);
         setAdvice(response.data.advice);
@@ -119,7 +119,7 @@ export default function DiaryView() {
                 </S.HoneyBearWrapper>
 
                 <PopUp name="꿀비의 답장">
-                  {mutation.isPending ?
+                  {postMutation.isPending ?
                     <CircleLoading>
                       조언을 생성 중입니다.
                     </CircleLoading> 
