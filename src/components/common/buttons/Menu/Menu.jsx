@@ -6,7 +6,7 @@ import useDeleteDiary from '../../../../hooks/queries/create/useDeleteDiary';
 import { useRecoilValue } from 'recoil';
 import { diaryId } from '../../../../recoil/atoms';
 
-export default function BtnMenu() {
+export default function BtnMenu({openModal}) {
     const [menuOpen, setMenuOpen] = useState(false);
     const { resetAdvice, resetFeeling } = useResetDiary();
     const navigate = useNavigate();
@@ -39,7 +39,7 @@ export default function BtnMenu() {
                     <S.EditBtn onClick={() => {handleEdit()}}>
                         일기 수정하기
                     </S.EditBtn>
-                    <S.DeleteBtn onClick={() => {handleDelete()}}>
+                    <S.DeleteBtn onClick={() => {openModal()}}>
                         일기 삭제하기
                     </S.DeleteBtn>
                 </S.MenuWrapper>

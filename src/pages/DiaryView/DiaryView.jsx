@@ -13,6 +13,8 @@ import BtnBack from '../../components/common/buttons/Back/BtnBack';
 import BtnMenu from '../../components/common/buttons/Menu/Menu';
 import BtnShare from '../../components/common/buttons/Share/Share';
 import { useNavigate } from 'react-router-dom';
+import { useModal } from '../../hooks/common/useModal';
+import HomeModal from '../../components/Modal/HomeModal';
 
 export default function DiaryView() {
 
@@ -27,7 +29,7 @@ export default function DiaryView() {
   const mutation = usePostAdvice();
   const navigate = useNavigate();
   const { resetAdvice, resetContent, resetTitle, resetFeeling, resetId, resetImage } = useResetDiary();
-
+  const [isOpen, openModal, closeModal] = useModal();
 
   const handleRequest = () => {
     console.log('요청하기')
@@ -60,15 +62,20 @@ export default function DiaryView() {
 
   return (
     <S.DiaryViewPageWrapper>
-
       <S.Filter>
+        {isOpen && 
+          <HomeModal 
+            closeModal={closeModal} 
+          />  
+        }
+
         <S.HeaderWrapper>
           <S.BtnBackWrapper>
             <BtnBack handleClick={handleBack} />
           </S.BtnBackWrapper>
           <S.ExtraBtnWrapper>
             <BtnShare title={title} image={image} />
-            <BtnMenu />
+            <BtnMenu openModal={openModal}/>
           </S.ExtraBtnWrapper>
         </S.HeaderWrapper>
         <S.CreatedDiaryWrapper>
