@@ -1,16 +1,14 @@
 import * as S from './DiaryView.style';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import CreatedDiary from '../../components/CreatedDiary/CreatedDiary';
 import DiaryViewPopUp from './DiaryViewPopUp/DiaryViewPopUp';
 import PopUp from '../../components/PopUp/PopUp';
-import { useRecoilValue, useRecoilState, useResetRecoilState } from 'recoil';
-import { diaryId, diaryAdvice, diaryFeeling, diaryTitle, diaryContent, createdDate, diaryImage } from '../../recoil/atoms';
-import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
+import { useRecoilValue, useRecoilState } from 'recoil';
+import { diaryId, diaryAdvice, diaryTitle, diaryContent, createdDate } from '../../recoil/atoms';
 import usePostAdvice from '../../hooks/queries/create/usePostAdvice';
 import BtnShowAdvice from '../../components/common/buttons/ShowAdvice/BtnShowAdvice';
 import CircleLoading from '../../components/Loading/CircleLoading/CircleLoading';
 import { useNavigate } from 'react-router-dom';
-import { shareKakao } from '../../utils/shareKakao';
 
 export default function DiaryView() {
 
@@ -19,9 +17,7 @@ export default function DiaryView() {
   const content = useRecoilValue(diaryContent);
   const date = useRecoilValue(createdDate);
   const id = useRecoilValue(diaryId);
-  const image = useRecoilValue(diaryImage);
   const [advice, setAdvice] = useRecoilState(diaryAdvice);
-  const {resetAdvice, resetFeeling} = useResetDiary();
   const isAdvice = advice.kind !== null && advice.kind !== "";
   const mutation = usePostAdvice();
   const navigate = useNavigate();
@@ -45,34 +41,15 @@ export default function DiaryView() {
     setIsClick(!isClick);
   }
 
-  const handlePatch = () => { 
-    resetAdvice();
-    resetFeeling();
-    navigate('/slowdiary');
-  } 
-
   return (
     <S.DiaryViewPageWrapper>
       <S.Filter>
-        <button
-          onClick={()=>{handlePatch()}}
-        >
-          일기 수정하기
-        </button>
-        <button 
-          onClick={() => {
-            shareKakao(title, image);
-          }}
-        >
-          카카오 공유하기
-        </button>
         <S.CreatedDiaryWrapper>
           <CreatedDiary
             title={title}  
             date={date}
             content={content}
             id={id}
-            image={image}
           />
         </S.CreatedDiaryWrapper>
         
