@@ -8,6 +8,7 @@ export default function SearchByEmotion(){
     const navigate = useNavigate();
 
     const handleBackButton = () => {
+        
         navigate('/main');
     }
 

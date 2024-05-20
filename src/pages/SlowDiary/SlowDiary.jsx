@@ -5,7 +5,6 @@ import { useFileReader } from '../../hooks/common/useFileReader';
 import { useNavigate } from 'react-router-dom';
 import { diaryImage, diaryContent, diaryTitle, diaryId } from '../../recoil/atoms';
 import { useRecoilState } from 'recoil';
-import parse from 'html-react-parser';
 import usePostSlowDiary from '../../hooks/queries/slowdiary/usePostSlowDiary';
 import usePatchDiary from '../../hooks/queries/slowdiary/usePatchDiary';
 import BtnHome from '../../components/common/buttons/Home/BtnHome';
@@ -41,10 +40,6 @@ export default function SlowDiary(){
   const blobContent = new Blob([JSON.stringify(data.diaryContent)],{
     type: 'application/json',
   });
-  
-  const deleteQuotes = (text) => {
-    return text.substring(1, text.length-1);
-  };
 
   const parseString =(text) =>{
     text = text.replace(/\\n/g, '\n');
