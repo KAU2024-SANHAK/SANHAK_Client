@@ -25,8 +25,6 @@ function Main() {
     { name: 'MainStep2', component: <MainStep2 /> } 
   ];
 
-  {console.log(activeSlide)}
-
   return (
     <div className='slider-container'>
       <Slider {...settings} dotsClass="test-css">
@@ -37,7 +35,9 @@ function Main() {
       </Slider>
       
       <S.WriteDiaryButtonWrapper>
-        <WriteDiaryButton />
+        <S.BtnWrapper>
+          <WriteDiaryButton />
+        </S.BtnWrapper>
       </S.WriteDiaryButtonWrapper>
 
       <S.MainStepWrapper>

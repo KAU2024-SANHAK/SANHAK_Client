@@ -10,7 +10,7 @@ export const CalendarComponentWrapper = styled.div`
     .react-datepicker__month-container {
         width: 32rem;
         border-radius: 3rem;
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.7);
         backdrop-filter: blur(1.5rem);
         border: none;
     }
@@ -27,7 +27,7 @@ export const CalendarComponentWrapper = styled.div`
     }
     .react-datepicker__day {
         ${({ theme }) => theme.fonts.body_08};
-        height: 4.3rem;
+        height: 4.5rem;
         width: 4rem;
         margin: 0.1rem 0.1rem 0.1rem 0.1rem;
         padding: 1rem 0 0 0;
@@ -82,8 +82,8 @@ export const CalendarComponentWrapper = styled.div`
 `;
 export const HeaderWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({})};
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-top: 2.3rem;
+    margin-bottom: 2.3rem;
 `
 export const CustomDatePicker = styled(DatePicker)`
 `

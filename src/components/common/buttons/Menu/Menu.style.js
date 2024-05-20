@@ -15,9 +15,7 @@ export const MenuWrapper = styled.div`
     height: 10rem;
     background-color: white;
     border-radius: 3rem;
-    position: absolute;
-    right: 2.7rem;
-    top: 10rem;
+    position: relative;
 `
 export const EditBtn = styled.button`
     ${({ theme }) => theme.fonts.body_02};
