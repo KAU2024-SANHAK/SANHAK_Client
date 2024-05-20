@@ -1,10 +1,10 @@
 import * as S from './CreatedDiary.style';
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useRouteError } from 'react-router-dom';
 import BtnBack from '../common/buttons/Back/BtnBack';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { diaryFeeling, diaryImage } from '../../recoil/atoms';
 import usePostFeeling from '../../hooks/queries/create/usePostFeeling';
+import usePostAiImage from '../../hooks/queries/create/usePostAiImage';
 import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
 import BtnShowFeeling from '../common/buttons/ShowFeeling/BtnShowFeeling';
 import Loading from '../../pages/Loading/Loading';
@@ -16,16 +16,17 @@ export default function CreatedDiary({ title, date, content, id }) {
   const navigate = useNavigate();
   const [feeling, setFeeling] = useRecoilState(diaryFeeling);
   const isFeeling = feeling !== 'NONE' && feeling !== '';
-  const [image, setImage] = useRecoilState(diaryImage)
+  const [image, setImage] = useRecoilState(diaryImage);
   const isImage = image !== null && image !== '';
-  const mutation = usePostFeeling();
+  const postFeelingMutation = usePostFeeling();
+  const postImageMutation = usePostAiImage();
   const {resetAdvice, resetContent, resetTitle, resetFeeling, resetId, resetImage} = useResetDiary();
 
   const requestFeeling = () => {
     const body = {
       diaryId: id,
     };
-    mutation.mutate(body, {
+    postFeelingMutation.mutate(body, {
       onSuccess: (response) => {
         console.log(response.data.feeling)
         setFeeling(response.data.feeling);
@@ -49,17 +50,25 @@ export default function CreatedDiary({ title, date, content, id }) {
     navigate('/main');
   };
 
-  const createImg = () => {
-    // 클릭시 ai 연결해서 이미지 생성하기
-    console.log("이미지를 생성중입니다.")
-    // 리코일에 이미지 저장하기
-  }
+  const handleImage = () => {
+    const body = {
+      diaryId: id,
+    };
+    postImageMutation.mutate(body,{
+      onSuccess: (response) => {
+        const data = response.data;
+        console.log(response);
+        setImage(data.image_url);
+      }
+    })
+  };
 
-  if(mutation.isPending){
+  if(postFeelingMutation.isPending){
     return <Loading />
   }
   return (
     <S.CreatedDiaryWrapper>
+      
       <S.HeaderWrapper>
         <S.BtnBackWrapper>
           <BtnBack handleClick={handleBack} />
@@ -82,20 +91,20 @@ export default function CreatedDiary({ title, date, content, id }) {
               </BtnShowFeeling>
             </S.TodayEmotionBtnWrapper>
           </S.DiaryTopInfoWrapper>
-          
+          {isImage ? <S.DiaryPhoto src={image} />
+          :
+          <S.PhotoBtnWrapper onClick={() => {handleImage()}}>
+            <S.BtnImage src={createImgBtn} />
+          </S.PhotoBtnWrapper>}
+
           
         </S.DiaryTopTextWrapper>
-        {isImage ? <S.DiaryPhoto src={image} />
-        :
-        <S.PhotoBtnWrapper onClick={() => {createImg()}}>
-          <S.BtnImage src={createImgBtn} />
-        </S.PhotoBtnWrapper>}
 
         <S.DiaryTextWrapper>
           <S.DiaryText>
             {
-              content.split('\\n').map( line => {
-                return (<span>{line}<br/></span>)
+              content.split('\\n').map( (line, idx) => {
+                return (<span key={idx}>{line}<br/></span>)
               })
             }
           </S.DiaryText>

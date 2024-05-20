@@ -41,10 +41,6 @@ export default function SlowDiary(){
   const blobContent = new Blob([JSON.stringify(data.diaryContent)],{
     type: 'application/json',
   });
-  
-  const deleteQuotes = (text) => {
-    return text.substring(1, text.length-1);
-  };
 
   const parseString =(text) =>{
     text = text.replace(/\\n/g, '\n');

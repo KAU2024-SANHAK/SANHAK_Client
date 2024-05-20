@@ -7,7 +7,7 @@ import { useRecoilValue, useRecoilState } from 'recoil';
 import { diaryId, diaryAdvice, diaryTitle, diaryContent, createdDate } from '../../recoil/atoms';
 import usePostAdvice from '../../hooks/queries/create/usePostAdvice';
 import BtnShowAdvice from '../../components/common/buttons/ShowAdvice/BtnShowAdvice';
-import AdviceLoading from '../../components/Loading/AdviceLoading/AdviceLoading';
+import CircleLoading from '../../components/Loading/CircleLoading/CircleLoading';
 import { useNavigate } from 'react-router-dom';
 
 export default function DiaryView() {
@@ -66,8 +66,15 @@ export default function DiaryView() {
                 </S.HoneyBearWrapper>
 
                 <PopUp name="꿀비의 답장">
-                  {mutation.isPending ? <AdviceLoading /> : 
-                  <DiaryViewPopUp spicy={advice.spicy} kind={advice.kind} />
+                  {mutation.isPending ?
+                    <CircleLoading>
+                      조언을 생성 중입니다.
+                    </CircleLoading> 
+                  : 
+                    <DiaryViewPopUp 
+                      spicy={advice.spicy} 
+                      kind={advice.kind} 
+                    />
                   }
                   
                   <S.CloseBtn onClick={()=>{setIsClick(false)}} >
