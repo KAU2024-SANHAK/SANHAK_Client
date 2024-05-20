@@ -64,7 +64,7 @@ export default function CreatedDiary({ title, date, content, id }) {
     });
   };
 
-  if (postFeelingMutation.isPending || postImageMutation.isPending) {
+  if (postFeelingMutation.isPending) {
     return <Loading />;
   }
 
