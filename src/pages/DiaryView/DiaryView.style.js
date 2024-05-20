@@ -4,15 +4,12 @@ import { IcXBtn } from '../../assets/svg';
 
 export const DiaryViewPageWrapper=styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
+    background-color: ${({ theme }) => theme.colors.pink.white_pink};
     width: 100%;
-    // ${({ theme }) => theme.colors.gradient.gradient_pink};
-    background: lightpink;
-    // padding-bottom: 20.2rem;
-`
-export const Filter = styled.div`
-    ${({ theme: { mixin } }) => mixin.flexCenter({})};
-    width: 100%;
-    background: rgba(255, 255, 255, 0.50);
+    min-height: 100vh;
+    height: auto;
+    max-height: fit-content;
+    justify-content: space-between;
 `
 export const CreatedDiaryWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};

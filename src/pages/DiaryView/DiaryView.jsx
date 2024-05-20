@@ -43,7 +43,6 @@ export default function DiaryView() {
 
   return (
     <S.DiaryViewPageWrapper>
-      <S.Filter>
         <S.CreatedDiaryWrapper>
           <CreatedDiary
             title={title}  
@@ -87,7 +86,6 @@ export default function DiaryView() {
             ) : null}
 
         </S.GoToReplyBtnWrapper>
-      </S.Filter>        
     </S.DiaryViewPageWrapper>
   );
 }
