@@ -15,3 +15,7 @@ export const DiaryListComponentWrapper = styled.div`
     margin: 2.8rem 0 4.4rem 0;
     gap: 0.8rem;
 `
+export const BackgroundAddition = styled.div`
+    width: 32.0rem;
+    height: 11.5rem;
+`

@@ -110,3 +110,9 @@ export const memberIdState = atom({
     default: {},
     effects_UNSTABLE: [persistAtom],
 })
+
+export const MainStep = atom({
+    key: 'MainStep',
+    default: {},
+    effects_UNSTABLE: [persistAtom],
+})
