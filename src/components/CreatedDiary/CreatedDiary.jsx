@@ -92,23 +92,30 @@ export default function CreatedDiary({ title, date, content, id }) {
               </BtnShowFeeling>
             </S.TodayEmotionBtnWrapper>
           </S.DiaryTopInfoWrapper>
-          {isImage ? (
-            <S.DiaryPhoto src={image} />
-          ) : (
-            <S.PhotoBtnWrapper onClick={() => handleImage()}>
-              <S.BtnImage src={createImgBtn} />
+
+          {postImageMutation.isPending ? (
+            <S.PhotoBtnWrapper>
+              <CircleLoading>AI 이미지를 생성 중입니다.</CircleLoading>
             </S.PhotoBtnWrapper>
-          )}
-          {postImageMutation.isPending && (
-            <CircleLoading>AI 이미지를 생성 중입니다.</CircleLoading>
+          ) : (
+            isImage ? (
+              <S.DiaryPhoto src={image} />
+            ) : (
+              <S.PhotoBtnWrapper onClick={handleImage}>
+                <S.BtnImage src={createImgBtn} />
+              </S.PhotoBtnWrapper>
+            )
           )}
         </S.DiaryTopTextWrapper>
 
         <S.DiaryTextWrapper>
           <S.DiaryText>
-            {content.split('\\n').map((line, idx) => {
-              return (<span key={idx}>{line}<br/></span>);
-            })}
+            {content.split('\\n').map((line, idx) => (
+              <span key={idx}>
+                {line}
+                <br />
+              </span>
+            ))}
           </S.DiaryText>
         </S.DiaryTextWrapper>
       </S.CreatedDiaryComponentWrapper>
