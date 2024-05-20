@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import InputCloud from '../../assets/img/InputCloud.svg'
 import inputCloud from '../../assets/InputCloud.png'
 
 export const FastDiaryStepWrapper = styled.div`

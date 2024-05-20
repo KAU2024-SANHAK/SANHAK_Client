@@ -1,18 +1,18 @@
 import { serverInstance } from "../../../apis/client";
 import { useMutation } from '@tanstack/react-query';
 
-export const postDiary = async (body) => {
-  const response =  await serverInstance.post('/api/diary/content', body);
+export const patchDiary = async (body) => {
+  const response =  await serverInstance.patch('/api/diary/update', body);
   return response.data;
 };
 
-const usePostDiary = () => {
+const usePatchDiary = () => {
   const mutation = useMutation({
-    mutationFn: postDiary,
+    mutationFn: patchDiary,
     onSuccess: (data) =>{
       console.log('요청에 성공했습니다.', data)
     }
   })
   return mutation;
 };
-export default usePostDiary;
+export default usePatchDiary;

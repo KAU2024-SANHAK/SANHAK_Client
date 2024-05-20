@@ -7,28 +7,13 @@ import SetDiaryStyle from "../SetDiaryStyle/SetDiaryStyle";
 import Title from "./title/Title";
 import Caption from "./title/Caption";
 import BtnComplete from "../common/buttons/complete/BtnComplete";
-import axios from "axios";
 
 export default function OnBoardingStep5({onNext}){
     const diaryTypeAtom = useRecoilValue(userDiaryType);
     const mutation = usePostDiaryType();
 
     const handlePostDiaryStyle= () => {
-        axios.post(
-            `${import.meta.env.VITE_APP_SERVER_BASE_URL}/api/member/character`,
-            {
-                userDiaryType : diaryTypeAtom,
-            },
-            {
-                headers: {
-                    Authorization: `Bearer ${getAccessToken()}`,
-                }
-            }
-
-        ).then((response) => {
-            console.log(response)
-        })
-        /*const body = {
+        const body = {
             userDiaryType : diaryTypeAtom,
          };
  
@@ -36,7 +21,7 @@ export default function OnBoardingStep5({onNext}){
              onSucess: (data) => {
                  console.log(data);
              }
-         })*/
+         })
      };
 
     return (
