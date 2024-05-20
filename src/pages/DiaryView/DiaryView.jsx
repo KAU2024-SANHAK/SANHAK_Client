@@ -8,6 +8,8 @@ import { diaryId, diaryAdvice, diaryTitle, diaryContent, createdDate } from '../
 import usePostAdvice from '../../hooks/queries/create/usePostAdvice';
 import BtnShowAdvice from '../../components/common/buttons/ShowAdvice/BtnShowAdvice';
 import AdviceLoading from '../../components/Loading/AdviceLoading/AdviceLoading';
+import { useNavigate } from 'react-router-dom';
+import { shareKakao } from '../../utils/shareKakao';
 
 export default function DiaryView() {
 
@@ -17,8 +19,10 @@ export default function DiaryView() {
   const date = useRecoilValue(createdDate);
   const id = useRecoilValue(diaryId);
   const [advice, setAdvice] = useRecoilState(diaryAdvice);
-  const isAdvice = advice.kind !== null && advice.kind !== '';
+  const {resetAdvice, resetFeeling} = useResetDiary();
+  const isAdvice = advice.kind !== null && advice.kind !== "";
   const mutation = usePostAdvice();
+  const navigate = useNavigate();
 
   const handleRequest = () => {
     console.log('요청하기')
@@ -42,6 +46,18 @@ export default function DiaryView() {
   return (
     <S.DiaryViewPageWrapper>
       <S.Filter>
+        <button
+          onClick={()=>{handlePatch()}}
+        >
+          일기 수정하기
+        </button>
+        <button 
+          onClick={() => {
+            shareKakao(title, image);
+          }}
+        >
+          카카오 공유하기
+        </button>
         <S.CreatedDiaryWrapper>
           <CreatedDiary
             title={title}  

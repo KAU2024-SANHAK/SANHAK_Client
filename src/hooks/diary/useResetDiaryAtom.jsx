@@ -8,15 +8,6 @@ const useResetDiary = () => {
   const resetId = useResetRecoilState(diaryId);
   const resetTitle = useResetRecoilState(diaryTitle);
   const resetImage = useResetRecoilState(diaryImage);
-
-  const resetDiary = () => {
-    resetAdvice();
-    resetContent();
-    resetFeeling();
-    resetId();
-    resetTitle();
-    resetImage();
-  }
   
   return {resetAdvice, resetContent, resetTitle, resetFeeling, resetId, resetImage};
 
