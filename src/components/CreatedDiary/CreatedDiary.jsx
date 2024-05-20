@@ -15,10 +15,11 @@ export default function CreatedDiary({ title, date, content, id }) {
   const [feeling, setFeeling] = useRecoilState(diaryFeeling);
   const isFeeling = feeling !== 'NONE' && feeling !== '';
   const [image, setImage] = useRecoilState(diaryImage);
-  const isImage = image !== null && image !== '';
+  const isImage = image !== null && image !== ''&& image !== undefined;
   const postFeelingMutation = usePostFeeling();
   const postImageMutation = usePostAiImage();
 
+  console.log(image)
   const requestFeeling = () => {
     const body = {
       diaryId: id,
