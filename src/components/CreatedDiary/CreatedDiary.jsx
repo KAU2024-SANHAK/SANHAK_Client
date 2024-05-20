@@ -10,13 +10,14 @@ import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
 import BtnShowFeeling from '../common/buttons/ShowFeeling/BtnShowFeeling';
 import Loading from '../../pages/Loading/Loading';
 
+
 export default function CreatedDiary({ title, date, content, id, image }) {
   const navigate = useNavigate();
   const img = useRecoilValue(diaryImage);
   const [feeling, setFeeling] = useRecoilState(diaryFeeling);
   const isFeeling = feeling !== 'NONE' && feeling !== '';
   const mutation = usePostFeeling();
-  const resetDiary = useResetDiary();
+  const {resetAdvice, resetContent, resetTitle, resetFeeling, resetId, resetImage} = useResetDiary();
 
   const requestFeeling = () => {
     const body = {
@@ -36,8 +37,13 @@ export default function CreatedDiary({ title, date, content, id, image }) {
     navigate('/emotionview');
   };
 
-  const handleClick = () => {
-    resetDiary();
+  const handleBack = () => {
+    resetAdvice();
+    resetContent();
+    resetTitle();
+    resetFeeling();
+    resetId();
+    resetImage();
     navigate('/main');
   };
 
@@ -48,7 +54,7 @@ export default function CreatedDiary({ title, date, content, id, image }) {
     <S.CreatedDiaryWrapper>
       <S.HeaderWrapper>
         <S.BtnBackWrapper>
-          <BtnBack handleClick={handleClick} />
+          <BtnBack handleClick={handleBack} />
         </S.BtnBackWrapper>
         <S.TodayEmotionBtnWrapper>
           <BtnShowFeeling handleClick={isFeeling ? responseFeeling : requestFeeling}>
@@ -63,10 +69,18 @@ export default function CreatedDiary({ title, date, content, id, image }) {
           <S.DiaryDate>{date}</S.DiaryDate>
         </S.DiaryTopTextWrapper>
 
-        <S.DiaryPhoto src={img} />
+        <S.DiaryPhoto 
+          src={img} 
+        />
 
         <S.DiaryTextWrapper>
-          <S.DiaryText>{content}</S.DiaryText>
+          <S.DiaryText>
+            {
+              content.split('\\n').map( line => {
+                return (<span>{line}<br/></span>)
+              })
+            }
+          </S.DiaryText>
         </S.DiaryTextWrapper>
       </S.CreatedDiaryComponentWrapper>
     </S.CreatedDiaryWrapper>

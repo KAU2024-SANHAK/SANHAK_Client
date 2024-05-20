@@ -9,7 +9,7 @@ export const OnBoardingHeader = styled.header`
     ${({ theme: { mixin } }) => mixin.flexBox({justify:'center',align: 'center' })};
     position: absolute;
     top: 5rem;
-    width: 100%;
+    width: 37.5rem;
 `
 export const OnBoardingBody = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({direction:'column', align: 'center' })};
