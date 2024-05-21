@@ -11,6 +11,21 @@ export const DiaryViewPageWrapper=styled.div`
     max-height: fit-content;
     justify-content: space-between;
 `
+export const HeaderWrapper = styled.div`
+    ${({ theme: { mixin } }) => mixin.flexBox({})};
+    width: 100%;
+    margin-top: 3.2rem;
+    justify-content: space-between;
+`
+export const BtnBackWrapper = styled.div`
+    padding-left: 2rem;
+    
+`
+export const ExtraBtnWrapper = styled.div`
+    ${({ theme: { mixin } }) => mixin.flexCenter({direction:'row'})};
+    background-color: transparent;
+    padding-right: 2rem;
+`
 export const CreatedDiaryWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
 `

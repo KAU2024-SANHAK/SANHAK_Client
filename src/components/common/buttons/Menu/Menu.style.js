@@ -33,3 +33,6 @@ export const DeleteBtn = styled.button`
     margin-bottom: 0.5rem;
     background-color: transparent;
 `
+export const ButtonField = styled.div`
+    width: 37.5rem;
+`
