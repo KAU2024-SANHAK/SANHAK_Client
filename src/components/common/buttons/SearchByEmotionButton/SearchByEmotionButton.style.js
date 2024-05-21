@@ -1,26 +1,22 @@
-import styled from "styled-components";
-import svgSearchByEmotionButton from "../../../../assets/svg/IcSearchByEmotionButton";
+import styled from 'styled-components';
+import svgSearchByEmotionButton from '../../../../assets/svg/IcSearchByEmotionButton';
 
 export const SearchByEmotionButtonIcon = styled(svgSearchByEmotionButton)`
-`
-export const SearchByEmotionIconWrapper = styled.div`
-    position: absolute;
-    left: 2.0rem;
-    top: 2.0rem;
-`
+  width: 4.6rem;
+`;
 export const Wrapper = styled.div`
-    ${({ theme: { mixin } }) => mixin.flexBox({justify: 'center'})};
-    width: 9.3rem;
-    height: 12rem;
-    flex-shrink: 0;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.27);
-    backdrop-filter: blur(7.5px);
-    border: none;
-`
+  ${({ theme: { mixin } }) => mixin.flexCenter({})};
+  width: 9.3rem;
+  height: 12rem;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.27);
+  backdrop-filter: blur(7.5px);
+  border: none;
+  padding: 1.5rem;
+  gap: 1.3rem;
+`;
 export const SearchByEmotionButtonText = styled.p`
-    position: absolute;
-    left: 2.6rem;
-    bottom: 1.2rem;
-    ${({ theme }) => theme.fonts.caption_01};
-`
+  ${({ theme: { mixin } }) => mixin.flexCenter({})};
+  ${({ theme }) => theme.fonts.caption_01};
+`;
