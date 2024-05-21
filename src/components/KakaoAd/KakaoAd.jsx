@@ -16,7 +16,6 @@ function KakaoAd() {
 
   return (
     <>
-      ...
       <div ref={scriptElement}>
         <ins
           className='kakao_ad_area'

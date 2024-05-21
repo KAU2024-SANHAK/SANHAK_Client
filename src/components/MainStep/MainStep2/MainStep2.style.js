@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 
+export const Main2Wrapper = styled.div`
+    ${({ theme: { mixin } }) => mixin.flexBox({direction: "column"})};
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    max-height: fit-content;
+`;
 export const MainStep2Wrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
 `

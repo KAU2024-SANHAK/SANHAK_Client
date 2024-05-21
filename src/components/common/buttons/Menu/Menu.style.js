@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { IcMenu } from "../../../../assets/svg";
 
 export const ButtonWrapper =styled.div`
+    ${({ theme: { mixin } }) => mixin.flexBox({justify: 'end'})};
     display: flex;
     background-color: transparent;
     margin: 0 1.2rem 0 1.2rem;
@@ -15,8 +16,7 @@ export const MenuWrapper = styled.div`
     height: 10rem;
     background-color: white;
     border-radius: 3rem;
-    position: fixed;
-    right: 2.7rem;
+    position: absolute;
     top: 10rem;
 `
 export const EditBtn = styled.button`
