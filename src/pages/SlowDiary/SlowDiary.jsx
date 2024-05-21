@@ -10,7 +10,7 @@ import usePostSlowDiary from '../../hooks/queries/slowdiary/usePostSlowDiary';
 import usePatchDiary from '../../hooks/queries/slowdiary/usePatchDiary';
 import BtnHome from '../../components/common/buttons/Home/BtnHome';
 import BtnNext from '../../components/common/buttons/Next/BtnNext';
-import HomeModal from '../../components/Modal/HomeModal';
+import OptionModal from '../../components/Modal/OptionModal';
 
 export default function SlowDiary(){
   const date = new Date();
@@ -105,12 +105,23 @@ export default function SlowDiary(){
       
   };
 
+  const handleGoMain=()=>{
+    navigate('/main');
+  };
+
   return(
     <S.SlowDiaryPageWrapper  $isEven = {today%2}>
       {isOpen && 
-        <HomeModal 
-          closeModal={closeModal} 
-        />  
+        <OptionModal 
+        closeModal={closeModal} 
+        handleOption={handleGoMain}
+        optionText='홈으로 돌아가기'
+        closeText='이어서 기록하기'
+        >
+          홈으로 되돌아가시겠습니까?
+          <br />
+          되돌아가면 글은 초기화됩니다.
+        </OptionModal>  
       }
       <S.SlowDiaryHeader>
         <BtnHome

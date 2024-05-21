@@ -9,8 +9,9 @@ export const MyPageWrapper=styled.div`
 export const HoneyBearWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     width: 37.5rem;
+    height: 30rem;
     position: absolute;
-    top: 5rem;
+    top: 7rem;
 `
 export const HoneyBear = styled(IcHoneyBear)`
     display: flex;

@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const Bubble = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({})};
+    background-color: ${({ theme }) => theme.colors.pink.btn_pink};
     width: 17.8rem;
     height: 4.3rem;
     flex-shrink: 0;
-    background-color: white;
-    margin-left: 1rem;
+    margin-left: 1.6rem;
     margin-top: 10rem;
-    border-radius: 12px;
+    border-radius: 1.2rem;
 `
 export const Wrapper = styled.div`
     z-index: 10;
@@ -26,13 +26,15 @@ export const ThisMonthEmotionText = styled.p`
 
 `
 export const PlayList = styled.p`
-    margin-left: 3.7rem;
+    margin-left: 3.9rem;
     margin-top: 0.8rem;
     ${({ theme }) => theme.fonts.caption_01};
 `
 export const HoneyBearWrapper = styled.div`
+    width: 10rem;
+    height: 0.1rem;
     display: flex;
-    position: absolute;
-    top: 33rem;
-    right: 64rem;
+    position: relative;
+    margin-left: 2rem;
+    bottom: 9rem;
 `

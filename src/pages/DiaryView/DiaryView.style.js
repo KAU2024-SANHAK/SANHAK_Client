@@ -9,6 +9,27 @@ export const DiaryViewPageWrapper=styled.div`
     background: lightpink;
     // padding-bottom: 20.2rem;
 `
+export const HeaderWrapper = styled.div`
+    ${({ theme: { mixin } }) => mixin.flexBox({})};
+    width: 100%;
+    margin-top: 3.2rem;
+    justify-content: space-between;
+`
+export const BtnBackWrapper = styled.div`
+    padding-left: 2rem;
+    
+`
+export const ExtraBtnWrapper = styled.div`
+    ${({ theme: { mixin } }) => mixin.flexCenter({direction:'row'})};
+    background-color: transparent;
+    padding-right: 2rem;
+`
+export const MenuWrapper = styled.div`
+    width: 10rem;
+    height: 8rem;
+    background-color: white;
+
+`
 export const Filter = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     width: 100%;

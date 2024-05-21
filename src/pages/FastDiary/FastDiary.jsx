@@ -2,9 +2,10 @@ import * as S from './FastDiary.style'
 import { useModal } from '../../hooks/common/useModal';
 import { useFunnel } from '../../hooks/common/useFunnel';
 import { useNavigate } from 'react-router-dom'
+import useResetKeywords from '../../hooks/diary/useResetKeywords';
 import BtnHome from '../../components/common/buttons/Home/BtnHome';
 import DiaryProgress from '../../components/DiaryProgress/DiaryProgress';
-import HomeModal from '../../components/Modal/HomeModal';
+import OptionModal from '../../components/Modal/OptionModal';
 import StepProgress from '../../components/common/StepPrgoress/StepProgress';
 import FastDiaryStep1 from '../../components/FastDiarySteps/FastDiaryStep1'
 import FastDiaryStep2 from '../../components/FastDiarySteps/FastDiaryStep2'
@@ -18,6 +19,7 @@ export default function FastDiary(){
     const today = date.getDate();
 
     const navigate = useNavigate();
+    const resetKeywords = useResetKeywords();
     const [isOpen, openModal, closeModal] = useModal();
     const [Funnel, Step, currentStep, setCurrentStep] = useFunnel("DiaryStep1");
 
@@ -47,10 +49,25 @@ export default function FastDiary(){
             setCurrentStep(steps[prevStepIndex].name);
         
     }   
+    const handleGoMain=()=>{
+        resetKeywords();
+        navigate('/main');
+    };
     
     return(
         <S.FastDairyPageWrapper $isEven = {today%2}>
-            {isOpen && <HomeModal closeModal = {closeModal}/>}
+            {isOpen && 
+                <OptionModal 
+                closeModal={closeModal} 
+                handleOption={handleGoMain}
+                optionText='홈으로 돌아가기'
+                closeText='이어서 기록하기'
+                >
+                    홈으로 되돌아가시겠습니까?
+                    <br />
+                    되돌아가면 감정과 글은 초기화됩니다.
+                </OptionModal>  
+            }
 
             <S.HoneyBearWrapper>
                 <S.HoneyBear height='30.5rem'/>

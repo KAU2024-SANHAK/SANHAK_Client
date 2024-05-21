@@ -1,7 +1,7 @@
 import * as S from './Share.style'
 import { shareKakao } from '../../../../utils/shareKakao'
 
-export default function Share({title, image}){
+export default function BtnShare({title, image}){
 
     const handleShare = () => {
         shareKakao(title, image)

@@ -15,7 +15,7 @@ export const MenuWrapper = styled.div`
     height: 10rem;
     background-color: white;
     border-radius: 3rem;
-    position: absolute;
+    position: fixed;
     right: 2.7rem;
     top: 10rem;
 `
@@ -32,4 +32,7 @@ export const DeleteBtn = styled.button`
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     background-color: transparent;
+`
+export const ButtonField = styled.div`
+    width: 37.5rem;
 `
