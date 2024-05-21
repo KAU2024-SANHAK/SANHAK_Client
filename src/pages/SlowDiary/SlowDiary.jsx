@@ -49,13 +49,13 @@ export default function SlowDiary(){
  };
 
  const handleDate = (text) => {
-      const date = new Date(text);
-      const year = date.getFullYear();
-      const month = date.getMonth() + 1;
-      const day = date.getDate();
-      const newDate = `${year}년 ${month}월 ${day}일`;
-      
-      text = newDate;
+    const date = new Date(text);
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const newDate = `${year}년 ${month}월 ${day}일`;
+    
+    text = newDate;
 
     return text;
   };
@@ -86,7 +86,7 @@ export default function SlowDiary(){
         onSuccess: (response) => {
           const data = response.data;
 
-          setImage(data.imageurl);
+          setImage(data.imageUrl);
           setContent(parseString(data.diaryContent));
           setTitle(parseString(data.diaryTitle));
           setId(data.diaryId);
