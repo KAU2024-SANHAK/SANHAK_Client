@@ -1,21 +1,17 @@
-import { useNavigate } from "react-router-dom"
-import * as S from "./MyPageButton.style"
+import { useNavigate } from 'react-router-dom';
+import * as S from './MyPageButton.style';
 
 export default function MyPageButton() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const handleClick = () => {
-        navigate('/mypage')
-    }
+  const handleClick = () => {
+    navigate('/mypage');
+  };
 
-    return (
-        <S.Wrapper onClick={handleClick}>
-            <S.MyPageIconWrapper>
-                <S.MyPageIcon/>
-            </S.MyPageIconWrapper>
-            <S.MyPageButtonText>
-                마이페이지
-            </S.MyPageButtonText>
-        </S.Wrapper>
-    )
+  return (
+    <S.Wrapper onClick={handleClick}>
+      <S.MyPageIcon />
+      <S.MyPageButtonText>마이페이지</S.MyPageButtonText>
+    </S.Wrapper>
+  );
 }
