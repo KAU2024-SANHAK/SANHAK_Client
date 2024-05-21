@@ -25,20 +25,18 @@ export const CloseBtn = styled.div`
     width: 3rem;
     height: 3rem;
     border-radius: 1.5rem;
-    background-color: white;
-    position: fixed;
-    top: 25.8rem;
-    right: 3rem;
+    background: white;
+    position: absolute;
+    top: 17rem;
+    left: 31.6rem;
 `
 export const XBtn = styled(IcXBtn)`
 
 `
 export const PopUpWrapper = styled.div`
-    width: 100vh;
-    height: 100vh;
     position: fixed;
-    bottom: 0rem;
-    left: 0rem;
+    bottom: 57.5rem;
+    margin-right: 37.5rem;
 `
 export const HoneyBearWrapper = styled.div`
     position: fixed;

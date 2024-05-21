@@ -3,9 +3,10 @@ import styled from "styled-components";
 
 export const DiaryViewPopUpWrapper=styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
-    height: 100vh;
-    bottom: 0rem;
-    z-index:10;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+
 `
 export const ReplyWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
@@ -13,7 +14,7 @@ export const ReplyWrapper = styled.div`
     width: 32rem;
     background-color: white;
     border-radius: 30px;
-    position: fixed;
+    position: absolute;
     bottom: 2.4rem;
     overflowY: auto;
 `
@@ -32,21 +33,21 @@ export const Kind = styled.p`
 `
 export const BtnWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({})};
-    position: fixed;
-    top: 30.4rem;
-    left: 6rem;
+    position: absolute;
+    top: 8rem;
+    left: 6.2rem;
 `
 export const SpicyTextWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     width: 8.5rem;
     height: 7rem;
     border-radius: 2rem;
-    background-color: ${props => props.selected ? 'white' : 'trnasparent'};
+    background-color: ${props => props.selected ? 'white' : 'transparent'};
 `
 export const KindTextWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     width: 8.5rem;
     height: 7rem;
     border-radius: 2rem;
-    background-color: ${props => props.selected ? 'white' : 'trnasparent'};
+    background-color: ${props => props.selected ? 'white' : 'transparent'};
 `

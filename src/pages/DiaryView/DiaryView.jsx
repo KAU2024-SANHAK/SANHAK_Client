@@ -56,36 +56,35 @@ export default function DiaryView() {
           <BtnShowAdvice handleClick={isAdvice ?() => {handleResponse()}: () => {handleRequest()}}>
             {isAdvice ? '답장 보러가기' : '답장 생성하기'}
           </BtnShowAdvice>
-
-            {isClick === true ? (
-              <S.PopUpWrapper>
-
-                <S.HoneyBearWrapper>
-                  <S.HoneyBear height='17rem'/>
-                </S.HoneyBearWrapper>
-
-                <PopUp name="꿀비의 답장">
-                  {mutation.isPending ?
-                    <CircleLoading>
-                      조언을 생성 중입니다.
-                    </CircleLoading> 
-                  : 
-                    <DiaryViewPopUp 
-                      spicy={advice.spicy} 
-                      kind={advice.kind} 
-                    />
-                  }
-                  
-                  <S.CloseBtn onClick={()=>{setIsClick(false)}} >
-                    <S.XBtn />
-                  </S.CloseBtn>
-
-                </PopUp>
-
-              </S.PopUpWrapper>    
-            ) : null}
-
         </S.GoToReplyBtnWrapper>
+        
+        {isClick === true ? (
+            <S.PopUpWrapper>
+
+              {/* <S.HoneyBearWrapper>
+                <S.HoneyBear height='17rem'/>
+              </S.HoneyBearWrapper> */}
+
+              <PopUp name="꿀비의 답장">
+                {mutation.isPending ?
+                  <CircleLoading>
+                    조언을 생성 중입니다.
+                  </CircleLoading> 
+                : 
+                  <DiaryViewPopUp 
+                    spicy={advice.spicy} 
+                    kind={advice.kind} 
+                  />
+                }
+                
+                <S.CloseBtn onClick={()=>{setIsClick(false)}} >
+                  <S.XBtn />
+                </S.CloseBtn>
+
+              </PopUp>
+
+            </S.PopUpWrapper>    
+          ) : null}
     </S.DiaryViewPageWrapper>
   );
 }
