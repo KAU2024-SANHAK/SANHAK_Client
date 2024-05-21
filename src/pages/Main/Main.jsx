@@ -34,7 +34,9 @@ function Main() {
       </Slider>
 
       <S.WriteDiaryButtonWrapper>
-        <WriteDiaryButton />
+        <S.BtnWrapper>
+          <WriteDiaryButton />
+        </S.BtnWrapper>
       </S.WriteDiaryButtonWrapper>
 
       <S.MainStepWrapper>
