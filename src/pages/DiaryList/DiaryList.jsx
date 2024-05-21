@@ -14,25 +14,39 @@ export default function DiaryList(){
     navigate('/searchbyemotion');
   };
 
+  const fillTheBlank = () => {
+    const additions = [];
+    for (let i = 0; i < numOfAdditions; i++) {
+      additions.push(<S.BackgroundAddition key={i} />);
+    }
+    return additions;
+  };
+
+  const numOfAdditions = Math.max(4 - diaryList.length, 0);
+
   console.log(diaryList)
   return(       
     <S.DiaryListWrapper>
-
       <S.BackButtonWrapper>
-        <BtnBack handleClick={() => {handleBackButton()}}/>
+        <BtnBack handleClick={handleBackButton} />
       </S.BackButtonWrapper>
 
       <S.DiaryListComponentWrapper>
-          {diaryList.map((item) => (
-            <DiaryListComponent
-              key = {item.diaryId}
-              feelingListId = {item.diaryId}
-              feelingListTitle = {item.diaryTitle}
-              feelingListDate = {item.createdDate}
-              imageUrl = {item.imageUrl}
-            />
-          ))}
+        {diaryList.map((item) => (
+          <DiaryListComponent
+            key={item.diaryId}
+            feelingListId={item.diaryId}
+            feelingListTitle={item.diaryTitle}
+            feelingListDate={item.createdDate}
+            imageUrl={item.imageUrl}
+          />
+        ))}
       </S.DiaryListComponentWrapper>
+      
+      {console.log(numOfAdditions)}
+
+      {fillTheBlank()}
+
     </S.DiaryListWrapper>
   );
 }

@@ -10,19 +10,15 @@ export const CalendarComponentWrapper = styled.div`
     .react-datepicker__month-container {
         width: 32rem;
         border-radius: 3rem;
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.7);
         backdrop-filter: blur(1.5rem);
         border: none;
     }
-
-    // 달력 년,월 표시 / 월 이동 화살표 / 요일 컴포넌트 포함
     .react-datepicker__header {
         background: transparent;
         border-radius: 3rem;
         border: none;
     }
-
-    // S M T ... 요일 컴포넌트 아래부분
     .react-datepicker__month {
         height: auto;
         margin-bottom: 2.1rem;
@@ -30,25 +26,40 @@ export const CalendarComponentWrapper = styled.div`
     .react-datepicker__week {
     }
     .react-datepicker__day {
-        // justify-content: center;
-        padding: 1.2rem 2.5rem 1.2rem 1.2rem;
         ${({ theme }) => theme.fonts.body_08};
+        height: 4.5rem;
+        width: 4rem;
+        margin: 0.1rem 0.1rem 0.1rem 0.1rem;
+        padding: 1rem 0 0 0;
+        text-align: center;
     }
-    .react-datepicker__day--highlighted{
-        background-color: pink;
+    .react-datepicker__day--highlighted {
+        position: relative;
+        background-color: transparent;
+        color: black;
+    }
+    .react-datepicker__day--highlighted::after {
+        content: '';
+        position: absolute;
+        width: 4rem;
+        bottom: 0.4rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 0.4rem;
+        background-color: #FE693D;
     }
     .react-datepicker__day-names {
-        padding: 0.9rem;
+        padding: 0.9rem 0 0.9rem 0;
         margin: 0.9rem 0.9rem 0 0.9rem;
-        justify-content : center;
-        align-items : center;
         border-top: 0.2rem solid white;
         border-bottom: 0.2rem solid white;
     }
     .react-datepicker__day-name {
-        padding: 0 2.5rem 0 1.2rem;
         ${({ theme }) => theme.fonts.body_08};
         justify-content : center;
+        width: 3.85rem;
         align-items : center;
     }
     .react-datepicker__day--weekend {
@@ -60,7 +71,6 @@ export const CalendarComponentWrapper = styled.div`
         height: 4rem;
         color: white;
     }
-    // 여기바뀜
     .react-datepicker__day--keyboard-selected {
         background: transparent;
     }
@@ -72,8 +82,8 @@ export const CalendarComponentWrapper = styled.div`
 `;
 export const HeaderWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({})};
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-top: 2.3rem;
+    margin-bottom: 2.3rem;
 `
 export const CustomDatePicker = styled(DatePicker)`
 `
@@ -105,12 +115,4 @@ export const MonthSelector = styled.select`
 
 `
 export const MonthOption = styled.option`
-`
-export const CloseBtn = styled.div`
-    position: absolute;
-    top: -0.5rem;
-    left: 31.6rem;
-    background-color: black;
-    height: 3rem;
-    width: 3rem;
 `

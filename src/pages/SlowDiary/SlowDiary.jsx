@@ -3,14 +3,14 @@ import { useState } from 'react';
 import { useModal } from '../../hooks/common/useModal';
 import { useFileReader } from '../../hooks/common/useFileReader';
 import { useNavigate } from 'react-router-dom';
-import { diaryImage, diaryContent, diaryTitle, diaryId } from '../../recoil/atoms';
+import { diaryImage, diaryContent, diaryTitle, diaryId, createdDate } from '../../recoil/atoms';
 import { useRecoilState } from 'recoil';
-import parse from 'html-react-parser';
+// import parse from 'html-react-parser';
 import usePostSlowDiary from '../../hooks/queries/slowdiary/usePostSlowDiary';
 import usePatchDiary from '../../hooks/queries/slowdiary/usePatchDiary';
 import BtnHome from '../../components/common/buttons/Home/BtnHome';
 import BtnNext from '../../components/common/buttons/Next/BtnNext';
-import HomeModal from '../../components/Modal/HomeModal';
+import OptionModal from '../../components/Modal/OptionModal';
 
 export default function SlowDiary(){
   const date = new Date();
@@ -25,6 +25,7 @@ export default function SlowDiary(){
   const [image, setImage] = useRecoilState(diaryImage);
   const [title, setTitle] = useRecoilState(diaryTitle);
   const [content, setContent] = useRecoilState(diaryContent);
+  const [diaryDate, setDiaryDate] = useRecoilState(createdDate);
   const [id, setId] = useRecoilState(diaryId);
 
   const [data, setData] = useState({
@@ -41,15 +42,23 @@ export default function SlowDiary(){
   const blobContent = new Blob([JSON.stringify(data.diaryContent)],{
     type: 'application/json',
   });
-  
-  const deleteQuotes = (text) => {
-    return text.substring(1, text.length-1);
-  };
 
   const parseString =(text) =>{
     text = text.replace(/\\n/g, '\n');
     return text.substring(1, text.length-1);
  };
+
+ const handleDate = (text) => {
+    const date = new Date(text);
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const newDate = `${year}년 ${month}월 ${day}일`;
+    
+    text = newDate;
+
+    return text;
+  };
 
   const handleChange = (event) => {
     setData({...data, [event.target.name] : event.target.value});
@@ -77,10 +86,11 @@ export default function SlowDiary(){
         onSuccess: (response) => {
           const data = response.data;
 
-          setImage(data.imageurl);
+          setImage(data.imageUrl);
           setContent(parseString(data.diaryContent));
           setTitle(parseString(data.diaryTitle));
           setId(data.diaryId);
+          setDiaryDate(handleDate(data.createdDate));
           navigate('/diaryview');
         }
       });
@@ -109,12 +119,23 @@ export default function SlowDiary(){
       
   };
 
+  const handleGoMain=()=>{
+    navigate('/main');
+  };
+
   return(
     <S.SlowDiaryPageWrapper  $isEven = {today%2}>
       {isOpen && 
-        <HomeModal 
-          closeModal={closeModal} 
-        />  
+        <OptionModal 
+        closeModal={closeModal} 
+        handleOption={handleGoMain}
+        optionText='홈으로 돌아가기'
+        closeText='이어서 기록하기'
+        >
+          홈으로 되돌아가시겠습니까?
+          <br />
+          되돌아가면 글은 초기화됩니다.
+        </OptionModal>  
       }
       <S.SlowDiaryHeader>
         <BtnHome

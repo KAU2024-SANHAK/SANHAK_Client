@@ -6,10 +6,17 @@ export const Wrapper = styled.div`
 `
 export const MainStepWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
-    left: 15rem;
+    width: 37.5rem;
+    position: fixed;
+    top: 1rem;
 `
 export const WriteDiaryButtonWrapper = styled.div`
     position: fixed;
+    bottom: 0rem;
+    width: 37.5rem;
+`
+export const BtnWrapper = styled.div`
+    position: absolute;
     bottom: 0rem;
     right: 0rem;
 `

@@ -1,33 +1,34 @@
 import * as S from './CreatedDiary.style';
-import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import BtnBack from '../common/buttons/Back/BtnBack';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { diaryFeeling, diaryImage } from '../../recoil/atoms';
-import { diaryId } from '../../recoil/atoms';
 import usePostFeeling from '../../hooks/queries/create/usePostFeeling';
+import usePostAiImage from '../../hooks/queries/create/usePostAiImage';
 import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
 import BtnShowFeeling from '../common/buttons/ShowFeeling/BtnShowFeeling';
 import Loading from '../../pages/Loading/Loading';
+import createImgBtn from '../../assets/img/createImgBtn.png';
+import CircleLoading from '../Loading/CircleLoading/CircleLoading';
 
-
-export default function CreatedDiary({ title, date, content, id, image }) {
+export default function CreatedDiary({ title, date, content, id }) {
   const navigate = useNavigate();
-  const img = useRecoilValue(diaryImage);
   const [feeling, setFeeling] = useRecoilState(diaryFeeling);
   const isFeeling = feeling !== 'NONE' && feeling !== '';
-  const mutation = usePostFeeling();
-  const {resetAdvice, resetContent, resetTitle, resetFeeling, resetId, resetImage} = useResetDiary();
+  const [image, setImage] = useRecoilState(diaryImage);
+  const isImage = image !== null && image !== ''&& image !== undefined;
+  const postFeelingMutation = usePostFeeling();
+  const postImageMutation = usePostAiImage();
 
+  console.log(image)
   const requestFeeling = () => {
     const body = {
       diaryId: id,
     };
-    mutation.mutate(body, {
+    postFeelingMutation.mutate(body, {
       onSuccess: (response) => {
-        console.log(response.data.feeling)
+        console.log(response.data.feeling);
         setFeeling(response.data.feeling);
-        console.log(feeling)
+        console.log(feeling);
         navigate('/emotionview');
       },
     });
@@ -37,49 +38,64 @@ export default function CreatedDiary({ title, date, content, id, image }) {
     navigate('/emotionview');
   };
 
-  const handleBack = () => {
-    resetAdvice();
-    resetContent();
-    resetTitle();
-    resetFeeling();
-    resetId();
-    resetImage();
-    navigate('/main');
+  const handleImage = () => {
+    const body = {
+      diaryId: id,
+    };
+    postImageMutation.mutate(body, {
+      onSuccess: (response) => {
+        const data = response.data;
+        console.log(response);
+        setImage(data.image_url);
+      },
+    });
   };
 
-  if(mutation.isPending){
-    return <Loading />
+  if (postFeelingMutation.isPending) {
+    return <Loading />;
   }
+
   return (
     <S.CreatedDiaryWrapper>
-      <S.HeaderWrapper>
-        <S.BtnBackWrapper>
-          <BtnBack handleClick={handleBack} />
-        </S.BtnBackWrapper>
-        <S.TodayEmotionBtnWrapper>
-          <BtnShowFeeling handleClick={isFeeling ? responseFeeling : requestFeeling}>
-            {isFeeling ? '오늘의 감정 보러가기' : '오늘의 감정 생성하기'}
-          </BtnShowFeeling>
-        </S.TodayEmotionBtnWrapper>
-      </S.HeaderWrapper>
 
       <S.CreatedDiaryComponentWrapper>
         <S.DiaryTopTextWrapper>
           <S.DiaryTitle>{title}</S.DiaryTitle>
-          <S.DiaryDate>{date}</S.DiaryDate>
-        </S.DiaryTopTextWrapper>
 
-        <S.DiaryPhoto 
-          src={img} 
-        />
+          <S.DiaryTopInfoWrapper>
+            <S.DiaryDate>{date}</S.DiaryDate>
+            <S.TodayEmotionBtnWrapper>
+              <BtnShowFeeling handleClick={isFeeling ? responseFeeling : requestFeeling}>
+                {isFeeling ? '오늘의 감정 보러가기' : '오늘의 감정 생성하기'}
+              </BtnShowFeeling>
+            </S.TodayEmotionBtnWrapper>
+          </S.DiaryTopInfoWrapper>
+
+          {isImage ? (
+            <S.DiaryPhoto src={image} />
+          ) : (
+            <S.PhotoBtnWrapper onClick={handleImage}>
+              {postImageMutation.isPending ? 
+                <CircleLoading>
+                  이미지를 생성 중입니다.
+                </CircleLoading>
+              :
+                <S.BtnImage src={createImgBtn} />
+              }
+            </S.PhotoBtnWrapper>
+          )}
+
+
+        </S.DiaryTopTextWrapper>
 
         <S.DiaryTextWrapper>
           <S.DiaryText>
-            {
-              content.split('\\n').map( line => {
-                return (<span>{line}<br/></span>)
-              })
-            }
+            {content.split('\\n').map((line, idx) => (
+              <span key={idx}>
+                {line}
+                <br />
+              </span>
+            ))}
           </S.DiaryText>
         </S.DiaryTextWrapper>
       </S.CreatedDiaryComponentWrapper>

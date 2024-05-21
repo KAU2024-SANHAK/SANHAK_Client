@@ -4,6 +4,10 @@ export const DiaryListWrapper=styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     background-color: ${({ theme }) => theme.colors.pink.white_pink};
     width: 100%;
+    min-height: 100vh;
+    height: auto;
+    max-height: fit-content;
+    justify-content: start;
 `
 export const BackButtonWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({})};
@@ -14,4 +18,8 @@ export const DiaryListComponentWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     margin: 2.8rem 0 4.4rem 0;
     gap: 0.8rem;
+`
+export const BackgroundAddition = styled.div`
+    width: 32.0rem;
+    height: 11.5rem;
 `

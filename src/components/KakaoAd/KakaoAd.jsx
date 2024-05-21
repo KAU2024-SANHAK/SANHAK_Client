@@ -16,12 +16,11 @@ function KakaoAd() {
 
   return (
     <>
-      ...
       <div ref={scriptElement}>
         <ins
           className='kakao_ad_area'
           style={{ display: 'none' }}
-          data-ad-unit='DAN-ytHqaFvCnFxYtiTK'
+          data-ad-unit='DAN-bisaH2yt9uz5j8VF'
           data-ad-width='320'
           data-ad-height='50'
           data-ad-onfail={<KakaoAdCallback />}

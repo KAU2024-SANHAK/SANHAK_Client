@@ -12,29 +12,32 @@ export default function MainStep2() {
   const diaries = useRecoilValue(clickedDiary);
   
   return (
-    <S.MainStep2Wrapper>
-      <S.MainStep2HoneyBearWrapper>
-        <HoneyBearMainStep2 />
-      </S.MainStep2HoneyBearWrapper>
+    <S.Main2Wrapper>
+      <S.MainStep2Wrapper>
+        <S.MainStep2HoneyBearWrapper>
+          <HoneyBearMainStep2 />
+        </S.MainStep2HoneyBearWrapper>
 
-      <S.MainStep2ComponentWrapper>
-        <Calendar />
-        {diaries.length > 0 ? (
-          diaries.map(item => (
-            <DiaryListComponent
-              key={item.diaryId}
-              feelingListId={item.diaryId}
-              feelingListTitle={item.diaryTitle}
-              feelingListDate={format(new Date(item.createdDate), "yyyy년 M월 d일")}
-              imageUrl={item.imageUrl}
-            />
-          ))
-        ) : (
-          <S.NoDiaryExist>
-            아직 작성된 일기가 없습니다.
-          </S.NoDiaryExist>
-        )}
-      </S.MainStep2ComponentWrapper>
-    </S.MainStep2Wrapper>
+        <S.MainStep2ComponentWrapper>
+          <Calendar />
+          {diaries.length > 0 ? (
+            diaries.map(item => (
+              <DiaryListComponent
+                key={item.diaryId}
+                feelingListId={item.diaryId}
+                feelingListTitle={item.diaryTitle}
+                feelingListDate={format(new Date(item.createdDate), "yyyy년 M월 d일")}
+                imageUrl={item.imageUrl}
+              />
+            ))
+          ) : (
+            <S.NoDiaryExist>
+              아직 작성된 일기가 없습니다.
+            </S.NoDiaryExist>
+          )}
+        </S.MainStep2ComponentWrapper>
+      </S.MainStep2Wrapper>
+    </S.Main2Wrapper>
+    
   );
 }

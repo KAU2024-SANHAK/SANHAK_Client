@@ -7,17 +7,20 @@ import KakaoAd from '../../KakaoAd/KakaoAd';
 
 export default function MainStep1() {
   return (
-    <S.MainStep1Wrapper>
-      <S.MainStep1HoneyBearWrapper>
-        <HoneyBearMainStep1 />
-      </S.MainStep1HoneyBearWrapper>
+    <S.Main1Wrapper>
+      <S.MainStep1Wrapper>
+        <S.MainStep1HoneyBearWrapper>
+          <HoneyBearMainStep1 />
+        </S.MainStep1HoneyBearWrapper>
 
-      <S.MainButtonWrapper>
-        <MyPageButton />
-        <SearchByEmotionButton />
-        <ThisMonthEmotion />
-      </S.MainButtonWrapper>
-      <KakaoAd />
-    </S.MainStep1Wrapper>
+        <S.MainButtonWrapper>
+          <MyPageButton />
+          <SearchByEmotionButton />
+          <ThisMonthEmotion />
+        </S.MainButtonWrapper>
+        <KakaoAd />
+      </S.MainStep1Wrapper>
+    </S.Main1Wrapper>
+    
   );
 }

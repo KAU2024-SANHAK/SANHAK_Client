@@ -4,15 +4,27 @@ import { IcXBtn } from '../../assets/svg';
 
 export const DiaryViewPageWrapper=styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
+    background-color: ${({ theme }) => theme.colors.pink.white_pink};
     width: 100%;
-    // ${({ theme }) => theme.colors.gradient.gradient_pink};
-    background: lightpink;
-    // padding-bottom: 20.2rem;
+    min-height: 100vh;
+    height: auto;
+    max-height: fit-content;
+    justify-content: space-between;
 `
-export const Filter = styled.div`
-    ${({ theme: { mixin } }) => mixin.flexCenter({})};
+export const HeaderWrapper = styled.div`
+    ${({ theme: { mixin } }) => mixin.flexBox({})};
     width: 100%;
-    background: rgba(255, 255, 255, 0.50);
+    margin-top: 3.2rem;
+    justify-content: space-between;
+`
+export const BtnBackWrapper = styled.div`
+    padding-left: 2rem;
+    
+`
+export const ExtraBtnWrapper = styled.div`
+    ${({ theme: { mixin } }) => mixin.flexCenter({direction:'row'})};
+    background-color: transparent;
+    padding-right: 2rem;
 `
 export const CreatedDiaryWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
@@ -28,20 +40,18 @@ export const CloseBtn = styled.div`
     width: 3rem;
     height: 3rem;
     border-radius: 1.5rem;
-    background-color: white;
-    position: fixed;
-    top: 25.8rem;
-    right: 3rem;
+    background: white;
+    position: absolute;
+    top: 17rem;
+    left: 31.6rem;
 `
 export const XBtn = styled(IcXBtn)`
 
 `
 export const PopUpWrapper = styled.div`
-    width: 100vh;
-    height: 100vh;
     position: fixed;
-    bottom: 0rem;
-    left: 0rem;
+    bottom: 57.5rem;
+    margin-right: 37.5rem;
 `
 export const HoneyBearWrapper = styled.div`
     position: fixed;
