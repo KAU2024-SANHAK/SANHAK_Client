@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useModal } from '../../hooks/common/useModal';
 import { useFileReader } from '../../hooks/common/useFileReader';
 import { useNavigate } from 'react-router-dom';
-import { diaryImage, diaryContent, diaryTitle, diaryId } from '../../recoil/atoms';
+import { diaryImage, diaryContent, diaryTitle, diaryId, createdDate } from '../../recoil/atoms';
 import { useRecoilState } from 'recoil';
 // import parse from 'html-react-parser';
 import usePostSlowDiary from '../../hooks/queries/slowdiary/usePostSlowDiary';
@@ -25,6 +25,7 @@ export default function SlowDiary(){
   const [image, setImage] = useRecoilState(diaryImage);
   const [title, setTitle] = useRecoilState(diaryTitle);
   const [content, setContent] = useRecoilState(diaryContent);
+  const [diaryDate, setDiaryDate] = useRecoilState(createdDate);
   const [id, setId] = useRecoilState(diaryId);
 
   const [data, setData] = useState({
@@ -46,6 +47,18 @@ export default function SlowDiary(){
     text = text.replace(/\\n/g, '\n');
     return text.substring(1, text.length-1);
  };
+
+ const handleDate = (text) => {
+    const date = new Date(text);
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const newDate = `${year}년 ${month}월 ${day}일`;
+    
+    text = newDate;
+
+    return text;
+  };
 
   const handleChange = (event) => {
     setData({...data, [event.target.name] : event.target.value});
@@ -73,10 +86,11 @@ export default function SlowDiary(){
         onSuccess: (response) => {
           const data = response.data;
 
-          setImage(data.imageurl);
+          setImage(data.imageUrl);
           setContent(parseString(data.diaryContent));
           setTitle(parseString(data.diaryTitle));
           setId(data.diaryId);
+          setDiaryDate(handleDate(data.createdDate));
           navigate('/diaryview');
         }
       });
