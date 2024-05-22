@@ -11,6 +11,9 @@ export const DiaryViewPageWrapper=styled.div`
     max-height: fit-content;
     justify-content: space-between;
 `
+export const DiaryCompWrapper = styled.div`
+    width: 100%;
+`
 export const HeaderWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({})};
     width: 100%;
