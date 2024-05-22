@@ -19,7 +19,6 @@ export default function CreatedDiary({ title, date, content, id }) {
   const postFeelingMutation = usePostFeeling();
   const postImageMutation = usePostAiImage();
 
-  console.log(image)
   const requestFeeling = () => {
     const body = {
       diaryId: id,
