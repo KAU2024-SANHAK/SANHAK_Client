@@ -120,7 +120,7 @@ export default function DiaryView() {
               </S.HoneyBearWrapper> */}
 
               <PopUp name="꿀비의 답장">
-                {mutation.isPending ?
+                {postMutation.isPending ?
                   <CircleLoading>
                     조언을 생성 중입니다.
                   </CircleLoading> 
