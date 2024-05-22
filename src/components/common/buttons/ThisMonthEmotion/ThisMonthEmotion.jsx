@@ -2,16 +2,38 @@ import * as S from "./ThisMonthEmotion.style";
 import { convertFeelingText } from "../../../../utils/convertFeelingText";
 import useGetSummary from "../../../../hooks/queries/main/useGetSummary";
 import FeelingHoneyBear from "../../HoneyBear/FeelingHoneyBear";
+import usePostPlaylist from "../../../../hooks/queries/main/usePostPlaylist";
 
 export default function ThisMonthEmotion() {
   const { data, isLoading, isError } = useGetSummary();
-  //진학이가 감정 수정하면 convert 진행
   const firstFeeling = data.data.firstFeeling;
   const secondFeeling = data.data.secondFeeling;
-  console.log(data);
-  convertFeelingText(firstFeeling)
+  const mutation = usePostPlaylist();  
+
+  const handlePlaylist = () => {
+    console.log('앗')
+    const body = {      
+      'month feeling 1': "SAD",
+      'month feeling 2': "HAPPY",
+      
+    };
+    mutation.mutate(body, {
+      onSuccess: (response) => {
+        const data = response.data;
+        console.log(data);
+      }
+    });
+  };
+
   return (
     <S.Wrapper>
+      <button
+        onClick={() => {
+          handlePlaylist();
+        }}
+      >
+        임시 플리 버튼
+      </button>
       <S.HoneyBearWrapper>
         <FeelingHoneyBear 
           feeling={firstFeeling} 
