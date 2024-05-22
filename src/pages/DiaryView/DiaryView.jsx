@@ -86,24 +86,25 @@ export default function DiaryView() {
             일기를 삭제하시겠습니까?
           </OptionModal>  
         }
-
-        <S.HeaderWrapper>
-          <S.BtnBackWrapper>
-            <BtnBack handleClick={handleBack} />
-          </S.BtnBackWrapper>
-          <S.ExtraBtnWrapper>
-            <BtnShare title={title} image={image} />
-            <BtnMenu openModal={openModal}/>
-          </S.ExtraBtnWrapper>
-        </S.HeaderWrapper>
-        <S.CreatedDiaryWrapper>
-          <CreatedDiary
-            title={title}  
-            date={date}
-            content={content}
-            id={id}
-          />
-        </S.CreatedDiaryWrapper>
+        <S.DiaryCompWrapper>
+          <S.HeaderWrapper>
+            <S.BtnBackWrapper>
+              <BtnBack handleClick={handleBack} />
+            </S.BtnBackWrapper>
+            <S.ExtraBtnWrapper>
+              <BtnShare title={title} image={image} />
+              <BtnMenu openModal={openModal}/>
+            </S.ExtraBtnWrapper>
+          </S.HeaderWrapper>
+          <S.CreatedDiaryWrapper>
+            <CreatedDiary
+              title={title}  
+              date={date}
+              content={content}
+              id={id}
+            />
+          </S.CreatedDiaryWrapper>
+        </S.DiaryCompWrapper>
         
         <S.GoToReplyBtnWrapper>
           <BtnShowAdvice handleClick={isAdvice ?() => {handleResponse()}: () => {handleRequest()}}>
@@ -119,7 +120,7 @@ export default function DiaryView() {
               </S.HoneyBearWrapper> */}
 
               <PopUp name="꿀비의 답장">
-                {postMutation.isPending ?
+                {mutation.isPending ?
                   <CircleLoading>
                     조언을 생성 중입니다.
                   </CircleLoading> 
