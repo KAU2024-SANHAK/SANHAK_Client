@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const LoadingWrapper = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
   background: ${({ theme: { colors } }) => colors.pink.white_pink};
-  width: 100%;
+  width: 37.5rem;
   height: 100vh;
   position: fixed;
   bottom: 0;
