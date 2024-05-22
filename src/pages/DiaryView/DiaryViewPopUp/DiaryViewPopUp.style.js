@@ -16,11 +16,11 @@ export const ReplyWrapper = styled.div`
     border-radius: 30px;
     position: absolute;
     bottom: 2.4rem;
-    overflowY: auto;
 `
 export const ReplyTextWrapper = styled.p`
     ${({ theme }) => theme.fonts.body_08};
     margin: 4rem 2.5rem 4rem 2.5rem;
+    overflow: scroll;
     
 `
 export const Spicy = styled.p`
