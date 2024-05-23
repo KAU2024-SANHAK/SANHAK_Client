@@ -16,6 +16,7 @@ import DiaryList from '../pages/DiaryList/DiaryList';
 import LoginCallback from '../components/common/buttons/KakaoLogin/LoginCallback/LoginCallback';
 import FallbackUI from '../pages/FallbackUI/FallbackUI';
 import Loading from '../pages/Loading/Loading';
+import SharedView from '../pages/SharedView/SharedView';
 
 /*이런 식으로 작성하기*/
 const router = createBrowserRouter([
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
         element: <DiaryView />,
       },
       {
+        path: '/diary:id',
+        element: <SharedView />,
+      },
+      {
         path: '/mypage',
         element: <MyPage />,
       },
@@ -74,14 +79,6 @@ const router = createBrowserRouter([
       {
         path:"/emotionview",
         element: <EmotionView/>
-      },
-      {
-        path: '/mypage/characterwiki',
-        element: <CharacterWiki />,
-      },
-      {
-        path:"/searchbyemotion/diarylist",
-        element: <DiaryList />
       },
       {
         path:"/apiloading",
