@@ -43,8 +43,6 @@ export default function DiaryList(){
         ))}
       </S.DiaryListComponentWrapper>
       
-      {console.log(numOfAdditions)}
-
       {fillTheBlank()}
 
     </S.DiaryListWrapper>
