@@ -57,7 +57,7 @@ const router = createBrowserRouter([
         element: <DiaryView />,
       },
       {
-        path: '/diary:id',
+        path: '/diary/:id',
         element: <SharedView />,
       },
       {

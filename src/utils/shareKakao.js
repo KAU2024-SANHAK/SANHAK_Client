@@ -1,5 +1,5 @@
 
-export const shareKakao = (diaryTitle, diaryImage) => {
+export const shareKakao = (diaryTitle, diaryImage, diaryId) => {
   if(window.Kakao){
     console.log(diaryTitle)
 
@@ -18,10 +18,10 @@ export const shareKakao = (diaryTitle, diaryImage) => {
           //배포 url로 수정
           mobileWebUrl: `${
             import.meta.env.VITE_LOCAL_URL
-          }diaryview`,
+          }diary/${diaryId}`,
           webUrl: `${
             import.meta.env.VITE_LOCAL_URL
-          }diaryview`,
+          }diary/${diaryId}`,
         },
       },
       buttons: [
@@ -31,10 +31,10 @@ export const shareKakao = (diaryTitle, diaryImage) => {
             //배포 url로 수정
             mobileWebUrl: `${
               import.meta.env.VITE_LOCAL_URL
-            }diaryview`,
+            }diary/${diaryId}`,
             webUrl: `${
               import.meta.env.VITE_LOCAL_URL
-            }diaryview`,
+            }diary/${diaryId}`,
           },
         },
       ],

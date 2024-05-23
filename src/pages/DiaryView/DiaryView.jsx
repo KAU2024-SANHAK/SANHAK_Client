@@ -94,7 +94,7 @@ export default function DiaryView() {
               <BtnBack handleClick={handleBack} />
             </S.BtnBackWrapper>
             <S.ExtraBtnWrapper>
-              <BtnShare title={title} image={image} />
+              <BtnShare title={title} image={image} id={id}/>
               <BtnMenu openModal={openModal}/>
             </S.ExtraBtnWrapper>
           </S.HeaderWrapper>
