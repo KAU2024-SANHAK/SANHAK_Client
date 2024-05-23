@@ -5,6 +5,7 @@ export const Wrapper = styled.button`
     ${({ theme: { mixin } }) => mixin.flexBox({})};
     justify-content: center;
     ${({ theme }) => theme.fonts.heading_01};
+    color: black;
     width: 17.8rem;
     margin-left: 1rem;
     background: transparent;

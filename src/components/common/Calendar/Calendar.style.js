@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css'; 
 
 export const CalendarComponentWrapper = styled.div`
+    ${({ theme }) => theme.fonts.body_08};
     .react-datepicker {
         border: none;
         background-color: transparent;
@@ -11,6 +12,10 @@ export const CalendarComponentWrapper = styled.div`
         width: 32rem;
         border-radius: 3rem;
         background: rgba(255, 255, 255, 0.7);
+        -webkit-backdrop-filter: blur(1.5rem);
+        -moz-backdrop-filter: blur(1.5rem);
+        -o-backdrop-filter: blur(1.5rem);
+        -ms-backdrop-filter: blur(1.5rem);
         backdrop-filter: blur(1.5rem);
         border: none;
     }
@@ -96,23 +101,4 @@ export const BtnRightWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({})};
     margin-right: 2.2rem;
     margin-left: 4rem;
-`
-export const YearSelector = styled.select`
-    ${({ theme: { mixin } }) => mixin.flexBox({})};
-    margin-left: 7rem;
-    background-color: transparent;
-    border: none;
-    ${({ theme }) => theme.fonts.heading_01};
-
-`
-export const YearOption = styled.option`
-`
-export const MonthSelector = styled.select`
-    ${({ theme: { mixin } }) => mixin.flexBox({})};
-    background-color: transparent;
-    border: none;
-    ${({ theme }) => theme.fonts.heading_01};
-
-`
-export const MonthOption = styled.option`
 `

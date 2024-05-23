@@ -29,6 +29,10 @@ export const Label = styled.label`
     height: 31.5rem;
     border-radius: 3rem;
     background: rgba(255, 255, 255, 0.50);
+    -webkit-backdrop-filter: blur(1.5rem);
+    -moz-backdrop-filter: blur(1.5rem);
+    -o-backdrop-filter: blur(1.5rem);
+    -ms-backdrop-filter: blur(1.5rem);
     backdrop-filter: blur(1.5rem);
 `
 export const TitleInput = styled.input`
@@ -37,6 +41,10 @@ export const TitleInput = styled.input`
     width: 31.5rem;
     height: 7rem;
     border-radius: 3rem;
+    -webkit-backdrop-filter: blur(1.5rem);
+    -moz-backdrop-filter: blur(1.5rem);
+    -o-backdrop-filter: blur(1.5rem);
+    -ms-backdrop-filter: blur(1.5rem);
     backdrop-filter: blur(1.5rem);
 
     outline: none;
@@ -57,6 +65,10 @@ export const ContentInput = styled.textarea`
     width: 31.5rem;
     height: 27rem;
     border-radius: 3rem;
+    -webkit-backdrop-filter: blur(1.5rem);
+    -moz-backdrop-filter: blur(1.5rem);
+    -o-backdrop-filter: blur(1.5rem);
+    -ms-backdrop-filter: blur(1.5rem);
     backdrop-filter: blur(1.5rem);
 
     outline: none;
