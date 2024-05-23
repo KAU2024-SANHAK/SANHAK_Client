@@ -30,6 +30,12 @@ export const serverInstance = axios.create({
   },
 });
 
+export const cleanHeadServerInstance = axios.create({
+  baseURL: import.meta.env.VITE_APP_SERVER_BASE_URL,
+  withCredentials: true,
+  headers: {},
+});
+
 export const aiInstance = axios.create({
   baseURL: import.meta.env.VITE_APP_AI_BASE_URL,
   withCredentials: true,
