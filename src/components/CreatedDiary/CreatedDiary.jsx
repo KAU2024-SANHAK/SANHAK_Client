@@ -15,7 +15,7 @@ import { useState } from 'react';
 export default function CreatedDiary({ title, date, content, id }) {
   const navigate = useNavigate();
   const [feeling, setFeeling] = useRecoilState(diaryFeeling);
-  const isFeeling = feeling !== 'NONE' && feeling !== '';
+  const isFeeling = feeling !== null && feeling !== '';
   const [image, setImage] = useRecoilState(diaryImage);
   const isImage = image !== null && image !== ''&& image !== undefined;
   const postFeelingMutation = usePostFeeling();
@@ -58,6 +58,11 @@ export default function CreatedDiary({ title, date, content, id }) {
       },
     });
   };
+
+  if (postFeelingMutation.isPending) {
+    return <Loading />;
+  }
+  console.log(feeling, isFeeling)
 
   return (
     <S.CreatedDiaryWrapper>
