@@ -15,16 +15,17 @@ export default function SearchByEmotionPopUp(){
   const mutation = usePostFeelingList();
   const navigate = useNavigate();
   
-  const handleDate = (list) => {
+  const handleList = (list) => {
     list.map((item) => {
       const date = new Date(item.createdDate);
       const year = date.getFullYear();
       const month = date.getMonth() + 1;
       const day = date.getDate();
       const newDate = `${year}년 ${month}월 ${day}일`;
-      
-      item.createdDate = newDate;
+      const newTitle = item.diaryTitle;
 
+      item.createdDate = newDate;
+      item.diaryTitle = newTitle.substring(1, newTitle.length-1);
     });
     
     return list;
@@ -37,8 +38,7 @@ export default function SearchByEmotionPopUp(){
 
     mutation.mutate(body, {
       onSuccess: (response) => {
-
-        setDiaryList(handleDate(response.data.feelingList));  
+        setDiaryList(handleList(response.data.feelingList));
         navigate('/searchbyemotion/diarylist');
       },
       onError: (error) => {
