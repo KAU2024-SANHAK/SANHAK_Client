@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
   border: none;
   padding: 2rem;
   gap: 1.8rem;
+  z-index: 1;
 `;
 export const MyPageButtonText = styled.p`
   ${({ theme }) => theme.fonts.caption_01};

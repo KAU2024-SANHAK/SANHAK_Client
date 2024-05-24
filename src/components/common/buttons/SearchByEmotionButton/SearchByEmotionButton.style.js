@@ -15,6 +15,7 @@ export const Wrapper = styled.div`
   border: none;
   padding: 1.5rem;
   gap: 1.3rem;
+  z-index: 1;
 `;
 export const SearchByEmotionButtonText = styled.p`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
