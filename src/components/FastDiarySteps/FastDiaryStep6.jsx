@@ -1,6 +1,14 @@
 import * as S from './FastDiaryStep.style';
 import { useRecoilState } from 'recoil';
-import { realizedKeyword, diaryContent, diaryFeeling, diaryImage, diaryTitle, diaryId, createdDate } from '../../recoil/atoms';
+import {
+  realizedKeyword,
+  diaryContent,
+  diaryFeeling,
+  diaryImage,
+  diaryTitle,
+  diaryId,
+  createdDate,
+} from '../../recoil/atoms';
 import { useKeywordNullCheck } from '../../hooks/useKeywordNullCheck';
 import { useModal } from '../../hooks/common/useModal';
 import { usePostKeywords } from '../../hooks/queries/fastdiary/usePostKeywords';
@@ -34,9 +42,9 @@ export default function FastDiaryStep6({ onNext, onPrev }) {
     const month = date.getMonth() + 1;
     const day = date.getDate();
     const newDate = `${year}년 ${month}월 ${day}일`;
-    
+
     data = newDate;
-    
+
     return data;
   };
 
@@ -48,7 +56,7 @@ export default function FastDiaryStep6({ onNext, onPrev }) {
         : mutation.mutate(diaryKeywords, {
             onSuccess: (response) => {
               const data = response.data;
-              setImage(data.imageurl)
+              setImage(data.imageurl);
               setId(data.diaryId);
               setContent(data.diaryContent);
               setTitle(data.title);
@@ -56,38 +64,33 @@ export default function FastDiaryStep6({ onNext, onPrev }) {
               setFeeling(diaryKeywords.feeling);
               onNext();
             },
-            
           });
     }
   };
-  if(mutation.isPending){
+  if (mutation.isPending) {
     return <Loading />;
   }
   return (
     <S.FastDiaryStepWrapper>
-       
-      {isOpen && 
-        <DiaryErrorModal 
-          closeModal={closeModal} 
-        >
-          모든 질문에 답변해주세요.
-        </DiaryErrorModal>
-      }
-      <LargeQuestion>
-        하루를 돌아보면서
-        <br />
-        느꼈던 것들이 있다면 말해줄래?
-      </LargeQuestion>
-
-      <S.FastDiaryTextAreaWrapper>
-        <S.InputArea
-          name='realized'
-          type='text'
-          placeholder='짧은 글로 작성해주거나 키워드를 입력해줘!'
-          value={realized}
-          onChange={handleChange}
-        />
-      </S.FastDiaryTextAreaWrapper>
+      {isOpen && (
+        <DiaryErrorModal closeModal={closeModal}>모든 질문에 답변해주세요.</DiaryErrorModal>
+      )}
+      <S.QuestionWrapper>
+        <LargeQuestion>
+          하루를 돌아보면서
+          <br />
+          느꼈던 것들이 있다면 말해줄래?
+        </LargeQuestion>
+        <S.InputPng>
+          <S.InputArea
+            name='realized'
+            type='text'
+            placeholder='짧은 글로 작성해주거나 키워드를 입력해줘!'
+            value={realized}
+            onChange={handleChange}
+          />
+        </S.InputPng>
+      </S.QuestionWrapper>
 
       <S.ButtonField>
         <BtnPrev onPrev={onPrev} />

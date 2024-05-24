@@ -24,5 +24,9 @@ export const PopUpSlide = styled(IcPopUpSlide)`
 //투명효과 적용
 export const SlideWrapper = styled.div`
     position: absolute;
+    -webkit-backdrop-filter: blur(1.5rem);
+    -moz-backdrop-filter: blur(1.5rem);
+    -o-backdrop-filter: blur(1.5rem);
+    -ms-backdrop-filter: blur(1.5rem);
     backdrop-filter: blur(1.5rem);
 `
