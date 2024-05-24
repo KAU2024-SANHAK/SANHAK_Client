@@ -23,6 +23,10 @@ export const WritingForm = styled.div`
   padding: 2.4rem;
   border-radius: 3rem;
   background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(1.5rem);
+  -moz-backdrop-filter: blur(1.5rem);
+  -o-backdrop-filter: blur(1.5rem);
+  -ms-backdrop-filter: blur(1.5rem);
   backdrop-filter: blur(1.5rem);
 `;
 export const HomeButtonWrapper = styled.div`
