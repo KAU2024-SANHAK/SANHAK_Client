@@ -2,30 +2,42 @@ import styled from 'styled-components';
 import inputCloud from '../../assets/InputCloud.png';
 
 export const FastDiaryStepWrapper = styled.div`
-  ${({ theme: { mixin } }) => mixin.flexCenter({})};
+  ${({ theme: { mixin } }) => mixin.flexBox({ direction: 'column', align: 'center' })};
+  width: 100%;
+  height: 100%;
 `;
 export const ButtonField = styled.div`
   display: flex;
   width: 100%;
   position: absolute;
   bottom: 2rem;
-  right: 2rem;
+  padding: 0 2rem;
   justify-content: flex-end;
+  margin-top: 10.8rem;
 `;
-export const FastDiaryTextAreaWrapper = styled.div`
-  ${({ theme: { mixin } }) => mixin.flexCenter({})};
+
+export const QuestionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-between;
+  width: 100%;
+  gap: 1.6rem;
+`;
+export const InputPng = styled.div`
   background-image: url(${inputCloud});
   width: 33rem;
   height: 9.7rem;
+  padding: 3.6rem 2.1rem;
   margin-left: 1rem;
-  margin-bottom: 17rem;
 `;
 export const InputArea = styled.textarea`
+  ${({ theme: { mixin } }) => mixin.flexCenter({})};
   ${({ theme }) => theme.fonts.body_06};
-  width: 27rem;
-  height: 5rem;
+  width: 100%;
   background-color: transparent;
   border: none;
+  margin-left: 1rem;
   letter-spacing: -0.0408rem;
 `;
 export const FastDiaryContentWrapper = styled.div`

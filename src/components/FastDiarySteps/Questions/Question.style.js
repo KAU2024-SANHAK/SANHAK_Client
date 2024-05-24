@@ -1,25 +1,27 @@
-import styled from 'styled-components'
-import smallSpeakCloud from '../../../assets/smallSpeakCloud.png'
-import largeSpeakCloud from '../../../assets/largeSpeakCloud.png'
+import styled from 'styled-components';
+import smallSpeakCloud from '../../../assets/smallSpeakCloud.png';
+import largeSpeakCloud from '../../../assets/largeSpeakCloud.png';
 
 export const SmallQuestionWrapper = styled.div`
-    ${({ theme: { mixin } }) => mixin.flexCenter({})};
-    background-image:url(${smallSpeakCloud});
-    display: flex;
-    bottom: 32rem;
-    width: 34rem;
-    height: 7.5rem;
-    margin-bottom: 1.3rem;
-`
+  width: 100%;
+`;
+
+export const SmallQuestionPng = styled.div`
+  background-image: url(${smallSpeakCloud});
+  width: 34rem;
+  height: 7.5rem;
+`;
 export const LargeQuestionWrapper = styled.div`
-    ${({ theme: { mixin } }) => mixin.flexCenter({})};
-    background-image:url(${largeSpeakCloud});
-    display: flex;
-    bottom: 28rem;
-    width: 34rem;
-    height: 11.8rem;
-    margin-bottom: 1.3rem;
-`
+  width: 100%;
+`;
+export const LargeQuestionPng = styled.div`
+  background-image: url(${largeSpeakCloud});
+  width: 34rem;
+  height: 11.8rem;
+`;
 export const QuestionText = styled.p`
-    ${({ theme }) => theme.fonts.heading_03};
-`
+  ${({ theme: { mixin } }) => mixin.flexCenter({})};
+  ${({ theme }) => theme.fonts.heading_03};
+  width: 100%;
+  padding-top: 3rem;
+`;
