@@ -9,7 +9,11 @@ export const Wrapper = styled.div`
   flex-shrink: 0;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.27);
-  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(1.5rem);
+  -moz-backdrop-filter: blur(1.5rem);
+  -o-backdrop-filter: blur(1.5rem);
+  -ms-backdrop-filter: blur(1.5rem);
+  backdrop-filter: blur(1.5rem);
   border: none;
   padding: 2rem;
   gap: 1.8rem;
