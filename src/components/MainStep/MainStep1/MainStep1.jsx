@@ -4,6 +4,7 @@ import SearchByEmotionButton from '../../common/buttons/SearchByEmotionButton/Se
 import HoneyBearMainStep1 from '../../common/HoneyBearMainStep1/HoneyBearMainStep1';
 import ThisMonthEmotion from '../../common/buttons/ThisMonthEmotion/ThisMonthEmotion';
 import KakaoAd from '../../KakaoAd/KakaoAd';
+import { motion } from 'framer-motion';
 
 export default function MainStep1() {
   return (
@@ -14,9 +15,22 @@ export default function MainStep1() {
         </S.MainStep1HoneyBearWrapper>
 
         <S.MainButtonWrapper>
-          <MyPageButton />
-          <SearchByEmotionButton />
-          <ThisMonthEmotion />
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.8 }}
+            transition={{ duration: 0.3 }}
+          >
+            <MyPageButton />
+          </motion.div>
+
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.8 }}
+            transition={{ duration: 0.3 }}
+          >
+            <SearchByEmotionButton />
+          </motion.div>
+          {/* <ThisMonthEmotion /> */}
         </S.MainButtonWrapper>
         <KakaoAd />
       </S.MainStep1Wrapper>

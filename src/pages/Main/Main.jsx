@@ -5,6 +5,7 @@ import React, { useState } from 'react'; // useState 추가
 import Slider from 'react-slick';
 import WriteDiaryButton from '../../components/common/buttons/WriteDiaryButton/WriteDiaryButton';
 import StepProgress from '../../components/common/StepPrgoress/StepProgress';
+import { motion } from 'framer-motion';
 
 function Main() {
   const [oldSlide, setOldSlide] = useState(0);
@@ -34,7 +35,13 @@ function Main() {
       </Slider>
 
       <S.WriteDiaryButtonWrapper>
+      <motion.div
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.8 }}
+        transition={{ duration: 0.3 }}
+      >
         <WriteDiaryButton />
+      </motion.div>
       </S.WriteDiaryButtonWrapper>
 
       <S.MainStepWrapper>
