@@ -3,9 +3,7 @@ import smallSpeakCloud from '../../../assets/smallSpeakCloud.png';
 import largeSpeakCloud from '../../../assets/largeSpeakCloud.png';
 
 export const SmallQuestionWrapper = styled.div`
-  ${({ theme: { mixin } }) => mixin.flexCenter({})};
   width: 100%;
-  height: 100%;
 `;
 
 export const SmallQuestionPng = styled.div`
@@ -14,10 +12,7 @@ export const SmallQuestionPng = styled.div`
   height: 7.5rem;
 `;
 export const LargeQuestionWrapper = styled.div`
-  ${({ theme: { mixin } }) => mixin.flexCenter({})};
-
   width: 100%;
-  height: 100%;
 `;
 export const LargeQuestionPng = styled.div`
   background-image: url(${largeSpeakCloud});

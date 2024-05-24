@@ -13,6 +13,7 @@ export const ButtonField = styled.div`
   bottom: 2rem;
   padding: 0 2rem;
   justify-content: flex-end;
+  margin-top: 10.8rem;
 `;
 
 export const QuestionWrapper = styled.div`
@@ -21,16 +22,19 @@ export const QuestionWrapper = styled.div`
   justify-content: center;
   align-content: space-between;
   width: 100%;
+  gap: 1.6rem;
 `;
 export const InputPng = styled.div`
   background-image: url(${inputCloud});
   width: 33rem;
   height: 9.7rem;
+  padding: 3.6rem 2.1rem;
+  margin-left: 1rem;
 `;
 export const InputArea = styled.textarea`
+  ${({ theme: { mixin } }) => mixin.flexCenter({})};
   ${({ theme }) => theme.fonts.body_06};
-  width: 27rem;
-  height: 100%;
+  width: 100%;
   background-color: transparent;
   border: none;
   margin-left: 1rem;
