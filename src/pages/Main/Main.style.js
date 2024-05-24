@@ -22,3 +22,26 @@ export const WriteDiaryButtonWrapper = styled.div`
   bottom: 0rem;
   width: 100%;
 `;
+export const hello = styled.div`
+  background-color: red;
+  width: 10rem;
+  height: 5rem;
+`
+export const hello2 = styled.div`
+  background-color: green;
+  width: 10rem;
+  height: 5rem;
+`
+export const MainStep1HoneyBearWrapper = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 4rem;
+  left: 8.7rem;
+`;
+export const MainStep2HoneyBearWrapper = styled.div`
+  position: absolute;
+  height: 100vh;
+  right: 9rem;
+  top: 4rem;
+`;

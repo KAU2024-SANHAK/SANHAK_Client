@@ -16,10 +16,3 @@ export const MainButtonWrapper = styled.div`
   margin-right: 11rem;
   gap: 1.5rem;
 `;
-export const MainStep1HoneyBearWrapper = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  top: 4rem;
-  left: 8.7rem;
-`;

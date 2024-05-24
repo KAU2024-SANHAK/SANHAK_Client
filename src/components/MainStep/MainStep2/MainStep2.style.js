@@ -16,12 +16,6 @@ export const MainStep2ComponentWrapper = styled.div`
   margin: 19.8rem 0 10.9rem 0;
   gap: 0.8rem;
 `;
-export const MainStep2HoneyBearWrapper = styled.div`
-  position: absolute;
-  height: 100vh;
-  right: 9rem;
-  top: 4rem;
-`;
 export const NoDiaryExist = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
   width: 32rem;
