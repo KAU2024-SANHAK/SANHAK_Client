@@ -5,11 +5,25 @@ import { useParams } from 'react-router-dom'
 export default function SharedView(){
   const { id } = useParams();
   const { data } = useGetSharedDiary(id);
-  console.log(data)
+  console.log(data.data)
+  //따옴표 파싱하기
+  const user = data.data.userName;
+  const title = data.data.diaryTitle;
+  const content = data.data.diaryContent;
+  const image = data.data.imageUrl;
 
   return(
     <S.SharedViewPageWrapper>
-
+      <S.HeaderText>
+        {user} 님의 오늘 일기
+      </S.HeaderText>
+      <S.DiaryTitle>
+        {title}
+      </S.DiaryTitle>
+      <S.DiaryImage src={image}/>
+      <S.DiaryContent>
+        {content}
+      </S.DiaryContent>
     </S.SharedViewPageWrapper>
   )
 }
