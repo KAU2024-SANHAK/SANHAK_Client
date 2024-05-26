@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom'
 export default function SharedView(){
   const { id } = useParams();
   const { data } = useGetSharedDiary(id);
-  console.log(id);
   console.log(data)
 
   return(
