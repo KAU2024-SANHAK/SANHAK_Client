@@ -67,6 +67,7 @@ function Main() {
         >
           <WriteDiaryButton />
         </motion.div>
+
       </S.WriteDiaryButtonWrapper>
 
       <S.MainStepWrapper>
