@@ -21,6 +21,7 @@
     "axios": "^1.6.8",
     "data-fns": "^1.1.0",
     "date-fns": "^3.6.0",
+    "framer-motion": "^11.2.6",
     "global": "^4.4.0",
     "html-react-parser": "^5.1.10",
     "http-proxy-middleware": "^3.0.0",

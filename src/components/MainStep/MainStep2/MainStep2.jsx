@@ -1,7 +1,6 @@
 import React from "react";
 import { format } from "date-fns"; // date-fns에서 format 함수를 가져옵니다.
 import * as S from './MainStep2.style';
-import HoneyBearMainStep2 from '../../common/HoneyBearMainStep2/HoneyBearMainStep2';
 import Calendar from '../../common/Calendar/Calendar';
 import DiaryListComponent from '../../common/DiaryListComponent/DiaryListComponent';
 
@@ -14,9 +13,6 @@ export default function MainStep2() {
   return (
     <S.Main2Wrapper>
       <S.MainStep2Wrapper>
-        <S.MainStep2HoneyBearWrapper>
-          <HoneyBearMainStep2 />
-        </S.MainStep2HoneyBearWrapper>
 
         <S.MainStep2ComponentWrapper>
           <Calendar />
