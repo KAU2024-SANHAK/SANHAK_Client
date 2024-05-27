@@ -4,6 +4,7 @@ import { useRecoilState } from "recoil";
 import { diaryContent, diaryAdvice, diaryTitle, diaryImage, diaryFeeling, createdDate, diaryId } from "../../../recoil/atoms";
 import usePostDiary from "../../../hooks/queries/etc/usePostDiary";
 import BtnSubmit from "../buttons/Submit/BtnSubmit";
+import { motion } from 'framer-motion';
 
 export default function DiaryListComponent({ feelingListId, feelingListTitle, feelingListDate, imageUrl }) {
   //이거랑 다른 부분들 꼭 hooks로 빼서 코드 정리하기 꼭
@@ -52,16 +53,22 @@ export default function DiaryListComponent({ feelingListId, feelingListTitle, fe
           {feelingListDate}
         </S.TextDate>
 
-        <BtnSubmit
-          onClick = {() => {
-            handleSearchButton();
-          }}
-          width = '18.5rem'
-          height = '4rem'
-          $color={({ theme }) => theme.colors.pink.red_pink}
-        >
-          조회하기
-        </BtnSubmit>
+        <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.8 }} // 클릭 애니메이션을 더 극적으로
+            transition={{ duration: 0.3 }}
+          >
+          <BtnSubmit
+            onClick = {() => {
+              handleSearchButton();
+            }}
+            width = '18.5rem'
+            height = '4rem'
+            $color={({ theme }) => theme.colors.pink.red_pink}
+          >
+            조회하기
+          </BtnSubmit>
+        </motion.div>
 
       </S.TextWrapper>
     </S.DiaryListComponentWrapper>
