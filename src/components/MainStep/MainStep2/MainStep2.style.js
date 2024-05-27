@@ -15,6 +15,7 @@ export const MainStep2ComponentWrapper = styled.div`
   width: 32rem;
   margin: 19.8rem 0 10.9rem 0;
   gap: 0.8rem;
+  z-index: 10;
 `;
 export const NoDiaryExist = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
