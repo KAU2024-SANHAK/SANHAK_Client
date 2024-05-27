@@ -26,7 +26,7 @@ export default function MainStep1() {
           >
             <SearchByEmotionButton />
           </motion.div>
-          {/* <ThisMonthEmotion /> */}
+          <ThisMonthEmotion />
         </S.MainButtonWrapper>
         <KakaoAd />
       </S.MainStep1Wrapper>
