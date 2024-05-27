@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { IcHoneyBear } from '../../assets/svg';
 
 export const Wrapper = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
@@ -10,6 +11,9 @@ export const Wrapper = styled.div`
     #999 100.45%
   );
 `;
+export const Honeybear = styled(IcHoneyBear)`
+
+`
 export const MainStepWrapper = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
   width: 37.5rem;
@@ -17,30 +21,19 @@ export const MainStepWrapper = styled.div`
   top: 1rem;
 `;
 export const WriteDiaryButtonWrapper = styled.div`
-  ${({ theme: { mixin } }) => mixin.flexBox({ justify: 'flex-end' })};
   position: fixed;
+  margin-left: 22.5rem;
   bottom: 0rem;
-  width: 100%;
 `;
-export const hello = styled.div`
-  background-color: red;
-  width: 10rem;
-  height: 5rem;
-`
-export const hello2 = styled.div`
-  background-color: green;
-  width: 10rem;
-  height: 5rem;
-`
 export const MainStep1HoneyBearWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100vh;
   top: 4rem;
   left: 8.7rem;
 `;
 export const MainStep2HoneyBearWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   height: 100vh;
   right: 9rem;
   top: 4rem;
