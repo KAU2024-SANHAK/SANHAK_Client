@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SharedViewPageWrapper = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
-  background-color: ${({ theme }) => theme.colors.pink.white_pink};
+  background-color: ${({ theme }) => theme.colors.pink.btn_pink};
   width: 100%;
   min-height: 100vh;
 `
@@ -28,7 +28,15 @@ export const IntroText = styled.p`
 export const DiaryTitle = styled.p`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
   ${({ theme }) => theme.fonts.heading_03};
+  width: 100%;
   padding: 1rem 0 1rem 0;
+  background: linear-gradient(
+    180deg, 
+    #FFF 7.85%, 
+    #FFF 16.84%, 
+    rgba(255, 255, 255, 0.00) 107.85%
+  );
+  border-radius: 3rem 3rem 0 3rem; 
 `
 export const DiaryContent = styled.p`
   ${({ theme }) => theme.fonts.body_02};
