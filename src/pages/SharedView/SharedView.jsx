@@ -1,7 +1,8 @@
-import BtnSubmit from '../../components/common/buttons/Submit/BtnSubmit';
-import useGetSharedDiary from '../../hooks/queries/etc/useGetSharedDiary';
 import * as S from './SharedView.style'
 import { useNavigate, useParams } from 'react-router-dom'
+import { format } from "date-fns";
+import BtnSubmit from '../../components/common/buttons/Submit/BtnSubmit';
+import useGetSharedDiary from '../../hooks/queries/etc/useGetSharedDiary';
 
 export default function SharedView(){
   const { id } = useParams();
@@ -19,6 +20,7 @@ export default function SharedView(){
  };
   //따옴표 파싱하기
   const user = data.data.userName;
+  const date = format(new Date(data.data.createdDate), "M월 d일")
   const title = parseString(data.data.diaryTitle);
   const content = parseString(data.data.diaryContent);
   const image = data.data.imageUrl;
@@ -55,7 +57,7 @@ export default function SharedView(){
       </S.Header>
 
       <S.IntroText>
-        {user} 님의 오늘 일기
+        {user} 님의 {date} 일기
       </S.IntroText>
 
       <S.DiaryTitle>
