@@ -29,7 +29,7 @@ function Start() {
         <S.Title>허니어리</S.Title>
       </S.TitleWrapper>
 
-      <HoneyBear height='34rem' />
+      <HoneyBear width='100%' />
 
       <S.ButtonField>
         {isToken ? (
