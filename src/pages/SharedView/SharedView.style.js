@@ -13,7 +13,7 @@ export const Header = styled.header`
 export const HeaderText = styled.p`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
   ${({ theme }) => theme.fonts.caption_01};
-  padding-bottom: 1rem;
+  padding: 2rem 0 1rem 0;
 `
 export const ButtonField = styled.div`
   ${({ theme: { mixin } }) => mixin.flexBox({justify:'center'})};

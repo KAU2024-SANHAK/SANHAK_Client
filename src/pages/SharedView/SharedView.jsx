@@ -7,12 +7,22 @@ export default function SharedView(){
   const { id } = useParams();
   const { data } = useGetSharedDiary(id);
   const navigate = useNavigate();
-  console.log(data.data)
+
+  const parseString =(text) =>{
+    text = text.replace(/\\n/g, '\n');
+    
+    if(text[0] === '"'){
+      return text.substring(1, text.length-1);
+    }else{
+      return text;
+    }
+ };
   //따옴표 파싱하기
   const user = data.data.userName;
-  const title = data.data.diaryTitle;
-  const content = data.data.diaryContent;
+  const title = parseString(data.data.diaryTitle);
+  const content = parseString(data.data.diaryContent);
   const image = data.data.imageUrl;
+
 
   const handleGoHome = () => {
     navigate('/start');
@@ -51,7 +61,7 @@ export default function SharedView(){
       <S.DiaryTitle>
         {title}
       </S.DiaryTitle>
-      
+
       <S.DiaryImage src={image}/>
 
       <S.DiaryContent>
