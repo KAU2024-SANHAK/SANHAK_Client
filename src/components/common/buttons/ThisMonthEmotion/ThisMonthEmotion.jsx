@@ -18,7 +18,9 @@ export default function ThisMonthEmotion() {
     };
     mutation.mutate(body, {
       onSuccess: (response) => {
-
+        const data = response.data.data;
+        console.log(data.playlist_url);
+        window.open(`${data.playlist_url}`);
       }
     });
   };
