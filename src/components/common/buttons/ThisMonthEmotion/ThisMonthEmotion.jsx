@@ -5,13 +5,13 @@ import FeelingHoneyBear from "../../HoneyBear/FeelingHoneyBear";
 import usePostPlaylist from "../../../../hooks/queries/main/usePostPlaylist";
 
 export default function ThisMonthEmotion() {
-  const { data, isLoading, isError } = useGetSummary();
+  const { data  } = useGetSummary();
   const firstFeeling = data.data.firstFeeling;
   const secondFeeling = data.data.secondFeeling;
   const mutation = usePostPlaylist();  
 
   const handlePlaylist = () => {
-    console.log('앗')
+    console.log('유튜브 플리 연결 진행')
     const body = {      
       'month feeling 1': firstFeeling,
       'month feeling 2': secondFeeling,
@@ -27,13 +27,6 @@ export default function ThisMonthEmotion() {
 
   return (
     <S.Wrapper>
-      <button
-        onClick={() => {
-          handlePlaylist();
-        }}
-      >
-        임시 플리 버튼
-      </button>
       <S.HoneyBearWrapper>
         <FeelingHoneyBear 
           feeling={firstFeeling} 
@@ -51,7 +44,11 @@ export default function ThisMonthEmotion() {
         </S.ThisMonthEmotionText>
       </S.Bubble>
       
-      <S.PlayList>
+      <S.PlayList
+        onClick={() => {
+          handlePlaylist();
+        }}
+      >
         추천 플레이리스트 보러가기
       </S.PlayList>
     </S.Wrapper>
