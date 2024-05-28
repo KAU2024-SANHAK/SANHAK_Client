@@ -10,13 +10,25 @@ export const Header = styled.header`
   backgorund-color: ${({ theme }) => theme.colors.pink.background_pink};
   width: 100%;
 `
+export const HeaderText = styled.p`
+  ${({ theme: { mixin } }) => mixin.flexCenter({})};
+  ${({ theme }) => theme.fonts.caption_01};
+  padding-bottom: 1rem;
+`
+export const ButtonField = styled.div`
+  ${({ theme: { mixin } }) => mixin.flexBox({justify:'center'})};
+  width: 100%;
+  gap: 1rem;
+  padding-bottom: 1rem;
+`
 export const IntroText = styled.p`
   ${({ theme }) => theme.fonts.heading_03};
+  padding: 1rem 0 1rem 0;
 ` 
 export const DiaryTitle = styled.p`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
   ${({ theme }) => theme.fonts.heading_03};
-  padding: 0.2rem 0.2rem 0 0.2rem;
+  padding: 1rem 0 1rem 0;
 `
 export const DiaryContent = styled.p`
   ${({ theme }) => theme.fonts.body_02};
@@ -24,15 +36,12 @@ export const DiaryContent = styled.p`
   width: 32rem;
   border-radius: 3rem;
   background: rgba(255, 255, 255, 0.7);
-  margin-top: 4rem;
-  margin-bottom: 4rem;    
-  padding-left: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 4rem;   
+  padding: 2rem 2rem 2rem 2rem;
   white-space: pre-line;
 `
-export const HeaderText = styled.p`
-  ${({ theme: { mixin } }) => mixin.flexCenter({})};
-  ${({ theme }) => theme.fonts.caption_01};
-`
+
 export const DiaryImage = styled.img`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
   width: 32rem;
