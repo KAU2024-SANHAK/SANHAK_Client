@@ -21,6 +21,7 @@ export default function SharedView(){
         {title}
       </S.DiaryTitle>
       <S.DiaryImage src={image}/>
+
       <S.DiaryContent>
         {content}
       </S.DiaryContent>

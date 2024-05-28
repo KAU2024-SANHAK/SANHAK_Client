@@ -17,10 +17,12 @@ export const DiaryTitle = styled.p`
 export const DiaryContent = styled.p`
   ${({ theme }) => theme.fonts.body_02};
   display: flex;
-  width: 27rem;
-  margin-left: 2.5rem;
+  width: 32rem;
+  border-radius: 3rem;
+  background: rgba(255, 255, 255, 0.7);
   margin-top: 4rem;
   margin-bottom: 4rem;    
+  padding-left: 2rem;
   white-space: pre-line;
 `
 export const DiaryImage = styled.img`
