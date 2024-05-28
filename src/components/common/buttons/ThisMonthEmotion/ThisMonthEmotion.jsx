@@ -13,8 +13,8 @@ export default function ThisMonthEmotion() {
   const handlePlaylist = () => {
     console.log('앗')
     const body = {      
-      'month feeling 1': "SAD",
-      'month feeling 2': "HAPPY",
+      'month feeling 1': firstFeeling,
+      'month feeling 2': secondFeeling,
       
     };
     mutation.mutate(body, {
