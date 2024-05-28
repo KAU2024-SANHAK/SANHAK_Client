@@ -29,9 +29,20 @@ export default function SharedView(){
   const title = parseString(data.data.diaryTitle);
   const content = parseString(data.data.diaryContent);
   const image = data.data.imageUrl;
-  const spicy = data.data.advice.spicy;
-  const kind = data.data.advice.kind;
+  const spicy = (
+    data.data.advice.spicy !== null ? 
+      data.data.advice.spicy
+    :
+      `아직 ${user}님이 생성한 조언이 없습니다.`
+  );
+  const kind = (
+    data.data.advice.kind !== null ? 
+      data.data.advice.kind
+    :
+      `아직 ${user}님이 생성한 조언이 없습니다.`
+  );
 
+  console.log(spicy)
 
   const handleGoHome = () => {
     navigate('/');
