@@ -71,7 +71,8 @@ export default function CreatedDiary({ title, date, content, id }) {
           closeModal={closeModal}
           top = '50%'
         >
-          {errorMessage}
+          일기를 분석할 수 없습니다. <br />
+          내용을 더 자세히 작성해주세요!
         </DiaryErrorModal>
       }
 
