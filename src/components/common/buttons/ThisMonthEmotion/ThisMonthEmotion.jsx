@@ -2,14 +2,29 @@ import * as S from "./ThisMonthEmotion.style";
 import { convertFeelingText } from "../../../../utils/convertFeelingText";
 import useGetSummary from "../../../../hooks/queries/main/useGetSummary";
 import FeelingHoneyBear from "../../HoneyBear/FeelingHoneyBear";
+import usePostPlaylist from "../../../../hooks/queries/main/usePostPlaylist";
 
 export default function ThisMonthEmotion() {
-  const { data, isLoading, isError } = useGetSummary();
-  //진학이가 감정 수정하면 convert 진행
+  const { data  } = useGetSummary();
   const firstFeeling = data.data.firstFeeling;
   const secondFeeling = data.data.secondFeeling;
-  console.log(data);
-  convertFeelingText(firstFeeling)
+  const mutation = usePostPlaylist();  
+
+  const handlePlaylist = () => {
+    const body = {      
+      'month feeling 1': firstFeeling,
+      'month feeling 2': secondFeeling,
+      
+    };
+    mutation.mutate(body, {
+      onSuccess: (response) => {
+        const data = response.data;
+        console.log(data.playlist_url);
+        window.open(`${data.playlist_url}`);
+      }
+    });
+  };
+
   return (
     <S.Wrapper>
       <S.HoneyBearWrapper>
@@ -29,7 +44,11 @@ export default function ThisMonthEmotion() {
         </S.ThisMonthEmotionText>
       </S.Bubble>
       
-      <S.PlayList>
+      <S.PlayList
+        onClick={() => {
+          handlePlaylist();
+        }}
+      >
         추천 플레이리스트 보러가기
       </S.PlayList>
     </S.Wrapper>
