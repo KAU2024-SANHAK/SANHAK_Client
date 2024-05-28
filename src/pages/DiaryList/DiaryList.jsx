@@ -14,6 +14,16 @@ export default function DiaryList(){
     navigate('/searchbyemotion');
   };
 
+  const parseQuotes = (text) => {
+    console.log(text)
+    if(text[0] === '"'){
+      return text.substring(1, text.length-1);
+    }
+    else{
+      return text;
+    }
+  };
+
   const fillTheBlank = () => {
     const additions = [];
     for (let i = 0; i < numOfAdditions; i++) {
@@ -36,15 +46,13 @@ export default function DiaryList(){
           <DiaryListComponent
             key={item.diaryId}
             feelingListId={item.diaryId}
-            feelingListTitle={item.diaryTitle}
+            feelingListTitle={parseQuotes(item.diaryTitle)}
             feelingListDate={item.createdDate}
             imageUrl={item.imageUrl}
           />
         ))}
       </S.DiaryListComponentWrapper>
       
-      {console.log(numOfAdditions)}
-
       {fillTheBlank()}
 
     </S.DiaryListWrapper>

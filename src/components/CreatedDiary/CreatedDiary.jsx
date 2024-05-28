@@ -4,22 +4,25 @@ import { useRecoilState } from 'recoil';
 import { diaryFeeling, diaryImage } from '../../recoil/atoms';
 import usePostFeeling from '../../hooks/queries/create/usePostFeeling';
 import usePostAiImage from '../../hooks/queries/create/usePostAiImage';
-import useResetDiary from '../../hooks/diary/useResetDiaryAtom';
 import BtnShowFeeling from '../common/buttons/ShowFeeling/BtnShowFeeling';
 import Loading from '../../pages/Loading/Loading';
 import createImgBtn from '../../assets/img/createImgBtn.png';
 import CircleLoading from '../Loading/CircleLoading/CircleLoading';
+import { useModal } from '../../hooks/common/useModal';
+import DiaryErrorModal from '../Modal/DiaryErrorModal';
+import { useState } from 'react';
 
 export default function CreatedDiary({ title, date, content, id }) {
   const navigate = useNavigate();
   const [feeling, setFeeling] = useRecoilState(diaryFeeling);
-  const isFeeling = feeling !== 'NONE' && feeling !== '';
+  const isFeeling = feeling !== null && feeling !== '';
   const [image, setImage] = useRecoilState(diaryImage);
   const isImage = image !== null && image !== ''&& image !== undefined;
   const postFeelingMutation = usePostFeeling();
   const postImageMutation = usePostAiImage();
+  const [isOpen, openModal, closeModal] = useModal();
+  const [errorMessage, setErrorMessage] = useState();
 
-  console.log(image)
   const requestFeeling = () => {
     const body = {
       diaryId: id,
@@ -31,6 +34,11 @@ export default function CreatedDiary({ title, date, content, id }) {
         console.log(feeling);
         navigate('/emotionview');
       },
+      onError: (error) => {
+        setErrorMessage(error.response.data.message);
+        console.log(errorMessage);
+        openModal();
+      }
     });
   };
 
@@ -54,9 +62,19 @@ export default function CreatedDiary({ title, date, content, id }) {
   if (postFeelingMutation.isPending) {
     return <Loading />;
   }
+  console.log(feeling, isFeeling)
 
   return (
     <S.CreatedDiaryWrapper>
+      {isOpen && 
+        <DiaryErrorModal 
+          closeModal={closeModal}
+          top = '50%'
+        >
+          일기를 분석할 수 없습니다. <br />
+          내용을 더 자세히 작성해주세요!
+        </DiaryErrorModal>
+      }
 
       <S.CreatedDiaryComponentWrapper>
         <S.DiaryTopTextWrapper>
