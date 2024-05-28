@@ -22,10 +22,8 @@ export default function SearchByEmotionPopUp(){
       const month = date.getMonth() + 1;
       const day = date.getDate();
       const newDate = `${year}년 ${month}월 ${day}일`;
-      const newTitle = item.diaryTitle;
 
       item.createdDate = newDate;
-      item.diaryTitle = newTitle.substring(1, newTitle.length-1);
     });
     
     return list;
