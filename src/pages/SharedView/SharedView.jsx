@@ -14,9 +14,9 @@ export default function SharedView(){
 
   return(
     <S.SharedViewPageWrapper>
-      <S.HeaderText>
+      <S.IntroText>
         {user} 님의 오늘 일기
-      </S.HeaderText>
+      </S.IntroText>
       <S.DiaryTitle>
         {title}
       </S.DiaryTitle>

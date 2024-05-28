@@ -6,8 +6,8 @@ export const SharedViewPageWrapper = styled.div`
   width: 100%;
   min-height: 100vh;
 `
-export const HeaderText = styled.p`
-  ${({ theme }) => theme.fonts.title};
+export const IntroText = styled.p`
+  ${({ theme }) => theme.fonts.heading_03};
 ` 
 export const DiaryTitle = styled.p`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
