@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { IcXBtn } from '../../assets/svg';
 
 export const SharedViewPageWrapper = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
@@ -57,3 +58,19 @@ export const DiaryImage = styled.img`
   flex-shrink: 0;
   border-radius: 30px;
 `
+export const PopUpWrapper = styled.div`
+  position: fixed;
+  bottom: 57.5rem;
+  margin-right: 37.5rem;
+`
+export const CloseBtn = styled.div`
+  ${({ theme: { mixin } }) => mixin.flexCenter({})};
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1.5rem;
+  background: white;
+  position: absolute;
+  top: 17rem;
+  left: 31.6rem;
+`
+export const XBtn = styled(IcXBtn)``
