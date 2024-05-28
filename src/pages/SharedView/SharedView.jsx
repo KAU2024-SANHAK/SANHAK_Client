@@ -14,6 +14,9 @@ export default function SharedView(){
 
   return(
     <S.SharedViewPageWrapper>
+      <S.Header>
+        <S.HeaderText>생성형 일기 어플 허니어리를 직접 이용해보세요!</S.HeaderText>
+      </S.Header>
       <S.IntroText>
         {user} 님의 오늘 일기
       </S.IntroText>

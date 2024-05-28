@@ -6,6 +6,11 @@ export const SharedViewPageWrapper = styled.div`
   width: 100%;
   min-height: 100vh;
 `
+export const Header = styled.header`
+  ${({ theme: { mixin } }) => mixin.flexCenter({})};
+  backgorund-color: ${({ theme }) => theme.colors.pink.background_pink};
+  width: 100%;
+`
 export const IntroText = styled.p`
   ${({ theme }) => theme.fonts.heading_03};
 ` 
@@ -24,6 +29,9 @@ export const DiaryContent = styled.p`
   margin-bottom: 4rem;    
   padding-left: 2rem;
   white-space: pre-line;
+`
+export const HeaderText = styled.p`
+  ${({ theme }) => theme.fonts.caption_01};
 `
 export const DiaryImage = styled.img`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
