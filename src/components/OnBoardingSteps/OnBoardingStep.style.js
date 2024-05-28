@@ -31,7 +31,8 @@ export const OnBoardingTitleWrapper = styled.div`
   width: 100%;
 `;
 export const OnBoardingImgWrapper = styled.div`
-  height: 35.3%;
+  position: fixed;
+  bottom: 0rem;
 `;
 export const OnBoardingImg = styled.img``;
 export const OnBoardingHoneyBearWrapper = styled.div`
