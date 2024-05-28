@@ -9,7 +9,7 @@ import { clickedDiary } from '../../../recoil/atoms'
 import { useRecoilState } from "recoil";
 import usePostCalendar from "../../../hooks/queries/main/usePostCalendar";
 
-const ReactDatePicker = () => {
+const Calendar = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [highlightDates, setHighlightDates] = useState([]);
   const [thatDiaries, setThatDiaries] = useRecoilState(clickedDiary);
@@ -18,7 +18,7 @@ const ReactDatePicker = () => {
   useEffect(() => {
     // 초기 렌더링 시 오늘 날짜에 대한 일기를 가져옴
     const current_date = new Date(); // 현재 날짜를 가져오는 코드 수정
-    handleDateClick(getYear(current_date), getMonth(current_date)+1, getDate(current_date)); // 수정된 current_date 변수 사용
+    handleDateClick(getYear(current_date), getMonth(current_date)+1, getDate(current_date)); // 수정된 current_date 변수를 가져옴
   }, []);
 
   const result = highlightDates.map(item => new Date(item.createdDate));
@@ -82,4 +82,4 @@ const ReactDatePicker = () => {
   );
 };
 
-export default ReactDatePicker;
+export default Calendar;
