@@ -11,7 +11,6 @@ export default function ThisMonthEmotion() {
   const mutation = usePostPlaylist();  
 
   const handlePlaylist = () => {
-    console.log('유튜브 플리 연결 진행')
     const body = {      
       'month feeling 1': firstFeeling,
       'month feeling 2': secondFeeling,
