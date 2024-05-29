@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const CreatedDiaryWrapper = styled.div`
-    width: 32rem;
+    width: 100%;
     margin-bottom: 2.5rem;
 `
 

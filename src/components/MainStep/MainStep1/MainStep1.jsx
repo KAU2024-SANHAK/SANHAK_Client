@@ -9,7 +9,6 @@ export default function MainStep1() {
   return (
     <S.Main1Wrapper>
       <S.MainStep1Wrapper>
-
         <S.MainButtonWrapper>
             <MyPageButton />
             <SearchByEmotionButton />
@@ -18,6 +17,5 @@ export default function MainStep1() {
         <KakaoAd />
       </S.MainStep1Wrapper>
     </S.Main1Wrapper>
-    
   );
 }
