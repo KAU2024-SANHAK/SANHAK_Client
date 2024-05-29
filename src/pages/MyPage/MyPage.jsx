@@ -12,23 +12,27 @@ export default function MyPage(){
 
   return(
     <S.MyPageWrapper>
-      <S.BackButtonWrapper>
-        <BtnBack 
-          handleClick={handleBackButton}
-        />
-      </S.BackButtonWrapper>
+      <S.TopWrapper>
+        <S.BackButtonWrapper>
+          <BtnBack 
+            handleClick={handleBackButton}
+          />
+        </S.BackButtonWrapper>
+        
+        <S.HoneyBearWrapper>
+          <S.HoneyBear 
+            height='30rem'
+          />
+        </S.HoneyBearWrapper>
+      </S.TopWrapper>
       
-      <S.HoneyBearWrapper>
-        <S.HoneyBear 
-          height='30rem'
-        />
-      </S.HoneyBearWrapper>
-
-      <PopUp 
-        name='마이페이지'
-      >
-        <MyPagePopUp />
-      </PopUp>
+      <S.PopUpWrapper>
+        <PopUp 
+          name='마이페이지'
+        >
+          <MyPagePopUp />
+        </PopUp>
+      </S.PopUpWrapper>
     </S.MyPageWrapper>
   )
 }
