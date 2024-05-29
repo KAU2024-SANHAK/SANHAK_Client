@@ -39,7 +39,7 @@ function Main() {
                 transition={{ duration: 0.5 }}
               >
                 <S.MainStep1HoneyBearWrapper>
-                  <S.Honeybear height={550}/>
+                  <S.Honeybear height={550} />
                 </S.MainStep1HoneyBearWrapper>
               </motion.div>
             ) : (
@@ -50,7 +50,7 @@ function Main() {
                 transition={{ duration: 0.5 }}
               >
                 <S.MainStep2HoneyBearWrapper>
-                  <S.Honeybear height={550}/>
+                  <S.Honeybear height={550} />
                 </S.MainStep2HoneyBearWrapper>
               </motion.div>
             )}
@@ -67,7 +67,6 @@ function Main() {
         >
           <WriteDiaryButton />
         </motion.div>
-
       </S.WriteDiaryButtonWrapper>
 
       <S.MainStepWrapper>

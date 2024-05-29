@@ -9,7 +9,6 @@ export default function MainStep1() {
   return (
     <S.Main1Wrapper>
       <S.MainStep1Wrapper>
-
         <S.MainButtonWrapper>
           <motion.div
             whileHover={{ scale: 1.1 }}
@@ -31,6 +30,5 @@ export default function MainStep1() {
         <KakaoAd />
       </S.MainStep1Wrapper>
     </S.Main1Wrapper>
-    
   );
 }
