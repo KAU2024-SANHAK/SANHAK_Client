@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import { IcHoneyBear } from '../../assets/svg';
 
+export const WholeWrapper = styled.div`
+  justify-content: center;
+`
 export const Wrapper = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
   background: linear-gradient(
@@ -13,14 +16,13 @@ export const Wrapper = styled.div`
 `;
 export const Honeybear = styled(IcHoneyBear)``;
 export const MainStepWrapper = styled.div`
-  ${({ theme: { mixin } }) => mixin.flexCenter({})};
-  width: 37.5rem;
   position: fixed;
+  left: 41.5%;
   top: 1rem;
 `;
 export const WriteDiaryButtonWrapper = styled.div`
   position: fixed;
-  margin-left: 22.5rem;
+  right: 0rem;;
   bottom: 0rem;
 `;
 export const MainStep1HoneyBearWrapper = styled.div`

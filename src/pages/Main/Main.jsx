@@ -27,7 +27,7 @@ function Main() {
   ];
 
   return (
-    <div className='slider-container'>
+    <S.WholeWrapper className='slider-container'>
       <Slider {...settings} dotsClass='test-css'>
         {steps.map((step, idx) => (
           <S.Wrapper key={idx}>
@@ -79,7 +79,7 @@ function Main() {
           </div>
         )}
       </S.MainStepWrapper>
-    </div>
+    </S.WholeWrapper>
   );
 }
 
