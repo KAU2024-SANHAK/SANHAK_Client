@@ -14,17 +14,22 @@ export default function SearchByEmotion(){
 
     return(
         <S.MyPageWrapper>
-            <S.BackButtonWrapper>
-                <BtnBack handleClick={handleBackButton}/>
-            </S.BackButtonWrapper>
+            <S.TopWrapper>
+                <S.BackButtonWrapper>
+                    <BtnBack handleClick={handleBackButton}/>
+                </S.BackButtonWrapper>
+                
+                <S.HoneyBearWrapper>
+                    <S.HoneyBear height='30rem'/>
+                </S.HoneyBearWrapper>
+            </S.TopWrapper>
             
-            <S.HoneyBearWrapper>
-                <S.HoneyBear height='30rem'/>
-            </S.HoneyBearWrapper>
-
-            <PopUp name='감정별 일기조회'>
-                <SearchByEmotionPopUp/>
-            </PopUp>
+            <S.PopUpWrapper>
+                <PopUp name='감정별 일기조회'>
+                    <SearchByEmotionPopUp/>
+                </PopUp>
+            </S.PopUpWrapper>
+            
         </S.MyPageWrapper>
     )
 }
