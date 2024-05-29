@@ -22,6 +22,5 @@ export const ThirdLayer = styled.div`
   margin: auto;
 `;
 export const HoneyPotWrapper = styled.div`
-  padding-left: 0.4rem;
   margin-top: 1rem;
 `;
