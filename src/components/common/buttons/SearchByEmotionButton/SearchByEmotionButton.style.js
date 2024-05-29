@@ -1,8 +1,14 @@
 import styled from 'styled-components';
 import svgSearchByEmotionButton from '../../../../assets/svg/IcSearchByEmotionButton';
+import { motion } from 'framer-motion';
 
 export const SearchByEmotionButtonIcon = styled(svgSearchByEmotionButton)`
   width: 4.6rem;
+`;
+export const SearchByEmotionClickedWrapper = styled(motion.div)`
+  width: 9.3rem;
+  height: 12rem;
+  border-radius: 1.2rem;
 `;
 export const Wrapper = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
