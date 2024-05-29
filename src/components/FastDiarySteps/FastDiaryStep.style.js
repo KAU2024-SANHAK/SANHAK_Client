@@ -10,9 +10,10 @@ export const ButtonField = styled.div`
   display: flex;
   width: 100%;
   position: absolute;
-  bottom: 2rem;
+  bottom: 0.5rem;
   padding: 0 2rem;
   justify-content: flex-end;
+  align-items: center;
   margin-top: 10.8rem;
 `;
 
