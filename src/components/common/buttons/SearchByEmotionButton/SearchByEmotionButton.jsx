@@ -9,12 +9,17 @@ export default function SearchByEmotionButton(props) {
   };
 
   return (
-    <S.Wrapper onClick={handleClick}>
-      <S.SearchByEmotionButtonIcon />
-      <S.SearchByEmotionButtonText>
-        <p>감정별</p>
-        일기조회
-      </S.SearchByEmotionButtonText>
-    </S.Wrapper>
+    <S.SearchByEmotionClickedWrapper
+      whileTap={{ scale: 0.9, backgroundColor: '#FFFFFF'}}
+      transition={{ duration: 0.3 }}
+    >
+      <S.Wrapper onClick={handleClick}>
+        <S.SearchByEmotionButtonIcon />
+        <S.SearchByEmotionButtonText>
+          <p>감정별</p>
+          일기조회
+        </S.SearchByEmotionButtonText>
+      </S.Wrapper>
+    </S.SearchByEmotionClickedWrapper>
   );
 }

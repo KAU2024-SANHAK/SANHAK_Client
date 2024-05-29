@@ -1,11 +1,9 @@
 import * as S from "./EmotionType.style";
-import { motion } from 'framer-motion';
 
 export default function BtnEmotionType({name,  onClick}) {
   return (
-    <motion.div
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
+    <S.ClickedWrapper
+      whileTap={{ scale: 0.9, backgroundColor: '#FFFFFF'}}
       transition={{ duration: 0.3 }}
     >
       <S.EmotionTypeBtnWrapper onClick = {() => {onClick()}}>
@@ -13,6 +11,6 @@ export default function BtnEmotionType({name,  onClick}) {
             {name}
         </S.EmotionTypeBtnText>
       </S.EmotionTypeBtnWrapper>
-    </motion.div>
+    </S.ClickedWrapper>
   )
 }

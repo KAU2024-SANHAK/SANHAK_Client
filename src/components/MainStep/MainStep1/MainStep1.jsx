@@ -10,22 +10,9 @@ export default function MainStep1() {
     <S.Main1Wrapper>
       <S.MainStep1Wrapper>
         <S.MainButtonWrapper>
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.8 }}
-            transition={{ duration: 0.3 }}
-          >
             <MyPageButton />
-          </motion.div>
-
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.8 }}
-            transition={{ duration: 0.3 }}
-          >
             <SearchByEmotionButton />
-          </motion.div>
-          <ThisMonthEmotion />
+            <ThisMonthEmotion />
         </S.MainButtonWrapper>
         <KakaoAd />
       </S.MainStep1Wrapper>
