@@ -17,10 +17,10 @@ export const shareKakao = (diaryTitle, diaryImage, diaryId) => {
         link:{
           //배포 url로 수정
           mobileWebUrl: `${
-            import.meta.env.VITE_LOCAL_URL
+            import.meta.env.VITE_APP_BASE_URL
           }diary/${diaryId}`,
           webUrl: `${
-            import.meta.env.VITE_LOCAL_URL
+            import.meta.env.VITE_APP_BASE_URL
           }diary/${diaryId}`,
         },
       },
@@ -30,10 +30,10 @@ export const shareKakao = (diaryTitle, diaryImage, diaryId) => {
           link:{
             //배포 url로 수정
             mobileWebUrl: `${
-              import.meta.env.VITE_LOCAL_URL
+              import.meta.env.VITE_APP_BASE_URL
             }diary/${diaryId}`,
             webUrl: `${
-              import.meta.env.VITE_LOCAL_URL
+              import.meta.env.VITE_APP_BASE_URL
             }diary/${diaryId}`,
           },
         },
