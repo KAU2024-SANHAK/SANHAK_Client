@@ -33,7 +33,7 @@ export default function DiaryView() {
   const { resetAdvice, resetContent, resetTitle, resetFeeling, resetId, resetImage } = useResetDiary();
   const [isOpen, openModal, closeModal] = useModal();
 
-  console.log(title);
+  console.log(image);
 
   const handleRequest = () => {
     console.log('요청하기')

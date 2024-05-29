@@ -60,7 +60,7 @@ export default function SharedView(){
             }}
             width='19.6rem'
             height='4rem'
-            $color = {({ theme }) => theme.colors.pink.red_pink}
+            $color = {({ theme }) => theme.colors.pink.btn_hover_pink}
           >
             허니어리 사용하기
           </BtnSubmit>
