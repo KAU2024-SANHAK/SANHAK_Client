@@ -33,6 +33,8 @@ export default function DiaryView() {
   const { resetAdvice, resetContent, resetTitle, resetFeeling, resetId, resetImage } = useResetDiary();
   const [isOpen, openModal, closeModal] = useModal();
 
+  console.log(image);
+
   const handleRequest = () => {
     console.log('요청하기')
     const body = {
@@ -92,7 +94,7 @@ export default function DiaryView() {
               <BtnBack handleClick={handleBack} />
             </S.BtnBackWrapper>
             <S.ExtraBtnWrapper>
-              <BtnShare title={title} image={image} />
+              <BtnShare title={title} image={image} id={id}/>
               <BtnMenu openModal={openModal}/>
             </S.ExtraBtnWrapper>
           </S.HeaderWrapper>

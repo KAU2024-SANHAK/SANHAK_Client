@@ -1,7 +1,8 @@
 
-export const shareKakao = (diaryTitle, diaryImage) => {
-  console.log(diaryTitle)
+export const shareKakao = (diaryTitle, diaryImage, diaryId) => {
   if(window.Kakao){
+    console.log(diaryTitle)
+
     const kakao = window.Kakao;
     if(!kakao.isInitialized()){
       kakao.init(import.meta.env.VITE_KAKAO_JAVASCRIPT_KEY);
@@ -17,10 +18,10 @@ export const shareKakao = (diaryTitle, diaryImage) => {
           //배포 url로 수정
           mobileWebUrl: `${
             import.meta.env.VITE_APP_BASE_URL
-          }diaryview`,
+          }diary/${diaryId}`,
           webUrl: `${
             import.meta.env.VITE_APP_BASE_URL
-          }diaryview`,
+          }diary/${diaryId}`,
         },
       },
       buttons: [
@@ -30,10 +31,10 @@ export const shareKakao = (diaryTitle, diaryImage) => {
             //배포 url로 수정
             mobileWebUrl: `${
               import.meta.env.VITE_APP_BASE_URL
-            }diaryview`,
+            }diary/${diaryId}`,
             webUrl: `${
               import.meta.env.VITE_APP_BASE_URL
-            }diaryview`,
+            }diary/${diaryId}`,
           },
         },
       ],
