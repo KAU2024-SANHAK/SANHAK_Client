@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
     #dcc6cc 100.45%,
     #999 100.45%
   );
-  height: 100vh;
+  // height: 100vh;
 `;
 export const Honeybear = styled(IcHoneyBear)``;
 export const MainStepWrapper = styled.div`
