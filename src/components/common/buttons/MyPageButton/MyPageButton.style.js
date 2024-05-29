@@ -7,6 +7,7 @@ export const ClickedWrapper = styled(motion.div)`
   width: 9.3rem;
   height: 12rem;
   border-radius: 1.2rem;
+  z-index: 100;
 `
 export const Wrapper = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};

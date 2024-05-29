@@ -12,7 +12,7 @@ export default function MainStep1() {
         <S.MainButtonWrapper>
             <MyPageButton />
             <SearchByEmotionButton />
-          <ThisMonthEmotion />
+            <ThisMonthEmotion />
         </S.MainButtonWrapper>
         <KakaoAd />
       </S.MainStep1Wrapper>
