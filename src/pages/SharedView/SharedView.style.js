@@ -37,7 +37,7 @@ export const DiaryTitle = styled.p`
     #FFF 16.84%, 
     rgba(255, 255, 255, 0.00) 107.85%
   );
-  border-radius: 3rem 3rem 0 3rem; 
+  border-radius: 3rem 3rem 0 0; 
 `
 export const DiaryContent = styled.p`
   ${({ theme }) => theme.fonts.body_02};
