@@ -1,9 +1,14 @@
-import { aiInstance } from '../../../apis/client';
+import { aiInstance, getMemberId } from '../../../apis/client';
 import { useMutation } from '@tanstack/react-query';
+
 
 export const postKeywords = async (body) => {
  // const memberId = localStorage.getItem('MemberId');
-  const response = await aiInstance.post('/api/ai/diary/create', body);
+  const response = await aiInstance.post('/api/ai/diary/create', body,{
+    headers: {
+      Authorization: `${getMemberId()}`,
+    }
+  });
   return response.data;
 };
 
