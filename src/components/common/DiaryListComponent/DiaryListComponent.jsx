@@ -7,7 +7,6 @@ import BtnSubmit from "../buttons/Submit/BtnSubmit";
 import { motion } from 'framer-motion';
 
 export default function DiaryListComponent({ feelingListId, feelingListTitle, feelingListDate, imageUrl }) {
-  //이거랑 다른 부분들 꼭 hooks로 빼서 코드 정리하기 꼭
   const [content, setContent] = useRecoilState(diaryContent);
   const [advice, setAdvice] = useRecoilState(diaryAdvice);
   const [title, settitle] = useRecoilState(diaryTitle);
@@ -19,6 +18,16 @@ export default function DiaryListComponent({ feelingListId, feelingListTitle, fe
   const mutation = usePostDiary();
   const navigate = useNavigate();
 
+  const parseString =(text) =>{
+    text = text.replace(/\\n/g, '\n');
+    
+    if(text[0] === '"'){
+      return text.substring(1, text.length-1);
+    }else{
+      return text;
+    }
+ };
+
   const handleSearchButton= () => {
     const body = {
       diaryId: feelingListId, 
@@ -29,11 +38,11 @@ export default function DiaryListComponent({ feelingListId, feelingListTitle, fe
         const data = response.data;
         console.log(response);
         setAdvice(data.advice);
-        setContent(data.diary_content);
+        setContent(parseString(data.diary_content));
         setDate(feelingListDate);
         setFeeling(data.feeling);
         setImage(data.imageUrl);
-        settitle(data.diaryTitle);
+        settitle(parseString(data.diaryTitle));
         setId(data.diaryId);
         navigate('/diaryview');
       }

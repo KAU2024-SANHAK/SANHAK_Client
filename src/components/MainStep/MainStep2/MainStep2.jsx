@@ -9,6 +9,15 @@ import { useRecoilValue } from "recoil";
 
 export default function MainStep2() {
   const diaries = useRecoilValue(clickedDiary);
+
+  const parseQuotes = (text) => {
+    if(text[0] === '"'){
+      return text.substring(1, text.length-1);
+    }
+    else{
+      return text;
+    }
+  };
   
   return (
     <S.Main2Wrapper>
@@ -21,7 +30,7 @@ export default function MainStep2() {
               <DiaryListComponent
                 key={item.diaryId}
                 feelingListId={item.diaryId}
-                feelingListTitle={item.diaryTitle}
+                feelingListTitle={parseQuotes(item.diaryTitle)}
                 feelingListDate={format(new Date(item.createdDate), "yyyy년 M월 d일")}
                 imageUrl={item.imageUrl}
               />
