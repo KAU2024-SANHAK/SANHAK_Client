@@ -18,6 +18,7 @@ export const FastDiaryHeader = styled.div`
 `;
 export const WritingForm = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
+
   width: 100%;
   height: 43.1rem;
   padding: 2.4rem 1.5rem 0 1.5rem;
@@ -28,7 +29,13 @@ export const WritingForm = styled.div`
   -o-backdrop-filter: blur(1.5rem);
   -ms-backdrop-filter: blur(1.5rem);
   backdrop-filter: blur(1.5rem);
-  z-index: 1;
+  z-index: 999;
+`;
+
+export const WritingWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  height: fit-content;
 `;
 export const HomeButtonWrapper = styled.div`
   border: none;
@@ -36,10 +43,11 @@ export const HomeButtonWrapper = styled.div`
   margin-left: 2rem;
   margin-bottom: 10rem;
 `;
+
 export const HoneyBearWrapper = styled.div`
   width: 100%;
   position: absolute;
-  top: 12.1rem;
+  top: 13rem;
   right: 5.5rem;
 `;
 export const HoneyBear = styled(IcHoneyBear)``;

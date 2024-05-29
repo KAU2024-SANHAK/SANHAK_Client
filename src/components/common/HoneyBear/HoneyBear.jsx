@@ -1,7 +1,5 @@
-import * as S from './HoneyBear.style'
+import * as S from './HoneyBear.style';
 
-export default function HoneyBear({height}){
-    return(
-        <S.HoneyBear height={height}/>
-    )
+export default function HoneyBear({ height, width }) {
+  return <S.HoneyBear height={height} width={width} />;
 }

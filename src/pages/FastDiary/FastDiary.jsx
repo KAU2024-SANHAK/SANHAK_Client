@@ -92,10 +92,6 @@ export default function FastDiary() {
         </OptionModal>
       )}
 
-      <S.HoneyBearWrapper>
-        <S.HoneyBear height='30.5rem' />
-      </S.HoneyBearWrapper>
-
       <S.FastDiaryHeader>
         <BtnHome
           onClick={() => {
@@ -105,26 +101,30 @@ export default function FastDiary() {
 
         <DiaryProgress steps={steps} cur={currentStep} />
       </S.FastDiaryHeader>
-
-      <S.WritingForm>
-        <Funnel>
-          {steps.map((step, idx) => (
-            <Step key={idx} name={step.name}>
-              <step.component
-                onNext={() => {
-                  handleNext();
-                }}
-                onPrev={() => {
-                  handlePrev();
-                }}
-              />
-              <S.ProgressWrapper>
-                <StepProgress steps={steps} cur={step.name} />
-              </S.ProgressWrapper>
-            </Step>
-          ))}
-        </Funnel>
-      </S.WritingForm>
+      <S.WritingWrapper>
+        <S.WritingForm>
+          <Funnel>
+            {steps.map((step, idx) => (
+              <Step key={idx} name={step.name}>
+                <step.component
+                  onNext={() => {
+                    handleNext();
+                  }}
+                  onPrev={() => {
+                    handlePrev();
+                  }}
+                />
+                <S.ProgressWrapper>
+                  <StepProgress steps={steps} cur={step.name} />
+                </S.ProgressWrapper>
+              </Step>
+            ))}
+          </Funnel>
+        </S.WritingForm>
+        <S.HoneyBearWrapper>
+          <S.HoneyBear height='30.5rem' />
+        </S.HoneyBearWrapper>
+      </S.WritingWrapper>
     </S.FastDairyPageWrapper>
   );
 }
