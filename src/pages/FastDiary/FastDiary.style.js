@@ -19,10 +19,10 @@ export const FastDiaryHeader = styled.div`
 
 export const WritingForm = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
-
   width: 100%;
   padding: 2.4rem 1.5rem 0 1.5rem;
   border-radius: 3rem;
+
   background: rgba(255, 255, 255, 0.5);
   -webkit-backdrop-filter: blur(1.5rem);
   -moz-backdrop-filter: blur(1.5rem);
@@ -36,7 +36,7 @@ export const WritingWrapper = styled.div`
   display: flex;
   bottom: 0;
   width: 100%;
-  height: 44rem;
+  height: 43.4rem;
 `;
 
 export const HoneyBearWrapper = styled.div`

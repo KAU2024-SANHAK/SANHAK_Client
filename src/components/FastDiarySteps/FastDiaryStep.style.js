@@ -4,7 +4,7 @@ import inputCloud from '../../assets/InputCloud.png';
 export const FastDiaryStepWrapper = styled.div`
   ${({ theme: { mixin } }) => mixin.flexBox({ direction: 'column', align: 'center' })};
   width: 100%;
-  height: 100%;
+  height: 36.5rem;
 `;
 export const ButtonField = styled.div`
   display: flex;
@@ -18,7 +18,8 @@ export const ButtonField = styled.div`
 `;
 
 export const QuestionWrapper = styled.div`
-${({ theme: { mixin } }) => mixin.flexCenter({})};
+  ${({ theme: { mixin } }) => mixin.flexCenter({})};
+
   width: 100%;
   gap: 1.6rem;
 `;
