@@ -18,10 +18,7 @@ export const ButtonField = styled.div`
 `;
 
 export const QuestionWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: space-between;
+${({ theme: { mixin } }) => mixin.flexCenter({})};
   width: 100%;
   gap: 1.6rem;
 `;
