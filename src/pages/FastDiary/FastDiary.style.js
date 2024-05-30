@@ -12,15 +12,15 @@ export const FastDairyPageWrapper = styled.div`
       : ({ theme }) => theme.colors.gradient.gradient_yellow};
 `;
 export const FastDiaryHeader = styled.div`
-  ${({ theme: { mixin } }) => mixin.flexBox({ justify: 'flex-end' })}
-  width: 100%;
-  margin-top: 3.2rem;
+  ${({ theme: { mixin } }) => mixin.flexBox({ justify: 'space-between', align: 'center' })}
+  width: 32rem;
+  height: 25rem;
 `;
+
 export const WritingForm = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
 
   width: 100%;
-  height: 43.1rem;
   padding: 2.4rem 1.5rem 0 1.5rem;
   border-radius: 3rem;
   background: rgba(255, 255, 255, 0.5);
@@ -34,24 +34,25 @@ export const WritingForm = styled.div`
 
 export const WritingWrapper = styled.div`
   display: flex;
-  width: 100%;
-  height: fit-content;
-`;
-export const HomeButtonWrapper = styled.div`
-  border: none;
-  background: transparent;
-  margin-left: 2rem;
-  margin-bottom: 10rem;
+  position: absolute;
+  bottom: 0;
+  width: 37.5rem;
 `;
 
 export const HoneyBearWrapper = styled.div`
-  width: 100%;
+  ${({ theme: { mixin } }) => mixin.flexBox({justify:'start'})};
+  width: 37.5rem;
   position: absolute;
+  height: 30rem;
   top: 13rem;
-  right: 5.5rem;
 `;
 export const HoneyBear = styled(IcHoneyBear)``;
+
 export const ProgressWrapper = styled.div`
   ${({ theme: { mixin } }) => mixin.flexBox({ align: 'flex-end' })};
   bottom: 0;
 `;
+
+export const HomeButtonWrapper = styled.div`
+  padding-bottom: 12rem;
+`
