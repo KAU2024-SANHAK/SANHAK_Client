@@ -10,7 +10,7 @@ export const fetchWeather = async () => {
 
 const useGetWeather = ()=>{
     const { data, isLoading, isError } = useSuspenseQuery({
-        queryKey: SUMMARY_QUERY_KEY,
+        queryKey: WEATHER_QUERY_KEY,
         queryFn: () => fetchWeather(),
     });
     return  { data, isLoading, isError };
