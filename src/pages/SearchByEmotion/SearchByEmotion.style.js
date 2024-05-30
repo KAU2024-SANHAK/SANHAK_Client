@@ -11,6 +11,7 @@ export const MyPageWrapper=styled.div`
 export const TopWrapper = styled.div`
     width: 32rem;
     height: 20rem;
+    margin-top: 3.2rem;
 `
 export const HoneyBearWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
@@ -21,10 +22,6 @@ export const HoneyBearWrapper = styled.div`
 `
 export const HoneyBear = styled(IcHoneyBear)`
     display: flex;
-`
-export const BackButtonWrapper = styled.div`
-    ${({ theme: { mixin } }) => mixin.flexBox({align:'center', justify:'start'})};
-    padding-top: 3.2rem;
 `
 export const PopUpWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};

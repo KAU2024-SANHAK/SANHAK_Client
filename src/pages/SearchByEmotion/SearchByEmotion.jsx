@@ -14,9 +14,7 @@ export default function SearchByEmotion(){
   return(
     <S.MyPageWrapper>
       <S.TopWrapper>
-        <S.BackButtonWrapper>
-          <BtnBack handleClick={handleBackButton} />
-        </S.BackButtonWrapper>
+        <BtnBack handleClick={handleBackButton} />
         
         <S.HoneyBearWrapper>
           <S.HoneyBear height='30rem' />
