@@ -7,14 +7,11 @@ export const FastDiaryStepWrapper = styled.div`
   height: 36.5rem;
 `;
 export const ButtonField = styled.div`
-  display: flex;
-  width: 100%;
+${({ theme: { mixin } }) => mixin.flexBox({ justify: 'space-between', align: 'center' })};
+  width: 37.5rem;
   position: absolute;
   bottom: 0.5rem;
-  padding: 0 2rem;
-  justify-content: flex-end;
-  align-items: center;
-  margin-top: 10.8rem;
+  padding: 0 2.5rem 0 2.5rem;
 `;
 
 export const QuestionWrapper = styled.div`
