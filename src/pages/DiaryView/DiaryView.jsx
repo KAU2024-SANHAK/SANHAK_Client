@@ -90,14 +90,14 @@ export default function DiaryView() {
         }
         <S.DiaryCompWrapper>
           <S.HeaderWrapper>
-            <S.BtnBackWrapper>
-              <BtnBack handleClick={handleBack} />
-            </S.BtnBackWrapper>
+            <BtnBack handleClick={handleBack} />
+            
             <S.ExtraBtnWrapper>
               <BtnShare title={title} image={image} id={id}/>
               <BtnMenu openModal={openModal}/>
             </S.ExtraBtnWrapper>
           </S.HeaderWrapper>
+
           <S.CreatedDiaryWrapper>
             <CreatedDiary
               title={title}  
