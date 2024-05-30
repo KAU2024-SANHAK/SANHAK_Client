@@ -37,6 +37,7 @@ export const WritingWrapper = styled.div`
   position: absolute;
   bottom: 0;
   width: 37.5rem;
+  height: 44rem;
 `;
 
 export const HoneyBearWrapper = styled.div`
