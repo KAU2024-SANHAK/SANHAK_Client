@@ -34,9 +34,8 @@ export const WritingForm = styled.div`
 
 export const WritingWrapper = styled.div`
   display: flex;
-  position: absolute;
   bottom: 0;
-  width: 37.5rem;
+  width: 100%;
   height: 44rem;
 `;
 
