@@ -13,12 +13,9 @@ export default function MyPage(){
   return(
     <S.MyPageWrapper>
       <S.TopWrapper>
-        <S.BackButtonWrapper>
           <BtnBack 
             handleClick={handleBackButton}
           />
-        </S.BackButtonWrapper>
-        
         <S.HoneyBearWrapper>
           <S.HoneyBear 
             height='30rem'
