@@ -7,12 +7,19 @@ export const FastDiaryStepWrapper = styled.div`
   height: 36.5rem;
 `;
 export const ButtonField = styled.div`
-${({ theme: { mixin } }) => mixin.flexBox({ justify: 'space-between', align: 'center' })};
+  ${({ theme: { mixin } }) => mixin.flexBox({ justify: 'space-between', align: 'center' })};
   width: 37.5rem;
   position: absolute;
   bottom: 0.5rem;
   padding: 0 2.5rem 0 2.5rem;
 `;
+export const Step1ButtonField = styled.div`
+  ${({ theme: { mixin } }) => mixin.flexBox({ justify: 'flex-end'})};
+  width: 37.5rem;
+  position: absolute;
+  bottom: 0.9rem;
+  padding: 0 2.5rem 0 2.5rem;
+`
 
 export const QuestionWrapper = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};

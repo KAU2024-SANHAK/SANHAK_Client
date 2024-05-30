@@ -12,9 +12,9 @@ export default function FastDiaryStep1({onNext}){
 
       <FeelingHive/>
       
-      <S.ButtonField>
+      <S.Step1ButtonField>
         <BtnNext onNext={onNext}/>
-      </S.ButtonField>
+      </S.Step1ButtonField>
     </S.FastDiaryStepWrapper>
   );
 }
