@@ -11,10 +11,8 @@ export const SlowDiaryPageWrapper = styled.div`
 
 `
 export const SlowDiaryHeader = styled.div`
-    width:100%;
-    display: flex;
+    width: 32rem;
     position: relative;
-    top: 0;
 `
 export const FormWrapper = styled.form`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
