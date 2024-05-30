@@ -84,13 +84,11 @@ export const ContentInput = styled.textarea`
     }
 `
 export const BtnField = styled.div`
-    display: flex;    
-    width: 100%;
-    justify-content: flex-end;
+    ${({ theme: { mixin } }) => mixin.flexBox({justify:'flex-end'})};
+    width: 32rem;
     padding-top: 1.8rem;
-    padding-right: 2.8rem;
-
 `
+
 export const Caption =styled.p`
     ${({ theme }) => theme.fonts.body_10};
     color: ${({ theme }) => theme.colors.gray.text_gray};
