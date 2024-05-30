@@ -9,7 +9,7 @@ export const MyPageWrapper=styled.div`
     justify-content: space-between;
 `
 export const TopWrapper = styled.div`
-    width: 100%;
+    width: 32rem;
     height: 20rem;
 `
 export const HoneyBearWrapper = styled.div`
@@ -23,9 +23,8 @@ export const HoneyBear = styled(IcHoneyBear)`
     display: flex;
 `
 export const BackButtonWrapper = styled.div`
-    padding-left: 2.8rem;
+    ${({ theme: { mixin } }) => mixin.flexBox({align:'center', justify:'start'})};
     padding-top: 3.2rem;
-    z-index: 1;
 `
 export const PopUpWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};

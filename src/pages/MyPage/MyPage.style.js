@@ -23,9 +23,9 @@ export const HoneyBear = styled(IcHoneyBear)`
     display: flex;
 `
 export const BackButtonWrapper = styled.div`
-    padding-left: 2.8rem;
-    padding-top: 3.2rem;
-    z-index: 1;
+    ${({ theme: { mixin } }) => mixin.flexBox({})};
+    width: 32rem;
+    margin-top: 3.2rem;
 `
 export const PopUpWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
