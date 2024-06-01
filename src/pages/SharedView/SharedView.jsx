@@ -47,6 +47,10 @@ export default function SharedView(){
   const handleGoHome = () => {
     navigate('/');
   }
+  const handleGoInfo = () => {
+    navigate('/information');
+  }
+
 
   return(
     <S.SharedViewPageWrapper>
@@ -65,6 +69,9 @@ export default function SharedView(){
             허니어리 사용하기
           </BtnSubmit>
           <BtnSubmit
+          onClick={() => {
+            handleGoInfo();
+          }}
             width='11.6rem'
             height='4rem'
             $color = {({ theme }) => theme.colors.normal.white}
