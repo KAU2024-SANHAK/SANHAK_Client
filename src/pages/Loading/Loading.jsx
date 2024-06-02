@@ -13,7 +13,7 @@ const Loading = () => {
 
       <S.Text>
         AI가 작동되고 있어요! <br />
-        잠시만 기다려주세요.
+        20 ~ 30초 정도 소요됩니다. 잠시만 기다려주세요.
       </S.Text>
     </S.LoadingWrapper>
   );
