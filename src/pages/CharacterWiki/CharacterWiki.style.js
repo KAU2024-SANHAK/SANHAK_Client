@@ -1,10 +1,11 @@
 import styled from 'styled-components';
-import { IcHoneyBear } from '../../assets/svg';
-import { IcBeeHoneyBear } from '../../assets/svg';
-import { IcRichHoneyBear } from '../../assets/svg';
-import { IcPrinceHoneyBear } from '../../assets/svg';
-import { IcStudentHoneyBear } from '../../assets/svg';
-
+import {
+  IcHoneyBear,
+  IcBeeHoneyBear,
+  IcRichHoneyBear,
+  IcPrinceHoneyBear,
+  IcStudentHoneyBear,
+} from '../../assets/svg';
 export const CharacterWikiPageWrapper = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
   background-color: ${({ theme }) => theme.colors.pink.white_pink};
