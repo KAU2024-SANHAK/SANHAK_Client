@@ -61,21 +61,27 @@ export const FooterText = styled.p`
     margin-bottom: 2rem;
 `
 export const HoneyBear = styled(IcHoneyBear)``;
-export const GgulbeeFromat =styled.div`
+export const format =styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({})};
 `
 export const GgulbeeFromatStatement1 =styled.p`
     ${({ theme }) => theme.fonts.caption_01};
-    margin-top: 1.6rem;
     margin-left: 1.6rem;
 `
 export const GgulbeeFromatStatement2 =styled.p`
     ${({ theme }) => theme.fonts.caption_01};
-    margin-top: 1.6rem;
     margin-right: 1.6rem;
 `
-export const GgulbeeInfoWrapper =styled.div`
+export const GgulbeePhotooWrapper =styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
+    ${({ theme }) => theme.fonts.caption_01};
+`
+export const GgulbeeInfoWrapper1 =styled.div`
+    ${({ theme: { mixin } }) => mixin.flexBox({direction: 'column'})};
+    ${({ theme }) => theme.fonts.caption_01};
+`
+export const GgulbeeInfoWrapper2 =styled.div`
+    ${({ theme: { mixin } }) => mixin.flexBox({align: 'end', direction: 'column'})};
     ${({ theme }) => theme.fonts.caption_01};
 `
 export const GgulbeePhoto =styled.img`
