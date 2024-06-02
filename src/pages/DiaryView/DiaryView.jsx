@@ -124,7 +124,8 @@ export default function DiaryView() {
               <PopUp name="꿀비의 답장">
                 {postMutation.isPending ?
                   <CircleLoading>
-                    조언을 생성 중입니다.
+                    조언을 생성 중입니다. <br />
+                    새로고침시 오류가 발생할 수 있으니, 20초 정도만 기다려주세요!
                   </CircleLoading> 
                 : 
                   <DiaryViewPopUp 
