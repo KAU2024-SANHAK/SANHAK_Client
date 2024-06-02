@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { IcHoneyBear } from '../../assets/svg';
 
 export const WholeWrapper = styled.div`
-  justify-content: center;
 `
 export const Wrapper = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
