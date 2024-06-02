@@ -12,22 +12,17 @@ export const DiaryViewPageWrapper=styled.div`
     justify-content: space-between;
 `
 export const DiaryCompWrapper = styled.div`
-    width: 100%;
+    width: 32rem;
 `
 export const HeaderWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({})};
-    width: 100%;
+    width: 32rem;
     margin-top: 3.2rem;
     justify-content: space-between;
 `
-export const BtnBackWrapper = styled.div`
-    padding-left: 2rem;
-    
-`
+
 export const ExtraBtnWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({direction:'row'})};
-    background-color: transparent;
-    padding-right: 2rem;
 `
 export const CreatedDiaryWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};

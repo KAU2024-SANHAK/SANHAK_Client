@@ -4,17 +4,16 @@ import SvgIcAddImage from '../../assets/svg/IcAddImage';
 export const SlowDiaryPageWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
     width: 100%;
-    height: 92.2rem;
+    min-height: 100vh;
     background: ${(props) => (props.$isEven === 0 ? 'linear-gradient(187deg, #FFBBCB 20.43%, #FFDAE3 81.25%, #DCC6CC 100.45%, #999 100.45%);'
     :'linear-gradient(187deg, #FFE768 20.43%, #FFF3B7 84.05%);'
     )};
 
 `
 export const SlowDiaryHeader = styled.div`
-    width:100%;
-    display: flex;
-    position: relative;
-    top: 0;
+    width: 32rem;
+    height: 16rem;
+    padding-top: 4rem;
 `
 export const FormWrapper = styled.form`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
@@ -86,21 +85,19 @@ export const ContentInput = styled.textarea`
     }
 `
 export const BtnField = styled.div`
-    display: flex;    
-    width: 100%;
-    justify-content: flex-end;
+    ${({ theme: { mixin } }) => mixin.flexBox({justify:'flex-end'})};
+    width: 32rem;
     padding-top: 1.8rem;
-    padding-right: 2.8rem;
-
+    padding-bottom: 1rem;
 `
+
 export const Caption =styled.p`
     ${({ theme }) => theme.fonts.body_10};
     color: ${({ theme }) => theme.colors.gray.text_gray};
     letter-spacing: -0.0408rem;
     
     margin-bottom: 0.5rem;
-    margin-top: 9rem;
-    margin-left: 8.5rem;
+    margin-left: 7.6rem;
     
 `
 export const PreviewImg = styled.img`
