@@ -9,7 +9,7 @@ import photo4 from '../../assets/img/photo4.png';
 import photo5 from '../../assets/img/photo5.png';
 
 export default function Information() {
-    const navigate = useNavigate;
+    const navigate = useNavigate();
     const [isBackgroundClick, setIsBackgroundClick] = useState(true);
     const [isGgulbeeClick, setIsGgulbeeClick] = useState(false);
 
