@@ -44,3 +44,8 @@ export { default as IcBeeHoneyBear } from './IcBeeHoneyBear';
 export { default as IcPrinceHoneyBear } from './IcPrinceHoneyBear';
 export { default as IcRichHoneyBear } from './IcRichHoneyBear';
 export { default as IcStudentHoneyBear } from './IcStudentHoneyBear';
+export { default as IcHoneyBee } from './IcHoneyBee';
+export { default as IcBearHoneyBee } from './IcBearHoneyBee';
+export { default as IcPrinceHoneyBee } from './IcPrinceHoneyBee';
+export { default as IcRichHoneyBee } from './IcRichHoneyBee';
+export { default as IcStudentHoneyBee } from './IcStudentHoneyBee';

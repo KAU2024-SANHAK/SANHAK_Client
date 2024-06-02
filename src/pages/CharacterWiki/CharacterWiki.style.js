@@ -6,6 +6,13 @@ import {
   IcPrinceHoneyBear,
   IcStudentHoneyBear,
 } from '../../assets/svg';
+import {
+  IcHoneyBee,
+  IcBearHoneyBee,
+  IcRichHoneyBee,
+  IcPrinceHoneyBee,
+  IcStudentHoneyBee,
+} from '../../assets/svg';
 export const CharacterWikiPageWrapper = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
   background-color: ${({ theme }) => theme.colors.pink.white_pink};
@@ -37,3 +44,13 @@ export const RichHoneyBear = styled(IcRichHoneyBear)``;
 export const PrinceHoneyBear = styled(IcPrinceHoneyBear)``;
 
 export const StudentHoneyBear = styled(IcStudentHoneyBear)``;
+
+export const HoneyBee = styled(IcHoneyBee)``;
+
+export const BearHoneyBee = styled(IcBearHoneyBee)``;
+
+export const RichHoneyBee = styled(IcRichHoneyBee)``;
+
+export const PrinceHoneyBee = styled(IcPrinceHoneyBee)``;
+
+export const StudentHoneyBee = styled(IcStudentHoneyBee)``;

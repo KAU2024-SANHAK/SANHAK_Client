@@ -17,6 +17,14 @@ export default function CharacterWiki() {
     { name: '부자 곰돌이', component: <S.RichHoneyBear /> },
   ];
 
+  const HoneyBeeCustom = [
+    { name: '일반 꿀벌', component: <S.HoneyBee /> },
+    { name: '곰돌이 꿀벌', component: <S.BearHoneyBee /> },
+    { name: '왕자 꿀벌', component: <S.PrinceHoneyBee /> },
+    { name: '대학생 꿀벌', component: <S.StudentHoneyBee /> },
+    { name: '부자 꿀벌', component: <S.RichHoneyBee /> },
+  ];
+
   return (
     <S.CharacterWikiPageWrapper>
       <S.ButtonField>
@@ -32,7 +40,7 @@ export default function CharacterWiki() {
       <S.WikiWrapper>
         <S.CharacterNameWrapper>꿀벌</S.CharacterNameWrapper>
 
-        <WikiCarousel customs={HoneyBearCustom} />
+        <WikiCarousel customs={HoneyBeeCustom} />
       </S.WikiWrapper>
     </S.CharacterWikiPageWrapper>
   );
