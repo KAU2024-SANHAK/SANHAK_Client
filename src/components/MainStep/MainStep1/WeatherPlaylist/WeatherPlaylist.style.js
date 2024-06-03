@@ -6,12 +6,13 @@ export const WeatherPlaylistWrapper = styled.div`
 export const WeatherIcon = styled.img`
   width: 3rem;
   height: 3rem;
-  margin-left: 0.3rem;
+  margin-left: 3.3rem;
   margin-bottom: 0.4rem;
 `;
 export const PlaylistBox = styled.div`
   ${({ theme: { mixin } }) => mixin.flexBox({align: 'center'})};
   gap: 0.5rem;
+  margin-left: 3rem;
 `;
 export const Thumbnail = styled.img`
   width: 3.6rem;
