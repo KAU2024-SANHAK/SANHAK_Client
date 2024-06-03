@@ -93,14 +93,21 @@ export default function FastDiary() {
       )}
 
       <S.FastDiaryHeader>
-        <BtnHome
-          onClick={() => {
-            openModal();
-          }}
-        />
+        <S.HomeButtonWrapper>
+          <BtnHome
+              onClick={() => {
+                openModal();
+              }}
+            />
+        </S.HomeButtonWrapper>
 
         <DiaryProgress steps={steps} cur={currentStep} />
       </S.FastDiaryHeader>
+
+      <S.HoneyBearWrapper>
+        <S.HoneyBear height='30rem' />
+      </S.HoneyBearWrapper>
+
       <S.WritingWrapper>
         <S.WritingForm>
           <Funnel>
@@ -121,9 +128,6 @@ export default function FastDiary() {
             ))}
           </Funnel>
         </S.WritingForm>
-        <S.HoneyBearWrapper>
-          <S.HoneyBear height='30.5rem' />
-        </S.HoneyBearWrapper>
       </S.WritingWrapper>
     </S.FastDairyPageWrapper>
   );

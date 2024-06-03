@@ -23,12 +23,12 @@ export const ThisMonthEmotionText = styled.p`
     width: 17.8rem;
     padding-top: 1.2rem;
     text-align: center;
-
 `
 export const PlayList = styled.p`
     margin-left: 3.9rem;
     margin-top: 0.8rem;
     ${({ theme }) => theme.fonts.caption_01};
+    cursor: pointer;
 `
 export const HoneyBearWrapper = styled.div`
     width: 10rem;

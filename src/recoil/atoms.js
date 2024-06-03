@@ -1,6 +1,5 @@
 import { atom } from "recoil";
 import { recoilPersist } from "recoil-persist";
-import defaultImage from '../assets/img/dayHoneyBear.webp';
 
 const { persistAtom } =recoilPersist({
    key: 'localstorage',
@@ -81,7 +80,7 @@ export const diaryFeeling = atom({
 
 export const diaryImage = atom({
     key: "diaryImage",
-    default: defaultImage,
+    default: '',
     effects_UNSTABLE: [persistAtom]
 });
 
