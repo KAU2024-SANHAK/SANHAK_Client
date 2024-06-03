@@ -14,6 +14,7 @@ export const MainStep1Wrapper = styled.div`
 `;
 export const MainButtonWrapper = styled.div`
   ${({ theme: { mixin } }) => mixin.flexBox({ direction: 'column', justify: 'space-between' })};
+  width: 21rem;
   margin-top: 8.7rem;
   margin-right: 11rem;
   gap: 1.5rem;
