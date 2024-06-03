@@ -7,7 +7,6 @@ import WeatherPlaylist from '../MainStep1/WeatherPlaylist/WeatherPlaylist';
 import { motion } from 'framer-motion';
 
 export default function MainStep1() {
-  
   return (
     <S.Main1Wrapper>
       <S.MainStep1Wrapper>
