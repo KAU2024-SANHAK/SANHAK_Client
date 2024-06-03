@@ -5,26 +5,28 @@ import BtnBack from '../../components/common/buttons/Back/BtnBack';
 import SearchByEmotionPopUp from './SearchByEmotionPopUp/SearchByEmotionPopUp';
 
 export default function SearchByEmotion(){
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const handleBackButton = () => {
+  const handleBackButton = () => {
+    navigate('/main');
+  }
+
+  return(
+    <S.MyPageWrapper>
+      <S.TopWrapper>
+        <BtnBack handleClick={handleBackButton} />
         
-        navigate('/main');
-    }
-
-    return(
-        <S.MyPageWrapper>
-            <S.BackButtonWrapper>
-                <BtnBack handleClick={handleBackButton}/>
-            </S.BackButtonWrapper>
-            
-            <S.HoneyBearWrapper>
-                <S.HoneyBear height='30rem'/>
-            </S.HoneyBearWrapper>
-
-            <PopUp name='감정별 일기조회'>
-                <SearchByEmotionPopUp/>
-            </PopUp>
-        </S.MyPageWrapper>
-    )
+        <S.HoneyBearWrapper>
+          <S.HoneyBear height='30rem' />
+        </S.HoneyBearWrapper>
+      </S.TopWrapper>
+      
+      <S.PopUpWrapper>
+        <PopUp name='감정별 일기조회'>
+          <SearchByEmotionPopUp/>
+        </PopUp>
+      </S.PopUpWrapper>
+        
+    </S.MyPageWrapper>
+  )
 }

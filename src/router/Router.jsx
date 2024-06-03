@@ -17,6 +17,7 @@ import LoginCallback from '../components/common/buttons/KakaoLogin/LoginCallback
 import FallbackUI from '../pages/FallbackUI/FallbackUI';
 import Loading from '../pages/Loading/Loading';
 import SharedView from '../pages/SharedView/SharedView';
+import Information from '../pages/Information/Information';
 
 /*이런 식으로 작성하기*/
 const router = createBrowserRouter([
@@ -83,6 +84,10 @@ const router = createBrowserRouter([
       {
         path:"/apiloading",
         element: <Loading />
+      },
+      {
+        path:"/information",
+        element: <Information />
       }
     ],
   },

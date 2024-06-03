@@ -95,7 +95,8 @@ export default function CreatedDiary({ title, date, content, id }) {
             <S.PhotoBtnWrapper onClick={handleImage}>
               {postImageMutation.isPending ? 
                 <CircleLoading>
-                  이미지를 생성 중입니다.
+                  이미지를 생성 중입니다. <br />
+                  새로고침시 오류가 발생할 수 있으니, 20초 정도만 기다려주세요!
                 </CircleLoading>
               :
                 <S.BtnImage src={createImgBtn} />

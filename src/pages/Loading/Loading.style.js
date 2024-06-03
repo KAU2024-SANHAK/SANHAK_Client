@@ -3,19 +3,20 @@ import styled from 'styled-components';
 export const LoadingWrapper = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
   background: ${({ theme: { colors } }) => colors.pink.white_pink};
-  width: 37.5rem;
+  width: 100%;
   height: 100vh;
-  position: fixed;
+  position: relative;
   bottom: 0;
   z-index: 999;
 `;
 
 export const Text = styled.div`
-  ${({ theme: { fonts } }) => fonts.body_10};
-  //color: ${({ theme: { colors } }) => colors.normal.black};
+  ${({ theme: { fonts } }) => fonts.body_06};
+  color: ${({ theme: { colors } }) => colors.normal.black};
+  text-align: center;
 
 `;
 
 export const LottieWrapper = styled.div`
-  width: 90%;
+  width: 50%;
 `

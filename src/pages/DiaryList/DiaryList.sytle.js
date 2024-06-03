@@ -7,7 +7,6 @@ export const DiaryListWrapper=styled.div`
     min-height: 100vh;
     height: auto;
     max-height: fit-content;
-    justify-content: start;
 `
 export const BackButtonWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexBox({})};

@@ -5,7 +5,6 @@ import { useFileReader } from '../../hooks/common/useFileReader';
 import { useNavigate } from 'react-router-dom';
 import { diaryImage, diaryContent, diaryTitle, diaryId, createdDate } from '../../recoil/atoms';
 import { useRecoilState } from 'recoil';
-// import parse from 'html-react-parser';
 import usePostSlowDiary from '../../hooks/queries/slowdiary/usePostSlowDiary';
 import usePatchDiary from '../../hooks/queries/slowdiary/usePatchDiary';
 import BtnHome from '../../components/common/buttons/Home/BtnHome';

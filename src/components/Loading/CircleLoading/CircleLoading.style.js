@@ -11,6 +11,7 @@ export const LoadingWrapper = styled.div`
 export const Text = styled.div`
   ${({ theme: { fonts } }) => fonts.body_10};
   //color: ${({ theme: { colors } }) => colors.normal.black};
+  text-align: center;
 
 `;
 
