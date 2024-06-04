@@ -18,6 +18,7 @@ import FallbackUI from '../pages/FallbackUI/FallbackUI';
 import Loading from '../pages/Loading/Loading';
 import SharedView from '../pages/SharedView/SharedView';
 import Information from '../pages/Information/Information';
+import Weather from '../pages/Weather/Weather';
 
 /*이런 식으로 작성하기*/
 const router = createBrowserRouter([
@@ -88,6 +89,9 @@ const router = createBrowserRouter([
       {
         path:"/information",
         element: <Information />
+      },{
+        path: '/weather',
+        element: <Weather />
       }
     ],
   },
