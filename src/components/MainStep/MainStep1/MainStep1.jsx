@@ -11,7 +11,7 @@ export default function MainStep1() {
     <S.Main1Wrapper>
       <S.MainStep1Wrapper>
         <S.MainButtonWrapper>
-            <WeatherPlaylist />
+            {/*<WeatherPlaylist />*/}
             <MyPageButton />
             <SearchByEmotionButton />
             <ThisMonthEmotion />
