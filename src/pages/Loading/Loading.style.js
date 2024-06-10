@@ -5,8 +5,9 @@ export const LoadingWrapper = styled.div`
   background: ${({ theme: { colors } }) => colors.pink.white_pink};
   width: 100%;
   height: 100vh;
-  position: relative;
+  position: fixed;
   bottom: 0;
+  right: 0;
   z-index: 999;
 `;
 
