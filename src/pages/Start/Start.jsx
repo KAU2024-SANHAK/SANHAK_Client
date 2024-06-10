@@ -4,6 +4,7 @@ import HoneyBear from '../../components/common/HoneyBear/HoneyBear';
 import { useNavigate } from 'react-router-dom';
 import BtnKakaoLogin from '../../components/common/buttons/KakaoLogin/BtnKakaoLogin';
 import { useEffect, useState } from 'react';
+import BtnSubmit from '../../components/common/buttons/Submit/BtnSubmit';
 
 function Start() {
   const navigate = useNavigate();
@@ -11,6 +12,10 @@ function Start() {
   const isFirstLogin = localStorage.getItem('FIRST_LOGIN');
   const ref = document.referrer;
   sessionStorage.setItem('url', ref);
+
+  const handleGoInfo = () => {
+    navigate('/information');
+  }
 
   const handleStartButton = () => {
     //isFirstLogin ? navigate('/onboarding') : navigate('/main');
@@ -43,6 +48,12 @@ function Start() {
         ) : (
           <BtnKakaoLogin />
         )}
+        <S.BtnSubmit
+          onClick={() => {
+            handleGoInfo();
+          }}>
+            허니어리란?
+          </S.BtnSubmit>
       </S.ButtonField>
     </S.StartPageWrapper>
   );
