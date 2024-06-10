@@ -26,4 +26,14 @@ export const Title = styled.p`
   ${({ theme }) => theme.fonts.big_title};
   line-height: 3rem;
 `;
-export const ButtonField = styled.div``;
+export const ButtonField = styled.div`
+  ${({ theme: { mixin } }) => mixin.flexCenter({})};
+`;
+
+export const BtnSubmit = styled.button`
+  ${({ theme: { mixin } }) => mixin.flexCenter({})};
+  ${({ theme }) => theme.fonts.body_06};
+  text-decoration: underline;
+  background-color: transparent;
+  padding-top: 1rem;
+`;
