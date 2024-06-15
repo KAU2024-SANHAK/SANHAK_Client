@@ -68,16 +68,9 @@ export default function SharedView(){
           >
             허니어리 사용하기
           </BtnSubmit>
-          <BtnSubmit
-          onClick={() => {
-            handleGoInfo();
-          }}
-            width='11.6rem'
-            height='4rem'
-            $color = {({ theme }) => theme.colors.normal.white}
-          >
+          <S.infobtn onClick={() => {handleGoInfo()}}>
             허니어리란?
-          </BtnSubmit>
+          </S.infobtn>
         </S.ButtonField>
       </S.Header>
 

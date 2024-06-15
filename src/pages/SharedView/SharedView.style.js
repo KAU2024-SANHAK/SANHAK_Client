@@ -74,3 +74,12 @@ export const CloseBtn = styled.div`
   left: 31.6rem;
 `
 export const XBtn = styled(IcXBtn)``
+export const infobtn = styled.button`
+  ${({ theme }) => theme.fonts.body_01};
+  background-color: white;
+  color: black;
+  border-radius: 3rem;
+  flex-shrink: 0;
+  height: 4rem;
+  margin: 0 1.7rem 0 1.7rem;
+`
