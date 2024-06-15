@@ -12,6 +12,7 @@ export const ButtonWrapper = styled.button`
 export const ButtonText = styled.p`
   ${({ theme }) => theme.fonts.body_10};
   text-decoration: underline;
+  color: black;
 `
 export const TT = styled.p`
   ${({ theme }) => theme.fonts.heading_01};

@@ -13,4 +13,5 @@ export const ButtonWrapper = styled.button`
 `
 export const ButtonText = styled.p`
   ${({ theme }) => theme.fonts.caption_04};
+  color: black;
 `
