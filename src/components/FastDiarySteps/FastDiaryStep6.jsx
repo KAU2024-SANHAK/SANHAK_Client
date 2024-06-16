@@ -61,7 +61,7 @@ export default function FastDiaryStep6({ onNext, onPrev }) {
               setContent(data.diaryContent);
               setTitle(data.title);
               setDate(handleDate(data.writed_at));
-              setFeeling(diaryKeywords.feeling);
+              setFeeling(data.feeling);
               onNext();
             },
           });
