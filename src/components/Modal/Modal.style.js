@@ -7,6 +7,7 @@ export const Overlay = styled.div`
     z-index: 9999;
     position: fixed;
     bottom: 0;
+    left: 0;
 `
 export const ModalWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
