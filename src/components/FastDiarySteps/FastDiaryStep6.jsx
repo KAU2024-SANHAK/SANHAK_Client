@@ -49,7 +49,6 @@ export default function FastDiaryStep6({ onNext, onPrev }) {
   };
 
   const onClickSubmit = async () => {
-    console.log(checkNull);
     {
       checkNull === true
         ? openModal()

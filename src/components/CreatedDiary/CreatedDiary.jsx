@@ -29,9 +29,7 @@ export default function CreatedDiary({ title, date, content, id }) {
     };
     postFeelingMutation.mutate(body, {
       onSuccess: (response) => {
-        console.log(response.data.feeling);
         setFeeling(response.data.feeling);
-        console.log(feeling);
         navigate('/emotionview');
       },
       onError: (error) => {
