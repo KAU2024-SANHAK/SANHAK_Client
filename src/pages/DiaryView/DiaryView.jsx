@@ -125,7 +125,8 @@ export default function DiaryView() {
                 {postMutation.isPending ?
                   <CircleLoading>
                     조언을 생성 중입니다. <br />
-                    새로고침시 오류가 발생할 수 있으니, 20초 정도만 기다려주세요!
+                    새로고침시 오류가 발생할 수 있으니, 20초 정도만 기다려주세요!<br />
+                    생성된 조언이 안 보인다면 새로고침을 해보세요!
                   </CircleLoading> 
                 : 
                   <DiaryViewPopUp 
