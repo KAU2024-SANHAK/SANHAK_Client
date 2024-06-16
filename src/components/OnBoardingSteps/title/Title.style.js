@@ -18,6 +18,6 @@ export const SubTitleWrapper = styled.p`
 export const CaptionWrapper = styled.li`
   ${({ theme }) => theme.fonts.caption_02};
   width: 100%;
-  margin-left: 6rem;
+  margin-left: 1.5rem;
   letter-spacing: -0.0408rem;
 `;
