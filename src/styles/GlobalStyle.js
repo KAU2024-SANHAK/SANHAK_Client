@@ -30,6 +30,7 @@ ${reset}
  html, body{
   font-family: 'Pretendard', serif, sans-serif, monospace;
   overflow-x :  hidden;
+  color: black;
  }
  
 
@@ -44,6 +45,9 @@ ${reset}
 
     /* 버튼 클릭 시 색 제거 */
     -webkit-tap-highlight-color: rgba(0,0,0,0);
+    font-family: 'Pretendard', serif, sans-serif, monospace;
+  overflow-x :  hidden;
+  color: black;
 }
 #root::-webkit-scrollbar {
     display: none; /* 크롬, 사파리, 오페라, 엣지 스크롤바 숨김 */
