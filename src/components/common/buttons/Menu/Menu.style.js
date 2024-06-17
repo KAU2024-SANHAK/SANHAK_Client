@@ -12,7 +12,7 @@ export const MenuBtn = styled(IcMenu)`
 `
 export const MenuWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
-    height: 8.5rem;
+    width: 13rem;
     background-color: white;
     border-radius: 3rem;
     position: absolute;
