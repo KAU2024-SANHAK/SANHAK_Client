@@ -5,10 +5,10 @@ import { useState } from 'react';
 function WeatherPlaylist(){
   const { data } = useGetWeather();
   const [isClick, setIsClick] = useState(false);
-  console.log(data);
+  console.log(data.data.icon);
   return(
     <S.WeatherPlaylistWrapper>
-      <S.WeatherIcon />
+      <S.WeatherIcon src={data.data.icon}/>
 
       <S.PlaylistBox>
         <S.Thumbnail 
