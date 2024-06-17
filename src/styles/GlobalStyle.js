@@ -28,7 +28,6 @@ ${reset}
  }
 
  html, body{
-  font-family: 'Pretendard';
   overflow-x :  hidden;
   color: black;
  }
@@ -45,7 +44,6 @@ ${reset}
 
     /* 버튼 클릭 시 색 제거 */
     -webkit-tap-highlight-color: rgba(0,0,0,0);
-    font-family: 'Pretendard';
   overflow-x :  hidden;
   color: black;
 }
