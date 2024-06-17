@@ -15,7 +15,7 @@ import { useState } from 'react';
 export default function CreatedDiary({ title, date, content, id }) {
   const navigate = useNavigate();
   const [feeling, setFeeling] = useRecoilState(diaryFeeling);
-  const isFeeling = feeling !== null && feeling !== '';
+  const isFeeling = (feeling === null ? false : true);
   const [image, setImage] = useRecoilState(diaryImage);
   const isImage = image !== null && image !== ''&& image !== undefined;
   const postFeelingMutation = usePostFeeling();
@@ -29,9 +29,7 @@ export default function CreatedDiary({ title, date, content, id }) {
     };
     postFeelingMutation.mutate(body, {
       onSuccess: (response) => {
-        console.log(response.data.feeling);
         setFeeling(response.data.feeling);
-        console.log(feeling);
         navigate('/emotionview');
       },
       onError: (error) => {
