@@ -32,37 +32,39 @@ const colors = {
     dark_gray: '#CBC7C7',
     text_gray: '#858585',
   },
-  gradient:{
-    gradient_pink: 'linear-gradient(187deg, #FFBBCB 20.43%, #FFDAE3 81.25%, #DCC6CC 100.45%, #999 100.45%)',
+  gradient: {
+    gradient_pink:
+      'linear-gradient(187deg, #FFBBCB 20.43%, #FFDAE3 81.25%, #DCC6CC 100.45%, #999 100.45%)',
     gradient_yellow: 'linear-gradient(187deg, #FFE768 20.43%, #FFF3B7 84.05%)',
-    this_month_emotion_gradient: 'background: var(--Warm-Pink, linear-gradient(180deg, rgba(255, 255, 255, 0.00) 50%, rgba(255, 255, 255, 0.39) 111.04%), #FFA2A2)'
-  }
+    this_month_emotion_gradient:
+      'background: var(--Warm-Pink, linear-gradient(180deg, rgba(255, 255, 255, 0.00) 50%, rgba(255, 255, 255, 0.39) 111.04%), #FFA2A2)',
+  },
 };
 
 const fonts = {
   big_title: css`
-    font-family: 'Pretendard';
+    font-family: 'Pretendard', serif, sans-serif, monospace;
     font-size: 3.2rem;
     font-style: normal;
     font-weight: 700;
     line-height: 2.2rem;
   `,
   title: css`
-    font-family: 'Pretendard';
+    font-family: 'Pretendard', serif, sans-serif, monospace;
     font-size: 2.6rem;
     font-style: normal;
     font-weight: 700;
     line-height: 3rem;
   `,
   heading_01: css`
-    font-family: 'Pretendard';
+    font-family: 'Pretendard', serif, sans-serif, monospace;
     font-size: 2.4rem;
     font-style: normal;
     font-weight: 600;
     line-height: 3rem;
   `,
   heading_03: css`
-    font-family: 'Pretendard';
+    font-family: 'Pretendard', serif, sans-serif, monospace;
     font-size: 2.1rem;
     font-style: normal;
     font-weight: 700;
@@ -70,35 +72,35 @@ const fonts = {
   `,
 
   body_01: css`
-    font-family: 'Pretendard';
+    font-family: 'Pretendard', serif, sans-serif, monospace;
     font-size: 1.8rem;
     font-style: normal;
     font-weight: 700;
     line-height: 2.2rem;
   `,
   body_02: css`
-    font-family: 'Pretendard';
+    font-family: 'Pretendard', serif, sans-serif, monospace;
     font-size: 1.8rem;
     font-style: normal;
     font-weight: 400;
     line-height: 2.2rem;
   `,
   body_06: css`
-    font-family: 'Pretendard';
+    font-family: 'Pretendard', serif, sans-serif, monospace;
     font-size: 1.6rem;
     font-style: normal;
     font-weight: 500;
     line-height: 2.2rem;
   `,
   body_08: css`
-    font-family: 'Pretendard';
+    font-family: 'Pretendard', serif, sans-serif, monospace;
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 400;
     line-height: 2.2rem;
   `,
   body_10: css`
-    font-family: 'Pretendard';
+    font-family: 'Pretendard', serif, sans-serif, monospace;
     font-size: 1.2rem;
     font-style: normal;
     font-weight: 400;
@@ -106,21 +108,21 @@ const fonts = {
   `,
 
   caption_01: css`
-    font-family: 'Pretendard';
+    font-family: 'Pretendard', serif, sans-serif, monospace;
     font-size: 1.2rem;
     font-style: normal;
     font-weight: 700;
     line-height: 1.6rem;
   `,
   caption_02: css`
-    font-family: 'Pretendard';
+    font-family: 'Pretendard', serif, sans-serif, monospace;
     font-size: 1.2rem;
     font-style: normal;
     font-weight: 400;
     line-height: 1.6rem;
   `,
   caption_04: css`
-    font-family: 'Pretendard';
+    font-family: 'Pretendard', serif, sans-serif, monospace;
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
