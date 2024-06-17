@@ -15,7 +15,7 @@ function Start() {
 
   const handleGoInfo = () => {
     navigate('/information');
-  }
+  };
 
   const handleStartButton = () => {
     //isFirstLogin ? navigate('/onboarding') : navigate('/main');
@@ -51,9 +51,10 @@ function Start() {
         <S.BtnSubmit
           onClick={() => {
             handleGoInfo();
-          }}>
-            허니어리란?
-          </S.BtnSubmit>
+          }}
+        >
+          허니어리란?
+        </S.BtnSubmit>
       </S.ButtonField>
     </S.StartPageWrapper>
   );
