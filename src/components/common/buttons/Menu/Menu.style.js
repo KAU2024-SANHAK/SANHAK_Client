@@ -13,9 +13,9 @@ export const MenuBtn = styled(IcMenu)`
 export const MenuWrapper = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
   height: 8.5rem;
+  width: 15rem;
   background-color: white;
   border-radius: 3rem;
-  padding: 0 1.7rem 0 1.7rem;
   position: absolute;
   top: 10rem;
 `;
@@ -26,6 +26,7 @@ export const EditBtn = styled.button`
   margin-bottom: 0.5rem;
   background-color: transparent;
   color: black;
+  width: 100%;
 `;
 export const DeleteBtn = styled.button`
   ${({ theme }) => theme.fonts.body_08};
@@ -34,6 +35,7 @@ export const DeleteBtn = styled.button`
   margin-bottom: 0.5rem;
   background-color: transparent;
   color: black;
+  width: 100%;
 `;
 export const ButtonField = styled.div`
   width: 37.5rem;
