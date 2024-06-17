@@ -36,4 +36,5 @@ export const BtnSubmit = styled.button`
   text-decoration: underline;
   background-color: transparent;
   padding-top: 1rem;
+  color: black;
 `;
