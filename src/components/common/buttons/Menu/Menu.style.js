@@ -15,20 +15,23 @@ export const MenuWrapper = styled.div`
     height: 8.5rem;
     background-color: white;
     border-radius: 3rem;
+    padding: 0 1.7rem 0 1.7rem;
     position: absolute;
     top: 10rem;
 `
 export const EditBtn = styled.button`
     ${({ theme }) => theme.fonts.body_02};
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
-    margin: 0.5rem 1.7rem 0.5rem 1.7rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     background-color: transparent;
     color: black;
 `
 export const DeleteBtn = styled.button`
     ${({ theme }) => theme.fonts.body_02};
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
-    margin: 0.5rem 1.7rem 0.5rem 1.7rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     background-color: transparent;
     color: black;
 `
