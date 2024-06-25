@@ -1,4 +1,4 @@
-import * as S from "./EmotionType.style";
+import * as S from "./BtnEmotionType.style";
 
 export default function BtnEmotionType({name,  onClick}) {
   return (
