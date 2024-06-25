@@ -1,7 +1,7 @@
 import * as S from "./ThisMonthEmotion.style";
 import { convertFeelingText } from "../../../../utils/convertFeelingText";
 import useGetSummary from "../../../../hooks/queries/main/useGetSummary";
-import FeelingHoneyBear from "../../HoneyBear/FeelingHoneyBear";
+import FeelingHoneyBear from "../../../common/HoneyBear/FeelingHoneyBear";
 import usePostPlaylist from "../../../../hooks/queries/main/usePostPlaylist";
 
 export default function ThisMonthEmotion() {

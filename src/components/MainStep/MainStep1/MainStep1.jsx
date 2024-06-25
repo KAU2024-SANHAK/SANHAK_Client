@@ -1,7 +1,7 @@
 import * as S from './MainStep1.style';
 import MyPageButton from '../../common/buttons/MyPageButton/MyPageButton';
 import SearchByEmotionButton from '../../common/buttons/SearchByEmotionButton/SearchByEmotionButton';
-import ThisMonthEmotion from '../../common/buttons/ThisMonthEmotion/ThisMonthEmotion';
+import ThisMonthEmotion from '../MainStep1/ThisMonthEmotion/ThisMonthEmotion';
 import KakaoAd from '../../KakaoAd/KakaoAd';
 import WeatherPlaylist from '../MainStep1/WeatherPlaylist/WeatherPlaylist';
 import { motion } from 'framer-motion';
