@@ -1,5 +1,5 @@
 import * as S from "./OnBoardingStep.style"
-import BtnComplete from "../common/buttons/complete/BtnComplete";
+import BtnComplete from "../common/buttons/Complete/BtnComplete";
 import Title from "./title/Title";
 import SubTitle from "./title/SubTitle";
 import HoneyBear from "../common/HoneyBear/HoneyBear";

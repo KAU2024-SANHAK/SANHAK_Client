@@ -6,7 +6,7 @@ import { userDiaryType } from '../../../recoil/atoms';
 import usePostDiaryType from "../../../hooks/queries/onboarding/usePostDiaryType";
 import useLogout from '../../../hooks/queries/member/members/useLogout';
 import BtnLogout from '../../../components/common/buttons/Logout/BtnLogout';
-import BtnComplete from '../../../components/common/buttons/complete/BtnComplete';
+import BtnComplete from '../../../components/common/buttons/Complete/BtnComplete';
 import BtnSetCharacter from '../../../components/common/buttons/SetCharcater/BtnSetCharacter';
 import BtnCurDiaryType from '../../../components/common/buttons/CurDiaryType/BtnCurDiaryType';
 import SetWritingStyle from '../../../components/SetDiaryStyle/SetDiaryStyle';

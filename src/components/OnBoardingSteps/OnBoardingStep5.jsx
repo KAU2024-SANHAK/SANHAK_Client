@@ -6,7 +6,7 @@ import { getAccessToken } from "../../apis/client";
 import SetDiaryStyle from "../SetDiaryStyle/SetDiaryStyle";
 import Title from "./title/Title";
 import Caption from "./title/Caption";
-import BtnComplete from "../common/buttons/complete/BtnComplete";
+import BtnComplete from '../common/buttons/Complete/BtnComplete';
 
 export default function OnBoardingStep5({onNext}){
 	const diaryTypeAtom = useRecoilValue(userDiaryType);

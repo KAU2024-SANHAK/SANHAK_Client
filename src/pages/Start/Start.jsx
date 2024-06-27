@@ -1,5 +1,5 @@
 import * as S from './Start.style';
-import BtnComplete from '../../components/common/buttons/complete/BtnComplete';
+import BtnComplete from '../../components/common/buttons/Complete/BtnComplete';
 import HoneyBear from '../../components/common/HoneyBear/HoneyBear';
 import { useNavigate } from 'react-router-dom';
 import BtnKakaoLogin from '../../components/common/buttons/KakaoLogin/BtnKakaoLogin';

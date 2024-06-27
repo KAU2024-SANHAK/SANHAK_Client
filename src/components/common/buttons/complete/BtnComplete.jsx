@@ -1,4 +1,4 @@
-import * as S from './BtnComplete.style'
+import * as S from './BtnComplete.style';
 
 export default function BtnComplete({onClick, children}){
 	return(
