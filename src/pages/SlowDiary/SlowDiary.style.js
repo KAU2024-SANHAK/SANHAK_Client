@@ -16,11 +16,9 @@ const InputBaseStyle = css`
 
   &::placeholder{
     color: ${({ theme }) => theme.colors.gray.text_gray};
-    letter-spacing: -0.0408rem;
     text-decoration-line: underline;
   };
-`
-
+`;
 
 export const SlowDiaryPageWrapper = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
@@ -41,7 +39,6 @@ export const FormWrapper = styled.form`
 `;
 export const ImageInput = styled.input`
   display:none;
-
 `;
 export const Label = styled.label`
   ${BackdropFilter};
@@ -78,11 +75,9 @@ export const BtnField = styled.div`
 export const Caption =styled.p`
   ${({ theme }) => theme.fonts.body_10};
   color: ${({ theme }) => theme.colors.gray.text_gray};
-  letter-spacing: -0.0408rem;
   
   margin-bottom: 0.5rem;
   margin-left: 7.6rem;
-  
 `;
 export const PreviewImg = styled.img`
   width: 31.5rem;
