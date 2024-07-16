@@ -66,8 +66,6 @@ export default function SlowDiary(){
     formData.append('diaryContent', inputData.diaryContent);
 
     if(id === 0){
-      formData.append('imageUrl', file);
-
       postMutation.mutate(formData, {
         onSuccess: (response) => {
           const data = response.data;
@@ -82,7 +80,6 @@ export default function SlowDiary(){
       });
     }
     else{
-
       formData.append('diaryId', id);
 
       patchMutation.mutate(formData,{
@@ -95,10 +92,8 @@ export default function SlowDiary(){
           setId(data.diaryId);
           navigate('/diaryview');
         }
-
-      })         
+      });        
     }
-      
   };
 
   const handleGoMain=()=>{
