@@ -52,11 +52,9 @@ export default function SlowDiary(){
     const year = date.getFullYear();
     const month = date.getMonth() + 1;
     const day = date.getDate();
-    const newDate = `${year}년 ${month}월 ${day}일`;
+    const formatedDate = `${year}년 ${month}월 ${day}일`;
     
-    text = newDate;
-
-    return text;
+    return formatedDate;
   };
 
   const handleChange = (event) => {
@@ -72,7 +70,6 @@ export default function SlowDiary(){
 
     setFile(file);
   };
-  console.log(data.diaryContent)
 
   const handleSubmit = () => {
 
@@ -95,7 +92,6 @@ export default function SlowDiary(){
       });
     }
     else{
-      console.log('patch')
       !file ? formData.append('imageUrl', new Blob(), '')
       : formData.append('imageUrl', file);
 
@@ -153,7 +149,8 @@ export default function SlowDiary(){
             id ='imgInput' 
             accept ='image/*' 
             name = 'imageurl' 
-            onChange = {handleImage} />
+            onChange = {handleImage} 
+          />
 
           <S.Label htmlFor = 'imgInput'>
             {data.imageurl ? (
