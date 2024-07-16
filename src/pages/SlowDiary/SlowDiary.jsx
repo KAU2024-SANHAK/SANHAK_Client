@@ -60,10 +60,12 @@ export default function SlowDiary(){
   };
 
   const handleSubmit = () => {
+    !file ? formData.append('imageUrl', new Blob(), '')
+    : formData.append('imageUrl', file);
+    formData.append('diaryTitle', inputData.diaryTitle);
+    formData.append('diaryContent', inputData.diaryContent);
 
     if(id === 0){
-      formData.append('diaryTitle', inputData.diaryTitle);
-      formData.append('diaryContent', inputData.diaryContent);
       formData.append('imageUrl', file);
 
       postMutation.mutate(formData, {
@@ -80,11 +82,7 @@ export default function SlowDiary(){
       });
     }
     else{
-      !file ? formData.append('imageUrl', new Blob(), '')
-      : formData.append('imageUrl', file);
 
-      formData.append('diaryTitle', inputData.diaryTitle);
-      formData.append('diaryContent', inputData.diaryContent);
       formData.append('diaryId', id);
 
       patchMutation.mutate(formData,{
