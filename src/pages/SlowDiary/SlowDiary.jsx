@@ -34,18 +34,6 @@ export default function SlowDiary(){
   });
 
   const [file, setFile] = useState(null);
-  
-  const blobTitle = new Blob([JSON.stringify(inputData.diaryTitle)],{
-    type: 'application/json',
-  });        
-  const blobContent = new Blob([JSON.stringify(inputData.diaryContent)],{
-    type: 'application/json',
-  });
-
-  const parseString =(text) =>{
-    text = text.replace(/\\n/g, '\n');
-    return text.substring(1, text.length-1);
- };
 
  const handleDate = (text) => {
     const date = new Date(text);
@@ -102,6 +90,7 @@ export default function SlowDiary(){
       patchMutation.mutate(formData,{
         onSuccess: (response) => {
           const data = response.data;
+          
           setImage(data.imageurl);
           setContent(data.diaryContent);
           setTitle(data.diaryTitle);
