@@ -1,10 +1,10 @@
 import * as S from './SlowDiary.style';
 import { useState } from 'react';
 import { useModal } from '../../hooks/common/useModal';
-import { useFileReader } from '../../hooks/common/useFileReader';
 import { useNavigate } from 'react-router-dom';
 import { diaryImage, diaryContent, diaryTitle, diaryId, createdDate } from '../../recoil/atoms';
 import { DefaultValue, useRecoilState } from 'recoil';
+import useFileReader from '../../hooks/common/useFileReader';
 import usePostSlowDiary from '../../hooks/queries/slowdiary/usePostSlowDiary';
 import usePatchDiary from '../../hooks/queries/slowdiary/usePatchDiary';
 import BtnHome from '../../components/common/buttons/Home/BtnHome';
