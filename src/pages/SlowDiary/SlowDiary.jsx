@@ -4,14 +4,14 @@ import { useModal } from '../../hooks/common/useModal';
 import { useFileReader } from '../../hooks/common/useFileReader';
 import { useNavigate } from 'react-router-dom';
 import { diaryImage, diaryContent, diaryTitle, diaryId, createdDate } from '../../recoil/atoms';
-import { useRecoilState } from 'recoil';
+import { DefaultValue, useRecoilState } from 'recoil';
 import usePostSlowDiary from '../../hooks/queries/slowdiary/usePostSlowDiary';
 import usePatchDiary from '../../hooks/queries/slowdiary/usePatchDiary';
 import BtnHome from '../../components/common/buttons/Home/BtnHome';
 import BtnNext from '../../components/common/buttons/Next/BtnNext';
 import OptionModal from '../../components/Modal/OptionModal';
 
-export default function SlowDiary(){
+function SlowDiary(){
   const date = new Date();
   const today = date.getDate();
 
@@ -166,5 +166,6 @@ export default function SlowDiary(){
           </S.BtnField>
       </S.FormWrapper>
     </S.SlowDiaryPageWrapper>
-  )   
+  );   
 }
+export default SlowDiary;
