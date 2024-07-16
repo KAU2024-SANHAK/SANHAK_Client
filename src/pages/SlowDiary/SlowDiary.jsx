@@ -1,4 +1,4 @@
-import * as S from './SlowDiary.style'
+import * as S from './SlowDiary.style';
 import { useState } from 'react';
 import { useModal } from '../../hooks/common/useModal';
 import { useFileReader } from '../../hooks/common/useFileReader';
@@ -35,7 +35,7 @@ export default function SlowDiary(){
 
   const [file, setFile] = useState(null);
 
- const handleDate = (text) => {
+  const handleDate = (text) => {
     const date = new Date(text);
     const year = date.getFullYear();
     const month = date.getMonth() + 1;
