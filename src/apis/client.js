@@ -46,7 +46,7 @@ export const aiInstance = axios.create({
 
 aiInstance.interceptors.request.use(
   (config) => {
-    if (!localStorage.getItem('MemberId') || !localStorage.getItem('LOGIN_REFRESH_TOKEN')) {
+    if (!localStorage.getItem('MemberId')) {
       window.location.href = '/login-error';
       return config;
     }

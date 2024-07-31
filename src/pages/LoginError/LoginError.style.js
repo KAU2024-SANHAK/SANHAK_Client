@@ -7,12 +7,12 @@ export const LoginErrorWrapper = styled.div`
   height: 100vh;
 `;
 
-export const BoldText = styled.p`
+export const BoldText = styled.div`
   ${({ theme }) => theme.fonts.body_01};
   padding-bottom: 2rem;
 `;
 
-export const LightText = styled.p`
+export const LightText = styled.div`
   ${({ theme }) => theme.fonts.body_08};
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
   padding-bottom: 2rem;
