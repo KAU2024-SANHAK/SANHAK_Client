@@ -1,7 +1,7 @@
 import { IcError } from '../../assets/svg';
 import * as S from './FallbackUI.style';
 
-const LoginError = () => {
+function FallbackUI() {
   return (
     <S.FallbackUIWrapper>
       <IcError style={{ width: '10rem', height: '10rem' }} />
@@ -12,5 +12,5 @@ const LoginError = () => {
       </S.LightText>
     </S.FallbackUIWrapper>
   );
-};
-export default LoginError;
+}
+export default FallbackUI;

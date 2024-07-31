@@ -1,10 +1,7 @@
-import { useNavigate } from 'react-router-dom';
 import * as S from './LoginError.style';
 import BtnKakaoLogin from '../../components/common/buttons/KakaoLogin/BtnKakaoLogin';
 
-const LoginError = () => {
-  const navigate = useNavigate();
-
+function LoginError() {
   return (
     <S.LoginErrorWrapper>
       <S.BoldText>로그인이 필요합니다.</S.BoldText>
@@ -15,5 +12,5 @@ const LoginError = () => {
       <BtnKakaoLogin />
     </S.LoginErrorWrapper>
   );
-};
+}
 export default LoginError;
