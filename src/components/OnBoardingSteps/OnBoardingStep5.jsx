@@ -1,14 +1,13 @@
-import * as S from "./OnBoardingStep.style";
-import usePostDiaryType from "../../hooks/queries/onboarding/usePostDiaryType";
-import { useRecoilValue } from "recoil";
-import { userDiaryType } from "../../recoil/atoms";
-import { getAccessToken } from "../../apis/client";
-import SetDiaryStyle from "../SetDiaryStyle/SetDiaryStyle";
-import Title from "./title/Title";
-import Caption from "./title/Caption";
-import BtnComplete from "../common/buttons/complete/BtnComplete";
+import * as S from './OnBoardingStep.style';
+import usePostDiaryType from '../../hooks/queries/onboarding/usePostDiaryType';
+import { useRecoilValue } from 'recoil';
+import { userDiaryType } from '../../recoil/atoms';
+import SetDiaryStyle from '../SetDiaryStyle/SetDiaryStyle';
+import Title from './title/Title';
+import Caption from './title/Caption';
+import BtnComplete from '../common/buttons/complete/BtnComplete';
 
-export default function OnBoardingStep5({onNext}){
+export default function OnBoardingStep5({ onNext }){
 	const diaryTypeAtom = useRecoilValue(userDiaryType);
 	const mutation = usePostDiaryType();
 
