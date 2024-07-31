@@ -3,7 +3,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Layout from '../layouts/Layout';
 import Start from '../pages/Start/Start';
-import FallbackUI from '../pages/FallbackUI/FallbackUI';
+import LoginError from '../pages/LoginError/LoginError';
 import OnBoarding from '../pages/OnBoarding/OnBoarding';
 import Main from '../pages/Main/Main';
 import SearchByEmotion from '../pages/SearchByEmotion/SearchByEmotion';
@@ -27,8 +27,8 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: '/error',
-        element: <FallbackUI />,
+        path: '/login-error',
+        element: <LoginError />,
       },
       {
         path: '/',
