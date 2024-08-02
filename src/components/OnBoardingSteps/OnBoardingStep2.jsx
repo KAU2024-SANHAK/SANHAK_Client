@@ -2,7 +2,7 @@ import * as S from './OnBoardingStep.style';
 import BtnNext from '../common/buttons/Next/BtnNext';
 import Title from './title/Title';
 import SubTitle from './title/SubTitle';
-import onBoardingStep2Img from '../../assets/img/onBoardingStep2.png';
+import onboardingStep2Webp from '../../assets/img/onboardingStep2.webp';
 
 export default function OnBoardingStep2({ onNext }){
   return (
@@ -25,7 +25,7 @@ export default function OnBoardingStep2({ onNext }){
       </S.OnBoardingTitleWrapper>
 
       <S.OnBoardingImgWrapper>
-          <S.OnBoardingImg src={onBoardingStep2Img}/>
+          <S.OnBoardingImg src={onboardingStep2Webp}/>
       </S.OnBoardingImgWrapper>
     </S.OnBoardingStepWrapper>
 
