@@ -6,7 +6,7 @@ export const OnBoardingStepWrapper = styled.div`
   height: 100vh;
 `;
 export const OnBoardingHeader = styled.header`
-  ${({ theme: { mixin } }) => mixin.flexBox({ justify: 'center', align: 'center' })};
+  ${({ theme: { mixin }}) => mixin.flexCenter({})};
   position: absolute;
   top: 5rem;
   width: 37.5rem;
