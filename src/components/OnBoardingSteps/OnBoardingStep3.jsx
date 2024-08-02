@@ -7,12 +7,6 @@ import onboardingStep3Webp from '../../assets/img/onboardingStep3.webp';
 export default function OnBoardingStep3({ onNext }){
   return (
     <S.OnBoardingStepWrapper>
-      <S.OnBoardingHeader>
-        <S.ButtonField>
-          <BtnNext onNext={()=>{onNext()}}/>
-        </S.ButtonField>
-      </S.OnBoardingHeader>
-
       <S.OnBoardingTitleWrapper>
         <Title>
           생성형AI를 통한 일기 작성
@@ -27,6 +21,9 @@ export default function OnBoardingStep3({ onNext }){
         <S.OnBoardingImg src={onboardingStep3Webp}/>
       </S.OnBoardingImgWrapper>
 
+      <S.ButtonField>
+        <BtnNext onNext={onNext}/>
+      </S.ButtonField>
     </S.OnBoardingStepWrapper>
   );
 }

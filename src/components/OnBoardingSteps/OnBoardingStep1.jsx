@@ -7,16 +7,6 @@ import onboardingStep1Webp from '../../assets/img/onboardingStep1.webp';
 export default function OnBoardingStep1({ onNext }) {
   return (
     <S.OnBoardingStepWrapper>
-      <S.OnBoardingHeader>
-        <S.ButtonField>
-          <BtnNext
-            onNext={() => {
-              onNext();
-            }}
-          />
-        </S.ButtonField>
-      </S.OnBoardingHeader>
-
       <S.OnBoardingTitleWrapper>
         <Title>
           당신은
@@ -33,6 +23,10 @@ export default function OnBoardingStep1({ onNext }) {
       <S.OnBoardingImgWrapper>
         <S.OnBoardingImg src={onboardingStep1Webp} />
       </S.OnBoardingImgWrapper>
+
+      <S.ButtonField>
+        <BtnNext onNext={onNext}/>
+      </S.ButtonField>
     </S.OnBoardingStepWrapper>
   );
 }

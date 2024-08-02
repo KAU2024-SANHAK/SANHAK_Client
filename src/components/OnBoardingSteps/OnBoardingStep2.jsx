@@ -7,12 +7,6 @@ import onboardingStep2Webp from '../../assets/img/onboardingStep2.webp';
 export default function OnBoardingStep2({ onNext }){
   return (
     <S.OnBoardingStepWrapper>
-      <S.OnBoardingHeader>
-        <S.ButtonField>
-          <BtnNext onNext={()=>{onNext()}}/>
-        </S.ButtonField>
-      </S.OnBoardingHeader>
-
       <S.OnBoardingTitleWrapper>
         <Title>
           바쁘고 귀찮아...<br/>
@@ -27,6 +21,10 @@ export default function OnBoardingStep2({ onNext }){
       <S.OnBoardingImgWrapper>
           <S.OnBoardingImg src={onboardingStep2Webp}/>
       </S.OnBoardingImgWrapper>
+
+      <S.ButtonField>
+        <BtnNext onNext={onNext}/>
+      </S.ButtonField>
     </S.OnBoardingStepWrapper>
 
   );

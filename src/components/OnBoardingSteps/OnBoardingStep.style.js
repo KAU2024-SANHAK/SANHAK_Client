@@ -40,8 +40,10 @@ export const OnBoardingHoneyBearWrapper = styled.div`
   margin-left: 1rem;
   height: 57%;
 `;
-
 export const ButtonField = styled.div`
+  ${({ theme: { mixin } }) => mixin.flexBox({ justify: 'flex-end' })};  
+  display: flex;
   position: absolute;
-  right: 2rem;
+  width: 35rem;
+  bottom: 2rem;
 `;

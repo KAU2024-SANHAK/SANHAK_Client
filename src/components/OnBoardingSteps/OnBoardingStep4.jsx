@@ -7,12 +7,6 @@ import onboardingStep4Webp from '../../assets/img/onboardingStep4.webp';
 export default function OnBoardingStep4({ onNext }){
   return (
     <S.OnBoardingStepWrapper>
-      <S.OnBoardingHeader>
-        <S.ButtonField>
-          <BtnNext onNext={()=>{onNext()}}/>
-        </S.ButtonField>
-      </S.OnBoardingHeader>
-
       <S.OnBoardingTitleWrapper>
         <Title>
           허니베어가 해주는 답장
@@ -26,6 +20,9 @@ export default function OnBoardingStep4({ onNext }){
         <S.OnBoardingImg src={onboardingStep4Webp}/>
       </S.OnBoardingImgWrapper>
 
+      <S.ButtonField>
+        <BtnNext onNext={onNext}/>
+      </S.ButtonField>
     </S.OnBoardingStepWrapper>
   );
 }
