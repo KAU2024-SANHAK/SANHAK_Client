@@ -22,7 +22,7 @@ export default function OnBoardingStep6({ onNext }){
       </S.OnBoardingHoneyBearWrapper>
               
       <S.OnBoardingFooter>
-        <BtnComplete onClick={()=>{onNext()}}>
+        <BtnComplete onClick={onNext}>
           지금 시작하기
         </BtnComplete>
       </S.OnBoardingFooter>
