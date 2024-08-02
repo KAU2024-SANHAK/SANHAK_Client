@@ -39,11 +39,7 @@ export default function OnBoarding() {
             <S.ProgressWrapper>
               <StepProgress steps={steps} cur={step.name} />
             </S.ProgressWrapper>
-            <step.component
-              onNext={() => {
-                handleNext();
-              }}
-            />
+            <step.component onNext={handleNext}/>
           </Step>
         ))}
       </Funnel>
