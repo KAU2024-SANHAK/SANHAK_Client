@@ -8,7 +8,7 @@ export function useFunnel( defaultStep ){
   };
 
   const Funnel = ({ children })=>{
-    const targetStep = children.find(childStep => childStep.name === currentStep );
+    const targetStep = children.find(childStep => childStep.props.name === currentStep );
     return <>{targetStep}</>
   };
 
