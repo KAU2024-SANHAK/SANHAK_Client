@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FallBackWrapper = styled.div`
+export const LoginErrorWrapper = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
   background: ${({ theme }) => theme.colors.gradient.gradient_pink};
   width: 100%;
@@ -15,4 +15,5 @@ export const BoldText = styled.div`
 export const LightText = styled.div`
   ${({ theme }) => theme.fonts.body_08};
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
+  padding-bottom: 2rem;
 `;
