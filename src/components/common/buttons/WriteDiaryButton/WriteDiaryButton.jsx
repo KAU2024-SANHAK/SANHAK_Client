@@ -22,7 +22,7 @@ export default function WriteDiaryButton() {
     <S.ButtonWrapper onClick={() => {
       handleClick();
     }}>
-      <S.WriteDiaryButtonIcon/>
+      <S.WriteButton color='white'/>
     </S.ButtonWrapper>
   )
 }
