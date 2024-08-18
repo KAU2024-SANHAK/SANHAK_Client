@@ -6,6 +6,7 @@ import Slider from 'react-slick';
 import WriteDiaryButton from '../../components/common/buttons/WriteDiaryButton/WriteDiaryButton';
 import StepProgress from '../../components/common/StepPrgoress/StepProgress';
 import { motion } from 'framer-motion';
+import BtnSlowDiary from '../../components/common/buttons/DiaryType/BtnSlowDiary';
 
 function Main() {
   const [oldSlide, setOldSlide] = useState(0);
@@ -69,6 +70,7 @@ function Main() {
           whileTap={{ scale: 0.9 }}
           transition={{ duration: 0.3 }}
         >
+          <BtnSlowDiary />
           <WriteDiaryButton isClick={isClick} onUpdate={onUpdate}/>
         </motion.div>
       </S.WriteDiaryButtonWrapper>
