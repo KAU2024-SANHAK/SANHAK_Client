@@ -10,6 +10,7 @@ import { motion } from 'framer-motion';
 function Main() {
   const [oldSlide, setOldSlide] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isClick, setIsClick] = useState(false);
   const settings = {
     dots: false,
     infinite: false,
@@ -25,6 +26,10 @@ function Main() {
     { name: 'MainStep1', component: <MainStep1 /> },
     { name: 'MainStep2', component: <MainStep2 /> },
   ];
+
+  const onUpdate = () => {
+    setIsClick(!isClick);
+  };
 
   return (
     <S.WholeWrapper className='slider-container'>
@@ -64,7 +69,7 @@ function Main() {
           whileTap={{ scale: 0.9 }}
           transition={{ duration: 0.3 }}
         >
-          <WriteDiaryButton />
+          <WriteDiaryButton isClick={isClick} onUpdate={onUpdate}/>
         </motion.div>
       </S.WriteDiaryButtonWrapper>
 
