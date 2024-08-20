@@ -1,8 +1,10 @@
 import * as S from './BtnDiaryType.style';
 
-function BtnSlowDiary() {
+function BtnSlowDiary({ onClick }) {
   return(
-    <S.ButtonWrapper>
+    <S.ButtonWrapper onClick={() => {
+      onClick();
+    }}>
       <S.SlowWriteButton />
     </S.ButtonWrapper>
   );

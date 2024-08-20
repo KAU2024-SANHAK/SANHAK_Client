@@ -8,11 +8,13 @@ import StepProgress from '../../components/common/StepPrgoress/StepProgress';
 import { motion } from 'framer-motion';
 import BtnSlowDiary from '../../components/common/buttons/DiaryType/BtnSlowDiary';
 import BtnFastDiary from './../../components/common/buttons/DiaryType/BtnFastDiary';
+import { useNavigate } from 'react-router-dom';
 
 function Main() {
   const [oldSlide, setOldSlide] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
   const [isClick, setIsClick] = useState(false);
+  const navigate = useNavigate();
   const settings = {
     dots: false,
     infinite: false,
@@ -31,6 +33,13 @@ function Main() {
 
   const onUpdate = () => {
     setIsClick(!isClick);
+  };
+
+  const handleFastDiary = () => {
+    navigate('/fastdiary');
+  };
+  const handleSlowDiary = () => {
+    navigate('/slowdiary');
   };
 
   return (
@@ -73,8 +82,8 @@ function Main() {
         {
           isClick && (
             <>
-              <BtnFastDiary />
-              <BtnSlowDiary />
+              <BtnSlowDiary onClick={handleSlowDiary}/>
+              <BtnFastDiary onClick={handleFastDiary}/>
             </>
           )
         }
