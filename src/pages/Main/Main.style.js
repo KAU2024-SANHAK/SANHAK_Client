@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import { IcHoneyBear } from '../../assets/svg';
 
 export const WholeWrapper = styled.div`
@@ -19,8 +20,9 @@ export const MainStepWrapper = styled.div`
   left: 41.5%;
   top: 1rem;
 `;
-export const WriteDiaryButtonWrapper = styled.div`
+export const ButtonMotionWrapper = styled(motion.div)`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
+  width: 20rem;
   position: fixed;
   right: 0rem;;
   bottom: 0rem;

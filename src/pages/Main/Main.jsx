@@ -7,6 +7,7 @@ import WriteDiaryButton from '../../components/common/buttons/WriteDiaryButton/W
 import StepProgress from '../../components/common/StepPrgoress/StepProgress';
 import { motion } from 'framer-motion';
 import BtnSlowDiary from '../../components/common/buttons/DiaryType/BtnSlowDiary';
+import BtnFastDiary from './../../components/common/buttons/DiaryType/BtnFastDiary';
 
 function Main() {
   const [oldSlide, setOldSlide] = useState(0);
@@ -65,15 +66,20 @@ function Main() {
         ))}
       </Slider>
 
-      <S.WriteDiaryButtonWrapper>
-        <motion.div
-          whileTap={{ scale: 0.9 }}
-          transition={{ duration: 0.3 }}
-        >
-          <BtnSlowDiary />
-          <WriteDiaryButton isClick={isClick} onUpdate={onUpdate}/>
-        </motion.div>
-      </S.WriteDiaryButtonWrapper>
+      <S.ButtonMotionWrapper
+        whileTap={{ scale: 0.9 }}
+        transition={{ duration: 0.3 }}
+      >
+        {
+          isClick && (
+            <>
+              <BtnFastDiary />
+              <BtnSlowDiary />
+            </>
+          )
+        }
+        <WriteDiaryButton isClick={isClick} onUpdate={onUpdate}/>
+      </S.ButtonMotionWrapper>
 
       <S.MainStepWrapper>
         {activeSlide === 0 ? (
