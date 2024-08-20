@@ -5,7 +5,7 @@ function BtnSlowDiary({ onClick }) {
     <S.ButtonWrapper onClick={() => {
       onClick();
     }}>
-      <S.SlowWriteButton />
+      <S.SlowCreateButton />
     </S.ButtonWrapper>
   );
 }

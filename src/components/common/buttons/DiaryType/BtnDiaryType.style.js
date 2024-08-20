@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { IcFastWriteButton, IcSlowWriteButton } from '../../../../assets/svg';
+import { IcFastCreateButton, IcFastWriteButton, IcSlowCreateButton, IcSlowWriteButton } from '../../../../assets/svg';
 
 export const ButtonWrapper = styled.button`
   display: flex;
   background: transparent;
 `;
-export const SlowWriteButton = styled(IcSlowWriteButton)`
+export const SlowCreateButton = styled(IcSlowCreateButton)`
 `;
-export const FastWriteButton = styled(IcFastWriteButton)`
+export const FastCreateButton = styled(IcFastCreateButton)`
 `;

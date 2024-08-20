@@ -5,7 +5,7 @@ function BtnFastDiary({ onClick }) {
     <S.ButtonWrapper onClick={() => {
       onClick();
     }}>
-      <S.FastWriteButton />
+      <S.FastCreateButton />
     </S.ButtonWrapper>
   );
 }

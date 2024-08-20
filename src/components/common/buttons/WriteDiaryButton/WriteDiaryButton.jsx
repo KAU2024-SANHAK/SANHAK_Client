@@ -24,7 +24,7 @@ export default function WriteDiaryButton({ isClick, onUpdate }) {
     <S.ButtonWrapper onClick={() => {
       handleClick();
     }}>
-      <S.WriteDiaryButtonIcon rotate={angle}/>
+      <S.CreateButton rotate={angle}/>
     </S.ButtonWrapper>
   )
 }
