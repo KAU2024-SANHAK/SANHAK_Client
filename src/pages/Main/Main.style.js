@@ -22,7 +22,7 @@ export const MainStepWrapper = styled.div`
 `;
 export const ButtonMotionWrapper = styled(motion.div)`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
-  width: 20rem;
+  width: 15rem;
   position: fixed;
   right: 0rem;;
   bottom: 0rem;
