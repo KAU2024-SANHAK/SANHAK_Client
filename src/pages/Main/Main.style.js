@@ -21,11 +21,26 @@ export const MainStepWrapper = styled.div`
   top: 1rem;
 `;
 export const ButtonMotionWrapper = styled(motion.div)`
-  ${({ theme: { mixin } }) => mixin.flexCenter({})};
-  width: 15rem;
+  ${({ theme: { mixin } }) => mixin.flexBox({ 
+    'direction': 'column', 
+    'justify': 'flex-end',
+    'align': 'flex-end',
+  })};
+  width: 100%;
   position: fixed;
   right: 0rem;;
   bottom: 0rem;
+`;
+export const CreateButtonField = styled.div`
+  ${({ theme: { mixin } }) => mixin.flexBox({ 
+    'direction': 'row', 
+    'align': 'center',
+  })};
+  padding-right: 1.5rem;
+`;
+export const ButtonText = styled.p`
+  ${({ theme }) => theme.fonts.body_01};
+  color: ${({ theme }) => theme.colors.normal.white};
 `;
 export const MainStep1HoneyBearWrapper = styled.div`
   position: fixed;

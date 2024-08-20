@@ -82,8 +82,19 @@ function Main() {
         {
           isClick && (
             <>
-              <BtnSlowDiary onClick={handleSlowDiary}/>
-              <BtnFastDiary onClick={handleFastDiary}/>
+              <S.CreateButtonField>
+                <S.ButtonText>
+                  직접 일기 쓰기
+                </S.ButtonText>
+                <BtnSlowDiary onClick={handleSlowDiary}/>
+              </S.CreateButtonField>
+
+              <S.CreateButtonField>
+                <S.ButtonText>
+                  키워드로 빠르게 쓰기
+                </S.ButtonText>
+                <BtnFastDiary onClick={handleFastDiary}/>
+              </S.CreateButtonField>
             </>
           )
         }

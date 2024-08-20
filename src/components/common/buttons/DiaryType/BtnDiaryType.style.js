@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { IcFastCreateButton, IcFastWriteButton, IcSlowCreateButton, IcSlowWriteButton } from '../../../../assets/svg';
+import { IcFastCreateButton, IcSlowCreateButton } from '../../../../assets/svg';
 
 export const ButtonWrapper = styled.button`
   display: flex;
