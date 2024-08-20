@@ -29,7 +29,12 @@ export const ButtonMotionWrapper = styled(motion.div)`
   ${({ theme, isClick}) => `
     ${isClick && `background: ${theme.colors.gradient.gradient_black};`}
   `};
-  width: 100%;
+  ${({ isClick }) => `
+    ${isClick 
+      ? `width: 100%;`
+      : `width: 50%;`
+    }
+  `}
   position: fixed;
   right: 0rem;;
   bottom: 0rem;
