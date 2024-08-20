@@ -78,6 +78,7 @@ function Main() {
       <S.ButtonMotionWrapper
         whileTap={{ scale: 0.9 }}
         transition={{ duration: 0.3 }}
+        isClick={isClick}
       >
         {
           isClick && (
