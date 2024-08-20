@@ -17,8 +17,7 @@ export default function OnBoarding() {
     { name: 'Step1', component: OnBoardingStep1, nextStep: 'Step2' },
     { name: 'Step2', component: OnBoardingStep2, nextStep: 'Step3' },
     { name: 'Step3', component: OnBoardingStep3, nextStep: 'Step4' },
-    { name: 'Step4', component: OnBoardingStep4, nextStep: 'Step5' },
-    { name: 'Step5', component: OnBoardingStep5, nextStep: 'Step6' },
+    { name: 'Step4', component: OnBoardingStep4, nextStep: 'Step6' },
     { name: 'Step6', component: OnBoardingStep6, nextStep: '/main' },
   ];
   const [Funnel, Step, currentStep, setCurrentStep] = useFunnel('Step1');
