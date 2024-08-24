@@ -5,12 +5,6 @@ export const OnBoardingStepWrapper = styled.div`
   width: 100%;
   height: 100vh;
 `;
-export const OnBoardingHeader = styled.header`
-  ${({ theme: { mixin } }) => mixin.flexBox({ justify: 'center', align: 'center' })};
-  position: absolute;
-  top: 5rem;
-  width: 37.5rem;
-`;
 export const OnBoardingBody = styled.div`
   ${({ theme: { mixin } }) => mixin.flexBox({ direction: 'column', align: 'center' })};
   width: 32rem;
@@ -40,8 +34,10 @@ export const OnBoardingHoneyBearWrapper = styled.div`
   margin-left: 1rem;
   height: 57%;
 `;
-
 export const ButtonField = styled.div`
+  ${({ theme: { mixin } }) => mixin.flexBox({ justify: 'flex-end' })};  
+  display: flex;
   position: absolute;
-  right: 2rem;
+  width: 35rem;
+  bottom: 2rem;
 `;
