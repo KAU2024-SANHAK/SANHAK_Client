@@ -1,13 +1,15 @@
 import * as S from './OnBoarding.style';
+import { useEffect } from 'react';
 import { useFunnel } from '../../hooks/common/useFunnel';
-import { useNavigate } from 'react-router-dom';
 import OnBoardingStep1 from '../../components/OnBoardingSteps/OnBoardingStep1';
 import OnBoardingStep2 from '../../components/OnBoardingSteps/OnBoardingStep2';
 import OnBoardingStep3 from '../../components/OnBoardingSteps/OnBoardingStep3';
 import OnBoardingStep4 from '../../components/OnBoardingSteps/OnBoardingStep4';
 import OnBoardingStep5 from '../../components/OnBoardingSteps/OnBoardingStep5';
 import OnBoardingStep6 from '../../components/OnBoardingSteps/OnBoardingStep6';
+import { useNavigate } from 'react-router-dom';
 import StepProgress from '../../components/common/StepPrgoress/StepProgress';
+import { getAccessToken } from '../../apis/client';
 
 export default function OnBoarding() {
   const navigate = useNavigate();
@@ -39,7 +41,11 @@ export default function OnBoarding() {
             <S.ProgressWrapper>
               <StepProgress steps={steps} cur={step.name} />
             </S.ProgressWrapper>
-            <step.component onNext={handleNext}/>
+            <step.component
+              onNext={() => {
+                handleNext();
+              }}
+            />
           </Step>
         ))}
       </Funnel>

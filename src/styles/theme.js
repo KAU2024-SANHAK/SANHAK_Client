@@ -48,7 +48,6 @@ const fonts = {
     font-style: normal;
     font-weight: 700;
     line-height: 2.2rem;
-    letter-spacing: -0.0408rem;
   `,
   title: css`
     font-family: 'Pretendard';
@@ -56,7 +55,6 @@ const fonts = {
     font-style: normal;
     font-weight: 700;
     line-height: 3rem;
-    letter-spacing: -0.0408rem;
   `,
   heading_01: css`
     font-family: 'Pretendard';
@@ -64,7 +62,6 @@ const fonts = {
     font-style: normal;
     font-weight: 600;
     line-height: 3rem;
-    letter-spacing: -0.0408rem;
   `,
   heading_03: css`
     font-family: 'Pretendard';
@@ -72,7 +69,6 @@ const fonts = {
     font-style: normal;
     font-weight: 700;
     line-height: 3rem;
-    letter-spacing: -0.0408rem;
   `,
 
   body_01: css`
@@ -81,7 +77,6 @@ const fonts = {
     font-style: normal;
     font-weight: 700;
     line-height: 2.2rem;
-    letter-spacing: -0.0408rem;
   `,
   body_02: css`
     font-family: 'Pretendard';
@@ -89,7 +84,6 @@ const fonts = {
     font-style: normal;
     font-weight: 400;
     line-height: 2.2rem;
-    letter-spacing: -0.0408rem;
   `,
   body_06: css`
     font-family: 'Pretendard';
@@ -97,7 +91,6 @@ const fonts = {
     font-style: normal;
     font-weight: 500;
     line-height: 2.2rem;
-    letter-spacing: -0.0408rem;
   `,
   body_08: css`
     font-family: 'Pretendard';
@@ -105,7 +98,6 @@ const fonts = {
     font-style: normal;
     font-weight: 400;
     line-height: 2.2rem;
-    letter-spacing: -0.0408rem;
   `,
   body_10: css`
     font-family: 'Pretendard';
@@ -113,7 +105,6 @@ const fonts = {
     font-style: normal;
     font-weight: 400;
     line-height: 2.2rem;
-    letter-spacing: -0.0408rem;
   `,
 
   caption_01: css`
@@ -122,7 +113,6 @@ const fonts = {
     font-style: normal;
     font-weight: 700;
     line-height: 1.6rem;
-    letter-spacing: -0.0408rem;
   `,
   caption_02: css`
     font-family: 'Pretendard';
@@ -130,7 +120,6 @@ const fonts = {
     font-style: normal;
     font-weight: 400;
     line-height: 1.6rem;
-    letter-spacing: -0.0408rem;
   `,
   caption_04: css`
     font-family: 'Pretendard';
@@ -138,7 +127,6 @@ const fonts = {
     font-style: normal;
     font-weight: 400;
     line-height: 2.2rem;
-    letter-spacing: -0.0408rem;
   `,
 };
 

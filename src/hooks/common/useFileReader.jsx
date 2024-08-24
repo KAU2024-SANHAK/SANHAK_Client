@@ -1,13 +1,12 @@
-function useFileReader(){
-
-  const readData = (file, setFile) => {
-    const reader = new FileReader;
-    reader.readAsDataURL(file);
+export function useFileReader(){
     
-    reader.onloadend = () => {
-      setFile(reader.result)
+    const readData = (file, setFile) => {
+        const reader = new FileReader;
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+            setFile(reader.result)
+        }
     }
-  };
-  return readData;
+
+    return readData;
 }
-export default useFileReader;

@@ -14,11 +14,11 @@ import MyPage from '../pages/MyPage/MyPage';
 import CharacterWiki from '../pages/CharacterWiki/CharacterWiki';
 import DiaryList from '../pages/DiaryList/DiaryList';
 import LoginCallback from '../components/common/buttons/KakaoLogin/LoginCallback/LoginCallback';
+import FallbackUI from '../pages/FallbackUI/FallbackUI';
 import Loading from '../pages/Loading/Loading';
 import SharedView from '../pages/SharedView/SharedView';
 import Information from '../pages/Information/Information';
 import Weather from '../pages/Weather/Weather';
-import LoginError from '../pages/LoginError/LoginError';
 
 /*이런 식으로 작성하기*/
 const router = createBrowserRouter([
@@ -26,10 +26,6 @@ const router = createBrowserRouter([
     path: '/',
     element: <Layout />,
     children: [
-      {
-        path: '/login-error',
-        element: <LoginError />,
-      },
       {
         path: '/',
         element: <Start />,
@@ -47,8 +43,8 @@ const router = createBrowserRouter([
         element: <Main />,
       },
       {
-        path: '/searchbyemotion',
-        element: <SearchByEmotion />,
+        path: "/searchbyemotion",
+        element: <SearchByEmotion/>
       },
       {
         path: '/fastdiary',
@@ -71,33 +67,32 @@ const router = createBrowserRouter([
         element: <MyPage />,
       },
       {
-        path: '/searchbyemotion',
-        element: <SearchByEmotion />,
+        path: "/searchbyemotion",
+        element: <SearchByEmotion/>
       },
       {
-        path: '/mypage/characterwiki',
-        element: <CharacterWiki />,
+        path:"/mypage/characterwiki",
+        element: <CharacterWiki/>
       },
       {
-        path: '/searchbyemotion/diarylist',
-        element: <DiaryList />,
+        path:"/searchbyemotion/diarylist",
+        element: <DiaryList/>
       },
       {
-        path: '/emotionview',
-        element: <EmotionView />,
+        path:"/emotionview",
+        element: <EmotionView/>
       },
       {
-        path: '/apiloading',
-        element: <Loading />,
+        path:"/apiloading",
+        element: <Loading />
       },
       {
-        path: '/information',
-        element: <Information />,
-      },
-      {
+        path:"/information",
+        element: <Information />
+      },{
         path: '/weather',
-        element: <Weather />,
-      },
+        element: <Weather />
+      }
     ],
   },
 ]);
