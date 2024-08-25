@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StartPageWrapper = styled.div`
   ${({ theme: { mixin } }) =>
     mixin.flexBox({ direction: 'column', justify: 'space-between', align: 'center' })};
-  ${({ theme }) => theme.fonts.title};
+  ${({ theme }) => theme.fonts.heading_01};
   background: ${({ theme }) => theme.colors.gradient.gradient_pink};
   color: ${({ theme }) => theme.colors.normal.black};
   width: 100%;

@@ -31,7 +31,7 @@ function Start() {
     <S.StartPageWrapper>
       <S.TitleWrapper>
         <S.SubTitle>꿀같은 일상을 담는 일기서비스</S.SubTitle>
-        <S.Title>허니어리 🍯</S.Title>
+        <S.Title>허니어리</S.Title>
       </S.TitleWrapper>
 
       <HoneyBear width='100%' />

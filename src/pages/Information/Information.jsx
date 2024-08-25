@@ -35,18 +35,18 @@ export default function Information() {
         <S.InfoWrapper>
             <S.TopWrapper>
                 <S.Header>
-                    <S.Subtitle>
-                        꿀같은 일상을 담는 일기서비스
-                    </S.Subtitle>
-                    <S.Title>
-                        허니어리 🍯
-                    </S.Title>
+                    <S.HoneyBear height={70}/>
+                        <S.Title>
+                            꿀단지 서비스 <br />
+                            허니어리란?
+                        </S.Title>
+                    <S.HoneyBear height={70}/>
                 </S.Header>
                 <S.Body>
                     
 
                     {isBackgroundClick ? 
-                        <S.FirstStatement>
+                        <S.Statement>
                             <S.HonearyBackgroundBtn onClick={BackgroundNotClick}>
                                 허니어리 서비스의 배경
                             </S.HonearyBackgroundBtn>
@@ -60,28 +60,25 @@ export default function Information() {
                             <br />
                             <br />
                             부족하지만, 열심히 만들어 봤습니다. 앞으로 더 좋은 허니어리를 위해 꾸준히 노력하겠습니다 ! : )
-                        </S.FirstStatement>
+                        </S.Statement>
                     :
-                        <S.HonearyBackgroundBeforeClickBtn onClick={BackgroundClick}>
+                        <S.HonearyBackgroundBtn onClick={BackgroundClick}>
                             허니어리 서비스의 배경
-                        </S.HonearyBackgroundBeforeClickBtn>
+                        </S.HonearyBackgroundBtn>
                     }
 
                     {isGgulbeeClick ? 
-                        <S.SecondStatement>
+                        <S.Statement>
                             <S.GgulbeesStatementBtn onClick={GgulbeeNotClick}>
-                                TEAM HONEYARY
+                                팀원(꿀비들) 소개
                             </S.GgulbeesStatementBtn>
 
                             <S.GgulbeeInfoWrapper1>
-                                왕호은
-                                <S.IntroductionText>
-                                    Team Leader
-                                </S.IntroductionText>
+                                (팀장) 왕호은
                                 <S.format>
-                                    <S.GgulbeePhotoWrapper>
+                                    <S.GgulbeePhotooWrapper>
                                         <S.GgulbeePhoto src={photo1}/>
-                                    </S.GgulbeePhotoWrapper>
+                                    </S.GgulbeePhotooWrapper>
                                     <S.GgulbeeFromatStatement1>
                                         “꿀같은 하루를 담다 - 허니어리 🍯🐻” <br />
                                         제작을 맡은  꿀Bee팀장 왕호은이라고 합니다. 더 좋은 서비스를 위해 꾸준히 연구하고 있습니다. 피드백을 환영합니다!    
@@ -90,29 +87,23 @@ export default function Information() {
                             </S.GgulbeeInfoWrapper1>
 
                             <S.GgulbeeInfoWrapper2>
-                                송필수
-                                <S.IntroductionText>
-                                    Frontend Engineer
-                                </S.IntroductionText>
+                                (프론트) 송필수
                                 <S.format>
                                     <S.GgulbeeFromatStatement2>
                                         프론트엔드 맡은 항공대 소프트웨어학과 송필수 입니다. 부족한 실력이지만 열심히 만들었으니, 잘 사용해주시면 감사하겠습니다! &#60;pissssssu.tistory.com&#62;
                                     </S.GgulbeeFromatStatement2>
-                                    <S.GgulbeePhotoWrapper>
+                                    <S.GgulbeePhotooWrapper>
                                         <S.GgulbeePhoto src={photo2}/>
-                                    </S.GgulbeePhotoWrapper>
+                                    </S.GgulbeePhotooWrapper>
                                 </S.format>
                             </S.GgulbeeInfoWrapper2>
                             
                             <S.GgulbeeInfoWrapper1>
-                                성소민
-                                <S.IntroductionText>
-                                    UX/UI Designer, Frontend Engineer
-                                </S.IntroductionText>
+                                (프론트) 성소민
                                 <S.format>
-                                    <S.GgulbeePhotoWrapper>
+                                    <S.GgulbeePhotooWrapper>
                                         <S.GgulbeePhoto src={photo3}/>
-                                    </S.GgulbeePhotoWrapper>
+                                    </S.GgulbeePhotooWrapper>
                                     <S.GgulbeeFromatStatement1>
                                         UX/UI 디자인과 프론트엔드를 담당한 <br /> 항공대 스마트드론공학과 성소민입니다. 허니어리 서비스만의 개성있고, 힐링되는 UI 경험을 얻어가시면 좋겠습니다!
                                     </S.GgulbeeFromatStatement1>
@@ -120,29 +111,23 @@ export default function Information() {
                             </S.GgulbeeInfoWrapper1>
                             
                             <S.GgulbeeInfoWrapper2>
-                                좌민석
-                                <S.IntroductionText>
-                                    Backend Engineer
-                                </S.IntroductionText>   
+                                (백엔드) 좌민석
                                 <S.format>
                                     <S.GgulbeeFromatStatement2>
                                         안녕하세요 백엔드를 담당한 좌민석입니다! 사용자분들이 저희 허니어리를 통해서  자신의 하루를 소중히 간직할 수 있었으면 좋겠습니다 🤗
                                     </S.GgulbeeFromatStatement2>
-                                    <S.GgulbeePhotoWrapper>
+                                    <S.GgulbeePhotooWrapper>
                                         <S.GgulbeePhoto src={photo4}/>
-                                    </S.GgulbeePhotoWrapper>
+                                    </S.GgulbeePhotooWrapper>
                                 </S.format>
                             </S.GgulbeeInfoWrapper2>
                             
                             <S.GgulbeeInfoWrapper1>
-                                송진학
-                                <S.IntroductionText>
-                                    AI Engineer
-                                </S.IntroductionText>
+                                (AI) 송진학
                                 <S.format>
-                                    <S.GgulbeePhotoWrapper>
+                                    <S.GgulbeePhotooWrapper>
                                         <S.GgulbeePhoto src={photo5}/>
-                                    </S.GgulbeePhotoWrapper>
+                                    </S.GgulbeePhotooWrapper>
                                     <S.GgulbeeFromatStatement1>
                                         일기 자동완성, 감정 분석등 여러분이 사용하시게 될 기능들을 제작한 AI 담당 송진학입니다! <br />
                                         다양한 기능들 알차게 사용해주세요!
@@ -151,11 +136,11 @@ export default function Information() {
                             </S.GgulbeeInfoWrapper1>
                             
 
-                        </S.SecondStatement>
+                        </S.Statement>
                     :
-                        <S.GgulbeesStatementBeforeClickBtn onClick={GgulbeeClick}>
-                            TEAM HONEYARY
-                        </S.GgulbeesStatementBeforeClickBtn>
+                        <S.GgulbeesStatementBtn onClick={GgulbeeClick}>
+                            팀원(꿀비들) 소개
+                        </S.GgulbeesStatementBtn>
                     }
                 </S.Body>
             </S.TopWrapper>
