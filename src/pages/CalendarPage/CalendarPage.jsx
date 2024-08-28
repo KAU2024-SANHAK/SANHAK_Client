@@ -11,7 +11,9 @@ function CalendarPage() {
 
   return(
     <S.CalendarPageWrapper>
-      <Calendar />
+      <S.CalendarWrapper>
+        <Calendar />
+      </S.CalendarWrapper>
       {diaries.length > 0 
         ? (
             diaries.map(item => (

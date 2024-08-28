@@ -17,3 +17,6 @@ export const ErrorBox = styled.div`
   border-radius: 3rem;
   background: rgba(255, 255, 255, 0.27);
 `;
+export const CalendarWrapper = styled.div`
+  margin: 10rem 0 2rem 0;
+`;
