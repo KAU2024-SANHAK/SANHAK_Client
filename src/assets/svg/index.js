@@ -49,3 +49,6 @@ export { default as IcBearHoneyBee } from './IcBearHoneyBee';
 export { default as IcPrinceHoneyBee } from './IcPrinceHoneyBee';
 export { default as IcRichHoneyBee } from './IcRichHoneyBee';
 export { default as IcStudentHoneyBee } from './IcStudentHoneyBee';
+export { default as IcCreateButton } from './IcCreateButton';
+export { default as IcFastCreateButton } from './IcFastCreateButton';
+export { default as IcSlowCreateButton } from './IcSlowCreateButton';
