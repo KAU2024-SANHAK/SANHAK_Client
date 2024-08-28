@@ -1,9 +1,9 @@
-import * as S from './Title.style'
+import * as S from './Title.style';
 
-export default function Title({children}){
-    return(
-        <S.TitleWrapper>
-            {children}
-        </S.TitleWrapper>
-    )
+export default function Title({ children }){
+  return(
+    <S.TitleWrapper>
+      {children}
+    </S.TitleWrapper>
+  );
 }
