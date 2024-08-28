@@ -4,15 +4,9 @@ import { IcHoneyBear } from '../../assets/svg';
 
 export const WholeWrapper = styled.div`
 `
-export const Wrapper = styled.div`
+export const MainWrapper = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
-  background: linear-gradient(
-    187deg,
-    #ffbbcb 20.43%,
-    #ffdae3 81.25%,
-    #dcc6cc 100.45%,
-    #999 100.45%
-  );
+  background: ${({ theme }) => theme.colors.gradient.gradient_pink};
 `;
 export const Honeybear = styled(IcHoneyBear)``;
 export const MainStepWrapper = styled.div`
@@ -38,6 +32,7 @@ export const ButtonMotionWrapper = styled(motion.div)`
   position: fixed;
   right: 0rem;;
   bottom: 0rem;
+  z-index: 100;
 `;
 export const CreateButtonField = styled.div`
   ${({ theme: { mixin } }) => mixin.flexBox({ 

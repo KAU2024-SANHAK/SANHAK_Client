@@ -12,7 +12,7 @@ export const Bubble = styled.div`
 `
 export const Wrapper = styled.div`
     z-index: 10;
-    width: 21rem;
+    width: 31.9rem;
     height: 18rem;
     flex-shrink: 0;
     border-radius: 30px;

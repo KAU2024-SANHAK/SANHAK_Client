@@ -43,37 +43,8 @@ function Main() {
   };
 
   return (
-    <S.WholeWrapper className='slider-container'>
-      <Slider {...settings} dotsClass='test-css'>
-        {steps.map((step, idx) => (
-          <S.Wrapper key={idx}>
-            {activeSlide === 0 ? (
-              <motion.div
-                initial={{ opacity: 0, x: 100, scale: 0.5 }} // 초기 위치 오른쪽으로 이동
-                animate={{ opacity: 1, x: 0, scale: 1 }} // 페이지 이동 완료 시 중앙으로 이동
-                exit={{ opacity: 0, x: -100, scale: 0.5 }} // 페이지 떠날 때 왼쪽으로 이동
-                transition={{ duration: 0.5 }}
-              >
-                <S.MainStep1HoneyBearWrapper>
-                  <S.Honeybear height={550} />
-                </S.MainStep1HoneyBearWrapper>
-              </motion.div>
-            ) : (
-              <motion.div
-                initial={{ opacity: 0, x: -100, scale: 0.5 }} // 초기 위치 왼쪽으로 이동
-                animate={{ opacity: 1, x: 0, scale: 1 }} // 페이지 이동 완료 시 중앙으로 이동
-                exit={{ opacity: 0, x: 100, scale: 0.5 }} // 페이지 떠날 때 오른쪽으로 이동
-                transition={{ duration: 0.5 }}
-              >
-                <S.MainStep2HoneyBearWrapper>
-                  <S.Honeybear height={550} />
-                </S.MainStep2HoneyBearWrapper>
-              </motion.div>
-            )}
-            {step.component}
-          </S.Wrapper>
-        ))}
-      </Slider>
+    <S.MainWrapper>
+      <MainStep1 />
 
       <S.ButtonMotionWrapper
         whileTap={{ scale: 0.9 }}
@@ -102,18 +73,8 @@ function Main() {
         <WriteDiaryButton isClick={isClick} onUpdate={onUpdate}/>
       </S.ButtonMotionWrapper>
 
-      <S.MainStepWrapper>
-        {activeSlide === 0 ? (
-          <div>
-            <StepProgress steps={steps} cur={'MainStep1'} />
-          </div>
-        ) : (
-          <div>
-            <StepProgress steps={steps} cur={'MainStep2'} />
-          </div>
-        )}
-      </S.MainStepWrapper>
-    </S.WholeWrapper>
+
+    </S.MainWrapper>
   );
 }
 
