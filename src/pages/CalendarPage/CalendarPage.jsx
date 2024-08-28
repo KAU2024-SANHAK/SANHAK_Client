@@ -25,9 +25,9 @@ function CalendarPage() {
             ))
           ) 
         : (
-            <S.ErrorText>
+            <S.ErrorBox>
               아직 작성된 일기가 없습니다.
-            </S.ErrorText>
+            </S.ErrorBox>
           )
       }
     </S.CalendarPageWrapper>
