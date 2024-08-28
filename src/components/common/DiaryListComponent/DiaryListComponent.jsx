@@ -4,7 +4,6 @@ import { useRecoilState } from "recoil";
 import { diaryContent, diaryAdvice, diaryTitle, diaryImage, diaryFeeling, createdDate, diaryId } from "../../../recoil/atoms";
 import usePostDiary from "../../../hooks/queries/etc/usePostDiary";
 import BtnSubmit from "../buttons/Submit/BtnSubmit";
-import { motion } from 'framer-motion';
 
 export default function DiaryListComponent({ feelingListId, feelingListTitle, feelingListDate, imageUrl }) {
   const [content, setContent] = useRecoilState(diaryContent);
@@ -62,7 +61,7 @@ export default function DiaryListComponent({ feelingListId, feelingListTitle, fe
           {feelingListDate}
         </S.DateText>
 
-        <motion.div
+        <S.MotionButton // 이거 스타일드컴포넌트로 묶기
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.8 }} // 클릭 애니메이션을 더 극적으로
           transition={{ duration: 0.3 }}
@@ -77,7 +76,7 @@ export default function DiaryListComponent({ feelingListId, feelingListTitle, fe
           >
             조회하기
           </BtnSubmit>
-        </motion.div>
+        </S.MotionButton>
       </S.TextWrapper>
     </S.DiaryListComponentWrapper>
   )

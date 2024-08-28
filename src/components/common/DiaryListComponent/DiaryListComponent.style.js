@@ -29,4 +29,4 @@ export const DateText = styled.p`
   ${({ theme }) => theme.fonts.caption_02};
 `;
 export const MotionButton = styled(motion.div)`
-`
+`;
