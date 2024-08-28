@@ -19,6 +19,7 @@ import SharedView from '../pages/SharedView/SharedView';
 import Information from '../pages/Information/Information';
 import Weather from '../pages/Weather/Weather';
 import LoginError from '../pages/LoginError/LoginError';
+import CalendarPage from './../pages/CalendarPage/CalendarPage';
 
 /*이런 식으로 작성하기*/
 const router = createBrowserRouter([
@@ -98,6 +99,10 @@ const router = createBrowserRouter([
         path: '/weather',
         element: <Weather />,
       },
+      {
+        path: '/calendar',
+        element: <CalendarPage />,
+      }
     ],
   },
 ]);
