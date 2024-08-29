@@ -44,8 +44,10 @@ function Main() {
 
   return (
     <S.MainWrapper>
+      <S.HoneyBearWrapper>
+        <S.HoneyBear />
+      </S.HoneyBearWrapper>
       <MainStep1 />
-
       <S.ButtonMotionWrapper
         whileTap={{ scale: 0.9 }}
         transition={{ duration: 0.3 }}

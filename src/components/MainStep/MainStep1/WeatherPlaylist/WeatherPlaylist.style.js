@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const WeatherPlaylistWrapper = styled.div`
   width: 100%;
+  margin-bottom: 15rem;
 `;
 export const WeatherIcon = styled.img`
   width: 3rem;
