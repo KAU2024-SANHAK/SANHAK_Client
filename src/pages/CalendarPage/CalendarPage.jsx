@@ -4,7 +4,7 @@ import { useRecoilValue } from 'recoil';
 import { format } from 'date-fns';
 import Calendar from '../../components/common/Calendar/Calendar';
 import DiaryListComponent from '../../components/common/DiaryListComponent/DiaryListComponent';
-
+import CreateDiaryButtonField from '../../components/CreateDiaryButtonField/CreateDiaryButtonField';
 
 function CalendarPage() {
   const diaries = useRecoilValue(clickedDiary);
@@ -32,6 +32,7 @@ function CalendarPage() {
             </S.ErrorBox>
           )
       }
+      <CreateDiaryButtonField />
     </S.CalendarPageWrapper>
   );
 }
