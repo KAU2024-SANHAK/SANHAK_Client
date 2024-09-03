@@ -7,6 +7,7 @@ export const CalendarPageWrapper = styled.div`
   min-height: 100vh;
   height: auto;
   max-height: fit-content;
+  padding-top: 10rem;
 `;
 export const ErrorBox = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
