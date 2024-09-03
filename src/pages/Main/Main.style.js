@@ -21,3 +21,7 @@ export const MainButtonWrapper = styled.div`
   margin-right: 11rem;
   gap: 1.5rem;
 `;
+export const MonthlyBox = styled.div`
+  ${({ theme: { mixin } }) => mixin.flexBox({ 'direction': 'row', 'justify': 'space-between' })};
+  width: 32rem;
+`

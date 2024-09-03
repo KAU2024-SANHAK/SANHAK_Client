@@ -1,13 +1,9 @@
 import * as S from "./MonthlyEmotion.style";
 import { convertFeelingText } from "../../utils/convertFeelingText";
-import useGetSummary from "../../hooks/queries/main/useGetSummary";
 import FeelingHoneyBear from "../common/HoneyBear/FeelingHoneyBear";
 import usePostPlaylist from "../../hooks/queries/main/usePostPlaylist";
 
-function MonthlyEmotion() {
-  const { data  } = useGetSummary();
-  const firstFeeling = data.data.firstFeeling;
-  const secondFeeling = data.data.secondFeeling;
+function MonthlyEmotion({ firstFeeling, secondFeeling }) {
   const mutation = usePostPlaylist();  
 
   const handlePlaylist = () => {
