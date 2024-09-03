@@ -1,10 +1,10 @@
-import * as S from "./ThisMonthEmotion.style";
-import { convertFeelingText } from "../../../../utils/convertFeelingText";
-import useGetSummary from "../../../../hooks/queries/main/useGetSummary";
-import FeelingHoneyBear from "../../HoneyBear/FeelingHoneyBear";
-import usePostPlaylist from "../../../../hooks/queries/main/usePostPlaylist";
+import * as S from "./MonthlyEmotion.style";
+import { convertFeelingText } from "../../utils/convertFeelingText";
+import useGetSummary from "../../hooks/queries/main/useGetSummary";
+import FeelingHoneyBear from "../common/HoneyBear/FeelingHoneyBear";
+import usePostPlaylist from "../../hooks/queries/main/usePostPlaylist";
 
-export default function ThisMonthEmotion() {
+function MonthlyEmotion() {
   const { data  } = useGetSummary();
   const firstFeeling = data.data.firstFeeling;
   const secondFeeling = data.data.secondFeeling;
@@ -27,6 +27,10 @@ export default function ThisMonthEmotion() {
 
   return (
     <S.Wrapper>
+      <S.BubbleText>
+        한 달동안 가장 많았던 <br />
+        감정들이에요.
+      </S.BubbleText>
       <S.HoneyBearWrapper>
         <FeelingHoneyBear 
           feeling={firstFeeling} 
@@ -34,23 +38,16 @@ export default function ThisMonthEmotion() {
         />  
       </S.HoneyBearWrapper> 
       <S.Bubble>
-        <S.ThisMonthEmotionText>
-          {firstFeeling === null ? 
+        {firstFeeling === null 
+          ? 
             '감정 분석 중'
-            :
+          :
             `${convertFeelingText(firstFeeling)} 
-             ${convertFeelingText(secondFeeling)}`          
-          }
-        </S.ThisMonthEmotionText>
+            ${convertFeelingText(secondFeeling)}`          
+        }
       </S.Bubble>
       
-      <S.PlayList
-        onClick={() => {
-          handlePlaylist();
-        }}
-      >
-        추천 플레이리스트 보러가기
-      </S.PlayList>
     </S.Wrapper>
-  )
+  );
 }
+export default MonthlyEmotion;

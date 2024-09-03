@@ -3,7 +3,7 @@ import CreateDiaryButtonField from '../../components/CreateDiaryButtonField/Crea
 import KakaoAd from '../../components/KakaoAd/KakaoAd';
 import MenuHeader from '../../components/MenuHeader/MenuHeader';
 import WeatherPlaylist from '../../components/WeatherPlaylist/WeatherPlaylist';
-import ThisMonthEmotion from '../../components/common/buttons/ThisMonthEmotion/ThisMonthEmotion';
+import MonthlyEmotion from '../../components/MonthlyEmotion/MonthlyEmotion';
 
 function Main() {
   return (
@@ -11,11 +11,10 @@ function Main() {
       <S.HoneyBearWrapper>
         <S.HoneyBear />
       </S.HoneyBearWrapper>
-
       <MenuHeader />
       <S.MainButtonWrapper>
         <WeatherPlaylist />
-        <ThisMonthEmotion />
+        <MonthlyEmotion />
       </S.MainButtonWrapper>
       <KakaoAd />
       <CreateDiaryButtonField />
