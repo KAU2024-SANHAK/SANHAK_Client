@@ -52,3 +52,7 @@ export { default as IcStudentHoneyBee } from './IcStudentHoneyBee';
 export { default as IcCreateButton } from './IcCreateButton';
 export { default as IcFastCreateButton } from './IcFastCreateButton';
 export { default as IcSlowCreateButton } from './IcSlowCreateButton';
+export { default as IcSearchIcon } from './IcSearchIcon';
+export { default as IcCalendarIcon } from './IcCalendarIcon';
+export { default as IcMyPageIcon } from './IcMyPageIcon';
+export { default as IcHomeIcon } from './IcHomeIcon';
