@@ -5,12 +5,14 @@ import { format } from 'date-fns';
 import Calendar from '../../components/common/Calendar/Calendar';
 import DiaryListComponent from '../../components/common/DiaryListComponent/DiaryListComponent';
 import CreateDiaryButtonField from '../../components/CreateDiaryButtonField/CreateDiaryButtonField';
+import MenuHeader from './../../components/MenuHeader/MenuHeader';
 
 function CalendarPage() {
   const diaries = useRecoilValue(clickedDiary);
 
   return(
     <S.CalendarPageWrapper>
+      <MenuHeader />
       <S.CalendarWrapper>
         <Calendar />
       </S.CalendarWrapper>
