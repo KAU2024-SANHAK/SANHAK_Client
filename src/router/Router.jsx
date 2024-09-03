@@ -17,7 +17,6 @@ import LoginCallback from '../components/common/buttons/KakaoLogin/LoginCallback
 import Loading from '../pages/Loading/Loading';
 import SharedView from '../pages/SharedView/SharedView';
 import Information from '../pages/Information/Information';
-import Weather from '../pages/Weather/Weather';
 import LoginError from '../pages/LoginError/LoginError';
 import CalendarPage from './../pages/CalendarPage/CalendarPage';
 
@@ -94,10 +93,6 @@ const router = createBrowserRouter([
       {
         path: '/information',
         element: <Information />,
-      },
-      {
-        path: '/weather',
-        element: <Weather />,
       },
       {
         path: '/calendar',

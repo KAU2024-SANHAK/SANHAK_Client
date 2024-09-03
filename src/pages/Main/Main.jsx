@@ -1,6 +1,9 @@
 import * as S from './Main.style';
-import MainStep1 from '../../components/MainStep/MainStep1/MainStep1';
 import CreateDiaryButtonField from '../../components/CreateDiaryButtonField/CreateDiaryButtonField';
+import KakaoAd from '../../components/KakaoAd/KakaoAd';
+import MenuHeader from '../../components/MenuHeader/MenuHeader';
+import WeatherPlaylist from '../../components/WeatherPlaylist/WeatherPlaylist';
+import ThisMonthEmotion from '../../components/common/buttons/ThisMonthEmotion/ThisMonthEmotion';
 
 function Main() {
   return (
@@ -8,7 +11,13 @@ function Main() {
       <S.HoneyBearWrapper>
         <S.HoneyBear />
       </S.HoneyBearWrapper>
-      <MainStep1 />
+
+      <MenuHeader />
+      <S.MainButtonWrapper>
+        <WeatherPlaylist />
+        <ThisMonthEmotion />
+      </S.MainButtonWrapper>
+      <KakaoAd />
       <CreateDiaryButtonField />
     </S.MainWrapper>
   );
