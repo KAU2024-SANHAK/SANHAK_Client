@@ -19,6 +19,7 @@ export const ButtonMotionWrapper = styled(motion.div)`
   position: fixed;
   right: 0rem;;
   bottom: 0rem;
+  z-index: 100;
 `;
 export const CreateButtonField = styled.div`
   ${({ theme: { mixin } }) => mixin.flexBox({ 

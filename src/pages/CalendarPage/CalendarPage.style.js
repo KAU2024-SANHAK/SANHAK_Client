@@ -19,5 +19,5 @@ export const ErrorBox = styled.div`
   background: rgba(255, 255, 255, 0.27);
 `;
 export const CalendarWrapper = styled.div`
-  margin: 10rem 0 2rem 0;
+  margin: 0 0 2rem 0;
 `;
