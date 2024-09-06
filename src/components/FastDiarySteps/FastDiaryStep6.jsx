@@ -18,6 +18,7 @@ import BtnNext from '../common/buttons/Next/BtnNext';
 import BtnPrev from '../common/buttons/Prev/BtnPrev';
 import DiaryErrorModal from '../Modal/DiaryErrorModal';
 import Loading from '../../pages/Loading/Loading';
+import BtnCreateDiary from '../common/buttons/CreateDiary/BtnCreateDiary';
 
 export default function FastDiaryStep6({ onNext, onPrev }) {
   const [realized, setRealized] = useRecoilState(realizedKeyword);
@@ -93,11 +94,7 @@ export default function FastDiaryStep6({ onNext, onPrev }) {
 
       <S.ButtonField>
         <BtnPrev onPrev={onPrev} />
-        <BtnNext
-          onNext={() => {
-            onClickSubmit();
-          }}
-        />
+        <BtnCreateDiary onClick={onClickSubmit}/>
       </S.ButtonField>
     </S.FastDiaryStepWrapper>
   );
