@@ -1,3 +1,4 @@
+export {default as IcSearching} from './IcSearching';
 export { default as IcError } from './IcError';
 export { default as IcMyPage } from './IcMyPage';
 export { default as IcSearchByEmotion } from './IcSearchByEmotionButton';
