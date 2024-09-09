@@ -120,9 +120,6 @@ export default function FastDiary() {
                   onNext={handleNext}
                   onPrev={handlePrev}
                 />
-                <S.ProgressWrapper>
-                  <StepProgress steps={steps} cur={step.name} />
-                </S.ProgressWrapper>
               </Step>
             ))}
           </Funnel>
