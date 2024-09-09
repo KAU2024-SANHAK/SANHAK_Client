@@ -7,10 +7,16 @@ import * as S from './SearchDiary.style';
 function SearchDiary() {
     return (
         <S.SearchingWrapper>
-            <DiaryBox/>
-            <FeelingBox/>
+            <S.Header>
             <SearchInput/>
+            <S.BackBtn>취소</S.BackBtn>
+            </S.Header>
+
+            <FeelingBox/>
             <CurrentBox/>
+
+
+            <DiaryBox/>
         </S.SearchingWrapper>
     )
 }
