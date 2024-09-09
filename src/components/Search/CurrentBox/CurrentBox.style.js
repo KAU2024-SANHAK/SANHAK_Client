@@ -14,7 +14,7 @@ padding : 0 2.4rem;
 background: rgba(255, 255, 255, 0.75);
 `;
 
-export const Text = styled.p`
+export const Text = styled.div`
 color: black;
 ${({ theme }) => theme.fonts.body_01};
 `;

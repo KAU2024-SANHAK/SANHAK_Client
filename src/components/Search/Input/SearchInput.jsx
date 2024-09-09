@@ -1,9 +1,12 @@
 import * as S from './SearchInput.style';
 
-function SearchInput () {
+function SearchInput ({ onHoverChange }) {
     return (
         <S.InputWrappr>
-            <S.Input placeholder='검색할 키워드를 입력하세요.'/>
+            <S.Input
+                placeholder='검색할 키워드를 입력하세요.'
+                onMouseEnter={() => onHoverChange(true)}
+                onMouseLeave={() => onHoverChange(false)}/>
         </S.InputWrappr>
     )
 }
