@@ -1,3 +1,4 @@
+export { default as IcCancel } from './IcCancel';
 export { default as IcAngryBear } from './IcAngryBear';
 export { default as IcCalmBear } from './IcCalmBear';
 export { default as IcHappyBear } from './IcHappyBear';
