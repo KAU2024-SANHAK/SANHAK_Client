@@ -2,7 +2,6 @@ import * as S from './Main.style';
 import CreateDiaryButtonField from '../../components/CreateDiaryButtonField/CreateDiaryButtonField';
 import KakaoAd from '../../components/KakaoAd/KakaoAd';
 import MenuHeader from '../../components/MenuHeader/MenuHeader';
-import WeatherPlaylist from '../../components/WeatherPlaylist/WeatherPlaylist';
 import MonthlyEmotion from '../../components/MonthlyEmotion/MonthlyEmotion';
 import MonthlyPlaylist from '../../components/MonthlyPlaylist/MonthlyPlaylist';
 import useGetSummary from '../../hooks/queries/main/useGetSummary';
@@ -19,7 +18,6 @@ function Main() {
       </S.HoneyBearWrapper>
       <MenuHeader />
       <S.MainButtonWrapper>
-        <WeatherPlaylist />
         <S.MonthlyBox>
           <MonthlyEmotion 
             firstFeeling={firstFeeling}

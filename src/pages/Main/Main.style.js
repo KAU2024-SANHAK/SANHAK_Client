@@ -15,13 +15,13 @@ export const HoneyBearWrapper = styled.div`
   top: 10rem;
 `;
 export const MainButtonWrapper = styled.div`
-  ${({ theme: { mixin } }) => mixin.flexBox({ direction: 'column', justify: 'space-between' })};
+  ${({ theme: { mixin } }) => mixin.flexBox({ direction: 'column', justify: 'space-between', align: 'center' })};
   width: 21rem;
-  margin-top: 8.7rem;
-  margin-right: 11rem;
+  padding-top: 37rem;
   gap: 1.5rem;
 `;
 export const MonthlyBox = styled.div`
   ${({ theme: { mixin } }) => mixin.flexBox({ 'direction': 'row', 'justify': 'space-between' })};
   width: 32rem;
+  height: 100%;
 `
