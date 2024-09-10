@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export const DiaryListComponentWrapper = styled.div`
   display: flex;
-  width: 32.0rem;
+  width: 32rem;
   height: 11.5rem;
   flex-shrink: 0;
   border-radius: 3rem;
