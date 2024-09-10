@@ -8,20 +8,6 @@ import BtnHomeIcon from './../common/buttons/Home/BtnHomeIcon/BtnHomeIcon';
 function MenuHeader() {
   const navigate = useNavigate();
 
-  const handleSearch = () => {
-    alert('삐용');
-    //라우트 설정 완료되면 주석 해젷 사용하심 될 것 같습니다 !
-    //navigate('/search');
-  };
-  const handleCalendar = () => {
-    navigate('/calendar');
-  };
-  const handleMyPage = () => {
-    navigate('/myPage');
-  };
-  const handleMain = () => {
-    navigate('/main');
-  };
   const getSegment = () => {
     const location = useLocation();
     const path = location.pathname;
@@ -32,18 +18,42 @@ function MenuHeader() {
   }
 
   const segment = getSegment();
+  const menuItems = [
+    {
+      id: 'search',
+      component: BtnSearch,
+      onClick: () => {alert('검색');},
+    },
+    {
+      id: 'calendar',
+      component: BtnCalendar,
+      onClick: () => {navigate('/calendar');},
+      condition: segment === 'main',
+    },
+    {
+      id: 'main',
+      component: BtnHomeIcon,
+      onClick: () => {navigate('/main');},
+      condition: segment !=='main',
+    },
+    {
+      id: 'myPage',
+      component: BtnMyPage,
+      onClick: () => {navigate('/myPage');},
+    },
+  ];
   
   return(
     <S.MenuHeaderWrapper>
-      <BtnSearch onClick={handleSearch}/>
       {
-        segment === 'main'
-          ? 
-            <BtnCalendar onClick={handleCalendar} />
-          :
-            <BtnHomeIcon onClick={handleMain} />
+        menuItems.filter(menu => menu.condition !== false)
+        .map((menuItem) => (
+          <menuItem.component 
+            key={menuItem.id} 
+            onClick={menuItem.onClick} 
+          />
+        ))
       }
-      <BtnMyPage onClick={handleMyPage} />
     </S.MenuHeaderWrapper>
   );
 }
