@@ -7,6 +7,7 @@ import useFileReader from '../../../hooks/common/useFileReader';
 import usePostSlowDiary from '../../../hooks/queries/slowdiary/usePostSlowDiary';
 import usePatchDiary from '../../../hooks/queries/slowdiary/usePatchDiary';
 import BtnNext from '../../../components/common/buttons/Next/BtnNext';
+import BtnCreateDiary from '../../../components/common/buttons/CreateDiary/BtnCreateDiary';
 
 function DiaryForm () {
 
@@ -91,7 +92,7 @@ function DiaryForm () {
   };
 
   return(
-   <>
+    <>
       <S.DiaryFormWrapper onSubmit={handleSubmit}>
           <S.ImageInput 
             type = 'file' 
@@ -125,14 +126,12 @@ function DiaryForm () {
             value = {values.diaryContent} 
             onChange = {handleChange}
           />
- 
+  
           <S.BtnField>
-            <BtnNext onNext={() => {
-              handleSubmit();
-            }}/>
+            <BtnCreateDiary onClick={handleSubmit}/>
           </S.BtnField>
       </S.DiaryFormWrapper>
-   </> 
+    </>   
   );
 }
 export default DiaryForm;

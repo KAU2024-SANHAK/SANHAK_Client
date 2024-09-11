@@ -17,6 +17,11 @@ export const DiaryFeelingButton = styled(IcDiaryFeeling)`
   display: flex;
   fill: ${({ theme }) => theme.colors.normal.white};
 `;
-export const FeelingText = styled.p`
+export const FeelingText = styled.span`
+  position: absolute;
+`;
+export const SmallFeelingText = styled.span`
+  ${({ theme }) => theme.fonts.body_08};
+  font-weight: 700;
   position: absolute;
 `;

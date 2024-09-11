@@ -13,23 +13,23 @@ export default function OptionModal({closeModal, children, handleOption, optionT
       <S.ButtonField>
         <BtnSubmit 
           onClick = {() => {
-            closeModal();
+            handleOption();
           }} 
           width = '15rem'
           height = '5.6rem'
           $color={({ theme }) => theme.colors.normal.white}
         >
-          {closeText}
+          {optionText}
         </BtnSubmit>
         <BtnSubmit 
           onClick = {() => {
-            handleOption();
+            closeModal();
           }} 
           width = '15rem'
           height = '5.6rem'
           $color={({ theme }) => theme.colors.pink.red_pink}
         >
-          {optionText}
+          {closeText}
         </BtnSubmit>
       </S.ButtonField>
     </Modal>

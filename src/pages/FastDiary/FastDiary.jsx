@@ -24,7 +24,10 @@ export default function FastDiary() {
   const [Funnel, Step, currentStep, setCurrentStep] = useFunnel('DiaryStep1');
 
   const steps = [
-    { name: 'DiaryStep1', component: FastDiaryStep1, nextStep: 'DiaryStep2' },
+    { name: 'DiaryStep1', 
+      component: FastDiaryStep1, 
+      nextStep: 'DiaryStep2' 
+    },
     {
       name: 'DiaryStep2',
       component: FastDiaryStep2,
@@ -114,16 +117,9 @@ export default function FastDiary() {
             {steps.map((step, idx) => (
               <Step key={idx} name={step.name}>
                 <step.component
-                  onNext={() => {
-                    handleNext();
-                  }}
-                  onPrev={() => {
-                    handlePrev();
-                  }}
+                  onNext={handleNext}
+                  onPrev={handlePrev}
                 />
-                <S.ProgressWrapper>
-                  <StepProgress steps={steps} cur={step.name} />
-                </S.ProgressWrapper>
               </Step>
             ))}
           </Funnel>

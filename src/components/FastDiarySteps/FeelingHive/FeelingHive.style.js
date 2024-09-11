@@ -14,14 +14,10 @@ export const FirstLayer = styled.div`
 export const SecondLayer = styled.div`
   width: 7rem;
   height: 18.3rem;
-  margin: auto;
+  margin: auto auto 1.2rem auto;
 `;
 export const ThirdLayer = styled.div`
   width: 7rem;
   height: 10rem;
   margin: auto;
-`;
-export const HoneyPotWrapper = styled.div`
-  margin-top: 1rem;
-  padding-left: 0.5rem;
 `;
