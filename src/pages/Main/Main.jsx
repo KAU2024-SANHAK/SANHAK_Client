@@ -5,6 +5,7 @@ import MenuHeader from '../../components/MenuHeader/MenuHeader';
 import MonthlyEmotion from '../../components/MonthlyEmotion/MonthlyEmotion';
 import MonthlyPlaylist from '../../components/MonthlyPlaylist/MonthlyPlaylist';
 import useGetSummary from '../../hooks/queries/main/useGetSummary';
+import EventBanner from '../../components/EventBanner/EventBanner';
 
 function Main() {
   const { data  } = useGetSummary();
@@ -18,6 +19,7 @@ function Main() {
       </S.HoneyBearWrapper>
       <MenuHeader />
       <S.MainButtonWrapper>
+        <EventBanner />
         <S.MonthlyBox>
           <MonthlyEmotion 
             firstFeeling={firstFeeling}
