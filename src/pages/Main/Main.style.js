@@ -10,7 +10,7 @@ export const MainWrapper = styled.div`
 `;
 export const HoneyBear = styled(IcHoneyBear)``;
 export const HoneyBearWrapper = styled.div`
-  width: 32rem;
+  width: 35rem;
   position: absolute;
   top: 10rem;
 `;
