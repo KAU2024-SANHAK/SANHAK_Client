@@ -16,9 +16,9 @@ export const HoneyBearWrapper = styled.div`
 export const MainButtonWrapper = styled.div`
   ${({ theme: { mixin } }) => mixin.flexBox({ direction: 'column', justify: 'space-between', align: 'center' })};
   width: 21rem;
-  padding-top: 29rem;
   gap: 1.5rem;
-  z-index: 9999;
+  z-index: 10;
+  margin-top: 29rem;
 `;
 export const MonthlyBox = styled.div`
   ${({ theme: { mixin } }) => mixin.flexBox({ 'direction': 'row', 'justify': 'space-between' })};
