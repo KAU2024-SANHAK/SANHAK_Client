@@ -1,3 +1,11 @@
+export { default as IcCancel } from './IcCancel';
+export { default as IcAngryBear } from './IcAngryBear';
+export { default as IcCalmBear } from './IcCalmBear';
+export { default as IcHappyBear } from './IcHappyBear';
+export { default as IcSadBear } from './IcSadBear';
+export { default as IcSurprisedBear } from './IcSurprisedBear';
+export { default as IcWorriedBear } from './IcWorriedBear';
+export { default as IcSearching } from './IcSearching';
 export { default as IcError } from './IcError';
 export { default as IcMyPage } from './IcMyPage';
 export { default as IcSearchByEmotion } from './IcSearchByEmotionButton';

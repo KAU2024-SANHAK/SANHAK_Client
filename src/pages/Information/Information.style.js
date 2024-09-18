@@ -3,7 +3,7 @@ import { IcHoneyBear } from "../../assets/svg";
 
 export const InfoWrapper = styled.div`
     ${({ theme: { mixin } }) => mixin.flexCenter({})};
-    width: 100%
+    width: 100%;
     height: auto;
     min-height: 100vh;
     max-height: fit-content;
