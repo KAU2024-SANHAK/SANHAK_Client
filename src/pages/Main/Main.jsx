@@ -1,119 +1,39 @@
 import * as S from './Main.style';
-import MainStep1 from '../../components/MainStep/MainStep1/MainStep1';
-import MainStep2 from '../../components/MainStep/MainStep2/MainStep2';
-import React, { useState } from 'react';
-import Slider from 'react-slick';
-import WriteDiaryButton from '../../components/common/buttons/WriteDiaryButton/WriteDiaryButton';
-import StepProgress from '../../components/common/StepPrgoress/StepProgress';
-import { motion } from 'framer-motion';
-import BtnSlowDiary from '../../components/common/buttons/DiaryType/BtnSlowDiary';
-import BtnFastDiary from './../../components/common/buttons/DiaryType/BtnFastDiary';
-import { useNavigate } from 'react-router-dom';
+import CreateDiaryButtonField from '../../components/CreateDiaryButtonField/CreateDiaryButtonField';
+import KakaoAd from '../../components/KakaoAd/KakaoAd';
+import MenuHeader from '../../components/MenuHeader/MenuHeader';
+import MonthlyEmotion from '../../components/MonthlyEmotion/MonthlyEmotion';
+import MonthlyPlaylist from '../../components/MonthlyPlaylist/MonthlyPlaylist';
+import useGetSummary from '../../hooks/queries/main/useGetSummary';
+import EventBanner from '../../components/EventBanner/EventBanner';
 
 function Main() {
-  const [oldSlide, setOldSlide] = useState(0);
-  const [activeSlide, setActiveSlide] = useState(0);
-  const [isClick, setIsClick] = useState(false);
-  const navigate = useNavigate();
-  const settings = {
-    dots: false,
-    infinite: false,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    adaptiveHeight: true,
-    beforeChange: (current, next) => {
-      setOldSlide(current);
-      setActiveSlide(next);
-    },
-  };
-  const steps = [
-    { name: 'MainStep1', component: <MainStep1 /> },
-    { name: 'MainStep2', component: <MainStep2 /> },
-  ];
-
-  const onUpdate = () => {
-    setIsClick(!isClick);
-  };
-
-  const handleFastDiary = () => {
-    navigate('/fastdiary');
-  };
-  const handleSlowDiary = () => {
-    navigate('/slowdiary');
-  };
+  const { data  } = useGetSummary();
+  const firstFeeling = data.data.firstFeeling;
+  const secondFeeling = data.data.secondFeeling;
 
   return (
-    <S.WholeWrapper className='slider-container'>
-      <Slider {...settings} dotsClass='test-css'>
-        {steps.map((step, idx) => (
-          <S.Wrapper key={idx}>
-            {activeSlide === 0 ? (
-              <motion.div
-                initial={{ opacity: 0, x: 100, scale: 0.5 }} // 초기 위치 오른쪽으로 이동
-                animate={{ opacity: 1, x: 0, scale: 1 }} // 페이지 이동 완료 시 중앙으로 이동
-                exit={{ opacity: 0, x: -100, scale: 0.5 }} // 페이지 떠날 때 왼쪽으로 이동
-                transition={{ duration: 0.5 }}
-              >
-                <S.MainStep1HoneyBearWrapper>
-                  <S.Honeybear height={550} />
-                </S.MainStep1HoneyBearWrapper>
-              </motion.div>
-            ) : (
-              <motion.div
-                initial={{ opacity: 0, x: -100, scale: 0.5 }} // 초기 위치 왼쪽으로 이동
-                animate={{ opacity: 1, x: 0, scale: 1 }} // 페이지 이동 완료 시 중앙으로 이동
-                exit={{ opacity: 0, x: 100, scale: 0.5 }} // 페이지 떠날 때 오른쪽으로 이동
-                transition={{ duration: 0.5 }}
-              >
-                <S.MainStep2HoneyBearWrapper>
-                  <S.Honeybear height={550} />
-                </S.MainStep2HoneyBearWrapper>
-              </motion.div>
-            )}
-            {step.component}
-          </S.Wrapper>
-        ))}
-      </Slider>
-
-      <S.ButtonMotionWrapper
-        whileTap={{ scale: 0.9 }}
-        transition={{ duration: 0.3 }}
-        isClick={isClick}
-      >
-        {
-          isClick && (
-            <>
-              <S.CreateButtonField>
-                <S.ButtonText>
-                  직접 일기 쓰기
-                </S.ButtonText>
-                <BtnSlowDiary onClick={handleSlowDiary}/>
-              </S.CreateButtonField>
-
-              <S.CreateButtonField>
-                <S.ButtonText>
-                  키워드로 빠르게 쓰기
-                </S.ButtonText>
-                <BtnFastDiary onClick={handleFastDiary}/>
-              </S.CreateButtonField>
-            </>
-          )
-        }
-        <WriteDiaryButton isClick={isClick} onUpdate={onUpdate}/>
-      </S.ButtonMotionWrapper>
-
-      <S.MainStepWrapper>
-        {activeSlide === 0 ? (
-          <div>
-            <StepProgress steps={steps} cur={'MainStep1'} />
-          </div>
-        ) : (
-          <div>
-            <StepProgress steps={steps} cur={'MainStep2'} />
-          </div>
-        )}
-      </S.MainStepWrapper>
-    </S.WholeWrapper>
+    <S.MainWrapper>
+      <S.HoneyBearWrapper>
+        <S.HoneyBear />
+      </S.HoneyBearWrapper>
+      <MenuHeader />
+      <S.MainButtonWrapper>
+        <EventBanner />
+        <S.MonthlyBox>
+          <MonthlyEmotion 
+            firstFeeling={firstFeeling}
+            secondFeeling={secondFeeling}
+          />
+          <MonthlyPlaylist 
+            firstFeeling={firstFeeling}
+            secondFeeling={secondFeeling}
+          />
+        </S.MonthlyBox>
+      </S.MainButtonWrapper>
+      <KakaoAd />
+      <CreateDiaryButtonField />
+    </S.MainWrapper>
   );
 }
 

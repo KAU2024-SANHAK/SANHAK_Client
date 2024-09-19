@@ -1,5 +1,5 @@
 import * as S from './WeatherPlaylist.style';
-import useGetWeather from '../../../../hooks/queries/main/useGetWeather';
+import useGetWeather from '../../hooks/queries/main/useGetWeather';
 import { useState } from 'react';
 
 function WeatherPlaylist(){

@@ -1,65 +1,27 @@
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
 import { IcHoneyBear } from '../../assets/svg';
 
-export const WholeWrapper = styled.div`
-`
-export const Wrapper = styled.div`
+export const MainWrapper = styled.div`
   ${({ theme: { mixin } }) => mixin.flexCenter({})};
-  background: linear-gradient(
-    187deg,
-    #ffbbcb 20.43%,
-    #ffdae3 81.25%,
-    #dcc6cc 100.45%,
-    #999 100.45%
-  );
-`;
-export const Honeybear = styled(IcHoneyBear)``;
-export const MainStepWrapper = styled.div`
-  position: fixed;
-  left: 41.5%;
-  top: 1rem;
-`;
-export const ButtonMotionWrapper = styled(motion.div)`
-  ${({ theme: { mixin } }) => mixin.flexBox({ 
-    'direction': 'column', 
-    'justify': 'flex-end',
-    'align': 'flex-end',
-  })};
-  ${({ theme, isClick}) => `
-    ${isClick && `background: ${theme.colors.gradient.gradient_black};`}
-  `};
-  ${({ isClick }) => `
-    ${isClick 
-      ? `width: 100%;`
-      : `width: 50%;`
-    }
-  `}
-  position: fixed;
-  right: 0rem;;
-  bottom: 0rem;
-`;
-export const CreateButtonField = styled.div`
-  ${({ theme: { mixin } }) => mixin.flexBox({ 
-    'direction': 'row', 
-    'align': 'center',
-  })};
-  padding-right: 1.5rem;
-`;
-export const ButtonText = styled.p`
-  ${({ theme }) => theme.fonts.body_01};
-  color: ${({ theme }) => theme.colors.normal.white};
-`;
-export const MainStep1HoneyBearWrapper = styled.div`
-  position: fixed;
-  width: 100%;
+  background: ${({ theme }) => theme.colors.gradient.gradient_pink};
   height: 100vh;
-  top: 4rem;
-  left: 8.7rem;
+  padding-bottom: 2rem;
 `;
-export const MainStep2HoneyBearWrapper = styled.div`
-  position: fixed;
-  height: 100vh;
-  right: 9rem;
-  top: 4rem;
+export const HoneyBear = styled(IcHoneyBear)``;
+export const HoneyBearWrapper = styled.div`
+  width: 35rem;
+  position: absolute;
+  top: 10rem;
 `;
+export const MainButtonWrapper = styled.div`
+  ${({ theme: { mixin } }) => mixin.flexBox({ direction: 'column', justify: 'space-between', align: 'center' })};
+  width: 21rem;
+  gap: 1.5rem;
+  z-index: 10;
+  margin-top: 29rem;
+`;
+export const MonthlyBox = styled.div`
+  ${({ theme: { mixin } }) => mixin.flexBox({ 'direction': 'row', 'justify': 'space-between' })};
+  width: 32rem;
+  height: 80%;
+`
